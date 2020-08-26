@@ -1,0 +1,2 @@
+(this["webpackJsonpdesign-at-cornell"]=this["webpackJsonpdesign-at-cornell"]||[]).push([[6],{264:function(t,n,a){t.exports={Contact:"Contact_Contact__1Fas1"}},271:function(t,n,a){"use strict";a.r(n);var e=a(0),c=a.n(e),o=a(264),s=a.n(o);n.default=function(){return c.a.createElement("div",{className:s.a.Contact,"data-testid":"Contact"},"Contact Component")}}}]);
+//# sourceMappingURL=6.d679c2a4.chunk.js.map

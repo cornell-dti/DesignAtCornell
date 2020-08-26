@@ -1,0 +1,29 @@
+.SiteHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgb(235, 235, 235);
+
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.toggleNav {
+  margin-left: 1.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: auto;
+}
