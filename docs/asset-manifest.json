@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DesignAtCornell/static/css/main.f00cbd8d.chunk.css",
+    "main.js": "/DesignAtCornell/static/js/main.4c0fd824.chunk.js",
+    "main.js.map": "/DesignAtCornell/static/js/main.4c0fd824.chunk.js.map",
+    "runtime-main.js": "/DesignAtCornell/static/js/runtime-main.d961bc7a.js",
+    "runtime-main.js.map": "/DesignAtCornell/static/js/runtime-main.d961bc7a.js.map",
+    "static/js/2.71c093eb.chunk.js": "/DesignAtCornell/static/js/2.71c093eb.chunk.js",
+    "static/js/2.71c093eb.chunk.js.map": "/DesignAtCornell/static/js/2.71c093eb.chunk.js.map",
+    "index.html": "/DesignAtCornell/index.html",
+    "precache-manifest.bfc6d6e451b15275109fb0c487d12470.js": "/DesignAtCornell/precache-manifest.bfc6d6e451b15275109fb0c487d12470.js",
+    "service-worker.js": "/DesignAtCornell/service-worker.js",
+    "static/css/main.f00cbd8d.chunk.css.map": "/DesignAtCornell/static/css/main.f00cbd8d.chunk.css.map",
+    "static/js/2.71c093eb.chunk.js.LICENSE.txt": "/DesignAtCornell/static/js/2.71c093eb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d961bc7a.js",
+    "static/js/2.71c093eb.chunk.js",
+    "static/css/main.f00cbd8d.chunk.css",
+    "static/js/main.4c0fd824.chunk.js"
+  ]
+}

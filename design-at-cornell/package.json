@@ -1,5 +1,6 @@
 {
   "name": "design-at-cornell",
+  "homepage": "http://cornell-dti.github.io/DesignAtCornell",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp -a ./build/. ../",
+    "build": "react-scripts build && cp -a ./build/. ../docs/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
