@@ -1,0 +1,1 @@
+{"version":3,"sources":["Homepage.module.css","AppPlaceholderImage.module.css"],"names":[],"mappings":"AAAA,0BACE,WAAY,CACZ,UACF,CCHA,6CACE,kBAAmB,CACnB,WAAY,CACZ,UACF","file":"5.646c33c4.chunk.css","sourcesContent":[".Homepage {\n  height: 100%;\n  width: 100%;\n}",".PlaceholderImage {\n  background: #EC952E;\n  height: 100%;\n  width: 100%;\n}"]}
