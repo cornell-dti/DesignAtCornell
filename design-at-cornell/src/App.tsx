@@ -12,14 +12,22 @@ import About from './about/About';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
+        <ul>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/" component={Homepage} />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
