@@ -20,11 +20,17 @@ class SideNav extends React.Component<any, SideNavState> {
     this.state = {
       isNavOpen: false
     }
-    Emitters.navOpenEmitter.subscribe((event) => {
-      this.setState({
-        isNavOpen: event
-      });
-    })
+    Emitters.navOpenEmitter.subscribe(this.onNavOpen)
+  }
+
+  onNavOpen = (event: boolean) => {
+    this.setState({
+      isNavOpen: event
+    });
+  };
+
+  componentWillUnmount() {
+    Emitters.navOpenEmitter.unsubscribe(this.onNavOpen);
   }
 
   render() {
@@ -40,7 +46,7 @@ class SideNav extends React.Component<any, SideNavState> {
         width='thin'
       >
         <Link to="/">
-          <Menu.Item>
+          <Menu.Item style={{ marginTop: '1rem' }}>
             <Icon name='home' />
           Home
         </Menu.Item>
@@ -51,12 +57,12 @@ class SideNav extends React.Component<any, SideNavState> {
         About
       </Menu.Item>
         </Link>
-        <Link to="/contact">
+        {/* <Link to="/contact">
           <Menu.Item>
             <Icon name='mail' />
         Contact Us
       </Menu.Item>
-        </Link>
+        </Link> */}
       </Sidebar >
     )
   }
