@@ -1,6 +1,5 @@
 {
   "name": "design-at-cornell",
-  "homepage": "http://cornell-dti.github.io/DesignAtCornell",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

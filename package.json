@@ -1,0 +1,10 @@
+{
+  "name": "design-at-cornell-deploy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "cd design-at-cornell && npm install && npm run build && cd ../ && npm run serve",
+    "dev": "cd design-at-cornell && npm run build && cd ../ && npm run serve",
+    "serve": "cd server && npm i && npm start"
+  }
+}
