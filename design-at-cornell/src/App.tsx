@@ -11,6 +11,7 @@ import SideNav from './side-nav/SideNav.lazy';
 import Contact from './contact/Contact.lazy';
 import { SidebarPushable, Segment, SidebarPusher } from 'semantic-ui-react';
 import SiteHeader from './site-header/SiteHeader.lazy';
+import PageNotFound from './404/PageNotFound.lazy';
 
 function App() {
   return (
@@ -22,11 +23,12 @@ function App() {
             <div className="header" style={{ height: '10vh' }}>
               <SiteHeader />
             </div>
-            <div className="header" style={{ minHeight: '90vh' }}>
+            <div className="body" style={{ minHeight: '90vh' }}>
               <Switch>
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/" component={Homepage} />
+                <Route exact path="/" component={Homepage} />
+                <Route path="/*" component={PageNotFound} />
               </Switch>
 
             </div>

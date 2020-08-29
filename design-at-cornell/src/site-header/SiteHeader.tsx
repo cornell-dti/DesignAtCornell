@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './SiteHeader.module.css';
 import { Emitters } from '../event-emitter/constant-emitters';
+import { Link } from 'react-router-dom';
 
 type SiteHeaderState = {
   navToggleChecked: boolean
@@ -31,9 +32,13 @@ class SiteHeader extends Component<any, SiteHeaderState> {
               onClick={() => this.onToggleNav()} />
             <label></label>
           </div>
-          <h1 className={styles.title} style={{ color: "black" }}>
-            Design <span style={{ color: "red" }}>@</span> Cornell
+          <Link to="/">
+            <h1 className={styles.title} style={{
+              color: "black", letterSpacing: '0.04rem'
+            }}>
+              Design<span style={{ color: "red" }}>@</span>Cornell
         </h1>
+          </Link>
         </div>
       </div>
     )
