@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "mkdir -p design-at-cornell/build && echo '<h1>Design@Cornell site building...</h1>' > design-at-cornell/build/index.html && npm run buildReact",
-    "start": "npm run serve",
+    "postinstall": "mkdir -p design-at-cornell/build && echo '<h1>Design@Cornell site building...</h1>' > design-at-cornell/build/index.html && npm run buildReact && npm run serve",
+    "start": "",
     "dev": "cd design-at-cornell && npm run build && cd ../ && npm run serve",
     "serve": "cd server && npm i && npm start && cd ..",
     "buildReact": "cd design-at-cornell && npm install && npm run build"
