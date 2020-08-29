@@ -7,7 +7,7 @@
     "start": "npm serve",
     "dev": "cd design-at-cornell && npm run build && cd ../ && npm run serve",
     "serveInstall": "cd server && npm i",
-    "serve": "npm start",
+    "serve": "cd server && npm start",
     "buildReact": "cd design-at-cornell && npm install && npm run build"
   }
 }
