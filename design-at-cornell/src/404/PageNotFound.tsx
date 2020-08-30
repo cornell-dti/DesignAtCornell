@@ -10,7 +10,7 @@ const PageNotFound: React.FC = () => (
     }}>
     <div style={{
       position: 'absolute', top: '0', left: '0',
-      width: '100%', height: '100%'
+      width: '100%', height: '100%', zIndex: 9999, pointerEvents: 'none'
     }}>
       <img src={notfoundimage} style={{
         position: 'absolute', top: '0', left: '0',
