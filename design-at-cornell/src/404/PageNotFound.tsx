@@ -16,7 +16,7 @@ const PageNotFound: React.FC = () => (
         position: 'absolute', top: '0', left: '0',
         width: '85%', opacity: 0.04, marginLeft: '7.5%', marginRight: '7.5%',
         paddingTop: '1rem'
-      }} />
+      }} alt="" />
     </div>
     <div style={{ paddingTop: '2rem' }}>
       <h2 style={{

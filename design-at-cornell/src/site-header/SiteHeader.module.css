@@ -1,3 +1,5 @@
+@import '../colors.css';
+
 .SiteHeader {
   display: flex;
   flex-direction: column;
@@ -18,12 +20,36 @@
 }
 
 .toggleNav {
+  cursor: pointer;
   margin-left: 1.5rem;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 .title {
+  margin-left: 1rem;
   margin-top: auto;
   margin-bottom: auto;
+  padding-bottom: 0.175em;
 }
+
+.atSymbol {
+  color: transparent;
+  font-weight: 800;
+  font-size: larger;
+  background-image: var(--backgroundGradient);
+  background-position: 0%;
+  background-size: 300%;
+  background-clip: text;
+  animation: gradientAnimation 5s alternate infinite ease-in-out;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+

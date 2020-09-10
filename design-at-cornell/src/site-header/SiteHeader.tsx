@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './SiteHeader.module.css';
 import { Emitters } from '../event-emitter/constant-emitters';
 import { Link } from 'react-router-dom';
+import { Icon } from 'semantic-ui-react';
 
 type SiteHeaderState = {
   navToggleChecked: boolean
@@ -28,15 +29,13 @@ class SiteHeader extends Component<any, SiteHeaderState> {
       <div className={styles.SiteHeader} data-testid="SiteHeader">
         <div className={styles.content}>
           <div className={styles.toggleNav + " ui toggle checkbox"}>
-            <input type="checkbox" name="open close nav"
-              onClick={() => this.onToggleNav()} />
-            <label></label>
+            <Icon name="bars" size="big" onClick={() => this.onToggleNav()}></Icon>
           </div>
           <Link to="/">
             <h1 className={styles.title} style={{
               color: "black", letterSpacing: '0.04rem'
             }}>
-              Design<span style={{ color: "red" }}>@</span>Cornell
+              Design<span className={styles.atSymbol}>@</span>Cornell
         </h1>
           </Link>
         </div>
