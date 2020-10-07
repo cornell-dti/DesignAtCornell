@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "mkdir -p design-at-cornell/build && echo '<h1>Design@Cornell site building...</h1>' > design-at-cornell/build/index.html && npm run buildReact && npm run serveInstall",
     "start": "npm run serve",
+    "live": "cd design-at-cornell && npm start",
     "dev": "cd design-at-cornell && npm run build && cd ../ && npm run serve",
     "serveInstall": "cd server && npm i",
     "serve": "cd server && npm start",
