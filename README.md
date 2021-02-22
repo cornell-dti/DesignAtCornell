@@ -1,3 +1,12 @@
 # DesignAtCornell
 
-* **Rohan Maheshwari** - Fullstack Developer
+## Contributors
+
+#### School Year
+
+### 2020 - 2021 
+* **Ying Yang** - Product Manager
+* **Jessica Feng** - Technical Project Manager
+* **Sheri Guo** - Product Designer
+* **Katrina Wang** - Software Developer
+* **Rohan Maheshwari** - Software Developer
