@@ -9,7 +9,11 @@
     "dev": "cd design-at-cornell && npm run build && cd ../ && npm run serve",
     "serveInstall": "cd server && npm i",
     "serve": "cd server && npm start",
-    "buildReact": "cd design-at-cornell && npm install && npm run build"
+    "buildReact": "cd design-at-cornell && npm install && npm run build",
+    "startReact": "cd design-at-cornell && yarn start",
+    "build": "cd design-at-cornell && yarn build",
+    "test": "cd design-at-cornell && yarn test",
+    "eject": "cd design-at-cornell && yarn eject"
   },
   "dependencies": {
     "ts-node": "^9.1.1",
