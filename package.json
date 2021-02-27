@@ -10,5 +10,10 @@
     "serveInstall": "cd server && npm i",
     "serve": "cd server && npm start",
     "buildReact": "cd design-at-cornell && npm install && npm run build"
+  },
+  "dependencies": {
+    "ts-node": "^9.1.1",
+    "tsc": "^1.20150623.0",
+    "typescript": "^4.2.2"
   }
 }
