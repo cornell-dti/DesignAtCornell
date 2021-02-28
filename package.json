@@ -3,13 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "mkdir -p design-at-cornell/build && echo '<h1>Design@Cornell site building...</h1>' > design-at-cornell/build/index.html && npm run buildReact && npm run serveInstall",
-    "start": "npm run serve",
-    "live": "cd design-at-cornell && npm start",
-    "dev": "cd design-at-cornell && npm run build && cd ../ && npm run serve",
-    "serveInstall": "cd server && npm i",
-    "serve": "cd server && npm start",
-    "buildReact": "cd design-at-cornell && npm install && npm run build",
     "startReact": "cd design-at-cornell && yarn start",
     "build": "cd design-at-cornell && yarn build",
     "test": "cd design-at-cornell && yarn test",
@@ -17,7 +10,6 @@
   },
   "dependencies": {
     "ts-node": "^9.1.1",
-    "tsc": "^1.20150623.0",
     "typescript": "^4.2.2"
   }
 }
