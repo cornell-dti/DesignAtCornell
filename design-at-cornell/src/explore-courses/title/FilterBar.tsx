@@ -2,7 +2,6 @@ import React from 'react';
 import {
   FilterBarContainer,
   FilterButton,
-  SearchBox,
 } from '../ExploreCoursesStyles';
 import downArrow from '../../static/images/down-arrow.png';
 
@@ -28,9 +27,7 @@ const FilterBar = () => (
       <p>Credits</p>
       <img src={downArrow} alt={"expand"} />
     </FilterButton>
-    <SearchBox>
-      <span role="img" aria-label="magnifying glass">🔎</span>
-    </SearchBox>
+    <input type="text" placeholder="Name, Keywords, Topics, Etc" />
   </FilterBarContainer>
 )
 

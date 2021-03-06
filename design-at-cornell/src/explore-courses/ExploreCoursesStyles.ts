@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import magnifyingGlass from '../static/images/magnifying-glass.svg';
 
 export const PageContainer = styled.div`
   display: flex;
@@ -72,6 +73,24 @@ export const FilterBarContainer = styled.div`
     text-align: center;
     color: white;
   }
+
+  input {
+    width: 338px;
+    height: 28px;
+    border-radius: 43px;
+    padding-left: 10px;
+    border-style: none;
+    background: white;
+    background-image: url(${magnifyingGlass});
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+    text-indent: 30px;
+    
+    &:focus {
+        outline: none;
+    }
+  }
+
 `
 
 export const FilterButton = styled.div`
@@ -99,31 +118,35 @@ export const FilterButton = styled.div`
   }
 `
 
-export const SearchBox = styled.div`
-  display: flex;
-  width: 338px;
-  height: 28px;
-
-  background: white;
-  border-radius: 43px;
-  align-items: center;
-  padding-left: 15px;
-`
-
-export const Sort = styled.div`
+export const Divider = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 80px;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-right: 80px;
   align-items: flex-end;
+`
+
+export const Sort = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 100%;
+  align-items: center;
 
   p {
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
+    margin: 0;
     color: #828282;
+  }
+
+  img {
+    width: 21px;
+    height: 14px;
+    margin-left: 10px;
   }
 `
 
