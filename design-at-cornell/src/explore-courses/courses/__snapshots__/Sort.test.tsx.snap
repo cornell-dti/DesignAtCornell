@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sort /> renders correctly 1`] = `
+<div
+  className="sc-iBPRYJ lfzwUM"
+>
+  <div
+    className="sc-fubCfw kvtSHF"
+  >
+    <p>
+      Sort By
+    </p>
+    <img
+      alt="sort"
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "sort-triangle.svg",
+        }
+      }
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,342 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
+<div
+  className="sc-bdfBwQ cSqurG"
+>
+  <div
+    className="sc-iBPRYJ lfzwUM"
+  >
+    <div
+      className="sc-fubCfw kvtSHF"
+    >
+      <p>
+        Sort By
+      </p>
+      <img
+        alt="sort"
+        src={
+          Object {
+            "ReactComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "__esModule": true,
+            "default": "sort-triangle.svg",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="sc-pFZIQ fCCEnC"
+  >
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1110
+      </h6>
+      <p>
+        Testing Coruse 1110
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 1
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 2
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1111
+      </h6>
+      <p>
+        Testing Coruse 1111
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 1
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 3
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1112
+      </h6>
+      <p>
+        Testing Coruse 1112
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 3
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 4
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1113
+      </h6>
+      <p>
+        Testing Coruse 1113
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 5
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 6
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1114
+      </h6>
+      <p>
+        Testing Coruse 1114
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 5
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 7
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 9
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1115
+      </h6>
+      <p>
+        Testing Coruse 1115
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 6
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1116
+      </h6>
+      <p>
+        Testing Coruse 1116
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 6
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 8
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1117
+      </h6>
+      <p>
+        Testing Coruse 1117
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CourseBubble /> renders correctly for no courses 1`] = `
+<div
+  className="sc-bdfBwQ cSqurG"
+>
+  <div
+    className="sc-iBPRYJ lfzwUM"
+  >
+    <div
+      className="sc-fubCfw kvtSHF"
+    >
+      <p>
+        Sort By
+      </p>
+      <img
+        alt="sort"
+        src={
+          Object {
+            "ReactComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "__esModule": true,
+            "default": "sort-triangle.svg",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="sc-pFZIQ fCCEnC"
+  />
+</div>
+`;
+
+exports[`<CourseBubble /> renders correctly for one course 1`] = `
+<div
+  className="sc-bdfBwQ cSqurG"
+>
+  <div
+    className="sc-iBPRYJ lfzwUM"
+  >
+    <div
+      className="sc-fubCfw kvtSHF"
+    >
+      <p>
+        Sort By
+      </p>
+      <img
+        alt="sort"
+        src={
+          Object {
+            "ReactComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "__esModule": true,
+            "default": "sort-triangle.svg",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="sc-pFZIQ fCCEnC"
+  >
+    <div
+      className="sc-jrAGrp hUBkJK"
+    >
+      <h6>
+        TEST1110
+      </h6>
+      <p>
+        Testing Coruse 1110
+      </p>
+      <div
+        className="sc-kEjbxe ccfgCZ"
+      >
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 1
+          </p>
+        </div>
+        <div
+          className="sc-iqHYGH kjejCW"
+        >
+          <p>
+            tag 2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

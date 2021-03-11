@@ -4,12 +4,7 @@ import {
   TagsContainer,
   Tag
 } from '../ExploreCoursesStyles';
-
-type Course = {
-  courseCode: string;
-  courseTitle: string;
-  tags: string[];
-};
+import { Course } from '../ExploreCourses'
 
 const CourseBubble = ({ courseCode, courseTitle, tags } : Course) => (
   <CourseContainer>
@@ -17,7 +12,7 @@ const CourseBubble = ({ courseCode, courseTitle, tags } : Course) => (
     <p>{courseTitle}</p>
     <TagsContainer>
       {tags.map(tag => (
-        <Tag>
+        <Tag key={tag}>
           <p>{tag}</p>
         </Tag>
       ))}

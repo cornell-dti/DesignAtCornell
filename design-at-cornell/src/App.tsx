@@ -17,15 +17,17 @@ import Footer from './footer/Footer';
 function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/explore-courses" component={ExploreCourses} />
-        <Route exact path="/" component={Homepage} />
-        <Route path="/*" component={PageNotFound} />
-      </Switch>
-      <Footer />
+      <div data-testid="App">
+        <Header />
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/explore-courses" component={ExploreCourses} />
+          <Route exact path="/" component={Homepage} />
+          <Route path="/*" component={PageNotFound} />
+        </Switch>
+        <Footer />
+      </div>
     </Router>
   );
 }

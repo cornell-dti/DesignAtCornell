@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseBubble /> reders course with empty course code 1`] = `
+<div
+  className="sc-jrAGrp hUBkJK"
+>
+  <h6>
+    
+  </h6>
+  <p>
+    Testing Course Title
+  </p>
+  <div
+    className="sc-kEjbxe ccfgCZ"
+  >
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 1
+      </p>
+    </div>
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 2
+      </p>
+    </div>
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 3
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CourseBubble /> renders course with empty course title 1`] = `
+<div
+  className="sc-jrAGrp hUBkJK"
+>
+  <h6>
+    TEST 1002
+  </h6>
+  <p>
+    
+  </p>
+  <div
+    className="sc-kEjbxe ccfgCZ"
+  >
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 1
+      </p>
+    </div>
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 2
+      </p>
+    </div>
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 3
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CourseBubble /> renders course with empty tags list 1`] = `
+<div
+  className="sc-jrAGrp hUBkJK"
+>
+  <h6>
+    TEST 1002
+  </h6>
+  <p>
+    
+  </p>
+  <div
+    className="sc-kEjbxe ccfgCZ"
+  />
+</div>
+`;
+
+exports[`<CourseBubble /> renders testing course correctly 1`] = `
+<div
+  className="sc-jrAGrp hUBkJK"
+>
+  <h6>
+    TEST 1001
+  </h6>
+  <p>
+    Testing Course Title
+  </p>
+  <div
+    className="sc-kEjbxe ccfgCZ"
+  >
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 1
+      </p>
+    </div>
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 2
+      </p>
+    </div>
+    <div
+      className="sc-iqHYGH kjejCW"
+    >
+      <p>
+        tag 3
+      </p>
+    </div>
+  </div>
+</div>
+`;
