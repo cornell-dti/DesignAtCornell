@@ -128,7 +128,7 @@ export const Divider = styled.div`
   align-items: flex-end;
 `
 
-export const Sort = styled.div`
+export const SortBy = styled.div`
   display: flex;
   flex-direction: row;
   width: fit-content;
@@ -160,7 +160,7 @@ export const CourseGrid = styled.div`
   padding-right: 80px;
 `;
 
-export const CourseBubble = styled.div`
+export const CourseContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 289px;
