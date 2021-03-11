@@ -10,22 +10,23 @@ import ExploreCourses from './explore-courses/ExploreCourses.lazy';
 import About from './about/About.lazy';
 import Contact from './contact/Contact.lazy';
 import PageNotFound from './404/PageNotFound.lazy';
-
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import Header from './header/Header.lazy';
+import Footer from './footer/Footer.lazy';
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/explore-courses" component={ExploreCourses} />
-        <Route exact path="/" component={Homepage} />
-        <Route path="/*" component={PageNotFound} />
-      </Switch>
-      <Footer />
+      <div>
+        <Header />
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/explore-courses" component={ExploreCourses} />
+            <Route exact path="/" component={Homepage} />
+            <Route path="/*" component={PageNotFound} />
+          </Switch>
+          <Footer />
+      </div>
     </Router>
   );
 }
