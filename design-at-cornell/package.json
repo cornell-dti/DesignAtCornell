@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/dom": "^7.22.6"
+    "@testing-library/dom": "^7.22.6",
+    "jest-styled-components": "^7.0.3"
   }
 }

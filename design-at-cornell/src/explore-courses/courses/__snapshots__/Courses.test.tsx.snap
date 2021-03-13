@@ -1,14 +1,182 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+  padding-right: 80px;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+  color: #828282;
+}
+
+.c2 img {
+  width: 21px;
+  height: 14px;
+  margin-left: 10px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 289px;
+  height: 197px;
+  background: #7CD0FF;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 25px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 h6 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: white;
+}
+
+.c4 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: start;
+  margin: 0;
+  color: black;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  background: rgba(255,255,255,0.53);
+  border-radius: 43px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 p {
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
 <div
-  className="sc-bdfBwQ cSqurG"
+  className="c0"
 >
   <div
-    className="sc-iBPRYJ lfzwUM"
+    className="c1"
   >
     <div
-      className="sc-fubCfw kvtSHF"
+      className="c2"
     >
       <p>
         Sort By
@@ -29,10 +197,10 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
     </div>
   </div>
   <div
-    className="sc-pFZIQ fCCEnC"
+    className="c3"
   >
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1110
@@ -41,17 +209,17 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1110
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 1
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 2
@@ -60,7 +228,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1111
@@ -69,17 +237,17 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1111
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 1
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 3
@@ -88,7 +256,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1112
@@ -97,17 +265,17 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1112
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 3
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 4
@@ -116,7 +284,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1113
@@ -125,17 +293,17 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1113
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 5
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 6
@@ -144,7 +312,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1114
@@ -153,24 +321,24 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1114
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 5
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 7
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 9
@@ -179,7 +347,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1115
@@ -188,10 +356,10 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1115
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 6
@@ -200,7 +368,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1116
@@ -209,17 +377,17 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1116
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 6
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 8
@@ -228,7 +396,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
       </div>
     </div>
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1117
@@ -237,7 +405,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
         Testing Coruse 1117
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       />
     </div>
   </div>
@@ -245,14 +413,93 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
 `;
 
 exports[`<CourseBubble /> renders correctly for no courses 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+  padding-right: 80px;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+  color: #828282;
+}
+
+.c2 img {
+  width: 21px;
+  height: 14px;
+  margin-left: 10px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
 <div
-  className="sc-bdfBwQ cSqurG"
+  className="c0"
 >
   <div
-    className="sc-iBPRYJ lfzwUM"
+    className="c1"
   >
     <div
-      className="sc-fubCfw kvtSHF"
+      className="c2"
     >
       <p>
         Sort By
@@ -273,20 +520,188 @@ exports[`<CourseBubble /> renders correctly for no courses 1`] = `
     </div>
   </div>
   <div
-    className="sc-pFZIQ fCCEnC"
+    className="c3"
   />
 </div>
 `;
 
 exports[`<CourseBubble /> renders correctly for one course 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+  padding-right: 80px;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+  color: #828282;
+}
+
+.c2 img {
+  width: 21px;
+  height: 14px;
+  margin-left: 10px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 289px;
+  height: 197px;
+  background: #7CD0FF;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 25px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 h6 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: white;
+}
+
+.c4 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: start;
+  margin: 0;
+  color: black;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  background: rgba(255,255,255,0.53);
+  border-radius: 43px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 p {
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
 <div
-  className="sc-bdfBwQ cSqurG"
+  className="c0"
 >
   <div
-    className="sc-iBPRYJ lfzwUM"
+    className="c1"
   >
     <div
-      className="sc-fubCfw kvtSHF"
+      className="c2"
     >
       <p>
         Sort By
@@ -307,10 +722,10 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
     </div>
   </div>
   <div
-    className="sc-pFZIQ fCCEnC"
+    className="c3"
   >
     <div
-      className="sc-jrAGrp hUBkJK"
+      className="c4"
     >
       <h6>
         TEST1110
@@ -319,17 +734,17 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
         Testing Coruse 1110
       </p>
       <div
-        className="sc-kEjbxe ccfgCZ"
+        className="c5"
       >
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 1
           </p>
         </div>
         <div
-          className="sc-iqHYGH kjejCW"
+          className="c6"
         >
           <p>
             tag 2

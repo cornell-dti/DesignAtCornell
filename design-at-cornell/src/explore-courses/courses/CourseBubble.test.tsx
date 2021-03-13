@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import CourseBubble from './CourseBubble';
 import { Course } from '../ExploreCourses';
+import 'jest-styled-components';
 
 describe('<CourseBubble />', () => {
   it('renders testing course correctly', () => {

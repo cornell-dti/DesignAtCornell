@@ -1,14 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Title /> renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 551px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  background: #FFD84E;
+  padding-left: 100px;
+  padding-right: 50px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(180deg,#FFD84E 0%,#FFCC18 100%);
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 85%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c2 h1 {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 64px;
+  line-height: 75px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.c2 p {
+  width: 70%;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: left;
+  color: black;
+  padding-left: 5px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 15%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 p {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: white;
+}
+
+.c3 input {
+  width: 338px;
+  height: 28px;
+  border-radius: 43px;
+  padding-left: 10px;
+  border-style: none;
+  background: white;
+  background-image: url(magnifying-glass.svg);
+  background-position: 7px 7px;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+}
+
+.c3 input:focus {
+  outline: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  background: rgba(255,255,255,0.53);
+  border-radius: 43px;
+  margin-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 p {
+  font-weight: bold;
+  font-size: 12px;
+  padding-right: 20px;
+  color: black;
+  margin: 0;
+}
+
+.c4 img {
+  width: 12px;
+  height: 12px;
+}
+
 <div
-  className="sc-gsTCUz hosgWk"
+  className="c0"
 >
   <div
-    className="sc-dlfnbm gzNRPu"
+    className="c1"
   >
     <div
-      className="sc-eCssSg jtbzzI"
+      className="c2"
     >
       <h1>
         Explore Courses
@@ -18,10 +169,10 @@ exports[`<Title /> renders correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-jSgupP fwkluo"
+      className="c3"
     >
       <div
-        className="sc-gKsewC RUKyW"
+        className="c4"
       >
         <p>
           Design Areas
@@ -32,7 +183,7 @@ exports[`<Title /> renders correctly 1`] = `
         />
       </div>
       <div
-        className="sc-gKsewC RUKyW"
+        className="c4"
       >
         <p>
           Major/Minors
@@ -43,7 +194,7 @@ exports[`<Title /> renders correctly 1`] = `
         />
       </div>
       <div
-        className="sc-gKsewC RUKyW"
+        className="c4"
       >
         <p>
           Semester
@@ -54,7 +205,7 @@ exports[`<Title /> renders correctly 1`] = `
         />
       </div>
       <div
-        className="sc-gKsewC RUKyW"
+        className="c4"
       >
         <p>
           Level
@@ -65,7 +216,7 @@ exports[`<Title /> renders correctly 1`] = `
         />
       </div>
       <div
-        className="sc-gKsewC RUKyW"
+        className="c4"
       >
         <p>
           Credits
@@ -82,10 +233,10 @@ exports[`<Title /> renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKgILt fQZyOa"
+    className="c5"
   >
     <div
-      className="sc-jSgupP fwkluo"
+      className="c3"
     >
       <p>
         Take the Design Course Quiz!
