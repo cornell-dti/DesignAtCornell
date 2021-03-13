@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterBar /> renders correctly 1`] = `
+<div
+  className="sc-jSgupP fwkluo"
+>
+  <div
+    className="sc-gKsewC RUKyW"
+  >
+    <p>
+      Design Areas
+    </p>
+    <img
+      alt="expand"
+      src="down-arrow.png"
+    />
+  </div>
+  <div
+    className="sc-gKsewC RUKyW"
+  >
+    <p>
+      Major/Minors
+    </p>
+    <img
+      alt="expand"
+      src="down-arrow.png"
+    />
+  </div>
+  <div
+    className="sc-gKsewC RUKyW"
+  >
+    <p>
+      Semester
+    </p>
+    <img
+      alt="expand"
+      src="down-arrow.png"
+    />
+  </div>
+  <div
+    className="sc-gKsewC RUKyW"
+  >
+    <p>
+      Level
+    </p>
+    <img
+      alt="expand"
+      src="down-arrow.png"
+    />
+  </div>
+  <div
+    className="sc-gKsewC RUKyW"
+  >
+    <p>
+      Credits
+    </p>
+    <img
+      alt="expand"
+      src="down-arrow.png"
+    />
+  </div>
+  <input
+    placeholder="Name, Keywords, Topics, Etc"
+    type="text"
+  />
+</div>
+`;

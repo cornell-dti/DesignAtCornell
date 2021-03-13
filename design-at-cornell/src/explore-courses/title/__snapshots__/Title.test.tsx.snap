@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> renders correctly 1`] = `
+<div
+  className="sc-gsTCUz hosgWk"
+>
+  <div
+    className="sc-dlfnbm gzNRPu"
+  >
+    <div
+      className="sc-eCssSg jtbzzI"
+    >
+      <h1>
+        Explore Courses
+      </h1>
+      <p>
+        Your central hub for finding and learning about courses to enrich your design skillset and broaden your horizons.
+      </p>
+    </div>
+    <div
+      className="sc-jSgupP fwkluo"
+    >
+      <div
+        className="sc-gKsewC RUKyW"
+      >
+        <p>
+          Design Areas
+        </p>
+        <img
+          alt="expand"
+          src="down-arrow.png"
+        />
+      </div>
+      <div
+        className="sc-gKsewC RUKyW"
+      >
+        <p>
+          Major/Minors
+        </p>
+        <img
+          alt="expand"
+          src="down-arrow.png"
+        />
+      </div>
+      <div
+        className="sc-gKsewC RUKyW"
+      >
+        <p>
+          Semester
+        </p>
+        <img
+          alt="expand"
+          src="down-arrow.png"
+        />
+      </div>
+      <div
+        className="sc-gKsewC RUKyW"
+      >
+        <p>
+          Level
+        </p>
+        <img
+          alt="expand"
+          src="down-arrow.png"
+        />
+      </div>
+      <div
+        className="sc-gKsewC RUKyW"
+      >
+        <p>
+          Credits
+        </p>
+        <img
+          alt="expand"
+          src="down-arrow.png"
+        />
+      </div>
+      <input
+        placeholder="Name, Keywords, Topics, Etc"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-hKgILt fQZyOa"
+  >
+    <div
+      className="sc-jSgupP fwkluo"
+    >
+      <p>
+        Take the Design Course Quiz!
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -140,7 +140,7 @@ export const SortBy = styled.div`
     font-size: 20px;
     line-height: 23px;
     margin: 0;
-    color: #828282;
+    color: ${colors.gray};
   }
 
   img {
@@ -166,7 +166,7 @@ export const CourseContainer = styled.div`
   width: 289px;
   height: 197px;
 
-  background: #7CD0FF;
+  background: ${colors.blue};
   border-radius: 8px;
   margin: 20px;
 

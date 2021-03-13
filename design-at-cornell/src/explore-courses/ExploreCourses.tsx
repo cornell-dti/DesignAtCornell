@@ -10,7 +10,7 @@ export type Course = {
 };
 
 const ExploreCourses = () => {
-  const [courses, setCourses] = useState<Course[]>([
+  const [courses] = useState<Course[]>([
     {courseCode: "INFO 1300", courseTitle: "Introductory Design and Programming for the Web", tags: ["Information Science", "3 Credits"]},
     {courseCode: "DEA 1500", courseTitle: "Introduction to Environmental Psychology", tags: ["Design and Enviro...", "3 Credits"]},
     {courseCode: "FSAD 1120", courseTitle: "Fashion Design and Visual Thinking", tags: ["Fashion Design an...", "Fall"]},
