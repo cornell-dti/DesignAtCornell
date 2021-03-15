@@ -10,3 +10,4 @@
 * **Sheri Guo** - Product Designer
 * **Katrina Wang** - Software Developer
 * **Rohan Maheshwari** - Software Developer
+* **Zak Kent** - Software Developer
