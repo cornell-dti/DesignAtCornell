@@ -1,8 +1,8 @@
 import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
-import admin, { credential } from 'firebase-admin'
-import e from 'express';
+import admin from 'firebase-admin'
+
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
 admin.initializeApp({
@@ -49,6 +49,7 @@ const courses = db.collection("courses")
 /**
  * retrieving the desired courses via query parameters from the database and 
  * storing them in a local array of type Course.
+
  * Precondition: up to two query parameters can be sent through the client: id and code
  *               if no parameters are sent, all courses will be returned
  * Postcondition: returns an an array of the desired courses with required fields 
