@@ -54,3 +54,73 @@ export const QuizButton = styled.div`
     text-align: center;
   }
 `
+
+export const DashboardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 467.6px;
+`
+
+export const StudiesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  height: fit-content;
+  padding: 90px;
+`
+
+export const Divider = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+
+  h1 {
+    font-weight: bold;
+    font-size: 28px;
+    color: black;
+    margin: 0;
+  }
+
+  div {
+    width: 775px;
+    height: 0px;
+    border: 4px solid #8ED663;
+    margin-left: 20px;
+  }
+`
+
+export const Grid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+`
+
+export const AreaOfStudyButton = styled.div`
+  width: 287px;
+  margin-bottom: 38px;
+
+  h1 {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+  }
+
+  p {
+    font-size: 13px;
+    color: #939393;
+  }
+`
+
+export const ApplyTagsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+  height: 100%;
+  background: ${colors.lightGreen};
+`
