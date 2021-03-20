@@ -1,6 +1,6 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, Logo, StyledLink } from './FooterStyles'
-import { about, explore, events, resources } from '../constants/pages'
+import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles'
+import { explore, resources, account } from '../constants/pages'
 
 type Page = {
   name: string;
@@ -25,11 +25,17 @@ const Footer = () => {
           <img src={require('../static/images/logo.svg')} alt="logo" />
           <p>Design@Cornell</p>
         </Logo>
-        {column(about)}
+        <div>
+          <p>Powered by</p>
+          <DTILogo>
+            <img src={require('../static/images/dti-logo.svg')} alt="dti logo" />
+            <p>Cornell Design & Tech Initiative</p>
+          </DTILogo>
+        </div>
       </FooterColumnn>
       {column(explore)}
-      {column(events)}
       {column(resources)}
+      {column(account)}
     </FooterContainer>
   )
   
