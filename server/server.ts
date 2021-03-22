@@ -1,7 +1,8 @@
 import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
-import admin from 'firebase-admin'
+import admin, { firestore } from 'firebase-admin'
+import e from 'express';
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -18,31 +19,24 @@ app.use(express.static(path.join(__dirname, '../design-at-cornell/build/')));
 
 const db = admin.firestore()
 
-type Course = {
+const roster_sem = "SP21"
+
+type course_content = {
   "title": string,
-  "code": number,
   "description": string,
   "syllabus": string,
-  "course_site": string,
-  "class_roster": string,
-  "tags": Tags,
-  "filters": Filters
-  
-}
-
-type Filters = {
+  "site": string,
+  "roster": string,
   "credits": number,
   "major": string,
   "design_areas": string[],
   "semester": string[],
-  "level": number
 }
 
-type Tags = {
-  "credits": number,
-  "major": string,
-  "design_areas": string[],
-  "semester": string[]
+type Course = {
+  "id": string, 
+  "code": number,
+  "content": course_content
 }
 
 const courses = db.collection("courses")
@@ -56,19 +50,24 @@ const courses = db.collection("courses")
  */
 app.get("/getCourses", async (req, res) => {
   let course_id = req.query.id
+  let course_code = req.query.code
   const localCourses: Course[] = [];
  
   if(course_id == null) {
-     const desiredCourses = (await courses.get())
-     for(const doc of desiredCourses.docs) {
-      let course: Course = doc.data() as Course
-      localCourses.push(course);
+    const course_types = (await courses.doc(roster_sem).listCollections())
+    const collections = course_types.map(collection => collection.listDocuments())
+
+    for(const collection of collections) {
+      for(const docRef of await collection) {
+        let course: Course = (await docRef.get()).data() as Course
+        localCourses.push(course)
+      }
     }
   }
   else {
-     const desiredCourses = (await courses.get())
-    .docs.filter(doc => doc.id == course_id)
-    for(const doc of desiredCourses) {
+     const desiredCourse = (await courses.doc(roster_sem).collection(course_id.toString()).get())
+    .docs.filter(doc => doc.id == course_code.toString())
+    for(const doc of desiredCourse) {
       let course: Course = doc.data() as Course
       localCourses.push(course);
     }
@@ -82,52 +81,59 @@ app.get("/getCourses", async (req, res) => {
  * Postcondition: One new course will be created and stored in firestore
 */
 app.post('/createCourse', async (req, res) => {
-  const course: Course = req.body.course_content
-  const course_id: string = req.body.id
-  console.log(course)
-  //checking if client missed any fields
-  if(course.code == null || course.title == null || 
-    course.class_roster == null || course.description == null || 
-    course.filters == null || course.tags == null) {
+  const course: Course = req.body
+  const course_id: string = course.id
+  const course_code: number = course.code
+
+  if(course.code == null || course.content.title == null || course.content.site == null ||
+    course.content.roster == null || course.content.description == null ||
+    course.id == null || course.content.semester.length == 0 || course.content.major == null ||
+    course.content.design_areas.length == 0) {
       res.send({"success": false, "message": "one or more fields is missing"});
     }
   else {
-    const newCourse = courses.doc(course_id);
-    newCourse.set(course)
-    res.send({"success": true})
+    let course_id_collection = courses.doc(roster_sem).collection(course_id)
+    const newCourse = course_id_collection.doc(course_code.toString());
+    newCourse.set(course.content)
+    res.send({"success": true, "data": course})
   }
 })
 /**
    * querying the database for the course with the client identifier and code
-   * Precondition: request body must have a course id
+   * Precondition: request body must have a course id and course code
    * Postcondition: only a singular course will be deleted
 */
 app.delete('/deleteCourse', async (req,res) => {
-  const course_id = req.body.id
+  const course_id: string = req.body.id
+  const course_code: number = req.body.code
     
-  if(course_id == null) {
+  if(course_id == null || course_code == null) {
     res.send({"success": false, "message": "One or more fields is missing"})
   }
   else {
-    courses.doc(course_id).delete()
+    courses.doc(roster_sem).collection(course_id).doc(course_code.toString()).delete()
     res.send({"success": true})
   }   
 })
 /**
  * updates the specified field of a course with specified content
- * Precondition: request body must have a course id, field, and new content
+ * Precondition: request body must have a course id and code, field, and new content
  * Postcondition: the specified data of a singular course will be updated
 */
-app.post('/updatePost', async (req, res) => {
+app.post('/updateCourse', async (req, res) => {
   const field: string = req.body.field;
-  const course_id: string = req.body.course
+  const course_id: string = req.body.id
+  const course_code: number = req.body.code
   const content = req.body.content;
 
-  if(content == null) {
-    res.send(false);
+  if(content == null || field == null || course_code == null || course_id == null) {
+    res.send("One or more fields is missing.");
   }
-    courses.doc(course_id).update({field: content})
+  else {
+    courses.doc(roster_sem).collection(course_id).doc(course_code.toString()).update({field: content})
     res.send(true);
+  }
+  
 });
 
 
