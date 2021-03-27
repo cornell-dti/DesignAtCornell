@@ -3,7 +3,7 @@ import { FilterButton } from '../ExploreCoursesStyles';
 import downArrow from '../../static/images/down-arrow.png';
 
 type FilterOptionButtonProps = {
-    readonly label: string
+    readonly label: string,
     readonly open: boolean,
     readonly onClick: () => void
 };
