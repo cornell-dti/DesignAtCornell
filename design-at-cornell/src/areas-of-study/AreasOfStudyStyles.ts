@@ -59,13 +59,13 @@ export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 467.6px;
+  height: fit-content;
 `
 
 export const StudiesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 80%;
   height: fit-content;
   padding: 90px;
 `
@@ -78,15 +78,16 @@ export const Divider = styled.div`
   align-items: center;
 
   h1 {
+    flex-grow: 0;
     font-weight: bold;
     font-size: 28px;
     color: black;
     margin: 0;
   }
 
-  div {
-    width: 775px;
-    height: 0px;
+  hr {
+    flex-grow: 1;
+    height: 0;
     border: 4px solid #8ED663;
     margin-left: 20px;
   }
@@ -119,8 +120,59 @@ export const AreaOfStudyButton = styled.div`
 
 export const ApplyTagsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 15%;
-  height: 100%;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
   background: ${colors.lightGreen};
+  padding-top: 90px;
+  padding-left: 60px;
+
+  h5 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 70px;
+    color: black;
+    margin: 0;
+  }
+
+  h6 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+    color: black;
+    margin: 0;
+  }
+
+  form {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    color: black;
+
+    input[type=checkbox] {
+      margin-right: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    input[type=checkbox]:before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 2px;
+      border: 2px solid black;
+      background-color: white;
+    }
+
+    input[type=checkbox]:checked:after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 2px;
+      border: 2px solid black;
+      background-color: black;
+    }
+  }
 `
