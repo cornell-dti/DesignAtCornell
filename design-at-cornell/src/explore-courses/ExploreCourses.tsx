@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Title from './title/Title';
 import {
   PageContainer,
-  Divider, 
+  Divider,
   Sort,
   CourseGrid,
   CourseBubble,
   TagsContainer,
-  Tag
+  Tag,
 } from './ExploreCoursesStyles';
 
 type Course = {
@@ -18,22 +18,46 @@ type Course = {
 
 const ExploreCourses = () => {
   const [courses] = useState<Course[]>([
-    {courseCode: "INFO 1300", courseTitle: "Introductory Design and Programming for the Web", tags: ["Information Science", "3 Credits"]},
-    {courseCode: "DEA 1500", courseTitle: "Introduction to Environmental Psychology", tags: ["Design and Enviro...", "3 Credits"]},
-    {courseCode: "FSAD 1120", courseTitle: "Fashion Design and Visual Thinking", tags: ["Fashion Design an...", "Fall"]},
-    {courseCode: "ART 2201", courseTitle: "Painting: Introduction to Painting", tags: ["Fine Arts", "3 Credits"]},
-    {courseCode: "ARCH 1101", courseTitle: "Design I", tags: ["Architecture", "3 Credits", "Fall"]},
-    {courseCode: "ART 2301", courseTitle: "Print Media: Introduction to Print Media", tags: ["Fine Arts", "3 Credits"]},
+    {
+      courseCode: 'INFO 1300',
+      courseTitle: 'Introductory Design and Programming for the Web',
+      tags: ['Information Science', '3 Credits'],
+    },
+    {
+      courseCode: 'DEA 1500',
+      courseTitle: 'Introduction to Environmental Psychology',
+      tags: ['Design and Enviro...', '3 Credits'],
+    },
+    {
+      courseCode: 'FSAD 1120',
+      courseTitle: 'Fashion Design and Visual Thinking',
+      tags: ['Fashion Design an...', 'Fall'],
+    },
+    {
+      courseCode: 'ART 2201',
+      courseTitle: 'Painting: Introduction to Painting',
+      tags: ['Fine Arts', '3 Credits'],
+    },
+    {
+      courseCode: 'ARCH 1101',
+      courseTitle: 'Design I',
+      tags: ['Architecture', '3 Credits', 'Fall'],
+    },
+    {
+      courseCode: 'ART 2301',
+      courseTitle: 'Print Media: Introduction to Print Media',
+      tags: ['Fine Arts', '3 Credits'],
+    },
   ]);
 
   const courseBubbles = (
     <CourseGrid>
-      {courses.map(course => (
+      {courses.map((course) => (
         <CourseBubble>
           <h6>{course.courseCode}</h6>
           <p>{course.courseTitle}</p>
           <TagsContainer>
-            {course.tags.map(tag => (
+            {course.tags.map((tag) => (
               <Tag>
                 <p>{tag}</p>
               </Tag>
@@ -51,14 +75,14 @@ const ExploreCourses = () => {
         <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
       </Sort>
     </Divider>
-  )
+  );
 
   return (
     <PageContainer>
-    <Title />
-    {divider}
-    {courseBubbles}
-  </PageContainer>
+      <Title />
+      {divider}
+      {courseBubbles}
+    </PageContainer>
   );
 };
 

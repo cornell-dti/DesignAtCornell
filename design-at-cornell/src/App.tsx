@@ -1,10 +1,6 @@
 import React from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './homepage/Homepage.lazy';
 import ExploreCourses from './explore-courses/ExploreCourses.lazy';
 import About from './about/About.lazy';
@@ -18,14 +14,14 @@ function App() {
     <Router>
       <div>
         <Header />
-          <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/explore-courses" component={ExploreCourses} />
-            <Route exact path="/" component={Homepage} />
-            <Route path="/*" component={PageNotFound} />
-          </Switch>
-          <Footer />
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/explore-courses" component={ExploreCourses} />
+          <Route exact path="/" component={Homepage} />
+          <Route path="/*" component={PageNotFound} />
+        </Switch>
+        <Footer />
       </div>
     </Router>
   );

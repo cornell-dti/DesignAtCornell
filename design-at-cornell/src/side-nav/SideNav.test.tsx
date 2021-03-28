@@ -6,7 +6,7 @@ import SideNav from './SideNav';
 describe('<SideNav />', () => {
   test('it should mount', () => {
     render(<SideNav />);
-    
+
     const sideNav = screen.getByTestId('SideNav');
 
     expect(sideNav).toBeInTheDocument();

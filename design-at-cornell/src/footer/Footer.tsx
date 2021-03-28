@@ -1,6 +1,6 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles'
-import { explore, resources, account } from '../constants/pages'
+import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles';
+import { explore, resources, account } from '../constants/pages';
 
 type Page = {
   name: string;
@@ -8,20 +8,20 @@ type Page = {
 };
 
 const Footer = () => {
-  const column = (pages : Page[]) => (
+  const column = (pages: Page[]) => (
     <FooterColumnn>
-      {pages.map(page => (
+      {pages.map((page) => (
         <StyledLink to={page.url}>
           <p>{page.name}</p>
         </StyledLink>
       ))}
     </FooterColumnn>
-  )
+  );
 
   return (
     <FooterContainer>
       <FooterColumnn>
-        <Logo to='/explore-courses'>
+        <Logo to="/explore-courses">
           <img src={require('../static/images/logo.svg')} alt="logo" />
           <p>Design@Cornell</p>
         </Logo>
@@ -37,7 +37,6 @@ const Footer = () => {
       {column(resources)}
       {column(account)}
     </FooterContainer>
-  )
-  
-}
+  );
+};
 export default Footer;

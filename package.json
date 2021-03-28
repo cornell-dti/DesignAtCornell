@@ -6,10 +6,32 @@
     "startReact": "cd design-at-cornell && yarn start",
     "build": "cd design-at-cornell && yarn build",
     "test": "cd design-at-cornell && yarn test",
-    "eject": "cd design-at-cornell && yarn eject"
+    "eject": "cd design-at-cornell && yarn eject",
+    "tsc": "yarn workspaces run tsc",
+    "frontend-dev": "yarn workspace design-at-cornell start",
+    "backend-dev": "yarn workspace server start",
+    "format": "prettier --write **/*.{ts,js,tsx,css,html}",
+    "format:check": "prettier --check **/*.{ts,js,tsx,css,html}",
+    "backend-test": "yarn workspace server test"
   },
   "dependencies": {
     "ts-node": "^9.1.1",
     "typescript": "^4.2.2"
+  },
+  "workspaces": [
+    "design-at-cornell",
+    "server"
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "endOfLine": "lf",
+    "proseWrap": "always"
+  },
+  "devDependencies": {
+    "@firebase/testing": "^0.20.11",
+    "@types/supertest": "^2.0.10",
+    "prettier": "^2.2.1"
   }
 }
