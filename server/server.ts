@@ -11,5 +11,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Design@Cornell server listening on port ' + port);
+  console.log(`Design@Cornell server listening on port ${  port}`);
 });
