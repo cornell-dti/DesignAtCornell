@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import e from 'express';
+import {Course, course_content, Major, major_content, Reason} from  './types'
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -21,25 +21,15 @@ const db = admin.firestore()
 
 const roster_sem = "SP21"
 
-type course_content = {
-  "title": string,
-  "description": string,
-  "syllabus": string,
-  "site": string,
-  "roster": string,
-  "credits": number,
-  "major": string,
-  "design_areas": string[],
-  "semester": string[],
-}
-
-type Course = {
-  "id": string, 
-  "code": number,
-  "content": course_content
-}
 
 const courses = db.collection("courses")
+const majors = db.collection("majors")
+
+
+/**
+ * COURSES COLLECTION CRUD OPERATIONS
+*/
+
 /**
  * retrieving the desired courses via query parameters from the database and 
  * storing them in a local array of type Course.
@@ -135,6 +125,122 @@ app.post('/updateCourse', async (req, res) => {
   }
   
 });
+
+/**
+ * MAJOR COLLECTION CRUD OPERATIONS
+ */
+
+/**
+ * retrieving the desired major via query parameters from the database and 
+ * storing them in a local array of type Major.
+
+ * Precondition: one query parameters can be sent through the client: major title,
+ *               if no parameters are sent, all courses will be returned
+ * Postcondition: returns an an array of the desired major(s) with required fields 
+ */
+
+ app.get("/getMajors", async (req, res) => {
+  let major_title = req.query.title
+  const localMajors: Major[] = [];
+ 
+  if(major_title == null) {
+    let majorDocs = await majors.get()
+
+    for(const docRef of majorDocs.docs) {
+      let major_c: major_content = docRef.data() as major_content
+      let major: Major = {
+        "content" : major_c,
+        "title" : docRef.id
+      }
+      localMajors.push(major)
+    }  
+
+    res.send({"success": true, "data": localMajors});
+  }
+  else {
+    let majorDocRef = await majors.doc(major_title.toString()).get()
+    let major_c: major_content = majorDocRef.data() as major_content
+    if(major_c == null) {
+      res.send({"success": false, "message": "Major not found."})
+    }
+    else {
+      let major: Major = {
+        "content" : major_c,
+        "title" : majorDocRef.id
+      }
+      localMajors.push(major)
+      res.send({"success": true, "data": localMajors});
+    }
+  }
+})
+
+/**
+ * creates a new major object in firestore using client provided fields 
+ * Precondition: Client must provide all required fields for the major, 
+ *               must not be a duplicate of an existing major
+ * Postcondition: One new major will be created and stored in firestore
+*/
+app.post('/createMajor', async (req, res) => {
+  const major: Major = req.body
+
+  if(major.title == null || major.content.academic_level == null || major.content.department_page == null ||
+    major.content.design_areas == null || major.content.reasons == null || major.content.school == null) {
+      res.send({"success": false, "message": "one or more fields is missing"});
+    }
+  else {
+    const newMajor = majors.doc(major.title);
+    newMajor.set(major.content)
+    res.send({"success": true, "data": major})
+  }
+})
+
+/**
+   * querying the database for the major with the major title
+   * Precondition: request body must have a major title
+   * Postcondition: only a singular major will be deleted
+*/
+app.delete('/deleteMajor', async (req,res) => {
+  const title: string = req.body.title
+  
+  if(title == null) {
+    res.send({"success": false, "message": "One or more fields is missing"})
+  }
+  else {
+    courses.doc(title).delete()
+    res.send({"success": true})
+  }   
+})
+
+/**
+ * updates the specified field of a major with specified content
+ * Precondition: request body must have a major title, field, and new content
+ * Postcondition: the specified data of a singular major will be updated
+*/
+app.post('/updateMajor', async (req, res) => {
+  const field: string = req.body.field;
+  const title: string = req.body.title
+  const content = req.body.content;
+
+  if(content == null || field == null || title == null) {
+    res.send("One or more fields is missing.");
+  }
+  else {
+    majors.doc(title).update({field: content})
+    res.send({"success": true, "data": []});
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.get('/*', (req, res) => {
