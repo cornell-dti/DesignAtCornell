@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import e from 'express';
+import {Course, course_content} from './types'
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -21,23 +21,6 @@ const db = admin.firestore()
 
 const roster_sem = "SP21"
 
-type course_content = {
-  "title": string,
-  "description": string,
-  "syllabus": string,
-  "site": string,
-  "roster": string,
-  "credits": number,
-  "major": string,
-  "design_areas": string[],
-  "semester": string[],
-}
-
-type Course = {
-  "id": string, 
-  "code": number,
-  "content": course_content
-}
 
 const courses = db.collection("courses")
 /**
