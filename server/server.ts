@@ -22,7 +22,7 @@ const db = admin.firestore()
 const roster_sem = "SP21"
 
 
-const courses = db.collection("courses")
+export const courses = db.collection("courses")
 const majors = db.collection("majors")
 
 
@@ -229,16 +229,6 @@ app.post('/updateMajor', async (req, res) => {
     res.send({"success": true, "data": []});
   }
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
