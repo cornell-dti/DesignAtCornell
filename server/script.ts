@@ -52,7 +52,7 @@ fs_courses_read.createReadStream('./website_data_csv/courses.csv')
             "credits": parseInt(courses_csv[i].credits),
             "major": courses_csv[i].major,
             "description": courses_csv[i].description,
-            "design_areas": courses_csv[i].design_areas.split(" "),
+            "design_areas": courses_csv[i].design_areas.split(", "),
             "course_roster": courses_csv[i].course_roster,
             "course_site": courses_csv[i].course_site
         }
