@@ -1,14 +1,14 @@
-import StringDict from './StringDict';
+import Dictionary from './Dictionary';
 
-class StringSet {
-    backingDict: StringDict<boolean> = {};
+class Set {
+    backingDict: Dictionary<boolean> = {};
     constructor(initial?: string[]) {
         if (initial !== undefined) {
             initial.forEach(str => this.backingDict[str] = true);
         }
     }
-    static copyOf(src: StringSet) {
-        const copy = new StringSet();
+    static copyOf(src: Set) {
+        const copy = new Set();
         for (const label in src.backingDict) {
             copy.add(label);
         }
@@ -32,4 +32,4 @@ class StringSet {
     }
 };
 
-export default StringSet;
+export default Set;

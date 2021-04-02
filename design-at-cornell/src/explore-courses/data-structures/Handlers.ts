@@ -1,6 +1,7 @@
-import StringDict from "./StringDict";
-import StringSet from "./StringSet";
+import Dictionary from "./Dictionary";
+import Set from "./Set";
 
-export type filterBarChangeHandler = (filterData: StringDict<StringSet>) => void;
+export type filterBarChangeHandler = (filterData: Dictionary<Set>) => void;
 export type filterCategoryChangeHandler = (checkboxLabel: string) => void;
-export type FilterCategoryButtonClickHandler = () => void;
+export type filterCheckboxClickHandler = () => void;
+export type filterCategoryButtonClickHandler = () => void;

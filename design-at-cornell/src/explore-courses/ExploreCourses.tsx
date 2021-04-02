@@ -9,8 +9,8 @@ import {
   TagsContainer,
   Tag
 } from './ExploreCoursesStyles';
-import StringDict from './data-structures/StringDict';
-import StringSet from './data-structures/StringSet';
+import Dictionary from './data-structures/Dictionary';
+import Set from './data-structures/Set';
 
 type Course = {
   courseCode: string;
@@ -29,12 +29,12 @@ const ExploreCourses = () => {
     { courseCode: "ART 2301", courseTitle: "Print Media: Introduction to Print Media", tags: ["Fine Arts", "3 Credits"] },
   ]);
 
-  const [filterData, setfilterData] = useState<StringDict<StringSet>>({
-    'Design Areas': new StringSet(),
-    'Majors/Minors': new StringSet(),
-    'Semester': new StringSet(),
-    'Level': new StringSet(),
-    'Credits': new StringSet()
+  const [filterData, setfilterData] = useState<Dictionary<Set>>({
+    'Design Areas': new Set(),
+    'Majors/Minors': new Set(),
+    'Semester': new Set(),
+    'Level': new Set(),
+    'Credits': new Set()
   });
 
   const courseBubbles = (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { filterCategoryChangeHandler } from '../data-structures/Handlers';
 import { TitleProps } from '../data-structures/PropertyTypes';
-import StringSet from '../data-structures/StringSet';
+import Set from '../data-structures/Set';
 import { FilterBarContainer } from '../ExploreCoursesStyles';
 import FilterCategory from './FilterCategory';
 
@@ -13,7 +13,7 @@ const FilterBar = ({ filterData, onChange }: TitleProps) => {
         Object.fromEntries(
           Object.entries(filterData).map(([k, v]) => {
             if (k !== category) return [k, v];
-            const copy = StringSet.copyOf(v);
+            const copy = Set.copyOf(v);
             copy.toggle(checkboxLabel);
             return [k, copy];
           })
