@@ -1,14 +1,9 @@
 import React from 'react';
 import { FilterButton } from '../ExploreCoursesStyles';
 import downArrow from '../../static/images/down-arrow.png';
+import { FilterCategoryButtonProps } from '../data-structures/PropertyTypes';
 
-type FilterOptionButtonProps = {
-    readonly label: string,
-    readonly open: boolean,
-    readonly onClick: () => void
-};
-
-const FilterOptionButton = ({ label, open, onClick }: FilterOptionButtonProps) => (
+const FilterCategoryButton = ({ label, open, onClick }: FilterCategoryButtonProps) => (
     <FilterButton onClick={onClick}>
         <p>{label}</p>
         <img
@@ -19,4 +14,4 @@ const FilterOptionButton = ({ label, open, onClick }: FilterOptionButtonProps) =
     </FilterButton>
 );
 
-export default FilterOptionButton;
+export default FilterCategoryButton;
