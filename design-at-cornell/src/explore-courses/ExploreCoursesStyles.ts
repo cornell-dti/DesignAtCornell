@@ -9,33 +9,18 @@ export const PageContainer = styled.div`
 
 export const TitleBackground = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 551px;
-`
-
-export const TitleBackgroundSolid = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 100%;
   background: ${colors.yellow};
   padding-left: 100px;
-  padding-right: 50px;
-`
-
-export const TitleBackgroundGradient = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 20%;
-  height: 100%;
-  background: ${colors.yellowGradient};
-  align-items: flex-end;
+  padding-right: 100px;
 `
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 55%;
   height: 85%;
   align-items:flex-start;
   justify-content: center;
@@ -50,7 +35,6 @@ export const TitleContainer = styled.div`
   }
 
   p {
-    width: 70%;
     font-size: 24px;
     line-height: 28px;
     text-align: left;
@@ -59,11 +43,31 @@ export const TitleContainer = styled.div`
   }
 `
 
+export const QuizButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 276px;
+  height: 40px;
+  background: ${colors.transparentWhite};
+  border-radius: 43px;
+  align-items: center;
+  p {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+`
+
 export const FilterBarContainer = styled.div`
   display: flex;
   width: 100%;
   height: 15%;
   align-items: center;
+  justify-content: space-between;
 
   p {
     width: 100%;
@@ -99,7 +103,6 @@ export const FilterButton = styled.div`
   height: 28px;
   background: ${colors.transparentWhite};
   border-radius: 43px;
-  margin-right: 25px;
   padding-left: 15px;
   padding-right: 15px;
   align-items: center;
@@ -115,6 +118,24 @@ export const FilterButton = styled.div`
   img {
     width: 12px;
     height: 12px;
+  }
+`
+
+export const SavedCoursesButton = styled.div`
+  display: flex;
+  width: 165px;
+  height: 36px;
+  background: white;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-evenly;
+
+  p {
+    width: fit-content;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: black;
   }
 `
 
@@ -135,6 +156,14 @@ export const Sort = styled.div`
   height: 100%;
   align-items: center;
 
+  h6 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0;
+    color: black;
+  }
+
   p {
     font-weight: bold;
     font-size: 20px;
@@ -144,8 +173,8 @@ export const Sort = styled.div`
   }
 
   img {
-    width: 21px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     margin-left: 10px;
   }
 `
@@ -166,7 +195,8 @@ export const CourseBubble = styled.div`
   width: 289px;
   height: 197px;
 
-  background: #7CD0FF;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
   margin: 20px;
 
@@ -180,7 +210,7 @@ export const CourseBubble = styled.div`
     line-height: 19px;
     text-align: start;
     margin: 0;
-    color: white;
+    color: #898989;
   }
 
   p {
@@ -190,6 +220,10 @@ export const CourseBubble = styled.div`
     text-align: start;
     margin: 0;
     color: black;
+  }
+
+  img {
+    width: 11px;
   }
 `
 
@@ -206,7 +240,6 @@ export const Tag = styled.div`
   display: flex;
   width: fit-content;
   height: 28px;
-  background: ${colors.transparentWhite};
   border-radius: 43px;
   margin-right: 10px;
   padding-left: 10px;

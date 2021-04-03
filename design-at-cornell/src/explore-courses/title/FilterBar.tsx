@@ -2,8 +2,10 @@ import React from 'react';
 import {
   FilterBarContainer,
   FilterButton,
+  SavedCoursesButton
 } from '../ExploreCoursesStyles';
 import downArrow from '../../static/images/down-arrow.png';
+import bookmarked from '../../static/images/bookmarked.svg';
 
 const FilterBar = () => (
   <FilterBarContainer>
@@ -28,6 +30,10 @@ const FilterBar = () => (
       <img src={downArrow} alt={"expand"} />
     </FilterButton>
     <input type="text" placeholder="Name, Keywords, Topics, Etc" />
+    <SavedCoursesButton>
+      <img src={bookmarked} alt={"saved courses"} />
+      <p>Saved Courses</p>
+    </SavedCoursesButton>
   </FilterBarContainer>
 )
 

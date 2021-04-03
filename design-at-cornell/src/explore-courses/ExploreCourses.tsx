@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { courseColors } from '../constants/colors';
 import Title from './title/Title';
 import {
   PageContainer,
@@ -29,12 +30,12 @@ const ExploreCourses = () => {
   const courseBubbles = (
     <CourseGrid>
       {courses.map(course => (
-        <CourseBubble>
+        <CourseBubble style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
           <h6>{course.courseCode}</h6>
           <p>{course.courseTitle}</p>
           <TagsContainer>
             {course.tags.map(tag => (
-              <Tag>
+              <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
                 <p>{tag}</p>
               </Tag>
             ))}
@@ -47,8 +48,9 @@ const ExploreCourses = () => {
   const divider = (
     <Divider>
       <Sort>
-        <p>Sort By</p>
-        <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
+        <h6>Sort By &nbsp;</h6>
+        <p>recommended</p>
+        <img src={require('../static/images/down-arrow.png')} alt="sort" />
       </Sort>
     </Divider>
   )
