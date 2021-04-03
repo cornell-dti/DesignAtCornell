@@ -3,4 +3,4 @@ export const colors = {
   yellow: '#FFD84E',
   yellowGradient: 'linear-gradient(180deg, #FFD84E 0%, #FFCC18 100%)',
   transparentWhite: 'rgba(255, 255, 255, 0.53)',
-}
+};

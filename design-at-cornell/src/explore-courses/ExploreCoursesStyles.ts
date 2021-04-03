@@ -5,13 +5,13 @@ import magnifyingGlass from '../static/images/magnifying-glass.svg';
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const TitleBackground = styled.div`
   display: flex;
   width: 100%;
   height: 551px;
-`
+`;
 
 export const TitleBackgroundSolid = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const TitleBackgroundSolid = styled.div`
   background: ${colors.yellow};
   padding-left: 100px;
   padding-right: 50px;
-`
+`;
 
 export const TitleBackgroundGradient = styled.div`
   display: flex;
@@ -30,14 +30,14 @@ export const TitleBackgroundGradient = styled.div`
   height: 100%;
   background: ${colors.yellowGradient};
   align-items: flex-end;
-`
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 85%;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
 
   h1 {
@@ -57,7 +57,7 @@ export const TitleContainer = styled.div`
     color: black;
     padding-left: 5px;
   }
-`
+`;
 
 export const FilterBarContainer = styled.div`
   display: flex;
@@ -85,13 +85,12 @@ export const FilterBarContainer = styled.div`
     background-position: 7px 7px;
     background-repeat: no-repeat;
     text-indent: 30px;
-    
+
     &:focus {
-        outline: none;
+      outline: none;
     }
   }
-
-`
+`;
 
 export const FilterButton = styled.div`
   display: flex;
@@ -116,7 +115,7 @@ export const FilterButton = styled.div`
     width: 12px;
     height: 12px;
   }
-`
+`;
 
 export const Divider = styled.div`
   display: flex;
@@ -126,7 +125,7 @@ export const Divider = styled.div`
   padding-top: 20px;
   padding-right: 80px;
   align-items: flex-end;
-`
+`;
 
 export const Sort = styled.div`
   display: flex;
@@ -148,7 +147,7 @@ export const Sort = styled.div`
     height: 14px;
     margin-left: 10px;
   }
-`
+`;
 
 export const CourseGrid = styled.div`
   display: flex;
@@ -166,7 +165,7 @@ export const CourseBubble = styled.div`
   width: 289px;
   height: 197px;
 
-  background: #7CD0FF;
+  background: #7cd0ff;
   border-radius: 8px;
   margin: 20px;
 
@@ -191,7 +190,7 @@ export const CourseBubble = styled.div`
     margin: 0;
     color: black;
   }
-`
+`;
 
 export const TagsContainer = styled.div`
   display: flex;
@@ -218,4 +217,4 @@ export const Tag = styled.div`
     font-size: 12px;
     color: black;
   }
-`
+`;

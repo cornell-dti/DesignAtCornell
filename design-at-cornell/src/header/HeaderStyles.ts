@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   color: #000000;
   padding-left: 60px;
   padding-right: 60px;
-`
+`;
 
 export const Logo = styled(Link)`
   display: flex;
@@ -28,11 +28,15 @@ export const Logo = styled(Link)`
     text-align: left;
   }
 
-  &:focus, &:hover, &:active, &:visited, &:link {
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
     text-decoration: none;
     color: black;
   }
-`
+`;
 
 export const Nav = styled.div`
   display: flex;
@@ -41,7 +45,7 @@ export const Nav = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-around;
-`
+`;
 
 export const StyledLink = styled(Link)`
   width: 107px;
@@ -54,6 +58,6 @@ export const StyledLink = styled(Link)`
 
   &:focus {
     text-decoration: none;
-    color: #009C80;
+    color: #009c80;
   }
-`
+`;
