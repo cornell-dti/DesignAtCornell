@@ -35,6 +35,20 @@ export type Reason = {
     "grad_year": number,
     "response": string
 }
+
+export type club_content = {
+    "design_areas": string[],
+    "org_type": string, 
+    "size": string,
+    "website": string,
+    "description": string
+    "credits": number
+}
+
+export type Club = {
+    "title": string,
+    "content": club_content
+}
   
 
 

@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import {Course, course_content, Major, major_content, Reason} from  './types'
+import {Course, course_content, Major, major_content, Reason, Club, club_content} from  './types'
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -23,7 +23,9 @@ const roster_sem = "SP21"
 
 
 export const courses = db.collection("courses")
-const majors = db.collection("majors")
+export const majors = db.collection("majors")
+export const clubs = db.collection("clubs")
+
 
 
 /**
@@ -206,7 +208,7 @@ app.delete('/deleteMajor', async (req,res) => {
     res.send({"success": false, "message": "One or more fields is missing"})
   }
   else {
-    courses.doc(title).delete()
+    majors.doc(title).delete()
     res.send({"success": true})
   }   
 })
@@ -230,7 +232,93 @@ app.post('/updateMajor', async (req, res) => {
   }
 });
 
+/**
+ * CLUBS COLLECTION CRUD OPERATIONS
+ */
 
+/**
+ * retrieving the desired club(s) via query parameters from the database and 
+ * storing them in a local array of type Course.
+
+ * Precondition: only one query parameters can be sent through the client: club title
+ *               if no parameters are sent, all clubs will be returned
+ * Postcondition: returns an an array of the desired clubs with required fields 
+ */
+
+app.get('/getClubs', async (req, res)  =>  {
+  let club_title = req.query.title
+  const localClubs: Club[] = [];
+ 
+  if(club_title == null) {
+    let clubDocs = await clubs.get()
+    for(const docRef of clubDocs.docs) {
+      let club_c: club_content = docRef.data() as club_content
+      let club: Club = {
+        "content" : club_c,
+        "title" : docRef.id
+      }
+      localClubs.push(club)
+    }  
+  }
+    res.send({"success": true, "data": localClubs});
+});
+
+/**
+ * creates a new club object in firestore using client provided fields 
+ * Precondition: Client must provide all required fields for the club, 
+ *               must not be a duplicate of an existing major
+ * Postcondition: One new club will be created and stored in firestore
+*/
+app.post('/createClub', async (req, res) => {
+  const club: Club = req.body
+
+  if(club.title == null || club.content.description == null || club.content.website == null ||
+    club.content.design_areas == null || club.content.size == null || club.content.credits == null
+    || club.content.org_type == null) {
+      res.send({"success": false, "message": "one or more fields is missing"});
+    }
+  else {
+    const newClub = clubs.doc(club.title);
+    newClub.set(club.content)
+    res.send({"success": true, "data": club})
+  }
+})
+
+/**
+   * querying the database for the club with the club title
+   * Precondition: request body must have a club title
+   * Postcondition: only a singular club will be deleted
+*/
+app.delete('/deleteClub', async (req,res) => {
+  const title: string = req.body.title
+  
+  if(title == null) {
+    res.send({"success": false, "message": "One or more fields is missing"})
+  }
+  else {
+    clubs.doc(title).delete()
+    res.send({"success": true})
+  }   
+})
+
+/**
+ * updates the specified field of a club with specified content
+ * Precondition: request body must have a club title, field, and new content
+ * Postcondition: the specified data of a singular club will be updated
+*/
+app.post('/updateClub', async (req, res) => {
+  const field: string = req.body.field;
+  const title: string = req.body.title
+  const content = req.body.content;
+
+  if(content == null || field == null || title == null) {
+    res.send("One or more fields is missing.");
+  }
+  else {
+    clubs.doc(title).update({field: content})
+    res.send({"success": true, "data": []});
+  }
+});
 
 
 app.get('/*', (req, res) => {
