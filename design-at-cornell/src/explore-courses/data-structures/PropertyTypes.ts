@@ -14,11 +14,14 @@ export type TitleProps = {
 
 export type FilterCategoryProps = {
     readonly category: string;
+    readonly checkboxLabels: string[];
     readonly checkboxData: Set;
+    readonly width: number;
     readonly onChange: filterCategoryChangeHandler;
 };
 
 export type FilterDropdownProps = {
+    readonly checkboxLabels: string[];
     readonly checkboxData: Set;
     readonly onChange: filterCategoryChangeHandler;
 };

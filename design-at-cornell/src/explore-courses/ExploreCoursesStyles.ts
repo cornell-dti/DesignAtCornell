@@ -60,10 +60,13 @@ export const TitleContainer = styled.div`
 `
 
 export const FilterBarContainer = styled.div`
+  float: left;
   display: flex;
   width: 100%;
   height: 15%;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 26px;
+  padding-bottom: 24px;
 
   p {
     width: 100%;
@@ -94,11 +97,12 @@ export const FilterBarContainer = styled.div`
 `
 
 export const FilterButton = styled.div`
+  white-space: nowrap;
   display: flex;
   width: fit-content;
   height: 28px;
   background: ${colors.transparentWhite};
-  border-radius: 43px;
+  border-radius: 15px;
   margin-right: 25px;
   padding-left: 15px;
   padding-right: 15px;
@@ -116,7 +120,38 @@ export const FilterButton = styled.div`
     width: 12px;
     height: 12px;
   }
-`
+`;
+
+export const FilterCategoryContainer = styled.div`
+  width: fit-content;
+  margin-right: 25px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  p {
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 20px;
+    color: black;
+    margin: 0;
+  }
+`;
+
+export const FilterDropdownContainer = styled.div`
+  white-space: nowrap;
+  background: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 15px;
+  margin-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+`;
 
 export const Divider = styled.div`
   display: flex;
