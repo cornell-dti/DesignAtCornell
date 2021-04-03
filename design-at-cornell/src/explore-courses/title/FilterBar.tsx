@@ -27,35 +27,30 @@ const FilterBar = ({ filterData, onChange }: TitleProps) => {
         category='Design Areas'
         checkboxLabels={FilterDropdownCheckboxes['Design Areas']}
         checkboxData={filterData['Design Areas']}
-        width={142}
         onChange={handleFilterCategoryChange('Design Areas')}
       />
       <FilterCategory
         category='Majors/Minors'
         checkboxLabels={FilterDropdownCheckboxes['Majors/Minors']}
         checkboxData={filterData['Majors/Minors']}
-        width={138}
         onChange={handleFilterCategoryChange('Majors/Minors')}
       />
       <FilterCategory
         category='Semester'
         checkboxLabels={FilterDropdownCheckboxes['Semester']}
         checkboxData={filterData['Semester']}
-        width={117}
         onChange={handleFilterCategoryChange('Semester')}
       />
       <FilterCategory
         category='Level'
         checkboxLabels={FilterDropdownCheckboxes['Level']}
         checkboxData={filterData['Level']}
-        width={93}
         onChange={handleFilterCategoryChange('Level')}
       />
       <FilterCategory
         category='Credits'
         checkboxLabels={FilterDropdownCheckboxes['Credits']}
         checkboxData={filterData['Credits']}
-        width={102}
         onChange={handleFilterCategoryChange('Credits')}
       />
     </FilterBarContainer>

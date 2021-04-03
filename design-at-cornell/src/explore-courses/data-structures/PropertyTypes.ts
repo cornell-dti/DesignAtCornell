@@ -16,7 +16,6 @@ export type FilterCategoryProps = {
     readonly category: string;
     readonly checkboxLabels: string[];
     readonly checkboxData: Set;
-    readonly width: number;
     readonly onChange: filterCategoryChangeHandler;
 };
 
@@ -32,13 +31,8 @@ export type FilterCategoryButtonProps = {
     readonly onClick: filterCategoryButtonClickHandler;
 };
 
-export type FilterLabeledCheckboxProps = {
-    readonly label: string;
-    readonly checked: boolean;
-    readonly onChange: filterCheckboxClickHandler;
-};
-
 export type FilterCheckboxProps = {
+    readonly label: string;
     readonly checked: boolean;
     readonly onClick: filterCheckboxClickHandler;
 };

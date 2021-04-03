@@ -5,10 +5,10 @@ import { FilterCategoryProps } from '../data-structures/PropertyTypes';
 import { FilterCategoryContainer } from '../ExploreCoursesStyles';
 import FilterDropDown from './FilterDropdown';
 
-const FilterCategory = ({ category, checkboxLabels, checkboxData, width, onChange }: FilterCategoryProps) => {
+const FilterCategory = ({ category, checkboxLabels, checkboxData, onChange }: FilterCategoryProps) => {
     const [open, setOpen] = useState(false);
     return (
-        <FilterCategoryContainer style={{width: width}}>
+        <FilterCategoryContainer>
             <FilterCategoryButton
                 label={category}
                 open={open}

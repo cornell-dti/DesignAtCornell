@@ -60,7 +60,6 @@ export const TitleContainer = styled.div`
 `
 
 export const FilterBarContainer = styled.div`
-  float: left;
   display: flex;
   width: 100%;
   height: 15%;
@@ -97,7 +96,6 @@ export const FilterBarContainer = styled.div`
 `
 
 export const FilterButton = styled.div`
-  white-space: nowrap;
   display: flex;
   width: fit-content;
   height: 28px;
@@ -120,12 +118,45 @@ export const FilterButton = styled.div`
     width: 12px;
     height: 12px;
   }
-`;
+`
+
+export const FilterButtonOpen = styled.div`
+  display: flex;
+  width: fit-content;
+  height: 33px;
+  background: white;
+  border-radius: 15px 15px 0px 0px;
+  margin-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-items: center;
+
+  p {
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 20px;
+    color: black;
+    margin: 0;
+  }
+
+  img {
+    width: 12px;
+    height: 12px;
+  }
+`
+
+export const Divider = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+  padding-right: 80px;
+  align-items: flex-end;
+`
 
 export const FilterCategoryContainer = styled.div`
   width: fit-content;
-  margin-right: 25px;
-  padding-left: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -141,27 +172,47 @@ export const FilterCategoryContainer = styled.div`
 `;
 
 export const FilterDropdownContainer = styled.div`
-  white-space: nowrap;
-  background: #E5E5E5;
+  background: white;
   display: flex;
   flex-direction: column;
+  row-gap: 13px;
+  z-index: 2;
   justify-content: flex-start;
   align-items: flex-start;
-  border-radius: 15px;
+  border-radius: 0px 15px 15px 15px;
   margin-right: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 21px;
+  padding-bottom: 24px;
 `;
 
-export const Divider = styled.div`
+export const FilterCheckboxContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 80px;
-  padding-top: 20px;
-  padding-right: 80px;
-  align-items: flex-end;
-`
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  p {
+    padding-left: 12px;
+  }
+`;
+
+export const UncheckedBox = styled.div`
+  max-width: 13px;
+  min-width: 13px;
+  height: 13px;
+  border-weight: 2px;
+  border-radius: 2px;
+  border: solid;
+  border-color: black;
+`;
+
+
+export const CheckedBox = styled.div`
+  width: 9px;
+  background: black;
+  height: 9px;
+`;
 
 export const Sort = styled.div`
   display: flex;

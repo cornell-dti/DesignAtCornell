@@ -12,13 +12,24 @@ const FilterDropdownCheckboxes: Dictionary<string[]> = {
         ''
     ],
     'Semester': [
-        ''
+        'Fall',
+        'Spring',
+        'Winter',
+        'Summer'
     ],
     'Level': [
-        ''
+        '1000',
+        '2000',
+        '3000',
+        '4000',
+        '5000'
     ],
     'Credits': [
-        ''
+        '1',
+        '2',
+        '3',
+        '4',
+        '5+'
     ]
 };
 
