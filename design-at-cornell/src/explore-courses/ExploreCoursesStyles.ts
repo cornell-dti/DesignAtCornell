@@ -204,15 +204,6 @@ export const CourseBubble = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 
-  h6 {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: start;
-    margin: 0;
-    color: #898989;
-  }
-
   p {
     font-weight: bold;
     font-size: 20px;
@@ -221,9 +212,23 @@ export const CourseBubble = styled.div`
     margin: 0;
     color: black;
   }
+`
 
-  img {
-    width: 11px;
+export const CourseNumber = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: start;
+    margin: 0;
+    color: #898989;
   }
 `
 

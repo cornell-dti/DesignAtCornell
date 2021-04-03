@@ -7,6 +7,7 @@ import {
   Sort,
   CourseGrid,
   CourseBubble,
+  CourseNumber,
   TagsContainer,
   Tag
 } from './ExploreCoursesStyles';
@@ -31,7 +32,10 @@ const ExploreCourses = () => {
     <CourseGrid>
       {courses.map(course => (
         <CourseBubble style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
-          <h6>{course.courseCode}</h6>
+          <CourseNumber>
+            <p>{course.courseCode}</p>
+            <img src={require('../static/images/bookmark.svg')} alt="save course" />
+          </CourseNumber>
           <p>{course.courseTitle}</p>
           <TagsContainer>
             {course.tags.map(tag => (
