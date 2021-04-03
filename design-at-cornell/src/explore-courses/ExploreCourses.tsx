@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { courseColors } from '../constants/colors';
 import Title from './title/Title';
 import {
@@ -12,37 +13,58 @@ import {
   Tag
 } from './ExploreCoursesStyles';
 
-type Course = {
-  courseCode: string;
-  courseTitle: string;
-  tags: string[];
-};
+export type course_content = {
+  "title": string,
+  "description": string,
+  "syllabus": string,
+  "site": string,
+  "course_roster": string,
+  "credits": number,
+  "major": string,
+  "design_areas": string[],
+  "semester": string[],
+}
+
+export type Course = {
+  "id": string, 
+  "code": number,
+  "content": course_content
+}
 
 const ExploreCourses = () => {
-  const [courses] = useState<Course[]>([
-    {courseCode: "INFO 1300", courseTitle: "Introductory Design and Programming for the Web", tags: ["Information Science", "3 Credits"]},
-    {courseCode: "DEA 1500", courseTitle: "Introduction to Environmental Psychology", tags: ["Design and Enviro...", "3 Credits"]},
-    {courseCode: "FSAD 1120", courseTitle: "Fashion Design and Visual Thinking", tags: ["Fashion Design an...", "Fall"]},
-    {courseCode: "ART 2201", courseTitle: "Painting: Introduction to Painting", tags: ["Fine Arts", "3 Credits"]},
-    {courseCode: "ARCH 1101", courseTitle: "Design I", tags: ["Architecture", "3 Credits", "Fall"]},
-    {courseCode: "ART 2301", courseTitle: "Print Media: Introduction to Print Media", tags: ["Fine Arts", "3 Credits"]},
-  ]);
+  const [courses, setCourses] = useState<course_content[]>([]);
+  const [curPage, setPage] = useState(1);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/getCourses')
+      .then((res) => res.data.data)
+      .then(setCourses)
+  }, []);
 
   const courseBubbles = (
     <CourseGrid>
       {courses.map(course => (
-        <CourseBubble style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+        <CourseBubble 
+          style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+          onClick={() => window.location.href=course.course_roster}>
           <CourseNumber>
-            <p>{course.courseCode}</p>
+            <p>ARCH 1101</p>
             <img src={require('../static/images/bookmark.svg')} alt="save course" />
           </CourseNumber>
-          <p>{course.courseTitle}</p>
+          <p>{course.title}</p>
           <TagsContainer>
-            {course.tags.map(tag => (
+            {/* {course.tags.map(tag => (
               <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
                 <p>{tag}</p>
               </Tag>
-            ))}
+            ))} */}
+            <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+              <p>{course.credits + ' Credits'}</p>
+            </Tag>
+            <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+              <p>{course.semester}</p>
+            </Tag>
           </TagsContainer>
         </CourseBubble>
       ))}
@@ -63,7 +85,7 @@ const ExploreCourses = () => {
     <PageContainer>
     <Title />
     {divider}
-    {courseBubbles}
+    {courses.length > 0 && courseBubbles}
   </PageContainer>
   );
 };

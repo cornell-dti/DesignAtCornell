@@ -9,6 +9,7 @@
     "eject": "cd design-at-cornell && yarn eject"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.2"
   }

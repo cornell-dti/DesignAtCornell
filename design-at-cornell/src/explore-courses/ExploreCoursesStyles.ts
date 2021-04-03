@@ -194,6 +194,7 @@ export const CourseBubble = styled.div`
   flex-direction: column;
   width: 289px;
   height: 197px;
+  cursor: pointer;
 
   background: white;
   border: 1px solid;
