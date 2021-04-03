@@ -35,14 +35,19 @@ app.get("/getCourses", async (req, res) => {
   let course_id = req.query.id
   let course_code = req.query.code
   const localCourses: Course[] = [];
+  let collectionIncrementer = 0; 
  
   if(course_id == null) {
     const course_types = (await courses.doc(roster_sem).listCollections())
     const collections = course_types.map(collection => collection.listDocuments())
 
     for(const collection of collections) {
+      let c_id = course_types[collectionIncrementer].id
       for(const docRef of await collection) {
+        let c_code = docRef.id
         let course: Course = (await docRef.get()).data() as Course
+        course.id = c_id
+        course.code = parseInt(c_code)
         localCourses.push(course)
       }
     }
