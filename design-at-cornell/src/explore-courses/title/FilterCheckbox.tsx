@@ -1,12 +1,10 @@
 import React from "react";
 import { FilterCheckboxProps } from "../data-structures/PropertyTypes";
-import { CheckedBox, FilterCheckboxContainer, UncheckedBox } from "../ExploreCoursesStyles";
+import { Checkbox, FilterCheckboxContainer } from "../ExploreCoursesStyles";
 
 const FilterCheckbox = ({ label, checked, onClick }: FilterCheckboxProps) => (
     <FilterCheckboxContainer>
-        <UncheckedBox onClick={onClick}>
-            {checked && <CheckedBox />}
-        </UncheckedBox>
+        <Checkbox onClick={onClick} checked={checked} />
         <p>{label}</p>
     </FilterCheckboxContainer>
 );

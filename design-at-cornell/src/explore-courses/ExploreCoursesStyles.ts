@@ -92,58 +92,25 @@ export const FilterBarContainer = styled.div`
         outline: none;
     }
   }
+`;
 
-`
-
-export const FilterButton = styled.div`
+export const FilterButton = styled.div<{ open: boolean }>`
   display: flex;
   width: fit-content;
   height: 28px;
-  background: ${colors.transparentWhite};
-  border-radius: 15px;
+  background: ${({ open }) => open ? 'white' : colors.transparentWhite};
+  border-radius: ${({ open }) => open ? '15px 15px 0px 0px' : '15px'};
   margin-right: 25px;
   padding-left: 15px;
   padding-right: 15px;
   align-items: center;
 
-  p {
-    font-weight: bold;
-    font-size: 12px;
-    padding-right: 20px;
-    color: black;
-    margin: 0;
-  }
-
   img {
+    transform: ${({ open }) => open ? 'rotate(180deg)' : 'none'};
     width: 12px;
     height: 12px;
   }
-`
-
-export const FilterButtonOpen = styled.div`
-  display: flex;
-  width: fit-content;
-  height: 33px;
-  background: white;
-  border-radius: 15px 15px 0px 0px;
-  margin-right: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
-  align-items: center;
-
-  p {
-    font-weight: bold;
-    font-size: 12px;
-    padding-right: 20px;
-    color: black;
-    margin: 0;
-  }
-
-  img {
-    width: 12px;
-    height: 12px;
-  }
-`
+`;
 
 export const Divider = styled.div`
   display: flex;
@@ -161,7 +128,6 @@ export const FilterCategoryContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
   p {
     font-weight: bold;
     font-size: 12px;
@@ -180,9 +146,7 @@ export const FilterDropdownContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 0px 15px 15px 15px;
-  margin-right: 25px;
   padding-left: 19px;
-  padding-right: 19px;
   padding-top: 21px;
   padding-bottom: 24px;
 `;
@@ -197,21 +161,15 @@ export const FilterCheckboxContainer = styled.div`
   }
 `;
 
-export const UncheckedBox = styled.div`
-  max-width: 13px;
+export const Checkbox = styled.div<{ checked: boolean }>`
   min-width: 13px;
+  max-width: 13px;
   height: 13px;
   border-weight: 2px;
   border-radius: 2px;
   border: solid;
+  background: ${({ checked }) => checked ? 'black' : 'white'};
   border-color: black;
-`;
-
-
-export const CheckedBox = styled.div`
-  width: 9px;
-  background: black;
-  height: 9px;
 `;
 
 export const Sort = styled.div`

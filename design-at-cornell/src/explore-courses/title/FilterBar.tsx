@@ -21,38 +21,23 @@ const FilterBar = ({ filterData, onChange }: TitleProps) => {
       );
     }
   );
+  const categories = [
+    'Design Areas',
+    'Majors/Minors',
+    'Semester',
+    'Level',
+    'Credits'
+  ];
   return (
     <FilterBarContainer>
-      <FilterCategory
-        category='Design Areas'
-        checkboxLabels={FilterDropdownCheckboxes['Design Areas']}
-        checkboxData={filterData['Design Areas']}
-        onChange={handleFilterCategoryChange('Design Areas')}
-      />
-      <FilterCategory
-        category='Majors/Minors'
-        checkboxLabels={FilterDropdownCheckboxes['Majors/Minors']}
-        checkboxData={filterData['Majors/Minors']}
-        onChange={handleFilterCategoryChange('Majors/Minors')}
-      />
-      <FilterCategory
-        category='Semester'
-        checkboxLabels={FilterDropdownCheckboxes['Semester']}
-        checkboxData={filterData['Semester']}
-        onChange={handleFilterCategoryChange('Semester')}
-      />
-      <FilterCategory
-        category='Level'
-        checkboxLabels={FilterDropdownCheckboxes['Level']}
-        checkboxData={filterData['Level']}
-        onChange={handleFilterCategoryChange('Level')}
-      />
-      <FilterCategory
-        category='Credits'
-        checkboxLabels={FilterDropdownCheckboxes['Credits']}
-        checkboxData={filterData['Credits']}
-        onChange={handleFilterCategoryChange('Credits')}
-      />
+      {categories.map(category =>
+        <FilterCategory
+          category={category}
+          checkboxLabels={FilterDropdownCheckboxes[category]}
+          checkboxData={filterData[category]}
+          onChange={handleFilterCategoryChange(category)}
+        />
+      )}
     </FilterBarContainer>
   );
 };
