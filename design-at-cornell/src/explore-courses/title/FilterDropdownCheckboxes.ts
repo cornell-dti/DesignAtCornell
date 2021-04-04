@@ -9,7 +9,12 @@ const FilterDropdownCheckboxes: Dictionary<string[]> = {
         'Spatial Design'
     ],
     'Majors/Minors': [
-        ''
+        'AEM',
+        'Architecture',
+        'Design and Environmental Analysis',
+        'Fiber Science and Apparel Design',
+        'Fine Arts',
+        'History of Architecture'
     ],
     'Semester': [
         'Fall',

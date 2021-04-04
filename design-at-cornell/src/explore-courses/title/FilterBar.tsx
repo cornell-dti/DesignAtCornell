@@ -2,7 +2,7 @@ import React from 'react';
 import { filterCategoryChangeHandler } from '../data-structures/Handlers';
 import { TitleProps } from '../data-structures/PropertyTypes';
 import Set from '../data-structures/Set';
-import { FilterBarContainer } from '../ExploreCoursesStyles';
+import { FilterBarContainer, FilterDropdownsList } from '../ExploreCoursesStyles';
 import FilterCategory from './FilterCategory';
 import FilterDropdownCheckboxes from './FilterDropdownCheckboxes';
 
@@ -30,14 +30,17 @@ const FilterBar = ({ filterData, onChange }: TitleProps) => {
   ];
   return (
     <FilterBarContainer>
-      {categories.map(category =>
-        <FilterCategory
-          category={category}
-          checkboxLabels={FilterDropdownCheckboxes[category]}
-          checkboxData={filterData[category]}
-          onChange={handleFilterCategoryChange(category)}
-        />
-      )}
+      <FilterDropdownsList>
+        {categories.map(category =>
+          <FilterCategory
+            key={category}
+            category={category}
+            checkboxLabels={FilterDropdownCheckboxes[category]}
+            checkboxData={filterData[category]}
+            onChange={handleFilterCategoryChange(category)}
+          />
+        )}
+      </FilterDropdownsList>
     </FilterBarContainer>
   );
 };

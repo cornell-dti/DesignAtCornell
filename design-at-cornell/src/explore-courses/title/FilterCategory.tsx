@@ -18,6 +18,7 @@ const FilterCategory = ({ category, checkboxLabels, checkboxData, onChange }: Fi
                 <FilterDropDown
                     checkboxLabels={checkboxLabels}
                     checkboxData={checkboxData}
+                    expand={category === 'Design Areas' || category === 'Majors/Minors'}
                     onChange={onChange}
                 />
             }

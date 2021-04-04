@@ -90,25 +90,39 @@ export const FilterBarContainer = styled.div`
     
     &:focus {
         outline: none;
-    }
+    } 
   }
+`;
+
+export const FilterDropdownsList = styled.ul`
+  position: absolute;
+  class: dropdown;
+  display: flex;
+  margin: 0px;
+  padding-left: 0px;
+  list-style: none;
 `;
 
 export const FilterButton = styled.div<{ open: boolean }>`
   display: flex;
   width: fit-content;
-  height: 28px;
+  height: ${({ open }) => open ? '33px' : '28px'};
   background: ${({ open }) => open ? 'white' : colors.transparentWhite};
   border-radius: ${({ open }) => open ? '15px 15px 0px 0px' : '15px'};
   margin-right: 25px;
   padding-left: 15px;
   padding-right: 15px;
-  align-items: center;
+  align-items: flex-start;
 
   img {
     transform: ${({ open }) => open ? 'rotate(180deg)' : 'none'};
-    width: 12px;
-    height: 12px;
+    margin-top: 8px;
+    max-width: 12px;
+    max-height: 12px;
+  }
+
+  p {
+    padding-top: 4px;
   }
 `;
 
@@ -122,42 +136,46 @@ export const Divider = styled.div`
   align-items: flex-end;
 `
 
-export const FilterCategoryContainer = styled.div`
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+export const FilterCategoryContainer = styled.li`
+  position: relative;
+  display: inline;
+  box-sizing: border-box;
   p {
     font-weight: bold;
     font-size: 12px;
     padding-right: 20px;
     color: black;
-    margin: 0;
+    margin: 0px;
   }
 `;
 
-export const FilterDropdownContainer = styled.div`
+export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
+  class: dropdown;
+  width: ${({ expand }) => expand ? 'auto' : 'calc(100% - 25px)'};
+  position: absolute;
+  display: inline;
   background: white;
-  display: flex;
-  flex-direction: column;
-  row-gap: 13px;
-  z-index: 2;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-radius: 0px 15px 15px 15px;
-  padding-left: 19px;
-  padding-top: 21px;
-  padding-bottom: 24px;
+  list-style: none;
+	margin: 0px 0px 0px 0px;
+	padding-left: 0px;
+  padding-top: 8px;
+  padding-bottom: 11px;
+  border-radius: 0px ${({ expand }) => expand ? '15px ' : '0px '}15px 15px;
 `;
 
-export const FilterCheckboxContainer = styled.div`
+export const FilterCheckboxContainer = styled.li`
+  white-space: nowrap;
+  position: relative;
+  max-height: 13px;
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 7px;
+  margin-bottom: 13px;
+  margin-left: 23px;
   p {
-    padding-left: 12px;
+    text-align: left;
+    margin-left: 12px;
   }
 `;
 

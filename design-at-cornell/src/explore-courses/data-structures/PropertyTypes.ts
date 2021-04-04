@@ -22,6 +22,7 @@ export type FilterCategoryProps = {
 export type FilterDropdownProps = {
     readonly checkboxLabels: string[];
     readonly checkboxData: Set;
+    readonly expand: boolean;
     readonly onChange: filterCategoryChangeHandler;
 };
 
