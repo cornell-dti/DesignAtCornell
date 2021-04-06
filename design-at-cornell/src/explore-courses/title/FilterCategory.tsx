@@ -1,27 +1,20 @@
-import { useState } from 'react';
 import React from 'react';
 import FilterCategoryButton from './FilterCategoryButton';
 import { FilterCategoryProps } from '../data-structures/PropertyTypes';
 import { FilterCategoryContainer } from '../ExploreCoursesStyles';
-import FilterDropDown from './FilterDropdown';
+import FilterDropdown from './FilterDropdown';
 
-const FilterCategory = ({ category, checkboxLabels, checkboxData, onChange }: FilterCategoryProps) => {
-    const [open, setOpen] = useState(false);
+const FilterCategory = (props: FilterCategoryProps) => {
+    const open = props.open;
+    const category = props.category;
     return (
         <FilterCategoryContainer>
             <FilterCategoryButton
                 label={category}
                 open={open}
-                onClick={() => setOpen(!open)}
+                onClick={props.onToggle}
             />
-            {open &&
-                <FilterDropDown
-                    checkboxLabels={checkboxLabels}
-                    checkboxData={checkboxData}
-                    expand={category === 'Design Areas' || category === 'Majors/Minors'}
-                    onChange={onChange}
-                />
-            }
+            {open && <FilterDropdown {...props} />}
         </FilterCategoryContainer>
     );
 };

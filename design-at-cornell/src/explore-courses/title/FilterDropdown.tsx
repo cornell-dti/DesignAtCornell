@@ -1,19 +1,33 @@
 import React from "react";
 import { FilterDropdownProps } from "../data-structures/PropertyTypes";
-import { FilterDropdownContainer } from "../ExploreCoursesStyles";
+import { FilterDropdownContainer, FilterDropdownScrollContainer, SearchBar } from "../ExploreCoursesStyles";
 import FilterCheckbox from "./FilterCheckbox";
 
-const FilterDropDown = ({ checkboxLabels, checkboxData, expand, onChange }: FilterDropdownProps) => (
-    <FilterDropdownContainer expand={expand}>
-        {checkboxLabels.map(label =>
-            <FilterCheckbox
-                key={label}
-                label={label}
-                checked={checkboxData.has(label)}
-                onClick={() => onChange(label)}
+const FilterDropdown = ({ checkboxLabels, checkboxData, expand, scroll, onChange }: FilterDropdownProps) => {
+    const checkboxes = checkboxLabels.map(label =>
+        <FilterCheckbox
+            key={label}
+            label={label}
+            checked={checkboxData.has(label)}
+            onClick={() => onChange(label)}
+        />
+    );
+    if (scroll) return (
+        <FilterDropdownContainer expand={expand}>
+            <SearchBar
+                width='292px'
+                background='#EAEAEA'
             />
-        )}
-    </FilterDropdownContainer>
-);
+            <FilterDropdownScrollContainer>
+                {checkboxes}
+            </FilterDropdownScrollContainer>
+        </FilterDropdownContainer>
+    );
+    return (
+        <FilterDropdownContainer expand={expand}>
+            {checkboxes}
+        </FilterDropdownContainer>
+    );
+};
 
-export default FilterDropDown;
+export default FilterDropdown;

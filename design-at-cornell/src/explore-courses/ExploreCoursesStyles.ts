@@ -5,13 +5,13 @@ import magnifyingGlass from '../static/images/magnifying-glass.svg';
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const TitleBackground = styled.div`
   display: flex;
   width: 100%;
   height: 551px;
-`
+`;
 
 export const TitleBackgroundSolid = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const TitleBackgroundSolid = styled.div`
   background: ${colors.yellow};
   padding-left: 100px;
   padding-right: 50px;
-`
+`;
 
 export const TitleBackgroundGradient = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ export const TitleBackgroundGradient = styled.div`
   height: 100%;
   background: ${colors.yellowGradient};
   align-items: flex-end;
-`
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ export const TitleContainer = styled.div`
     color: black;
     padding-left: 5px;
   }
-`
+`;
 
 export const FilterBarContainer = styled.div`
   display: flex;
@@ -75,22 +75,26 @@ export const FilterBarContainer = styled.div`
     text-align: center;
     color: white;
   }
+`;
 
-  input {
-    width: 338px;
-    height: 28px;
-    border-radius: 43px;
-    padding-left: 10px;
-    border-style: none;
-    background: white;
-    background-image: url(${magnifyingGlass});
-    background-position: 7px 7px;
-    background-repeat: no-repeat;
-    text-indent: 30px;
-    
-    &:focus {
-        outline: none;
-    } 
+export const SearchBar = styled.input<{ width: string; background: string }>`
+  width: ${({ width }) => width};
+  type: text;
+  height: 28px;
+  border-radius: 43px;
+  padding-left: 10px;
+  border-style: none;
+  background: ${({ background }) => background};
+  background-image: url(${magnifyingGlass});
+  background-position: 7px 7px;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+
+  &:focus {
+      outline: none;
+  } 
+  img {
+    background: ${({ background }) => background};
   }
 `;
 
@@ -134,7 +138,7 @@ export const Divider = styled.div`
   padding-top: 20px;
   padding-right: 80px;
   align-items: flex-end;
-`
+`;
 
 export const FilterCategoryContainer = styled.li`
   position: relative;
@@ -157,10 +161,30 @@ export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
   background: white;
   list-style: none;
 	margin: 0px 0px 0px 0px;
-	padding-left: 0px;
+  padding-left: 23px;
   padding-top: 8px;
   padding-bottom: 11px;
   border-radius: 0px ${({ expand }) => expand ? '15px ' : '0px '}15px 15px;
+  input {
+    margin-top: 11px;
+  }
+`;
+
+export const FilterDropdownScrollContainer = styled.ul`
+  width: 292px;
+  margin-top: 24px;
+  padding-left: 0px;
+  padding-right: 24px;
+  margin-bottom: 15px;
+  max-height: 148px;
+  overflow-y: auto;
+  margin-right: 24px;
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+  input {
+    position: absolute;
+  }
 `;
 
 export const FilterCheckboxContainer = styled.li`
@@ -170,9 +194,9 @@ export const FilterCheckboxContainer = styled.li`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 0px;
   margin-top: 7px;
   margin-bottom: 13px;
-  margin-left: 23px;
   p {
     text-align: left;
     margin-left: 12px;
@@ -182,12 +206,20 @@ export const FilterCheckboxContainer = styled.li`
 export const Checkbox = styled.div<{ checked: boolean }>`
   min-width: 13px;
   max-width: 13px;
+  align-items: center;
+  justify-content: center;
   height: 13px;
   border-weight: 2px;
   border-radius: 2px;
   border: solid;
   background: ${({ checked }) => checked ? 'black' : 'white'};
   border-color: black;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 `;
 
 export const Sort = styled.div`
@@ -210,7 +242,7 @@ export const Sort = styled.div`
     height: 14px;
     margin-left: 10px;
   }
-`
+`;
 
 export const CourseGrid = styled.div`
   display: flex;
@@ -253,7 +285,7 @@ export const CourseBubble = styled.div`
     margin: 0;
     color: black;
   }
-`
+`;
 
 export const TagsContainer = styled.div`
   display: flex;
@@ -280,4 +312,4 @@ export const Tag = styled.div`
     font-size: 12px;
     color: black;
   }
-`
+`;

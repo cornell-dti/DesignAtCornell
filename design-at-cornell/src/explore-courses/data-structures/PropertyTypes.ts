@@ -2,28 +2,33 @@ import {
     filterBarChangeHandler,
     filterCategoryButtonClickHandler,
     filterCategoryChangeHandler,
-    filterCheckboxClickHandler
+    filterCheckboxClickHandler,
+    filterDropdownToggleHandler
 } from "./Handlers";
 import Dictionary from "./Dictionary";
 import Set from "./Set";
 
 export type TitleProps = {
     readonly filterData: Dictionary<Set>;
+    readonly dropdownInfo: Dictionary<FilterDropdownInfo>;
     readonly onChange: filterBarChangeHandler;
 };
 
-export type FilterCategoryProps = {
+export type FilterCategoryProps = FilterDropdownProps & {
     readonly category: string;
-    readonly checkboxLabels: string[];
+    readonly open: boolean;
+    readonly onToggle: filterDropdownToggleHandler;
+};
+
+export type FilterDropdownProps = FilterDropdownInfo & {
     readonly checkboxData: Set;
     readonly onChange: filterCategoryChangeHandler;
 };
 
-export type FilterDropdownProps = {
-    readonly checkboxLabels: string[];
-    readonly checkboxData: Set;
+export type FilterDropdownInfo = {
+    readonly checkboxLabels: ReadonlyArray<string>;
     readonly expand: boolean;
-    readonly onChange: filterCategoryChangeHandler;
+    readonly scroll: boolean;
 };
 
 export type FilterCategoryButtonProps = {

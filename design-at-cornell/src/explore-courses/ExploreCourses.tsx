@@ -11,6 +11,7 @@ import {
 } from './ExploreCoursesStyles';
 import Dictionary from './data-structures/Dictionary';
 import Set from './data-structures/Set';
+import FilterDropdowns from './title/FilterDropdowns';
 
 type Course = {
   courseCode: string;
@@ -29,14 +30,11 @@ const ExploreCourses = () => {
     { courseCode: "ART 2301", courseTitle: "Print Media: Introduction to Print Media", tags: ["Fine Arts", "3 Credits"] },
   ]);
 
-  const [filterData, setfilterData] = useState<Dictionary<Set>>({
-    'Design Areas': new Set(),
-    'Majors/Minors': new Set(),
-    'Semester': new Set(),
-    'Level': new Set(),
-    'Credits': new Set()
-  });
-
+  const [filterData, setfilterData] = useState<Dictionary<Set>>(
+    Object.fromEntries(
+      Object.keys(FilterDropdowns).map(category => [category, new Set()])
+    )
+  );
   const courseBubbles = (
     <CourseGrid>
       {courses.map(course => (
@@ -62,11 +60,15 @@ const ExploreCourses = () => {
         <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
       </Sort>
     </Divider>
-  )
+  );
 
   return (
     <PageContainer>
-      <Title filterData={filterData} onChange={setfilterData}/>
+      <Title 
+        filterData={filterData} 
+        dropdownInfo={FilterDropdowns}
+        onChange={setfilterData}
+      />
       {divider}
       {courseBubbles}
     </PageContainer>

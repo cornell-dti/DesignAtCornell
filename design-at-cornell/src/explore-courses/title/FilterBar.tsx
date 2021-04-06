@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { filterCategoryChangeHandler } from '../data-structures/Handlers';
 import { TitleProps } from '../data-structures/PropertyTypes';
 import Set from '../data-structures/Set';
-import { FilterBarContainer, FilterDropdownsList } from '../ExploreCoursesStyles';
+import { FilterBarContainer, FilterDropdownsList, SearchBar } from '../ExploreCoursesStyles';
 import FilterCategory from './FilterCategory';
-import FilterDropdownCheckboxes from './FilterDropdownCheckboxes';
 
-const FilterBar = ({ filterData, onChange }: TitleProps) => {
+const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
+  const [openDropdown, setOpenDropdown] = useState('');
   const handleFilterCategoryChange = (category: string): filterCategoryChangeHandler => (
     checkboxLabel => {
       onChange(
@@ -21,25 +21,28 @@ const FilterBar = ({ filterData, onChange }: TitleProps) => {
       );
     }
   );
-  const categories = [
-    'Design Areas',
-    'Majors/Minors',
-    'Semester',
-    'Level',
-    'Credits'
-  ];
   return (
     <FilterBarContainer>
       <FilterDropdownsList>
-        {categories.map(category =>
-          <FilterCategory
-            key={category}
-            category={category}
-            checkboxLabels={FilterDropdownCheckboxes[category]}
-            checkboxData={filterData[category]}
-            onChange={handleFilterCategoryChange(category)}
-          />
-        )}
+        {Object.entries(dropdownInfo).map(([category, info]) => {
+          const open = category === openDropdown;
+          return (
+            <FilterCategory
+              key={category}
+              category={category}
+              open={open}
+              onToggle={() => setOpenDropdown(open ? '' : category)}
+              {...info}
+              checkboxData={filterData[category]}
+              onChange={handleFilterCategoryChange(category)}
+            />
+          );
+        })}
+        <SearchBar
+          width="338px"
+          placeholder="Name, Keywords, Topics, Etc"
+          background='white'
+        />
       </FilterDropdownsList>
     </FilterBarContainer>
   );

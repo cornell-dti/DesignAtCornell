@@ -36,6 +36,6 @@ class Set {
     isEmpty() {
         return this.size === 0;
     }
-};
+}
 
 export default Set;

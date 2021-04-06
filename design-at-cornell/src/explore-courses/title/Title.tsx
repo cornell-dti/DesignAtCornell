@@ -16,7 +16,7 @@ const Title = (props: TitleProps) => (
         <h1>Explore Courses</h1>
         <p>Your central hub for finding and learning about courses to enrich your design skillset and broaden your horizons.</p>
       </TitleContainer>
-      <FilterBar {...props}/>
+      <FilterBar {...props} />
     </TitleBackgroundSolid>
     <TitleBackgroundGradient>
       <FilterBarContainer>
