@@ -5,12 +5,10 @@ import {
     filterCheckboxClickHandler,
     filterDropdownToggleHandler
 } from "./Handlers";
-import Dictionary from "./Dictionary";
-import Set from "./Set";
 
 export type TitleProps = {
-    readonly filterData: Dictionary<Set>;
-    readonly dropdownInfo: Dictionary<FilterDropdownInfo>;
+    readonly filterData: ReadonlyMap<string, ReadonlySet<string>>;
+    readonly dropdownInfo: ReadonlyMap<string, FilterDropdownInfo>;
     readonly onChange: filterBarChangeHandler;
 };
 
@@ -21,7 +19,7 @@ export type FilterCategoryProps = FilterDropdownProps & {
 };
 
 export type FilterDropdownProps = FilterDropdownInfo & {
-    readonly checkboxData: Set;
+    readonly checkboxData: ReadonlySet<string>;
     readonly onChange: filterCategoryChangeHandler;
 };
 

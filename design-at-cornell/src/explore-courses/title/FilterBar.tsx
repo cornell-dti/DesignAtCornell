@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { filterCategoryChangeHandler } from '../data-structures/Handlers';
-import { TitleProps } from '../data-structures/PropertyTypes';
-import Set from '../data-structures/Set';
+import { filterCategoryChangeHandler } from '../types/Handlers';
+import { TitleProps } from '../types/PropertyTypes';
 import { FilterBarContainer, FilterDropdownsList, SearchBar } from '../ExploreCoursesStyles';
 import FilterCategory from './FilterCategory';
 
@@ -9,22 +8,21 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState('');
   const handleFilterCategoryChange = (category: string): filterCategoryChangeHandler => (
     checkboxLabel => {
-      onChange(
-        Object.fromEntries(
-          Object.entries(filterData).map(([k, v]) => {
-            if (k !== category) return [k, v];
-            const copy = Set.copyOf(v);
-            copy.toggle(checkboxLabel);
-            return [k, copy];
-          })
-        )
-      );
+      onChange(new Map(
+        Array.from(filterData.entries()).map(([k, v]) => {
+          if (k !== category) return [k, v];
+          const copy = new Set(v);
+          if (copy.has(checkboxLabel)) copy.delete(checkboxLabel);
+          else copy.add(checkboxLabel);
+          return [k, copy];
+        })
+      ));
     }
   );
   return (
     <FilterBarContainer>
       <FilterDropdownsList>
-        {Object.entries(dropdownInfo).map(([category, info]) => {
+        {Array.from(dropdownInfo.entries()).map(([category, info]) => {
           const open = category === openDropdown;
           return (
             <FilterCategory
@@ -33,7 +31,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
               open={open}
               onToggle={() => setOpenDropdown(open ? '' : category)}
               {...info}
-              checkboxData={filterData[category]}
+              checkboxData={filterData.get(category) || new Set()}
               onChange={handleFilterCategoryChange(category)}
             />
           );

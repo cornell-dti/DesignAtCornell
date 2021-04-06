@@ -1,6 +1,10 @@
 import React from "react";
-import { FilterDropdownProps } from "../data-structures/PropertyTypes";
-import { FilterDropdownContainer, FilterDropdownScrollContainer, SearchBar } from "../ExploreCoursesStyles";
+import { FilterDropdownProps } from "../types/PropertyTypes";
+import {
+    FilterDropdownContainer,
+    FilterDropdownScrollContainer,
+    SearchBar
+} from "../ExploreCoursesStyles";
 import FilterCheckbox from "./FilterCheckbox";
 
 const FilterDropdown = ({ checkboxLabels, checkboxData, expand, scroll, onChange }: FilterDropdownProps) => {

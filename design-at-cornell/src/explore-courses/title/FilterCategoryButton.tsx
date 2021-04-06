@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilterButton } from '../ExploreCoursesStyles';
 import downArrow from '../../static/images/down-arrow.png';
-import { FilterCategoryButtonProps } from '../data-structures/PropertyTypes';
+import { FilterCategoryButtonProps } from '../types/PropertyTypes';
 
 const FilterCategoryButton = ({ label, open, onClick }: FilterCategoryButtonProps) => (
     <FilterButton onClick={onClick} open={open}>

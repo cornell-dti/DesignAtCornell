@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterCategoryButton from './FilterCategoryButton';
-import { FilterCategoryProps } from '../data-structures/PropertyTypes';
+import { FilterCategoryProps } from '../types/PropertyTypes';
 import { FilterCategoryContainer } from '../ExploreCoursesStyles';
 import FilterDropdown from './FilterDropdown';
 

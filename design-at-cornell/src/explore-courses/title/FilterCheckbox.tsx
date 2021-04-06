@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterCheckboxProps } from "../data-structures/PropertyTypes";
+import { FilterCheckboxProps } from "../types/PropertyTypes";
 import { Checkbox, FilterCheckboxContainer } from "../ExploreCoursesStyles";
 import check from '../../static/images/check.svg'
 

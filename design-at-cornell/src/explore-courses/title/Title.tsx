@@ -7,7 +7,7 @@ import {
   TitleContainer,
   FilterBarContainer,
 } from '../ExploreCoursesStyles';
-import { TitleProps } from '../data-structures/PropertyTypes';
+import { TitleProps } from '../types/PropertyTypes';
 
 const Title = (props: TitleProps) => (
   <TitleBackground>
