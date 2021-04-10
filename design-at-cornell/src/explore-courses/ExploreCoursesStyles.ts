@@ -163,12 +163,13 @@ export const CourseGrid = styled.div`
 export const CourseBubble = styled.div`
   display: flex;
   flex-direction: column;
-  width: 289px;
-  height: 197px;
+  width: 22%;
+  min-width: 250px;
+  height: 200px;
 
   background: #7CD0FF;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
 
   padding: 25px;
   align-items: flex-start;
@@ -217,5 +218,54 @@ export const Tag = styled.div`
     font-weight: bold;
     font-size: 12px;
     color: black;
+  }
+`
+
+export const StyledPagination = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 0px 80px;
+  align-items: center;
+  font-size: 20px;
+
+  ul {
+    display: flex;
+    width: 90%;
+    list-style-type: none;
+    padding-left: 10%;
+    justify-content: center;
+  }
+
+  li {
+    display: inline-block;
+    margin: 5px;
+    
+    button {
+      width: 41px;
+      height: 41px;
+      border-radius: 100%;
+      border: none;
+      background: none;
+      color: gray;
+
+      &:focus {
+        color: black;
+        border: none;
+        outline: none;
+        background: #E0E0E0;
+      }
+    }
+  }
+
+  button {
+    width: 10%;
+    height: 41px;
+    border: none;
+    background: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
   }
 `
