@@ -13,7 +13,7 @@ const pages: Page[] = [
 
 const explore: Page[] = [
   { name: 'Courses', url: '/explore-courses' },
-  { name: 'Majors & Minors', url: '/majors-&-minors' },
+  { name: 'Majors & Minors', url: '/areas-of-study' },
   { name: 'Student Organizations', url: '/student-organizations' },
   { name: 'Events', url: '/events' }
 ];

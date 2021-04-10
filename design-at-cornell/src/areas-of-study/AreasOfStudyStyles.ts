@@ -150,8 +150,8 @@ export const ApplyTagsContainer = styled.div`
     color: black;
 
     input[type=checkbox] {
+      vertical-align: middle;
       margin-right: 10px;
-      position: relative;
       cursor: pointer;
     }
 

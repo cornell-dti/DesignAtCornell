@@ -5,7 +5,7 @@ import {
 
 const ApplyTags = () => {
   const designAreaTags = ['Art + Design', 'Digital Design', 'Industrial Design', 'Policy Design', 'Spatial Design']
-  const schools = ['AAP', 'Agriculture and Life Sciences', 'Arts and Sciences', 'Engineering', 'Human Ecology', 'ILR', 'SC Johnson School of Buisness']
+  const schools = ['AAP', 'Agriculture and Life Sciences', 'Arts and Sciences', 'Engineering', 'Human Ecology', 'ILR', 'SC Johnson School of Business']
 
   const checkboxes = (tags: string[]) => (
     <form>
