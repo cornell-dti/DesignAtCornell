@@ -23,6 +23,8 @@ export type course_content = {
   "major": string,
   "design_areas": string[],
   "semester": string[],
+  "id": string,
+  "code": number
 }
 
 export type Course = {
@@ -49,7 +51,7 @@ const ExploreCourses = () => {
           style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
           onClick={() => window.location.href=course.course_roster}>
           <CourseNumber>
-            <p>ARCH 1101</p>
+            <p>{course.id + ' ' + course.code}</p>
             <img src={require('../static/images/bookmark.svg')} alt="save course" />
           </CourseNumber>
           <p>{course.title}</p>
