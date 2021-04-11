@@ -1,7 +1,8 @@
+import Category from "../types/Category";
 import { FilterDropdownInfo } from "../types/PropertyTypes";
 
-const FilterDropdowns: ReadonlyMap<string, FilterDropdownInfo> = new Map([
-    ['Design Areas',
+const FilterDropdowns: ReadonlyMap<Category, FilterDropdownInfo> = new Map([
+    [Category['Design Areas'],
         {
             checkboxLabels: [
                 'Art + Design',
@@ -14,7 +15,7 @@ const FilterDropdowns: ReadonlyMap<string, FilterDropdownInfo> = new Map([
             scroll: false
         }
     ],
-    ['Majors/Minors',
+    [Category['Majors/Minors'],
         {
             checkboxLabels: [
                 'AEM',
@@ -28,7 +29,7 @@ const FilterDropdowns: ReadonlyMap<string, FilterDropdownInfo> = new Map([
             scroll: true
         }
     ],
-    ['Semester',
+    [Category['Semester'],
         {
             checkboxLabels: [
                 'Fall',
@@ -40,7 +41,7 @@ const FilterDropdowns: ReadonlyMap<string, FilterDropdownInfo> = new Map([
             scroll: false
         }
     ],
-    ['Level',
+    [Category['Level'],
         {
             checkboxLabels: [
                 '1000',
@@ -53,7 +54,7 @@ const FilterDropdowns: ReadonlyMap<string, FilterDropdownInfo> = new Map([
             scroll: false
         }
     ],
-    ['Credits',
+    [Category['Credits'],
         {
             checkboxLabels: [
                 '1',

@@ -10,6 +10,7 @@ import {
   Tag
 } from './ExploreCoursesStyles';
 import FilterDropdowns from './title/FilterDropdowns';
+import Category from './types/Category';
 
 type Course = {
   courseCode: string;
@@ -28,24 +29,32 @@ const ExploreCourses = () => {
     { courseCode: "ART 2301", courseTitle: "Print Media: Introduction to Print Media", tags: ["Fine Arts", "3 Credits"] },
   ]);
 
-  const [filterData, setfilterData] = useState<ReadonlyMap<string, ReadonlySet<string>>>(new Map(
+  const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(new Map(
     Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
   ));
+
   const courseBubbles = (
     <CourseGrid>
-      {courses.map(course => (
-        <CourseBubble>
-          <h6>{course.courseCode}</h6>
-          <p>{course.courseTitle}</p>
-          <TagsContainer>
-            {course.tags.map(tag => (
-              <Tag>
-                <p>{tag}</p>
-              </Tag>
-            ))}
-          </TagsContainer>
-        </CourseBubble>
-      ))}
+      {courses
+        .filter(({ tags }) => {
+          const credits = filterData.get(Category['Credits']);
+          if (credits === undefined || (credits.size > 0 && Array.from(credits).every(box => !box.includes(tags[1][0]))))
+            return false;
+          return true;
+        })
+        .map(course => (
+          <CourseBubble>
+            <h6>{course.courseCode}</h6>
+            <p>{course.courseTitle}</p>
+            <TagsContainer>
+              {course.tags.map(tag => (
+                <Tag>
+                  <p>{tag}</p>
+                </Tag>
+              ))}
+            </TagsContainer>
+          </CourseBubble>
+        ))}
     </CourseGrid>
   );
 

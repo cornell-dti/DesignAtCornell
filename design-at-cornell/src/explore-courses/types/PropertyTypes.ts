@@ -1,26 +1,36 @@
+import Category from "./Category";
 import {
     filterBarChangeHandler,
     filterCategoryButtonClickHandler,
-    filterCategoryChangeHandler,
+    filterCategoryCheckHandler,
+    filterCategoryClearHandler,
     filterCheckboxClickHandler,
-    filterDropdownToggleHandler
+    filterDropdownToggleHandler,
+    filterSelectionBubbleClickHandler
 } from "./Handlers";
 
 export type TitleProps = {
-    readonly filterData: ReadonlyMap<string, ReadonlySet<string>>;
-    readonly dropdownInfo: ReadonlyMap<string, FilterDropdownInfo>;
+    readonly filterData: ReadonlyMap<Category, ReadonlySet<string>>;
+    readonly dropdownInfo: ReadonlyMap<Category, FilterDropdownInfo>;
     readonly onChange: filterBarChangeHandler;
 };
 
 export type FilterCategoryProps = FilterDropdownProps & {
-    readonly category: string;
+    readonly category: Category;
     readonly open: boolean;
     readonly onToggle: filterDropdownToggleHandler;
 };
 
 export type FilterDropdownProps = FilterDropdownInfo & {
     readonly checkboxData: ReadonlySet<string>;
-    readonly onChange: filterCategoryChangeHandler;
+    readonly onCheck: filterCategoryCheckHandler;
+    readonly onClear: filterCategoryClearHandler;
+};
+
+export type FilterSelectionBubbleProps = {
+    readonly label: string;
+    readonly color: string;
+    readonly onClick: filterSelectionBubbleClickHandler;
 };
 
 export type FilterDropdownInfo = {
@@ -30,8 +40,9 @@ export type FilterDropdownInfo = {
 };
 
 export type FilterCategoryButtonProps = {
-    readonly label: string,
+    readonly label: Category,
     readonly open: boolean,
+    readonly applied: number;
     readonly onClick: filterCategoryButtonClickHandler;
 };
 

@@ -1,15 +1,18 @@
 import React from 'react';
-import { FilterButton } from '../ExploreCoursesStyles';
+import { FilterButton, FiltersApplied } from '../ExploreCoursesStyles';
 import downArrow from '../../static/images/down-arrow.png';
 import { FilterCategoryButtonProps } from '../types/PropertyTypes';
 
-const FilterCategoryButton = ({ label, open, onClick }: FilterCategoryButtonProps) => (
-    <FilterButton onClick={onClick} open={open}>
+const FilterCategoryButton = ({ label, open, applied, onClick }: FilterCategoryButtonProps) => (
+    <FilterButton onClick={onClick} open={open} applied={applied > 0}>
         <p>{label}</p>
-        <img
-            src={downArrow}
-            alt={"expand"}
-        />
+        {applied === 0 ?
+            <img src={downArrow} alt={"expand"} />
+            :
+            <FiltersApplied>
+                <p>{applied}</p>
+            </FiltersApplied>
+        }
     </FilterButton>
 );
 

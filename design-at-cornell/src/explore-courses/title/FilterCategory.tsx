@@ -12,6 +12,7 @@ const FilterCategory = (props: FilterCategoryProps) => {
             <FilterCategoryButton
                 label={category}
                 open={open}
+                applied={props.checkboxData.size}
                 onClick={props.onToggle}
             />
             {open && <FilterDropdown {...props} />}

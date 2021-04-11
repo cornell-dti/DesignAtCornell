@@ -72,7 +72,6 @@ export const FilterBarContainer = styled.div`
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
     color: white;
   }
 `;
@@ -107,7 +106,7 @@ export const FilterDropdownsList = styled.ul`
   list-style: none;
 `;
 
-export const FilterButton = styled.div<{ open: boolean }>`
+export const FilterButton = styled.div<{ open: boolean, applied: boolean }>`
   display: flex;
   width: fit-content;
   height: ${({ open }) => open ? '33px' : '28px'};
@@ -115,18 +114,19 @@ export const FilterButton = styled.div<{ open: boolean }>`
   border-radius: ${({ open }) => open ? '15px 15px 0px 0px' : '15px'};
   margin-right: 25px;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: ${({ applied }) => applied ? '7px' : '15px'};
   align-items: flex-start;
 
   img {
     transform: ${({ open }) => open ? 'rotate(180deg)' : 'none'};
     margin-top: 8px;
-    max-width: 12px;
+    width: 12px;
     max-height: 12px;
   }
 
   p {
-    padding-top: 4px;
+    margin-right: ${({ applied }) => applied ? '11px' : '20px'};
+    margin-top: 4px;
   }
 `;
 
@@ -147,9 +147,7 @@ export const FilterCategoryContainer = styled.li`
   p {
     font-weight: bold;
     font-size: 12px;
-    padding-right: 20px;
     color: black;
-    margin: 0px;
   }
 `;
 
@@ -160,14 +158,59 @@ export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
   display: inline;
   background: white;
   list-style: none;
-	margin: 0px 0px 0px 0px;
   padding-left: 23px;
   padding-top: 8px;
   padding-bottom: 11px;
   border-radius: 0px ${({ expand }) => expand ? '15px ' : '0px '}15px 15px;
   input {
     margin-top: 11px;
+  } 
+`;
+
+export const FiltersApplied = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+  background: white;
+  height: 19px;
+  width: 29px;
+  margin-top: 4px;
+  p {
+    text-align: center;
+    width: 29px;
+    padding: 0;
+    margin: 0;
   }
+`;
+
+export const FilterSelectionBubbleContainer = styled.div<{ color: string }>`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  background: ${({ color }) => color};
+  border-radius: 43px;
+  margin-top: 9px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 9px;
+  z-index: 999;
+  img {
+    width: 9px;
+    height: 9px;
+  }
+  p {
+    padding-right: 9px;
+    margin: 0;
+  }
+`
+
+export const ClearCategoryFilters = styled.p`
+  padding-top: 7px;
+  text-decoration: underline;
+  text-align: right;
+  padding-right: 12px;
 `;
 
 export const FilterDropdownScrollContainer = styled.ul`
@@ -176,7 +219,7 @@ export const FilterDropdownScrollContainer = styled.ul`
   padding-left: 0px;
   padding-right: 24px;
   margin-bottom: 15px;
-  max-height: 148px;
+  height: 148px;
   overflow-y: auto;
   margin-right: 24px;
   ::-webkit-scrollbar-track {
@@ -200,6 +243,7 @@ export const FilterCheckboxContainer = styled.li`
   p {
     text-align: left;
     margin-left: 12px;
+    padding-right: 20px;
   }
 `;
 

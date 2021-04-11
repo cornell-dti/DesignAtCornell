@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { filterCategoryChangeHandler } from '../types/Handlers';
+import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
 import { FilterBarContainer, FilterDropdownsList, SearchBar } from '../ExploreCoursesStyles';
 import FilterCategory from './FilterCategory';
+import Category from '../types/Category';
 
 const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
-  const [openDropdown, setOpenDropdown] = useState('');
-  const handleFilterCategoryChange = (category: string): filterCategoryChangeHandler => (
+  const [openDropdown, setOpenDropdown] = useState<Category | ''>('');
+  const handleFilterCategoryChange = (category: Category): filterCategoryCheckHandler => (
     checkboxLabel => {
       onChange(new Map(
         Array.from(filterData.entries()).map(([k, v]) => {
@@ -32,7 +33,12 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
               onToggle={() => setOpenDropdown(open ? '' : category)}
               {...info}
               checkboxData={filterData.get(category) || new Set()}
-              onChange={handleFilterCategoryChange(category)}
+              onCheck={handleFilterCategoryChange(category)}
+              onClear={() => {
+                const copy = new Map(filterData);
+                copy.set(category, new Set());
+                onChange(copy);
+              }}
             />
           );
         })}
