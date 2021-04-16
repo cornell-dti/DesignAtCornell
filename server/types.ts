@@ -35,8 +35,3 @@ export type Reason = {
     "grad_year": number,
     "response": string
 }
-  
-
-
-
-  
