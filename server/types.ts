@@ -49,8 +49,3 @@ export type Club = {
     "title": string,
     "content": club_content
 }
-  
-
-
-
-  
