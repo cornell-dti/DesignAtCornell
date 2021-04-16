@@ -213,7 +213,7 @@ app.delete('/deleteMajor', async (req,res) => {
     res.send({"success": false, "message": "One or more fields is missing"})
   }
   else {
-    majors.doc(title).delete()
+    majors.doc(title).delete()  
     res.send({"success": true})
   }   
 })
