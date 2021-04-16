@@ -2,7 +2,8 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import {Course, course_content, Major, major_content, Reason, Club, club_content} from  './types'
+import {Course, course_content, Major, major_content, Reason, Club, club_content, Event, event_content} from  './types'
+import e from 'express';
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -25,6 +26,7 @@ const roster_sem = "SP21"
 export const courses = db.collection("courses")
 export const majors = db.collection("majors")
 export const clubs = db.collection("clubs")
+export const events = db.collection("events")
 
 
 
@@ -271,7 +273,7 @@ app.get('/getClubs', async (req, res)  =>  {
 /**
  * creates a new club object in firestore using client provided fields 
  * Precondition: Client must provide all required fields for the club, 
- *               must not be a duplicate of an existing major
+ *               must not be a duplicate of an existing event
  * Postcondition: One new club will be created and stored in firestore
 */
 app.post('/createClub', async (req, res) => {
@@ -324,6 +326,104 @@ app.post('/updateClub', async (req, res) => {
     res.send({"success": true, "data": []});
   }
 });
+
+/**
+ * EVENTS COLLECTION CRUD OPERATIONS
+ */
+
+
+/**
+ * retrieving the desired event(s) via query parameters from the database and 
+ * storing them in a local array of type Event.
+
+ * Precondition: only one query parameters can be sent through the client: event title
+ *               if no parameters are sent, all clubs will be returned
+ * Postcondition: returns an an array of the desired events with required fields 
+ */
+app.get('/getEvents', async (req,res) => {
+  const title = req.query.title
+  const localEvents: Event[] = []
+
+  if(title == null) {
+    let eventDocs = await events.get()
+    for(const docRef of eventDocs.docs) {
+      let event_c: event_content = docRef.data() as event_content
+      let event = {
+        "title": docRef.id,
+        "content": event_c
+      }
+      localEvents.push(event)
+    } 
+    res.send({"success": true,"data": localEvents})
+  }
+
+  else {
+    let eventRef = await events.doc(title.toString()).get()
+    let event = eventRef.data()
+    event.title = title
+    res.send({"success": true, "data": event})
+  }
+
+});
+
+/**
+ * creates a new event object in firestore using client provided fields 
+ * 
+ * Precondition: Client must provide all required fields for the event, 
+ *               must not be a duplicate of an existing event
+ * Postcondition: One new event will be created and stored in firestore
+*/
+app.post('/createEvent', async (req,res) => {
+  const event: Event = req.body
+
+  if(event.title == null ||event.content.description == null ||event.content.date == null ||
+    event.content.topic == null || event.content.rsvp_link == null || event.content.period == null
+    || event.content.type == null) {
+      res.send({"success": false, "message": "one or more fields is missing"});
+  }
+  else {
+    const newEvent = events.doc(event.title);
+    newEvent.set(event.content)
+    res.send({"success": true, "data": event})
+  }
+})
+
+/**
+   * querying the database for the event with the event title and deleting it
+   * 
+   * Precondition: request body must have a event title
+   * Postcondition: only a singular event will be deleted
+*/
+app.delete('/deleteEvent', async (req,res) => {
+  const title: string = req.body.title
+  if(title == null) {
+    res.send({"success": false, "message": "one or more fields is missing"})
+  }
+  else {
+    events.doc(title).delete()
+    res.send({"success": true})
+  }
+})
+
+/**
+ * updates the specified field of a event with specified content
+ * 
+ * Precondition: request body must have a event title, field, and new content
+ * Postcondition: the specified data of a singular event will be updated
+*/
+app.post('/updateEvent', async (req, res) => {
+  const title: string = req.body.title
+  const field: string = req.body.field
+  const content: string = req.body.content
+
+  if (title == null || field == null || content == null) {
+    res.send({"success": true, "message": "one or more fields is missing"})
+  }
+  else {
+    events.doc(title).update({field: content})
+    res.send({"success": true, "data": []});
+  }
+})
 
 
 app.get('/*', (req, res) => {

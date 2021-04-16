@@ -49,3 +49,21 @@ export type Club = {
     "title": string,
     "content": club_content
 }
+
+
+export type event_content = {
+    "date": string,
+    "period": string,
+    "type": string,
+    "topic": string,
+    "description": string,
+    "rsvp_link": string
+}
+
+export type Event = {
+    "title": string,
+    "content": event_content
+}
+
+
+
