@@ -7,8 +7,9 @@ import {
   TitleContainer,
   FilterBarContainer,
 } from '../ExploreCoursesStyles';
+import { TitleProps } from '../types/PropertyTypes';
 
-const Title = () => (
+const Title = (props: TitleProps) => (
   <TitleBackground>
     <TitleBackgroundSolid>
       <TitleContainer>
@@ -18,7 +19,7 @@ const Title = () => (
           broaden your horizons.
         </p>
       </TitleContainer>
-      <FilterBar />
+      <FilterBar {...props} />
     </TitleBackgroundSolid>
     <TitleBackgroundGradient>
       <FilterBarContainer>
