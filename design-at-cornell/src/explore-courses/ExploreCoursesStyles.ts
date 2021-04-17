@@ -211,6 +211,7 @@ export const ClearCategoryFilters = styled.p`
   text-decoration: underline;
   text-align: right;
   padding-right: 12px;
+  cursor: pointer;
 `;
 
 export const FilterDropdownScrollContainer = styled.ul`
@@ -258,6 +259,7 @@ export const Checkbox = styled.div<{ checked: boolean }>`
   border: solid;
   background: ${({ checked }) => checked ? 'black' : 'white'};
   border-color: black;
+  cursor: pointer;
   img {
     display: block;
     margin-left: auto;
