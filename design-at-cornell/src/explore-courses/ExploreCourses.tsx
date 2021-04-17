@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
+<<<<<<< HEAD
 import {
   PageContainer,
   Divider,
@@ -9,10 +11,13 @@ import {
   TagsContainer,
   Tag,
 } from './ExploreCoursesStyles';
+=======
+import Courses from './courses/Courses';
+>>>>>>> master
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
 
-type Course = {
+export type Course = {
   courseCode: string;
   courseTitle: string;
   tags: string[];
@@ -56,6 +61,7 @@ const ExploreCourses = () => {
     new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
   );
 
+<<<<<<< HEAD
   const courseBubbles = (
     <CourseGrid>
       {courses
@@ -98,8 +104,18 @@ const ExploreCourses = () => {
       <Title filterData={filterData} dropdownInfo={FilterDropdowns} onChange={setfilterData} />
       {divider}
       {courseBubbles}
+=======
+  return (
+    <PageContainer>
+      <Title
+        filterData={filterData}
+        dropdownInfo={FilterDropdowns}
+        onChange={setfilterData}
+      />
+      <Courses {...courses} />
+>>>>>>> master
     </PageContainer>
   );
-};
+}
 
 export default ExploreCourses;

@@ -268,7 +268,7 @@ export const Checkbox = styled.div<{ checked: boolean }>`
   }
 `;
 
-export const Sort = styled.div`
+export const SortBy = styled.div`
   display: flex;
   flex-direction: row;
   width: fit-content;
@@ -280,7 +280,7 @@ export const Sort = styled.div`
     font-size: 20px;
     line-height: 23px;
     margin: 0;
-    color: #828282;
+    color: ${colors.gray};
   }
 
   img {
@@ -300,13 +300,17 @@ export const CourseGrid = styled.div`
   padding-right: 80px;
 `;
 
-export const CourseBubble = styled.div`
+export const CourseContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 289px;
   height: 197px;
 
+<<<<<<< HEAD
   background: #7cd0ff;
+=======
+  background: ${colors.blue};
+>>>>>>> master
   border-radius: 8px;
   margin: 20px;
 
