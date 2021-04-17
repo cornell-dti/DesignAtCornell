@@ -5,7 +5,7 @@ import { pages } from '../constants/pages';
 const Header = () => {
   const navigations = (
     <Nav>
-      {pages.map(page => (
+      {pages.map((page) => (
         <StyledLink key={page.name} to={page.url}>
           <p>{page.name}</p>
         </StyledLink>

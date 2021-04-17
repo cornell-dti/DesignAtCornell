@@ -6,7 +6,7 @@ export type courseContent = {
   roster: string;
   credits: number;
   major: string;
-  design_areas: string[];
+  designAreas: string[];
   semester: string[];
 };
 

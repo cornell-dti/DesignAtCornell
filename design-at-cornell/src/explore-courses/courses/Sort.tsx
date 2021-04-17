@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Divider, 
-  SortBy
-} from '../ExploreCoursesStyles';
+import { Divider, SortBy } from '../ExploreCoursesStyles';
 
 const Sort = () => (
   <Divider>
@@ -11,6 +8,6 @@ const Sort = () => (
       <img src={require('../../static/images/sort-triangle.svg')} alt="sort" />
     </SortBy>
   </Divider>
-)
+);
 
 export default Sort;

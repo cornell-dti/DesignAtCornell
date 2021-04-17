@@ -10,7 +10,7 @@ type Page = {
 const Footer = () => {
   const column = (pages: Page[]) => (
     <FooterColumnn>
-      {pages.map(page => (
+      {pages.map((page) => (
         <StyledLink key={page.name} to={page.url}>
           <p>{page.name}</p>
         </StyledLink>

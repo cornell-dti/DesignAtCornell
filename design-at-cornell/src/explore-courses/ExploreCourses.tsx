@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
-<<<<<<< HEAD
 import {
   PageContainer,
   Divider,
-  Sort,
+  SortBy,
   CourseGrid,
-  CourseBubble,
+  CourseContainer,
   TagsContainer,
   Tag,
 } from './ExploreCoursesStyles';
-=======
 import Courses from './courses/Courses';
->>>>>>> master
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
 
@@ -61,7 +57,6 @@ const ExploreCourses = () => {
     new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
   );
 
-<<<<<<< HEAD
   const courseBubbles = (
     <CourseGrid>
       {courses
@@ -75,7 +70,7 @@ const ExploreCourses = () => {
           return true;
         })
         .map((course) => (
-          <CourseBubble>
+          <CourseContainer>
             <h6>{course.courseCode}</h6>
             <p>{course.courseTitle}</p>
             <TagsContainer>
@@ -85,17 +80,17 @@ const ExploreCourses = () => {
                 </Tag>
               ))}
             </TagsContainer>
-          </CourseBubble>
+          </CourseContainer>
         ))}
     </CourseGrid>
   );
 
   const divider = (
     <Divider>
-      <Sort>
+      <SortBy>
         <p>Sort By</p>
         <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
-      </Sort>
+      </SortBy>
     </Divider>
   );
 
@@ -104,18 +99,8 @@ const ExploreCourses = () => {
       <Title filterData={filterData} dropdownInfo={FilterDropdowns} onChange={setfilterData} />
       {divider}
       {courseBubbles}
-=======
-  return (
-    <PageContainer>
-      <Title
-        filterData={filterData}
-        dropdownInfo={FilterDropdowns}
-        onChange={setfilterData}
-      />
-      <Courses {...courses} />
->>>>>>> master
     </PageContainer>
   );
-}
+};
 
 export default ExploreCourses;

@@ -7,8 +7,8 @@ import { Course } from '../ExploreCourses';
 const Courses = (courses: Course[]) => {
   const courseBubbles = (
     <CourseGrid>
-      {Object.values(courses).map(course => (
-        <CourseBubble 
+      {Object.values(courses).map((course) => (
+        <CourseBubble
           key={course.courseCode}
           courseCode={course.courseCode}
           courseTitle={course.courseTitle}
