@@ -18,6 +18,7 @@ export const FooterColumnn = styled.div`
   width: fit-content;
   height: 100%;
   justify-content: space-between;
+  font-weight: bold;
 `
 
 export const Logo = styled(Link)`
@@ -32,6 +33,33 @@ export const Logo = styled(Link)`
     font-size: 16px;
     line-height: 19px;
     text-align: left;
+  }
+
+  &:focus, &:hover, &:active, &:visited, &:link {
+    text-decoration: none;
+    color: black;
+  }
+`
+
+export const DTILogo = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  p {
+    width: 95px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: black;
   }
 
   &:focus, &:hover, &:active, &:visited, &:link {

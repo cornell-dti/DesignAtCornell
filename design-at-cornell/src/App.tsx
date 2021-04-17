@@ -10,9 +10,8 @@ import ExploreCourses from './explore-courses/ExploreCourses.lazy';
 import About from './about/About.lazy';
 import Contact from './contact/Contact.lazy';
 import PageNotFound from './404/PageNotFound.lazy';
-
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import Header from './header/Header.lazy';
+import Footer from './footer/Footer.lazy';
 
 function App() {
   return (
