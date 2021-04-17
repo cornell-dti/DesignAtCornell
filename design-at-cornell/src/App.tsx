@@ -12,6 +12,7 @@ import Contact from './contact/Contact.lazy';
 import PageNotFound from './404/PageNotFound.lazy';
 import Header from './header/Header.lazy';
 import Footer from './footer/Footer.lazy';
+import Clubs from './clubs/Clubs.lazy';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/explore-courses" component={ExploreCourses} />
+            <Route path="/student-organizations" component={Clubs} />
             <Route exact path="/" component={Homepage} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
