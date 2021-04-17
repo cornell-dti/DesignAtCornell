@@ -1,58 +1,58 @@
 import {majors} from './server'
 
 const csv =  require('csv-parser')
-const fs_majors_read = require('fs')
-const majors_csv = []
+const fsMajorsRead = require('fs')
+const majorsCSV = []
 
 type formatMajor = {
     "title": string,
-    "academic_level": string,
-    "department_page": string,
-    "design_areas": string[],
+    "academicLevel": string,
+    "departmentPage": string,
+    "designAreas": string[],
     "reasons": Reason[],
     "school": string
 }
 
 type Reason = {
-    "first_name": string,
-    "grad_year": number,
+    "firstName": string,
+    "gradYear": number,
     "response": string
 }
 
-let roster_sem = 'SP21'
+let rosterSem = 'SP21'
 
-function createMajors (format_majors: formatMajor[]) {
-    for(let i = 0; i < format_majors.length; i++) {
-        const newMajor = majors.doc(format_majors[i].title)
+function createMajors (formatMajors: formatMajor[]) {
+    for(let i = 0; i < formatMajors.length; i++) {
+        const newMajor = majors.doc(formatMajors[i].title)
         newMajor.set({
-            "title": format_majors[i].title,
-            "academic_level": format_majors[i].academic_level,
-            "department_page": format_majors[i].department_page,
-            "design_areas": format_majors[i].design_areas,
-            "reasons": format_majors[i].reasons,
-            "school": format_majors[i].school
+            "title": formatMajors[i].title,
+            "academicLevel": formatMajors[i].academicLevel,
+            "departmentPage": formatMajors[i].departmentPage,
+            "designAreas": formatMajors[i].designAreas,
+            "reasons": formatMajors[i].reasons,
+            "school": formatMajors[i].school
         })
     }
 }
 
-fs_majors_read.createReadStream('./website_data_csv/courses.csv')
+fsMajorsRead.createReadStream('./website_data_csv/courses.csv')
 .pipe(csv())
-.on('data', (data) => majors_csv.push(data))
+.on('data', (data) => majorsCSV.push(data))
 .on('end', () => {
-    let formatted_majors:formatMajor[] = []
+    let formattedMajors:formatMajor[] = []
     //converting each course (CSV object) into formatCourse (JSON object)
-    for(let i = 0; i < majors_csv.length; i++) {
-        let f_major: formatMajor = {
-            "title": majors_csv[i].title,
-            "academic_level": majors_csv[i].academic_level,
-            "design_areas": majors_csv[i].design_areas.split(", "),
-            "reasons": majors_csv[i].reasons.split(", "),
-            "school": majors_csv[i].school,
-            "department_page": majors_csv[i].department_page,
+    for(let i = 0; i < majorsCSV.length; i++) {
+        let fMajor: formatMajor = {
+            "title": majorsCSV[i].title,
+            "academicLevel": majorsCSV[i].academicLevel,
+            "designAreas": majorsCSV[i].designAreas.split(", "),
+            "reasons": majorsCSV[i].reasons.split(", "),
+            "school": majorsCSV[i].school,
+            "departmentPage": majorsCSV[i].departmentPage,
         }
-        formatted_majors.push(f_major)
+        formattedMajors.push(fMajor)
     }
-    createMajors(formatted_majors)
+    createMajors(formattedMajors)
     console.log("added majors to firebase")
 })
 

@@ -1,7 +1,7 @@
 import {events} from './server'
 
 const csv =  require('csv-parser')
-const fs_events_read = require('fs')
+const fsEventsRead = require('fs')
 const eventsCSV = []
 
 type formatEvent = {
@@ -10,11 +10,11 @@ type formatEvent = {
     "type": string, 
     "period": string,
     "date": string,
-    "rsvp_link": string
+    "rsvpLink": string
     "description": string
 }
 
-let roster_sem = 'SP21'
+let rosterSem = 'SP21'
 
 function createEvents (formatEvents: formatEvent[]) {
     for(let i = 0; i < formatEvents.length; i++) {
@@ -25,30 +25,30 @@ function createEvents (formatEvents: formatEvent[]) {
             "date": formatEvents[i].date,
             "type": formatEvents[i].type,
             "period": formatEvents[i].period,
-            "rsvp_link": formatEvents[i].rsvp_link,
+            "rsvpLink": formatEvents[i].rsvpLink,
             "description": formatEvents[i].description
         })
     }
 }
 
-fs_events_read.createReadStream('./website_data_csv/courses.csv')
+fsEventsRead.createReadStream('./website_data_csv/courses.csv')
 .pipe(csv())
 .on('data', (data) => eventsCSV.push(data))
 .on('end', () => {
-    let formatted_events:formatEvent[] = []
+    let formattedEvents:formatEvent[] = []
     //converting each course (CSV object) into formatCourse (JSON object)
     for(let i = 0; i < eventsCSV.length; i++) {
-        let f_event: formatEvent = {
+        let fEvent: formatEvent = {
             "title": eventsCSV[i].title,
             "topic": eventsCSV[i].topic,
             "date": eventsCSV[i].date,
             "type": eventsCSV[i].type,
             "period": eventsCSV[i].period,
-            "rsvp_link": eventsCSV[i].rsvp_link,
+            "rsvpLink": eventsCSV[i].rsvpLink,
             "description": eventsCSV[i].description
         }
-        formatted_events.push(f_event)
+        formattedEvents.push(fEvent)
     }
-    createEvents(formatted_events)
+    createEvents(formattedEvents)
     console.log("added events to firebase")
 })
