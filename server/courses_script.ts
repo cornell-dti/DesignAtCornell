@@ -1,8 +1,9 @@
 import {courses} from './server'
 
+
 const csv =  require('csv-parser')
-const fs_courses_read = require('fs')
-const courses_csv = []
+const fsCoursesRead = require('fs')
+const coursesCSV = []
 
 type formatCourse = {
     "id": string,
@@ -12,53 +13,53 @@ type formatCourse = {
     "credits": number,
     "major": string,
     "description": string,
-    "design_areas": string[],
-    "course_roster": string,
-    "course_site": string
+    "designAreas": string[],
+    "courseRoster": string,
+    "courseSite": string
 
 }
 
-let roster_sem = 'SP21'
+let rosterSem = 'SP21'
 
-function createCourses (format_courses: formatCourse[]) {
-    for(let i = 0; i < format_courses.length; i++) {
-        let course_id_collection = courses.doc(roster_sem).collection(format_courses[i].id)
-        const newCourse = course_id_collection.doc(format_courses[i].code.toString())
+function createCourses (formatCourses: formatCourse[]) {
+    for(let i = 0; i < formatCourses.length; i++) {
+        let courseIDCollection = courses.doc(rosterSem).collection(formatCourses[i].id)
+        const newCourse = courseIDCollection.doc(formatCourses[i].code.toString())
         newCourse.set({
-            "title": format_courses[i].title,
-            "semester": format_courses[i].semester,
-            "credits": format_courses[i].credits,
-            "major": format_courses[i].major,
-            "description": format_courses[i].description,
-            "design_areas": format_courses[i].design_areas,
-            "course_roster": format_courses[i].course_roster,
-            "course_site": format_courses[i].course_site,
+            "title": formatCourses[i].title,
+            "semester": formatCourses[i].semester,
+            "credits": formatCourses[i].credits,
+            "major": formatCourses[i].major,
+            "description": formatCourses[i].description,
+            "designAreas": formatCourses[i].designAreas,
+            "courseRoster": formatCourses[i].courseRoster,
+            "courseSite": formatCourses[i].courseSite,
         })
     }
 }
 
-fs_courses_read.createReadStream('./website_data_csv/courses.csv')
+fsCoursesRead.createReadStream('./website_data_csv/courses.csv')
 .pipe(csv())
-.on('data', (data) => courses_csv.push(data))
+.on('data', (data) => coursesCSV.push(data))
 .on('end', () => {
-    let formatted_courses:formatCourse[] = []
+    let formattedCourses:formatCourse[] = []
     //converting each course (CSV object) into formatCourse (JSON object)
-    for(let i = 0; i < courses_csv.length; i++) {
-        let f_course:formatCourse = {
-            "id" : courses_csv[i].tag.split(" ")[0],
-            "code": parseInt(courses_csv[i].tag.split(" ")[1]),
-            "title": courses_csv[i].title,
-            "semester": courses_csv[i].semester,
-            "credits": parseInt(courses_csv[i].credits),
-            "major": courses_csv[i].major,
-            "description": courses_csv[i].description,
-            "design_areas": courses_csv[i].design_areas.split(", "),
-            "course_roster": courses_csv[i].course_roster,
-            "course_site": courses_csv[i].course_site
+    for(let i = 0; i < coursesCSV.length; i++) {
+        let fCourse:formatCourse = {
+            "id" : coursesCSV[i].tag.split(" ")[0],
+            "code": parseInt(coursesCSV[i].tag.split(" ")[1]),
+            "title": coursesCSV[i].title,
+            "semester": coursesCSV[i].semester,
+            "credits": parseInt(coursesCSV[i].credits),
+            "major": coursesCSV[i].major,
+            "description": coursesCSV[i].description,
+            "designAreas": coursesCSV[i].designAreas.split(", "),
+            "courseRoster": coursesCSV[i].courseRoster,
+            "courseSite": coursesCSV[i].courseSite
         }
-        formatted_courses.push(f_course)
+        formattedCourses.push(fCourse)
     }
-    createCourses(formatted_courses)
+    createCourses(formattedCourses)
     console.log("added courses to firebase")
 })
 
