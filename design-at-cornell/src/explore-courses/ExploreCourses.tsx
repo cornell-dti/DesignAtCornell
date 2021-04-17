@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
+import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
-import {
-  PageContainer,
-  Divider,
-  Sort,
-  CourseGrid,
-  CourseBubble,
-  TagsContainer,
-  Tag
-} from './ExploreCoursesStyles';
+import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
 
-type Course = {
+export type Course = {
   courseCode: string;
   courseTitle: string;
   tags: string[];
@@ -33,40 +26,6 @@ const ExploreCourses = () => {
     Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
   ));
 
-  const courseBubbles = (
-    <CourseGrid>
-      {courses
-        .filter(({ tags }) => {
-          const credits = filterData.get(Category['Credits']);
-          if (credits === undefined || (credits.size > 0 && Array.from(credits).every(box => !box.includes(tags[1][0]))))
-            return false;
-          return true;
-        })
-        .map(course => (
-          <CourseBubble>
-            <h6>{course.courseCode}</h6>
-            <p>{course.courseTitle}</p>
-            <TagsContainer>
-              {course.tags.map(tag => (
-                <Tag>
-                  <p>{tag}</p>
-                </Tag>
-              ))}
-            </TagsContainer>
-          </CourseBubble>
-        ))}
-    </CourseGrid>
-  );
-
-  const divider = (
-    <Divider>
-      <Sort>
-        <p>Sort By</p>
-        <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
-      </Sort>
-    </Divider>
-  );
-
   return (
     <PageContainer>
       <Title
@@ -74,10 +33,9 @@ const ExploreCourses = () => {
         dropdownInfo={FilterDropdowns}
         onChange={setfilterData}
       />
-      {divider}
-      {courseBubbles}
+      <Courses {...courses} />
     </PageContainer>
   );
-};
+}
 
 export default ExploreCourses;

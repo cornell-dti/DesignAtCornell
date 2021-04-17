@@ -16,16 +16,16 @@ import Footer from './footer/Footer.lazy';
 function App() {
   return (
     <Router>
-      <div>
+      <div data-testid="App">
         <Header />
-          <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/explore-courses" component={ExploreCourses} />
-            <Route exact path="/" component={Homepage} />
-            <Route path="/*" component={PageNotFound} />
-          </Switch>
-          <Footer />
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/explore-courses" component={ExploreCourses} />
+          <Route exact path="/" component={Homepage} />
+          <Route path="/*" component={PageNotFound} />
+        </Switch>
+        <Footer />
       </div>
     </Router>
   );
