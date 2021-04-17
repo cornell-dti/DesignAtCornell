@@ -3,10 +3,12 @@ import FilterCategoryButton from './FilterCategoryButton';
 import { FilterCategoryProps } from '../types/PropertyTypes';
 import { FilterCategoryContainer } from '../ExploreCoursesStyles';
 import FilterDropdown from './FilterDropdown';
+import FilterDropdownScroll from './FilterDropdownScroll';
 
 const FilterCategory = (props: FilterCategoryProps) => {
     const open = props.open;
     const category = props.category;
+    const dropdownType = props.scroll ? FilterDropdownScroll : FilterDropdown;
     return (
         <FilterCategoryContainer>
             <FilterCategoryButton
@@ -15,7 +17,7 @@ const FilterCategory = (props: FilterCategoryProps) => {
                 applied={props.checkboxData.size}
                 onClick={props.onToggle}
             />
-            {open && <FilterDropdown {...props} />}
+            {open && dropdownType({ ...props })}
         </FilterCategoryContainer>
     );
 };

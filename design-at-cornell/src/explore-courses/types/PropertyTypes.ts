@@ -16,12 +16,15 @@ export type TitleProps = {
 };
 
 export type FilterCategoryProps = FilterDropdownProps & {
+    readonly scroll: boolean;
     readonly category: Category;
     readonly open: boolean;
     readonly onToggle: filterDropdownToggleHandler;
 };
 
-export type FilterDropdownProps = FilterDropdownInfo & {
+export type FilterDropdownProps = {
+    readonly checkboxLabels: ReadonlyArray<string>;
+    readonly expand: boolean;
     readonly checkboxData: ReadonlySet<string>;
     readonly onCheck: filterCategoryCheckHandler;
     readonly onClear: filterCategoryClearHandler;
