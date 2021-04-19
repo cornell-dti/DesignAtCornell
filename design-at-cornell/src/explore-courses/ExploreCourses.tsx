@@ -22,8 +22,6 @@ const ExploreCourses = () => {
     Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
   ));
 
-  console.log(courses);
-
   return (
     <PageContainer>
       <Title
