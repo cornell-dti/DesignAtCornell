@@ -66,11 +66,9 @@ export const FilterBarContainer = styled.div`
   display: flex;
   width: 100%;
   height: 15%;
-  align-items: center;
-  justify-content: space-between;
-  /* align-items: flex-start;
+  align-items: flex-start;
   padding-top: 26px;
-  padding-bottom: 24px; */
+  padding-bottom: 24px;
 
   p {
     width: 100%;
@@ -86,6 +84,7 @@ export const SearchBar = styled.input<{ width: string; background: string }>`
   height: 28px;
   border-radius: 43px;
   padding-left: 10px;
+  margin-right: 25px;
   border-style: none;
   background: ${({ background }) => background};
   background-image: url(${magnifyingGlass});
