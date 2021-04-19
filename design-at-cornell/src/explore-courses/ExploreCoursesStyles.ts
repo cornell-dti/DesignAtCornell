@@ -308,7 +308,7 @@ export const SortBy = styled.div`
     font-size: 20px;
     line-height: 23px;
     margin: 0;
-    color: ${colors.gray};
+    color: ${colors.darkGray};
   }
 
   img {
@@ -369,7 +369,7 @@ export const CourseNumber = styled.div`
     line-height: 19px;
     text-align: start;
     margin: 0;
-    color: #898989;
+    color:${colors.gray};
   }
 `;
 
