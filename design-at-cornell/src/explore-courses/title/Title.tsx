@@ -5,8 +5,9 @@ import {
   TitleContainer,
   QuizButton,
 } from '../ExploreCoursesStyles';
+import { TitleProps } from '../types/PropertyTypes';
 
-const Title = () => (
+const Title = (props: TitleProps) => (
   <TitleBackground>
     <TitleContainer>
       <h1>Explore Courses</h1>
@@ -15,7 +16,7 @@ const Title = () => (
         <p>Taking the Design Course Quiz</p>
       </QuizButton>
     </TitleContainer>
-    <FilterBar />
+    <FilterBar {...props} />
   </TitleBackground>
 )
 
