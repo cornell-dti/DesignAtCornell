@@ -1,4 +1,4 @@
-export type course_content = {
+export type CourseContent = {
   "title": string,
   "description": string,
   "syllabus": string,
@@ -7,7 +7,7 @@ export type course_content = {
   "credits": number,
   "major": string,
   "designAreas": string[],
-  "semester": string[],
+  "semester": string,
   "id": string, 
   "code": number
 }
@@ -15,5 +15,5 @@ export type course_content = {
 export type Course = {
   "id": string, 
   "code": number,
-  "content": course_content
+  "content": CourseContent
 }

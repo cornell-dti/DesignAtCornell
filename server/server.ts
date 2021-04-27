@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import {Course, course_content} from './types'
+import { Course, CourseContent } from './types'
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -35,15 +35,15 @@ app.get("/getCourses", async (req, res) => {
   let course_id = req.query.id
   let course_code = req.query.code
   const localCourses: Course[] = [];
-  let collectionIncrementer = 0; 
- 
-  if(course_id == null) {
+  let collectionIncrementer = 0;
+
+  if (course_id == null) {
     const course_types = (await courses.doc(roster_sem).listCollections())
     const collections = course_types.map(collection => collection.listDocuments())
 
-    for(const collection of collections) {
+    for (const collection of collections) {
       let c_id = course_types[collectionIncrementer].id
-      for(const docRef of await collection) {
+      for (const docRef of await collection) {
         let c_code = docRef.id
         let course: Course = (await docRef.get()).data() as Course
         course.id = c_id
@@ -53,14 +53,14 @@ app.get("/getCourses", async (req, res) => {
     }
   }
   else {
-     const desiredCourse = (await courses.doc(roster_sem).collection(course_id.toString()).get())
-    .docs.filter(doc => doc.id == course_code.toString())
-    for(const doc of desiredCourse) {
+    const desiredCourse = (await courses.doc(roster_sem).collection(course_id.toString()).get())
+      .docs.filter(doc => doc.id == course_code.toString())
+    for (const doc of desiredCourse) {
       let course: Course = doc.data() as Course
       localCourses.push(course);
     }
   }
-  res.send({"success": true, "data": localCourses});
+  res.send({ "success": true, "data": localCourses });
 })
 /**
  * creates a new course object in firestore using client provided fields 
@@ -73,17 +73,17 @@ app.post('/createCourse', async (req, res) => {
   const course_id: string = course.id
   const course_code: number = course.code
 
-  if(course.code == null || course.content.title == null || course.content.courseSite == null ||
+  if (course.code == null || course.content.title == null || course.content.courseSite == null ||
     course.content.courseRoster == null || course.content.description == null ||
     course.id == null || course.content.semester.length == 0 || course.content.major == null ||
     course.content.designAreas.length == 0) {
-      res.send({"success": false, "message": "one or more fields is missing"});
-    }
+    res.send({ "success": false, "message": "one or more fields is missing" });
+  }
   else {
     let course_id_collection = courses.doc(roster_sem).collection(course_id)
     const newCourse = course_id_collection.doc(course_code.toString());
     newCourse.set(course.content)
-    res.send({"success": true, "data": course})
+    res.send({ "success": true, "data": course })
   }
 })
 /**
@@ -91,17 +91,17 @@ app.post('/createCourse', async (req, res) => {
    * Precondition: request body must have a course id and course code
    * Postcondition: only a singular course will be deleted
 */
-app.delete('/deleteCourse', async (req,res) => {
+app.delete('/deleteCourse', async (req, res) => {
   const course_id: string = req.body.id
   const course_code: number = req.body.code
-    
-  if(course_id == null || course_code == null) {
-    res.send({"success": false, "message": "One or more fields is missing"})
+
+  if (course_id == null || course_code == null) {
+    res.send({ "success": false, "message": "One or more fields is missing" })
   }
   else {
     courses.doc(roster_sem).collection(course_id).doc(course_code.toString()).delete()
-    res.send({"success": true})
-  }   
+    res.send({ "success": true })
+  }
 })
 /**
  * updates the specified field of a course with specified content
@@ -114,14 +114,14 @@ app.post('/updateCourse', async (req, res) => {
   const course_code: number = req.body.code
   const content = req.body.content;
 
-  if(content == null || field == null || course_code == null || course_id == null) {
+  if (content == null || field == null || course_code == null || course_id == null) {
     res.send("One or more fields is missing.");
   }
   else {
-    courses.doc(roster_sem).collection(course_id).doc(course_code.toString()).update({field: content})
+    courses.doc(roster_sem).collection(course_id).doc(course_code.toString()).update({ field: content })
     res.send(true);
   }
-  
+
 });
 
 

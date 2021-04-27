@@ -7,9 +7,9 @@ import {
 } from '../ExploreCoursesStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg'
-import { course_content } from '../../../../server/types';
+import { CourseContent } from '../../../../server/types';
 
-const CourseBubble = (course : course_content) => (
+const CourseBubble = (course : CourseContent) => (
   <CourseContainer
     style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
     onClick={() => window.location.href=course.courseRoster}>

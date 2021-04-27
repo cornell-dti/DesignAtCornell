@@ -1,3 +1,4 @@
+import { CourseContent } from "../../../../server/types";
 import Category from "./Category";
 import {
     filterBarChangeHandler,
@@ -9,8 +10,15 @@ import {
     filterSelectionBubbleClickHandler
 } from "./Handlers";
 
+export type FilterDataMap = ReadonlyMap<Category, ReadonlySet<string>>;
+
+export type CoursesProps = {
+    readonly courses: ReadonlyArray<CourseContent>;
+    readonly filterData: FilterDataMap;
+}
+
 export type TitleProps = {
-    readonly filterData: ReadonlyMap<Category, ReadonlySet<string>>;
+    readonly filterData: FilterDataMap;
     readonly dropdownInfo: ReadonlyMap<Category, FilterDropdownInfo>;
     readonly onChange: filterBarChangeHandler;
 };

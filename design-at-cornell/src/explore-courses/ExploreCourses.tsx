@@ -4,21 +4,33 @@ import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
 import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
-import Category from './types/Category';
-import { course_content } from '../../../server/types';
+import { CourseContent } from '../../../server/types';
+import { FilterDataMap } from './types/PropertyTypes';
+
+const removeDuplicates = (courses: readonly CourseContent[]) => {
+  const seen = new Set<string>();
+  return courses.filter(({ id, code }) => {
+    const key = id + ' ' + code;
+    if (!seen.has(key)) {
+      seen.add(key);
+      return true;
+    }
+    return false;
+  });
+};
 
 const ExploreCourses = () => {
 
-  const [courses, setCourses] = useState<course_content[]>([]);
+  const [courses, setCourses] = useState<ReadonlyArray<CourseContent>>([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/getCourses')
-      .then((res) => res.data.data)
-      .then(setCourses)
+      .get<{ success: boolean; data: CourseContent[] }>('http://localhost:3000/getCourses')
+      .then(res => res.data.data)
+      .then(rawCourses => setCourses(removeDuplicates(rawCourses)));
   }, []);
 
-  const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(new Map(
+  const [filterData, setfilterData] = useState<FilterDataMap>(new Map(
     Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
   ));
 
@@ -29,7 +41,7 @@ const ExploreCourses = () => {
         dropdownInfo={FilterDropdowns}
         onChange={setfilterData}
       />
-      <Courses {...courses} />
+      <Courses courses={courses} filterData={filterData} />
     </PageContainer>
   );
 }
