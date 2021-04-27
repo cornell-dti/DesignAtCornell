@@ -6,7 +6,7 @@ const Header = () => {
   const navigations = (
     <Nav>
       {pages.map(page => (
-        <StyledLink to={page.url}>
+        <StyledLink key={page.name} to={page.url}>
           <p>{page.name}</p>
         </StyledLink>
       ))}
