@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageContainer } from './AreasOfStudyStyles';
 import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
+import axios from 'axios';
+import { Major, MajorContent } from '../../../server/types';
 
 export type AreaOfStudy = {
   name: string;
@@ -9,49 +11,62 @@ export type AreaOfStudy = {
 };
 
 export type Studies = {
-  majors: AreaOfStudy[];
-  minors: AreaOfStudy[];
-  grad_studies: AreaOfStudy[];
+  readonly majors: ReadonlyArray<Major>;
+  readonly minors: ReadonlyArray<AreaOfStudy>;
+  readonly gradStudies: ReadonlyArray<AreaOfStudy>;
 }
 
 const AreasOfStudy = () => {
+
+  const [majors, setMajors] = useState<ReadonlyArray<Major>>([]);
+
+  /*
   const [majors] = useState<AreaOfStudy[]>([
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '}
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' }
   ]);
+  */
 
   const [minors] = useState<AreaOfStudy[]>([
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '}
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' }
   ]);
 
-  const [grad_studies] = useState<AreaOfStudy[]>([
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '},
-    {name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. '}
+  const [gradStudies] = useState<AreaOfStudy[]>([
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' },
+    { name: 'Applied Economics & Management', description: 'Major. Minor. Graduate. Product Design. Dyson. ' }
   ]);
+
+  const majorsURL = '';
+  useEffect(() => {
+    axios
+      .get<Major[]>(majorsURL)
+      .then(res => res.data)
+      .then(setMajors)
+  }, []);
 
   const studies: Studies = {
     majors: majors,
     minors: minors,
-    grad_studies: grad_studies
+    gradStudies: gradStudies
   }
 
   return (
     <PageContainer>
       <Title />
-      <Dashboard {...studies}/>
+      <Dashboard {...studies} />
     </PageContainer>
   );
 }

@@ -25,8 +25,8 @@ export type MajorContent = {
 }
 
 export type Major = {
-    "title": string,
-    "content": MajorContent
+    title: string,
+    content: MajorContent
 }
   
 export type Reason = {

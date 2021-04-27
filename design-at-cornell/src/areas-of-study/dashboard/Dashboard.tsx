@@ -26,7 +26,7 @@ const Dashboard = (studies: Studies) => {
           <h1>Graduate Studies</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...studies.grad_studies} />
+        <StudiesGrid {...studies.gradStudies} />
       </StudiesContainer>
       <ApplyTags />
     </DashboardContainer>
