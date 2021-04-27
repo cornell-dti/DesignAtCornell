@@ -1,61 +1,69 @@
 import React, { useState } from 'react';
 import Title from './title/Title';
+import { courseColors } from '../constants/colors';
 import {
   PageContainer,
-  Divider,
+  Divider, 
   Sort,
-  CourseGrid,
-  CourseBubble,
+  OrganizationGrid,
+  OrganizationBubble,
+  OrganizationName,
   TagsContainer,
   Tag
 } from './ClubsStyles';
 import FilterDropdowns from './title/FilterDropdowns';
 import ClubsCategory from './types/ClubsCategory';
 
-type Course = {
-  courseCode: string;
-  courseTitle: string;
-  tags: string[];
-};
+type Organization = {
+  "name": string, 
+  "for_credits": boolean,
+  "tags": string[]
+}
 
 const Clubs = () => {
 
-  const [courses] = useState<Course[]>([
-    { courseCode: "INFO 1300", courseTitle: "Introductory Design and Programming for the Web", tags: ["Information Science", "3 Credits"] },
-    { courseCode: "DEA 1500", courseTitle: "Introduction to Environmental Psychology", tags: ["Design and Enviro...", "3 Credits"] },
-    { courseCode: "FSAD 1120", courseTitle: "Fashion Design and Visual Thinking", tags: ["Fashion Design an...", "Fall"] },
-    { courseCode: "ART 2201", courseTitle: "Painting: Introduction to Painting", tags: ["Fine Arts", "3 Credits"] },
-    { courseCode: "ARCH 1101", courseTitle: "Design I", tags: ["Architecture", "3 Credits", "Fall"] },
-    { courseCode: "ART 2301", courseTitle: "Print Media: Introduction to Print Media", tags: ["Fine Arts", "3 Credits"] },
+  const [organizations, setOrganizations] = useState<Organization[]>([
+    {name: 'Design & Tech Initiative', for_credits: true, tags: ['tech', 'large']},
+    {name: 'Design & Tech Initiative', for_credits: false, tags: ['tech', 'large']},
+    {name: 'Design & Tech Initiative', for_credits: false, tags: ['tech', 'large']},
+    {name: 'Design & Tech Initiative', for_credits: true, tags: ['tech', 'large']},
+    {name: 'Design & Tech Initiative', for_credits: false, tags: ['tech', 'large']},
+    {name: 'Design & Tech Initiative', for_credits: true, tags: ['tech', 'large']}
   ]);
 
   const [filterData, setfilterData] = useState<ReadonlyMap<ClubsCategory, ReadonlySet<string>>>(new Map(
     Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
   ));
 
-  const courseBubbles = (
-    <CourseGrid>
-      {courses.map(course => (
-        <CourseBubble>
-          <h6>{course.courseCode}</h6>
-          <p>{course.courseTitle}</p>
+  const clubBubbles = (
+    <OrganizationGrid>
+      {organizations.map(org => (
+        <OrganizationBubble 
+          style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+        >
+          <OrganizationName>
+            <p>{org.for_credits? 'For Credits' : ''}</p>
+            <img src={require('../static/images/bookmark.svg')} alt="save course" />
+          </OrganizationName>
+          <p>{org.name}</p>
           <TagsContainer>
-            {course.tags.map(tag => (
-              <Tag>
+            {org.tags.map(tag => (
+              <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
                 <p>{tag}</p>
               </Tag>
             ))}
           </TagsContainer>
-        </CourseBubble>
+        </OrganizationBubble>
       ))}
-    </CourseGrid>
+    </OrganizationGrid>
   );
 
   const divider = (
     <Divider>
       <Sort>
-        <p>Sort By</p>
-        <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
+        <h6>Sort By &nbsp;</h6>
+        <p>recommended</p>
+        <img src={require('../static/images/down-arrow.png')} alt="sort" />
       </Sort>
     </Divider>
   );
@@ -68,7 +76,7 @@ const Clubs = () => {
         onChange={setfilterData}
       />
       {divider}
-      {courseBubbles}
+      {clubBubbles}
     </PageContainer>
   );
 };

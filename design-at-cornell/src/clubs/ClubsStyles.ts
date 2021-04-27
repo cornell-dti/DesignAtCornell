@@ -9,27 +9,12 @@ export const PageContainer = styled.div`
 
 export const TitleBackground = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 551px;
-`;
-
-export const ClubsTitleBackgroundSolid = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 100%;
   background: ${colors.cyan};
   padding-left: 100px;
-  padding-right: 50px;
-`;
-
-export const TitleBackgroundGradient = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 20%;
-  height: 100%;
-  background: ${colors.cyan};
-  align-items: flex-end;
+  padding-right: 100px;
 `;
 
 export const TitleContainer = styled.div`
@@ -274,7 +259,13 @@ export const Sort = styled.div`
   width: fit-content;
   height: 100%;
   align-items: center;
-
+  h6 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0;
+    color: black;
+  }
   p {
     font-weight: bold;
     font-size: 20px;
@@ -282,15 +273,14 @@ export const Sort = styled.div`
     margin: 0;
     color: #828282;
   }
-
   img {
-    width: 21px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     margin-left: 10px;
   }
 `;
 
-export const CourseGrid = styled.div`
+export const OrganizationGrid = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -300,29 +290,19 @@ export const CourseGrid = styled.div`
   padding-right: 80px;
 `;
 
-export const CourseBubble = styled.div`
+export const OrganizationBubble = styled.div`
   display: flex;
   flex-direction: column;
   width: 289px;
   height: 197px;
-
-  background: #7CD0FF;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
   margin: 20px;
-
   padding: 25px;
   align-items: flex-start;
   justify-content: space-between;
-
-  h6 {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: start;
-    margin: 0;
-    color: white;
-  }
-
   p {
     font-weight: bold;
     font-size: 20px;
@@ -330,6 +310,24 @@ export const CourseBubble = styled.div`
     text-align: start;
     margin: 0;
     color: black;
+  }
+`;
+
+export const OrganizationName = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: start;
+    margin: 0;
+    color: #898989;
   }
 `;
 

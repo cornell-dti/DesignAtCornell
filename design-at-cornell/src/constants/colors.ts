@@ -5,3 +5,12 @@ export const colors = {
   cyan: '#00C8C8',
   transparentWhite: 'rgba(255, 255, 255, 0.53)',
 } as const;
+
+export const courseColors = [
+  '#BAE6FF', 
+  '#FFE5A1', 
+  '#FFC5EF', 
+  '#C9E1AA', 
+  '#FFCBBA', 
+  '#D3D2F7'
+];
