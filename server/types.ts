@@ -1,4 +1,4 @@
-export type course_content = {
+export type CourseContent = {
     "title": string,
     "description": string,
     "syllabus": string,
@@ -13,21 +13,20 @@ export type course_content = {
 export type Course = {
     "id": string, 
     "code": number,
-    "content": course_content
+    "content": CourseContent
 }
   
-export type major_content = {
-    "academic_level": string,
-    "department_page": string,
-    "design_areas": string[],
-    "reasons": Reason[],
-    "school": string
-  
+export type MajorContent = {
+    academicLevel: string,
+    departmentPage: string,
+    designAreas: string[],
+    reasons: Reason[],
+    school: string
 }
 
 export type Major = {
     "title": string,
-    "content": major_content
+    "content": MajorContent
 }
   
 export type Reason = {
@@ -36,7 +35,7 @@ export type Reason = {
     "response": string
 }
 
-export type club_content = {
+export type ClubContent = {
     "design_areas": string[],
     "org_type": string, 
     "size": string,
@@ -47,5 +46,5 @@ export type club_content = {
 
 export type Club = {
     "title": string,
-    "content": club_content
+    "content": ClubContent
 }

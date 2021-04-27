@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import {Course, course_content, Major, major_content, Reason, Club, club_content} from  './types'
+import {Course, CourseContent, Major, MajorContent, Reason, Club, ClubContent} from  './types'
 
 
 const serviceAccount = require("./designAtCornellServiceAccount.json");
@@ -154,7 +154,7 @@ app.post('/updateCourse', async (req, res) => {
     let majorDocs = await majors.get()
 
     for(const docRef of majorDocs.docs) {
-      let major_c: major_content = docRef.data() as major_content
+      let major_c: MajorContent = docRef.data() as MajorContent
       let major: Major = {
         "content" : major_c,
         "title" : docRef.id
@@ -166,7 +166,7 @@ app.post('/updateCourse', async (req, res) => {
   }
   else {
     let majorDocRef = await majors.doc(major_title.toString()).get()
-    let major_c: major_content = majorDocRef.data() as major_content
+    let major_c: MajorContent = majorDocRef.data() as MajorContent
     if(major_c == null) {
       res.send({"success": false, "message": "Major not found."})
     }
@@ -257,7 +257,7 @@ app.get('/getClubs', async (req, res)  =>  {
   if(club_title == null) {
     let clubDocs = await clubs.get()
     for(const docRef of clubDocs.docs) {
-      let club_c: club_content = docRef.data() as club_content
+      let club_c: ClubContent = docRef.data() as ClubContent
       let club: Club = {
         "content" : club_c,
         "title" : docRef.id
