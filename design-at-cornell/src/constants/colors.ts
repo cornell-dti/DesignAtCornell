@@ -6,5 +6,6 @@ export const colors = {
   gray: '#828282',
   lightGray: '#F5F5F5',
   blue: '#7CD0FF',
-  linkColor: '#009C80'
+  linkColor: '#009C80',
+  lightGreen: 'rgba(142, 214, 99, 0.17)'
 }
