@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { colors } from '../constants/colors';
 
 export const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 405px;
-  background: #F5F5F5;
+  background: ${colors.lightGray};
   padding: 126px 126px 100px 126px;
   justify-content: space-between;
 `
@@ -77,6 +78,6 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     text-decoration: none;
-    color: #009C80;
+    color: ${colors.linkColor};
   }
 `

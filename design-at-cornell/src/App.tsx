@@ -17,7 +17,7 @@ import Footer from './footer/Footer.lazy';
 function App() {
   return (
     <Router>
-      <div>
+      <div data-testid="App">
         <Header />
         <Switch>
           <Route path="/about" component={About} />
