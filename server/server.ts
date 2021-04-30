@@ -61,6 +61,7 @@ app.get("/getCourses", async (req, res) => {
         course.code = parseInt(cCode)
         localCourses.push(course)
       }
+      collectionIncrementer++
     }
   }
   else {
