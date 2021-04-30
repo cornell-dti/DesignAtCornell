@@ -6,7 +6,7 @@ enum Category {
     'Semester' = 'Semester',
     'Level' = 'Level',
     'Credits' = 'Credits'
-};
+}
 
 export const getSelections = (data: FilterDataMap, category: Category) => (
     data.get(category) || new Set()
