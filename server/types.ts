@@ -1,4 +1,4 @@
-export type course_content = {
+export type courseContent = {
     "title": string,
     "description": string,
     "syllabus": string,
@@ -6,46 +6,66 @@ export type course_content = {
     "roster": string,
     "credits": number,
     "major": string,
-    "design_areas": string[],
+    "designAreas": string[],
     "semester": string[],
 }
   
 export type Course = {
     "id": string, 
     "code": number,
-    "content": course_content
+    "content": courseContent
 }
   
-export type major_content = {
-    "academic_level": string,
-    "department_page": string,
-    "design_areas": string[],
+export type majorContent = {
+    "academicLevel": string,
+    "departmentPage": string,
+    "designAreas": string[],
     "reasons": Reason[],
     "school": string
+    "type": string
   
 }
 
 export type Major = {
     "title": string,
-    "content": major_content
+    "content": majorContent
 }
   
 export type Reason = {
-    "first_name": string,
-    "grad_year": number,
+    "firstName": string,
+    "gradYear": number,
     "response": string
 }
 
-export type club_content = {
-    "design_areas": string[],
-    "org_type": string, 
+export type clubContent = {
+    "designAreas": string[],
+    "orgType": string, 
     "size": string,
     "website": string,
-    "description": string
-    "credits": number
+    "description": string,
+    "credits": number,
+    "contact": string
 }
 
 export type Club = {
     "title": string,
-    "content": club_content
+    "content": clubContent
 }
+
+
+export type eventContent = {
+    "date": string,
+    "period": string,
+    "type": string,
+    "topic": string,
+    "description": string,
+    "rsvpLink": string
+}
+
+export type Event = {
+    "title": string,
+    "content": eventContent
+}
+
+
+
