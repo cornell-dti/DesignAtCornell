@@ -10,8 +10,9 @@ type formatClub = {
     "orgType": string, 
     "size": string,
     "website": string,
-    "description": string
-    "credits": number
+    "description": string,
+    "credits": number,
+    "contact": string
 }
 
 let rosterSem = 'SP21'
@@ -26,12 +27,13 @@ function createClubs (formatClubs: formatClub[]) {
             "designAreas": formatClubs[i].designAreas,
             "description": formatClubs[i].description,
             "website": formatClubs[i].website,
-            "credits": formatClubs[i].credits
+            "credits": formatClubs[i].credits,
+            "contact": formatClubs[i].contact
         })
     }
 }
 
-fsClubsRead.createReadStream('./website_data_csv/courses.csv')
+fsClubsRead.createReadStream('./website_data_csv/clubs.csv')
 .pipe(csv())
 .on('data', (data) => clubsCSV.push(data))
 .on('end', () => {
@@ -45,7 +47,8 @@ fsClubsRead.createReadStream('./website_data_csv/courses.csv')
             "website": clubsCSV[i].website,
             "credits": parseInt(clubsCSV[i].credits),
             "size": clubsCSV[i].size,
-            "description": clubsCSV[i].description
+            "description": clubsCSV[i].description,
+            "contact": clubsCSV[i].contact
         }
         formattedClubs.push(fClub)
     }

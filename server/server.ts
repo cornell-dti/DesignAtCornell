@@ -193,7 +193,8 @@ app.post('/createMajor', async (req, res) => {
   const major: Major = req.body
 
   if(major.title == null || major.content.academicLevel == null || major.content.departmentPage == null ||
-    major.content.designAreas == null || major.content.reasons == null || major.content.school == null) {
+    major.content.designAreas == null || major.content.reasons == null || major.content.school == null
+    || major.content.type == null) {
       res.send({"success": false, "message": "one or more fields is missing"});
     }
   else {
@@ -281,7 +282,7 @@ app.post('/createClub', async (req, res) => {
 
   if(club.title == null || club.content.description == null || club.content.website == null ||
     club.content.designAreas == null || club.content.size == null || club.content.credits == null
-    || club.content.orgType == null) {
+    || club.content.orgType == null || club.content.contact == null) {
       res.send({"success": false, "message": "one or more fields is missing"});
     }
   else {

@@ -22,6 +22,7 @@ export type majorContent = {
     "designAreas": string[],
     "reasons": Reason[],
     "school": string
+    "type": string
   
 }
 
@@ -41,8 +42,9 @@ export type clubContent = {
     "orgType": string, 
     "size": string,
     "website": string,
-    "description": string
-    "credits": number
+    "description": string,
+    "credits": number,
+    "contact": string
 }
 
 export type Club = {

@@ -10,7 +10,8 @@ type formatMajor = {
     "departmentPage": string,
     "designAreas": string[],
     "reasons": Reason[],
-    "school": string
+    "school": string,
+    "type": string
 }
 
 type Reason = {
@@ -30,12 +31,13 @@ function createMajors (formatMajors: formatMajor[]) {
             "departmentPage": formatMajors[i].departmentPage,
             "designAreas": formatMajors[i].designAreas,
             "reasons": formatMajors[i].reasons,
-            "school": formatMajors[i].school
+            "school": formatMajors[i].school,
+            "type": formatMajors[i].type
         })
     }
 }
 
-fsMajorsRead.createReadStream('./website_data_csv/courses.csv')
+fsMajorsRead.createReadStream('./website_data_csv/majors.csv')
 .pipe(csv())
 .on('data', (data) => majorsCSV.push(data))
 .on('end', () => {
@@ -49,6 +51,7 @@ fsMajorsRead.createReadStream('./website_data_csv/courses.csv')
             "reasons": majorsCSV[i].reasons.split(", "),
             "school": majorsCSV[i].school,
             "departmentPage": majorsCSV[i].departmentPage,
+            "type": majorsCSV[i].type
         }
         formattedMajors.push(fMajor)
     }
