@@ -1,4 +1,4 @@
-import { CourseInfo } from "../../../../server/types";
+import { Course } from "../../../../server/types";
 import Category from "./Category";
 import {
     filterBarChangeHandler,
@@ -13,7 +13,7 @@ import {
 export type FilterDataMap = ReadonlyMap<Category, ReadonlySet<string>>;
 
 export type CoursesProps = {
-    readonly courses: ReadonlyArray<CourseInfo>;
+    readonly courses: ReadonlyArray<Course>;
     readonly filterData: FilterDataMap;
 }
 

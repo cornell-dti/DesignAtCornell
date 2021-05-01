@@ -16,10 +16,14 @@ const Courses = ({ courses, filterData }: CoursesProps) => {
   const courseBubbles = (
     <CourseGrid>
       {courses
-        .filter(({ code, designAreas, major, semester, credits }) => {
+        .filter(({ code, content }) => {
+          const {
+             designAreas, major, semester, credits
+          } = content;
           if (selectedDesignAreas.size > 0 && !designAreas.some(area => selectedDesignAreas.has(area))) return false;
           if (selectedMajors.size > 0 && !selectedMajors.has(major)) return false;
-          if (selectedSemesters.size > 0 && !semester.split(", ").some(str => selectedSemesters.has(str))) return false;
+          console.log(typeof semester);
+          if (selectedSemesters.size > 0 && !semester.some(str => selectedSemesters.has(str))) return false;
           const levelString = (code - code % 1000).toString();
           if (selectedLevels.size > 0 && !selectedLevels.has(levelString)) return false;
           const creditsString = credits < 5 ? credits.toString() : '5+';

@@ -4,17 +4,20 @@ import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
 import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
-import { CourseInfo } from '../../../server/types';
+import { Course } from '../../../server/types';
 import { FilterDataMap } from './types/PropertyTypes';
 
 const ExploreCourses = () => {
 
-  const [courses, setCourses] = useState<ReadonlyArray<CourseInfo>>([]);
+  const [courses, setCourses] = useState<ReadonlyArray<Course>>([]);
 
   useEffect(() => {
     axios
-      .get<{ success: boolean; data: CourseInfo[] }>('http://localhost:3000/getCourses')
-      .then(res => res.data.data)
+      .get<{ success: boolean; data: Course[] }>('http://localhost:3000/getCourses')
+      .then(res => { 
+        console.log(res.data.data);
+        return res.data.data;
+      })
       .then(setCourses);
   }, []);
 
