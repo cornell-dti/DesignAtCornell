@@ -18,7 +18,11 @@ export type Studies = {
 
 const AreasOfStudy = () => {
 
-  const [majors, setMajors] = useState<ReadonlyArray<Major>>([]);
+  const [studies, setStudies] = useState<Studies>({
+    majors: [],
+    minors: [],
+    gradStudies: []
+  });
 
   const majorsURL = 'http://localhost:3000/getMajors';
   useEffect(() => {
@@ -28,14 +32,16 @@ const AreasOfStudy = () => {
         data: Major[];
       }>(majorsURL)
       .then(res => res.data.data)
-      .then(setMajors)
+      .then(allStudies => {
+        const majors = allStudies.filter(({ content }) => content.type === 'Major');
+        const minors = allStudies.filter(({ content }) => content.type === 'Minor');
+        setStudies({
+          majors: majors,
+          minors: minors,
+          gradStudies: [...majors, ...minors]
+        });
+      });
   }, []);
-
-  const studies: Studies = {
-    majors: majors,
-    minors: majors,
-    gradStudies: majors
-  }
 
   return (
     <PageContainer>
