@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, AreaOfStudyButton } from '../AreasOfStudyStyles';
-import { AreaOfStudy } from '../AreasOfStudy';
+import { Major } from '../../../../server/types';
 
-const StudiesGrid = (studies: AreaOfStudy[]) => (
+const StudiesGrid = ({ studies }: { studies: ReadonlyArray<Major> }) => (
   <Grid>
-    {Object.values(studies).map(study => (
-      <AreaOfStudyButton key={study.name}>
-        <h1>{study.name}</h1>
-        <p>{study.description}</p>
+    {Object.values(studies).map(({ title, content }) => (
+      <AreaOfStudyButton key={title}>
+        <h1>{title}</h1>
+        <p>{content.designAreas}</p>
       </AreaOfStudyButton>
     ))}
   </Grid>

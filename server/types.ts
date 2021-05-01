@@ -23,16 +23,15 @@ export type majorContent = {
     "departmentPage": string,
     "designAreas": string[],
     "reasons": Reason[],
-    "school": string
+    "school": string,
     "type": string
-  
 }
 
 export type Major = {
     "title": string,
     "content": majorContent
 }
-  
+
 export type Reason = {
     "firstName": string,
     "gradYear": number,

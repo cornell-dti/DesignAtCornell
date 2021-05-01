@@ -16,17 +16,17 @@ const Dashboard = (studies: Studies) => {
           <h1>Undergraduate Majors</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...studies.majors} />
+        <StudiesGrid studies={studies.majors} />
         <Divider>
           <h1>Undergraduate Minors</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...studies.minors} />
+        <StudiesGrid studies={studies.minors} />
         <Divider>
           <h1>Graduate Studies</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...studies.gradStudies} />
+        <StudiesGrid studies={studies.gradStudies} />
       </StudiesContainer>
       <ApplyTags />
     </DashboardContainer>
