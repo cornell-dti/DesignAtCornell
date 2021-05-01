@@ -5,11 +5,11 @@ import Title from './title/Title';
 import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
-import { course_content } from '../../../server/types';
+import { Course } from '../../../server/types';
 
 const ExploreCourses = () => {
 
-  const [courses, setCourses] = useState<course_content[]>([]);
+  const [courses, setCourses] = useState<Course[]>([]);
 
   useEffect(() => {
     axios
