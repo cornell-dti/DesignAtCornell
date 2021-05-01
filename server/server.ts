@@ -94,8 +94,8 @@ app.post('/createCourse', async (req, res) => {
   const courseId: string = course.id
   const courseCode: number = course.code
 
-  if(course.code == null || course.content.title == null || course.content.courseSite == null ||
-    course.content.courseRoster == null || course.content.description == null ||
+  if(course.code == null || course.content.title == null || course.content.site == null ||
+    course.content.roster == null || course.content.description == null ||
     course.id == null || course.content.semester.length == 0 || course.content.major == null ||
     course.content.designAreas.length == 0) {
       res.send({"success": false, "message": "one or more fields is missing"});
