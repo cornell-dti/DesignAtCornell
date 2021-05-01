@@ -17,7 +17,7 @@ const Courses = ({ courses, filterData }: CoursesProps) => {
     <CourseGrid>
       {courses
         .filter(({ code, designAreas, major, semester, credits }) => {
-          if (selectedDesignAreas.size > 0 && !designAreas.some(selectedDesignAreas.has)) return false;
+          if (selectedDesignAreas.size > 0 && !designAreas.some(area => selectedDesignAreas.has(area))) return false;
           if (selectedMajors.size > 0 && !selectedMajors.has(major)) return false;
           if (selectedSemesters.size > 0 && !semester.split(", ").some(str => selectedSemesters.has(str))) return false;
           const levelString = (code - code % 1000).toString();
