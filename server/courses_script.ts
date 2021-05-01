@@ -9,7 +9,7 @@ type formatCourse = {
     "id": string,
     "code": number
     "title": string,
-    "semester": string,
+    "semester": string[],
     "credits": number,
     "major": string,
     "description": string,
@@ -49,7 +49,7 @@ fsCoursesRead.createReadStream('./website_data_csv/courses.csv')
             "id" : coursesCSV[i].tag.split(" ")[0],
             "code": parseInt(coursesCSV[i].tag.split(" ")[1]),
             "title": coursesCSV[i].title,
-            "semester": coursesCSV[i].semester,
+            "semester": coursesCSV[i].semester.split(", "),
             "credits": parseInt(coursesCSV[i].credits),
             "major": coursesCSV[i].major,
             "description": coursesCSV[i].description,

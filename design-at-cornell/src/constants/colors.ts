@@ -5,8 +5,9 @@ export const colors = {
   darkGray: '#828282',
   gray: '#898989',
   lightGray: '#F5F5F5',
-  linkColor: '#009C80'
-}
+  linkColor: '#009C80',
+  lightGreen: 'rgba(142, 214, 99, 0.17)'
+};
 
 export const courseColors = [
   '#BAE6FF', 
@@ -15,4 +16,4 @@ export const courseColors = [
   '#C9E1AA', 
   '#FFCBBA', 
   '#D3D2F7'
-]
+];

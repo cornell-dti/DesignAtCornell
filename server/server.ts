@@ -55,19 +55,28 @@ app.get("/getCourses", async (req, res) => {
       let cId = courseTypes[collectionIncrementer].id
       for (const docRef of await collection) {
         let cCode = docRef.id
-        let course: Course = (await docRef.get()).data() as Course
-        course.id = cId
-        course.code = parseInt(cCode)
+        let cContent : courseContent = (await docRef.get()).data() as courseContent
+        let course: Course = {
+          id : cId,
+          code : parseInt(cCode),
+          content : cContent
+
+        }
         localCourses.push(course)
       }
       collectionIncrementer++
     }
   }
   else {
-    const desiredCourse = (await courses.doc(rosterSem).collection(courseId.toString()).get())
-      .docs.filter(doc => doc.id == courseCode.toString())
-    for (const doc of desiredCourse) {
-      let course: Course = doc.data() as Course
+     const desiredCourse = (await courses.doc(rosterSem).collection(courseId.toString()).get())
+    .docs.filter(doc => doc.id == courseCode.toString())
+    for(const doc of desiredCourse) {
+      let cContent: courseContent = doc.data() as courseContent
+      let course : Course = {
+        id : courseId.toString(),
+        code : parseInt(courseCode.toString()),
+        content : cContent
+      }
       localCourses.push(course);
     }
   }

@@ -52,7 +52,6 @@ export type Club = {
     "content": clubContent
 }
 
-
 export type eventContent = {
     "date": string,
     "period": string,
@@ -66,6 +65,3 @@ export type Event = {
     "title": string,
     "content": eventContent
 }
-
-
-
