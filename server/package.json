@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "ts-node server.ts"
+    "start": "ts-node server.ts",
+    "courses-script": "ts-node courses_script.ts",
+    "majors-script": "ts-node majors_minors_script.ts",
+    "clubs-script": "ts-node clubs_script.ts",
+    "events-script": "ts-node events_script.ts"
   },
   "dependencies": {
     "@types/express": "^4.17.7",
     "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
     "express": "^4.17.1",
     "firebase-admin": "^9.5.0",
     "ts-node": "^9.1.1",
