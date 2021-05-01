@@ -9,7 +9,7 @@ import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg'
 import { CourseInfo } from '../../../../server/types';
 
-const CourseBubble = ({ id, code, roster, title, credits, semester}: CourseInfo) => (
+const CourseBubble = ({ id, code, roster, title, credits, semester }: CourseInfo) => (
   <CourseContainer
     style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
     onClick={() => window.location.href = roster}>
