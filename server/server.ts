@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import {Course, courseContent, Major, majorContent, Reason, Club, clubContent, Event, eventContent} from  './types'
+import { Course, courseContent, Major, majorContent, Reason, Club, clubContent, Event, eventContent } from './types'
 import e from 'express';
 
 
@@ -37,7 +37,6 @@ export const events = db.collection("events")
 /**
  * retrieving the desired courses via query parameters from the database and 
  * storing them in a local array of type Course.
-
  * Precondition: up to two query parameters can be sent through the client: Id and code
  *               if no parameters are sent, all courses will be returned
  * Postcondition: returns an an array of the desired courses with required fields 
@@ -46,15 +45,15 @@ app.get("/getCourses", async (req, res) => {
   let courseId = req.query.id
   let courseCode = req.query.code
   const localCourses: Course[] = [];
-  let collectionIncrementer = 0; 
- 
-  if(courseId == null) {
+  let collectionIncrementer = 0;
+
+  if (courseId == null) {
     const courseTypes = (await courses.doc(rosterSem).listCollections())
     const collections = courseTypes.map(collection => collection.listDocuments())
 
-    for(const collection of collections) {
+    for (const collection of collections) {
       let cId = courseTypes[collectionIncrementer].id
-      for(const docRef of await collection) {
+      for (const docRef of await collection) {
         let cCode = docRef.id
         let course: Course = (await docRef.get()).data() as Course
         course.id = cId
@@ -65,9 +64,9 @@ app.get("/getCourses", async (req, res) => {
     }
   }
   else {
-     const desiredCourse = (await courses.doc(rosterSem).collection(courseId.toString()).get())
-    .docs.filter(doc => doc.id == courseCode.toString())
-    for(const doc of desiredCourse) {
+    const desiredCourse = (await courses.doc(rosterSem).collection(courseId.toString()).get())
+      .docs.filter(doc => doc.id == courseCode.toString())
+    for (const doc of desiredCourse) {
       let course: Course = doc.data() as Course
       localCourses.push(course);
     }
@@ -85,12 +84,12 @@ app.post('/createCourse', async (req, res) => {
   const courseId: string = course.id
   const courseCode: number = course.code
 
-  if (course.code == null || course.content.title == null || course.content.courseSite == null ||
-    course.content.courseRoster == null || course.content.description == null ||
+  if (course.code == null || course.content.title == null || course.content.site == null ||
+    course.content.roster == null || course.content.description == null ||
     course.id == null || course.content.semester.length == 0 || course.content.major == null ||
     course.content.designAreas.length == 0) {
-      res.send({"success": false, "message": "one or more fields is missing"});
-    }
+    res.send({ "success": false, "message": "one or more fields is missing" });
+  }
   else {
     let courseIdCollection = courses.doc(rosterSem).collection(courseId)
     const newCourse = courseIdCollection.doc(courseCode.toString());
@@ -103,17 +102,17 @@ app.post('/createCourse', async (req, res) => {
    * Precondition: request body must have a course Id and course code
    * Postcondition: only a singular course will be deleted
 */
-app.delete('/deleteCourse', async (req,res) => {
+app.delete('/deleteCourse', async (req, res) => {
   const courseId: string = req.body.id
   const courseCode: number = req.body.code
-    
-  if(courseId == null || courseCode == null) {
-    res.send({"success": false, "message": "One or more fields is missing"})
+
+  if (courseId == null || courseCode == null) {
+    res.send({ "success": false, "message": "One or more fields is missing" })
   }
   else {
     courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).delete()
-    res.send({"success": true})
-  }   
+    res.send({ "success": true })
+  }
 })
 /**
  * updates the specified field of a course with specified content
@@ -126,11 +125,11 @@ app.post('/updateCourse', async (req, res) => {
   const courseCode: number = req.body.code
   const content = req.body.content;
 
-  if(content == null || field == null || courseCode == null || courseId == null) {
+  if (content == null || field == null || courseCode == null || courseId == null) {
     res.send("One or more fields is missing.");
   }
   else {
-    courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).update({field: content})
+    courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).update({ field: content })
     res.send(true);
   }
 
@@ -143,43 +142,42 @@ app.post('/updateCourse', async (req, res) => {
 /**
  * retrieving the desired major via query parameters from the database and 
  * storing them in a local array of type Major.
-
  * Precondition: one query parameters can be sent through the client: major title,
  *               if no parameters are sent, all courses will be returned
  * Postcondition: returns an an array of the desired major(s) with required fields 
  */
 
- app.get("/getMajors", async (req, res) => {
+app.get("/getMajors", async (req, res) => {
   let majorTitle = req.query.title
   const localMajors: Major[] = [];
- 
-  if(majorTitle == null) {
+
+  if (majorTitle == null) {
     let majorDocs = await majors.get()
 
-    for(const docRef of majorDocs.docs) {
+    for (const docRef of majorDocs.docs) {
       let majorC: majorContent = docRef.data() as majorContent
       let major: Major = {
-        "content" : majorC,
-        "title" : docRef.id
+        "content": majorC,
+        "title": docRef.id
       }
       localMajors.push(major)
-    }  
+    }
 
-    res.send({"success": true, "data": localMajors});
+    res.send({ "success": true, "data": localMajors });
   }
   else {
     let majorDocRef = await majors.doc(majorTitle.toString()).get()
     let majorC: majorContent = majorDocRef.data() as majorContent
-    if(majorC == null) {
-      res.send({"success": false, "message": "Major not found."})
+    if (majorC == null) {
+      res.send({ "success": false, "message": "Major not found." })
     }
     else {
       let major: Major = {
-        "content" : majorC,
-        "title" : majorDocRef.id
+        "content": majorC,
+        "title": majorDocRef.id
       }
       localMajors.push(major)
-      res.send({"success": true, "data": localMajors});
+      res.send({ "success": true, "data": localMajors });
     }
   }
 })
@@ -193,15 +191,15 @@ app.post('/updateCourse', async (req, res) => {
 app.post('/createMajor', async (req, res) => {
   const major: Major = req.body
 
-  if(major.title == null || major.content.academicLevel == null || major.content.departmentPage == null ||
+  if (major.title == null || major.content.academicLevel == null || major.content.departmentPage == null ||
     major.content.designAreas == null || major.content.reasons == null || major.content.school == null
     || major.content.type == null) {
-      res.send({"success": false, "message": "one or more fields is missing"});
-    }
+    res.send({ "success": false, "message": "one or more fields is missing" });
+  }
   else {
     const newMajor = majors.doc(major.title);
     newMajor.set(major.content)
-    res.send({"success": true, "data": major})
+    res.send({ "success": true, "data": major })
   }
 })
 
@@ -210,16 +208,16 @@ app.post('/createMajor', async (req, res) => {
    * Precondition: request body must have a major title
    * Postcondition: only a singular major will be deleted
 */
-app.delete('/deleteMajor', async (req,res) => {
+app.delete('/deleteMajor', async (req, res) => {
   const title: string = req.body.title
-  
-  if(title == null) {
-    res.send({"success": false, "message": "One or more fields is missing"})
+
+  if (title == null) {
+    res.send({ "success": false, "message": "One or more fields is missing" })
   }
   else {
-    majors.doc(title).delete()  
-    res.send({"success": true})
-  }   
+    majors.doc(title).delete()
+    res.send({ "success": true })
+  }
 })
 
 /**
@@ -232,12 +230,12 @@ app.post('/updateMajor', async (req, res) => {
   const title: string = req.body.title
   const content = req.body.content;
 
-  if(content == null || field == null || title == null) {
+  if (content == null || field == null || title == null) {
     res.send("One or more fields is missing.");
   }
   else {
-    majors.doc(title).update({field: content})
-    res.send({"success": true, "data": []});
+    majors.doc(title).update({ field: content })
+    res.send({ "success": true, "data": [] });
   }
 });
 
@@ -248,28 +246,27 @@ app.post('/updateMajor', async (req, res) => {
 /**
  * retrieving the desired club(s) via query parameters from the database and 
  * storing them in a local array of type Course.
-
  * Precondition: only one query parameters can be sent through the client: club title
  *               if no parameters are sent, all clubs will be returned
  * Postcondition: returns an an array of the desired clubs with required fields 
  */
 
-app.get('/getClubs', async (req, res)  =>  {
+app.get('/getClubs', async (req, res) => {
   let clubTitle = req.query.title
   const localClubs: Club[] = [];
- 
-  if(clubTitle == null) {
+
+  if (clubTitle == null) {
     let clubDocs = await clubs.get()
-    for(const docRef of clubDocs.docs) {
+    for (const docRef of clubDocs.docs) {
       let clubC: clubContent = docRef.data() as clubContent
       let club: Club = {
-        "content" : clubC,
-        "title" : docRef.id
+        "content": clubC,
+        "title": docRef.id
       }
       localClubs.push(club)
-    }  
+    }
   }
-    res.send({"success": true, "data": localClubs});
+  res.send({ "success": true, "data": localClubs });
 });
 
 /**
@@ -281,15 +278,15 @@ app.get('/getClubs', async (req, res)  =>  {
 app.post('/createClub', async (req, res) => {
   const club: Club = req.body
 
-  if(club.title == null || club.content.description == null || club.content.website == null ||
+  if (club.title == null || club.content.description == null || club.content.website == null ||
     club.content.designAreas == null || club.content.size == null || club.content.credits == null
     || club.content.orgType == null || club.content.contact == null) {
-      res.send({"success": false, "message": "one or more fields is missing"});
-    }
+    res.send({ "success": false, "message": "one or more fields is missing" });
+  }
   else {
     const newClub = clubs.doc(club.title);
     newClub.set(club.content)
-    res.send({"success": true, "data": club})
+    res.send({ "success": true, "data": club })
   }
 })
 
@@ -298,16 +295,16 @@ app.post('/createClub', async (req, res) => {
    * Precondition: request body must have a club title
    * Postcondition: only a singular club will be deleted
 */
-app.delete('/deleteClub', async (req,res) => {
+app.delete('/deleteClub', async (req, res) => {
   const title: string = req.body.title
-  
-  if(title == null) {
-    res.send({"success": false, "message": "One or more fields is missing"})
+
+  if (title == null) {
+    res.send({ "success": false, "message": "One or more fields is missing" })
   }
   else {
     clubs.doc(title).delete()
-    res.send({"success": true})
-  }   
+    res.send({ "success": true })
+  }
 })
 
 /**
@@ -320,12 +317,12 @@ app.post('/updateClub', async (req, res) => {
   const title: string = req.body.title
   const content = req.body.content;
 
-  if(content == null || field == null || title == null) {
+  if (content == null || field == null || title == null) {
     res.send("One or more fields is missing.");
   }
   else {
-    clubs.doc(title).update({field: content})
-    res.send({"success": true, "data": []});
+    clubs.doc(title).update({ field: content })
+    res.send({ "success": true, "data": [] });
   }
 });
 
@@ -337,33 +334,32 @@ app.post('/updateClub', async (req, res) => {
 /**
  * retrieving the desired event(s) via query parameters from the database and 
  * storing them in a local array of type Event.
-
  * Precondition: only one query parameters can be sent through the client: event title
  *               if no parameters are sent, all clubs will be returned
  * Postcondition: returns an an array of the desired events with required fields 
  */
-app.get('/getEvents', async (req,res) => {
+app.get('/getEvents', async (req, res) => {
   const title = req.query.title
   const localEvents: Event[] = []
 
-  if(title == null) {
+  if (title == null) {
     let eventDocs = await events.get()
-    for(const docRef of eventDocs.docs) {
+    for (const docRef of eventDocs.docs) {
       let eventC: eventContent = docRef.data() as eventContent
       let event = {
         "title": docRef.id,
         "content": eventC
       }
       localEvents.push(event)
-    } 
-    res.send({"success": true,"data": localEvents})
+    }
+    res.send({ "success": true, "data": localEvents })
   }
 
   else {
     let eventRef = await events.doc(title.toString()).get()
     let event = eventRef.data()
     event.title = title
-    res.send({"success": true, "data": event})
+    res.send({ "success": true, "data": event })
   }
 
 });
@@ -375,18 +371,18 @@ app.get('/getEvents', async (req,res) => {
  *               must not be a duplicate of an existing event
  * Postcondition: One new event will be created and stored in firestore
 */
-app.post('/createEvent', async (req,res) => {
+app.post('/createEvent', async (req, res) => {
   const event: Event = req.body
 
-  if(event.title == null ||event.content.description == null ||event.content.date == null ||
+  if (event.title == null || event.content.description == null || event.content.date == null ||
     event.content.topic == null || event.content.rsvpLink == null || event.content.period == null
     || event.content.type == null) {
-      res.send({"success": false, "message": "one or more fields is missing"});
+    res.send({ "success": false, "message": "one or more fields is missing" });
   }
   else {
     const newEvent = events.doc(event.title);
     newEvent.set(event.content)
-    res.send({"success": true, "data": event})
+    res.send({ "success": true, "data": event })
   }
 })
 
@@ -396,14 +392,14 @@ app.post('/createEvent', async (req,res) => {
    * Precondition: request body must have a event title
    * Postcondition: only a singular event will be deleted
 */
-app.delete('/deleteEvent', async (req,res) => {
+app.delete('/deleteEvent', async (req, res) => {
   const title: string = req.body.title
-  if(title == null) {
-    res.send({"success": false, "message": "one or more fields is missing"})
+  if (title == null) {
+    res.send({ "success": false, "message": "one or more fields is missing" })
   }
   else {
     events.doc(title).delete()
-    res.send({"success": true})
+    res.send({ "success": true })
   }
 })
 
@@ -419,11 +415,11 @@ app.post('/updateEvent', async (req, res) => {
   const content: string = req.body.content
 
   if (title == null || field == null || content == null) {
-    res.send({"success": true, "message": "one or more fields is missing"})
+    res.send({ "success": true, "message": "one or more fields is missing" })
   }
   else {
-    events.doc(title).update({field: content})
-    res.send({"success": true, "data": []});
+    events.doc(title).update({ field: content })
+    res.send({ "success": true, "data": [] });
   }
 })
 

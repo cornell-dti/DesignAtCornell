@@ -7,23 +7,23 @@ import {
 } from '../ExploreCoursesStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg'
-import { CourseContent } from '../../../../server/types';
+import { CourseInfo } from '../../../../server/types';
 
-const CourseBubble = (course : CourseContent) => (
+const CourseBubble = ({ id, code, roster, title, credits, semester}: CourseInfo) => (
   <CourseContainer
-    style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
-    onClick={() => window.location.href=course.courseRoster}>
+    style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+    onClick={() => window.location.href = roster}>
     <CourseNumber>
-      <p>{course.id + ' ' + course.code}</p>
+      <p>{id + ' ' + code}</p>
       <img src={bookmark} alt="save course" />
     </CourseNumber>
-    <p>{course.title}</p>
+    <p>{title}</p>
     <TagsContainer>
-      <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
-        <p>{course.credits + ' Credits'}</p>
+      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+        <p>{credits + ' Credits'}</p>
       </Tag>
-      <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
-        <p>{course.semester}</p>
+      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+        <p>{semester}</p>
       </Tag>
     </TagsContainer>
   </CourseContainer>

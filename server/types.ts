@@ -7,7 +7,7 @@ export type courseContent = {
     "credits": number,
     "major": string,
     "designAreas": string[],
-    "semester": string[],
+    "semester": string,
 }
   
 export type Course = {
@@ -15,6 +15,8 @@ export type Course = {
     "code": number,
     "content": courseContent
 }
+
+export type CourseInfo = courseContent & Course;
   
 export type majorContent = {
     "academicLevel": string,

@@ -16,7 +16,7 @@ const Courses = ({ courses, filterData }: CoursesProps) => {
   const courseBubbles = (
     <CourseGrid>
       {courses
-        .filter(({ designAreas, major, semester, credits, code }) => {
+        .filter(({ code, designAreas, major, semester, credits }) => {
           if (selectedDesignAreas.size > 0 && !designAreas.some(selectedDesignAreas.has)) return false;
           if (selectedMajors.size > 0 && !selectedMajors.has(major)) return false;
           if (selectedSemesters.size > 0 && !semester.split(", ").some(str => selectedSemesters.has(str))) return false;
