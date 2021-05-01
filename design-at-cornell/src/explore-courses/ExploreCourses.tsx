@@ -14,10 +14,7 @@ const ExploreCourses = () => {
   useEffect(() => {
     axios
       .get<{ success: boolean; data: Course[] }>('http://localhost:3000/getCourses')
-      .then(res => { 
-        console.log(res.data.data);
-        return res.data.data;
-      })
+      .then(res => res.data.data)
       .then(setCourses);
   }, []);
 
