@@ -1,12 +1,13 @@
 import React from 'react';
-import { HeaderContainer, Logo, Nav, StyledLink } from './HeaderStyles'
-import { pages } from '../constants/pages'
+import { HeaderContainer, Logo, Nav, StyledLink } from './HeaderStyles';
+import { pages } from '../constants/pages';
+import dacLogo from '../static/images/logo.svg';
 
 const Header = () => {
   const navigations = (
     <Nav>
       {pages.map(page => (
-        <StyledLink to={page.url}>
+        <StyledLink key={page.name} to={page.url}>
           <p>{page.name}</p>
         </StyledLink>
       ))}
@@ -16,7 +17,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logo to='./explore-courses'>
-        <img src={require('../static/images/logo.svg')} alt="logo" />
+        <img src={dacLogo} alt="logo" />
         <p>Design At Cornell</p>
       </Logo>
       
