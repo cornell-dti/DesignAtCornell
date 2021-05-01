@@ -22,7 +22,7 @@ const resources: Page[] = [
   { name: 'Design Resources', url: '/design-resources' },
   { name: 'Designer Database', url: '/designer-database' },
   { name: 'Career Resources', url: '/career-resources' },
-  { name: 'Design Inspiration', url: '/designe-inspiration' },
+  { name: 'Design Inspiration', url: '/design-inspiration' },
   { name: 'Faculty Group & Research', url: '/faculty-group-&-research' }
 ];
 
