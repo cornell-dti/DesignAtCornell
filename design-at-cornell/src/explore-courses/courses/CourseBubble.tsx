@@ -12,7 +12,7 @@ import { Course } from '../../../../server/types';
 const CourseBubble = (course : Course) => (
   <CourseContainer
     style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
-    onClick={() => window.location.href=course.content.roster}>
+    onClick={() => window.location.href=course.content.courseRoster}>
     <CourseNumber>
       <p>{course.id + ' ' + course.code}</p>
       <img src={bookmark} alt="save course" />
