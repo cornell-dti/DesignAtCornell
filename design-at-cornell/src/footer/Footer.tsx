@@ -1,6 +1,6 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles'
-import { explore, resources, account } from '../constants/pages'
+import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles';
+import { explore, resources, account } from '../constants/pages';
 import dacLogo from '../static/images/logo.svg';
 import dtiLogo from '../static/images/dti-logo.svg';
 
@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterColumnn>
-        <Logo to='/explore-courses'>
+        <Logo to="/explore-courses">
           <img src={dacLogo} alt="logo" />
           <p>Design@Cornell</p>
         </Logo>

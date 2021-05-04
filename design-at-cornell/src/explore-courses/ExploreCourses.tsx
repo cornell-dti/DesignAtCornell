@@ -8,14 +8,13 @@ import Category from './types/Category';
 import { courseContent } from '../../../server/types';
 
 const ExploreCourses = () => {
-
   const [courses, setCourses] = useState<courseContent[]>([]);
 
   useEffect(() => {
     axios
       .get('http://localhost:3000/getCourses')
       .then((res) => res.data.data)
-      .then(setCourses)
+      .then(setCourses);
   }, []);
 
   const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(
@@ -24,11 +23,7 @@ const ExploreCourses = () => {
 
   return (
     <PageContainer>
-      <Title
-        filterData={filterData}
-        dropdownInfo={FilterDropdowns}
-        onChange={setfilterData}
-      />
+      <Title filterData={filterData} dropdownInfo={FilterDropdowns} onChange={setfilterData} />
       <Courses {...courses} />
     </PageContainer>
   );

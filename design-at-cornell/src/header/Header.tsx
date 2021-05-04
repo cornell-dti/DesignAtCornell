@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo to='./explore-courses'>
+      <Logo to="./explore-courses">
         <img src={dacLogo} alt="logo" />
         <p>Design At Cornell</p>
       </Logo>

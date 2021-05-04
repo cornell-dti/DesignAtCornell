@@ -7,11 +7,8 @@ import { courseContent } from '../../../../server/types';
 const Courses = (courses: courseContent[]) => {
   const courseBubbles = (
     <CourseGrid>
-      {Object.values(courses).map(course => (
-        <CourseBubble 
-          key={course.id + ' ' + course.code}
-          {...course}
-        />
+      {Object.values(courses).map((course) => (
+        <CourseBubble key={course.id + ' ' + course.code} {...course} />
       ))}
     </CourseGrid>
   );

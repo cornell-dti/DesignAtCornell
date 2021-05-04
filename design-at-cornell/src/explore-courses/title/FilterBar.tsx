@@ -45,9 +45,6 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
             />
           );
         })}
-<<<<<<< HEAD
-        <SearchBar width="338px" placeholder="Name, Keywords, Topics, Etc" background="white" />
-=======
         <SearchBar
           width="338px"
           placeholder="Name, Keywords, Topics, Etc"
@@ -57,7 +54,6 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
           <img src={bookmarked} alt={"saved courses"} />
           <p>Saved Courses</p>
         </SavedCoursesButton>
->>>>>>> master
       </FilterDropdownsList>
     </FilterBarContainer>
   );
