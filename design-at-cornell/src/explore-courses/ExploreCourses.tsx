@@ -1,104 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Title from './title/Title';
-import {
-  PageContainer,
-  Divider,
-  SortBy,
-  CourseGrid,
-  CourseContainer,
-  TagsContainer,
-  Tag,
-} from './ExploreCoursesStyles';
+import { PageContainer } from './ExploreCoursesStyles';
 import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
-
-export type Course = {
-  courseCode: string;
-  courseTitle: string;
-  tags: string[];
-};
+import { courseContent } from '../../../server/types';
 
 const ExploreCourses = () => {
-  const [courses] = useState<Course[]>([
-    {
-      courseCode: 'INFO 1300',
-      courseTitle: 'Introductory Design and Programming for the Web',
-      tags: ['Information Science', '3 Credits'],
-    },
-    {
-      courseCode: 'DEA 1500',
-      courseTitle: 'Introduction to Environmental Psychology',
-      tags: ['Design and Enviro...', '3 Credits'],
-    },
-    {
-      courseCode: 'FSAD 1120',
-      courseTitle: 'Fashion Design and Visual Thinking',
-      tags: ['Fashion Design an...', 'Fall'],
-    },
-    {
-      courseCode: 'ART 2201',
-      courseTitle: 'Painting: Introduction to Painting',
-      tags: ['Fine Arts', '3 Credits'],
-    },
-    {
-      courseCode: 'ARCH 1101',
-      courseTitle: 'Design I',
-      tags: ['Architecture', '3 Credits', 'Fall'],
-    },
-    {
-      courseCode: 'ART 2301',
-      courseTitle: 'Print Media: Introduction to Print Media',
-      tags: ['Fine Arts', '3 Credits'],
-    },
-  ]);
+
+  const [courses, setCourses] = useState<courseContent[]>([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/getCourses')
+      .then((res) => res.data.data)
+      .then(setCourses)
+  }, []);
 
   const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(
     new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
   );
 
-  const courseBubbles = (
-    <CourseGrid>
-      {courses
-        .filter(({ tags }) => {
-          const credits = filterData.get(Category['Credits']);
-          if (
-            credits === undefined ||
-            (credits.size > 0 && Array.from(credits).every((box) => !box.includes(tags[1][0])))
-          )
-            return false;
-          return true;
-        })
-        .map((course) => (
-          <CourseContainer>
-            <h6>{course.courseCode}</h6>
-            <p>{course.courseTitle}</p>
-            <TagsContainer>
-              {course.tags.map((tag) => (
-                <Tag>
-                  <p>{tag}</p>
-                </Tag>
-              ))}
-            </TagsContainer>
-          </CourseContainer>
-        ))}
-    </CourseGrid>
-  );
-
-  const divider = (
-    <Divider>
-      <SortBy>
-        <p>Sort By</p>
-        <img src={require('../static/images/sort-triangle.svg')} alt="sort" />
-      </SortBy>
-    </Divider>
-  );
-
   return (
     <PageContainer>
-      <Title filterData={filterData} dropdownInfo={FilterDropdowns} onChange={setfilterData} />
-      {divider}
-      {courseBubbles}
+      <Title
+        filterData={filterData}
+        dropdownInfo={FilterDropdowns}
+        onChange={setfilterData}
+      />
+      <Courses {...courses} />
     </PageContainer>
   );
 };

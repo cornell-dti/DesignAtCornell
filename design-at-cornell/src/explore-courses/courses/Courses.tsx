@@ -2,17 +2,15 @@ import React from 'react';
 import { PageContainer, CourseGrid } from '../ExploreCoursesStyles';
 import Sort from './Sort';
 import CourseBubble from './CourseBubble';
-import { Course } from '../ExploreCourses';
+import { courseContent } from '../../../../server/types';
 
-const Courses = (courses: Course[]) => {
+const Courses = (courses: courseContent[]) => {
   const courseBubbles = (
     <CourseGrid>
-      {Object.values(courses).map((course) => (
-        <CourseBubble
-          key={course.courseCode}
-          courseCode={course.courseCode}
-          courseTitle={course.courseTitle}
-          tags={course.tags}
+      {Object.values(courses).map(course => (
+        <CourseBubble 
+          key={course.id + ' ' + course.code}
+          {...course}
         />
       ))}
     </CourseGrid>
