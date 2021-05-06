@@ -6,7 +6,7 @@ import bookmarked from '../../static/images/bookmarked.svg';
 import FilterCategory from './FilterCategory';
 import Category from '../types/Category';
 
-const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
+const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState<Category | ''>('');
   const handleFilterCategoryChange = (category: Category): filterCategoryCheckHandler => (
     checkboxLabel => {
@@ -47,6 +47,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
           width="338px"
           placeholder="Name, Keywords, Topics, Etc"
           background='white'
+          onChange={searchHandler}
         />
         <SavedCoursesButton>
           <img src={bookmarked} alt={"saved courses"} />
