@@ -34,7 +34,6 @@ const FilterDropdownScroll = ({ checkboxLabels, checkboxData, expand, onCheck, o
     return (
         <FilterDropdownContainer expand={expand}>
             <SearchBar
-                width='292px'
                 background='#EAEAEA'
                 onChange={e => setQuery(e.currentTarget.value.toLowerCase())}
             />

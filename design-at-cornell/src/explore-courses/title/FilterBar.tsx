@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
-import { FilterBarContainer, FilterDropdownsList, SearchBar, SavedCoursesButton } from '../ExploreCoursesStyles';
+import { FilterBarContainer, FilterDropdownsList, SearchAndBookmarkList, SearchBar, SavedCoursesButton } from '../ExploreCoursesStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterCategory from './FilterCategory';
 import Category from '../types/Category';
@@ -43,8 +43,9 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
             />
           );
         })}
+      </FilterDropdownsList>
+      <SearchAndBookmarkList>
         <SearchBar
-          width="338px"
           placeholder="Name, Keywords, Topics, Etc"
           background='white'
         />
@@ -52,7 +53,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
           <img src={bookmarked} alt={"saved courses"} />
           <p>Saved Courses</p>
         </SavedCoursesButton>
-      </FilterDropdownsList>
+      </SearchAndBookmarkList>
     </FilterBarContainer>
   );
 };
