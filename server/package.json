@@ -7,7 +7,7 @@
     "courses-script": "ts-node courses_script.ts",
     "majors-script": "ts-node majors_minors_script.ts",
     "clubs-script": "ts-node clubs_script.ts",
-    "events-script": "ts-node events_script.ts"
+    "events-script": "ts-node events_script.ts",
     "tsc": "tsc"
   },
   "dependencies": {
