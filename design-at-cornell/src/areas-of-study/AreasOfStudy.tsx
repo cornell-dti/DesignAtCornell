@@ -42,14 +42,12 @@ const AreasOfStudy = () => {
         });
       });
   }, []);
-}
-
   return (
     <PageContainer>
       <Title />
       <Dashboard {...studies} />
     </PageContainer>
   );
-}
+};
 
 export default AreasOfStudy;
