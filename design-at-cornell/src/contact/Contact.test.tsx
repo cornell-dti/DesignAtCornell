@@ -6,7 +6,7 @@ import Contact from './Contact';
 describe('<Contact />', () => {
   test('it should mount', () => {
     render(<Contact />);
-    
+
     const contact = screen.getByTestId('Contact');
 
     expect(contact).toBeInTheDocument();

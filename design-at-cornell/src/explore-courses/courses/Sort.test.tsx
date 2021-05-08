@@ -5,9 +5,7 @@ import 'jest-styled-components';
 
 describe('<Sort />', () => {
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<Sort />)
-      .toJSON();
+    const tree = renderer.create(<Sort />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
