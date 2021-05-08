@@ -35,6 +35,10 @@ export const TitleBackground = styled.div`
   }
 `
 
+export const AreaOfStudyTag = styled.span<{ highlight: boolean }>`
+  background: ${({ highlight }) => highlight ? colors.yellowHighlight : 'white'};
+`;
+
 export const QuizButton = styled.div`
   display: flex;
   flex-direction: row;
