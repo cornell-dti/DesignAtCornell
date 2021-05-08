@@ -14,7 +14,10 @@ const StudiesGrid = ({ studies, filters }: StudiesGridProps) => (
       <AreaOfStudyButton key={title}>
         <h1>{title}</h1>
         <p>{content.type}. {content.designAreas}</p>
-        <AreaOfStudyTag highlight={filters.schools.has(content.school)}>
+        <AreaOfStudyTag highlight={
+          filters.schools.has(content.school) ||
+          filters.schools.has(content.school.replace('College of ', ''))
+        }>
           {content.school}
         </AreaOfStudyTag>
       </AreaOfStudyButton>

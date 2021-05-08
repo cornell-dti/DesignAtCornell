@@ -18,11 +18,11 @@ const ApplyTags = ({ filters, onChange }: ApplyTagsProps) => {
     'Spatial Design'
   ];
   const schools = [
-    'College of Architecture, Art, Planning', 
-    'College of Agriculture and Life Sciences', 
-    'College of Arts and Sciences', 
-    'College of Engineering', 
-    'College of Human Ecology', 
+    'Architecture, Art, Planning', 
+    'Agriculture and Life Sciences', 
+    'Arts and Sciences', 
+    'Engineering', 
+    'Human Ecology', 
     'School of Hotel Administration', 
     'SC Johnson College of Business'
   ];
