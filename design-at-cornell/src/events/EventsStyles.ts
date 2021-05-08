@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
-import magnifyingGlass from '../static/images/magnifying-glass.svg';
 
 export const PageContainer = styled.div`
   display: flex;
@@ -11,7 +10,7 @@ export const TitleBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 551px;
+  height: 550px;
   background: ${colors.blue};
   padding-left: 100px;
   padding-right: 100px;
@@ -46,9 +45,67 @@ export const Divider = styled.div`
   flex-direction: column;
   width: 100%;
   height: 80px;
-  padding-top: 20px;
-  padding-right: 80px;
-  align-items: flex-end;
+  padding: 5px;
+  align-items: center;
+`;
+
+export const FilterButton = styled.div<{ open: boolean }>`
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  height: 70px;
+  align-items: center;
+  justify-content: ${({ open }) => open ? 'space-between' : 'center'};
+  background: ${({ open }) => open ? 'white' : 'none'};
+  border-radius: 26px 26px 0 0;
+  box-shadow: ${({ open }) => open ? '0px 0px 24px 2px rgba(0, 0, 0, 0.07)' : 'none'};
+`;
+
+export const MonthSelected = styled.div`
+  display: flex;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+`;
+
+export const Arrow = styled.img<{ direction: string; show: boolean }>`
+  transform: ${({ direction }) => direction === 'left' ? 'rotate(90deg)' : direction === 'right' ? 'rotate(270deg)' : 'none'};
+  display: ${({ show }) => show ? 'auto' : 'none'};
+  width: 24px;
+  height: 24px;
+  margin: 0px 10px;
+  cursor: pointer;
+`;
+
+export const FilterWindow = styled.div<{ open: boolean }>`
+  position: absolute;
+  display: ${({ open }) => open ? 'flex' : 'none'};
+  flex-wrap: wrap;
+  width: 530px;
+  height: 400px;
+  border-radius: 26px;
+  box-shadow: 0 24px 24px 2px rgba(0, 0, 0, 0.07);
+  margin-top: 70px;
+  padding: 10px;
+  background: white;
+`;
+
+export const MonthButton = styled.div<{ selected: boolean }>`
+  width: 150px;
+  height: 75px;
+  border-radius: 6px;
+  margin: 10px;
+  background: ${({ selected }) => selected ? '#707070' : '#E6E6E6'};
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 75px;
+  text-align: center;
+  color: ${({ selected }) => selected ? 'white' : 'black'};
 `;
 
 export const EventList = styled.div`
@@ -65,7 +122,6 @@ export const EventContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 353px;
-  cursor: pointer;
   background: white;
   border-radius: 14px;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.07);
@@ -120,8 +176,7 @@ export const Tag = styled.div`
   height: 22px;
   border-radius: 43px;
   margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   align-items: center;
   background: #E4E4E4;
   p {
@@ -132,20 +187,22 @@ export const Tag = styled.div`
   }
 `;
 
-export const Link = styled.div`
+export const Link = styled.div<{ shadowColor: string }>`
   display: flex;
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px #AED8F7;
+  box-shadow: 0px 0px 22px ${({shadowColor}) => shadowColor};
   margin-right: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px;
   align-items: center;
+  cursor: pointer;
+  
   p {
     font-weight: bold;
     font-size: 17px;
     line-height: 20px;
     color: black;
+    margin-left: 10px;
   }
 `;

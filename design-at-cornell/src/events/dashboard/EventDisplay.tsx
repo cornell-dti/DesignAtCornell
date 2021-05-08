@@ -9,6 +9,7 @@ import {
 import { Event } from '../Events';
 import time from '../../static/images/time.svg';
 import loc from '../../static/images/location.svg';
+import { buttons } from '../../constants/eventButtons';
 
 const EventDisplay = (event : Event) => (
   <EventContainer>
@@ -19,7 +20,6 @@ const EventDisplay = (event : Event) => (
       <img src={loc} alt="location" />
       <p>{event.location}</p>
     </Settings>
-    {/* <h2>{event.time + ' ' + event.location}</h2> */}
     <TagsContainer>
       {event.tags.map(tag => (
         <Tag key={tag}>
@@ -30,8 +30,9 @@ const EventDisplay = (event : Event) => (
     <p>{event.description}</p>
     <TagsContainer>
       {event.links.map(link => (
-        <Link key={link}>
-          <p>{link}</p>
+        <Link key={link} shadowColor={buttons[link].color}>
+          <img src={buttons[link].icon} />
+          <p>{buttons[link].name}</p>
         </Link>
       ))}
     </TagsContainer>
