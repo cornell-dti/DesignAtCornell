@@ -17,16 +17,19 @@ export const Logo = styled(Link)`
   flex-direction: row;
   width: 40%;
   height: 100%;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  
+
+  img {
+    width: 142px;
+  }
 
   p {
     width: 73px;
-    height: 100%;
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
     text-align: left;
+    margin: 18px;
   }
 
   &:focus, &:hover, &:active, &:visited, &:link {
