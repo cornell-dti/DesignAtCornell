@@ -1,7 +1,6 @@
 export type courseContent = {
     "title": string,
     "description": string,
-    "syllabus": string,
     "courseSite": string,
     "courseRoster": string,
     "credits": number,
@@ -65,3 +64,5 @@ export type Event = {
     "title": string,
     "content": eventContent
 }
+
+export let rosterSem = "SP21"
