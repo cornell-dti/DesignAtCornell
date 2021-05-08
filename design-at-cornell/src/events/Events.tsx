@@ -13,7 +13,7 @@ export type Event = {
   links: string[];
 };
 
-const ExploreCourses = () => {
+const Events = () => {
 
   const [events] = useState<Event[]>([
     { 
@@ -72,7 +72,7 @@ const ExploreCourses = () => {
   const eventDisplay = (
     <EventList>
       {filteredEvents.map(event => (
-        <EventDisplay {...event} />
+        <EventDisplay key={event.name} {...event} />
       ))}
     </EventList>
   );
@@ -92,4 +92,4 @@ const ExploreCourses = () => {
   );
 }
 
-export default ExploreCourses;
+export default Events;
