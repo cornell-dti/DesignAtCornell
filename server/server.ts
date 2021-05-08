@@ -82,9 +82,9 @@ app.post('/createCourse', async (req, res) => {
     course.content.courseRoster == null ||
     course.content.description == null ||
     course.id == null ||
-    course.content.semester.length == 0 ||
+    course.content.semester.length === 0 ||
     course.content.major == null ||
-    course.content.designAreas.length == 0
+    course.content.designAreas.length === 0
   ) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
