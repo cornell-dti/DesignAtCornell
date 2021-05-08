@@ -23,7 +23,7 @@ const resources: Page[] = [
   { name: 'Designer Database', url: '/designer-database' },
   { name: 'Career Resources', url: '/career-resources' },
   { name: 'Design Inspiration', url: '/design-inspiration' },
-  { name: 'Faculty Group & Research', url: '/faculty-group-&-research' }
+  { name: 'Faculty Group & Research', url: '/faculty-group-&-research' },
 ];
 
 const account: Page[] = [

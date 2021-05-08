@@ -17,7 +17,6 @@ export const Logo = styled(Link)`
   flex-direction: row;
   width: 40%;
   height: 100%;
-  
 
   img {
     width: 142px;
