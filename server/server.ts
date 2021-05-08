@@ -48,7 +48,7 @@ app.get("/getCourses", async (req, res) => {
   const localCourses: Course[] = [];
   let collectionIncrementer = 0; 
  
-  if(courseId == null) {
+  if(courseId === null) {
     const courseTypes = (await courses.doc(rosterSem).listCollections())
     const collections = courseTypes.map(collection => collection.listDocuments())
 
@@ -94,9 +94,9 @@ app.post('/createCourse', async (req, res) => {
   const courseId: string = course.id
   const courseCode: number = course.code
 
-  if(course.code == null || course.content.title == null || course.content.courseSite == null ||
-    course.content.courseRoster == null || course.content.description == null ||
-    course.id == null || course.content.semester.length == 0 || course.content.major == null ||
+  if(course.code === null || course.content.title === null || course.content.courseSite === null ||
+    course.content.courseRoster === null || course.content.description === null ||
+    course.id === null || course.content.semester.length == 0 || course.content.major === null ||
     course.content.designAreas.length == 0) {
       res.send({"success": false, "message": "one or more fields is missing"});
     }
@@ -116,7 +116,7 @@ app.delete('/deleteCourse', async (req,res) => {
   const courseId: string = req.body.id
   const courseCode: number = req.body.code
     
-  if(courseId == null || courseCode == null) {
+  if(courseId === null || courseCode === null) {
     res.send({"success": false, "message": "One or more fields is missing"})
   }
   else {
@@ -135,7 +135,7 @@ app.post('/updateCourse', async (req, res) => {
   const courseCode: number = req.body.code
   const content = req.body.content;
 
-  if(content == null || field == null || courseCode == null || courseId == null) {
+  if(content === null || field === null || courseCode === null || courseId === null) {
     res.send("One or more fields is missing.");
   }
   else {
@@ -162,7 +162,7 @@ app.post('/updateCourse', async (req, res) => {
   let majorTitle = req.query.title
   const localMajors: Major[] = [];
  
-  if(majorTitle == null) {
+  if(majorTitle === null) {
     let majorDocs = await majors.get()
 
     for(const docRef of majorDocs.docs) {
@@ -179,7 +179,7 @@ app.post('/updateCourse', async (req, res) => {
   else {
     let majorDocRef = await majors.doc(majorTitle.toString()).get()
     let majorC: majorContent = majorDocRef.data() as majorContent
-    if(majorC == null) {
+    if(majorC === null) {
       res.send({"success": false, "message": "Major not found."})
     }
     else {
@@ -202,9 +202,9 @@ app.post('/updateCourse', async (req, res) => {
 app.post('/createMajor', async (req, res) => {
   const major: Major = req.body
 
-  if(major.title == null || major.content.academicLevel == null || major.content.departmentPage == null ||
-    major.content.designAreas == null || major.content.reasons == null || major.content.school == null
-    || major.content.type == null) {
+  if(major.title === null || major.content.academicLevel === null || major.content.departmentPage === null ||
+    major.content.designAreas === null || major.content.reasons === null || major.content.school === null
+    || major.content.type === null) {
       res.send({"success": false, "message": "one or more fields is missing"});
     }
   else {
@@ -222,7 +222,7 @@ app.post('/createMajor', async (req, res) => {
 app.delete('/deleteMajor', async (req,res) => {
   const title: string = req.body.title
   
-  if(title == null) {
+  if(title === null) {
     res.send({"success": false, "message": "One or more fields is missing"})
   }
   else {
@@ -241,7 +241,7 @@ app.post('/updateMajor', async (req, res) => {
   const title: string = req.body.title
   const content = req.body.content;
 
-  if(content == null || field == null || title == null) {
+  if(content === null || field === null || title === null) {
     res.send("One or more fields is missing.");
   }
   else {
@@ -267,7 +267,7 @@ app.get('/getClubs', async (req, res)  =>  {
   let clubTitle = req.query.title
   const localClubs: Club[] = [];
  
-  if(clubTitle == null) {
+  if(clubTitle === null) {
     let clubDocs = await clubs.get()
     for(const docRef of clubDocs.docs) {
       let clubC: clubContent = docRef.data() as clubContent
@@ -290,9 +290,9 @@ app.get('/getClubs', async (req, res)  =>  {
 app.post('/createClub', async (req, res) => {
   const club: Club = req.body
 
-  if(club.title == null || club.content.description == null || club.content.website == null ||
-    club.content.designAreas == null || club.content.size == null || club.content.credits == null
-    || club.content.orgType == null || club.content.contact == null) {
+  if(club.title === null || club.content.description === null || club.content.website === null ||
+    club.content.designAreas === null || club.content.size === null || club.content.credits === null
+    || club.content.orgType === null || club.content.contact === null) {
       res.send({"success": false, "message": "one or more fields is missing"});
     }
   else {
@@ -310,7 +310,7 @@ app.post('/createClub', async (req, res) => {
 app.delete('/deleteClub', async (req,res) => {
   const title: string = req.body.title
   
-  if(title == null) {
+  if(title === null) {
     res.send({"success": false, "message": "One or more fields is missing"})
   }
   else {
@@ -329,7 +329,7 @@ app.post('/updateClub', async (req, res) => {
   const title: string = req.body.title
   const content = req.body.content;
 
-  if(content == null || field == null || title == null) {
+  if(content === null || field === null || title === null) {
     res.send("One or more fields is missing.");
   }
   else {
@@ -355,7 +355,7 @@ app.get('/getEvents', async (req,res) => {
   const title = req.query.title
   const localEvents: Event[] = []
 
-  if(title == null) {
+  if(title === null) {
     let eventDocs = await events.get()
     for(const docRef of eventDocs.docs) {
       let eventC: eventContent = docRef.data() as eventContent
@@ -387,9 +387,9 @@ app.get('/getEvents', async (req,res) => {
 app.post('/createEvent', async (req,res) => {
   const event: Event = req.body
 
-  if(event.title == null ||event.content.description == null ||event.content.date == null ||
-    event.content.topic == null || event.content.rsvpLink == null || event.content.period == null
-    || event.content.type == null) {
+  if(event.title === null ||event.content.description === null ||event.content.date === null ||
+    event.content.topic === null || event.content.rsvpLink === null || event.content.period === null
+    || event.content.type === null) {
       res.send({"success": false, "message": "one or more fields is missing"});
   }
   else {
@@ -407,7 +407,7 @@ app.post('/createEvent', async (req,res) => {
 */
 app.delete('/deleteEvent', async (req,res) => {
   const title: string = req.body.title
-  if(title == null) {
+  if(title === null) {
     res.send({"success": false, "message": "one or more fields is missing"})
   }
   else {
@@ -427,7 +427,7 @@ app.post('/updateEvent', async (req, res) => {
   const field: string = req.body.field
   const content: string = req.body.content
 
-  if (title == null || field == null || content == null) {
+  if (title === null || field === null || content === null) {
     res.send({"success": true, "message": "one or more fields is missing"})
   }
   else {
