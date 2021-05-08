@@ -5,7 +5,7 @@ import admin, { firestore } from 'firebase-admin';
 import { isConstructorDeclaration } from 'typescript';
 import { Course, courseContent } from './types';
 
-/* eslint @typescript-eslint/no-var-requires: "off" */
+// eslint-disable-next-line
 const serviceAccount = require('./designAtCornellServiceAccount.json');
 
 admin.initializeApp({
