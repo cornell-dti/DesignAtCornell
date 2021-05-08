@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "startServer": "cd server && yarn start",
     "startReact": "cd design-at-cornell && yarn start",
+    "start": "concurrently \"yarn startServer\" \"yarn startReact\"",
     "build": "cd design-at-cornell && yarn build",
     "test": "cd design-at-cornell && yarn test",
     "eject": "cd design-at-cornell && yarn eject"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "@types/express": "^4.17.11",
+    "axios": "^0.21.1",
+    "concurrently": "^6.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^9.6.0",
