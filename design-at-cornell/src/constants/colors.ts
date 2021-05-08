@@ -18,4 +18,4 @@ export const courseColors = [
   '#C9E1AA', 
   '#FFCBBA', 
   '#D3D2F7'
-]
+];
