@@ -13,13 +13,14 @@ const StudiesGrid = ({ studies, filters }: StudiesGridProps) => (
     {Object.values(studies).map(({ title, content }) => (
       <AreaOfStudyButton key={title}>
         <h1>{title}</h1>
-        <p>{content.type}. {content.designAreas}</p>
+        <span>{content.type}. {content.designAreas}</span>
         <AreaOfStudyTag highlight={
           filters.schools.has(content.school) ||
           filters.schools.has(content.school.replace('College of ', ''))
         }>
           {content.school}
         </AreaOfStudyTag>
+        <br />
       </AreaOfStudyButton>
     ))}
   </Grid>

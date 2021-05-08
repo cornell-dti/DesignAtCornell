@@ -116,7 +116,7 @@ export const AreaOfStudyButton = styled.div`
     color: black;
   }
 
-  p {
+  p, span {
     font-size: 13px;
     color: #939393;
   }
