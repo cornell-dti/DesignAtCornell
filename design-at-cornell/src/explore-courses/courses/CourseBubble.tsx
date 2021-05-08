@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  CourseContainer,
-  CourseNumber,
-  TagsContainer,
-  Tag
-} from '../ExploreCoursesStyles';
+import { CourseContainer, CourseNumber, TagsContainer, Tag } from '../ExploreCoursesStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg'
 import { Course } from '../../../../server/types';
-
+s
 const CourseBubble = (course : Course) => (
   <CourseContainer
     style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
@@ -27,6 +22,6 @@ const CourseBubble = (course : Course) => (
       </Tag>
     </TagsContainer>
   </CourseContainer>
-)
+);
 
 export default CourseBubble;

@@ -6,7 +6,7 @@ import About from './About';
 describe('<About />', () => {
   test('it should mount', () => {
     render(<About />);
-    
+
     const about = screen.getByTestId('About');
 
     expect(about).toBeInTheDocument();

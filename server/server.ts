@@ -2,14 +2,17 @@ import express, { response } from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin, { firestore } from 'firebase-admin'
-import {Course, courseContent, Major, majorContent, Reason, Club, clubContent, Event, eventContent} from  './types'
+import {Course, courseContent, Major, majorContent, Reason, Club, clubContent, Event, eventContent, rosterSem} from  './types'
 import e from 'express';
+import { isConstructorDeclaration } from 'typescript';
 
 
-const serviceAccount = require("./designAtCornellServiceAccount.json");
+// eslint-disable-next-line
+const serviceAccount = require('./designAtCornellServiceAccount.json');
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://designatcornell.firebaseio.com"
+  databaseURL: 'https://designatcornell.firebaseio.com',
 });
 
 const app = express();
@@ -18,16 +21,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../design-at-cornell/build/')));
 
-const db = admin.firestore()
-
-const rosterSem = "SP21"
-
+const db = admin.firestore();
 
 export const courses = db.collection("courses")
 export const majors = db.collection("majors")
 export const clubs = db.collection("clubs")
 export const events = db.collection("events")
-
 
 
 /**
@@ -42,6 +41,7 @@ export const events = db.collection("events")
  *               if no parameters are sent, all courses will be returned
  * Postcondition: returns an an array of the desired courses with required fields 
  */
+
 app.get("/getCourses", async (req, res) => {
   let courseId = req.query.id
   let courseCode = req.query.code
@@ -61,7 +61,6 @@ app.get("/getCourses", async (req, res) => {
           id : cId,
           code : parseInt(cCode),
           content : cContent
-
         }
         localCourses.push(course)
       }
@@ -69,7 +68,7 @@ app.get("/getCourses", async (req, res) => {
     }
   }
   else {
-     const desiredCourse = (await courses.doc(rosterSem).collection(courseId.toString()).get())
+    const desiredCourse = (await courses.doc(rosterSem).collection(courseId.toString()).get())
     .docs.filter(doc => doc.id == courseCode.toString())
     for(const doc of desiredCourse) {
       let cContent: courseContent = doc.data() as courseContent
@@ -81,15 +80,17 @@ app.get("/getCourses", async (req, res) => {
       localCourses.push(course);
     }
   }
-  res.send({"success": true, "data": localCourses});
-})
+  res.send({ success: true, data: localCourses });
+});
 /**
+
  * creates a new course object in firestore using client provIded fields 
  * Precondition: Client must provIde all required fields for the course, 
- *               must not be a duplicate of an existing course
+ * must not be a duplicate of an existing course
  * Postcondition: One new course will be created and stored in firestore
-*/
+ */
 app.post('/createCourse', async (req, res) => {
+
   const course: Course = req.body
   const courseId: string = course.id
   const courseCode: number = course.code
@@ -106,8 +107,9 @@ app.post('/createCourse', async (req, res) => {
     newCourse.set(course.content)
     res.send({"success": true, "data": course})
   }
-})
+});
 /**
+
    * querying the database for the course with the client Identifier and code
    * Precondition: request body must have a course Id and course code
    * Postcondition: only a singular course will be deleted
@@ -123,13 +125,15 @@ app.delete('/deleteCourse', async (req,res) => {
     courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).delete()
     res.send({"success": true})
   }   
-})
+});
+
 /**
  * updates the specified field of a course with specified content
  * Precondition: request body must have a course Id and code, field, and new content
  * Postcondition: the specified data of a singular course will be updated
-*/
+ */
 app.post('/updateCourse', async (req, res) => {
+
   const field: string = req.body.field;
   const courseId: string = req.body.id
   const courseCode: number = req.body.code
@@ -142,7 +146,6 @@ app.post('/updateCourse', async (req, res) => {
     courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).update({field: content})
     res.send(true);
   }
-  
 });
 
 /**
@@ -157,8 +160,7 @@ app.post('/updateCourse', async (req, res) => {
  *               if no parameters are sent, all courses will be returned
  * Postcondition: returns an an array of the desired major(s) with required fields 
  */
-
- app.get("/getMajors", async (req, res) => {
+app.get("/getMajors", async (req, res) => {
   let majorTitle = req.query.title
   const localMajors: Major[] = [];
  
@@ -191,7 +193,7 @@ app.post('/updateCourse', async (req, res) => {
       res.send({"success": true, "data": localMajors});
     }
   }
-})
+});
 
 /**
  * creates a new major object in firestore using client provIded fields 
@@ -212,7 +214,7 @@ app.post('/createMajor', async (req, res) => {
     newMajor.set(major.content)
     res.send({"success": true, "data": major})
   }
-})
+});
 
 /**
    * querying the database for the major with the major title
@@ -229,7 +231,7 @@ app.delete('/deleteMajor', async (req,res) => {
     majors.doc(title).delete()  
     res.send({"success": true})
   }   
-})
+});
 
 /**
  * updates the specified field of a major with specified content
@@ -300,7 +302,7 @@ app.post('/createClub', async (req, res) => {
     newClub.set(club.content)
     res.send({"success": true, "data": club})
   }
-})
+});
 
 /**
    * querying the database for the club with the club title
@@ -317,7 +319,7 @@ app.delete('/deleteClub', async (req,res) => {
     clubs.doc(title).delete()
     res.send({"success": true})
   }   
-})
+});
 
 /**
  * updates the specified field of a club with specified content
@@ -397,7 +399,7 @@ app.post('/createEvent', async (req,res) => {
     newEvent.set(event.content)
     res.send({"success": true, "data": event})
   }
-})
+});
 
 /**
    * querying the database for the event with the event title and deleting it
@@ -414,7 +416,7 @@ app.delete('/deleteEvent', async (req,res) => {
     events.doc(title).delete()
     res.send({"success": true})
   }
-})
+});
 
 /**
  * updates the specified field of a event with specified content
@@ -434,13 +436,12 @@ app.post('/updateEvent', async (req, res) => {
     events.doc(title).update({field: content})
     res.send({"success": true, "data": []});
   }
-})
-
+});
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../design-at-cornell/build/', 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log("Design@Cornell server listening on port " + port);
+  console.log(`Design@Cornell server listening on port ${port}`);
 });

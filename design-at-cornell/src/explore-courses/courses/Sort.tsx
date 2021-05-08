@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Divider, 
-  SortBy
-} from '../ExploreCoursesStyles';
+import { Divider, SortBy } from '../ExploreCoursesStyles';
 import arrow from '../../static/images/down-arrow.png';
 
 const Sort = () => (
@@ -13,6 +10,6 @@ const Sort = () => (
       <img src={arrow} alt="sort" />
     </SortBy>
   </Divider>
-)
+);
 
 export default Sort;
