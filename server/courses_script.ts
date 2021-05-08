@@ -6,21 +6,6 @@ const csv =  require('csv-parser')
 const fsCoursesRead = require('fs')
 const coursesCSV = []
 
-type formatCourse = {
-    "id": string,
-    "code": number
-    "title": string,
-    "semester": string[],
-    "credits": number,
-    "major": string,
-    "description": string,
-    "designAreas": string[],
-    "courseRoster": string,
-    "courseSite": string
-
-}
-
-
 function createCourses (formatCourses: Course[]) {
     for(let i = 0; i < formatCourses.length; i++) {
         let courseIDCollection = courses.doc(rosterSem).collection(formatCourses[i].id)

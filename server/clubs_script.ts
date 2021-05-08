@@ -6,8 +6,6 @@ const fsClubsRead = require('fs')
 const clubsCSV = []
 
 
-let rosterSem = 'SP21'
-
 function createClubs (formatClubs: Club[]) {
     for(let i = 0; i < formatClubs.length; i++) {
         const newClubs = clubs.doc(formatClubs[i].title)

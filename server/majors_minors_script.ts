@@ -1,26 +1,9 @@
 import {majors} from './server'
-import {Major, rosterSem} from './types'
+import {Major} from './types'
 
 const csv =  require('csv-parser')
 const fsMajorsRead = require('fs')
 const majorsCSV = []
-
-type formatMajor = {
-    "title": string,
-    "academicLevel": string,
-    "departmentPage": string,
-    "designAreas": string[],
-    "reasons": Reason[],
-    "school": string,
-    "type": string
-}
-
-type Reason = {
-    "firstName": string,
-    "gradYear": number,
-    "response": string
-}
-
 
 
 function createMajors (formatMajors: Major[]) {

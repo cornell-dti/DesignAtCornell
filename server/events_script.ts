@@ -4,18 +4,6 @@ const csv =  require('csv-parser')
 const fsEventsRead = require('fs')
 const eventsCSV = []
 
-type formatEvent = {
-    "title": string,
-    "topic": string,
-    "type": string, 
-    "period": string,
-    "date": string,
-    "rsvpLink": string
-    "description": string
-}
-
-let rosterSem = 'SP21'
-
 function createEvents (formatEvents: Event[]) {
     for(let i = 0; i < formatEvents.length; i++) {
         const newEvents = events.doc(formatEvents[i].title)
