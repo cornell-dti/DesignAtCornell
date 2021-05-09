@@ -8,7 +8,6 @@ import Category from './types/Category';
 import { Course } from '../../../server/types';
 
 const ExploreCourses = () => {
-    
   const [courses, setCourses] = useState<Course[]>([]);
 
   useEffect(() => {
