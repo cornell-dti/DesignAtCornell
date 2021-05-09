@@ -1,11 +1,12 @@
+import csv from 'csv-parser';
+import fsEventsRead from 'fs';
 import { events } from './server';
 import { Event } from './types';
-const csv = require('csv-parser');
-const fsEventsRead = require('fs');
+
 const eventsCSV = [];
 
 function createEvents(formatEvents: Event[]) {
-  for (let i = 0; i < formatEvents.length; i++) {
+  for (let i = 0; i < formatEvents.length; i += 1) {
     const newEvents = events.doc(formatEvents[i].title);
     newEvents.set({
       title: formatEvents[i].title,
@@ -24,10 +25,10 @@ fsEventsRead
   .pipe(csv())
   .on('data', (data) => eventsCSV.push(data))
   .on('end', () => {
-    let formattedEvents: Event[] = [];
-    //converting each course (CSV object) into formatCourse (JSON object)
-    for (let i = 0; i < eventsCSV.length; i++) {
-      let fEvent: Event = {
+    const formattedEvents: Event[] = [];
+    // converting each course (CSV object) into formatCourse (JSON object)
+    for (let i = 0; i < eventsCSV.length; i += 1) {
+      const fEvent: Event = {
         title: eventsCSV[i].title,
         content: {
           topic: eventsCSV[i].topic,

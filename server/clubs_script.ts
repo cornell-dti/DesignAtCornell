@@ -1,12 +1,12 @@
+import csv from 'csv-parser';
+import fsClubsRead from 'fs';
 import { clubs } from './server';
 import { Club } from './types';
 
-const csv = require('csv-parser');
-const fsClubsRead = require('fs');
 const clubsCSV = [];
 
 function createClubs(formatClubs: Club[]) {
-  for (let i = 0; i < formatClubs.length; i++) {
+  for (let i = 0; i < formatClubs.length; i += 1) {
     const newClubs = clubs.doc(formatClubs[i].title);
     newClubs.set({
       title: formatClubs[i].title,
@@ -26,16 +26,16 @@ fsClubsRead
   .pipe(csv())
   .on('data', (data) => clubsCSV.push(data))
   .on('end', () => {
-    let formattedClubs: Club[] = [];
-    //converting each course (CSV object) into formatCourse (JSON object)
-    for (let i = 0; i < clubsCSV.length; i++) {
-      let fClub: Club = {
+    const formattedClubs: Club[] = [];
+    // converting each course (CSV object) into formatCourse (JSON object)
+    for (let i = 0; i < clubsCSV.length; i += 1) {
+      const fClub: Club = {
         title: clubsCSV[i].title,
         content: {
           orgType: clubsCSV[i].orgType,
           designAreas: clubsCSV[i].designAreas.split(', '),
           website: clubsCSV[i].website,
-          credits: parseInt(clubsCSV[i].credits),
+          credits: parseInt(clubsCSV[i].credits, 10),
           size: clubsCSV[i].size,
           description: clubsCSV[i].description,
           contact: clubsCSV[i].contact,

@@ -1,12 +1,12 @@
+import csv from 'csv-parser';
+import fsMajorsRead from 'fs';
 import { majors } from './server';
 import { Major } from './types';
 
-const csv = require('csv-parser');
-const fsMajorsRead = require('fs');
 const majorsCSV = [];
 
 function createMajors(formatMajors: Major[]) {
-  for (let i = 0; i < formatMajors.length; i++) {
+  for (let i = 0; i < formatMajors.length; i += 1) {
     const newMajor = majors.doc(formatMajors[i].title);
     newMajor.set({
       title: formatMajors[i].title,
@@ -25,10 +25,10 @@ fsMajorsRead
   .pipe(csv())
   .on('data', (data) => majorsCSV.push(data))
   .on('end', () => {
-    let formattedMajors: Major[] = [];
-    //converting each course (CSV object) into formatCourse (JSON object)
-    for (let i = 0; i < majorsCSV.length; i++) {
-      let fMajor: Major = {
+    const formattedMajors: Major[] = [];
+    // converting each course (CSV object) into formatCourse (JSON object)
+    for (let i = 0; i < majorsCSV.length; i += 1) {
+      const fMajor: Major = {
         title: majorsCSV[i].title,
         content: {
           academicLevel: majorsCSV[i].academicLevel,

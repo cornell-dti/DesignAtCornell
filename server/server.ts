@@ -1,7 +1,7 @@
-import express, { response } from 'express';
+import express from 'express';
 import path from 'path';
 import cors from 'cors';
-import admin, { firestore } from 'firebase-admin';
+import admin from 'firebase-admin';
 import {
   Course,
   courseContent,
@@ -14,8 +14,6 @@ import {
   eventContent,
   rosterSem,
 } from './types';
-import e from 'express';
-import { isConstructorDeclaration } from 'typescript';
 
 // eslint-disable-next-line
 const serviceAccount = require('./designAtCornellServiceAccount.json');
@@ -52,38 +50,38 @@ export const events = db.collection('events');
  */
 
 app.get('/getCourses', async (req, res) => {
-  let courseId = req.query.id;
-  let courseCode = req.query.code;
+  const courseId = req.query.id;
+  const courseCode = req.query.code;
   const localCourses: Course[] = [];
   let collectionIncrementer = 0;
 
   if (courseId === null) {
     const courseTypes = await courses.doc(rosterSem).listCollections();
     const collections = courseTypes.map((collection) => collection.listDocuments());
-
+    /* eslint-disable no-await-in-loop */
     for (const collection of collections) {
-      let cId = courseTypes[collectionIncrementer].id;
+      const cId = courseTypes[collectionIncrementer].id;
       for (const docRef of await collection) {
-        let cCode = docRef.id;
-        let cContent: courseContent = (await docRef.get()).data() as courseContent;
-        let course: Course = {
+        const cCode = docRef.id;
+        const cContent: courseContent = (await docRef.get()).data() as courseContent;
+        const course: Course = {
           id: cId,
-          code: parseInt(cCode),
+          code: parseInt(cCode, 10),
           content: cContent,
         };
         localCourses.push(course);
       }
-      collectionIncrementer++;
+      collectionIncrementer += 1;
     }
   } else {
     const desiredCourse = (
       await courses.doc(rosterSem).collection(courseId.toString()).get()
     ).docs.filter((doc) => doc.id == courseCode.toString());
     for (const doc of desiredCourse) {
-      let cContent: courseContent = doc.data() as courseContent;
-      let course: Course = {
+      const cContent: courseContent = doc.data() as courseContent;
+      const course: Course = {
         id: courseId.toString(),
-        code: parseInt(courseCode.toString()),
+        code: parseInt(courseCode.toString(), 10),
         content: cContent,
       };
       localCourses.push(course);
@@ -116,7 +114,7 @@ app.post('/createCourse', async (req, res) => {
   ) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
-    let courseIdCollection = courses.doc(rosterSem).collection(courseId);
+    const courseIdCollection = courses.doc(rosterSem).collection(courseId);
     const newCourse = courseIdCollection.doc(courseCode.toString());
     newCourse.set(course.content);
     res.send({ success: true, data: course });
@@ -146,10 +144,10 @@ app.delete('/deleteCourse', async (req, res) => {
  * Postcondition: the specified data of a singular course will be updated
  */
 app.post('/updateCourse', async (req, res) => {
-  const field: string = req.body.field;
+  const { field } = req.body;
   const courseId: string = req.body.id;
   const courseCode: number = req.body.code;
-  const content = req.body.content;
+  const { content } = req.body;
 
   if (content === null || field === null || courseCode === null || courseId === null) {
     res.send('One or more fields is missing.');
@@ -176,15 +174,15 @@ app.post('/updateCourse', async (req, res) => {
  * Postcondition: returns an an array of the desired major(s) with required fields 
  */
 app.get('/getMajors', async (req, res) => {
-  let majorTitle = req.query.title;
+  const majorTitle = req.query.title;
   const localMajors: Major[] = [];
 
   if (majorTitle === null) {
-    let majorDocs = await majors.get();
+    const majorDocs = await majors.get();
 
     for (const docRef of majorDocs.docs) {
-      let majorC: majorContent = docRef.data() as majorContent;
-      let major: Major = {
+      const majorC: majorContent = docRef.data() as majorContent;
+      const major: Major = {
         content: majorC,
         title: docRef.id,
       };
@@ -193,12 +191,12 @@ app.get('/getMajors', async (req, res) => {
 
     res.send({ success: true, data: localMajors });
   } else {
-    let majorDocRef = await majors.doc(majorTitle.toString()).get();
-    let majorC: majorContent = majorDocRef.data() as majorContent;
+    const majorDocRef = await majors.doc(majorTitle.toString()).get();
+    const majorC: majorContent = majorDocRef.data() as majorContent;
     if (majorC === null) {
       res.send({ success: false, message: 'Major not found.' });
     } else {
-      let major: Major = {
+      const major: Major = {
         content: majorC,
         title: majorDocRef.id,
       };
@@ -240,7 +238,7 @@ app.post('/createMajor', async (req, res) => {
  * Postcondition: only a singular major will be deleted
  */
 app.delete('/deleteMajor', async (req, res) => {
-  const title: string = req.body.title;
+  const { title } = req.body;
 
   if (title === null) {
     res.send({ success: false, message: 'One or more fields is missing' });
@@ -256,9 +254,9 @@ app.delete('/deleteMajor', async (req, res) => {
  * Postcondition: the specified data of a singular major will be updated
  */
 app.post('/updateMajor', async (req, res) => {
-  const field: string = req.body.field;
-  const title: string = req.body.title;
-  const content = req.body.content;
+  const { field } = req.body;
+  const { title } = req.body;
+  const { content } = req.body;
 
   if (content === null || field === null || title === null) {
     res.send('One or more fields is missing.');
@@ -282,14 +280,14 @@ app.post('/updateMajor', async (req, res) => {
  */
 
 app.get('/getClubs', async (req, res) => {
-  let clubTitle = req.query.title;
+  const clubTitle = req.query.title;
   const localClubs: Club[] = [];
 
   if (clubTitle === null) {
-    let clubDocs = await clubs.get();
+    const clubDocs = await clubs.get();
     for (const docRef of clubDocs.docs) {
-      let clubC: clubContent = docRef.data() as clubContent;
-      let club: Club = {
+      const clubC: clubContent = docRef.data() as clubContent;
+      const club: Club = {
         content: clubC,
         title: docRef.id,
       };
@@ -332,7 +330,7 @@ app.post('/createClub', async (req, res) => {
  * Postcondition: only a singular club will be deleted
  */
 app.delete('/deleteClub', async (req, res) => {
-  const title: string = req.body.title;
+  const { title } = req.body;
 
   if (title === null) {
     res.send({ success: false, message: 'One or more fields is missing' });
@@ -348,9 +346,9 @@ app.delete('/deleteClub', async (req, res) => {
  * Postcondition: the specified data of a singular club will be updated
  */
 app.post('/updateClub', async (req, res) => {
-  const field: string = req.body.field;
-  const title: string = req.body.title;
-  const content = req.body.content;
+  const { field } = req.body;
+  const { title } = req.body;
+  const { content } = req.body;
 
   if (content === null || field === null || title === null) {
     res.send('One or more fields is missing.');
@@ -373,14 +371,14 @@ app.post('/updateClub', async (req, res) => {
  * Postcondition: returns an an array of the desired events with required fields 
  */
 app.get('/getEvents', async (req, res) => {
-  const title = req.query.title;
+  const { title } = req.query;
   const localEvents: Event[] = [];
 
   if (title === null) {
-    let eventDocs = await events.get();
+    const eventDocs = await events.get();
     for (const docRef of eventDocs.docs) {
-      let eventC: eventContent = docRef.data() as eventContent;
-      let event = {
+      const eventC: eventContent = docRef.data() as eventContent;
+      const event = {
         title: docRef.id,
         content: eventC,
       };
@@ -388,8 +386,8 @@ app.get('/getEvents', async (req, res) => {
     }
     res.send({ success: true, data: localEvents });
   } else {
-    let eventRef = await events.doc(title.toString()).get();
-    let event = eventRef.data();
+    const eventRef = await events.doc(title.toString()).get();
+    const event = eventRef.data();
     event.title = title;
     res.send({ success: true, data: event });
   }
@@ -429,7 +427,7 @@ app.post('/createEvent', async (req, res) => {
  * Postcondition: only a singular event will be deleted
  */
 app.delete('/deleteEvent', async (req, res) => {
-  const title: string = req.body.title;
+  const { title } = req.body;
   if (title === null) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
@@ -445,9 +443,9 @@ app.delete('/deleteEvent', async (req, res) => {
  * Postcondition: the specified data of a singular event will be updated
  */
 app.post('/updateEvent', async (req, res) => {
-  const title: string = req.body.title;
-  const field: string = req.body.field;
-  const content: string = req.body.content;
+  const { title } = req.body;
+  const { field } = req.body;
+  const { content } = req.body;
 
   if (title === null || field === null || content === null) {
     res.send({ success: true, message: 'one or more fields is missing' });

@@ -64,4 +64,4 @@ export type Event = {
   content: eventContent;
 };
 
-export let rosterSem = 'SP21';
+export const rosterSem = 'SP21';
