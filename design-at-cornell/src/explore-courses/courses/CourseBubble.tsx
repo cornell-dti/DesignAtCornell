@@ -3,7 +3,7 @@ import { CourseContainer, CourseNumber, TagsContainer, Tag } from '../ExploreCou
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg'
 import { Course } from '../../../../server/types';
-s
+
 const CourseBubble = (course : Course) => (
   <CourseContainer
     style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
