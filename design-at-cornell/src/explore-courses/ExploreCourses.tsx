@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
+import { PageContainer } from './ExploreCoursesStyles';
 import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
 import Pagination from './Pagination';
-import { course_content } from '../../../server/types';
+import { courseContent } from '../../../server/types';
 
 const ExploreCourses = () => {
-
-  const [courses, setCourses] = useState<course_content[]>([]);
+  const [courses, setCourses] = useState<courseContent[]>([]);
 
   useEffect(() => {
     axios
       .get('http://localhost:3000/getCourses')
       .then((res) => res.data.data)
-      .then(setCourses)
+      .then(setCourses);
   }, []);
 
-  const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(new Map(
-    Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
-  ));
+  const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(
+    new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
+  );
 
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
@@ -61,6 +60,6 @@ const ExploreCourses = () => {
       />
     </PageContainer>
   );
-}
+};
 
 export default ExploreCourses;
