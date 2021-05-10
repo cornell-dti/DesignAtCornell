@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyledPagination } from './ExploreCoursesStyles';
+import { StyledPagination, PageButton, PageNavButton } from './ExploreCoursesStyles';
+import rightArrow from '../static/images/right-arrow.svg';
 
 const Pagination = ({ currentPage, coursesPerPage, totalCourses, paginate }: Props ) => {
   const numPages = Math.ceil(totalCourses / coursesPerPage);
@@ -13,19 +14,35 @@ const Pagination = ({ currentPage, coursesPerPage, totalCourses, paginate }: Pro
 
   return (
     <StyledPagination>
+      {(currentPage > 1)? 
+        <PageNavButton 
+          direction='left'
+          onClick={() => paginate(currentPage - 1)}
+        >
+          <img src={rightArrow} alt='previous page' />
+          Previous
+        </PageNavButton> : <div/>
+      }
       <ul>
         {pageNumbers.map(page => (
           <li key={page}>
-            <button onClick={() => paginate(page)}>
+            <PageButton
+              selected={page === currentPage}
+              onClick={() => paginate(page)}
+            >
               {page}
-            </button>
+            </PageButton>
           </li>
         ))}
       </ul>
       {(currentPage < numPages)? 
-        <button onClick={() => paginate(currentPage + 1)}>
+        <PageNavButton 
+          direction='right'
+          onClick={() => paginate(currentPage + 1)}
+        >
           Next
-        </button> : null        
+          <img src={rightArrow} alt='next page' />
+        </PageNavButton> : <div/>
       }
     </StyledPagination>
   );

@@ -24,27 +24,25 @@ const ExploreCourses = () => {
   ));
 
   const [search, setSearch] = useState('');
-
   const [currentPage, setPage] = useState(1);
-
-  const searchResult = courses.filter(course => 
-    (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
-    course.title.toLowerCase().includes(search.toLowerCase())
-  );
 
   const searchHandler = function(event: React.ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
     setPage(1);
   }
 
+  const paginate = (pageNum: number) => {
+    setPage(pageNum);
+  }
+
+  const searchResult = courses.filter(course => 
+    (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
+    course.title.toLowerCase().includes(search.toLowerCase())
+  );
   const coursesPerPage = 20;
   const lastCourseIdx = currentPage * coursesPerPage;
   const firstCourseIdx = lastCourseIdx - coursesPerPage;
-  const displayCourses = searchResult.slice(firstCourseIdx, lastCourseIdx);
-
-  const paginate = (pageNum: number) => (
-    setPage(pageNum)
-  );
+  const displayedCourses = searchResult.slice(firstCourseIdx, lastCourseIdx);
 
   return (
     <PageContainer>
@@ -54,7 +52,7 @@ const ExploreCourses = () => {
         onChange={setfilterData}
         searchHandler={searchHandler}
       />
-      <Courses {...displayCourses} />
+      <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
         coursesPerPage={coursesPerPage}
