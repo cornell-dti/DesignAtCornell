@@ -157,7 +157,7 @@ app.post('/updateCourse', async (req, res) => {
       .collection(courseId)
       .doc(courseCode.toString())
       .update({ field: content });
-    res.send({success: true});
+    res.send({ success: true });
   }
 });
 
@@ -451,7 +451,7 @@ app.post('/updateEvent', async (req, res) => {
     res.send({ success: true, message: 'one or more fields is missing' });
   } else {
     events.doc(title).update({ field: content });
-    res.send({success: true});
+    res.send({ success: true });
   }
 });
 
