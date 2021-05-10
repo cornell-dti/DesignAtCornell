@@ -53,7 +53,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleP
         <SearchBar
           width="338px"
           placeholder="Name, Keywords, Topics, Etc"
-          background='white'
+          background="white"
           onChange={searchHandler}
         />
         <SavedCoursesButton>

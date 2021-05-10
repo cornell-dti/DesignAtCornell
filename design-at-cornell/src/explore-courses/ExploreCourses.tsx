@@ -25,18 +25,19 @@ const ExploreCourses = () => {
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
 
-  const searchHandler = function(event: React.ChangeEvent<HTMLInputElement>) {
+  const searchHandler = function (event: React.ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
     setPage(1);
-  }
+  };
 
   const paginate = (pageNum: number) => {
     setPage(pageNum);
-  }
+  };
 
-  const searchResult = courses.filter(course => 
-    (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
-    course.title.toLowerCase().includes(search.toLowerCase())
+  const searchResult = courses.filter(
+    (course) =>
+      (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
+      course.title.toLowerCase().includes(search.toLowerCase())
   );
   const coursesPerPage = 20;
   const lastCourseIdx = currentPage * coursesPerPage;

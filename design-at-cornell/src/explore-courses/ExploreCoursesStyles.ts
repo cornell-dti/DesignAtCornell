@@ -432,8 +432,8 @@ export const PageButton = styled.button<{ selected: boolean }>`
   font-size: 20px;
   line-height: 23px;
   cursor: pointer;
-  color: ${({selected}) => selected? 'black' : 'gray'};
-  background: ${({selected}) => selected? '#E0E0E0' : 'none'};
+  color: ${({ selected }) => (selected ? 'black' : 'gray')};
+  background: ${({ selected }) => (selected ? '#E0E0E0' : 'none')};
 
   &:focus {
     border: none;
@@ -453,12 +453,12 @@ export const PageNavButton = styled.button<{ direction: string }>`
   line-height: 41px;
   text-align: center;
   align-items: center;
-  justify-content: ${({ direction }) => direction === 'left' ? 'flex-start' : 'flex-end'};;
+  justify-content: ${({ direction }) => (direction === 'left' ? 'flex-start' : 'flex-end')};
   cursor: pointer;
 
   img {
     margin: 10px;
-    transform: ${({ direction }) => direction === 'left' ? 'rotate(180deg)' : 'none'};
+    transform: ${({ direction }) => (direction === 'left' ? 'rotate(180deg)' : 'none')};
   }
 
   &:focus {
