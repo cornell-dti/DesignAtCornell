@@ -6,10 +6,10 @@ import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
 import Category from './types/Category';
 import Pagination from './Pagination';
-import { courseContent } from '../../../server/types';
+import { Course } from '../../../server/types';
 
 const ExploreCourses = () => {
-  const [courses, setCourses] = useState<courseContent[]>([]);
+  const [courses, setCourses] = useState<Course[]>([]);
 
   useEffect(() => {
     axios
@@ -37,7 +37,7 @@ const ExploreCourses = () => {
   const searchResult = courses.filter(
     (course) =>
       (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
-      course.title.toLowerCase().includes(search.toLowerCase())
+      course.content.title.toLowerCase().includes(search.toLowerCase())
   );
   const coursesPerPage = 20;
   const lastCourseIdx = currentPage * coursesPerPage;
