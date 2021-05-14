@@ -6,13 +6,15 @@ import {
     filterCategoryClearHandler,
     filterCheckboxClickHandler,
     filterDropdownToggleHandler,
-    filterSelectionBubbleClickHandler
+    filterSelectionBubbleClickHandler,
+    searchHandler
 } from "./Handlers";
 
 export type TitleProps = {
     readonly filterData: ReadonlyMap<ClubsCategory, ReadonlySet<string>>;
     readonly dropdownInfo: ReadonlyMap<ClubsCategory, FilterDropdownInfo>;
     readonly onChange: filterBarChangeHandler;
+    readonly searchHandler: searchHandler;
 };
 
 export type FilterCategoryProps = FilterDropdownProps & {

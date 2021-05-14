@@ -12,6 +12,7 @@ import bookmark from '../../static/images/bookmark.svg';
 const ClubBubble = (club: Club) => (
   <OrganizationBubble 
     style={{borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+    onClick={() => (window.location.href = club.content.website)}
   >
     <ForCredit>
       <p>{club.content.credits? 'For Credit' : ''}</p>

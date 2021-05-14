@@ -2,8 +2,7 @@ import React from 'react';
 import FilterBar from "./FilterBar";
 import {
   TitleBackground,
-  TitleContainer,
-  FilterBarContainer,
+  TitleContainer
 } from '../ClubsStyles';
 import { TitleProps } from '../types/PropertyTypes';
 

@@ -12,7 +12,7 @@ import FilterCategory from './FilterCategory';
 import ClubsCategory from '../types/ClubsCategory';
 import bookmarked from '../../static/images/bookmarked.svg';
 
-const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
+const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState<ClubsCategory | ''>('');
   const handleFilterCategoryChange = (category: ClubsCategory): filterCategoryCheckHandler => (
     checkboxLabel => {
@@ -54,6 +54,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
         <SearchBar
           placeholder="Name, Keywords, Topics, Etc"
           background='white'
+          onChange={searchHandler}
         />
         <SavedClubsButton>
           <img src={bookmarked} alt={'saved clubs'} />
