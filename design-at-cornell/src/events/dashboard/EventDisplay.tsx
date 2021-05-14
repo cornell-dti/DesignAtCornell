@@ -25,7 +25,7 @@ const EventDisplay = (event: Event) => (
     <TagsContainer>
       {event.links.map((link) => (
         <Link key={link} shadowColor={buttons[link].color}>
-          <img src={buttons[link].icon} alt={link}/>
+          <img src={buttons[link].icon} alt={link} />
           <p>{buttons[link].name}</p>
         </Link>
       ))}
