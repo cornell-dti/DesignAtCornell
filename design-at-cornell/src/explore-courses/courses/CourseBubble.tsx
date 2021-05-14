@@ -19,7 +19,7 @@ const CourseBubble = (course: Course) => (
         <p>{course.content.credits + ' Credits'}</p>
       </Tag>
       <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
-        <p>{course.content.semester}</p>
+        <p>{course.content.semester.join(', ')}</p>
       </Tag>
     </TagsContainer>
   </CourseContainer>

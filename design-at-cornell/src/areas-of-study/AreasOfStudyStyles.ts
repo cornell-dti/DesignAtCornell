@@ -10,7 +10,7 @@ export const TitleBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 551px;
+  height: 550px;
   padding-left: 100px;
   background: #8ed663;
   align-items: flex-start;
@@ -43,6 +43,7 @@ export const QuizButton = styled.div`
   background: ${colors.transparentWhite};
   border-radius: 43px;
   align-items: center;
+  cursor: pointer;
 
   p {
     width: 100%;
@@ -67,7 +68,7 @@ export const StudiesContainer = styled.div`
   flex-direction: column;
   width: 80%;
   height: fit-content;
-  padding: 90px;
+  padding: 60px 90px;
 `;
 
 export const Divider = styled.div`
@@ -110,6 +111,7 @@ export const AreaOfStudyButton = styled.div`
     font-weight: bold;
     font-size: 16px;
     color: black;
+    cursor: pointer;
   }
 
   p {
@@ -124,8 +126,7 @@ export const ApplyTagsContainer = styled.div`
   width: 20%;
   height: auto;
   background: ${colors.lightGreen};
-  padding-top: 90px;
-  padding-left: 60px;
+  padding: 60px;
 
   h5 {
     font-weight: bold;
@@ -173,6 +174,12 @@ export const ApplyTagsContainer = styled.div`
       border-radius: 2px;
       border: 2px solid black;
       background-color: black;
+    }
+
+    label {
+      display: block;
+      margin-top: -24px;
+      margin-left: 20px;
     }
   }
 `;

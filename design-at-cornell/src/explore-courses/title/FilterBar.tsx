@@ -4,6 +4,7 @@ import { TitleProps } from '../types/PropertyTypes';
 import {
   FilterBarContainer,
   FilterDropdownsList,
+  SearchAndBookmarkList,
   SearchBar,
   SavedCoursesButton,
 } from '../ExploreCoursesStyles';
@@ -50,12 +51,14 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
             />
           );
         })}
-        <SearchBar width="338px" placeholder="Name, Keywords, Topics, Etc" background="white" />
+      </FilterDropdownsList>
+      <SearchAndBookmarkList>
+        <SearchBar placeholder="Name, Keywords, Topics, Etc" background="white" />
         <SavedCoursesButton>
           <img src={bookmarked} alt={'saved courses'} />
           <p>Saved Courses</p>
         </SavedCoursesButton>
-      </FilterDropdownsList>
+      </SearchAndBookmarkList>
     </FilterBarContainer>
   );
 };
