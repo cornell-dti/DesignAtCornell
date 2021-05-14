@@ -69,7 +69,7 @@ export const StudiesContainer = styled.div`
   width: 80%;
   height: fit-content;
   padding: 60px 90px;
-`
+`;
 
 export const Divider = styled.div`
   display: flex;

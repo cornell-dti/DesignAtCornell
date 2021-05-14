@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
-import { 
-  FilterBarContainer, 
-  FilterDropdownsList, 
-  SearchAndBookmarkList, 
-  SearchBar, 
-  SavedCoursesButton 
+import {
+  FilterBarContainer,
+  FilterDropdownsList,
+  SearchAndBookmarkList,
+  SearchBar,
+  SavedCoursesButton,
 } from '../ExploreCoursesStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterCategory from './FilterCategory';
@@ -53,10 +53,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
         })}
       </FilterDropdownsList>
       <SearchAndBookmarkList>
-        <SearchBar
-          placeholder="Name, Keywords, Topics, Etc"
-          background='white'
-        />
+        <SearchBar placeholder="Name, Keywords, Topics, Etc" background="white" />
         <SavedCoursesButton>
           <img src={bookmarked} alt={'saved courses'} />
           <p>Saved Courses</p>

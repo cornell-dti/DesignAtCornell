@@ -115,12 +115,12 @@ export const SearchAndBookmarkList = styled.ul`
   padding: 0;
 `;
 
-export const FilterButton = styled.div<{ open: boolean, applied: boolean }>`
+export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
   display: flex;
   width: fit-content;
-  height: ${({ open }) => open ? '33px' : '28px'};
-  background: ${({ open }) => open ? 'white' : colors.transparentWhite};
-  border-radius: ${({ open }) => open ? '15px 15px 0px 0px' : '15px'};
+  height: ${({ open }) => (open ? '33px' : '28px')};
+  background: ${({ open }) => (open ? 'white' : colors.transparentWhite)};
+  border-radius: ${({ open }) => (open ? '15px 15px 0px 0px' : '15px')};
   margin-right: 20px;
   padding-left: 15px;
   padding-right: ${({ applied }) => (applied ? '7px' : '15px')};
@@ -179,7 +179,7 @@ export const FilterCategoryContainer = styled.li`
 `;
 
 export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
-  width: ${({ expand }) => expand ? 'auto' : 'calc(100% - 20px)'};
+  width: ${({ expand }) => (expand ? 'auto' : 'calc(100% - 20px)')};
   position: absolute;
   display: inline;
   background: white;
