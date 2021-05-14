@@ -58,18 +58,12 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
-export const SearchBarContainer = styled.div`
-  display: flex;
-  flex-grow: 1;
-  height: 100%;
-  align-items: center;
-`;
-
 export const SearchBar = styled.input<{ background: string }>`
   flex-grow: 1;
   height: 28px;
   border-radius: 43px;
   padding-left: 10px;
+  margin-right: 20px;
   border-style: none;
   background: ${({ background }) => background};
   background-image: url(${magnifyingGlass});
@@ -78,8 +72,8 @@ export const SearchBar = styled.input<{ background: string }>`
   text-indent: 30px;
 
   &:focus {
-      outline: none;
-  } 
+    outline: none;
+  }
   img {
     background: ${({ background }) => background};
   }
@@ -91,6 +85,15 @@ export const FilterDropdownsList = styled.ul`
   margin: 27.25px 0px;
   padding-left: 0px;
   list-style: none;
+`;
+
+export const SearchAndBookmarkList = styled.ul`
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 
 export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
@@ -112,6 +115,23 @@ export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
   p {
     margin-right: ${({ applied }) => (applied ? '11px' : '20px')};
     margin-top: 4px;
+  }
+`;
+
+export const SavedClubsButton = styled.div`
+  display: flex;
+  width: 165px;
+  height: 36px;
+  background: white;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-evenly;
+  p {
+    width: fit-content;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: black;
   }
 `;
 
@@ -345,7 +365,6 @@ export const Tag = styled.div`
   display: flex;
   width: fit-content;
   height: 28px;
-  background: ${colors.transparentWhite};
   border-radius: 43px;
   margin-right: 10px;
   padding-left: 10px;

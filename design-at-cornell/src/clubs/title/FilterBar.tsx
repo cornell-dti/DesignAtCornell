@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
-import { FilterBarContainer, FilterDropdownsList, SearchBarContainer, SearchBar } from '../ClubsStyles';
+import { 
+  FilterBarContainer, 
+  FilterDropdownsList, 
+  SearchAndBookmarkList, 
+  SearchBar, 
+  SavedClubsButton 
+} from '../ClubsStyles';
 import FilterCategory from './FilterCategory';
 import ClubsCategory from '../types/ClubsCategory';
+import bookmarked from '../../static/images/bookmarked.svg';
 
 const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState<ClubsCategory | ''>('');
@@ -43,12 +50,16 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
           );
         })}
       </FilterDropdownsList>
-      <SearchBarContainer>
+      <SearchAndBookmarkList>
         <SearchBar
           placeholder="Name, Keywords, Topics, Etc"
           background='white'
         />
-      </SearchBarContainer>
+        <SavedClubsButton>
+          <img src={bookmarked} alt={'saved clubs'} />
+          <p>Saved Clubs</p>
+        </SavedClubsButton>
+      </SearchAndBookmarkList>
     </FilterBarContainer>
   );
 };
