@@ -9,6 +9,6 @@ const Title = () => (
       <p>Take the Majors & Minors Quiz!</p>
     </QuizButton>
   </TitleBackground>
-)
+);
 
-export default Title
+export default Title;
