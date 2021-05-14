@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './homepage/Homepage.lazy';
 import ExploreCourses from './explore-courses/ExploreCourses.lazy';
 import AreasOfStudy from './areas-of-study/AreasOfStudy.lazy';
+import Clubs from './clubs/Clubs.lazy';
 import About from './about/About.lazy';
 import Contact from './contact/Contact.lazy';
 import PageNotFound from './404/PageNotFound.lazy';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/explore-courses" component={ExploreCourses} />
           <Route path="/areas-of-study" component={AreasOfStudy} />
+          <Route path="/student-organizations" component={Clubs} />
           <Route exact path="/" component={Homepage} />
           <Route path="/*" component={PageNotFound} />
         </Switch>
