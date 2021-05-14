@@ -55,7 +55,7 @@ app.get('/getCourses', async (req, res) => {
   const localCourses: Course[] = [];
   let collectionIncrementer = 0;
 
-  if (courseId === null) {
+  if (courseId === undefined) {
     const courseTypes = await courses.doc(rosterSem).listCollections();
     const collections = courseTypes.map((collection) => collection.listDocuments());
     /* eslint-disable no-await-in-loop */
@@ -102,14 +102,14 @@ app.post('/createCourse', async (req, res) => {
   const courseCode: number = course.code;
 
   if (
-    course.code === null ||
-    course.content.title === null ||
-    course.content.courseSite === null ||
-    course.content.courseRoster === null ||
-    course.content.description === null ||
-    course.id === null ||
+    course.code === undefined ||
+    course.content.title === undefined ||
+    course.content.courseSite === undefined ||
+    course.content.courseRoster === undefined ||
+    course.content.description === undefined ||
+    course.id === undefined ||
     course.content.semester.length == 0 ||
-    course.content.major === null ||
+    course.content.major === undefined ||
     course.content.designAreas.length == 0
   ) {
     res.send({ success: false, message: 'one or more fields is missing' });
@@ -130,7 +130,7 @@ app.delete('/deleteCourse', async (req, res) => {
   const courseId: string = req.body.id;
   const courseCode: number = req.body.code;
 
-  if (courseId === null || courseCode === null) {
+  if (courseId === undefined || courseCode === undefined) {
     res.send({ success: false, message: 'One or more fields is missing' });
   } else {
     courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).delete();
@@ -149,7 +149,12 @@ app.post('/updateCourse', async (req, res) => {
   const courseCode: number = req.body.code;
   const { content } = req.body;
 
-  if (content === null || field === null || courseCode === null || courseId === null) {
+  if (
+    content === undefined ||
+    field === undefined ||
+    courseCode === undefined ||
+    courseId === undefined
+  ) {
     res.send('One or more fields is missing.');
   } else {
     courses
@@ -177,7 +182,7 @@ app.get('/getMajors', async (req, res) => {
   const majorTitle = req.query.title;
   const localMajors: Major[] = [];
 
-  if (majorTitle === null) {
+  if (majorTitle === undefined) {
     const majorDocs = await majors.get();
 
     for (const docRef of majorDocs.docs) {
@@ -193,7 +198,7 @@ app.get('/getMajors', async (req, res) => {
   } else {
     const majorDocRef = await majors.doc(majorTitle.toString()).get();
     const majorC: majorContent = majorDocRef.data() as majorContent;
-    if (majorC === null) {
+    if (majorC === undefined) {
       res.send({ success: false, message: 'Major not found.' });
     } else {
       const major: Major = {
@@ -216,13 +221,13 @@ app.post('/createMajor', async (req, res) => {
   const major: Major = req.body;
 
   if (
-    major.title === null ||
-    major.content.academicLevel === null ||
-    major.content.departmentPage === null ||
-    major.content.designAreas === null ||
-    major.content.reasons === null ||
-    major.content.school === null ||
-    major.content.type === null
+    major.title === undefined ||
+    major.content.academicLevel === undefined ||
+    major.content.departmentPage === undefined ||
+    major.content.designAreas === undefined ||
+    major.content.reasons === undefined ||
+    major.content.school === undefined ||
+    major.content.type === undefined
   ) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
@@ -240,7 +245,7 @@ app.post('/createMajor', async (req, res) => {
 app.delete('/deleteMajor', async (req, res) => {
   const { title } = req.body;
 
-  if (title === null) {
+  if (title === undefined) {
     res.send({ success: false, message: 'One or more fields is missing' });
   } else {
     majors.doc(title).delete();
@@ -258,7 +263,7 @@ app.post('/updateMajor', async (req, res) => {
   const { title } = req.body;
   const { content } = req.body;
 
-  if (content === null || field === null || title === null) {
+  if (content === undefined || field === undefined || title === undefined) {
     res.send('One or more fields is missing.');
   } else {
     majors.doc(title).update({ field: content });
@@ -283,7 +288,7 @@ app.get('/getClubs', async (req, res) => {
   const clubTitle = req.query.title;
   const localClubs: Club[] = [];
 
-  if (clubTitle === null) {
+  if (clubTitle === undefined) {
     const clubDocs = await clubs.get();
     for (const docRef of clubDocs.docs) {
       const clubC: clubContent = docRef.data() as clubContent;
@@ -307,14 +312,14 @@ app.post('/createClub', async (req, res) => {
   const club: Club = req.body;
 
   if (
-    club.title === null ||
-    club.content.description === null ||
-    club.content.website === null ||
-    club.content.designAreas === null ||
-    club.content.size === null ||
-    club.content.credits === null ||
-    club.content.orgType === null ||
-    club.content.contact === null
+    club.title === undefined ||
+    club.content.description === undefined ||
+    club.content.website === undefined ||
+    club.content.designAreas === undefined ||
+    club.content.size === undefined ||
+    club.content.credits === undefined ||
+    club.content.orgType === undefined ||
+    club.content.contact === undefined
   ) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
@@ -332,7 +337,7 @@ app.post('/createClub', async (req, res) => {
 app.delete('/deleteClub', async (req, res) => {
   const { title } = req.body;
 
-  if (title === null) {
+  if (title === undefined) {
     res.send({ success: false, message: 'One or more fields is missing' });
   } else {
     clubs.doc(title).delete();
@@ -350,7 +355,7 @@ app.post('/updateClub', async (req, res) => {
   const { title } = req.body;
   const { content } = req.body;
 
-  if (content === null || field === null || title === null) {
+  if (content === undefined || field === undefined || title === undefined) {
     res.send('One or more fields is missing.');
   } else {
     clubs.doc(title).update({ field: content });
@@ -374,7 +379,7 @@ app.get('/getEvents', async (req, res) => {
   const { title } = req.query;
   const localEvents: Event[] = [];
 
-  if (title === null) {
+  if (title === undefined) {
     const eventDocs = await events.get();
     for (const docRef of eventDocs.docs) {
       const eventC: eventContent = docRef.data() as eventContent;
@@ -404,13 +409,13 @@ app.post('/createEvent', async (req, res) => {
   const event: Event = req.body;
 
   if (
-    event.title === null ||
-    event.content.description === null ||
-    event.content.date === null ||
-    event.content.topic === null ||
-    event.content.rsvpLink === null ||
-    event.content.period === null ||
-    event.content.type === null
+    event.title === undefined ||
+    event.content.description === undefined ||
+    event.content.date === undefined ||
+    event.content.topic === undefined ||
+    event.content.rsvpLink === undefined ||
+    event.content.period === undefined ||
+    event.content.type === undefined
   ) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
@@ -428,7 +433,7 @@ app.post('/createEvent', async (req, res) => {
  */
 app.delete('/deleteEvent', async (req, res) => {
   const { title } = req.body;
-  if (title === null) {
+  if (title === undefined) {
     res.send({ success: false, message: 'one or more fields is missing' });
   } else {
     events.doc(title).delete();
@@ -447,7 +452,7 @@ app.post('/updateEvent', async (req, res) => {
   const { field } = req.body;
   const { content } = req.body;
 
-  if (title === null || field === null || content === null) {
+  if (title === undefined || field === undefined || content === undefined) {
     res.send({ success: true, message: 'one or more fields is missing' });
   } else {
     events.doc(title).update({ field: content });
