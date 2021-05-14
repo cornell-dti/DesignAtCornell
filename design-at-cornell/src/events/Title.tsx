@@ -8,6 +8,6 @@ const Title = () => (
       <p>Learn, grow and share with your creative community.</p>
     </TitleContainer>
   </TitleBackground>
-)
+);
 
-export default Title
+export default Title;

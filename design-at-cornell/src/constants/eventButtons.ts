@@ -10,10 +10,10 @@ type EventButton = {
   color: string;
 };
 
-export const buttons: {[key: string]: EventButton} = {
-  'google': {icon: googleCalIcon, name: 'Add to Google Calendar', color: '#C9E1AA'},
-  'rsvp': {icon: emailIcon, name: 'RSVP', color: '#FFCBCB'},
-  'facebook': {icon: facebookIcon, name: 'Facebook Link', color: 'rgba(98, 43, 255, 0.25)'},
-  'zoom': {icon: zoomIcon, name: 'Zoom Link', color: '#AED8F7'},
-  'eventLink': {icon: linkIcon, name: 'Event Link', color: '#FFC0FC'},
+export const buttons: { [key: string]: EventButton } = {
+  google: { icon: googleCalIcon, name: 'Add to Google Calendar', color: '#C9E1AA' },
+  rsvp: { icon: emailIcon, name: 'RSVP', color: '#FFCBCB' },
+  facebook: { icon: facebookIcon, name: 'Facebook Link', color: 'rgba(98, 43, 255, 0.25)' },
+  zoom: { icon: zoomIcon, name: 'Zoom Link', color: '#AED8F7' },
+  eventLink: { icon: linkIcon, name: 'Event Link', color: '#FFC0FC' },
 };

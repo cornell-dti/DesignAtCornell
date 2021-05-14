@@ -14,14 +14,14 @@ export const TitleBackground = styled.div`
   background: ${colors.blue};
   padding-left: 100px;
   padding-right: 100px;
-`
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 55%;
   height: 100%;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
   h1 {
     font-style: normal;
@@ -55,10 +55,10 @@ export const FilterButton = styled.div<{ open: boolean }>`
   width: 350px;
   height: 70px;
   align-items: center;
-  justify-content: ${({ open }) => open ? 'space-between' : 'center'};
-  background: ${({ open }) => open ? 'white' : 'none'};
+  justify-content: ${({ open }) => (open ? 'space-between' : 'center')};
+  background: ${({ open }) => (open ? 'white' : 'none')};
   border-radius: 26px 26px 0 0;
-  box-shadow: ${({ open }) => open ? '0px 0px 24px 2px rgba(0, 0, 0, 0.07)' : 'none'};
+  box-shadow: ${({ open }) => (open ? '0px 0px 24px 2px rgba(0, 0, 0, 0.07)' : 'none')};
 `;
 
 export const MonthSelected = styled.div`
@@ -72,8 +72,9 @@ export const MonthSelected = styled.div`
 `;
 
 export const Arrow = styled.img<{ direction: string; show: boolean }>`
-  transform: ${({ direction }) => direction === 'left' ? 'rotate(90deg)' : direction === 'right' ? 'rotate(270deg)' : 'none'};
-  display: ${({ show }) => show ? 'auto' : 'none'};
+  transform: ${({ direction }) =>
+    direction === 'left' ? 'rotate(90deg)' : direction === 'right' ? 'rotate(270deg)' : 'none'};
+  display: ${({ show }) => (show ? 'auto' : 'none')};
   width: 24px;
   height: 24px;
   margin: 0px 10px;
@@ -82,7 +83,7 @@ export const Arrow = styled.img<{ direction: string; show: boolean }>`
 
 export const FilterWindow = styled.div<{ open: boolean }>`
   position: absolute;
-  display: ${({ open }) => open ? 'flex' : 'none'};
+  display: ${({ open }) => (open ? 'flex' : 'none')};
   flex-wrap: wrap;
   width: 530px;
   height: 400px;
@@ -98,14 +99,14 @@ export const MonthButton = styled.div<{ selected: boolean }>`
   height: 75px;
   border-radius: 6px;
   margin: 10px;
-  background: ${({ selected }) => selected ? '#707070' : '#E6E6E6'};
+  background: ${({ selected }) => (selected ? '#707070' : '#E6E6E6')};
   cursor: pointer;
 
   font-weight: bold;
   font-size: 24px;
   line-height: 75px;
   text-align: center;
-  color: ${({ selected }) => selected ? 'white' : 'black'};
+  color: ${({ selected }) => (selected ? 'white' : 'black')};
 `;
 
 export const EventList = styled.div`
@@ -141,14 +142,14 @@ export const EventContainer = styled.div`
   p {
     font-size: 16px;
     line-height: 19px;
-    color: black; 
+    color: black;
   }
 `;
 
 export const Settings = styled.div`
   display: flex;
   flex-direction: row;
-  
+
   img {
     margin-right: 10px;
   }
@@ -178,7 +179,7 @@ export const Tag = styled.div`
   margin-right: 10px;
   padding: 10px;
   align-items: center;
-  background: #E4E4E4;
+  background: #e4e4e4;
   p {
     font-weight: bold;
     font-size: 12px;
@@ -192,12 +193,12 @@ export const Link = styled.div<{ shadowColor: string }>`
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px ${({shadowColor}) => shadowColor};
+  box-shadow: 0px 0px 22px ${({ shadowColor }) => shadowColor};
   margin-right: 30px;
   padding: 20px;
   align-items: center;
   cursor: pointer;
-  
+
   p {
     font-weight: bold;
     font-size: 17px;
