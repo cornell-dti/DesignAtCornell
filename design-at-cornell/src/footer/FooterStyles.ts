@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { colors } from '../constants/colors';
 
 export const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 405px;
-  background: #F5F5F5;
+  background: ${colors.lightGray};
   padding: 126px 126px 100px 126px;
   justify-content: space-between;
-`
+`;
 
 export const FooterColumnn = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ export const FooterColumnn = styled.div`
   height: 100%;
   justify-content: space-between;
   font-weight: bold;
-`
+`;
 
 export const Logo = styled(Link)`
   display: flex;
@@ -34,11 +35,15 @@ export const Logo = styled(Link)`
     text-align: left;
   }
 
-  &:focus, &:hover, &:active, &:visited, &:link {
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
     text-decoration: none;
     color: black;
   }
-`
+`;
 
 export const DTILogo = styled.div`
   display: flex;
@@ -61,11 +66,15 @@ export const DTILogo = styled.div`
     color: black;
   }
 
-  &:focus, &:hover, &:active, &:visited, &:link {
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
     text-decoration: none;
     color: black;
   }
-`
+`;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -77,6 +86,6 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     text-decoration: none;
-    color: #009C80;
+    color: ${colors.linkColor};
   }
-`
+`;

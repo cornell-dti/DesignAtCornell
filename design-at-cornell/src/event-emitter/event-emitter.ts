@@ -1,5 +1,4 @@
 export class EventEmitter<T> {
-
   private subscribers: Set<(event: T) => any> = new Set();
 
   subscribe(subscriber: (event: T) => any) {
@@ -16,5 +15,4 @@ export class EventEmitter<T> {
       sub(event);
     }
   }
-
 }
