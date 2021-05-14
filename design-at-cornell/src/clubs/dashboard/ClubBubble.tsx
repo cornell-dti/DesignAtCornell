@@ -32,7 +32,7 @@ const ClubBubble = (club: Club) => (
           </Tag>
       }
       {
-        club.content.designAreas.map(area => 
+        club.content.designAreas.map(area => area === '' ? null : 
           <Tag style={{background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
             <p>{area}</p>
           </Tag>
