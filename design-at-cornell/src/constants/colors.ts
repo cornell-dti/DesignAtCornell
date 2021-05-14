@@ -1,6 +1,7 @@
 export const colors = {
   backgroundGradient: 'linear-gradient(90deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)',
   yellow: '#FFD84E',
+  blue: '#7EA3FF',
   transparentWhite: 'rgba(255, 255, 255, 0.53)',
   darkGray: '#828282',
   gray: '#898989',
