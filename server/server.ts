@@ -149,7 +149,12 @@ app.post('/updateCourse', async (req, res) => {
   const courseCode: number = req.body.code;
   const { content } = req.body;
 
-  if (content === undefined || field === undefined || courseCode === undefined || courseId === undefined) {
+  if (
+    content === undefined ||
+    field === undefined ||
+    courseCode === undefined ||
+    courseId === undefined
+  ) {
     res.send('One or more fields is missing.');
   } else {
     courses
