@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
-import { FilterBarContainer, FilterDropdownsList, SearchBar } from '../ClubsStyles';
+import { FilterBarContainer, FilterDropdownsList, SearchBarContainer, SearchBar } from '../ClubsStyles';
 import FilterCategory from './FilterCategory';
 import ClubsCategory from '../types/ClubsCategory';
 
@@ -42,12 +42,13 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
             />
           );
         })}
+      </FilterDropdownsList>
+      <SearchBarContainer>
         <SearchBar
-          width="338px"
           placeholder="Name, Keywords, Topics, Etc"
           background='white'
         />
-      </FilterDropdownsList>
+      </SearchBarContainer>
     </FilterBarContainer>
   );
 };

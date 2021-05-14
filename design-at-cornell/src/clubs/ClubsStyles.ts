@@ -11,7 +11,7 @@ export const TitleBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 551px;
+  height: 550px;
   background: ${colors.cyan};
   padding-left: 100px;
   padding-right: 100px;
@@ -49,9 +49,6 @@ export const FilterBarContainer = styled.div`
   width: 100%;
   height: 15%;
   align-items: flex-start;
-  padding-top: 26px;
-  padding-bottom: 24px;
-
   p {
     width: 100%;
     font-weight: bold;
@@ -61,9 +58,15 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
-export const SearchBar = styled.input<{ width: string; background: string }>`
-  width: ${({ width }) => width};
-  type: text;
+export const SearchBarContainer = styled.div`
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+`;
+
+export const SearchBar = styled.input<{ background: string }>`
+  flex-grow: 1;
   height: 28px;
   border-radius: 43px;
   padding-left: 10px;
@@ -83,34 +86,31 @@ export const SearchBar = styled.input<{ width: string; background: string }>`
 `;
 
 export const FilterDropdownsList = styled.ul`
-  position: absolute;
-  class: dropdown;
   display: flex;
-  margin: 0px;
+  flex-shrink: 0;
+  margin: 27.25px 0px;
   padding-left: 0px;
   list-style: none;
 `;
 
-export const FilterButton = styled.div<{ open: boolean, applied: boolean }>`
+export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
   display: flex;
   width: fit-content;
-  height: ${({ open }) => open ? '33px' : '28px'};
-  background: ${({ open }) => open ? 'white' : colors.transparentWhite};
-  border-radius: ${({ open }) => open ? '15px 15px 0px 0px' : '15px'};
-  margin-right: 25px;
+  height: ${({ open }) => (open ? '33px' : '28px')};
+  background: ${({ open }) => (open ? 'white' : colors.transparentWhite)};
+  border-radius: ${({ open }) => (open ? '15px 15px 0px 0px' : '15px')};
+  margin-right: 20px;
   padding-left: 15px;
-  padding-right: ${({ applied }) => applied ? '7px' : '15px'};
+  padding-right: ${({ applied }) => (applied ? '7px' : '15px')};
   align-items: flex-start;
-
   img {
-    transform: ${({ open }) => open ? 'rotate(180deg)' : 'none'};
+    transform: ${({ open }) => (open ? 'rotate(180deg)' : 'none')};
     margin-top: 8px;
     width: 12px;
     max-height: 12px;
   }
-
   p {
-    margin-right: ${({ applied }) => applied ? '11px' : '20px'};
+    margin-right: ${({ applied }) => (applied ? '11px' : '20px')};
     margin-top: 4px;
   }
 `;
@@ -137,8 +137,7 @@ export const FilterCategoryContainer = styled.li`
 `;
 
 export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
-  class: dropdown;
-  width: ${({ expand }) => expand ? 'auto' : 'calc(100% - 25px)'};
+  width: ${({ expand }) => (expand ? 'auto' : 'calc(100% - 20px)')};
   position: absolute;
   display: inline;
   background: white;
@@ -146,10 +145,11 @@ export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
   padding-left: 23px;
   padding-top: 8px;
   padding-bottom: 11px;
-  border-radius: 0px ${({ expand }) => expand ? '15px ' : '0px '}15px 15px;
+  border-radius: 0px ${({ expand }) => (expand ? '15px ' : '0px ')}15px 15px;
   input {
+    width: 90%;
     margin-top: 11px;
-  } 
+  }
 `;
 
 export const FiltersApplied = styled.div`
@@ -189,7 +189,7 @@ export const FilterSelectionBubbleContainer = styled.div<{ color: string }>`
     padding-right: 9px;
     margin: 0;
   }
-`
+`;
 
 export const ClearCategoryFilters = styled.p`
   padding-top: 7px;
@@ -239,10 +239,10 @@ export const Checkbox = styled.div<{ checked: boolean }>`
   align-items: center;
   justify-content: center;
   height: 13px;
-  border-weight: 2px;
+  border: 2px;
   border-radius: 2px;
   border: solid;
-  background: ${({ checked }) => checked ? 'black' : 'white'};
+  background: ${({ checked }) => (checked ? 'black' : 'white')};
   border-color: black;
   cursor: pointer;
   img {
@@ -253,7 +253,7 @@ export const Checkbox = styled.div<{ checked: boolean }>`
   }
 `;
 
-export const Sort = styled.div`
+export const SortBy = styled.div`
   display: flex;
   flex-direction: row;
   width: fit-content;
@@ -271,7 +271,7 @@ export const Sort = styled.div`
     font-size: 20px;
     line-height: 23px;
     margin: 0;
-    color: #828282;
+    color: ${colors.darkGray};
   }
   img {
     width: 12px;
@@ -291,15 +291,16 @@ export const OrganizationGrid = styled.div`
 `;
 
 export const OrganizationBubble = styled.div`
-  display: flex;
+	display: flex;
   flex-direction: column;
-  width: 289px;
+  width: 22%;
+  min-width: 250px;
   height: 197px;
   cursor: pointer;
   background: white;
   border: 1px solid;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
   padding: 25px;
   align-items: flex-start;
   justify-content: space-between;
@@ -313,7 +314,7 @@ export const OrganizationBubble = styled.div`
   }
 `;
 
-export const OrganizationName = styled.div`
+export const ForCredit = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -327,14 +328,14 @@ export const OrganizationName = styled.div`
     line-height: 19px;
     text-align: start;
     margin: 0;
-    color: #898989;
+    color: ${colors.gray};
   }
 `;
 
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: fit-content;
   align-items: flex-start;
