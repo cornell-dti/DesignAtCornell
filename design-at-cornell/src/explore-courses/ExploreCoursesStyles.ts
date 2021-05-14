@@ -15,14 +15,14 @@ export const TitleBackground = styled.div`
   background: ${colors.yellow};
   padding-left: 100px;
   padding-right: 100px;
-`
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 55%;
   height: 85%;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
 
   h1 {
@@ -60,7 +60,7 @@ export const QuizButton = styled.div`
     padding: 0;
     text-align: center;
   }
-`
+`;
 
 export const FilterBarContainer = styled.div`
   display: flex;
@@ -91,8 +91,8 @@ export const SearchBar = styled.input<{ background: string }>`
   text-indent: 30px;
 
   &:focus {
-      outline: none;
-  } 
+    outline: none;
+  }
   img {
     background: ${({ background }) => background};
   }
@@ -123,18 +123,18 @@ export const FilterButton = styled.div<{ open: boolean, applied: boolean }>`
   border-radius: ${({ open }) => open ? '15px 15px 0px 0px' : '15px'};
   margin-right: 20px;
   padding-left: 15px;
-  padding-right: ${({ applied }) => applied ? '7px' : '15px'};
+  padding-right: ${({ applied }) => (applied ? '7px' : '15px')};
   align-items: flex-start;
 
   img {
-    transform: ${({ open }) => open ? 'rotate(180deg)' : 'none'};
+    transform: ${({ open }) => (open ? 'rotate(180deg)' : 'none')};
     margin-top: 8px;
     width: 12px;
     max-height: 12px;
   }
 
   p {
-    margin-right: ${({ applied }) => applied ? '11px' : '20px'};
+    margin-right: ${({ applied }) => (applied ? '11px' : '20px')};
     margin-top: 4px;
   }
 `;
@@ -155,7 +155,7 @@ export const SavedCoursesButton = styled.div`
     line-height: 14px;
     color: black;
   }
-`
+`;
 
 export const Divider = styled.div`
   display: flex;
@@ -187,11 +187,11 @@ export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
   padding-left: 23px;
   padding-top: 8px;
   padding-bottom: 11px;
-  border-radius: 0px ${({ expand }) => expand ? '15px ' : '0px '}15px 15px;
+  border-radius: 0px ${({ expand }) => (expand ? '15px ' : '0px ')}15px 15px;
   input {
     width: 90%;
     margin-top: 11px;
-  } 
+  }
 `;
 
 export const FiltersApplied = styled.div`
@@ -231,7 +231,7 @@ export const FilterSelectionBubbleContainer = styled.div<{ color: string }>`
     padding-right: 9px;
     margin: 0;
   }
-`
+`;
 
 export const ClearCategoryFilters = styled.p`
   padding-top: 7px;
@@ -284,7 +284,7 @@ export const Checkbox = styled.div<{ checked: boolean }>`
   border: 2px;
   border-radius: 2px;
   border: solid;
-  background: ${({ checked }) => checked ? 'black' : 'white'};
+  background: ${({ checked }) => (checked ? 'black' : 'white')};
   border-color: black;
   cursor: pointer;
   img {
@@ -342,7 +342,6 @@ export const CourseContainer = styled.div`
   min-width: 250px;
   height: 197px;
   cursor: pointer;
-
   background: white;
   border: 1px solid;
   border-radius: 8px;
@@ -360,7 +359,7 @@ export const CourseContainer = styled.div`
     margin: 0;
     color: black;
   }
-`
+`;
 
 export const CourseNumber = styled.div`
   display: flex;
@@ -369,21 +368,21 @@ export const CourseNumber = styled.div`
   height: fit-content;
   align-items: center;
   justify-content: space-between;
-  
+
   p {
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
     text-align: start;
     margin: 0;
-    color:${colors.gray};
+    color: ${colors.gray};
   }
 `;
 
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: fit-content;
   align-items: flex-start;

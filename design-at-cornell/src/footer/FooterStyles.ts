@@ -10,7 +10,7 @@ export const FooterContainer = styled.div`
   background: ${colors.lightGray};
   padding: 126px 126px 100px 126px;
   justify-content: space-between;
-`
+`;
 
 export const FooterColumnn = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ export const FooterColumnn = styled.div`
   height: 100%;
   justify-content: space-between;
   font-weight: bold;
-`
+`;
 
 export const Logo = styled(Link)`
   display: flex;
@@ -35,11 +35,15 @@ export const Logo = styled(Link)`
     text-align: left;
   }
 
-  &:focus, &:hover, &:active, &:visited, &:link {
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
     text-decoration: none;
     color: black;
   }
-`
+`;
 
 export const DTILogo = styled.div`
   display: flex;
@@ -62,11 +66,15 @@ export const DTILogo = styled.div`
     color: black;
   }
 
-  &:focus, &:hover, &:active, &:visited, &:link {
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
     text-decoration: none;
     color: black;
   }
-`
+`;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -80,4 +88,4 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     color: ${colors.linkColor};
   }
-`
+`;

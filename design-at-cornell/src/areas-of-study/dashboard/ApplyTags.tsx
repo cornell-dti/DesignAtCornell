@@ -1,22 +1,34 @@
 import React from 'react';
-import { 
-  ApplyTagsContainer
-} from '../AreasOfStudyStyles';
+import { ApplyTagsContainer } from '../AreasOfStudyStyles';
 
 const ApplyTags = () => {
-  const designAreaTags = ['Art + Design', 'Digital Design', 'Industrial Design', 'Policy Design', 'Spatial Design']
-  const schools = ['AAP', 'Agriculture and Life Sciences', 'Arts and Sciences', 'Engineering', 'Human Ecology', 'ILR', 'SC Johnson School of Business']
+  const designAreaTags = [
+    'Art + Design',
+    'Digital Design',
+    'Industrial Design',
+    'Policy Design',
+    'Spatial Design',
+  ];
+  const schools = [
+    'AAP',
+    'Agriculture and Life Sciences',
+    'Arts and Sciences',
+    'Engineering',
+    'Human Ecology',
+    'ILR',
+    'SC Johnson School of Business',
+  ];
 
   const checkboxes = (tags: string[]) => (
     <form>
-      {tags.map(tag => (
+      {tags.map((tag) => (
         <div>
           <input key={tag} type="checkbox" id={tag} />
           <label htmlFor={tag}>{tag}</label>
         </div>
       ))}
     </form>
- )
+  );
 
   return (
     <ApplyTagsContainer>
@@ -27,6 +39,6 @@ const ApplyTags = () => {
       {checkboxes(schools)}
     </ApplyTagsContainer>
   );
-}
+};
 
 export default ApplyTags;

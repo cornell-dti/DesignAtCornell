@@ -6,76 +6,80 @@ import 'jest-styled-components';
 
 describe('<CourseBubble />', () => {
   it('renders testing course correctly', () => {
-    const course : Course = {
+    const course: Course = {
       courseCode: 'TEST 1001',
       courseTitle: 'Testing Course Title',
-      tags: ['tag 1', 'tag 2', 'tag 3']
-    }
+      tags: ['tag 1', 'tag 2', 'tag 3'],
+    };
 
     const tree = renderer
       .create(
-        <CourseBubble 
+        <CourseBubble
           courseCode={course.courseCode}
           courseTitle={course.courseTitle}
-          tags={course.tags}  
-      />)
+          tags={course.tags}
+        />
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('reders course with empty course code', () => {
-    const course : Course = {
+    const course: Course = {
       courseCode: '',
       courseTitle: 'Testing Course Title',
-      tags: ['tag 1', 'tag 2', 'tag 3']
-    }
+      tags: ['tag 1', 'tag 2', 'tag 3'],
+    };
 
     const tree = renderer
       .create(
-        <CourseBubble 
+        <CourseBubble
           courseCode={course.courseCode}
           courseTitle={course.courseTitle}
-          tags={course.tags}  
-      />)
+          tags={course.tags}
+        />
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('renders course with empty course title', () => {
-    const course : Course = {
+    const course: Course = {
       courseCode: 'TEST 1002',
       courseTitle: '',
-      tags: ['tag 1', 'tag 2', 'tag 3']
-    }
+      tags: ['tag 1', 'tag 2', 'tag 3'],
+    };
 
     const tree = renderer
       .create(
-        <CourseBubble 
+        <CourseBubble
           courseCode={course.courseCode}
           courseTitle={course.courseTitle}
-          tags={course.tags}  
-      />)
+          tags={course.tags}
+        />
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('renders course with empty tags list', () => {
-    const course : Course = {
+    const course: Course = {
       courseCode: 'TEST 1002',
       courseTitle: '',
-      tags: []
-    }
+      tags: [],
+    };
 
     const tree = renderer
       .create(
-        <CourseBubble 
+        <CourseBubble
           courseCode={course.courseCode}
           courseTitle={course.courseTitle}
-          tags={course.tags}  
-      />)
+          tags={course.tags}
+        />
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

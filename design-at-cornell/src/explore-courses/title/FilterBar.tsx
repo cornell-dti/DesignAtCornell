@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
-import { FilterBarContainer, FilterDropdownsList, SearchAndBookmarkList, SearchBar, SavedCoursesButton } from '../ExploreCoursesStyles';
+import { 
+  FilterBarContainer, 
+  FilterDropdownsList, 
+  SearchAndBookmarkList, 
+  SearchBar, 
+  SavedCoursesButton 
+} from '../ExploreCoursesStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterCategory from './FilterCategory';
 import Category from '../types/Category';
@@ -9,8 +15,10 @@ import Category from '../types/Category';
 const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState<Category | ''>('');
   const handleFilterCategoryChange = (category: Category): filterCategoryCheckHandler => (
-    checkboxLabel => {
-      onChange(new Map(
+    checkboxLabel
+  ) => {
+    onChange(
+      new Map(
         Array.from(filterData.entries()).map(([k, v]) => {
           if (k !== category) return [k, v];
           const copy = new Set(v);
@@ -18,9 +26,9 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
           else copy.add(checkboxLabel);
           return [k, copy];
         })
-      ));
-    }
-  );
+      )
+    );
+  };
   return (
     <FilterBarContainer>
       <FilterDropdownsList>
@@ -50,7 +58,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
           background='white'
         />
         <SavedCoursesButton>
-          <img src={bookmarked} alt={"saved courses"} />
+          <img src={bookmarked} alt={'saved courses'} />
           <p>Saved Courses</p>
         </SavedCoursesButton>
       </SearchAndBookmarkList>

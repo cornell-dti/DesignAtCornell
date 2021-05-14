@@ -6,7 +6,7 @@ import PageNotFound from './PageNotFound';
 describe('<PageNotFound />', () => {
   test('it should mount', () => {
     render(<PageNotFound />);
-    
+
     const pageNotFound = screen.getByTestId('PageNotFound');
 
     expect(pageNotFound).toBeInTheDocument();

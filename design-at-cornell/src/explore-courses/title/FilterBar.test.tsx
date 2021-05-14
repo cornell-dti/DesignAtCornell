@@ -5,9 +5,7 @@ import 'jest-styled-components';
 
 describe('<FilterBar />', () => {
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<FilterBar />)
-      .toJSON();
+    const tree = renderer.create(<FilterBar />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
