@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { filterCategoryCheckHandler } from '../types/Handlers';
 import { TitleProps } from '../types/PropertyTypes';
-import { 
-  FilterBarContainer, 
-  FilterDropdownsList, 
-  SearchAndBookmarkList, 
-  SearchBar, 
-  SavedClubsButton 
+import {
+  FilterBarContainer,
+  FilterDropdownsList,
+  SearchAndBookmarkList,
+  SearchBar,
+  SavedClubsButton,
 } from '../ClubsStyles';
 import FilterCategory from './FilterCategory';
 import ClubsCategory from '../types/ClubsCategory';
@@ -15,8 +15,10 @@ import bookmarked from '../../static/images/bookmarked.svg';
 const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState<ClubsCategory | ''>('');
   const handleFilterCategoryChange = (category: ClubsCategory): filterCategoryCheckHandler => (
-    checkboxLabel => {
-      onChange(new Map(
+    checkboxLabel
+  ) => {
+    onChange(
+      new Map(
         Array.from(filterData.entries()).map(([k, v]) => {
           if (k !== category) return [k, v];
           const copy = new Set(v);
@@ -24,9 +26,9 @@ const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleP
           else copy.add(checkboxLabel);
           return [k, copy];
         })
-      ));
-    }
-  );
+      )
+    );
+  };
   return (
     <FilterBarContainer>
       <FilterDropdownsList>
@@ -53,7 +55,7 @@ const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleP
       <SearchAndBookmarkList>
         <SearchBar
           placeholder="Name, Keywords, Topics, Etc"
-          background='white'
+          background="white"
           onChange={searchHandler}
         />
         <SavedClubsButton>

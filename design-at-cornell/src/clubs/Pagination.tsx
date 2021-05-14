@@ -50,4 +50,4 @@ interface Props {
   clubsPerPage: number;
   totalClubs: number;
   paginate(page: number): void;
-};
+}

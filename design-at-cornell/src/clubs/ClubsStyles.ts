@@ -22,7 +22,7 @@ export const TitleContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 85%;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
 
   h1 {
@@ -127,7 +127,7 @@ export const SavedClubsButton = styled.div`
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
-  
+
   p {
     width: fit-content;
     font-weight: bold;
@@ -313,7 +313,7 @@ export const OrganizationGrid = styled.div`
 `;
 
 export const OrganizationBubble = styled.div`
-	display: flex;
+  display: flex;
   flex-direction: column;
   width: 22%;
   min-width: 250px;
@@ -343,7 +343,7 @@ export const ForCredit = styled.div`
   height: fit-content;
   align-items: center;
   justify-content: space-between;
-  
+
   p {
     font-weight: bold;
     font-size: 16px;

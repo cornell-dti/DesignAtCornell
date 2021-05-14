@@ -1,9 +1,11 @@
-import React from "react";
-import ClubsCategory from "./ClubsCategory";
+import React from 'react';
+import ClubsCategory from './ClubsCategory';
 
-export type filterBarChangeHandler = (filterData: ReadonlyMap<ClubsCategory, ReadonlySet<string>>) => void;
+export type filterBarChangeHandler = (
+  filterData: ReadonlyMap<ClubsCategory, ReadonlySet<string>>
+) => void;
 export type filterCategoryCheckHandler = (checkboxLabel: string) => void;
-export type filterCategoryClearHandler = () => void
+export type filterCategoryClearHandler = () => void;
 export type filterCheckboxClickHandler = () => void;
 export type filterCategoryButtonClickHandler = () => void;
 export type filterDropdownToggleHandler = () => void;

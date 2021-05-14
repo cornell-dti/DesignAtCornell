@@ -9,12 +9,11 @@ import ClubsCategory from './types/ClubsCategory';
 import { Club } from '../../../server/types';
 
 const Clubs = () => {
-
   const [clubs, setClubs] = useState<Club[]>([]);
 
-  const [filterData, setfilterData] = useState<ReadonlyMap<ClubsCategory, ReadonlySet<string>>>(new Map(
-    Array.from(FilterDropdowns.keys()).map(category => [category, new Set()])
-  ));
+  const [filterData, setfilterData] = useState<ReadonlyMap<ClubsCategory, ReadonlySet<string>>>(
+    new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
+  );
 
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
@@ -35,9 +34,10 @@ const Clubs = () => {
     setPage(pageNum);
   };
 
-  const searchResult = clubs.filter(club => 
-    club.title.toLowerCase().includes(search.toLowerCase()) || 
-    club.content.description.toLowerCase().includes(search.toLowerCase())
+  const searchResult = clubs.filter(
+    (club) =>
+      club.title.toLowerCase().includes(search.toLowerCase()) ||
+      club.content.description.toLowerCase().includes(search.toLowerCase())
   );
 
   const clubsPerPage = 20;

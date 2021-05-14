@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  PageContainer,
-  OrganizationGrid
-} from '../ClubsStyles';
+import { PageContainer, OrganizationGrid } from '../ClubsStyles';
 import Sort from './Sort';
 import ClubBubble from './ClubBubble';
 import { Club } from '../../../../server/types';

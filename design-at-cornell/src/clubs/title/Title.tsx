@@ -1,9 +1,6 @@
 import React from 'react';
-import FilterBar from "./FilterBar";
-import {
-  TitleBackground,
-  TitleContainer
-} from '../ClubsStyles';
+import FilterBar from './FilterBar';
+import { TitleBackground, TitleContainer } from '../ClubsStyles';
 import { TitleProps } from '../types/PropertyTypes';
 
 const Title = (props: TitleProps) => (
@@ -14,6 +11,6 @@ const Title = (props: TitleProps) => (
     </TitleContainer>
     <FilterBar {...props} />
   </TitleBackground>
-)
+);
 
-export default Title
+export default Title;
