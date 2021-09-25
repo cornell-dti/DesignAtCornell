@@ -1,7 +1,7 @@
 import csv from 'csv-parser';
 import fsCoursesRead from 'fs';
-import { courses } from './server';
-import { Course, rosterSem } from './types';
+import { courses } from '../server';
+import { Course, rosterSem } from '../types';
 
 const coursesCSV = [];
 
