@@ -9,3 +9,4 @@ export type filterCheckboxClickHandler = () => void;
 export type filterCategoryButtonClickHandler = () => void;
 export type filterDropdownToggleHandler = () => void;
 export type filterSelectionBubbleClickHandler = () => void;
+export type searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => void;
