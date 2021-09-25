@@ -1,8 +1,8 @@
-import { clubs } from "../../server";
-import { Club, clubContent } from "../../types";
+import { clubs } from '../../server';
+import { Club, clubContent } from '../../types';
 
 export async function getClubs(req, res) {
-    const clubTitle = req.query.title;
+  const clubTitle = req.query.title;
   const localClubs: Club[] = [];
 
   if (clubTitle === undefined) {
@@ -20,7 +20,7 @@ export async function getClubs(req, res) {
 }
 
 export async function createClubs(req, res) {
-    const club: Club = req.body;
+  const club: Club = req.body;
 
   if (
     club.title === undefined ||
@@ -38,11 +38,10 @@ export async function createClubs(req, res) {
     newClub.set(club.content);
     res.send({ success: true, data: club });
   }
-
 }
 
 export async function deleteClubs(req, res) {
-    const { title } = req.body;
+  const { title } = req.body;
 
   if (title === undefined) {
     res.send({ success: false, message: 'One or more fields is missing' });
@@ -50,11 +49,10 @@ export async function deleteClubs(req, res) {
     clubs.doc(title).delete();
     res.send({ success: true });
   }
-
 }
 
 export async function updateClubs(req, res) {
-    const { field } = req.body;
+  const { field } = req.body;
   const { title } = req.body;
   const { content } = req.body;
 
@@ -64,5 +62,4 @@ export async function updateClubs(req, res) {
     clubs.doc(title).update({ field: content });
     res.send({ success: true });
   }
-
 }
