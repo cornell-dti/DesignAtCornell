@@ -30,13 +30,6 @@ const ExploreCourses = () => {
         onChange={setfilterData}
         searchHandler={searchHandler}
       />
-      <Courses {...displayedCourses} />
-      <Pagination
-        currentPage={currentPage}
-        coursesPerPage={coursesPerPage}
-        totalCourses={searchResult.length}
-        paginate={paginate}
-      />
       <Courses courses={courses} filterData={filterData} />
     </PageContainer>
   );
