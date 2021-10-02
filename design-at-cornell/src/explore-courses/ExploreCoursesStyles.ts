@@ -11,7 +11,7 @@ export const TitleBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 551px;
+  height: 550px;
   background: ${colors.yellow};
   padding-left: 100px;
   padding-right: 100px;
@@ -67,8 +67,6 @@ export const FilterBarContainer = styled.div`
   width: 100%;
   height: 15%;
   align-items: flex-start;
-  padding-top: 26px;
-  padding-bottom: 24px;
 
   p {
     width: 100%;
@@ -79,12 +77,12 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
-export const SearchBar = styled.input<{ width: string; background: string }>`
-  width: ${({ width }) => width};
+export const SearchBar = styled.input<{ background: string }>`
+  flex-grow: 1;
   height: 28px;
   border-radius: 43px;
   padding-left: 10px;
-  margin-right: 25px;
+  margin-right: 20px;
   border-style: none;
   background: ${({ background }) => background};
   background-image: url(${magnifyingGlass});
@@ -101,11 +99,20 @@ export const SearchBar = styled.input<{ width: string; background: string }>`
 `;
 
 export const FilterDropdownsList = styled.ul`
-  position: absolute;
   display: flex;
-  margin: 0px;
+  flex-shrink: 0;
+  margin: 27.25px 0px;
   padding-left: 0px;
   list-style: none;
+`;
+
+export const SearchAndBookmarkList = styled.ul`
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 
 export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
@@ -114,7 +121,7 @@ export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
   height: ${({ open }) => (open ? '33px' : '28px')};
   background: ${({ open }) => (open ? 'white' : colors.transparentWhite)};
   border-radius: ${({ open }) => (open ? '15px 15px 0px 0px' : '15px')};
-  margin-right: 25px;
+  margin-right: 20px;
   padding-left: 15px;
   padding-right: ${({ applied }) => (applied ? '7px' : '15px')};
   align-items: flex-start;
@@ -172,7 +179,7 @@ export const FilterCategoryContainer = styled.li`
 `;
 
 export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
-  width: ${({ expand }) => (expand ? 'auto' : 'calc(100% - 25px)')};
+  width: ${({ expand }) => (expand ? 'auto' : 'calc(100% - 20px)')};
   position: absolute;
   display: inline;
   background: white;
@@ -182,6 +189,7 @@ export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
   padding-bottom: 11px;
   border-radius: 0px ${({ expand }) => (expand ? '15px ' : '0px ')}15px 15px;
   input {
+    width: 90%;
     margin-top: 11px;
   }
 `;
@@ -373,7 +381,7 @@ export const CourseNumber = styled.div`
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: fit-content;
   align-items: flex-start;
