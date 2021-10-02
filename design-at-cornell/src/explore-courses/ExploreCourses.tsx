@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { PageContainer } from './ExploreCoursesStyles';
 import Title from './title/Title';
+import { PageContainer } from './ExploreCoursesStyles';
 import Courses from './courses/Courses';
 import FilterDropdowns from './title/FilterDropdowns';
 import { Course } from '../../../server/types';
@@ -28,10 +28,18 @@ const ExploreCourses = () => {
         filterData={filterData}
         dropdownInfo={FilterDropdowns}
         onChange={setfilterData}
+        searchHandler={searchHandler}
+      />
+      <Courses {...displayedCourses} />
+      <Pagination
+        currentPage={currentPage}
+        coursesPerPage={coursesPerPage}
+        totalCourses={searchResult.length}
+        paginate={paginate}
       />
       <Courses courses={courses} filterData={filterData} />
     </PageContainer>
   );
-}
+};
 
 export default ExploreCourses;

@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  CourseContainer,
-  CourseNumber,
-  TagsContainer,
-  Tag
-} from '../ExploreCoursesStyles';
+import { CourseContainer, CourseNumber, TagsContainer, Tag } from '../ExploreCoursesStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg'
 import { Course } from '../../../../server/types';
@@ -33,5 +28,4 @@ const CourseBubble = ({ id, code, content }: Course) => {
     </CourseContainer>
   );
 };
-
 export default CourseBubble;

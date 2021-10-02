@@ -7,15 +7,24 @@
     "courses-script": "ts-node courses_script.ts",
     "majors-script": "ts-node majors_minors_script.ts",
     "clubs-script": "ts-node clubs_script.ts",
-    "events-script": "ts-node events_script.ts"
+    "events-script": "ts-node events_script.ts",
+    "tsc": "tsc"
   },
   "dependencies": {
-    "@types/express": "^4.17.7",
+    "cross-env": "5.0.5",
+    "design-at-cornell": "0.1.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/supertest": "^2.0.10",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "firebase": "^8.3.1",
     "firebase-admin": "^9.5.0",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.0.2"
+    "supertest": "^6.1.3"
   }
 }

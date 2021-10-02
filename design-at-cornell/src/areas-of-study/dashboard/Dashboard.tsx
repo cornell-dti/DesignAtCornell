@@ -1,9 +1,5 @@
 import React from 'react';
-import { 
-  DashboardContainer, 
-  StudiesContainer, 
-  Divider
-} from '../AreasOfStudyStyles';
+import { DashboardContainer, StudiesContainer, Divider } from '../AreasOfStudyStyles';
 import StudiesGrid from './StudiesGrid';
 import { Studies } from '../AreasOfStudy';
 import ApplyTags from './ApplyTags';
@@ -31,6 +27,6 @@ const Dashboard = (studies: Studies) => {
       <ApplyTags />
     </DashboardContainer>
   );
-}
+};
 
 export default Dashboard;

@@ -4,16 +4,16 @@ import { colors } from '../constants/colors';
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const TitleBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 551px;
+  height: 550px;
   padding-left: 100px;
-  background: #8ED663;
-  align-items:flex-start;
+  background: #8ed663;
+  align-items: flex-start;
   justify-content: center;
 
   h1 {
@@ -33,7 +33,7 @@ export const TitleBackground = styled.div`
     color: black;
     padding-left: 5px;
   }
-`
+`;
 
 export const QuizButton = styled.div`
   display: flex;
@@ -43,6 +43,7 @@ export const QuizButton = styled.div`
   background: ${colors.transparentWhite};
   border-radius: 43px;
   align-items: center;
+  cursor: pointer;
 
   p {
     width: 100%;
@@ -53,22 +54,22 @@ export const QuizButton = styled.div`
     padding: 0;
     text-align: center;
   }
-`
+`;
 
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: fit-content;
-`
+`;
 
 export const StudiesContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
   height: fit-content;
-  padding: 90px;
-`
+  padding: 60px 90px;
+`;
 
 export const Divider = styled.div`
   display: flex;
@@ -88,10 +89,10 @@ export const Divider = styled.div`
   hr {
     flex-grow: 1;
     height: 0;
-    border: 4px solid #8ED663;
+    border: 4px solid #8ed663;
     margin-left: 20px;
   }
-`
+`;
 
 export const Grid = styled.div`
   display: flex;
@@ -100,7 +101,7 @@ export const Grid = styled.div`
   width: 100%;
   height: fit-content;
   justify-content: space-between;
-`
+`;
 
 export const AreaOfStudyButton = styled.div`
   width: 287px;
@@ -110,13 +111,14 @@ export const AreaOfStudyButton = styled.div`
     font-weight: bold;
     font-size: 16px;
     color: black;
+    cursor: pointer;
   }
 
   p {
     font-size: 13px;
     color: #939393;
   }
-`
+`;
 
 export const ApplyTagsContainer = styled.div`
   display: flex;
@@ -124,8 +126,7 @@ export const ApplyTagsContainer = styled.div`
   width: 20%;
   height: auto;
   background: ${colors.lightGreen};
-  padding-top: 90px;
-  padding-left: 60px;
+  padding: 60px;
 
   h5 {
     font-weight: bold;
@@ -149,14 +150,14 @@ export const ApplyTagsContainer = styled.div`
     line-height: 24px;
     color: black;
 
-    input[type=checkbox] {
+    input[type='checkbox'] {
       vertical-align: middle;
       margin-right: 10px;
       cursor: pointer;
     }
 
-    input[type=checkbox]:before {
-      content: "";
+    input[type='checkbox']:before {
+      content: '';
       position: absolute;
       width: 13px;
       height: 13px;
@@ -165,8 +166,8 @@ export const ApplyTagsContainer = styled.div`
       background-color: white;
     }
 
-    input[type=checkbox]:checked:after {
-      content: "";
+    input[type='checkbox']:checked:after {
+      content: '';
       position: absolute;
       width: 13px;
       height: 13px;
@@ -174,5 +175,11 @@ export const ApplyTagsContainer = styled.div`
       border: 2px solid black;
       background-color: black;
     }
+
+    label {
+      display: block;
+      margin-top: -24px;
+      margin-left: 20px;
+    }
   }
-`
+`;
