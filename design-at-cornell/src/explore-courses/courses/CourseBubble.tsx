@@ -1,18 +1,23 @@
 import React from 'react';
-import { CourseContainer, CourseNumber, TagsContainer, Tag } from '../ExploreCoursesStyles';
+import {
+  ElementContainer,
+  Subtitle,
+  TagsContainer,
+  Tag,
+} from '../../components/DashboardElementStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
 import { Course } from '../../../../server/types';
 
 const CourseBubble = (course: Course) => (
-  <CourseContainer
+  <ElementContainer
     style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
     onClick={() => (window.location.href = course.content.courseRoster)}
   >
-    <CourseNumber>
+    <Subtitle>
       <p>{course.id + ' ' + course.code}</p>
       <img src={bookmark} alt="save course" />
-    </CourseNumber>
+    </Subtitle>
     <p>{course.content.title}</p>
     <TagsContainer>
       <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
@@ -22,7 +27,7 @@ const CourseBubble = (course: Course) => (
         <p>{course.content.semester.join(', ')}</p>
       </Tag>
     </TagsContainer>
-  </CourseContainer>
+  </ElementContainer>
 );
 
 export default CourseBubble;
