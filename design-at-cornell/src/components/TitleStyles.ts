@@ -6,7 +6,7 @@ export const TitleBackground = styled.div`
   flex-direction: column;
   width: 100%;
   height: 550px;
-  background: ${props => props.color};
+  background: ${(props) => props.color};
   padding-left: 100px;
   padding-right: 100px;
 `;
