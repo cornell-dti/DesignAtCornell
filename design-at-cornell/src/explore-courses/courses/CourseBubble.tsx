@@ -1,5 +1,10 @@
 import React from 'react';
-import { ElementContainer, Subtitle, TagsContainer, Tag } from '../../components/DashboardElementStyles';
+import {
+  ElementContainer,
+  Subtitle,
+  TagsContainer,
+  Tag,
+} from '../../components/DashboardElementStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
 import { Course } from '../../../../server/types';
