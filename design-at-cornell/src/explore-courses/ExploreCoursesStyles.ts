@@ -7,68 +7,11 @@ export const PageContainer = styled.div`
   flex-direction: column;
 `;
 
-export const TitleBackground = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 551px;
-  background: ${colors.yellow};
-  padding-left: 100px;
-  padding-right: 100px;
-`;
-
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 55%;
-  height: 85%;
-  align-items: flex-start;
-  justify-content: center;
-
-  h1 {
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 64px;
-    line-height: 75px;
-    margin-bottom: 30px;
-    color: black;
-  }
-
-  p {
-    font-size: 24px;
-    line-height: 28px;
-    text-align: left;
-    color: black;
-    padding-left: 5px;
-  }
-`;
-
-export const QuizButton = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 276px;
-  height: 40px;
-  background: ${colors.transparentWhite};
-  border-radius: 43px;
-  align-items: center;
-  p {
-    width: 100%;
-    font-weight: bold;
-    font-size: 16px;
-    color: black;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-`;
-
 export const FilterBarContainer = styled.div`
   display: flex;
   width: 100%;
   height: 15%;
   align-items: flex-start;
-  padding-top: 26px;
-  padding-bottom: 24px;
 
   p {
     width: 100%;
@@ -79,12 +22,12 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
-export const SearchBar = styled.input<{ width: string; background: string }>`
-  width: ${({ width }) => width};
+export const SearchBar = styled.input<{ background: string }>`
+  flex-grow: 1;
   height: 28px;
   border-radius: 43px;
   padding-left: 10px;
-  margin-right: 25px;
+  margin-right: 20px;
   border-style: none;
   background: ${({ background }) => background};
   background-image: url(${magnifyingGlass});
@@ -101,11 +44,20 @@ export const SearchBar = styled.input<{ width: string; background: string }>`
 `;
 
 export const FilterDropdownsList = styled.ul`
-  position: absolute;
   display: flex;
-  margin: 0px;
+  flex-shrink: 0;
+  margin: 27.25px 0px;
   padding-left: 0px;
   list-style: none;
+`;
+
+export const SearchAndBookmarkList = styled.ul`
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 
 export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
@@ -114,7 +66,7 @@ export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
   height: ${({ open }) => (open ? '33px' : '28px')};
   background: ${({ open }) => (open ? 'white' : colors.transparentWhite)};
   border-radius: ${({ open }) => (open ? '15px 15px 0px 0px' : '15px')};
-  margin-right: 25px;
+  margin-right: 20px;
   padding-left: 15px;
   padding-right: ${({ applied }) => (applied ? '7px' : '15px')};
   align-items: flex-start;
@@ -172,7 +124,7 @@ export const FilterCategoryContainer = styled.li`
 `;
 
 export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
-  width: ${({ expand }) => (expand ? 'auto' : 'calc(100% - 25px)')};
+  width: ${({ expand }) => (expand ? 'auto' : 'calc(100% - 20px)')};
   position: absolute;
   display: inline;
   background: white;
@@ -182,6 +134,7 @@ export const FilterDropdownContainer = styled.ul<{ expand: boolean }>`
   padding-bottom: 11px;
   border-radius: 0px ${({ expand }) => (expand ? '15px ' : '0px ')}15px 15px;
   input {
+    width: 90%;
     margin-top: 11px;
   }
 `;
@@ -323,76 +276,5 @@ export const CourseGrid = styled.div`
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
-  padding-left: 80px;
-  padding-right: 80px;
-`;
-
-export const CourseContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 22%;
-  min-width: 250px;
-  height: 197px;
-  cursor: pointer;
-  background: white;
-  border: 1px solid;
-  border-radius: 8px;
-  margin: 1.5%;
-
-  padding: 25px;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  p {
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: start;
-    margin: 0;
-    color: black;
-  }
-`;
-
-export const CourseNumber = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: fit-content;
-  align-items: center;
-  justify-content: space-between;
-
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: start;
-    margin: 0;
-    color: ${colors.gray};
-  }
-`;
-
-export const TagsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  height: fit-content;
-  align-items: flex-start;
-`;
-
-export const Tag = styled.div`
-  display: flex;
-  width: fit-content;
-  height: 28px;
-  border-radius: 43px;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  align-items: center;
-
-  p {
-    font-weight: bold;
-    font-size: 12px;
-    color: black;
-  }
+  padding: 0 80px;
 `;
