@@ -1,43 +1,8 @@
 import styled from 'styled-components';
-import { colors } from '../constants/colors';
 
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const TitleBackground = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 550px;
-  background: ${colors.blue};
-  padding-left: 100px;
-  padding-right: 100px;
-`;
-
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 55%;
-  height: 100%;
-  align-items: flex-start;
-  justify-content: center;
-  h1 {
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 64px;
-    line-height: 75px;
-    margin-bottom: 30px;
-    color: black;
-  }
-  p {
-    font-size: 24px;
-    line-height: 28px;
-    text-align: left;
-    color: black;
-    padding-left: 5px;
-  }
 `;
 
 export const Divider = styled.div`
