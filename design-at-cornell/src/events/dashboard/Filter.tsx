@@ -10,11 +10,11 @@ import {
 import arrowImg from '../../static/images/down-arrow.png';
 
 type Props = {
-  month: string;
+  month: number;
   year: number;
   leftClickHandler: () => void;
   rightClickHandler: () => void;
-  monthClickHandler: (m: string) => void;
+  monthClickHandler: (m: number) => void;
 };
 
 const Filter = ({ month, year, leftClickHandler, rightClickHandler, monthClickHandler }: Props) => {
@@ -36,12 +36,12 @@ const Filter = ({ month, year, leftClickHandler, rightClickHandler, monthClickHa
 
   const window = (
     <FilterWindow open={open}>
-      {months.map((m) => (
+      {months.map((m, i) => (
         <MonthButton
           key={m}
-          selected={month === m}
+          selected={months[month] === m}
           onClick={() => {
-            monthClickHandler(m);
+            monthClickHandler(i);
             setOpen(false);
           }}
         >
@@ -61,7 +61,7 @@ const Filter = ({ month, year, leftClickHandler, rightClickHandler, monthClickHa
           show={open}
           onClick={() => leftClickHandler()}
         />
-        <MonthSelected onClick={() => setOpen(!open)}>{month + ' ' + year}</MonthSelected>
+        <MonthSelected onClick={() => setOpen(!open)}>{months[month] + ' ' + year}</MonthSelected>
         <Arrow
           src={arrowImg}
           alt="next year"

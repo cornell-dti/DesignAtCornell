@@ -6,7 +6,8 @@ import EventDisplay from './dashboard/EventDisplay';
 
 export type Event = {
   name: string;
-  time: string;
+  startTime: Date;
+  endTime: Date;
   location: string;
   tags: string[];
   description: string;
@@ -17,7 +18,8 @@ const Events = () => {
   const [events] = useState<Event[]>([
     {
       name: 'Design Seminar Series with Professor XYZ',
-      time: '3:00 - 4:00 PM EST Saturday, May 1, 2021',
+      startTime: new Date(2021, 9, 5, 15),
+      endTime: new Date(2021, 9, 5, 16),
       location: 'Virtual',
       tags: ['Annual', 'Virtual', 'Computing in the Arts'],
       description:
@@ -26,54 +28,41 @@ const Events = () => {
     },
     {
       name: 'Design Seminar Series with Professor XYZ',
-      time: '3:00 - 4:00 PM EST Saturday, May 1, 2021',
+      startTime: new Date(2021, 9, 5, 20),
+      endTime: new Date(2021, 9, 6, 8),
       location: 'Virtual',
       tags: ['Annual', 'Virtual', 'Computing in the Arts'],
       description:
         'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['zoom', 'rsvp', 'facebook'],
+      links: ['google', 'zoom'],
     },
     {
       name: 'Design Seminar Series with Professor XYZ',
-      time: '3:00 - 4:00 PM EST Saturday, May 1, 2021',
+      startTime: new Date(2021, 10, 20, 18),
+      endTime: new Date(2021, 10, 20, 20),
       location: 'Virtual',
       tags: ['Annual', 'Virtual', 'Computing in the Arts'],
       description:
         'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['facebook', 'eventLink'],
-    },
-    {
-      name: 'Design Seminar Series with Professor XYZ',
-      time: '3:00 - 4:00 PM EST Saturday, Feb 28, 2021',
-      location: 'Virtual',
-      tags: ['Annual', 'Virtual', 'Computing in the Arts'],
-      description:
-        'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['facebook', 'eventLink'],
-    },
-    {
-      name: 'Design Seminar Series with Professor XYZ',
-      time: '3:00 - 4:00 PM EST Saturday, Feb 28, 2019',
-      location: 'Virtual',
-      tags: ['Annual', 'Virtual', 'Computing in the Arts'],
-      description:
-        'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['facebook', 'eventLink'],
+      links: ['google', 'zoom'],
     },
   ]);
 
   const date = new Date();
 
   const [year, setYear] = useState(date.getFullYear());
-  const [month, setMonth] = useState(date.toLocaleString('default', { month: 'long' }));
+  const [month, setMonth] = useState(date.getMonth());
 
   const leftClickHandler = () => setYear(year - 1);
   const rightClickHandler = () => setYear(year + 1);
-  const monthClickHandler = (m: string) => setMonth(m);
+  const monthClickHandler = (m: number) => setMonth(m);
 
-  const filteredEvents = events.filter(
-    (event) => event.time.includes(month.slice(0, 3)) && event.time.includes(year.toString())
-  );
+  const filteredEvents = events.filter((event) => {
+    const start = event.startTime.getFullYear() * 12 + event.startTime.getMonth();
+    const end = event.endTime.getFullYear() * 12 + event.endTime.getMonth();
+    const cur = year * 12 + month;
+    return start <= cur && cur <= end;
+  });
 
   const eventDisplay = (
     <EventList>
