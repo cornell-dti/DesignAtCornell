@@ -6,18 +6,18 @@ import 'jest-styled-components';
 
 describe('<Courses />', () => {
   const course: Course = {
-    id: "TEST",
+    id: 'TEST',
     code: 1101,
     content: {
-      courseRoster: "https://example.url",
-      title: "Intro to Design",
+      courseRoster: 'https://example.url',
+      title: 'Intro to Design',
       credits: 4,
-      courseSite: "https://example.url",
-      major: "Computer Science",
-      semester: ["Fall", "Spring"],
-      designAreas: ["Area1", "Area2"],
-      description:"This is a test course"
-    }
+      courseSite: 'https://example.url',
+      major: 'Computer Science',
+      semester: ['Fall', 'Spring'],
+      designAreas: ['Area1', 'Area2'],
+      description: 'This is a test course',
+    },
   };
   it('renders correctly for no courses', () => {
     const courses: Course[] = [];
@@ -33,13 +33,13 @@ describe('<Courses />', () => {
 
   it('renders correctly for 3 course', () => {
     const courses: Course[] = [
-      {...course, code: 1101},
-      {...course, code: 1102},
-      {...course, code: 1103},
+      { ...course, code: 1101 },
+      { ...course, code: 1102 },
+      { ...course, code: 1103 },
     ];
 
     const snapshot = renderer.create(<Courses {...courses} />).toJSON();
-    
+
     expect(snapshot).toMatchSnapshot();
   });
 });

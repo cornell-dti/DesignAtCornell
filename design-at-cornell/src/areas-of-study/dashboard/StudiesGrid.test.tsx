@@ -9,7 +9,7 @@ describe('<StudiesGrid />', () => {
     name: 'test major',
     description: 'This is an example major for testing. ',
   };
-  
+
   it('renders correctly for no areas of study', () => {
     const areas: AreaOfStudy[] = [];
     const snapshot = renderer.create(<StudiesGrid {...areas} />).toJSON();
@@ -24,9 +24,9 @@ describe('<StudiesGrid />', () => {
 
   it('renders correctly for 3 majors', () => {
     const areas: AreaOfStudy[] = [
-      {...exampleMajor, name: "major 1"},
-      {...exampleMajor, name: "major 2"},
-      {...exampleMajor, name: "major 3"},
+      { ...exampleMajor, name: 'major 1' },
+      { ...exampleMajor, name: 'major 2' },
+      { ...exampleMajor, name: 'major 3' },
     ];
     const snapshot = renderer.create(<StudiesGrid {...areas} />).toJSON();
     expect(snapshot).toMatchSnapshot();
