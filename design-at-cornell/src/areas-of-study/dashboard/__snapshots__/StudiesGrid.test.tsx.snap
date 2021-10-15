@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StudiesGrid /> renders correctly for 3 majors 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  width: 287px;
+  margin-bottom: 38px;
+}
+
+.c1 h1 {
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+}
+
+.c1 p {
+  font-size: 13px;
+  color: #939393;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h1>
+      major 1
+    </h1>
+    <p>
+      This is an example major for testing. 
+    </p>
+  </div>
+  <div
+    className="c1"
+  >
+    <h1>
+      major 2
+    </h1>
+    <p>
+      This is an example major for testing. 
+    </p>
+  </div>
+  <div
+    className="c1"
+  >
+    <h1>
+      major 3
+    </h1>
+    <p>
+      This is an example major for testing. 
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<StudiesGrid /> renders correctly for no areas of study 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`<StudiesGrid /> renders correctly with one major 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  width: 287px;
+  margin-bottom: 38px;
+}
+
+.c1 h1 {
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+}
+
+.c1 p {
+  font-size: 13px;
+  color: #939393;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h1>
+      test major
+    </h1>
+    <p>
+      This is an example major for testing. 
+    </p>
+  </div>
+</div>
+`;

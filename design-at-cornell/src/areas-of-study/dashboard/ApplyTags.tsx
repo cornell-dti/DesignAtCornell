@@ -22,8 +22,8 @@ const ApplyTags = () => {
   const checkboxes = (tags: string[]) => (
     <form>
       {tags.map((tag) => (
-        <div>
-          <input key={tag} type="checkbox" id={tag} />
+        <div key={tag}>
+          <input type="checkbox" id={tag} />
           <label htmlFor={tag}>{tag}</label>
         </div>
       ))}
