@@ -1,132 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CourseBubble /> reders course with empty course code 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 289px;
-  height: 197px;
-  background: #7CD0FF;
-  border-radius: 8px;
-  margin: 20px;
-  padding: 25px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c0 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: start;
-  margin: 0;
-  color: white;
-}
-
-.c0 p {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: start;
-  margin: 0;
-  color: black;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 28px;
-  background: rgba(255,255,255,0.53);
-  border-radius: 43px;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 p {
-  font-weight: bold;
-  font-size: 12px;
-  color: black;
-}
-
-<div
-  className="c0"
->
-  <h6>
-    
-  </h6>
-  <p>
-    Testing Course Title
-  </p>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <p>
-        tag 1
-      </p>
-    </div>
-    <div
-      className="c2"
-    >
-      <p>
-        tag 2
-      </p>
-    </div>
-    <div
-      className="c2"
-    >
-      <p>
-        tag 3
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`<CourseBubble /> renders course with empty course title 1`] = `
 .c0 {
   display: -webkit-box;
@@ -136,11 +9,14 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 289px;
+  width: 22%;
+  min-width: 250px;
   height: 197px;
-  background: #7CD0FF;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
   padding: 25px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -150,15 +26,6 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c0 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: start;
-  margin: 0;
-  color: white;
 }
 
 .c0 p {
@@ -178,9 +45,40 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -191,7 +89,7 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   align-items: flex-start;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -200,7 +98,6 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   height: 28px;
-  background: rgba(255,255,255,0.53);
   border-radius: 43px;
   margin-right: 10px;
   padding-left: 10px;
@@ -211,7 +108,8 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   align-items: center;
 }
 
-.c2 p {
+.c3 p {
+  white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
   color: black;
@@ -219,42 +117,59 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
 
 <div
   className="c0"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#C9E1AA",
+    }
+  }
 >
-  <h6>
-    TEST 1002
-  </h6>
+  <div
+    className="c1"
+  >
+    <p>
+      TEST 1101
+    </p>
+    <img
+      alt="save course"
+      src="bookmark.svg"
+    />
+  </div>
   <p>
     
   </p>
   <div
-    className="c1"
+    className="c2"
   >
     <div
-      className="c2"
+      className="c3"
+      style={
+        Object {
+          "background": "#BAE6FF",
+        }
+      }
     >
       <p>
-        tag 1
+        4 Credits
       </p>
     </div>
     <div
-      className="c2"
+      className="c3"
+      style={
+        Object {
+          "background": "#FFE5A1",
+        }
+      }
     >
       <p>
-        tag 2
-      </p>
-    </div>
-    <div
-      className="c2"
-    >
-      <p>
-        tag 3
+        Fall, Spring
       </p>
     </div>
   </div>
 </div>
 `;
 
-exports[`<CourseBubble /> renders course with empty tags list 1`] = `
+exports[`<CourseBubble /> renders course with empty description 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -263,11 +178,14 @@ exports[`<CourseBubble /> renders course with empty tags list 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 289px;
+  width: 22%;
+  min-width: 250px;
   height: 197px;
-  background: #7CD0FF;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
   padding: 25px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -277,15 +195,6 @@ exports[`<CourseBubble /> renders course with empty tags list 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c0 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: start;
-  margin: 0;
-  color: white;
 }
 
 .c0 p {
@@ -305,9 +214,40 @@ exports[`<CourseBubble /> renders course with empty tags list 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -318,18 +258,590 @@ exports[`<CourseBubble /> renders course with empty tags list 1`] = `
   align-items: flex-start;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  border-radius: 43px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 p {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
 <div
   className="c0"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#C9E1AA",
+    }
+  }
 >
-  <h6>
-    TEST 1002
-  </h6>
-  <p>
-    
-  </p>
   <div
     className="c1"
-  />
+  >
+    <p>
+      TEST 1101
+    </p>
+    <img
+      alt="save course"
+      src="bookmark.svg"
+    />
+  </div>
+  <p>
+    Intro to Design
+  </p>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#BAE6FF",
+        }
+      }
+    >
+      <p>
+        4 Credits
+      </p>
+    </div>
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#FFE5A1",
+        }
+      }
+    >
+      <p>
+        Fall, Spring
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 22%;
+  min-width: 250px;
+  height: 197px;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
+  border-radius: 8px;
+  margin: 1.5%;
+  padding: 25px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: start;
+  margin: 0;
+  color: black;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  border-radius: 43px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 p {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#C9E1AA",
+    }
+  }
+>
+  <div
+    className="c1"
+  >
+    <p>
+      TEST 1101
+    </p>
+    <img
+      alt="save course"
+      src="bookmark.svg"
+    />
+  </div>
+  <p>
+    Intro to Design
+  </p>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#BAE6FF",
+        }
+      }
+    >
+      <p>
+        4 Credits
+      </p>
+    </div>
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#FFE5A1",
+        }
+      }
+    >
+      <p>
+        Fall, Spring
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CourseBubble /> renders course with empty major 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 22%;
+  min-width: 250px;
+  height: 197px;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
+  border-radius: 8px;
+  margin: 1.5%;
+  padding: 25px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: start;
+  margin: 0;
+  color: black;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  border-radius: 43px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 p {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#C9E1AA",
+    }
+  }
+>
+  <div
+    className="c1"
+  >
+    <p>
+      TEST 1101
+    </p>
+    <img
+      alt="save course"
+      src="bookmark.svg"
+    />
+  </div>
+  <p>
+    Intro to Design
+  </p>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#BAE6FF",
+        }
+      }
+    >
+      <p>
+        4 Credits
+      </p>
+    </div>
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#FFE5A1",
+        }
+      }
+    >
+      <p>
+        Fall, Spring
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CourseBubble /> renders course without roster 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 22%;
+  min-width: 250px;
+  height: 197px;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
+  border-radius: 8px;
+  margin: 1.5%;
+  padding: 25px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: start;
+  margin: 0;
+  color: black;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 28px;
+  border-radius: 43px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 p {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#C9E1AA",
+    }
+  }
+>
+  <div
+    className="c1"
+  >
+    <p>
+      TEST 1101
+    </p>
+    <img
+      alt="save course"
+      src="bookmark.svg"
+    />
+  </div>
+  <p>
+    Intro to Design
+  </p>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#BAE6FF",
+        }
+      }
+    >
+      <p>
+        4 Credits
+      </p>
+    </div>
+    <div
+      className="c3"
+      style={
+        Object {
+          "background": "#FFE5A1",
+        }
+      }
+    >
+      <p>
+        Fall, Spring
+      </p>
+    </div>
+  </div>
 </div>
 `;
 
@@ -342,11 +854,14 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 289px;
+  width: 22%;
+  min-width: 250px;
   height: 197px;
-  background: #7CD0FF;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
   padding: 25px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -356,15 +871,6 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c0 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: start;
-  margin: 0;
-  color: white;
 }
 
 .c0 p {
@@ -384,9 +890,40 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -397,7 +934,7 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   align-items: flex-start;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -406,7 +943,6 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   height: 28px;
-  background: rgba(255,255,255,0.53);
   border-radius: 43px;
   margin-right: 10px;
   padding-left: 10px;
@@ -417,7 +953,8 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   align-items: center;
 }
 
-.c2 p {
+.c3 p {
+  white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
   color: black;
@@ -425,35 +962,52 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
 
 <div
   className="c0"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#C9E1AA",
+    }
+  }
 >
-  <h6>
-    TEST 1001
-  </h6>
-  <p>
-    Testing Course Title
-  </p>
   <div
     className="c1"
   >
+    <p>
+      TEST 1101
+    </p>
+    <img
+      alt="save course"
+      src="bookmark.svg"
+    />
+  </div>
+  <p>
+    Intro to Design
+  </p>
+  <div
+    className="c2"
+  >
     <div
-      className="c2"
+      className="c3"
+      style={
+        Object {
+          "background": "#BAE6FF",
+        }
+      }
     >
       <p>
-        tag 1
+        4 Credits
       </p>
     </div>
     <div
-      className="c2"
+      className="c3"
+      style={
+        Object {
+          "background": "#FFE5A1",
+        }
+      }
     >
       <p>
-        tag 2
-      </p>
-    </div>
-    <div
-      className="c2"
-    >
-      <p>
-        tag 3
+        Fall, Spring
       </p>
     </div>
   </div>

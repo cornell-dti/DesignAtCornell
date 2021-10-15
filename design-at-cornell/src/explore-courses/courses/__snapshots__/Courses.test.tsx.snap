@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
+exports[`<Courses /> renders correctly for 3 course 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -47,6 +47,14 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   align-items: center;
 }
 
+.c2 h6 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+  color: black;
+}
+
 .c2 p {
   font-weight: bold;
   font-size: 20px;
@@ -56,8 +64,8 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
 }
 
 .c2 img {
-  width: 21px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-left: 10px;
 }
 
@@ -76,8 +84,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 0 80px;
 }
 
 .c4 {
@@ -88,11 +95,14 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 289px;
+  width: 22%;
+  min-width: 250px;
   height: 197px;
-  background: #7CD0FF;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
   padding: 25px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -102,15 +112,6 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: start;
-  margin: 0;
-  color: white;
 }
 
 .c4 p {
@@ -130,9 +131,40 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -143,7 +175,7 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   align-items: flex-start;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -152,7 +184,6 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   height: 28px;
-  background: rgba(255,255,255,0.53);
   border-radius: 43px;
   margin-right: 10px;
   padding-left: 10px;
@@ -163,7 +194,8 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   align-items: center;
 }
 
-.c6 p {
+.c7 p {
+  white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
   color: black;
@@ -178,21 +210,15 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
     <div
       className="c2"
     >
+      <h6>
+        Sort By  
+      </h6>
       <p>
-        Sort By
+        recommended
       </p>
       <img
         alt="sort"
-        src={
-          Object {
-            "ReactComponent": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "render": [Function],
-            },
-            "__esModule": true,
-            "default": "sort-triangle.svg",
-          }
-        }
+        src="down-arrow.png"
       />
     </div>
   </div>
@@ -201,218 +227,165 @@ exports[`<CourseBubble /> renders correctly for 8 course 1`] = `
   >
     <div
       className="c4"
+      onClick={[Function]}
+      style={
+        Object {
+          "borderColor": "#C9E1AA",
+        }
+      }
     >
-      <h6>
-        TEST1110
-      </h6>
-      <p>
-        Testing Coruse 1110
-      </p>
       <div
         className="c5"
       >
+        <p>
+          TEST 1101
+        </p>
+        <img
+          alt="save course"
+          src="bookmark.svg"
+        />
+      </div>
+      <p>
+        Intro to Design
+      </p>
+      <div
+        className="c6"
+      >
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#BAE6FF",
+            }
+          }
         >
           <p>
-            tag 1
+            4 Credits
           </p>
         </div>
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#FFE5A1",
+            }
+          }
         >
           <p>
-            tag 2
+            Fall, Spring
           </p>
         </div>
       </div>
     </div>
     <div
       className="c4"
+      onClick={[Function]}
+      style={
+        Object {
+          "borderColor": "#FFCBBA",
+        }
+      }
     >
-      <h6>
-        TEST1111
-      </h6>
-      <p>
-        Testing Coruse 1111
-      </p>
       <div
         className="c5"
       >
+        <p>
+          TEST 1102
+        </p>
+        <img
+          alt="save course"
+          src="bookmark.svg"
+        />
+      </div>
+      <p>
+        Intro to Design
+      </p>
+      <div
+        className="c6"
+      >
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#BAE6FF",
+            }
+          }
         >
           <p>
-            tag 1
+            4 Credits
           </p>
         </div>
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#FFE5A1",
+            }
+          }
         >
           <p>
-            tag 3
+            Fall, Spring
           </p>
         </div>
       </div>
     </div>
     <div
       className="c4"
+      onClick={[Function]}
+      style={
+        Object {
+          "borderColor": "#D3D2F7",
+        }
+      }
     >
-      <h6>
-        TEST1112
-      </h6>
-      <p>
-        Testing Coruse 1112
-      </p>
       <div
         className="c5"
       >
-        <div
-          className="c6"
-        >
-          <p>
-            tag 3
-          </p>
-        </div>
-        <div
-          className="c6"
-        >
-          <p>
-            tag 4
-          </p>
-        </div>
+        <p>
+          TEST 1103
+        </p>
+        <img
+          alt="save course"
+          src="bookmark.svg"
+        />
       </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <h6>
-        TEST1113
-      </h6>
       <p>
-        Testing Coruse 1113
+        Intro to Design
       </p>
       <div
-        className="c5"
+        className="c6"
       >
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#BAE6FF",
+            }
+          }
         >
           <p>
-            tag 5
+            4 Credits
           </p>
         </div>
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#FFE5A1",
+            }
+          }
         >
           <p>
-            tag 6
+            Fall, Spring
           </p>
         </div>
       </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <h6>
-        TEST1114
-      </h6>
-      <p>
-        Testing Coruse 1114
-      </p>
-      <div
-        className="c5"
-      >
-        <div
-          className="c6"
-        >
-          <p>
-            tag 5
-          </p>
-        </div>
-        <div
-          className="c6"
-        >
-          <p>
-            tag 7
-          </p>
-        </div>
-        <div
-          className="c6"
-        >
-          <p>
-            tag 9
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <h6>
-        TEST1115
-      </h6>
-      <p>
-        Testing Coruse 1115
-      </p>
-      <div
-        className="c5"
-      >
-        <div
-          className="c6"
-        >
-          <p>
-            tag 6
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <h6>
-        TEST1116
-      </h6>
-      <p>
-        Testing Coruse 1116
-      </p>
-      <div
-        className="c5"
-      >
-        <div
-          className="c6"
-        >
-          <p>
-            tag 6
-          </p>
-        </div>
-        <div
-          className="c6"
-        >
-          <p>
-            tag 8
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <h6>
-        TEST1117
-      </h6>
-      <p>
-        Testing Coruse 1117
-      </p>
-      <div
-        className="c5"
-      />
     </div>
   </div>
 </div>
 `;
 
-exports[`<CourseBubble /> renders correctly for no courses 1`] = `
+exports[`<Courses /> renders correctly for no courses 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -459,6 +432,14 @@ exports[`<CourseBubble /> renders correctly for no courses 1`] = `
   align-items: center;
 }
 
+.c2 h6 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+  color: black;
+}
+
 .c2 p {
   font-weight: bold;
   font-size: 20px;
@@ -468,8 +449,8 @@ exports[`<CourseBubble /> renders correctly for no courses 1`] = `
 }
 
 .c2 img {
-  width: 21px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-left: 10px;
 }
 
@@ -488,8 +469,7 @@ exports[`<CourseBubble /> renders correctly for no courses 1`] = `
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 0 80px;
 }
 
 <div
@@ -501,21 +481,15 @@ exports[`<CourseBubble /> renders correctly for no courses 1`] = `
     <div
       className="c2"
     >
+      <h6>
+        Sort By  
+      </h6>
       <p>
-        Sort By
+        recommended
       </p>
       <img
         alt="sort"
-        src={
-          Object {
-            "ReactComponent": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "render": [Function],
-            },
-            "__esModule": true,
-            "default": "sort-triangle.svg",
-          }
-        }
+        src="down-arrow.png"
       />
     </div>
   </div>
@@ -525,7 +499,7 @@ exports[`<CourseBubble /> renders correctly for no courses 1`] = `
 </div>
 `;
 
-exports[`<CourseBubble /> renders correctly for one course 1`] = `
+exports[`<Courses /> renders correctly for one course 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -572,6 +546,14 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   align-items: center;
 }
 
+.c2 h6 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+  color: black;
+}
+
 .c2 p {
   font-weight: bold;
   font-size: 20px;
@@ -581,8 +563,8 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
 }
 
 .c2 img {
-  width: 21px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-left: 10px;
 }
 
@@ -601,8 +583,7 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 0 80px;
 }
 
 .c4 {
@@ -613,11 +594,14 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 289px;
+  width: 22%;
+  min-width: 250px;
   height: 197px;
-  background: #7CD0FF;
+  cursor: pointer;
+  background: white;
+  border: 1px solid;
   border-radius: 8px;
-  margin: 20px;
+  margin: 1.5%;
   padding: 25px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -627,15 +611,6 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: start;
-  margin: 0;
-  color: white;
 }
 
 .c4 p {
@@ -655,9 +630,40 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  margin: 0;
+  color: #898989;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -668,7 +674,7 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   align-items: flex-start;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -677,7 +683,6 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   height: 28px;
-  background: rgba(255,255,255,0.53);
   border-radius: 43px;
   margin-right: 10px;
   padding-left: 10px;
@@ -688,7 +693,8 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   align-items: center;
 }
 
-.c6 p {
+.c7 p {
+  white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
   color: black;
@@ -703,21 +709,15 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
     <div
       className="c2"
     >
+      <h6>
+        Sort By  
+      </h6>
       <p>
-        Sort By
+        recommended
       </p>
       <img
         alt="sort"
-        src={
-          Object {
-            "ReactComponent": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "render": [Function],
-            },
-            "__esModule": true,
-            "default": "sort-triangle.svg",
-          }
-        }
+        src="down-arrow.png"
       />
     </div>
   </div>
@@ -726,28 +726,52 @@ exports[`<CourseBubble /> renders correctly for one course 1`] = `
   >
     <div
       className="c4"
+      onClick={[Function]}
+      style={
+        Object {
+          "borderColor": "#C9E1AA",
+        }
+      }
     >
-      <h6>
-        TEST1110
-      </h6>
-      <p>
-        Testing Coruse 1110
-      </p>
       <div
         className="c5"
       >
+        <p>
+          TEST 1101
+        </p>
+        <img
+          alt="save course"
+          src="bookmark.svg"
+        />
+      </div>
+      <p>
+        Intro to Design
+      </p>
+      <div
+        className="c6"
+      >
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#BAE6FF",
+            }
+          }
         >
           <p>
-            tag 1
+            4 Credits
           </p>
         </div>
         <div
-          className="c6"
+          className="c7"
+          style={
+            Object {
+              "background": "#FFE5A1",
+            }
+          }
         >
           <p>
-            tag 2
+            Fall, Spring
           </p>
         </div>
       </div>

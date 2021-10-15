@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0px 80px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.c0 div {
+  width: 15%;
+  height: 41px;
+}
+
+.c1 {
+  width: 41px;
+  height: 41px;
+  border-radius: 100%;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  cursor: pointer;
+  color: black;
+  background: #E0E0E0;
+}
+
+.c1:focus {
+  border: none;
+  outline: none;
+}
+
+.c2 {
+  width: 41px;
+  height: 41px;
+  border-radius: 100%;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  cursor: pointer;
+  color: gray;
+  background: none;
+}
+
+.c2:focus {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 15%;
+  height: 41px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 41px;
+  text-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.c3 img {
+  margin: 10px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c3:focus {
+  border: none;
+  outline: none;
+}
+
+<div
+  className="c0"
+>
+  <div />
+  <ul>
+    <li>
+      <button
+        className="c1"
+        onClick={[Function]}
+        selected={true}
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        className="c2"
+        onClick={[Function]}
+        selected={false}
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        className="c2"
+        onClick={[Function]}
+        selected={false}
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        className="c2"
+        onClick={[Function]}
+        selected={false}
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        className="c2"
+        onClick={[Function]}
+        selected={false}
+      >
+        5
+      </button>
+    </li>
+  </ul>
+  <button
+    className="c3"
+    direction="right"
+    onClick={[Function]}
+  >
+    Next
+    <img
+      alt="next page"
+      src="right-arrow.svg"
+    />
+  </button>
+</div>
+`;
+
+exports[`<Pagination /> renders correctly less courses than coursesPerPage 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0px 80px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.c0 div {
+  width: 15%;
+  height: 41px;
+}
+
+<div
+  className="c0"
+>
+  <div />
+  <ul />
+  <div />
+</div>
+`;
+
+exports[`<Pagination /> renders correctly with no courses 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0px 80px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.c0 div {
+  width: 15%;
+  height: 41px;
+}
+
+<div
+  className="c0"
+>
+  <div />
+  <ul />
+  <div />
+</div>
+`;

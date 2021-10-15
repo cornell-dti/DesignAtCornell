@@ -11,7 +11,7 @@ import { Course } from '../../../../server/types';
 
 const CourseBubble = (course: Course) => (
   <ElementContainer
-    style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+    style={{ borderColor: courseColors[Math.floor(course.code % courseColors.length)] }}
     onClick={() => (window.location.href = course.content.courseRoster)}
   >
     <Subtitle>
@@ -20,10 +20,10 @@ const CourseBubble = (course: Course) => (
     </Subtitle>
     <p>{course.content.title}</p>
     <TagsContainer>
-      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+      <Tag style={{ background: courseColors[0] }}>
         <p>{course.content.credits + ' Credits'}</p>
       </Tag>
-      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+      <Tag style={{ background: courseColors[1] }}>
         <p>{course.content.semester.join(', ')}</p>
       </Tag>
     </TagsContainer>
