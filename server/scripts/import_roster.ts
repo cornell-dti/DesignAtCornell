@@ -35,7 +35,7 @@ async function getRosterCourses(courses: string[][]) {
             //console.log(classes[0].catalogNbr);
             fetchedCourses.push(classes[0] as RosterCourse);
             })
-            .catch((error) => {
+            .catch(() => {
                 console.log(courses[i]);
             })
     }
@@ -63,6 +63,15 @@ function transformCourses(courses: RosterCourse[]) {
         })
     }
     console.log('i finished transforming');
-    console.log(formattedCourses.length);
+    console.log(formattedCourses[0]);
 
 }
+
+/*
+
+-grab all possible courses from current roster
+-anything that can't be grabbed, grab from previous roster
+-format design areas
+
+
+*/
