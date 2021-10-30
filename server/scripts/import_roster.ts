@@ -2,18 +2,20 @@ import axios from 'axios';
 import { Course, RosterCourse, RosterResponse } from '../types';
 import fsCoursesRead from 'fs';
 import csv from 'csv-parser';
-import { createCourses } from '../endpoints/courses/courses_endpoints';
+import { courses }  from '../server';
 
 
+const currSem = 'FA21';
+const prevSem = 'SP21';
+const summerSem = 'SU21';
 
-const classRosterURL = 'https://classes.cornell.edu/api/2.0/search/classes.json?roster=FA21&subject=';
+const classRosterURL = 'https://classes.cornell.edu/api/2.0/search/classes.json?roster=' + currSem + '&subject=';
 
-const prevClassRosterURL = 'https://classes.cornell.edu/api/2.0/search/classes.json?roster=SP21&subject=';
+const prevClassRosterURL = 'https://classes.cornell.edu/api/2.0/search/classes.json?roster=' + prevSem + '&subject=';
 
-const summerClassRosterURL = 'https://classes.cornell.edu/api/2.0/search/classes.json?roster=SU21&subject='
+const summerClassRosterURL = 'https://classes.cornell.edu/api/2.0/search/classes.json?roster=' + summerSem + '&subject='
 
 const coursesCSV = [];
-
 
 fsCoursesRead
   .createReadStream('./website_data_csv/courses.csv')
@@ -45,7 +47,7 @@ async function getRosterCourses(courses: string[][]) {
                 missedCourses.push(courses[i]);
             })
     }
-    console.log('i finished getting');
+    console.log('i finished getting courses from current roster');
     transformCourses(fetchedCourses);
     getPrevRosterCourses(missedCourses);
 }
@@ -64,7 +66,7 @@ async function getPrevRosterCourses(courses: string[][]) {
                 missedCourses.push(courses[i])
             })
     }
-    console.log('i finished getting');
+    console.log('i finished getting courses from previous roster');
     transformCourses(fetchedCourses);
     getSummerRosterCourses(missedCourses);
 }
@@ -84,14 +86,13 @@ async function getSummerRosterCourses(courses: string[][]) {
             })
     }
     console.log('i finished getting');
-    console.log('missed courses after summer');
+    console.log('missed courses after grabbing from summer');
     console.log(missedCourses);
     transformCourses(fetchedCourses);
 }
 
 
 function transformCourses(courses: RosterCourse[]) {
-    //console.log(courses);
     let formattedCourses: Course[] = [];
     for(let i = 0; i < courses.length; i++) {
         let formattedSemesters = courses[i].catalogWhenOffered.split(', ');
@@ -113,20 +114,15 @@ function transformCourses(courses: RosterCourse[]) {
             }
         })
     }
-    console.log('i finished transforming');
+    console.log('i finished transforming the courses');
     pushCoursesToDatabase(formattedCourses);
 }
 
-function pushCoursesToDatabase(courses: Course[]) {
-    
-    console.log('i pushed the courses to firestore')
+function pushCoursesToDatabase(formattedCourses: Course[]) {
+    for(let i = 0; i < formattedCourses.length; i++) {
+        const courseIdCollection = courses.doc('test').collection(formattedCourses[i].id);
+        const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
+        newCourse.set(formattedCourses[i].content);
+    }
+    console.log('i pushed the courses to firestore');
 }
-
-/*
-
--grab all possible courses from current roster
--anything that can't be grabbed, grab from previous roster
--format design areas
-
-
-*/
