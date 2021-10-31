@@ -63,11 +63,12 @@ export const AreaOfStudyButton = styled.div`
     color: black;
     cursor: pointer;
   }
+`;
 
-  p {
-    font-size: 13px;
-    color: #939393;
-  }
+export const AreaOfStudyTag = styled.span<{ highlight: boolean }>`
+  background: ${({ highlight }) => highlight ? colors.yellowHighlight : 'white'};
+  font-size: 13px;
+  color: ${colors.gray};
 `;
 
 export const ApplyTagsContainer = styled.div`
