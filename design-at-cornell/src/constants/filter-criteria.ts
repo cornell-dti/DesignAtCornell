@@ -1,4 +1,4 @@
-export type Filters = {[indexer: string] : boolean};
+export type Filters = { [indexer: string]: boolean };
 export type SetFilters = (filters: React.SetStateAction<Filters>) => void;
 
 export const designAreas: Filters = {
