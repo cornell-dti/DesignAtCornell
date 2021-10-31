@@ -6,24 +6,28 @@ import { Filters, SetFilters } from '../../constants/filter-criteria';
 import ApplyTags from './ApplyTags';
 
 const Dashboard = (props: Props) => {
+  const studies = (category: string, studies: Major[]) => (
+    <div>
+      <Divider>
+        <h1>{category}</h1>
+        <hr />
+      </Divider>
+      <StudiesGrid
+        {...{
+          studies: studies,
+          designAreaTags: props.designAreaTags,
+          schoolTags: props.schoolTags,
+        }}
+      />
+    </div>
+  );
+
   return (
     <DashboardContainer>
       <StudiesContainer>
-        <Divider>
-          <h1>Undergraduate Majors</h1>
-          <hr />
-        </Divider>
-        <StudiesGrid {...props.majors} />
-        <Divider>
-          <h1>Undergraduate Minors</h1>
-          <hr />
-        </Divider>
-        <StudiesGrid {...props.minors} />
-        <Divider>
-          <h1>Graduate Studies</h1>
-          <hr />
-        </Divider>
-        <StudiesGrid {...props.gradStudies} />
+        {studies('Undergraduate Majors', props.majors)}
+        {studies('Undergraduate Minors', props.minors)}
+        {studies('Graduate Studies', props.gradStudies)}
       </StudiesContainer>
       <ApplyTags
         {...{
