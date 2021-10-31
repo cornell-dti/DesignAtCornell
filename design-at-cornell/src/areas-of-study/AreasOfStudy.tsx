@@ -3,6 +3,7 @@ import axios from 'axios';
 import { PageContainer } from './AreasOfStudyStyles';
 import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
+import { Filters, designAreas, schools } from '../constants/filter-criteria';
 import { Major } from '../../../server/types';
 
 export type Studies = {
@@ -37,10 +38,22 @@ const AreasOfStudy = () => {
     grad_studies: [],
   });
 
+  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas });
+
+  const [schoolTags, setSchoolTags] = useState<Filters>({ ...schools });
+
   return (
     <PageContainer>
       <Title />
-      <Dashboard {...studies} />
+      <Dashboard
+        {...{
+          studies: studies,
+          designAreaTags: designAreaTags,
+          schoolTags: schoolTags,
+          setDesignTags: setDesignAreaTags,
+          setSchoolTags: setSchoolTags,
+        }}
+      />
     </PageContainer>
   );
 };

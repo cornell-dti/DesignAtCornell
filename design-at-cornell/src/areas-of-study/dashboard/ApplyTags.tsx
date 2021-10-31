@@ -1,29 +1,21 @@
 import React from 'react';
 import { ApplyTagsContainer } from '../AreasOfStudyStyles';
+import { Filters, SetFilters } from '../../constants/filter-criteria';
 
-const ApplyTags = () => {
-  const designAreaTags = [
-    'Art + Design',
-    'Digital Design',
-    'Industrial Design',
-    'Policy Design',
-    'Spatial Design',
-  ];
-  const schools = [
-    'AAP',
-    'Agriculture and Life Sciences',
-    'Arts and Sciences',
-    'Engineering',
-    'Human Ecology',
-    'ILR',
-    'SC Johnson School of Business',
-  ];
-
-  const checkboxes = (tags: string[]) => (
+const ApplyTags = (props: Props) => {
+  const checkboxes = (tags: Filters, setter: SetFilters) => (
     <form>
-      {tags.map((tag) => (
-        <div>
-          <input key={tag} type="checkbox" id={tag} />
+      {Object.entries(tags).map(([tag, _]) => (
+        <div key={tag}>
+          <input
+            type="checkbox"
+            id={tag}
+            onChange={(event) => {
+              const newTags = { ...tags };
+              newTags[tag] = event.target.checked;
+              setter(newTags);
+            }}
+          />
           <label htmlFor={tag}>{tag}</label>
         </div>
       ))}
@@ -34,11 +26,18 @@ const ApplyTags = () => {
     <ApplyTagsContainer>
       <h5>Apply Tags</h5>
       <h6>Design Areas</h6>
-      {checkboxes(designAreaTags)}
+      {checkboxes(props.designAreaTags, props.setDesignAreaTags)}
       <h6>Schools</h6>
-      {checkboxes(schools)}
+      {checkboxes(props.schoolTags, props.setSchoolTags)}
     </ApplyTagsContainer>
   );
+};
+
+type Props = {
+  designAreaTags: Filters;
+  schoolTags: Filters;
+  setDesignAreaTags: SetFilters;
+  setSchoolTags: SetFilters;
 };
 
 export default ApplyTags;
