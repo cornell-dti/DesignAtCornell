@@ -31,11 +31,11 @@ fsCoursesRead
     getRosterCourses(formattedCourses);
   });
 
-async function getRosterCourses(courses: string[][]) {
+async function getRosterCourses(targetCourses: string[][]) {
   const fetchedCourses = [];
   const missedCourses = [];
-   /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < courses.length; i++) {
+  /* eslint-disable no-await-in-loop */
+  for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
       .get(`${classRosterURL + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
@@ -53,11 +53,11 @@ async function getRosterCourses(courses: string[][]) {
   getPrevRosterCourses(missedCourses);
 }
 
-async function getPrevRosterCourses(courses: string[][]) {
+async function getPrevRosterCourses(targetCourses: string[][]) {
   const fetchedCourses = [];
   const missedCourses = [];
-   /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < courses.length; i++) {
+  /* eslint-disable no-await-in-loop */
+  for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
       .get(`${summerClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
@@ -74,11 +74,11 @@ async function getPrevRosterCourses(courses: string[][]) {
   getSummerRosterCourses(missedCourses);
 }
 
-async function getSummerRosterCourses(courses: string[][]) {
+async function getSummerRosterCourses(targetCourses: string[][]) {
   const fetchedCourses = [];
   const missedCourses = [];
-   /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < courses.length; i++) {
+  /* eslint-disable no-await-in-loop */
+  for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
       .get(`${prevClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
@@ -97,16 +97,16 @@ async function getSummerRosterCourses(courses: string[][]) {
   transformCourses(fetchedCourses);
 }
 
-function transformCourses(courses: RosterCourse[]) {
+function transformCourses(targetCourses: RosterCourse[]) {
   const formattedCourses: Course[] = [];
-  for (let i = 0; i < courses.length; i++) {
+  for (let i = 0; i < targetCourses.length; i += 1) {
     const formattedSemesters = courses[i].catalogWhenOffered.split(', ');
     let lastSem = formattedSemesters.pop();
     lastSem = lastSem.slice(0, lastSem.length - 1);
     formattedSemesters.push(lastSem);
     formattedCourses.push({
       id: courses[i].subject,
-      code: parseInt(courses[i].catalogNbr),
+      code: parseInt(courses[i].catalogNbr, 10),
       content: {
         title: courses[i].titleLong,
         description: courses[i].description,
@@ -124,7 +124,7 @@ function transformCourses(courses: RosterCourse[]) {
 }
 
 function pushCoursesToDatabase(formattedCourses: Course[]) {
-  for (let i = 0; i < formattedCourses.length; i++) {
+  for (let i = 0; i < formattedCourses.length; i += 1) {
     const courseIdCollection = courses.doc('test').collection(formattedCourses[i].id);
     const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
