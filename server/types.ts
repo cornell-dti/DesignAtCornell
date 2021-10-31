@@ -67,108 +67,106 @@ export type Event = {
 export const rosterSem = 'SP21';
 
 export type RosterResponse = {
-  status: string,
+  status: string;
   data: {
-    classes: RosterCourse[]
-  },
-}
+    classes: RosterCourse[];
+  };
+};
 
-export type RosterCourse = 
-{
-    strm: number,
-    crseId: number,
-    crseOfferNbr: number,
-    subject: string,
-    catalogNbr: string,
-    titleShort: string,
-    titleLong: string,
-    enrollGroups: EnrollGroup[],
-     description : string,
-     catalogBreadth : string,
-     catalogDistr : string,
-     catalogLang : string,
-     catalogForbiddenOverlaps : string,
-     catalogAttribute : string,
-     catalogWhenOffered : string,
-     catalogComments : string,
-     catalogPrereqCoreq : string,
-     catalogFee : string,
-     catalogSatisfiesReq : string,
-     catalogPermission : string,
-     catalogCourseSubfield : string,
-     catalogOutcomes : any,
-     acadCareer : string,
-     acadGroup : string
-}
+export type RosterCourse = {
+  strm: number;
+  crseId: number;
+  crseOfferNbr: number;
+  subject: string;
+  catalogNbr: string;
+  titleShort: string;
+  titleLong: string;
+  enrollGroups: EnrollGroup[];
+  description: string;
+  catalogBreadth: string;
+  catalogDistr: string;
+  catalogLang: string;
+  catalogForbiddenOverlaps: string;
+  catalogAttribute: string;
+  catalogWhenOffered: string;
+  catalogComments: string;
+  catalogPrereqCoreq: string;
+  catalogFee: string;
+  catalogSatisfiesReq: string;
+  catalogPermission: string;
+  catalogCourseSubfield: string;
+  catalogOutcomes: any;
+  acadCareer: string;
+  acadGroup: string;
+};
 
-export type EnrollGroup =
-    {
-        classSections: ClassSection[],
-        unitsMinimum : number,
-        unitsMaximum : number,
-        componentsOptional : any[],
-        componentsRequired : string[],
-        gradingBasis : string,
-        gradingBasisShort : string,
-        gradingBasisLong : string,
-        simpleCombinations : SimpleCombination[],
-        sessionCode : string,
-        sessionBeginDt : string,
-        sessionEndDt : string,
-        sessionLong : string
-    }
+export type EnrollGroup = {
+  classSections: ClassSection[];
+  unitsMinimum: number;
+  unitsMaximum: number;
+  componentsOptional: any[];
+  componentsRequired: string[];
+  gradingBasis: string;
+  gradingBasisShort: string;
+  gradingBasisLong: string;
+  simpleCombinations: SimpleCombination[];
+  sessionCode: string;
+  sessionBeginDt: string;
+  sessionEndDt: string;
+  sessionLong: string;
+};
 
 export type SimpleCombination = {
-    subject : string,
-    catalogNbr : string,
-    type : string
-}
+  subject: string;
+  catalogNbr: string;
+  type: string;
+};
 
 export type ClassSection = {
-    ssrComponent: string,
-    ssrComponentLong: string,
-    section: string,
-    classNbr: number,
-    meetings: Meeting[],
-    notes: Note[],
-    campus: string,
-    campusDescr: string,
-    location: string,
-    locationDescr: string,
-    startDt: string,
-    endDt : string,
-    addConsent : string,
-    addConsentDescr : string,
-    isComponentGraded : boolean,
-    instructionMode : string,
-    instrModeDescrshort : string,
-    instrModeDescr : string,
-    topicDescription : string
-}
+  ssrComponent: string;
+  ssrComponentLong: string;
+  section: string;
+  classNbr: number;
+  meetings: Meeting[];
+  notes: Note[];
+  campus: string;
+  campusDescr: string;
+  location: string;
+  locationDescr: string;
+  startDt: string;
+  endDt: string;
+  addConsent: string;
+  addConsentDescr: string;
+  isComponentGraded: boolean;
+  instructionMode: string;
+  instrModeDescrshort: string;
+  instrModeDescr: string;
+  topicDescription: string;
+};
 
 export type Meeting = {
-    classMtgNbr: number,
-    timeStart: string,
-    timeEnd: string,
-    startDt: string,
-    endDt: string,
-    instructors: Instructor[],
-    pattern: string,
-    facilityDescr: string,
-    bldgDescr: any,
-    facilityDescrshort: string,
-    meetingTopicDescription: string
-}
+  classMtgNbr: number;
+  timeStart: string;
+  timeEnd: string;
+  startDt: string;
+  endDt: string;
+  instructors: Instructor[];
+  pattern: string;
+  facilityDescr: string;
+  bldgDescr: any;
+  facilityDescrshort: string;
+  meetingTopicDescription: string;
+};
 
 export type Instructor = {
-    instrAssignSeq: number,
-    netid: string,
-    firstName: string,
-    middleName: string,
-    lastName: string
-}
+  instrAssignSeq: number;
+  netid: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+};
 
 export type Note = {
-    classNotesSeq : number,
-    descrlong : string
-}
+  classNotesSeq: number;
+  descrlong: string;
+};
