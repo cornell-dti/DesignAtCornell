@@ -1,7 +1,7 @@
 import React from 'react';
 import { DashboardContainer, StudiesContainer, Divider } from '../AreasOfStudyStyles';
 import StudiesGrid from './StudiesGrid';
-import { Studies } from '../AreasOfStudy';
+import { Major } from '../../../../server/types';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import ApplyTags from './ApplyTags';
 
@@ -13,17 +13,17 @@ const Dashboard = (props: Props) => {
           <h1>Undergraduate Majors</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...props.studies.majors} />
+        <StudiesGrid {...props.majors} />
         <Divider>
           <h1>Undergraduate Minors</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...props.studies.minors} />
+        <StudiesGrid {...props.minors} />
         <Divider>
           <h1>Graduate Studies</h1>
           <hr />
         </Divider>
-        <StudiesGrid {...props.studies.grad_studies} />
+        <StudiesGrid {...props.gradStudies} />
       </StudiesContainer>
       <ApplyTags
         {...{
@@ -38,7 +38,9 @@ const Dashboard = (props: Props) => {
 };
 
 type Props = {
-  studies: Studies;
+  majors: Major[];
+  minors: Major[];
+  gradStudies: Major[];
   designAreaTags: Filters;
   schoolTags: Filters;
   setDesignTags: SetFilters;
