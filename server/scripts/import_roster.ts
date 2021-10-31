@@ -34,6 +34,7 @@ fsCoursesRead
 async function getRosterCourses(courses: string[][]) {
   const fetchedCourses = [];
   const missedCourses = [];
+   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < courses.length; i++) {
     await axios
       .get(`${classRosterURL + courses[i][0]}&q=${courses[i][1]}`)
@@ -55,13 +56,13 @@ async function getRosterCourses(courses: string[][]) {
 async function getPrevRosterCourses(courses: string[][]) {
   const fetchedCourses = [];
   const missedCourses = [];
+   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < courses.length; i++) {
     await axios
       .get(`${summerClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        // console.log(classes[0].catalogNbr);
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
@@ -76,6 +77,7 @@ async function getPrevRosterCourses(courses: string[][]) {
 async function getSummerRosterCourses(courses: string[][]) {
   const fetchedCourses = [];
   const missedCourses = [];
+   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < courses.length; i++) {
     await axios
       .get(`${prevClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
