@@ -5,10 +5,16 @@ import { PageContainer } from './ExploreCoursesStyles';
 import Courses from './courses/Courses';
 import Pagination from './Pagination';
 import { Course } from '../../../server/types';
+import {
+  Filters,
+  designAreas,
+  departments,
+  semesters,
+  levels,
+  credits,
+} from '../constants/filter-criteria';
 
 const ExploreCourses = () => {
-  const [courses, setCourses] = useState<Course[]>([]);
-
   useEffect(() => {
     axios
       .get('http://localhost:3000/getCourses')
@@ -16,6 +22,12 @@ const ExploreCourses = () => {
       .then(setCourses);
   }, []);
 
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas, all: true });
+  const [departmentTags, setDepartmentTags] = useState<Filters>({ ...departments, all: true });
+  const [semesterTags, setSemesterTags] = useState<Filters>({ ...semesters, all: true });
+  const [levelTags, setLevelTags] = useState<Filters>({ ...levels, all: true });
+  const [creditTags, setCreditTags] = useState<Filters>({ ...credits, all: true });
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
 
