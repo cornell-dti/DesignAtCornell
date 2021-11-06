@@ -26,6 +26,7 @@ const FilterDropdown = (props: Props) => {
                 newTags['all'] = newNumApplied === 0;
                 setNumApplied(newNumApplied);
                 props.setTags(newTags);
+                props.setPage(1);
               }}
             />
             <label htmlFor={tag}>{tag}</label>
@@ -50,6 +51,7 @@ type Props = {
   category: string;
   tags: Filters;
   setTags: SetFilters;
+  setPage: (page: React.SetStateAction<number>) => void;
 };
 
 export default FilterDropdown;

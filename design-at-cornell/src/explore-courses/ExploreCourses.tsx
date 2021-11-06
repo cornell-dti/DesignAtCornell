@@ -38,29 +38,39 @@ const ExploreCourses = () => {
     { category: 'Credits', tags: creditTags, setTags: setCreditTags },
   ];
 
-  const paginate = (pageNum: number) => {
-    setPage(pageNum);
-  };
-
-  const searchResult = courses.filter(
+  const filterResult = courses.filter(
     (course) =>
-      (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
-      course.content.title.toLowerCase().includes(search.toLowerCase())
+      course.content.designAreas.reduce(
+        (acc, area) => acc || designAreaTags[area],
+        designAreaTags['all']
+      ) &&
+      course.content.semester.reduce(
+        (acc, area) => acc || semesterTags[area],
+        semesterTags['all']
+      ) &&
+      (departmentTags['all'] || departmentTags[course.id]) &&
+      (levelTags['all'] || levelTags[(Math.floor(course.code / 1000) * 1000).toString()]) &&
+      (creditTags['all'] ||
+        creditTags[course.content.credits < 5 ? course.content.credits.toString() : '5+']) &&
+      (course.id + course.code + course.content.title)
+        .replace(/\s/g, '')
+        .toLowerCase()
+        .includes(search.replace(/\s/g, '').toLowerCase())
   );
   const coursesPerPage = 20;
   const lastCourseIdx = currentPage * coursesPerPage;
   const firstCourseIdx = lastCourseIdx - coursesPerPage;
-  const displayedCourses = searchResult.slice(firstCourseIdx, lastCourseIdx);
+  const displayedCourses = filterResult.slice(firstCourseIdx, lastCourseIdx);
 
   return (
     <PageContainer>
-      <Title {...{ filterList: filterList }} />
+      <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
       <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
         coursesPerPage={coursesPerPage}
-        totalCourses={searchResult.length}
-        paginate={paginate}
+        totalCourses={filterResult.length}
+        paginate={setPage}
       />
     </PageContainer>
   );
