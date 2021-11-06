@@ -9,9 +9,10 @@ export const PageContainer = styled.div`
 
 export const FilterBarContainer = styled.div`
   display: flex;
+  flex-direction: row;
   width: 100%;
   height: 15%;
-  align-items: flex-start;
+  align-items: center;
 
   p {
     width: 100%;
@@ -26,8 +27,8 @@ export const SearchBar = styled.input`
   flex-grow: 1;
   height: 28px;
   border-radius: 43px;
-  padding-left: 10px;
-  margin-right: 20px;
+  padding: 0 10px;
+  margin: 0 10px;
   border-style: none;
   background-image: url(${magnifyingGlass});
   background-position: 7px 7px;
@@ -41,10 +42,12 @@ export const SearchBar = styled.input`
 
 export const SavedCoursesButton = styled.div`
   display: flex;
+  flex-shrink: 0;
   width: 165px;
   height: 36px;
   background: white;
   border-radius: 4px;
+  margin: 0 10px;
   align-items: center;
   justify-content: space-evenly;
 
