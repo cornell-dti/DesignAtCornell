@@ -19,7 +19,33 @@ export const FilterBarContainer = styled.div`
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: white;
+  }
+`;
+
+export const FilterButton = styled.div<{ expand: boolean }>`
+  display: flex;
+  flex-shrink: 0;
+  width: fit-content;
+  white-space: nowrap;
+  height: 28px;
+  background: ${({ expand }) => (expand ? 'white' : colors.transparentWhite)};
+  border-radius: ${({ expand }) => (expand ? '15px 15px 0px 0px' : '15px')};
+  padding: 0 15px;
+  margin: 0 10px;
+  align-items: flex-start;
+
+  img {
+    transform: ${({ expand }) => (expand ? 'rotate(180deg)' : 'none')};
+    margin-top: 8px;
+    width: 12px;
+    max-height: 12px;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 20px;
+    margin-top: 4px;
   }
 `;
 

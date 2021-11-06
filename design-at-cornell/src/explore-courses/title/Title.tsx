@@ -1,9 +1,9 @@
 import React from 'react';
-import FilterBar from './FilterBar';
+import FilterBar, { Props } from './FilterBar';
 import { TitleBackground, TitleContainer, QuizButton } from '../../components/TitleStyles';
 import { colors } from '../../constants/colors';
 
-const Title = () => (
+const Title = (props: Props) => (
   <TitleBackground color={colors.yellow}>
     <TitleContainer>
       <h1>Explore Courses</h1>
@@ -15,7 +15,7 @@ const Title = () => (
         <p>Taking the Design Course Quiz</p>
       </QuizButton>
     </TitleContainer>
-    <FilterBar />
+    <FilterBar {...props} />
   </TitleBackground>
 );
 

@@ -30,6 +30,13 @@ const ExploreCourses = () => {
   const [creditTags, setCreditTags] = useState<Filters>({ ...credits, all: true });
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
+  const filterList = [
+    { category: 'Design Areas', tags: designAreaTags, setTags: setDesignAreaTags },
+    { category: 'Majors/Minors', tags: departmentTags, setTags: setDepartmentTags },
+    { category: 'Semesters', tags: semesterTags, setTags: setSemesterTags },
+    { category: 'Levels', tags: levelTags, setTags: setLevelTags },
+    { category: 'Credits', tags: creditTags, setTags: setCreditTags },
+  ];
 
   const paginate = (pageNum: number) => {
     setPage(pageNum);
@@ -47,7 +54,7 @@ const ExploreCourses = () => {
 
   return (
     <PageContainer>
-      <Title />
+      <Title {...{ filterList: filterList }} />
       <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
