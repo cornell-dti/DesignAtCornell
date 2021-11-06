@@ -57,7 +57,7 @@ export const FilterButton = styled.div<{ expand: boolean }>`
 export const FilterFormContainer = styled.div<{ expand: boolean }>`
   width: 100%;
   position: absolute;
-  display: ${({ expand }) => (expand ? 'inline': 'none')};
+  display: ${({ expand }) => (expand ? 'inline' : 'none')};
   background: white;
   padding: 0 15px;
   border-radius: 0 0 15px 15px;

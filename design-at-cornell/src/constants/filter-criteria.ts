@@ -20,27 +20,27 @@ export const schools: Filters = {
 };
 
 export const departments: Filters = {
-  'ARCH': false,
-  'ART': false,
-  'COMM': false,
-  'CRP': false,
-  'CS': false,
-  'DEA': false,
-  'ECE': false,
-  'FSAD': false,
-  'HADM': false,
-  'INFO': false,
-  'LA': false,
-  'MAE': false,
-  'NBA': false,
-  'NBAY': false,
+  ARCH: false,
+  ART: false,
+  COMM: false,
+  CRP: false,
+  CS: false,
+  DEA: false,
+  ECE: false,
+  FSAD: false,
+  HADM: false,
+  INFO: false,
+  LA: false,
+  MAE: false,
+  NBA: false,
+  NBAY: false,
 };
 
 export const semesters: Filters = {
-  'Fall': false,
-  'Spring': false,
-  'Summer': false,
-  'Winter': false,
+  Fall: false,
+  Spring: false,
+  Summer: false,
+  Winter: false,
 };
 
 export const levels: Filters = {
