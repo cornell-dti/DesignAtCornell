@@ -35,14 +35,14 @@ async function getRosterCourses(targetCourses: string[][]) {
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
-      .get(`${classRosterURL + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${classRosterURL + targetCourses[i][0]}&q=${targetCourses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
-        missedCourses.push(courses[i]);
+        missedCourses.push(targetCourses[i]);
       });
   }
   console.log('i finished getting courses from current roster');
@@ -56,14 +56,14 @@ async function getPrevRosterCourses(targetCourses: string[][]) {
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
-      .get(`${prevClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${prevClassRosterURL + targetCourses[i][0]}&q=${targetCourses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
-        missedCourses.push(courses[i]);
+        missedCourses.push(targetCourses[i]);
       });
   }
   console.log('i finished getting courses from previous roster');
@@ -77,14 +77,14 @@ async function getSummerRosterCourses(targetCourses: string[][]) {
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
-      .get(`${summerClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${summerClassRosterURL + targetCourses[i][0]}&q=${targetCourses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
-        missedCourses.push(courses[i]);
+        missedCourses.push(targetCourses[i]);
       });
   }
   console.log('i finished getting');
@@ -96,19 +96,19 @@ async function getSummerRosterCourses(targetCourses: string[][]) {
 function transformCourses(targetCourses: RosterCourse[]) {
   const formattedCourses: Course[] = [];
   for (let i = 0; i < targetCourses.length; i += 1) {
-    const formattedSemesters = courses[i].catalogWhenOffered.split(', ');
+    const formattedSemesters = targetCourses[i].catalogWhenOffered.split(', ');
     let lastSem = formattedSemesters.pop();
     lastSem = lastSem.slice(0, lastSem.length - 1);
     formattedSemesters.push(lastSem);
     formattedCourses.push({
-      id: courses[i].subject,
-      code: parseInt(courses[i].catalogNbr, 10),
+      id: targetCourses[i].subject,
+      code: parseInt(targetCourses[i].catalogNbr, 10),
       content: {
-        title: courses[i].titleLong,
-        description: courses[i].description,
+        title: targetCourses[i].titleLong,
+        description: targetCourses[i].description,
         courseSite: 'tbd',
-        courseRoster: `https://classes.cornell.edu/browse/roster/FA21/class/${courses[i].subject}/${courses[i].catalogNbr}`,
-        credits: courses[i].enrollGroups[0].unitsMaximum,
+        courseRoster: `https://classes.cornell.edu/browse/roster/FA21/class/${targetCourses[i].subject}/${targetCourses[i].catalogNbr}`,
+        credits: targetCourses[i].enrollGroups[0].unitsMaximum,
         major: 'tbd',
         designAreas: ['tbd'],
         semester: formattedSemesters,
