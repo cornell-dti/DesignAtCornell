@@ -22,6 +22,19 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
+export const FilterDropdownContainer = styled.li`
+  position: relative;
+  display: inline;
+  box-sizing: border-box;
+  margin: 0 10px;
+  p {
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 20px;
+    margin-top: 4px;
+  }
+`;
+
 export const FilterButton = styled.div<{ expand: boolean }>`
   display: flex;
   flex-shrink: 0;
@@ -31,7 +44,6 @@ export const FilterButton = styled.div<{ expand: boolean }>`
   background: ${({ expand }) => (expand ? 'white' : colors.transparentWhite)};
   border-radius: ${({ expand }) => (expand ? '15px 15px 0px 0px' : '15px')};
   padding: 0 15px;
-  margin: 0 10px;
   align-items: flex-start;
 
   img {
@@ -40,13 +52,15 @@ export const FilterButton = styled.div<{ expand: boolean }>`
     width: 12px;
     max-height: 12px;
   }
+`;
 
-  p {
-    font-weight: bold;
-    font-size: 12px;
-    margin-right: 20px;
-    margin-top: 4px;
-  }
+export const FilterFormContainer = styled.div<{ expand: boolean }>`
+  width: 100%;
+  position: absolute;
+  display: ${({ expand }) => (expand ? 'inline': 'none')};
+  background: white;
+  padding: 0 15px;
+  border-radius: 0 0 15px 15px;
 `;
 
 export const SearchBar = styled.input`
