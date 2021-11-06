@@ -22,12 +22,10 @@ fsCoursesRead
   .on('data', (data) => coursesCSV.push(data))
   .on('end', () => {
     const formattedCourses: string[][] = [];
-    // converting each course (CSV object) into formatCourse (JSON object)
     for (let i = 0; i < coursesCSV.length; i += 1) {
       const fCourse: string[] = coursesCSV[i].tag.split(' ');
       formattedCourses.push(fCourse);
     }
-    // console.log(formattedCourses);
     getRosterCourses(formattedCourses);
   });
 
@@ -41,7 +39,6 @@ async function getRosterCourses(targetCourses: string[][]) {
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        // console.log(classes[0].catalogNbr);
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
@@ -59,7 +56,7 @@ async function getPrevRosterCourses(targetCourses: string[][]) {
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
-      .get(`${summerClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${prevClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
@@ -80,11 +77,10 @@ async function getSummerRosterCourses(targetCourses: string[][]) {
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < targetCourses.length; i += 1) {
     await axios
-      .get(`${prevClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${summerClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        // console.log(classes[0].catalogNbr);
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
