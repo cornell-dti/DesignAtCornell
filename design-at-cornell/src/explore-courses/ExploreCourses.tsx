@@ -3,8 +3,6 @@ import axios from 'axios';
 import Title from './title/Title';
 import { PageContainer } from './ExploreCoursesStyles';
 import Courses from './courses/Courses';
-import FilterDropdowns from './title/FilterDropdowns';
-import Category from './types/Category';
 import Pagination from './Pagination';
 import { Course } from '../../../server/types';
 
@@ -18,17 +16,8 @@ const ExploreCourses = () => {
       .then(setCourses);
   }, []);
 
-  const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(
-    new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
-  );
-
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
-
-  const searchHandler = function (event: React.ChangeEvent<HTMLInputElement>) {
-    setSearch(event.target.value);
-    setPage(1);
-  };
 
   const paginate = (pageNum: number) => {
     setPage(pageNum);
@@ -46,12 +35,7 @@ const ExploreCourses = () => {
 
   return (
     <PageContainer>
-      <Title
-        filterData={filterData}
-        dropdownInfo={FilterDropdowns}
-        onChange={setfilterData}
-        searchHandler={searchHandler}
-      />
+      <Title />
       <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
