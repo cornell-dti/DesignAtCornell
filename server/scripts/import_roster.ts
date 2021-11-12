@@ -30,68 +30,61 @@ fsCoursesRead
       formattedCourses.push(fCourse);
     }
 
-    // console.log(formattedCourses);
     getRosterCourses(formattedCourses, classRosterURL).then((missedCourses) => {
-      getRosterCourses(missedCourses, prevClassRosterURL).then((missedCourses) => {
-        getRosterCourses(missedCourses, summerClassRosterURL).then(() => {
+      getRosterCourses(missedCourses, prevClassRosterURL).then((missedCoursesNew) => {
+        getRosterCourses(missedCoursesNew, summerClassRosterURL).then(() => {
           transformCourses(fetchedCourses);
         });
       });
     });
   });
 
-async function getRosterCourses(courses: string[][], classUrl: string) {
+async function getRosterCourses(coursesOne: string[][], classUrl: string) {
   const missedCourses = [];
   /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < courses.length; i++) {
+  for (let i = 0; i < coursesOne.length; i += 1) {
     await axios
-      .get(`${classUrl + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${classUrl + coursesOne[i][0]}&q=${coursesOne[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        // console.log(classes[0].catalogNbr);
         fetchedCourses.push(classes[0] as RosterCourse);
       })
       .catch(() => {
-        missedCourses.push(courses[i]);
+        missedCourses.push(coursesOne[i]);
       });
   }
-
-  console.log('i finished getting courses from current roster');
-  // console.log(classUrl, missedCourses)
   return missedCourses;
 }
-function transformCourses(courses: RosterCourse[]) {
+function transformCourses(coursesTwo: RosterCourse[]) {
   const formattedCourses: Course[] = [];
-  for (let i = 0; i < courses.length; i++) {
-    const formattedSemesters = courses[i].catalogWhenOffered.split(', ');
+  for (let i = 0; i < coursesTwo.length; i += 1) {
+    const formattedSemesters = coursesTwo[i].catalogWhenOffered.split(', ');
     let lastSem = formattedSemesters.pop();
     lastSem = lastSem.slice(0, lastSem.length - 1);
     formattedSemesters.push(lastSem);
     formattedCourses.push({
-      id: courses[i].subject,
-      code: parseInt(courses[i].catalogNbr),
+      id: coursesTwo[i].subject,
+      code: parseInt(coursesTwo[i].catalogNbr, 0),
       content: {
-        title: courses[i].titleLong,
-        description: courses[i].description,
+        title: coursesTwo[i].titleLong,
+        description: coursesTwo[i].description,
         courseSite: 'tbd',
-        courseRoster: `https://classes.cornell.edu/browse/roster/FA21/class/${courses[i].subject}/${courses[i].catalogNbr}`,
-        credits: courses[i].enrollGroups[0].unitsMaximum,
+        courseRoster: `https://classes.cornell.edu/browse/roster/FA21/class/${coursesTwo[i].subject}/${coursesTwo[i].catalogNbr}`,
+        credits: coursesTwo[i].enrollGroups[0].unitsMaximum,
         major: 'tbd',
         designAreas: ['tbd'],
         semester: formattedSemesters,
       },
     });
   }
-  console.log('i finished transforming the courses');
   pushCoursesToDatabase(formattedCourses);
 }
 
 function pushCoursesToDatabase(formattedCourses: Course[]) {
-  for (let i = 0; i < formattedCourses.length; i++) {
+  for (let i = 0; i < formattedCourses.length; i += 1) {
     const courseIdCollection = courses.doc('test2').collection(formattedCourses[i].id);
     const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
   }
-  console.log('i pushed the courses to firestore');
 }
