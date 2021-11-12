@@ -16,6 +16,8 @@ const summerClassRosterURL = `https://classes.cornell.edu/api/2.0/search/classes
 
 const coursesCSV = [];
 
+const fetchedCourses = [];
+
 fsCoursesRead
   .createReadStream('./website_data_csv/courses.csv')
   .pipe(csv())
@@ -27,17 +29,23 @@ fsCoursesRead
       const fCourse: string[] = coursesCSV[i].tag.split(' ');
       formattedCourses.push(fCourse);
     }
+
     // console.log(formattedCourses);
-    getRosterCourses(formattedCourses);
+    getRosterCourses(formattedCourses, classRosterURL).then((missedCourses) => {
+      getRosterCourses(missedCourses, prevClassRosterURL).then((missedCourses) => {
+        getRosterCourses(missedCourses, summerClassRosterURL).then(() => {
+          transformCourses(fetchedCourses);
+        });
+      });
+    });
   });
 
-async function getRosterCourses(targetCourses: string[][]) {
-  const fetchedCourses = [];
+async function getRosterCourses(courses: string[][], classUrl: string) {
   const missedCourses = [];
   /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < targetCourses.length; i += 1) {
+  for (let i = 0; i < courses.length; i++) {
     await axios
-      .get(`${classRosterURL + courses[i][0]}&q=${courses[i][1]}`)
+      .get(`${classUrl + courses[i][0]}&q=${courses[i][1]}`)
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
@@ -48,65 +56,21 @@ async function getRosterCourses(targetCourses: string[][]) {
         missedCourses.push(courses[i]);
       });
   }
+
   console.log('i finished getting courses from current roster');
-  transformCourses(fetchedCourses);
-  getPrevRosterCourses(missedCourses);
+  // console.log(classUrl, missedCourses)
+  return missedCourses;
 }
-
-async function getPrevRosterCourses(targetCourses: string[][]) {
-  const fetchedCourses = [];
-  const missedCourses = [];
-  /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < targetCourses.length; i += 1) {
-    await axios
-      .get(`${summerClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
-      .then(async (res) => {
-        const resData: RosterResponse = (await res.data) as RosterResponse;
-        const classes = resData.data.classes as RosterCourse[];
-        fetchedCourses.push(classes[0] as RosterCourse);
-      })
-      .catch(() => {
-        missedCourses.push(courses[i]);
-      });
-  }
-  console.log('i finished getting courses from previous roster');
-  transformCourses(fetchedCourses);
-  getSummerRosterCourses(missedCourses);
-}
-
-async function getSummerRosterCourses(targetCourses: string[][]) {
-  const fetchedCourses = [];
-  const missedCourses = [];
-  /* eslint-disable no-await-in-loop */
-  for (let i = 0; i < targetCourses.length; i += 1) {
-    await axios
-      .get(`${prevClassRosterURL + courses[i][0]}&q=${courses[i][1]}`)
-      .then(async (res) => {
-        const resData: RosterResponse = (await res.data) as RosterResponse;
-        const classes = resData.data.classes as RosterCourse[];
-        // console.log(classes[0].catalogNbr);
-        fetchedCourses.push(classes[0] as RosterCourse);
-      })
-      .catch(() => {
-        missedCourses.push(courses[i]);
-      });
-  }
-  console.log('i finished getting');
-  console.log('missed courses after grabbing from summer');
-  console.log(missedCourses);
-  transformCourses(fetchedCourses);
-}
-
-function transformCourses(targetCourses: RosterCourse[]) {
+function transformCourses(courses: RosterCourse[]) {
   const formattedCourses: Course[] = [];
-  for (let i = 0; i < targetCourses.length; i += 1) {
+  for (let i = 0; i < courses.length; i++) {
     const formattedSemesters = courses[i].catalogWhenOffered.split(', ');
     let lastSem = formattedSemesters.pop();
     lastSem = lastSem.slice(0, lastSem.length - 1);
     formattedSemesters.push(lastSem);
     formattedCourses.push({
       id: courses[i].subject,
-      code: parseInt(courses[i].catalogNbr, 10),
+      code: parseInt(courses[i].catalogNbr),
       content: {
         title: courses[i].titleLong,
         description: courses[i].description,
@@ -124,8 +88,8 @@ function transformCourses(targetCourses: RosterCourse[]) {
 }
 
 function pushCoursesToDatabase(formattedCourses: Course[]) {
-  for (let i = 0; i < formattedCourses.length; i += 1) {
-    const courseIdCollection = courses.doc('test').collection(formattedCourses[i].id);
+  for (let i = 0; i < formattedCourses.length; i++) {
+    const courseIdCollection = courses.doc('test2').collection(formattedCourses[i].id);
     const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
   }
