@@ -9,7 +9,7 @@ import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
 import { Course } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
-import { ModalContainer } from '../../components/ModalStyles';
+import { ModalContainer, ModalHeader } from '../../components/ModalStyles';
 
 const CourseBubble = (course: Course) => {
   const [open, setOpen] = React.useState(false);
@@ -40,8 +40,11 @@ const CourseBubble = (course: Course) => {
       onOpen={() => setOpen(true)}
       open={open}
       trigger={courseCard}
+      style={{ width: '699px', height: '523px' }}
     >
-      <ModalContainer></ModalContainer>
+      <ModalContainer>
+        <ModalHeader></ModalHeader>
+      </ModalContainer>
     </Modal>
   );
 };

@@ -3,6 +3,7 @@ export const colors = {
   yellow: '#FFD84E',
   yellowHighlight: '#FFF59D',
   blue: '#7EA3FF',
+  lightBlue: '#7CD0FF',
   transparentWhite: 'rgba(255, 255, 255, 0.53)',
   darkGray: '#828282',
   gray: '#898989',
