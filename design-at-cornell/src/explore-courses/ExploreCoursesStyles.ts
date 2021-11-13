@@ -63,6 +63,7 @@ export const FilterFormContainer = styled.div<{ expand: boolean }>`
   background: white;
   padding: 0px 15px 15px 15px;
   border-radius: 0 0 15px 15px;
+  box-shadow: 0px 20px 20px 10px ${colors.shadow};
 `;
 
 export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
@@ -74,6 +75,7 @@ export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
   background: white;
   padding: 0px 15px 15px 15px;
   border-radius: 0 15px 15px 15px;
+  box-shadow: 0px 20px 20px 10px ${colors.shadow};
 `;
 
 export const SearchBar = styled.input`
