@@ -58,7 +58,7 @@ export async function createCourses(req, res) {
     course.content.major === undefined ||
     course.content.designAreas.length == 0
   ) {
-    res.send({ success: false, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     const courseIdCollection = courses.doc(rosterSem).collection(courseId);
     const newCourse = courseIdCollection.doc(courseCode.toString());
@@ -72,7 +72,7 @@ export async function deleteCourses(req, res) {
   const courseCode: number = req.body.code;
 
   if (courseId === undefined || courseCode === undefined) {
-    res.send({ success: false, message: 'One or more fields is missing' });
+    res.send({ success: false, message: 'Course ID or code is missing.' });
   } else {
     courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).delete();
     res.send({ success: true });
@@ -91,7 +91,7 @@ export async function updateCourses(req, res) {
     courseCode === undefined ||
     courseId === undefined
   ) {
-    res.send('One or more fields is missing.');
+    res.send({success: true, message:'One or more fields is missing.'});
   } else {
     courses
       .doc(rosterSem)

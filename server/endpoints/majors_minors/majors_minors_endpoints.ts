@@ -46,7 +46,7 @@ export async function createMajors(req, res) {
     major.content.school === undefined ||
     major.content.type === undefined
   ) {
-    res.send({ success: false, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     const newMajor = majors.doc(major.title);
     newMajor.set(major.content);
@@ -58,7 +58,7 @@ export async function deleteMajors(req, res) {
   const { title } = req.body;
 
   if (title === undefined) {
-    res.send({ success: false, message: 'One or more fields is missing' });
+    res.send({ success: false, message: 'Major/Minor title is missing.' });
   } else {
     majors.doc(title).delete();
     res.send({ success: true });
@@ -71,7 +71,7 @@ export async function updateMajors(req, res) {
   const { content } = req.body;
 
   if (content === undefined || field === undefined || title === undefined) {
-    res.send('One or more fields is missing.');
+    res.send({success: true, message: 'One or more fields is missing.'});
   } else {
     majors.doc(title).update({ field: content });
     res.send({ success: true });
