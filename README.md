@@ -4,7 +4,7 @@
 
 #### School Year
 
-### 2020 - 2021
+### 2021 - 2022
 
 - **Ying Yang** - Product Manager
 - **Jessica Feng** - Technical Project Manager
@@ -13,3 +13,5 @@
 - **Katrina Wang** - Software Developer
 - **Rohan Maheshwari** - Software Developer
 - **Zak Kent** - Software Developer
+- **Sydney Tran** - Software Developer
+- **Sarah Young** - Software Developer
