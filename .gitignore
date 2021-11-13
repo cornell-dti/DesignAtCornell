@@ -68,7 +68,7 @@ node_modules/
 .env
 
 #docs cache
-docs/
+/docs
 
 # misc
 .DS_Store

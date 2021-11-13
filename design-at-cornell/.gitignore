@@ -12,7 +12,7 @@
 /build
 
 #docs cache
-docs/
+/docs
 
 # misc
 .DS_Store
