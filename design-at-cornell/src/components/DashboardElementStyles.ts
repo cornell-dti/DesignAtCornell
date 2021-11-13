@@ -12,19 +12,18 @@ export const ElementContainer = styled.div`
   border: 1px solid;
   border-radius: 8px;
   margin: 1.5%;
-
   padding: 25px;
   align-items: flex-start;
   justify-content: space-between;
+`;
 
-  p {
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: start;
-    margin: 0;
-    color: black;
-  }
+export const Title = styled.div`
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: start;
+  margin: 0;
+  color: black;
 `;
 
 export const Subtitle = styled.div`
@@ -42,6 +41,10 @@ export const Subtitle = styled.div`
     text-align: start;
     margin: 0;
     color: ${colors.gray};
+  }
+
+  img {
+    cursor: pointer;
   }
 `;
 
@@ -63,11 +66,9 @@ export const Tag = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
-
-  p {
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 12px;
-    color: black;
-  }
+  background-color: ${colors.transparentWhite};
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
 `;

@@ -84,24 +84,6 @@ export const FilterButton = styled.div<{ open: boolean; applied: boolean }>`
   }
 `;
 
-export const SavedCoursesButton = styled.div`
-  display: flex;
-  width: 165px;
-  height: 36px;
-  background: white;
-  border-radius: 4px;
-  align-items: center;
-  justify-content: space-evenly;
-
-  p {
-    width: fit-content;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: black;
-  }
-`;
-
 export const Divider = styled.div`
   display: flex;
   flex-direction: column;

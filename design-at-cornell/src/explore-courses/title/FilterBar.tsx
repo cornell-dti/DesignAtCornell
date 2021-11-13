@@ -6,8 +6,8 @@ import {
   FilterDropdownsList,
   SearchAndBookmarkList,
   SearchBar,
-  SavedCoursesButton,
 } from '../ExploreCoursesStyles';
+import { RectangularButton } from '../../components/ButtonStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterCategory from './FilterCategory';
 import Category from '../types/Category';
@@ -58,10 +58,10 @@ const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleP
           background="white"
           onChange={searchHandler}
         />
-        <SavedCoursesButton>
+        <RectangularButton>
           <img src={bookmarked} alt={'saved courses'} />
           <p>Saved Courses</p>
-        </SavedCoursesButton>
+        </RectangularButton>
       </SearchAndBookmarkList>
     </FilterBarContainer>
   );
