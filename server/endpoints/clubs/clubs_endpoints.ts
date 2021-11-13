@@ -57,7 +57,7 @@ export async function updateClubs(req, res) {
   const { content } = req.body;
 
   if (content === undefined || field === undefined || title === undefined) {
-    res.send({success: false, message: 'One or more fields is missing.'});
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     clubs.doc(title).update({ field: content });
     res.send({ success: true });

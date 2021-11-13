@@ -71,7 +71,7 @@ export async function updateMajors(req, res) {
   const { content } = req.body;
 
   if (content === undefined || field === undefined || title === undefined) {
-    res.send({success: true, message: 'One or more fields is missing.'});
+    res.send({ success: true, message: 'One or more fields is missing.' });
   } else {
     majors.doc(title).update({ field: content });
     res.send({ success: true });

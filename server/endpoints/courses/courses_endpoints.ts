@@ -91,7 +91,7 @@ export async function updateCourses(req, res) {
     courseCode === undefined ||
     courseId === undefined
   ) {
-    res.send({success: true, message:'One or more fields is missing.'});
+    res.send({ success: true, message: 'One or more fields is missing.' });
   } else {
     courses
       .doc(rosterSem)
