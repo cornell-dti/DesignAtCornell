@@ -40,11 +40,13 @@ export const FilterButton = styled.div<{ expand: boolean }>`
   flex-shrink: 0;
   width: fit-content;
   white-space: nowrap;
-  height: 28px;
+  height: ${({ expand }) => (expand ? '38px' : '28px')};
+  margin-top: ${({ expand }) => (expand ? '10px' : '0px')};
   background: ${({ expand }) => (expand ? 'white' : colors.transparentWhite)};
   border-radius: ${({ expand }) => (expand ? '15px 15px 0px 0px' : '15px')};
   padding: 0 15px;
   align-items: flex-start;
+  cursor: pointer;
 
   img {
     transform: ${({ expand }) => (expand ? 'rotate(180deg)' : 'none')};
@@ -59,8 +61,19 @@ export const FilterFormContainer = styled.div<{ expand: boolean }>`
   position: absolute;
   display: ${({ expand }) => (expand ? 'inline' : 'none')};
   background: white;
-  padding: 0 15px;
+  padding: 0px 15px 15px 15px;
   border-radius: 0 0 15px 15px;
+`;
+
+export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
+  width: fit-content;
+  height: 340px;
+  position: absolute;
+  white-space: nowrap;
+  display: ${({ expand }) => (expand ? 'inline' : 'none')};
+  background: white;
+  padding: 0px 15px 15px 15px;
+  border-radius: 0 15px 15px 15px;
 `;
 
 export const SearchBar = styled.input`

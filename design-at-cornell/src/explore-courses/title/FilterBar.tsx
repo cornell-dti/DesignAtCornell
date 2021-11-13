@@ -8,7 +8,7 @@ const FilterBar = (props: Props) => {
   return (
     <FilterBarContainer>
       {props.filterList.map((f) => (
-        <FilterDropdown {...{ ...f, setPage: props.setPage }} />
+        <FilterDropdown key={f.category} {...{ ...f, setPage: props.setPage }} />
       ))}
       <SearchBar
         placeholder="Name, Keywords, Topics, Etc"

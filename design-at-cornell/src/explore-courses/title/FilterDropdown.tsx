@@ -3,14 +3,17 @@ import {
   FilterButton,
   FilterDropdownContainer,
   FilterFormContainer,
+  LargeFilterFormContainer,
 } from '../ExploreCoursesStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import downArrow from '../../static/images/down-arrow.png';
 import { Form } from '../../components/FormStyles';
+import { department_name } from '../../constants/departments';
 
 const FilterDropdown = (props: Props) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [numApplied, setNumApplied] = useState<number>(0);
+
   const filterForm = (
     <Form>
       {Object.entries(props.tags).map(([tag, _]) =>
@@ -29,7 +32,9 @@ const FilterDropdown = (props: Props) => {
                 props.setPage(1);
               }}
             />
-            <label htmlFor={tag}>{tag}</label>
+            <label htmlFor={tag}>
+              {props.category === 'Majors/Minors' ? department_name[tag] : tag}
+            </label>
           </div>
         )
       )}
@@ -42,7 +47,11 @@ const FilterDropdown = (props: Props) => {
         <p>{props.category}</p>
         <img src={downArrow} alt={'expand'} />
       </FilterButton>
-      <FilterFormContainer expand={expand}>{filterForm}</FilterFormContainer>
+      {props.category === 'Majors/Minors' ? (
+        <LargeFilterFormContainer expand={expand}>{filterForm}</LargeFilterFormContainer>
+      ) : (
+        <FilterFormContainer expand={expand}>{filterForm}</FilterFormContainer>
+      )}
     </FilterDropdownContainer>
   );
 };
