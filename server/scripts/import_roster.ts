@@ -3,6 +3,7 @@ import fsCoursesRead from 'fs';
 import csv from 'csv-parser';
 import { Course, RosterCourse, RosterResponse } from '../types';
 import { courses } from '../server';
+
 const currSem = 'FA21';
 const prevSem = 'SP21';
 const summerSem = 'SU21';
