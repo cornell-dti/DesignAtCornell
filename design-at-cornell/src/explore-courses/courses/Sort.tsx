@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, SortBy } from '../ExploreCoursesStyles';
+import { Divider, SortBy } from '../../components/DashboardGridStyles';
 import arrow from '../../static/images/down-arrow.png';
 
 const Sort = () => (

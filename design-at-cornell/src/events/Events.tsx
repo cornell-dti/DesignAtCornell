@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { PageContainer, EventList } from './EventsStyles';
+import { VerticalFlex } from '../components/ContainerStyles';
+import { EventList } from './EventsStyles';
 import Title from './Title';
 import Filter from './dashboard/Filter';
 import EventDisplay from './dashboard/EventDisplay';
@@ -73,7 +74,7 @@ const Events = () => {
   );
 
   return (
-    <PageContainer>
+    <VerticalFlex>
       <Title />
       <Filter
         month={month}
@@ -83,7 +84,7 @@ const Events = () => {
         monthClickHandler={monthClickHandler}
       />
       {eventDisplay}
-    </PageContainer>
+    </VerticalFlex>
   );
 };
 

@@ -4,7 +4,7 @@ import {
   FilterDropdownContainer,
   FilterFormContainer,
   LargeFilterFormContainer,
-} from '../ExploreCoursesStyles';
+} from '../../components/FilterBarStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import downArrow from '../../static/images/down-arrow.png';
 import { Form } from '../../components/FormStyles';
