@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Title from './title/Title';
+import Pagination from './Pagination';
 import { VerticalFlex } from '../components/ContainerStyles';
 import { Club } from '../../../server/types';
 import { Filters, designAreas, organizationType, size } from '../constants/filter-criteria';
@@ -26,10 +27,34 @@ const Clubs = () => {
     { category: 'Semesters', tags: sizeTags, setTags: setSizeTags },
   ];
 
+  const filterResult = clubs.filter(
+    (club) =>
+      club.content.designAreas.reduce(
+        (acc, area) => acc || designAreaTags[area],
+        designAreaTags['all']
+      ) &&
+      (orgTypeTags['all'] || orgTypeTags[club.content.orgType]) &&
+      (sizeTags['all'] || sizeTags[club.content.size]) &&
+      (club.title + club.content.orgType)
+        .replace(/\s/g, '')
+        .toLowerCase()
+        .includes(search.replace(/\s/g, '').toLowerCase())
+  );
+  const clubsPerPage = 20;
+  const lastClubIdx = currentPage * clubsPerPage;
+  const firstClubIdx = lastClubIdx - clubsPerPage;
+  const displayedClubs = filterResult.slice(firstClubIdx, lastClubIdx);
+
   return (
     <VerticalFlex>
       <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
-      <Dashboard {...clubs} />
+      <Dashboard {...displayedClubs} />
+      <Pagination
+        currentPage={currentPage}
+        clubsPerPage={clubsPerPage}
+        totalClubs={filterResult.length}
+        paginate={setPage}
+      />
     </VerticalFlex>
   );
 };
