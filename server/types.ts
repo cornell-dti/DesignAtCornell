@@ -172,6 +172,6 @@ export type Note = {
 };
 
 export type CourseAndSem = {
-  course: RosterCourse,
-  sem: string
-}
+  course: RosterCourse;
+  sem: string;
+};

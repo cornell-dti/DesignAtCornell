@@ -40,7 +40,7 @@ async function getRosterCourses(coursesOne: string[][], classUrl: string, currSe
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        fetchedCourses.push({course: classes[0] as RosterCourse, sem: currSem});
+        fetchedCourses.push({ course: classes[0] as RosterCourse, sem: currSem });
       })
       .catch(() => {
         missedCourses.push(coursesOne[i]);
@@ -73,8 +73,6 @@ function transformCourses(coursesTwo: CourseAndSem[]) {
   pushCoursesToDatabase(formattedCourses);
 }
 function pushCoursesToDatabase(formattedCourses: Course[]) {
-  console.log('pushing courses');
-  console.log(formattedCourses);
   for (let i = 0; i < formattedCourses.length; i += 1) {
     const courseIdCollection = courses.doc('test3').collection(formattedCourses[i].id);
     const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
