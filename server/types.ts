@@ -171,7 +171,13 @@ export type Note = {
   descrlong: string;
 };
 
-export type CourseAndSem = {
+export type FetchedCourse = {
   course: RosterCourse;
   sem: string;
+  designAreas: string[];
 };
+
+export type identifierAndDA = {
+  identifier: string[];
+  designAreas: string[];
+}
