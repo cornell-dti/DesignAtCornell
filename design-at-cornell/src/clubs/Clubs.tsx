@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Title from './title/Title';
 import { VerticalFlex } from '../components/ContainerStyles';
 import { Club } from '../../../server/types';
 import {
@@ -21,7 +22,19 @@ const Clubs = () => {
   const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas, all: true });
   const [organizationTypeTags, setOrganizationTypeTags] = useState<Filters>({ ...organizationType, all: true });
   const [sizeTags, setSizeTags] = useState<Filters>({ ...size, all: true });
-  return <VerticalFlex></VerticalFlex>;
+  const [search, setSearch] = useState('');
+  const [currentPage, setPage] = useState(1);
+  const filterList = [
+    { category: 'Design Areas', tags: designAreaTags, setTags: setDesignAreaTags },
+    { category: 'Majors/Minors', tags: organizationTypeTags, setTags: setOrganizationTypeTags },
+    { category: 'Semesters', tags: sizeTags, setTags: setSizeTags },
+  ];
+
+  return (
+    <VerticalFlex>
+      <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
+    </VerticalFlex>
+  );
 };
 
 export default Clubs;

@@ -90,7 +90,7 @@ export const SearchBar = styled.input`
   }
 `;
 
-export const SavedCoursesButton = styled.div`
+export const SavedButton = styled.div`
   display: flex;
   flex-shrink: 0;
   width: 165px;

@@ -22,8 +22,8 @@ const FilterBar = (props: Props) => {
         }}
       />
       <SavedButton>
-        <img src={bookmarked} alt={'saved courses'} />
-        <p>Saved Courses</p>
+        <img src={bookmarked} alt={'saved clubs'} />
+        <p>Saved Clubs</p>
       </SavedButton>
     </FilterBarContainer>
   );
