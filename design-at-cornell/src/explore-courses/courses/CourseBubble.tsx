@@ -5,13 +5,13 @@ import {
   TagsContainer,
   Tag,
 } from '../../components/DashboardElementStyles';
-import { courseColors } from '../../constants/colors';
+import { dashboardColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
 import { Course } from '../../../../server/types';
 
 const CourseBubble = (course: Course) => (
   <ElementContainer
-    style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+    style={{ borderColor: dashboardColors[Math.floor(Math.random() * dashboardColors.length)] }}
     onClick={() => (window.location.href = course.content.courseRoster)}
   >
     <Subtitle>
@@ -20,10 +20,14 @@ const CourseBubble = (course: Course) => (
     </Subtitle>
     <p>{course.content.title}</p>
     <TagsContainer>
-      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+      <Tag
+        style={{ background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)] }}
+      >
         <p>{course.content.credits + ' Credits'}</p>
       </Tag>
-      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+      <Tag
+        style={{ background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)] }}
+      >
         <p>{course.content.semester.join(', ')}</p>
       </Tag>
     </TagsContainer>

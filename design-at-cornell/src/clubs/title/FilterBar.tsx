@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  FilterBarContainer,
-  SearchBar,
-  SavedButton,
-} from '../../components/FilterBarStyles';
+import { FilterBarContainer, SearchBar, SavedButton } from '../../components/FilterBarStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterDropdown from './FilterDropdown';

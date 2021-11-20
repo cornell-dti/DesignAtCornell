@@ -14,4 +14,4 @@ export const colors = {
   shadow: 'rgba(0, 0, 0, 0.05)',
 };
 
-export const courseColors = ['#BAE6FF', '#FFE5A1', '#FFC5EF', '#C9E1AA', '#FFCBBA', '#D3D2F7'];
+export const dashboardColors = ['#BAE6FF', '#FFE5A1', '#FFC5EF', '#C9E1AA', '#FFCBBA', '#D3D2F7'];
