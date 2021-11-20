@@ -170,3 +170,8 @@ export type Note = {
   classNotesSeq: number;
   descrlong: string;
 };
+
+export type CourseAndSem = {
+  course: RosterCourse,
+  sem: string
+}

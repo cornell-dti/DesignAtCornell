@@ -1,7 +1,7 @@
 import axios from 'axios';
 import fsCoursesRead from 'fs';
 import csv from 'csv-parser';
-import { Course, RosterCourse, RosterResponse } from '../types';
+import { Course, RosterCourse, RosterResponse, CourseAndSem } from '../types';
 import { courses } from '../server';
 
 const currSem = 'FA21';
@@ -23,15 +23,15 @@ fsCoursesRead
       const fCourse: string[] = coursesCSV[i].tag.split(' ');
       formattedCourses.push(fCourse);
     }
-    getRosterCourses(formattedCourses, classRosterURL).then((missedCourses) => {
-      getRosterCourses(missedCourses, prevClassRosterURL).then((missedCoursesNew) => {
-        getRosterCourses(missedCoursesNew, summerClassRosterURL).then(() => {
+    getRosterCourses(formattedCourses, classRosterURL, currSem).then((missedCourses) => {
+      getRosterCourses(missedCourses, prevClassRosterURL, prevSem).then((missedCoursesNew) => {
+        getRosterCourses(missedCoursesNew, summerClassRosterURL, summerSem).then(() => {
           transformCourses(fetchedCourses);
         });
       });
     });
   });
-async function getRosterCourses(coursesOne: string[][], classUrl: string) {
+async function getRosterCourses(coursesOne: string[][], classUrl: string, currSem: string) {
   const missedCourses = [];
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < coursesOne.length; i += 1) {
@@ -40,7 +40,7 @@ async function getRosterCourses(coursesOne: string[][], classUrl: string) {
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        fetchedCourses.push(classes[0] as RosterCourse);
+        fetchedCourses.push({course: classes[0] as RosterCourse, sem: currSem});
       })
       .catch(() => {
         missedCourses.push(coursesOne[i]);
@@ -48,22 +48,22 @@ async function getRosterCourses(coursesOne: string[][], classUrl: string) {
   }
   return missedCourses;
 }
-function transformCourses(coursesTwo: RosterCourse[]) {
+function transformCourses(coursesTwo: CourseAndSem[]) {
   const formattedCourses: Course[] = [];
   for (let i = 0; i < coursesTwo.length; i += 1) {
-    const formattedSemesters = coursesTwo[i].catalogWhenOffered.split(', ');
+    const formattedSemesters = coursesTwo[i].course.catalogWhenOffered.split(', ');
     let lastSem = formattedSemesters.pop();
     lastSem = lastSem.slice(0, lastSem.length - 1);
     formattedSemesters.push(lastSem);
     formattedCourses.push({
-      id: coursesTwo[i].subject,
-      code: parseInt(coursesTwo[i].catalogNbr, 0),
+      id: coursesTwo[i].course.subject,
+      code: parseInt(coursesTwo[i].course.catalogNbr, 0),
       content: {
-        title: coursesTwo[i].titleLong,
-        description: coursesTwo[i].description,
+        title: coursesTwo[i].course.titleLong,
+        description: coursesTwo[i].course.description,
         courseSite: 'tbd',
-        courseRoster: `https://classes.cornell.edu/browse/roster/FA21/class/${coursesTwo[i].subject}/${coursesTwo[i].catalogNbr}`,
-        credits: coursesTwo[i].enrollGroups[0].unitsMaximum,
+        courseRoster: `https://classes.cornell.edu/browse/roster/${coursesTwo[i].sem}/class/${coursesTwo[i].course.subject}/${coursesTwo[i].course.catalogNbr}`,
+        credits: coursesTwo[i].course.enrollGroups[0].unitsMaximum,
         major: 'tbd',
         designAreas: ['tbd'],
         semester: formattedSemesters,
@@ -73,8 +73,10 @@ function transformCourses(coursesTwo: RosterCourse[]) {
   pushCoursesToDatabase(formattedCourses);
 }
 function pushCoursesToDatabase(formattedCourses: Course[]) {
+  console.log('pushing courses');
+  console.log(formattedCourses);
   for (let i = 0; i < formattedCourses.length; i += 1) {
-    const courseIdCollection = courses.doc('test2').collection(formattedCourses[i].id);
+    const courseIdCollection = courses.doc('test3').collection(formattedCourses[i].id);
     const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
   }
