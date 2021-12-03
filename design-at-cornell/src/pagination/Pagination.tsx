@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledPagination, PageButton, PageNavButton } from '../components/PaginationStyles';
+import { StyledPagination, PageButton, PageNavButton } from './PaginationStyles';
 import rightArrow from '../static/images/right-arrow.svg';
 
 const Pagination = ({ currentPage, cardsPerPage, totalCards, paginate }: Props) => {
