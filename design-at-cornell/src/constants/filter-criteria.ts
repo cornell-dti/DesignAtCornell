@@ -60,12 +60,12 @@ export const credits: Filters = {
 };
 
 export const organizationType: Filters = {
-  'Club': false,
+  Club: false,
   'Project Team': false,
   'Community Service': false,
-  'Mentorship': false,
+  Mentorship: false,
   'Career Prep': false,
-  'Volunteering': false,
+  Volunteering: false,
 };
 
 export const size: Filters = {
