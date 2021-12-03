@@ -14,21 +14,21 @@ import Category from '../types/Category';
 
 const FilterBar = ({ filterData, onChange, dropdownInfo, searchHandler }: TitleProps) => {
   const [openDropdown, setOpenDropdown] = useState<Category | ''>('');
-  const handleFilterCategoryChange = (category: Category): filterCategoryCheckHandler => (
-    checkboxLabel
-  ) => {
-    onChange(
-      new Map(
-        Array.from(filterData.entries()).map(([k, v]) => {
-          if (k !== category) return [k, v];
-          const copy = new Set(v);
-          if (copy.has(checkboxLabel)) copy.delete(checkboxLabel);
-          else copy.add(checkboxLabel);
-          return [k, copy];
-        })
-      )
-    );
-  };
+  const handleFilterCategoryChange =
+    (category: Category): filterCategoryCheckHandler =>
+    (checkboxLabel) => {
+      onChange(
+        new Map(
+          Array.from(filterData.entries()).map(([k, v]) => {
+            if (k !== category) return [k, v];
+            const copy = new Set(v);
+            if (copy.has(checkboxLabel)) copy.delete(checkboxLabel);
+            else copy.add(checkboxLabel);
+            return [k, copy];
+          })
+        )
+      );
+    };
   return (
     <FilterBarContainer>
       <FilterDropdownsList>
