@@ -76,7 +76,7 @@ export const ApplyTagsContainer = styled.div`
   flex-direction: column;
   width: 20%;
   height: auto;
-  background: ${colors.lightGreen};
+  background: ${colors.pastelGreen};
   padding: 60px;
 
   h5 {
