@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilterBarContainer, SearchBar } from '../ExploreCoursesStyles';
-import { RectangularButton } from '../../components/ButtonStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
+import { RectangularButton } from '../../components/ButtonStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterDropdown from './FilterDropdown';
 
