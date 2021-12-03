@@ -1,9 +1,21 @@
 import React from 'react';
-import { AreaOfStudyButton, AreaOfStudyTag } from '../AreasOfStudyStyles';
+import {
+  AreaOfStudyButton,
+  AreaOfStudyTag,
+  ModalContentQuestion,
+  ModalContentResponse,
+} from '../AreasOfStudyStyles';
 import { Filters } from '../../constants/filter-criteria';
 import { Major } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
-import { ModalContainer, ModalHeader, Title, Subtitle, Exit } from '../../components/ModalStyles';
+import {
+  ModalContainer,
+  ModalHeader,
+  ModalContent,
+  Title,
+  Subtitle,
+  Exit,
+} from '../../components/ModalStyles';
 import { TagsContainer, Tag } from '../../components/DashboardElementStyles';
 import { colors } from '../../constants/colors';
 import { HorizontalFlex } from '../../components/ContainerStyles';
@@ -49,6 +61,20 @@ const AreaOfStudyModal = (props: Props) => {
             <Tag>{props.study.content.school}</Tag>
           </TagsContainer>
         </ModalHeader>
+        <ModalContent>
+          <ModalContentQuestion>
+            <span>why did you choose&nbsp;</span>
+            <span style={{ color: colors.green }}>{props.study.title}</span>
+            <span>?</span>
+          </ModalContentQuestion>
+          <ModalContentResponse>
+            {props.study.content.reasons.map((reason) =>
+              reason.response === undefined ? null : (
+                <div key={reason.firstName + reason.gradYear}>{reason.response}</div>
+              )
+            )}
+          </ModalContentResponse>
+        </ModalContent>
       </ModalContainer>
     </Modal>
   );

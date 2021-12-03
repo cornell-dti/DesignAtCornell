@@ -3,6 +3,7 @@ import exit from '../static/images/exit.svg';
 
 export const ModalContainer = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 `;
@@ -16,6 +17,15 @@ export const ModalHeader = styled.div`
   padding: 30px;
   border-radius: 10px 10px 0px 0px;
   justify-content: space-between;
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 343px;
+  padding: 30px;
+  border-radius: 0px 0px 10px 10px;
 `;
 
 export const Title = styled.div`
