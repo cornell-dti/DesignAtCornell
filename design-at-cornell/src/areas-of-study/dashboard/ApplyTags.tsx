@@ -1,10 +1,11 @@
 import React from 'react';
 import { ApplyTagsContainer } from '../AreasOfStudyStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
+import { Form } from '../../components/FormStyles';
 
 const ApplyTags = (props: Props) => {
   const checkboxes = (tags: Filters, setter: SetFilters) => (
-    <form>
+    <Form>
       {Object.entries(tags).map(([tag, _]) => (
         <div key={tag}>
           <input
@@ -19,7 +20,7 @@ const ApplyTags = (props: Props) => {
           <label htmlFor={tag}>{tag}</label>
         </div>
       ))}
-    </form>
+    </Form>
   );
 
   return (

@@ -1,0 +1,16 @@
+export const department_name: { [indexer: string]: string } = {
+  ARCH: 'Architecture',
+  ART: 'Art',
+  COMM: 'Communication',
+  CRP: 'City & Regional Planning',
+  CS: 'Computer Science',
+  DEA: 'Design & Environmental Analysis',
+  ECE: 'Electrical & Computer Engineering',
+  FSAD: 'Fiber Science & Apparel Design',
+  HADM: 'Hotel Administration',
+  INFO: 'Information Science',
+  LA: 'Landscape Architecture',
+  MAE: 'Mechanical & Aerospace Engineering',
+  NBA: 'Graduate Management Business Admin',
+  NBAY: 'Graduate Management Business Admin NYT',
+};
