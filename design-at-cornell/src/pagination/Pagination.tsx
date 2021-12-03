@@ -2,8 +2,8 @@ import React from 'react';
 import { StyledPagination, PageButton, PageNavButton } from '../components/PaginationStyles';
 import rightArrow from '../static/images/right-arrow.svg';
 
-const Pagination = ({ currentPage, clubsPerPage, totalClubs, paginate }: Props) => {
-  const numPages = Math.ceil(totalClubs / clubsPerPage);
+const Pagination = ({ currentPage, cardsPerPage, totalCards, paginate }: Props) => {
+  const numPages = Math.ceil(totalCards / cardsPerPage);
   const pageNumbers = [];
 
   if (numPages > 1) {
@@ -47,7 +47,7 @@ export default Pagination;
 
 interface Props {
   currentPage: number;
-  clubsPerPage: number;
-  totalClubs: number;
+  cardsPerPage: number;
+  totalCards: number;
   paginate(page: number): void;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Title from './title/Title';
-import Pagination from './Pagination';
+import Pagination from '../pagination/Pagination';
 import { VerticalFlex } from '../components/ContainerStyles';
 import { Club } from '../../../server/types';
 import { Filters, designAreas, organizationType, size } from '../constants/filter-criteria';
@@ -51,8 +51,8 @@ const Clubs = () => {
       <Dashboard {...displayedClubs} />
       <Pagination
         currentPage={currentPage}
-        clubsPerPage={clubsPerPage}
-        totalClubs={filterResult.length}
+        cardsPerPage={clubsPerPage}
+        totalCards={filterResult.length}
         paginate={setPage}
       />
     </VerticalFlex>
