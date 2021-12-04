@@ -1,6 +1,7 @@
 import React from 'react';
-import { FilterBarContainer, SearchBar, SavedCoursesButton } from '../ExploreCoursesStyles';
+import { FilterBarContainer, SearchBar } from '../ExploreCoursesStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
+import { RectangularButton } from '../../components/ButtonStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
 import FilterDropdown from './FilterDropdown';
 
@@ -17,10 +18,10 @@ const FilterBar = (props: Props) => {
           props.setPage(1);
         }}
       />
-      <SavedCoursesButton>
+      <RectangularButton>
         <img src={bookmarked} alt={'saved courses'} />
         <p>Saved Courses</p>
-      </SavedCoursesButton>
+      </RectangularButton>
     </FilterBarContainer>
   );
 };

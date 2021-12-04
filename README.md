@@ -15,7 +15,7 @@
 - **Zak Kent** - Software Developer
 - **Sydney Tran** - Software Developer
 - **Sarah Young** - Software Developer
-- **Vishok Jonnalagadda** - Software Developer 
+- **Vishok Jonnalagadda** - Software Developer
 
 ### 2020 - 2021
 
@@ -26,5 +26,3 @@
 - **Katrina Wang** - Software Developer
 - **Rohan Maheshwari** - Software Developer
 - **Zak Kent** - Software Developer
-
-
