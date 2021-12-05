@@ -67,6 +67,9 @@ node_modules/
 # dotenv environment variables file
 .env
 
+#docs cache
+/docs
+
 # misc
 .DS_Store
 .env.local
