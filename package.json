@@ -10,8 +10,8 @@
     "tsc": "yarn workspaces run tsc",
     "frontend-dev": "yarn workspace design-at-cornell start",
     "backend-dev": "yarn workspace server start",
-    "format": "prettier --write **/*.{ts,js,tsx,css,html}",
-    "format:check": "prettier --check **/*.{ts,js,tsx,css,html}",
+    "format": "prettier --write \"**/*.{ts,js,tsx,css,html}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,tsx,css,html}\"",
     "lint": "eslint . --ext .js --ext .ts --ext .jsx --ext .tsx",
     "lint:fix": "yarn lint --fix"
   },

@@ -1,7 +1,7 @@
 import csv from 'csv-parser';
 import fsEventsRead from 'fs';
-import { events } from './server';
-import { Event } from './types';
+import { events } from '../server';
+import { Event } from '../types';
 
 const eventsCSV = [];
 
