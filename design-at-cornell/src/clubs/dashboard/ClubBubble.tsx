@@ -4,6 +4,7 @@ import {
   Subtitle,
   TagsContainer,
   Tag,
+  Title,
 } from '../../components/DashboardElementStyles';
 import { dashboardColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
@@ -18,7 +19,7 @@ const ClubBubble = (club: Club) => (
       <p>{club.content.orgType}</p>
       <img src={bookmark} alt="save club" />
     </Subtitle>
-    <p>{club.title}</p>
+    <Title>{club.title}</Title>
     <TagsContainer>
       {club.content.size === '' ? null : (
         <Tag
@@ -26,7 +27,7 @@ const ClubBubble = (club: Club) => (
             background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
           }}
         >
-          <p>{club.content.size}</p>
+          {club.content.size}
         </Tag>
       )}
       {club.content.designAreas.filter((area) => area !== '').length === 0 ? null : (
@@ -35,7 +36,7 @@ const ClubBubble = (club: Club) => (
             background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
           }}
         >
-          <p>{club.content.designAreas.join(', ')}</p>
+          {club.content.designAreas.join(', ')}
         </Tag>
       )}
     </TagsContainer>
