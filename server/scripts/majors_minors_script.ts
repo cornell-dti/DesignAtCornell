@@ -1,7 +1,7 @@
 import csv from 'csv-parser';
 import fsMajorsRead from 'fs';
-import { majors } from './server';
-import { Major } from './types';
+import { majors } from '../server';
+import { Major } from '../types';
 
 const majorsCSV = [];
 

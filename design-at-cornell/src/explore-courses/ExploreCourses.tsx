@@ -3,14 +3,18 @@ import axios from 'axios';
 import Title from './title/Title';
 import { PageContainer } from './ExploreCoursesStyles';
 import Courses from './courses/Courses';
-import FilterDropdowns from './title/FilterDropdowns';
-import Category from './types/Category';
 import Pagination from './Pagination';
 import { Course } from '../../../server/types';
+import {
+  Filters,
+  designAreas,
+  departments,
+  semesters,
+  levels,
+  credits,
+} from '../constants/filter-criteria';
 
 const ExploreCourses = () => {
-  const [courses, setCourses] = useState<Course[]>([]);
-
   useEffect(() => {
     axios
       .get('http://localhost:3000/getCourses')
@@ -18,46 +22,55 @@ const ExploreCourses = () => {
       .then(setCourses);
   }, []);
 
-  const [filterData, setfilterData] = useState<ReadonlyMap<Category, ReadonlySet<string>>>(
-    new Map(Array.from(FilterDropdowns.keys()).map((category) => [category, new Set()]))
-  );
-
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas, all: true });
+  const [departmentTags, setDepartmentTags] = useState<Filters>({ ...departments, all: true });
+  const [semesterTags, setSemesterTags] = useState<Filters>({ ...semesters, all: true });
+  const [levelTags, setLevelTags] = useState<Filters>({ ...levels, all: true });
+  const [creditTags, setCreditTags] = useState<Filters>({ ...credits, all: true });
   const [search, setSearch] = useState('');
   const [currentPage, setPage] = useState(1);
+  const filterList = [
+    { category: 'Design Areas', tags: designAreaTags, setTags: setDesignAreaTags },
+    { category: 'Majors/Minors', tags: departmentTags, setTags: setDepartmentTags },
+    { category: 'Semesters', tags: semesterTags, setTags: setSemesterTags },
+    { category: 'Levels', tags: levelTags, setTags: setLevelTags },
+    { category: 'Credits', tags: creditTags, setTags: setCreditTags },
+  ];
 
-  const searchHandler = function (event: React.ChangeEvent<HTMLInputElement>) {
-    setSearch(event.target.value);
-    setPage(1);
-  };
-
-  const paginate = (pageNum: number) => {
-    setPage(pageNum);
-  };
-
-  const searchResult = courses.filter(
+  const filterResult = courses.filter(
     (course) =>
-      (course.id + ' ' + course.code).toLowerCase().includes(search.toLowerCase()) ||
-      course.content.title.toLowerCase().includes(search.toLowerCase())
+      course.content.designAreas.reduce(
+        (acc, area) => acc || designAreaTags[area],
+        designAreaTags['all']
+      ) &&
+      course.content.semester.reduce(
+        (acc, area) => acc || semesterTags[area],
+        semesterTags['all']
+      ) &&
+      (departmentTags['all'] || departmentTags[course.id]) &&
+      (levelTags['all'] || levelTags[(Math.floor(course.code / 1000) * 1000).toString()]) &&
+      (creditTags['all'] ||
+        creditTags[course.content.credits < 5 ? course.content.credits.toString() : '5+']) &&
+      (course.id + course.code + course.content.title)
+        .replace(/\s/g, '')
+        .toLowerCase()
+        .includes(search.replace(/\s/g, '').toLowerCase())
   );
   const coursesPerPage = 20;
   const lastCourseIdx = currentPage * coursesPerPage;
   const firstCourseIdx = lastCourseIdx - coursesPerPage;
-  const displayedCourses = searchResult.slice(firstCourseIdx, lastCourseIdx);
+  const displayedCourses = filterResult.slice(firstCourseIdx, lastCourseIdx);
 
   return (
     <PageContainer>
-      <Title
-        filterData={filterData}
-        dropdownInfo={FilterDropdowns}
-        onChange={setfilterData}
-        searchHandler={searchHandler}
-      />
+      <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
       <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
         coursesPerPage={coursesPerPage}
-        totalCourses={searchResult.length}
-        paginate={paginate}
+        totalCourses={filterResult.length}
+        paginate={setPage}
       />
     </PageContainer>
   );

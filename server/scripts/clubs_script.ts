@@ -1,7 +1,7 @@
 import csv from 'csv-parser';
 import fsClubsRead from 'fs';
-import { clubs } from './server';
-import { Club } from './types';
+import { clubs } from '../server';
+import { Club } from '../types';
 
 const clubsCSV = [];
 
