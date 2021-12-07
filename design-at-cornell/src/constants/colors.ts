@@ -9,7 +9,8 @@ export const colors = {
   gray: '#898989',
   lightGray: '#F5F5F5',
   linkColor: '#009C80',
-  lightGreen: 'rgba(142, 214, 99, 0.17)',
+  pastelGreen: 'rgba(142, 214, 99, 0.17)',
+  lightGreen: 'rgba(125, 206, 87, 0.27)',
   green: '#8ed663',
   shadow: 'rgba(0, 0, 0, 0.05)',
 };

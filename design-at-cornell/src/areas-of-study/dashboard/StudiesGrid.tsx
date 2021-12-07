@@ -1,22 +1,13 @@
 import React from 'react';
-import { Grid, AreaOfStudyButton, AreaOfStudyTag } from '../AreasOfStudyStyles';
+import AreaOfStudyModal from './AreaOfStudyModal';
+import { Grid } from '../AreasOfStudyStyles';
 import { Filters } from '../../constants/filter-criteria';
 import { Major } from '../../../../server/types';
 
 const StudiesGrid = (props: Props) => (
   <Grid>
     {Object.values(props.studies).map((study) => (
-      <AreaOfStudyButton key={study.title}>
-        <h1>{study.title}</h1>
-        <AreaOfStudyTag highlight={props.schoolTags[study.content.school]}>
-          {study.content.school + '. '}
-        </AreaOfStudyTag>
-        {study.content.designAreas.map((area) =>
-          area === '' ? null : (
-            <AreaOfStudyTag highlight={props.designAreaTags[area]}>{area + '. '}</AreaOfStudyTag>
-          )
-        )}
-      </AreaOfStudyButton>
+      <AreaOfStudyModal key={study.title} {...{ ...props, study: study }}></AreaOfStudyModal>
     ))}
   </Grid>
 );
