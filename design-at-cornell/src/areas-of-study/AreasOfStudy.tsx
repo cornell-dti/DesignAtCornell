@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { PageContainer } from './AreasOfStudyStyles';
+import { VerticalFlex } from '../components/ContainerStyles';
 import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
 import { Filters, designAreas, schools } from '../constants/filter-criteria';
@@ -33,7 +33,7 @@ const AreasOfStudy = () => {
   const [schoolTags, setSchoolTags] = useState<Filters>({ ...schools });
 
   return (
-    <PageContainer>
+    <VerticalFlex>
       <Title />
       <Dashboard
         {...{
@@ -46,7 +46,7 @@ const AreasOfStudy = () => {
           setSchoolTags: setSchoolTags,
         }}
       />
-    </PageContainer>
+    </VerticalFlex>
   );
 };
 
