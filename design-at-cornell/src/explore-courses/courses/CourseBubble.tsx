@@ -1,28 +1,76 @@
 import React from 'react';
-import { CourseContainer, CourseNumber, TagsContainer, Tag } from '../ExploreCoursesStyles';
+import {
+  ElementContainer,
+  Subtitle,
+  TagsContainer,
+  Tag,
+  Title,
+} from '../../components/DashboardElementStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
+import exit from '../../static/images/exit.svg';
 import { Course } from '../../../../server/types';
+import { Modal } from 'semantic-ui-react';
+import { ModalContainer, ModalHeader } from '../../components/ModalStyles';
+import { RectangularButton } from '../../components/ButtonStyles';
+import { HorizontalFlex } from '../../components/ContainerStyles';
 
-const CourseBubble = (course: Course) => (
-  <CourseContainer
-    style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
-    onClick={() => (window.location.href = course.content.courseRoster)}
-  >
-    <CourseNumber>
-      <p>{course.id + ' ' + course.code}</p>
-      <img src={bookmark} alt="save course" />
-    </CourseNumber>
-    <p>{course.content.title}</p>
-    <TagsContainer>
-      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
-        <p>{course.content.credits + ' Credits'}</p>
-      </Tag>
-      <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
-        <p>{course.content.semester}</p>
-      </Tag>
-    </TagsContainer>
-  </CourseContainer>
-);
+const CourseBubble = (course: Course) => {
+  const [open, setOpen] = React.useState(false);
+
+  const courseCard = (
+    <ElementContainer
+      style={{ borderColor: courseColors[Math.floor(Math.random() * courseColors.length)] }}
+    >
+      <Subtitle>
+        <p>{course.id + ' ' + course.code}</p>
+        <img src={bookmark} alt="save course" />
+      </Subtitle>
+      <Title>{course.content.title}</Title>
+      <TagsContainer>
+        <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+          {course.content.credits + ' Credits'}
+        </Tag>
+        <Tag style={{ background: courseColors[Math.floor(Math.random() * courseColors.length)] }}>
+          {course.content.semester.join(', ')}
+        </Tag>
+      </TagsContainer>
+    </ElementContainer>
+  );
+
+  return (
+    <Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={courseCard}
+      style={{ width: '699px', height: '523px', borderRadius: '10px' }}
+    >
+      <ModalContainer>
+        <ModalHeader>
+          <Subtitle>
+            <p style={{ color: 'white' }}>{course.id + ' ' + course.code}</p>
+            <img onClick={() => setOpen(false)} src={exit} alt="close modal" />
+          </Subtitle>
+          <Title>{course.content.title}</Title>
+          <HorizontalFlex>
+            <TagsContainer>
+              <Tag>{course.content.major}</Tag>
+              <Tag>{course.content.semester.join(', ')}</Tag>
+              {course.content.designAreas.filter((x) => x !== '').length === 0 ? null : (
+                <Tag>{course.content.designAreas.join(', ')}</Tag>
+              )}
+              <Tag>{course.content.credits + ' Credits'}</Tag>
+            </TagsContainer>
+            <RectangularButton>
+              <img src={bookmark} alt={'add to saved'} />
+              <p>Add to Saved</p>
+            </RectangularButton>
+          </HorizontalFlex>
+        </ModalHeader>
+      </ModalContainer>
+    </Modal>
+  );
+};
 
 export default CourseBubble;

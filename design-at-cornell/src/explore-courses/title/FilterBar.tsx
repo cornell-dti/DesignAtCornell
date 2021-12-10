@@ -1,63 +1,35 @@
-import React, { useState } from 'react';
-import { filterCategoryCheckHandler } from '../types/Handlers';
-import { TitleProps } from '../types/PropertyTypes';
-import {
-  FilterBarContainer,
-  FilterDropdownsList,
-  SearchBar,
-  SavedCoursesButton,
-} from '../ExploreCoursesStyles';
+import React from 'react';
+import { FilterBarContainer, SearchBar } from '../ExploreCoursesStyles';
+import { Filters, SetFilters } from '../../constants/filter-criteria';
+import { RectangularButton } from '../../components/ButtonStyles';
 import bookmarked from '../../static/images/bookmarked.svg';
-import FilterCategory from './FilterCategory';
-import Category from '../types/Category';
+import FilterDropdown from './FilterDropdown';
 
-const FilterBar = ({ filterData, onChange, dropdownInfo }: TitleProps) => {
-  const [openDropdown, setOpenDropdown] = useState<Category | ''>('');
-  const handleFilterCategoryChange = (category: Category): filterCategoryCheckHandler => (
-    checkboxLabel
-  ) => {
-    onChange(
-      new Map(
-        Array.from(filterData.entries()).map(([k, v]) => {
-          if (k !== category) return [k, v];
-          const copy = new Set(v);
-          if (copy.has(checkboxLabel)) copy.delete(checkboxLabel);
-          else copy.add(checkboxLabel);
-          return [k, copy];
-        })
-      )
-    );
-  };
+const FilterBar = (props: Props) => {
   return (
     <FilterBarContainer>
-      <FilterDropdownsList>
-        {Array.from(dropdownInfo.entries()).map(([category, info]) => {
-          const open = category === openDropdown;
-          return (
-            <FilterCategory
-              key={category}
-              category={category}
-              open={open}
-              onToggle={() => setOpenDropdown(open ? '' : category)}
-              {...info}
-              checkboxData={filterData.get(category) || new Set()}
-              onCheck={handleFilterCategoryChange(category)}
-              onClear={() => {
-                const copy = new Map(filterData);
-                copy.set(category, new Set());
-                onChange(copy);
-              }}
-            />
-          );
-        })}
-        <SearchBar width="338px" placeholder="Name, Keywords, Topics, Etc" background="white" />
-        <SavedCoursesButton>
-          <img src={bookmarked} alt={'saved courses'} />
-          <p>Saved Courses</p>
-        </SavedCoursesButton>
-      </FilterDropdownsList>
+      {props.filterList.map((f) => (
+        <FilterDropdown key={f.category} {...{ ...f, setPage: props.setPage }} />
+      ))}
+      <SearchBar
+        placeholder="Name, Keywords, Topics, Etc"
+        onChange={(event) => {
+          props.setSearch(event.target.value);
+          props.setPage(1);
+        }}
+      />
+      <RectangularButton>
+        <img src={bookmarked} alt={'saved courses'} />
+        <p>Saved Courses</p>
+      </RectangularButton>
     </FilterBarContainer>
   );
+};
+
+export type Props = {
+  filterList: { category: string; tags: Filters; setTags: SetFilters }[];
+  setPage: (page: React.SetStateAction<number>) => void;
+  setSearch: (search: React.SetStateAction<string>) => void;
 };
 
 export default FilterBar;

@@ -1,10 +1,10 @@
 import React from 'react';
-import FilterBar from './FilterBar';
-import { TitleBackground, TitleContainer, QuizButton } from '../ExploreCoursesStyles';
-import { TitleProps } from '../types/PropertyTypes';
+import FilterBar, { Props } from './FilterBar';
+import { TitleBackground, TitleContainer, QuizButton } from '../../components/TitleStyles';
+import { colors } from '../../constants/colors';
 
-const Title = (props: TitleProps) => (
-  <TitleBackground>
+const Title = (props: Props) => (
+  <TitleBackground color={colors.yellow}>
     <TitleContainer>
       <h1>Explore Courses</h1>
       <p>

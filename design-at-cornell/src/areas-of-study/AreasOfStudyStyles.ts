@@ -6,55 +6,6 @@ export const PageContainer = styled.div`
   flex-direction: column;
 `;
 
-export const TitleBackground = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 551px;
-  padding-left: 100px;
-  background: #8ed663;
-  align-items: flex-start;
-  justify-content: center;
-
-  h1 {
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 64px;
-    line-height: 75px;
-    margin-bottom: 30px;
-    color: black;
-  }
-
-  p {
-    width: 50%;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: left;
-    color: black;
-    padding-left: 5px;
-  }
-`;
-
-export const QuizButton = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 276px;
-  height: 40px;
-  background: ${colors.transparentWhite};
-  border-radius: 43px;
-  align-items: center;
-
-  p {
-    width: 100%;
-    font-weight: bold;
-    font-size: 16px;
-    color: black;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-`;
-
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -67,7 +18,7 @@ export const StudiesContainer = styled.div`
   flex-direction: column;
   width: 80%;
   height: fit-content;
-  padding: 90px;
+  padding: 60px 90px;
 `;
 
 export const Divider = styled.div`
@@ -110,12 +61,14 @@ export const AreaOfStudyButton = styled.div`
     font-weight: bold;
     font-size: 16px;
     color: black;
+    cursor: pointer;
   }
+`;
 
-  p {
-    font-size: 13px;
-    color: #939393;
-  }
+export const AreaOfStudyTag = styled.span<{ highlight: boolean }>`
+  background: ${({ highlight }) => (highlight ? colors.yellowHighlight : 'white')};
+  font-size: 13px;
+  color: ${colors.gray};
 `;
 
 export const ApplyTagsContainer = styled.div`
@@ -124,8 +77,7 @@ export const ApplyTagsContainer = styled.div`
   width: 20%;
   height: auto;
   background: ${colors.lightGreen};
-  padding-top: 90px;
-  padding-left: 60px;
+  padding: 60px;
 
   h5 {
     font-weight: bold;
@@ -141,38 +93,5 @@ export const ApplyTagsContainer = styled.div`
     line-height: 40px;
     color: black;
     margin: 0;
-  }
-
-  form {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 24px;
-    color: black;
-
-    input[type='checkbox'] {
-      vertical-align: middle;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    input[type='checkbox']:before {
-      content: '';
-      position: absolute;
-      width: 13px;
-      height: 13px;
-      border-radius: 2px;
-      border: 2px solid black;
-      background-color: white;
-    }
-
-    input[type='checkbox']:checked:after {
-      content: '';
-      position: absolute;
-      width: 13px;
-      height: 13px;
-      border-radius: 2px;
-      border: 2px solid black;
-      background-color: black;
-    }
   }
 `;

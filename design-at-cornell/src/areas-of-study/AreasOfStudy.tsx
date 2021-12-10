@@ -1,111 +1,51 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { PageContainer } from './AreasOfStudyStyles';
 import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
-
-export type AreaOfStudy = {
-  name: string;
-  description: string;
-};
-
-export type Studies = {
-  majors: AreaOfStudy[];
-  minors: AreaOfStudy[];
-  grad_studies: AreaOfStudy[];
-};
+import { Filters, designAreas, schools } from '../constants/filter-criteria';
+import { Major } from '../../../server/types';
 
 const AreasOfStudy = () => {
-  const [majors] = useState<AreaOfStudy[]>([
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-  ]);
+  const majorsURL = 'http://localhost:3000/getMajors';
+  useEffect(() => {
+    axios
+      .get<{
+        success: boolean;
+        data: Major[];
+      }>(majorsURL)
+      .then((res) => res.data.data)
+      .then((allStudies) => {
+        const majors = allStudies.filter(({ content }) => content.type === 'Major');
+        const minors = allStudies.filter(({ content }) => content.type === 'Minor');
+        setMajors(majors);
+        setMinors(minors);
+        setGradStudies([...majors, ...minors]);
+      });
+  }, []);
 
-  const [minors] = useState<AreaOfStudy[]>([
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-  ]);
+  const [majors, setMajors] = useState<Major[]>([]);
+  const [minors, setMinors] = useState<Major[]>([]);
+  const [gradStudies, setGradStudies] = useState<Major[]>([]);
 
-  const [grad_studies] = useState<AreaOfStudy[]>([
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-    {
-      name: 'Applied Economics & Management',
-      description: 'Major. Minor. Graduate. Product Design. Dyson. ',
-    },
-  ]);
+  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas });
 
-  const studies: Studies = {
-    majors: majors,
-    minors: minors,
-    grad_studies: grad_studies,
-  };
+  const [schoolTags, setSchoolTags] = useState<Filters>({ ...schools });
 
   return (
     <PageContainer>
       <Title />
-      <Dashboard {...studies} />
+      <Dashboard
+        {...{
+          majors: majors,
+          minors: minors,
+          gradStudies: gradStudies,
+          designAreaTags: designAreaTags,
+          schoolTags: schoolTags,
+          setDesignTags: setDesignAreaTags,
+          setSchoolTags: setSchoolTags,
+        }}
+      />
     </PageContainer>
   );
 };
