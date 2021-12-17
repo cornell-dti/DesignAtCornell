@@ -6,8 +6,8 @@ import 'jest-styled-components';
 describe('<Pagination />', () => {
   const props = {
     currentPage: 1,
-    coursesPerPage: 12,
-    totalCourses: 56,
+    cardsPerPage: 12,
+    totalCards: 56,
     paginate: () => {},
   };
   it('renders correctly', () => {
@@ -15,14 +15,14 @@ describe('<Pagination />', () => {
     expect(snapshot).toMatchSnapshot();
   });
 
-  it('renders correctly with no courses', () => {
-    const propsWithNoCourses = { ...props, totalCourses: 0 };
+  it('renders correctly with no cards', () => {
+    const propsWithNoCourses = { ...props, totalCards: 0 };
     const snapshot = renderer.create(<Pagination {...propsWithNoCourses} />).toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 
-  it('renders correctly less courses than coursesPerPage', () => {
-    const propsWithFewCourses = { ...props, totalCourses: 6 };
+  it('renders correctly less cards than coursesPerPage', () => {
+    const propsWithFewCourses = { ...props, totalCards: 6 };
     const snapshot = renderer.create(<Pagination {...propsWithFewCourses} />).toJSON();
     expect(snapshot).toMatchSnapshot();
   });

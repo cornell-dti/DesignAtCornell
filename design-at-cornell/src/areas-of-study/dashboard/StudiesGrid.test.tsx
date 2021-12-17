@@ -1,34 +1,80 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import StudiesGrid from './StudiesGrid';
-import { AreaOfStudy } from '../AreasOfStudy';
+import { Filters } from '../../constants/filter-criteria';
+import { Major } from '../../../../server/types';
 import 'jest-styled-components';
 
 describe('<StudiesGrid />', () => {
-  const exampleMajor: AreaOfStudy = {
-    name: 'test major',
-    description: 'This is an example major for testing. ',
+  const major: Major = {
+    title: 'Major Title',
+    content: {
+      academicLevel: 'undergraduate',
+      departmentPage: 'www.example.com',
+      designAreas: [],
+      reasons: [
+        {
+          firstName: 'John',
+          gradYear: 2023,
+          response: 'test test test',
+        },
+      ],
+      school: 'Engineering',
+      type: 'major',
+    },
+  };
+
+  const majorTwo = { ...major, title: 'Major Two' };
+  const majorThree = { ...major, title: 'Major Three' };
+
+  const tags: Filters = {
+    Tag1: false,
+    Tag2: true,
+    Tag3: false,
   };
 
   it('renders correctly for no areas of study', () => {
-    const areas: AreaOfStudy[] = [];
-    const snapshot = renderer.create(<StudiesGrid {...areas} />).toJSON();
+    const snapshot = renderer
+      .create(
+        <StudiesGrid
+          {...{
+            studies: [],
+            designAreaTags: {},
+            schoolTags: {},
+          }}
+        />
+      )
+      .toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 
   it('renders correctly with one major', () => {
-    const areas: AreaOfStudy[] = [exampleMajor];
-    const snapshot = renderer.create(<StudiesGrid {...areas} />).toJSON();
+    const snapshot = renderer
+      .create(
+        <StudiesGrid
+          {...{
+            studies: [major],
+            designAreaTags: tags,
+            schoolTags: tags,
+          }}
+        />
+      )
+      .toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 
   it('renders correctly for 3 majors', () => {
-    const areas: AreaOfStudy[] = [
-      { ...exampleMajor, name: 'major 1' },
-      { ...exampleMajor, name: 'major 2' },
-      { ...exampleMajor, name: 'major 3' },
-    ];
-    const snapshot = renderer.create(<StudiesGrid {...areas} />).toJSON();
+    const snapshot = renderer
+      .create(
+        <StudiesGrid
+          {...{
+            studies: [major, majorTwo, majorThree],
+            designAreaTags: tags,
+            schoolTags: tags,
+          }}
+        />
+      )
+      .toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 });

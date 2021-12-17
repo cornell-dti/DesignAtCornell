@@ -29,16 +29,8 @@ const CourseBubble = (course: Course) => {
       </Subtitle>
       <Title>{course.content.title}</Title>
       <TagsContainer>
-        <Tag
-          style={{ background: dashboardColors[0] }}
-        >
-          {course.content.credits + ' Credits'}
-        </Tag>
-        <Tag
-          style={{ background: dashboardColors[1] }}
-        >
-          {course.content.semester.join(', ')}
-        </Tag>
+        <Tag style={{ background: dashboardColors[0] }}>{course.content.credits + ' Credits'}</Tag>
+        <Tag style={{ background: dashboardColors[1] }}>{course.content.semester.join(', ')}</Tag>
       </TagsContainer>
     </ElementContainer>
   );

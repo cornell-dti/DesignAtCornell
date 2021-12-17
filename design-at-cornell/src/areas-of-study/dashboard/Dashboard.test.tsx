@@ -1,60 +1,73 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Dashboard from './Dashboard';
-import { Studies } from '../AreasOfStudy';
+import { Major } from '../../../../server/types';
 import 'jest-styled-components';
+import { Filters } from '../../constants/filter-criteria';
 
 describe('<Dashboard />', () => {
-  it('renders correctly without any majors, minors, grad_studies', () => {
-    const studies: Studies = {
-      majors: [],
-      minors: [],
-      grad_studies: [],
-    };
-    const snapshot = renderer.create(<Dashboard {...studies} />).toJSON();
+  const major: Major = {
+    title: 'Major Title',
+    content: {
+      academicLevel: 'undergraduate',
+      departmentPage: 'www.example.com',
+      designAreas: [],
+      reasons: [
+        {
+          firstName: 'John',
+          gradYear: 2023,
+          response: 'test test test',
+        },
+      ],
+      school: 'Engineering',
+      type: 'major',
+    },
+  };
+
+  const majorTwo = { ...major, title: 'Major Two' };
+
+  const tags = {
+    Tag1: false,
+    Tag2: true,
+    Tag3: false,
+  };
+  const setTags = (tags: Filters) => {};
+
+  it('renders correctly all inputs being empty', () => {
+    const snapshot = renderer
+      .create(
+        <Dashboard
+          {...{
+            majors: [],
+            minors: [],
+            gradStudies: [],
+            designAreaTags: {},
+            schoolTags: {},
+            setDesignTags: setTags,
+            setSchoolTags: setTags,
+          }}
+        />
+      )
+      .toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 
-  it('renders correctly with one area of study in each category', () => {
-    const studies: Studies = {
-      majors: [{ name: 'major 1', description: 'this is a major' }],
-      minors: [{ name: 'minor 1', description: 'this is a minor' }],
-      grad_studies: [{ name: 'gread area 1', description: 'this is a grad area' }],
-    };
-    const snapshot = renderer.create(<Dashboard {...studies} />).toJSON();
-    expect(snapshot).toMatchSnapshot();
-  });
-
-  it('renders correctly with multiple areas in each category', () => {
-    const studies: Studies = {
-      majors: [
-        { name: 'major 1', description: 'this is a major' },
-        { name: 'major 2', description: 'this is a major' },
-      ],
-      minors: [
-        { name: 'minor 1', description: 'this is a minor' },
-        { name: 'minor 2', description: 'this is a minor' },
-      ],
-      grad_studies: [
-        { name: 'gread area 1', description: 'this is a grad area' },
-        { name: 'gread area 2', description: 'this is a grad area' },
-        { name: 'gread area 3', description: 'this is a grad area' },
-      ],
-    };
-    const snapshot = renderer.create(<Dashboard {...studies} />).toJSON();
-    expect(snapshot).toMatchSnapshot();
-  });
-
-  it('renders correctly with only majors', () => {
-    const studies: Studies = {
-      majors: [
-        { name: 'major 1', description: 'this is a major' },
-        { name: 'major 2', description: 'this is a major' },
-      ],
-      minors: [],
-      grad_studies: [],
-    };
-    const snapshot = renderer.create(<Dashboard {...studies} />).toJSON();
+  it('renders correctly with mix of empty and non-empty input', () => {
+    const snapshot = renderer
+      .create(
+        <Dashboard
+          {...{
+            majors: [major, majorTwo],
+            minors: [major],
+            gradStudies: [],
+            designAreaTags: tags,
+            schoolTags: {},
+            setDesignTags: setTags,
+            setSchoolTags: setTags,
+          }}
+        />
+      )
+      .toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 });
