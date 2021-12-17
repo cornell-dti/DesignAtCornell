@@ -16,9 +16,28 @@ import {
 
 const ExploreCourses = () => {
   useEffect(() => {
+    const isCourse = (c: Course): c is Course => {
+      return (
+        typeof c.id === 'string' &&
+        typeof c.code === 'number' &&
+        typeof c.content === 'object' &&
+        typeof c.content.title === 'string' &&
+        typeof c.content.description === 'string' &&
+        typeof c.content.courseSite === 'string' &&
+        typeof c.content.courseRoster === 'string' &&
+        typeof c.content.credits === 'number' &&
+        typeof c.content.major === 'string' &&
+        Array.isArray(c.content.designAreas) &&
+        c.content.designAreas.every((e) => typeof e === 'string') &&
+        Array.isArray(c.content.semester) &&
+        c.content.semester.every((e) => typeof e === 'string')
+      );
+    };
+
     axios
       .get('http://localhost:3000/getCourses')
       .then((res) => res.data.data)
+      .then((data) => data.filter(isCourse))
       .then(setCourses);
   }, []);
 

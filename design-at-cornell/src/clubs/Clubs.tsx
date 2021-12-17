@@ -9,9 +9,25 @@ import Dashboard from './dashboard/Dashboard';
 
 const Clubs = () => {
   useEffect(() => {
+    const isClub = (c: Club): c is Club => {
+      return (
+        typeof c.title === 'string' &&
+        typeof c.content === 'object' &&
+        typeof c.content.orgType === 'string' &&
+        typeof c.content.size === 'string' &&
+        typeof c.content.website === 'string' &&
+        typeof c.content.description === 'string' &&
+        typeof c.content.contact === 'string' &&
+        (typeof c.content.credits === 'number' || typeof c.content.credits === 'object') &&
+        Array.isArray(c.content.designAreas) &&
+        c.content.designAreas.every((e) => typeof e === 'string')
+      );
+    };
+
     axios
       .get('http://localhost:3000/getClubs')
       .then((res) => res.data.data)
+      .then((data) => data.filter(isClub))
       .then(setClubs);
   }, []);
 
