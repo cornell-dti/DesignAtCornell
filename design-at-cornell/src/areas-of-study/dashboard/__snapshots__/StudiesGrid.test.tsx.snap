@@ -34,9 +34,10 @@ exports[`<StudiesGrid /> renders correctly for 3 majors 1`] = `
   cursor: pointer;
 }
 
-.c1 p {
+.c2 {
+  background: white;
   font-size: 13px;
-  color: #939393;
+  color: #898989;
 }
 
 <div
@@ -44,33 +45,54 @@ exports[`<StudiesGrid /> renders correctly for 3 majors 1`] = `
 >
   <div
     className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <h1>
-      major 1
+      Major Title
     </h1>
-    <p>
-      This is an example major for testing. 
-    </p>
+    <span
+      className="c2"
+    >
+      Engineering. 
+    </span>
   </div>
   <div
     className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <h1>
-      major 2
+      Major Two
     </h1>
-    <p>
-      This is an example major for testing. 
-    </p>
+    <span
+      className="c2"
+    >
+      Engineering. 
+    </span>
   </div>
   <div
     className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <h1>
-      major 3
+      Major Three
     </h1>
-    <p>
-      This is an example major for testing. 
-    </p>
+    <span
+      className="c2"
+    >
+      Engineering. 
+    </span>
   </div>
 </div>
 `;
@@ -136,9 +158,10 @@ exports[`<StudiesGrid /> renders correctly with one major 1`] = `
   cursor: pointer;
 }
 
-.c1 p {
+.c2 {
+  background: white;
   font-size: 13px;
-  color: #939393;
+  color: #898989;
 }
 
 <div
@@ -146,13 +169,20 @@ exports[`<StudiesGrid /> renders correctly with one major 1`] = `
 >
   <div
     className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <h1>
-      test major
+      Major Title
     </h1>
-    <p>
-      This is an example major for testing. 
-    </p>
+    <span
+      className="c2"
+    >
+      Engineering. 
+    </span>
   </div>
 </div>
 `;

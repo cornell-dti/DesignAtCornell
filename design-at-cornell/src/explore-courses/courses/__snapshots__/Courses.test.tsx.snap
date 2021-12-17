@@ -9,6 +9,16 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c1 {
@@ -114,7 +124,7 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   justify-content: space-between;
 }
 
-.c4 p {
+.c6 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -154,7 +164,11 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   color: #898989;
 }
 
-.c6 {
+.c5 img {
+  cursor: pointer;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -165,6 +179,7 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -175,7 +190,7 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   align-items: flex-start;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -192,9 +207,7 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c7 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -227,7 +240,11 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
   >
     <div
       className="c4"
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "borderColor": "#C9E1AA",
@@ -245,41 +262,43 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
           src="bookmark.svg"
         />
       </div>
-      <p>
-        Intro to Design
-      </p>
       <div
         className="c6"
       >
+        Intro to Design
+      </div>
+      <div
+        className="c7"
+      >
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#BAE6FF",
             }
           }
         >
-          <p>
-            4 Credits
-          </p>
+          4 Credits
         </div>
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#FFE5A1",
             }
           }
         >
-          <p>
-            Fall, Spring
-          </p>
+          Fall, Spring
         </div>
       </div>
     </div>
     <div
       className="c4"
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "borderColor": "#FFCBBA",
@@ -297,41 +316,43 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
           src="bookmark.svg"
         />
       </div>
-      <p>
-        Intro to Design
-      </p>
       <div
         className="c6"
       >
+        Intro to Design
+      </div>
+      <div
+        className="c7"
+      >
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#BAE6FF",
             }
           }
         >
-          <p>
-            4 Credits
-          </p>
+          4 Credits
         </div>
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#FFE5A1",
             }
           }
         >
-          <p>
-            Fall, Spring
-          </p>
+          Fall, Spring
         </div>
       </div>
     </div>
     <div
       className="c4"
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "borderColor": "#D3D2F7",
@@ -349,35 +370,33 @@ exports[`<Courses /> renders correctly for 3 course 1`] = `
           src="bookmark.svg"
         />
       </div>
-      <p>
-        Intro to Design
-      </p>
       <div
         className="c6"
       >
+        Intro to Design
+      </div>
+      <div
+        className="c7"
+      >
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#BAE6FF",
             }
           }
         >
-          <p>
-            4 Credits
-          </p>
+          4 Credits
         </div>
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#FFE5A1",
             }
           }
         >
-          <p>
-            Fall, Spring
-          </p>
+          Fall, Spring
         </div>
       </div>
     </div>
@@ -394,6 +413,16 @@ exports[`<Courses /> renders correctly for no courses 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c1 {
@@ -508,6 +537,16 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c1 {
@@ -613,7 +652,7 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   justify-content: space-between;
 }
 
-.c4 p {
+.c6 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -653,7 +692,11 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   color: #898989;
 }
 
-.c6 {
+.c5 img {
+  cursor: pointer;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -664,6 +707,7 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -674,7 +718,7 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   align-items: flex-start;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -691,9 +735,7 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c7 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -726,7 +768,11 @@ exports[`<Courses /> renders correctly for one course 1`] = `
   >
     <div
       className="c4"
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "borderColor": "#C9E1AA",
@@ -744,35 +790,33 @@ exports[`<Courses /> renders correctly for one course 1`] = `
           src="bookmark.svg"
         />
       </div>
-      <p>
-        Intro to Design
-      </p>
       <div
         className="c6"
       >
+        Intro to Design
+      </div>
+      <div
+        className="c7"
+      >
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#BAE6FF",
             }
           }
         >
-          <p>
-            4 Credits
-          </p>
+          4 Credits
         </div>
         <div
-          className="c7"
+          className="c8"
           style={
             Object {
               "background": "#FFE5A1",
             }
           }
         >
-          <p>
-            Fall, Spring
-          </p>
+          Fall, Spring
         </div>
       </div>
     </div>

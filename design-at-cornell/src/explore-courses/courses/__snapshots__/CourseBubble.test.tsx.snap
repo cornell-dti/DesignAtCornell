@@ -28,7 +28,7 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   justify-content: space-between;
 }
 
-.c0 p {
+.c2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -68,7 +68,11 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   color: #898989;
 }
 
-.c2 {
+.c1 img {
+  cursor: pointer;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,6 +83,7 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -89,7 +94,7 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   align-items: flex-start;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -106,9 +111,7 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c3 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -117,7 +120,11 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
 
 <div
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   style={
     Object {
       "borderColor": "#C9E1AA",
@@ -135,35 +142,33 @@ exports[`<CourseBubble /> renders course with empty course title 1`] = `
       src="bookmark.svg"
     />
   </div>
-  <p>
-    
-  </p>
   <div
     className="c2"
   >
+    
+  </div>
+  <div
+    className="c3"
+  >
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#BAE6FF",
         }
       }
     >
-      <p>
-        4 Credits
-      </p>
+      4 Credits
     </div>
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#FFE5A1",
         }
       }
     >
-      <p>
-        Fall, Spring
-      </p>
+      Fall, Spring
     </div>
   </div>
 </div>
@@ -197,7 +202,7 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
   justify-content: space-between;
 }
 
-.c0 p {
+.c2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -237,7 +242,11 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
   color: #898989;
 }
 
-.c2 {
+.c1 img {
+  cursor: pointer;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -248,6 +257,7 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -258,7 +268,7 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
   align-items: flex-start;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -275,9 +285,7 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c3 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -286,7 +294,11 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
 
 <div
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   style={
     Object {
       "borderColor": "#C9E1AA",
@@ -304,35 +316,33 @@ exports[`<CourseBubble /> renders course with empty description 1`] = `
       src="bookmark.svg"
     />
   </div>
-  <p>
-    Intro to Design
-  </p>
   <div
     className="c2"
   >
+    Intro to Design
+  </div>
+  <div
+    className="c3"
+  >
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#BAE6FF",
         }
       }
     >
-      <p>
-        4 Credits
-      </p>
+      4 Credits
     </div>
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#FFE5A1",
         }
       }
     >
-      <p>
-        Fall, Spring
-      </p>
+      Fall, Spring
     </div>
   </div>
 </div>
@@ -366,7 +376,7 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
   justify-content: space-between;
 }
 
-.c0 p {
+.c2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -406,7 +416,11 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
   color: #898989;
 }
 
-.c2 {
+.c1 img {
+  cursor: pointer;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -417,6 +431,7 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -427,7 +442,7 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
   align-items: flex-start;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,9 +459,7 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c3 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -455,7 +468,11 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
 
 <div
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   style={
     Object {
       "borderColor": "#C9E1AA",
@@ -473,35 +490,33 @@ exports[`<CourseBubble /> renders course with empty designAreas list 1`] = `
       src="bookmark.svg"
     />
   </div>
-  <p>
-    Intro to Design
-  </p>
   <div
     className="c2"
   >
+    Intro to Design
+  </div>
+  <div
+    className="c3"
+  >
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#BAE6FF",
         }
       }
     >
-      <p>
-        4 Credits
-      </p>
+      4 Credits
     </div>
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#FFE5A1",
         }
       }
     >
-      <p>
-        Fall, Spring
-      </p>
+      Fall, Spring
     </div>
   </div>
 </div>
@@ -535,7 +550,7 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
   justify-content: space-between;
 }
 
-.c0 p {
+.c2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -575,7 +590,11 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
   color: #898989;
 }
 
-.c2 {
+.c1 img {
+  cursor: pointer;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -586,6 +605,7 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -596,7 +616,7 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
   align-items: flex-start;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -613,9 +633,7 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c3 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -624,7 +642,11 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
 
 <div
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   style={
     Object {
       "borderColor": "#C9E1AA",
@@ -642,35 +664,33 @@ exports[`<CourseBubble /> renders course with empty major 1`] = `
       src="bookmark.svg"
     />
   </div>
-  <p>
-    Intro to Design
-  </p>
   <div
     className="c2"
   >
+    Intro to Design
+  </div>
+  <div
+    className="c3"
+  >
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#BAE6FF",
         }
       }
     >
-      <p>
-        4 Credits
-      </p>
+      4 Credits
     </div>
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#FFE5A1",
         }
       }
     >
-      <p>
-        Fall, Spring
-      </p>
+      Fall, Spring
     </div>
   </div>
 </div>
@@ -704,7 +724,7 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
   justify-content: space-between;
 }
 
-.c0 p {
+.c2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -744,7 +764,11 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
   color: #898989;
 }
 
-.c2 {
+.c1 img {
+  cursor: pointer;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -755,6 +779,7 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -765,7 +790,7 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
   align-items: flex-start;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -782,9 +807,7 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c3 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -793,7 +816,11 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
 
 <div
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   style={
     Object {
       "borderColor": "#C9E1AA",
@@ -811,35 +838,33 @@ exports[`<CourseBubble /> renders course without roster 1`] = `
       src="bookmark.svg"
     />
   </div>
-  <p>
-    Intro to Design
-  </p>
   <div
     className="c2"
   >
+    Intro to Design
+  </div>
+  <div
+    className="c3"
+  >
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#BAE6FF",
         }
       }
     >
-      <p>
-        4 Credits
-      </p>
+      4 Credits
     </div>
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#FFE5A1",
         }
       }
     >
-      <p>
-        Fall, Spring
-      </p>
+      Fall, Spring
     </div>
   </div>
 </div>
@@ -873,7 +898,7 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   justify-content: space-between;
 }
 
-.c0 p {
+.c2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
@@ -913,7 +938,11 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   color: #898989;
 }
 
-.c2 {
+.c1 img {
+  cursor: pointer;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -924,6 +953,7 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -934,7 +964,7 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   align-items: flex-start;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -951,9 +981,7 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c3 p {
+  background-color: rgba(255,255,255,0.53);
   white-space: nowrap;
   font-weight: bold;
   font-size: 12px;
@@ -962,7 +990,11 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
 
 <div
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   style={
     Object {
       "borderColor": "#C9E1AA",
@@ -980,35 +1012,33 @@ exports[`<CourseBubble /> renders testing course correctly 1`] = `
       src="bookmark.svg"
     />
   </div>
-  <p>
-    Intro to Design
-  </p>
   <div
     className="c2"
   >
+    Intro to Design
+  </div>
+  <div
+    className="c3"
+  >
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#BAE6FF",
         }
       }
     >
-      <p>
-        4 Credits
-      </p>
+      4 Credits
     </div>
     <div
-      className="c3"
+      className="c4"
       style={
         Object {
           "background": "#FFE5A1",
         }
       }
     >
-      <p>
-        Fall, Spring
-      </p>
+      Fall, Spring
     </div>
   </div>
 </div>

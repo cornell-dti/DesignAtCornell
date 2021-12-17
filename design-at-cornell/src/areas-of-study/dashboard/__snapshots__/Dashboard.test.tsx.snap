@@ -1,1231 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Dashboard /> renders correctly with multiple areas in each category 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 60px 90px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 70px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 h1 {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  font-weight: bold;
-  font-size: 28px;
-  color: black;
-  margin: 0;
-}
-
-.c2 hr {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 0;
-  border: 4px solid #8ed663;
-  margin-left: 20px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c4 {
-  width: 287px;
-  margin-bottom: 38px;
-}
-
-.c4 h1 {
-  font-weight: bold;
-  font-size: 16px;
-  color: black;
-  cursor: pointer;
-}
-
-.c4 p {
-  font-size: 13px;
-  color: #939393;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 20%;
-  height: auto;
-  background: rgba(142,214,99,0.17);
-  padding: 60px;
-}
-
-.c5 h5 {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 70px;
-  color: black;
-  margin: 0;
-}
-
-.c5 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 40px;
-  color: black;
-  margin: 0;
-}
-
-.c5 form {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 24px;
-  color: black;
-}
-
-.c5 form input[type='checkbox'] {
-  vertical-align: middle;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.c5 form input[type='checkbox']:before {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 2px;
-  border: 2px solid black;
-  background-color: white;
-}
-
-.c5 form input[type='checkbox']:checked:after {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 2px;
-  border: 2px solid black;
-  background-color: black;
-}
-
-.c5 form label {
-  display: block;
-  margin-top: -24px;
-  margin-left: 20px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Majors
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          major 1
-        </h1>
-        <p>
-          this is a major
-        </p>
-      </div>
-      <div
-        className="c4"
-      >
-        <h1>
-          major 2
-        </h1>
-        <p>
-          this is a major
-        </p>
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Minors
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          minor 1
-        </h1>
-        <p>
-          this is a minor
-        </p>
-      </div>
-      <div
-        className="c4"
-      >
-        <h1>
-          minor 2
-        </h1>
-        <p>
-          this is a minor
-        </p>
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <h1>
-        Graduate Studies
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          gread area 1
-        </h1>
-        <p>
-          this is a grad area
-        </p>
-      </div>
-      <div
-        className="c4"
-      >
-        <h1>
-          gread area 2
-        </h1>
-        <p>
-          this is a grad area
-        </p>
-      </div>
-      <div
-        className="c4"
-      >
-        <h1>
-          gread area 3
-        </h1>
-        <p>
-          this is a grad area
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    className="c5"
-  >
-    <h5>
-      Apply Tags
-    </h5>
-    <h6>
-      Design Areas
-    </h6>
-    <form>
-      <div>
-        <input
-          id="Art + Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Art + Design"
-        >
-          Art + Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Digital Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Digital Design"
-        >
-          Digital Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Industrial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Industrial Design"
-        >
-          Industrial Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Policy Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Policy Design"
-        >
-          Policy Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Spatial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Spatial Design"
-        >
-          Spatial Design
-        </label>
-      </div>
-    </form>
-    <h6>
-      Schools
-    </h6>
-    <form>
-      <div>
-        <input
-          id="AAP"
-          type="checkbox"
-        />
-        <label
-          htmlFor="AAP"
-        >
-          AAP
-        </label>
-      </div>
-      <div>
-        <input
-          id="Agriculture and Life Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Agriculture and Life Sciences"
-        >
-          Agriculture and Life Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Arts and Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Arts and Sciences"
-        >
-          Arts and Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Engineering"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Engineering"
-        >
-          Engineering
-        </label>
-      </div>
-      <div>
-        <input
-          id="Human Ecology"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Human Ecology"
-        >
-          Human Ecology
-        </label>
-      </div>
-      <div>
-        <input
-          id="ILR"
-          type="checkbox"
-        />
-        <label
-          htmlFor="ILR"
-        >
-          ILR
-        </label>
-      </div>
-      <div>
-        <input
-          id="SC Johnson School of Business"
-          type="checkbox"
-        />
-        <label
-          htmlFor="SC Johnson School of Business"
-        >
-          SC Johnson School of Business
-        </label>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`<Dashboard /> renders correctly with one area of study in each category 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 60px 90px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 70px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 h1 {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  font-weight: bold;
-  font-size: 28px;
-  color: black;
-  margin: 0;
-}
-
-.c2 hr {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 0;
-  border: 4px solid #8ed663;
-  margin-left: 20px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c4 {
-  width: 287px;
-  margin-bottom: 38px;
-}
-
-.c4 h1 {
-  font-weight: bold;
-  font-size: 16px;
-  color: black;
-  cursor: pointer;
-}
-
-.c4 p {
-  font-size: 13px;
-  color: #939393;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 20%;
-  height: auto;
-  background: rgba(142,214,99,0.17);
-  padding: 60px;
-}
-
-.c5 h5 {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 70px;
-  color: black;
-  margin: 0;
-}
-
-.c5 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 40px;
-  color: black;
-  margin: 0;
-}
-
-.c5 form {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 24px;
-  color: black;
-}
-
-.c5 form input[type='checkbox'] {
-  vertical-align: middle;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.c5 form input[type='checkbox']:before {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 2px;
-  border: 2px solid black;
-  background-color: white;
-}
-
-.c5 form input[type='checkbox']:checked:after {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 2px;
-  border: 2px solid black;
-  background-color: black;
-}
-
-.c5 form label {
-  display: block;
-  margin-top: -24px;
-  margin-left: 20px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Majors
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          major 1
-        </h1>
-        <p>
-          this is a major
-        </p>
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Minors
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          minor 1
-        </h1>
-        <p>
-          this is a minor
-        </p>
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <h1>
-        Graduate Studies
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          gread area 1
-        </h1>
-        <p>
-          this is a grad area
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    className="c5"
-  >
-    <h5>
-      Apply Tags
-    </h5>
-    <h6>
-      Design Areas
-    </h6>
-    <form>
-      <div>
-        <input
-          id="Art + Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Art + Design"
-        >
-          Art + Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Digital Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Digital Design"
-        >
-          Digital Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Industrial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Industrial Design"
-        >
-          Industrial Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Policy Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Policy Design"
-        >
-          Policy Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Spatial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Spatial Design"
-        >
-          Spatial Design
-        </label>
-      </div>
-    </form>
-    <h6>
-      Schools
-    </h6>
-    <form>
-      <div>
-        <input
-          id="AAP"
-          type="checkbox"
-        />
-        <label
-          htmlFor="AAP"
-        >
-          AAP
-        </label>
-      </div>
-      <div>
-        <input
-          id="Agriculture and Life Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Agriculture and Life Sciences"
-        >
-          Agriculture and Life Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Arts and Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Arts and Sciences"
-        >
-          Arts and Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Engineering"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Engineering"
-        >
-          Engineering
-        </label>
-      </div>
-      <div>
-        <input
-          id="Human Ecology"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Human Ecology"
-        >
-          Human Ecology
-        </label>
-      </div>
-      <div>
-        <input
-          id="ILR"
-          type="checkbox"
-        />
-        <label
-          htmlFor="ILR"
-        >
-          ILR
-        </label>
-      </div>
-      <div>
-        <input
-          id="SC Johnson School of Business"
-          type="checkbox"
-        />
-        <label
-          htmlFor="SC Johnson School of Business"
-        >
-          SC Johnson School of Business
-        </label>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`<Dashboard /> renders correctly with only majors 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 60px 90px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 70px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 h1 {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  font-weight: bold;
-  font-size: 28px;
-  color: black;
-  margin: 0;
-}
-
-.c2 hr {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 0;
-  border: 4px solid #8ed663;
-  margin-left: 20px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c4 {
-  width: 287px;
-  margin-bottom: 38px;
-}
-
-.c4 h1 {
-  font-weight: bold;
-  font-size: 16px;
-  color: black;
-  cursor: pointer;
-}
-
-.c4 p {
-  font-size: 13px;
-  color: #939393;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 20%;
-  height: auto;
-  background: rgba(142,214,99,0.17);
-  padding: 60px;
-}
-
-.c5 h5 {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 70px;
-  color: black;
-  margin: 0;
-}
-
-.c5 h6 {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 40px;
-  color: black;
-  margin: 0;
-}
-
-.c5 form {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 24px;
-  color: black;
-}
-
-.c5 form input[type='checkbox'] {
-  vertical-align: middle;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.c5 form input[type='checkbox']:before {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 2px;
-  border: 2px solid black;
-  background-color: white;
-}
-
-.c5 form input[type='checkbox']:checked:after {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 2px;
-  border: 2px solid black;
-  background-color: black;
-}
-
-.c5 form label {
-  display: block;
-  margin-top: -24px;
-  margin-left: 20px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Majors
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <h1>
-          major 1
-        </h1>
-        <p>
-          this is a major
-        </p>
-      </div>
-      <div
-        className="c4"
-      >
-        <h1>
-          major 2
-        </h1>
-        <p>
-          this is a major
-        </p>
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Minors
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    />
-    <div
-      className="c2"
-    >
-      <h1>
-        Graduate Studies
-      </h1>
-      <hr />
-    </div>
-    <div
-      className="c3"
-    />
-  </div>
-  <div
-    className="c5"
-  >
-    <h5>
-      Apply Tags
-    </h5>
-    <h6>
-      Design Areas
-    </h6>
-    <form>
-      <div>
-        <input
-          id="Art + Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Art + Design"
-        >
-          Art + Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Digital Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Digital Design"
-        >
-          Digital Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Industrial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Industrial Design"
-        >
-          Industrial Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Policy Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Policy Design"
-        >
-          Policy Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Spatial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Spatial Design"
-        >
-          Spatial Design
-        </label>
-      </div>
-    </form>
-    <h6>
-      Schools
-    </h6>
-    <form>
-      <div>
-        <input
-          id="AAP"
-          type="checkbox"
-        />
-        <label
-          htmlFor="AAP"
-        >
-          AAP
-        </label>
-      </div>
-      <div>
-        <input
-          id="Agriculture and Life Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Agriculture and Life Sciences"
-        >
-          Agriculture and Life Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Arts and Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Arts and Sciences"
-        >
-          Arts and Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Engineering"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Engineering"
-        >
-          Engineering
-        </label>
-      </div>
-      <div>
-        <input
-          id="Human Ecology"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Human Ecology"
-        >
-          Human Ecology
-        </label>
-      </div>
-      <div>
-        <input
-          id="ILR"
-          type="checkbox"
-        />
-        <label
-          htmlFor="ILR"
-        >
-          ILR
-        </label>
-      </div>
-      <div>
-        <input
-          id="SC Johnson School of Business"
-          type="checkbox"
-        />
-        <label
-          htmlFor="SC Johnson School of Business"
-        >
-          SC Johnson School of Business
-        </label>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`<Dashboard /> renders correctly without any majors, minors, grad_studies 1`] = `
+exports[`<Dashboard /> renders correctly all inputs being empty 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1343,20 +118,20 @@ exports[`<Dashboard /> renders correctly without any majors, minors, grad_studie
   margin: 0;
 }
 
-.c4 form {
+.c5 {
   font-weight: bold;
   font-size: 12px;
   line-height: 24px;
   color: black;
 }
 
-.c4 form input[type='checkbox'] {
+.c5 input[type='checkbox'] {
   vertical-align: middle;
   margin-right: 10px;
   cursor: pointer;
 }
 
-.c4 form input[type='checkbox']:before {
+.c5 input[type='checkbox']:before {
   content: '';
   position: absolute;
   width: 13px;
@@ -1366,7 +141,7 @@ exports[`<Dashboard /> renders correctly without any majors, minors, grad_studie
   background-color: white;
 }
 
-.c4 form input[type='checkbox']:checked:after {
+.c5 input[type='checkbox']:checked:after {
   content: '';
   position: absolute;
   width: 13px;
@@ -1376,7 +151,7 @@ exports[`<Dashboard /> renders correctly without any majors, minors, grad_studie
   background-color: black;
 }
 
-.c4 form label {
+.c5 label {
   display: block;
   margin-top: -24px;
   margin-left: 20px;
@@ -1388,39 +163,45 @@ exports[`<Dashboard /> renders correctly without any majors, minors, grad_studie
   <div
     className="c1"
   >
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Majors
-      </h1>
-      <hr />
+    <div>
+      <div
+        className="c2"
+      >
+        <h1>
+          Undergraduate Majors
+        </h1>
+        <hr />
+      </div>
+      <div
+        className="c3"
+      />
     </div>
-    <div
-      className="c3"
-    />
-    <div
-      className="c2"
-    >
-      <h1>
-        Undergraduate Minors
-      </h1>
-      <hr />
+    <div>
+      <div
+        className="c2"
+      >
+        <h1>
+          Undergraduate Minors
+        </h1>
+        <hr />
+      </div>
+      <div
+        className="c3"
+      />
     </div>
-    <div
-      className="c3"
-    />
-    <div
-      className="c2"
-    >
-      <h1>
-        Graduate Studies
-      </h1>
-      <hr />
+    <div>
+      <div
+        className="c2"
+      >
+        <h1>
+          Graduate Studies
+        </h1>
+        <hr />
+      </div>
+      <div
+        className="c3"
+      />
     </div>
-    <div
-      className="c3"
-    />
   </div>
   <div
     className="c4"
@@ -1431,145 +212,348 @@ exports[`<Dashboard /> renders correctly without any majors, minors, grad_studie
     <h6>
       Design Areas
     </h6>
-    <form>
+    <form
+      className="c5"
+    />
+    <h6>
+      Schools
+    </h6>
+    <form
+      className="c5"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Dashboard /> renders correctly with mix of empty and non-empty input 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 60px 90px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 70px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 h1 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  font-weight: bold;
+  font-size: 28px;
+  color: black;
+  margin: 0;
+}
+
+.c2 hr {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 0;
+  border: 4px solid #8ed663;
+  margin-left: 20px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  width: 287px;
+  margin-bottom: 38px;
+}
+
+.c4 h1 {
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+}
+
+.c5 {
+  background: white;
+  font-size: 13px;
+  color: #898989;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+  background: rgba(142,214,99,0.17);
+  padding: 60px;
+}
+
+.c6 h5 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 70px;
+  color: black;
+  margin: 0;
+}
+
+.c6 h6 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  color: black;
+  margin: 0;
+}
+
+.c7 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 24px;
+  color: black;
+}
+
+.c7 input[type='checkbox'] {
+  vertical-align: middle;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.c7 input[type='checkbox']:before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.c7 input[type='checkbox']:checked:after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid black;
+  background-color: black;
+}
+
+.c7 label {
+  display: block;
+  margin-top: -24px;
+  margin-left: 20px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div>
+      <div
+        className="c2"
+      >
+        <h1>
+          Undergraduate Majors
+        </h1>
+        <hr />
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <h1>
+            Major Title
+          </h1>
+          <span
+            className="c5"
+          >
+            Engineering. 
+          </span>
+        </div>
+        <div
+          className="c4"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <h1>
+            Major Two
+          </h1>
+          <span
+            className="c5"
+          >
+            Engineering. 
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="c2"
+      >
+        <h1>
+          Undergraduate Minors
+        </h1>
+        <hr />
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <h1>
+            Major Title
+          </h1>
+          <span
+            className="c5"
+          >
+            Engineering. 
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="c2"
+      >
+        <h1>
+          Graduate Studies
+        </h1>
+        <hr />
+      </div>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c6"
+  >
+    <h5>
+      Apply Tags
+    </h5>
+    <h6>
+      Design Areas
+    </h6>
+    <form
+      className="c7"
+    >
       <div>
         <input
-          id="Art + Design"
+          id="Tag1"
+          onChange={[Function]}
           type="checkbox"
         />
         <label
-          htmlFor="Art + Design"
+          htmlFor="Tag1"
         >
-          Art + Design
+          Tag1
         </label>
       </div>
       <div>
         <input
-          id="Digital Design"
+          id="Tag2"
+          onChange={[Function]}
           type="checkbox"
         />
         <label
-          htmlFor="Digital Design"
+          htmlFor="Tag2"
         >
-          Digital Design
+          Tag2
         </label>
       </div>
       <div>
         <input
-          id="Industrial Design"
+          id="Tag3"
+          onChange={[Function]}
           type="checkbox"
         />
         <label
-          htmlFor="Industrial Design"
+          htmlFor="Tag3"
         >
-          Industrial Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Policy Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Policy Design"
-        >
-          Policy Design
-        </label>
-      </div>
-      <div>
-        <input
-          id="Spatial Design"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Spatial Design"
-        >
-          Spatial Design
+          Tag3
         </label>
       </div>
     </form>
     <h6>
       Schools
     </h6>
-    <form>
-      <div>
-        <input
-          id="AAP"
-          type="checkbox"
-        />
-        <label
-          htmlFor="AAP"
-        >
-          AAP
-        </label>
-      </div>
-      <div>
-        <input
-          id="Agriculture and Life Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Agriculture and Life Sciences"
-        >
-          Agriculture and Life Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Arts and Sciences"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Arts and Sciences"
-        >
-          Arts and Sciences
-        </label>
-      </div>
-      <div>
-        <input
-          id="Engineering"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Engineering"
-        >
-          Engineering
-        </label>
-      </div>
-      <div>
-        <input
-          id="Human Ecology"
-          type="checkbox"
-        />
-        <label
-          htmlFor="Human Ecology"
-        >
-          Human Ecology
-        </label>
-      </div>
-      <div>
-        <input
-          id="ILR"
-          type="checkbox"
-        />
-        <label
-          htmlFor="ILR"
-        >
-          ILR
-        </label>
-      </div>
-      <div>
-        <input
-          id="SC Johnson School of Business"
-          type="checkbox"
-        />
-        <label
-          htmlFor="SC Johnson School of Business"
-        >
-          SC Johnson School of Business
-        </label>
-      </div>
-    </form>
+    <form
+      className="c7"
+    />
   </div>
 </div>
 `;

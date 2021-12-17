@@ -31,20 +31,20 @@ exports[`<ApplyTags /> renders correctly 1`] = `
   margin: 0;
 }
 
-.c0 form {
+.c1 {
   font-weight: bold;
   font-size: 12px;
   line-height: 24px;
   color: black;
 }
 
-.c0 form input[type='checkbox'] {
+.c1 input[type='checkbox'] {
   vertical-align: middle;
   margin-right: 10px;
   cursor: pointer;
 }
 
-.c0 form input[type='checkbox']:before {
+.c1 input[type='checkbox']:before {
   content: '';
   position: absolute;
   width: 13px;
@@ -54,7 +54,7 @@ exports[`<ApplyTags /> renders correctly 1`] = `
   background-color: white;
 }
 
-.c0 form input[type='checkbox']:checked:after {
+.c1 input[type='checkbox']:checked:after {
   content: '';
   position: absolute;
   width: 13px;
@@ -64,7 +64,7 @@ exports[`<ApplyTags /> renders correctly 1`] = `
   background-color: black;
 }
 
-.c0 form label {
+.c1 label {
   display: block;
   margin-top: -24px;
   margin-left: 20px;
@@ -79,144 +79,344 @@ exports[`<ApplyTags /> renders correctly 1`] = `
   <h6>
     Design Areas
   </h6>
-  <form>
+  <form
+    className="c1"
+  >
     <div>
       <input
-        id="Art + Design"
+        id="Tag1"
+        onChange={[Function]}
         type="checkbox"
       />
       <label
-        htmlFor="Art + Design"
+        htmlFor="Tag1"
       >
-        Art + Design
+        Tag1
       </label>
     </div>
     <div>
       <input
-        id="Digital Design"
+        id="Tag2"
+        onChange={[Function]}
         type="checkbox"
       />
       <label
-        htmlFor="Digital Design"
+        htmlFor="Tag2"
       >
-        Digital Design
+        Tag2
       </label>
     </div>
     <div>
       <input
-        id="Industrial Design"
+        id="Tag3"
+        onChange={[Function]}
         type="checkbox"
       />
       <label
-        htmlFor="Industrial Design"
+        htmlFor="Tag3"
       >
-        Industrial Design
-      </label>
-    </div>
-    <div>
-      <input
-        id="Policy Design"
-        type="checkbox"
-      />
-      <label
-        htmlFor="Policy Design"
-      >
-        Policy Design
-      </label>
-    </div>
-    <div>
-      <input
-        id="Spatial Design"
-        type="checkbox"
-      />
-      <label
-        htmlFor="Spatial Design"
-      >
-        Spatial Design
+        Tag3
       </label>
     </div>
   </form>
   <h6>
     Schools
   </h6>
-  <form>
+  <form
+    className="c1"
+  >
     <div>
       <input
-        id="AAP"
+        id="Tag1"
+        onChange={[Function]}
         type="checkbox"
       />
       <label
-        htmlFor="AAP"
+        htmlFor="Tag1"
       >
-        AAP
+        Tag1
       </label>
     </div>
     <div>
       <input
-        id="Agriculture and Life Sciences"
+        id="Tag2"
+        onChange={[Function]}
         type="checkbox"
       />
       <label
-        htmlFor="Agriculture and Life Sciences"
+        htmlFor="Tag2"
       >
-        Agriculture and Life Sciences
+        Tag2
       </label>
     </div>
     <div>
       <input
-        id="Arts and Sciences"
+        id="Tag3"
+        onChange={[Function]}
         type="checkbox"
       />
       <label
-        htmlFor="Arts and Sciences"
+        htmlFor="Tag3"
       >
-        Arts and Sciences
-      </label>
-    </div>
-    <div>
-      <input
-        id="Engineering"
-        type="checkbox"
-      />
-      <label
-        htmlFor="Engineering"
-      >
-        Engineering
-      </label>
-    </div>
-    <div>
-      <input
-        id="Human Ecology"
-        type="checkbox"
-      />
-      <label
-        htmlFor="Human Ecology"
-      >
-        Human Ecology
-      </label>
-    </div>
-    <div>
-      <input
-        id="ILR"
-        type="checkbox"
-      />
-      <label
-        htmlFor="ILR"
-      >
-        ILR
-      </label>
-    </div>
-    <div>
-      <input
-        id="SC Johnson School of Business"
-        type="checkbox"
-      />
-      <label
-        htmlFor="SC Johnson School of Business"
-      >
-        SC Johnson School of Business
+        Tag3
       </label>
     </div>
   </form>
+</div>
+`;
+
+exports[`<ApplyTags /> renders correctly with no design area tags 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+  background: rgba(142,214,99,0.17);
+  padding: 60px;
+}
+
+.c0 h5 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 70px;
+  color: black;
+  margin: 0;
+}
+
+.c0 h6 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  color: black;
+  margin: 0;
+}
+
+.c1 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 24px;
+  color: black;
+}
+
+.c1 input[type='checkbox'] {
+  vertical-align: middle;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.c1 input[type='checkbox']:before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.c1 input[type='checkbox']:checked:after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid black;
+  background-color: black;
+}
+
+.c1 label {
+  display: block;
+  margin-top: -24px;
+  margin-left: 20px;
+}
+
+<div
+  className="c0"
+>
+  <h5>
+    Apply Tags
+  </h5>
+  <h6>
+    Design Areas
+  </h6>
+  <form
+    className="c1"
+  />
+  <h6>
+    Schools
+  </h6>
+  <form
+    className="c1"
+  >
+    <div>
+      <input
+        id="Tag1"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="Tag1"
+      >
+        Tag1
+      </label>
+    </div>
+    <div>
+      <input
+        id="Tag2"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="Tag2"
+      >
+        Tag2
+      </label>
+    </div>
+    <div>
+      <input
+        id="Tag3"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="Tag3"
+      >
+        Tag3
+      </label>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<ApplyTags /> renders correctly with no school tags 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+  background: rgba(142,214,99,0.17);
+  padding: 60px;
+}
+
+.c0 h5 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 70px;
+  color: black;
+  margin: 0;
+}
+
+.c0 h6 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  color: black;
+  margin: 0;
+}
+
+.c1 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 24px;
+  color: black;
+}
+
+.c1 input[type='checkbox'] {
+  vertical-align: middle;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.c1 input[type='checkbox']:before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.c1 input[type='checkbox']:checked:after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid black;
+  background-color: black;
+}
+
+.c1 label {
+  display: block;
+  margin-top: -24px;
+  margin-left: 20px;
+}
+
+<div
+  className="c0"
+>
+  <h5>
+    Apply Tags
+  </h5>
+  <h6>
+    Design Areas
+  </h6>
+  <form
+    className="c1"
+  >
+    <div>
+      <input
+        id="Tag1"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="Tag1"
+      >
+        Tag1
+      </label>
+    </div>
+    <div>
+      <input
+        id="Tag2"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="Tag2"
+      >
+        Tag2
+      </label>
+    </div>
+    <div>
+      <input
+        id="Tag3"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="Tag3"
+      >
+        Tag3
+      </label>
+    </div>
+  </form>
+  <h6>
+    Schools
+  </h6>
+  <form
+    className="c1"
+  />
 </div>
 `;

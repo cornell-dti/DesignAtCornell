@@ -180,7 +180,7 @@ exports[`<Pagination /> renders correctly 1`] = `
 </div>
 `;
 
-exports[`<Pagination /> renders correctly less courses than coursesPerPage 1`] = `
+exports[`<Pagination /> renders correctly less cards than coursesPerPage 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -229,7 +229,7 @@ exports[`<Pagination /> renders correctly less courses than coursesPerPage 1`] =
 </div>
 `;
 
-exports[`<Pagination /> renders correctly with no courses 1`] = `
+exports[`<Pagination /> renders correctly with no cards 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
