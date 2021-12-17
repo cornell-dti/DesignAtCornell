@@ -14,6 +14,12 @@ const FilterDropdown = (props: Props) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [numApplied, setNumApplied] = useState<number>(0);
 
+  /**
+   * Listen for checkbox updates and flip the value of the corresponding tag.
+   * Set tag 'all' to true iff none of the other tags are selected.
+   * Tag 'all' is not displayed to users as a filter option,
+   * it's only used in the course filtering step.
+   */
   const filterForm = (
     <Form>
       {Object.entries(props.tags).map(([tag, _]) =>

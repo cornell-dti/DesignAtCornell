@@ -16,6 +16,10 @@ import {
 
 const ExploreCourses = () => {
   useEffect(() => {
+    /**
+     * @param c is the raw input for a course retrieved from the backend
+     * @returns whether c has the correct type (Course)
+     */
     const isCourse = (c: Course): c is Course => {
       return (
         typeof c.id === 'string' &&
@@ -37,7 +41,7 @@ const ExploreCourses = () => {
     axios
       .get('http://localhost:3000/getCourses')
       .then((res) => res.data.data)
-      .then((data) => data.filter(isCourse))
+      .then((data) => data.filter(isCourse)) // filter incorrectly typed input
       .then(setCourses);
   }, []);
 
@@ -57,6 +61,12 @@ const ExploreCourses = () => {
     { category: 'Credits', tags: creditTags, setTags: setCreditTags },
   ];
 
+  /**
+   * Filter courses based on applied filters in each category and the search query.
+   * For each filter category, the 'all' tag is applied if no other filters are selected.
+   * The search query selects a course if it is a substring of the course's
+   * id + code (e.g. ARCH 1101) or title (e.g. Design I), ignoring case and white space.
+   */
   const filterResult = courses.filter(
     (course) =>
       course.content.designAreas.reduce(
@@ -76,6 +86,9 @@ const ExploreCourses = () => {
         .toLowerCase()
         .includes(search.replace(/\s/g, '').toLowerCase())
   );
+  /**
+   * Find courses to be displayed on the current page.
+   */
   const coursesPerPage = 20;
   const lastCourseIdx = currentPage * coursesPerPage;
   const firstCourseIdx = lastCourseIdx - coursesPerPage;

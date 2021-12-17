@@ -9,6 +9,10 @@ import Dashboard from './dashboard/Dashboard';
 
 const Clubs = () => {
   useEffect(() => {
+    /**
+     * @param c is the raw input for a club retrieved from the backend
+     * @returns whether c has the correct type (Club)
+     */
     const isClub = (c: Club): c is Club => {
       return (
         typeof c.title === 'string' &&
@@ -27,7 +31,7 @@ const Clubs = () => {
     axios
       .get('http://localhost:3000/getClubs')
       .then((res) => res.data.data)
-      .then((data) => data.filter(isClub))
+      .then((data) => data.filter(isClub)) // filter incorrectly typed input
       .then(setClubs);
   }, []);
 
@@ -43,6 +47,12 @@ const Clubs = () => {
     { category: 'Semesters', tags: sizeTags, setTags: setSizeTags },
   ];
 
+  /**
+   * Filter clubs based on applied filters in each category and the search query.
+   * For each filter category, the 'all' tag is applied if no other filters are selected.
+   * The search query selects a club if it is a substring of the club's title or orgType,
+   * ignoring case and white space.
+   */
   const filterResult = clubs.filter(
     (club) =>
       club.content.designAreas.reduce(
@@ -56,6 +66,9 @@ const Clubs = () => {
         .toLowerCase()
         .includes(search.replace(/\s/g, '').toLowerCase())
   );
+  /**
+   * Find clubs to be displayed on the current page.
+   */
   const clubsPerPage = 20;
   const lastClubIdx = currentPage * clubsPerPage;
   const firstClubIdx = lastClubIdx - clubsPerPage;
