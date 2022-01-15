@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 86px;
+  margin: 0 -10px;
+  justify-content: space-between;
+`;
+
 export const RectangularButton = styled.div`
   display: flex;
   width: 165px;
