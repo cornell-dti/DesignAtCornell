@@ -3,7 +3,7 @@ import { EventContainer, Settings, TagsContainer, Tag, Link } from '../EventsSty
 import { Event } from '../Events';
 import time from '../../static/images/time.svg';
 import loc from '../../static/images/location.svg';
-import { buttons } from '../../constants/eventButtons';
+import { buttons } from './eventButtons';
 
 const EventDisplay = (event: Event) => (
   <EventContainer>

@@ -4,6 +4,11 @@ import { Filters, SetFilters } from '../../constants/filter-criteria';
 import { Form } from '../../components/FormStyles';
 
 const ApplyTags = (props: Props) => {
+  /**
+   * Listen for checkbox clicks and flip the value of the corresponding tag.
+   * @param tags: the tags state in AreasOfSstudy.tsx
+   * @param setter: the state setter for tags
+   */
   const checkboxes = (tags: Filters, setter: SetFilters) => (
     <Form>
       {Object.entries(tags).map(([tag, _]) => (

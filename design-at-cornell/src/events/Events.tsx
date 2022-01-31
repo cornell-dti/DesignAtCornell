@@ -50,7 +50,6 @@ const Events = () => {
   ]);
 
   const date = new Date();
-
   const [year, setYear] = useState(date.getFullYear());
   const [month, setMonth] = useState(date.getMonth());
 
@@ -58,6 +57,9 @@ const Events = () => {
   const rightClickHandler = () => setYear(year + 1);
   const monthClickHandler = (m: number) => setMonth(m);
 
+  /**
+   * Events that are occurring in the selected month
+   */
   const filteredEvents = events.filter((event) => {
     const start = event.startTime.getFullYear() * 12 + event.startTime.getMonth();
     const end = event.endTime.getFullYear() * 12 + event.endTime.getMonth();
