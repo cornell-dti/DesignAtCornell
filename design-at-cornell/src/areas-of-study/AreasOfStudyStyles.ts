@@ -76,7 +76,7 @@ export const ApplyTagsContainer = styled.div`
   flex-direction: column;
   width: 20%;
   height: auto;
-  background: ${colors.lightGreen};
+  background: ${colors.pastelGreen};
   padding: 60px;
 
   h5 {
@@ -93,5 +93,28 @@ export const ApplyTagsContainer = styled.div`
     line-height: 40px;
     color: black;
     margin: 0;
+  }
+`;
+
+export const ModalContentQuestion = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+`;
+
+export const ModalContentResponse = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  div {
+    padding: 16px;
+    border-radius: 8px;
+    margin: 8px 0px;
+    background-color: ${colors.lightGreen};
+    font-size: 12px;
+    line-height: 14px;
   }
 `;
