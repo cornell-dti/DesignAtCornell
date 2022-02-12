@@ -7,6 +7,7 @@ import {
   createCourses,
   deleteCourses,
   getCourses,
+  getCourses_v2,
   updateCourses,
 } from './endpoints/courses/courses_endpoints';
 import {} from './types';
@@ -56,6 +57,15 @@ export const events = db.collection('events');
 app.get('/getCourses', async (req, res) => {
   getCourses(req, res);
 });
+/**
+ * retrieving the desired courses via query parameters from the database and
+ * storing them in a local array of type Course.
+ */
+ app.get('/getCourses_v2', async (req, res) => {
+  getCourses_v2(req, res);
+});
+
+
 /**
  * creates a new course object in firestore using client provided fields
  */

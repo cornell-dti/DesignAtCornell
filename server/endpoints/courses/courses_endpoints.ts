@@ -42,6 +42,44 @@ export async function getCourses(req, res) {
   res.send({ success: true, data: localCourses });
 }
 
+export async function getCourses_v2(req, res) {
+  const courseId = req.query.id;
+  const courseCode = req.query.code;
+  const localCourses: Course[] = [];
+  let collectionIncrementer = 0;
+
+  if (courseId === undefined) {
+    const coursesCollection = (await courses.doc('test').collection('test').get()).docs;
+    /* eslint-disable no-await-in-loop */
+    for (const doc of coursesCollection) {
+        const docId = doc.id.split(' ');
+        const cId = docId[0]
+        const cCode = docId[1];
+        const cContent: courseContent = doc.data() as courseContent;
+        const course: Course = {
+          id: cId,
+          code: parseInt(cCode, 10),
+          content: cContent,
+      }
+      localCourses.push(course);
+    }
+  } else {
+    const desiredCourse = (
+      await courses.doc('test').collection('test').get()
+    ).docs.filter((doc) => doc.id == courseId + ' ' + courseCode.toString());
+    for (const doc of desiredCourse) {
+      const cContent: courseContent = doc.data() as courseContent;
+      const course: Course = {
+        id: courseId,
+        code: parseInt(courseCode.toString(), 10),
+        content: cContent,
+      };
+      localCourses.push(course);
+    }
+  }
+  res.send({ success: true, data: localCourses });
+}
+
 export async function createCourses(req, res) {
   const course: Course = req.body;
   const courseId: string = course.id;
