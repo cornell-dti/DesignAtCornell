@@ -66,12 +66,18 @@ const ClubBubble = (club: Club) => {
             <p style={{ color: 'white' }}>{'Apply by '}</p>
           </Subtitle>
           <TagsContainer>
-            <Tag>{club.content.orgType}</Tag>
-            <Tag>{club.content.size}</Tag>
+            {club.content.orgType === '' ? null : (
+              <Tag>{club.content.orgType}</Tag>
+            )}
+            {club.content.size === '' ? null : (
+              <Tag>{club.content.size}</Tag>
+            )}
             {club.content.designAreas.filter((x) => x !== '').length === 0 ? null : (
               <Tag>{club.content.designAreas.join(', ')}</Tag>
             )}
-            <Tag>{club.content.credits + ' Credits'}</Tag>
+            {club.content.credits === null ? null : (
+              <Tag>{club.content.credits + ' Credits'}</Tag>
+            )}
           </TagsContainer>
           <ButtonContainer>
             <LargeRectangularButton>
