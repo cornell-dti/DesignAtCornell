@@ -48,6 +48,6 @@ export const LargeRectangularButton = styled.div`
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    color: #6B6B6B;
+    color: #6b6b6b;
   }
 `;
