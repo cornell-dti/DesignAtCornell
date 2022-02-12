@@ -4,8 +4,8 @@ import csv from 'csv-parser';
 import { Course, RosterCourse, RosterResponse, FetchedCourse, identifierAndDA } from '../types';
 import { courses } from '../server';
 
-const currSem = 'FA21';
-const prevSem = 'SP21';
+const currSem = 'SP22';
+const prevSem = 'FA21';
 const summerSem = 'SU21';
 const classRosterURL = `https://classes.cornell.edu/api/2.0/search/classes.json?roster=${currSem}&subject=`;
 const prevClassRosterURL = `https://classes.cornell.edu/api/2.0/search/classes.json?roster=${prevSem}&subject=`;
@@ -18,7 +18,6 @@ fsCoursesRead
   .on('data', (data) => coursesCSV.push(data))
   .on('end', () => {
     const formattedCourses: identifierAndDA[] = [];
-    // converting each course (CSV object) into formatCourse (JSON object)
     for (let i = 0; i < coursesCSV.length; i += 1) {
       const courseIdentifier: string[] = coursesCSV[i].tag.split(' ');
       const fCourse: identifierAndDA =  {identifier: courseIdentifier, designAreas: coursesCSV[i].designAreas};
@@ -75,7 +74,7 @@ function transformCourses(coursesTwo: FetchedCourse[]) {
 }
 function pushCoursesToDatabase(formattedCourses: Course[]) {
   for (let i = 0; i < formattedCourses.length; i += 1) {
-    const courseIdCollection = courses.doc('test3').collection(formattedCourses[i].id);
+    const courseIdCollection = courses.doc('SP22').collection(formattedCourses[i].id);
     const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
   }
