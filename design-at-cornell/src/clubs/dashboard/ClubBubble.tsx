@@ -5,14 +5,16 @@ import {
   TagsContainer,
   Tag,
   Title,
+  LargeTitle,
 } from '../../components/DashboardElementStyles';
 import { dashboardColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
+import openlink from '../../static/images/openlink-icon.svg';
 import exit from '../../static/images/exit.svg';
 import { Club } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
 import { ModalContainer, VerticalModalHeader, VerticalModalBody } from '../../components/ModalStyles';
-import { ButtonContainer, RectangularButton } from '../../components/ButtonStyles';
+import { ButtonContainer, LargeRectangularButton } from '../../components/ButtonStyles';
 
 const ClubBubble = (club: Club) => {
   const [open, setOpen] = React.useState(false);
@@ -59,7 +61,7 @@ const ClubBubble = (club: Club) => {
     >
       <ModalContainer>
         <VerticalModalHeader>
-          <Title >{club.title}</Title>
+          <LargeTitle >{club.title}</LargeTitle>
           <Subtitle>
             <p style={{ color: 'white' }}>{'Apply by '}</p>
           </Subtitle>
@@ -72,14 +74,14 @@ const ClubBubble = (club: Club) => {
             <Tag>{club.content.credits + ' Credits'}</Tag>
           </TagsContainer>
           <ButtonContainer>
-            <RectangularButton>
-              <img onClick={() => (window.location.href = club.content.website)} src={bookmark} alt={'website'} />
+            <LargeRectangularButton>
+              <img onClick={() => (window.location.href = club.content.website)} src={openlink} alt={'website'} />
               <p>Website</p> 
-            </RectangularButton>
-            <RectangularButton>
-              <img onClick={() => (window.location.href = club.content.website)} src={bookmark} alt={'website'} />
+            </LargeRectangularButton>
+            <LargeRectangularButton>
+              <img onClick={() => (window.location.href = club.content.website)} src={openlink} alt={'application'} />
               <p>Application</p> 
-            </RectangularButton>
+            </LargeRectangularButton>
           </ButtonContainer>
         </VerticalModalHeader>
         <VerticalModalBody>
