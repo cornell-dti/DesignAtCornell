@@ -27,3 +27,27 @@ export const RectangularButton = styled.div`
     color: black;
   }
 `;
+
+export const LargeRectangularButton = styled.div`
+  display: flex;
+  width: 230px;
+  height: 40px;
+  background: white;
+  border-radius: 4px;
+  margin: 0 10px;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  img {
+    margin: 0 30px;
+  }
+
+  p {
+    width: fit-content;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6B6B6B;
+  }
+`;
