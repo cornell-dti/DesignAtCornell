@@ -20,7 +20,10 @@ fsCoursesRead
     const formattedCourses: identifierAndDA[] = [];
     for (let i = 0; i < coursesCSV.length; i += 1) {
       const courseIdentifier: string[] = coursesCSV[i].tag.split(' ');
-      const fCourse: identifierAndDA =  {identifier: courseIdentifier, designAreas: coursesCSV[i].designAreas};
+      const fCourse: identifierAndDA = {
+        identifier: courseIdentifier,
+        designAreas: coursesCSV[i].designAreas,
+      };
       formattedCourses.push(fCourse);
     }
     getRosterCourses(formattedCourses, classRosterURL, currSem).then((missedCourses) => {
@@ -40,7 +43,11 @@ async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string,
       .then(async (res) => {
         const resData: RosterResponse = (await res.data) as RosterResponse;
         const classes = resData.data.classes as RosterCourse[];
-        fetchedCourses.push({course: classes[0] as RosterCourse, sem: currSem, designAreas: coursesOne[i].designAreas});
+        fetchedCourses.push({
+          course: classes[0] as RosterCourse,
+          sem: currSem,
+          designAreas: coursesOne[i].designAreas,
+        });
       })
       .catch(() => {
         missedCourses.push(coursesOne[i]);

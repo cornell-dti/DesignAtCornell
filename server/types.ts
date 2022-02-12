@@ -180,4 +180,4 @@ export type FetchedCourse = {
 export type identifierAndDA = {
   identifier: string[];
   designAreas: string[];
-}
+};
