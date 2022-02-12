@@ -26,6 +26,15 @@ export const Title = styled.div`
   color: black;
 `;
 
+export const LargeTitle = styled.div`
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: start;
+  margin: 0;
+  color: black;
+`;
+
 export const Subtitle = styled.div`
   display: flex;
   flex-direction: row;
