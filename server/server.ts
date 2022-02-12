@@ -55,16 +55,12 @@ export const events = db.collection('events');
  * storing them in a local array of type Course.
  */
 app.get('/getCourses', async (req, res) => {
-  getCourses(req, res);
+  getCourses_v2(req, res);
 });
 /**
  * retrieving the desired courses via query parameters from the database and
  * storing them in a local array of type Course.
  */
- app.get('/getCourses_v2', async (req, res) => {
-  getCourses_v2(req, res);
-});
-
 
 /**
  * creates a new course object in firestore using client provided fields
