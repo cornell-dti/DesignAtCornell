@@ -22,7 +22,7 @@ fsCoursesRead
       const courseIdentifier: string[] = coursesCSV[i].tag.split(' ');
       const fCourse: identifierAndDA = {
         identifier: courseIdentifier,
-        designAreas: coursesCSV[i].designAreas,
+        designAreas: coursesCSV[i].designAreas.split(','),
       };
       formattedCourses.push(fCourse);
     }
@@ -85,4 +85,5 @@ function pushCoursesToDatabase(formattedCourses: Course[]) {
     const newCourse = courseIdCollection.doc(formattedCourses[i].id.toString() + ' ' + formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
   }
+  console.log('done');
 }
