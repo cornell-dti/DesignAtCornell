@@ -26,14 +26,11 @@ fsCoursesRead
       };
       formattedCourses.push(fCourse);
     }
-    getRosterCourses(formattedCourses, classRosterURL, currSem).then((missedCourses) => {
-      getRosterCourses(missedCourses, prevClassRosterURL, prevSem).then((missedCoursesNew) => {
-        getRosterCourses(missedCoursesNew, summerClassRosterURL, summerSem).then(() => {
-          transformCourses(fetchedCourses);
-        });
-      });   
-    });
-  });
+    getRosterCourses(formattedCourses, classRosterURL, currSem)
+    .then((missedCourses) => getRosterCourses(missedCourses, prevClassRosterURL, prevSem))
+    .then((missedCoursesNew) => getRosterCourses(missedCoursesNew, summerClassRosterURL, summerSem))
+    .then(() => transformCourses(fetchedCourses));
+    });   
 async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string, currSem: string) {
   const missedCourses = [];
   /* eslint-disable no-await-in-loop */
@@ -81,7 +78,7 @@ function transformCourses(coursesTwo: FetchedCourse[]) {
 }
 function pushCoursesToDatabase(formattedCourses: Course[]) {
   for (let i = 0; i < formattedCourses.length; i += 1) {
-    const courseIdCollection = courses.doc('test').collection('test');
+    const courseIdCollection = courses.doc('test2').collection('test');
     const newCourse = courseIdCollection.doc(formattedCourses[i].id.toString() + ' ' + formattedCourses[i].code.toString());
     newCourse.set(formattedCourses[i].content);
   }
