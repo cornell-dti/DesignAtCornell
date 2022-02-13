@@ -31,7 +31,7 @@ fsCoursesRead
         getRosterCourses(missedCoursesNew, summerClassRosterURL, summerSem).then(() => {
           transformCourses(fetchedCourses);
         });
-      });
+      });   
     });
   });
 async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string, currSem: string) {
