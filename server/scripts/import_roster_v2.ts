@@ -82,7 +82,7 @@ function pushCoursesToDatabase(formattedCourses: Course[]) {
   for (let i = 0; i < formattedCourses.length; i += 1) {
     const courseIdCollection = courses.doc('test2').collection('test');
     const newCourse = courseIdCollection.doc(
-      `${formattedCourses[i].id.toString()  } ${  formattedCourses[i].code.toString()}`
+      `${formattedCourses[i].id.toString()} ${formattedCourses[i].code.toString()}`
     );
     newCourse.set(formattedCourses[i].content);
   }

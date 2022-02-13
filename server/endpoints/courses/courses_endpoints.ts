@@ -65,7 +65,7 @@ export async function getCourses_v2(req, res) {
     }
   } else {
     const desiredCourse = (await courses.doc('test').collection('test').get()).docs.filter(
-      (doc) => doc.id == `${courseId  } ${  courseCode.toString()}`
+      (doc) => doc.id == `${courseId} ${courseCode.toString()}`
     );
     for (const doc of desiredCourse) {
       const cContent: courseContent = doc.data() as courseContent;
