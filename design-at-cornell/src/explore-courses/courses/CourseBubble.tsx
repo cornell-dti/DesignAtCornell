@@ -8,12 +8,16 @@ import {
 } from '../../components/DashboardElementStyles';
 import { courseColors } from '../../constants/colors';
 import bookmark from '../../static/images/bookmark.svg';
+import reviews_icon from '../../static/images/reviews_icon.svg';
+import courseroster_icon from '../../static/images/courseroster_icon.svg';
+import syllabus_icon from '../../static/images/syllabus_icon.svg';
+import coursesite_icon from '../../static/images/coursesite_icon.svg';
 import exit from '../../static/images/exit.svg';
 import { Course } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
-import { ModalContainer, ModalHeader } from '../../components/ModalStyles';
-import { RectangularButton } from '../../components/ButtonStyles';
-import { HorizontalFlex } from '../../components/ContainerStyles';
+import { ModalContainer, ModalHeader, ModalContent} from '../../components/ModalStyles';
+import { RectangularButton, CUReviewsButton, CourseRosterButton, SyllabusButton, CourseSiteButton } from '../../components/ButtonStyles';
+import { HorizontalFlex, ButtonHorizontalFlex } from '../../components/ContainerStyles';
 import { colors } from '../../constants/colors';
 
 const CourseBubble = (course: Course) => {
@@ -55,7 +59,7 @@ const CourseBubble = (course: Course) => {
           </Subtitle>
           <Title>{course.content.title}</Title>
           <HorizontalFlex>
-            <TagsContainer>
+            <TagsContainer> 
               <Tag>{course.content.major}</Tag>
               <Tag>{course.content.semester.join(', ')}</Tag>
               {course.content.designAreas.filter((x) => x !== '').length === 0 ? null : (
@@ -69,7 +73,32 @@ const CourseBubble = (course: Course) => {
             </RectangularButton>
           </HorizontalFlex>
         </ModalHeader>
+        
+        <ModalContent>
+          <Subtitle>{course.content.description}</Subtitle>
+          <ButtonHorizontalFlex>
+          <SyllabusButton>
+            <img src={syllabus_icon} alt={'Syllabus'} />
+            <p>Syllabus</p>
+          </SyllabusButton>
+          <CourseRosterButton onClick={() => (window.location.href = course.content.courseRoster)}>
+            <img src={courseroster_icon} alt={'Course Roster'}/>
+            <p>Course Roster</p> 
+            
+          </CourseRosterButton>
+          <CourseSiteButton>
+            <img src={coursesite_icon} alt={'Course Site'} />
+            <p> Course Site </p>
+          </CourseSiteButton>
+          <CUReviewsButton>
+            <img src={reviews_icon} alt={'CU Reviews'} />
+            <p>CU Reviews</p>
+          </CUReviewsButton>
+        </ButtonHorizontalFlex>
+        </ModalContent>
+        
       </ModalContainer>
+      
     </Modal>
   );
 };
