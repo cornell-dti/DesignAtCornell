@@ -42,7 +42,7 @@ export async function getCourses(req, res) {
   res.send({ success: true, data: localCourses });
 }
 
-export async function getCourses_v2(req, res) {
+export async function getCoursesv2(req, res) {
   const courseId = req.query.id;
   const courseCode = req.query.code;
   const localCourses: Course[] = [];
