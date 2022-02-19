@@ -1,7 +1,6 @@
 import { courses } from '../../server';
 import { Course, courseContent, rosterSem } from '../../types';
 
-
 const currSem = 'SP22';
 export async function getCourses(req, res) {
   const courseId = req.query.id;
@@ -59,7 +58,7 @@ export async function createCourses(req, res) {
     res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     const courseCollection = courses.doc(currSem).collection(currSem);
-    const newCourse = courseCollection.doc(courseId + ' ' + courseCode.toString());
+    const newCourse = courseCollection.doc(`${courseId  } ${  courseCode.toString()}`);
     newCourse.set(course.content);
     res.send({ success: true, data: course });
   }
@@ -72,7 +71,11 @@ export async function deleteCourses(req, res) {
   if (courseId === undefined || courseCode === undefined) {
     res.send({ success: false, message: 'Course ID or code is missing.' });
   } else {
-    courses.doc(currSem).collection(currSem).doc(courseId + ' ' + courseCode.toString()).delete();
+    courses
+      .doc(currSem)
+      .collection(currSem)
+      .doc(`${courseId  } ${  courseCode.toString()}`)
+      .delete();
     res.send({ success: true });
   }
 }
@@ -94,7 +97,7 @@ export async function updateCourses(req, res) {
     courses
       .doc(currSem)
       .collection(currSem)
-      .doc(courseId + ' ' + courseCode.toString())
+      .doc(`${courseId  } ${  courseCode.toString()}`)
       .update({ field: content });
     res.send({ success: true });
   }
