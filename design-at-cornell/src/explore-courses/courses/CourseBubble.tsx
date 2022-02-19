@@ -81,7 +81,7 @@ const CourseBubble = (course: Course) => {
             <img src={syllabus_icon} alt={'Syllabus'} />
             <p>Syllabus</p>
           </SyllabusButton>
-          <CourseRosterButton onClick={() => (window.location.href = course.content.courseRoster)}>
+          <CourseRosterButton onClick={() => (window.open(course.content.courseRoster))}>
             <img src={courseroster_icon} alt={'Course Roster'}/>
             <p>Course Roster</p> 
             
