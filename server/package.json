@@ -9,7 +9,6 @@
     "clubs-script": "ts-node scripts/clubs_script.ts",
     "events-script": "ts-node scripts/events_script.ts",
     "roster-script": "ts-node scripts/import_roster.ts",
-    "roster-script-v2": "ts-node scripts/import_roster_v2.ts",
     "tsc": "tsc"
   },
   "dependencies": {

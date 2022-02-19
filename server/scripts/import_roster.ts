@@ -22,19 +22,18 @@ fsCoursesRead
       const courseIdentifier: string[] = coursesCSV[i].tag.split(' ');
       const fCourse: identifierAndDA = {
         identifier: courseIdentifier,
-        designAreas: coursesCSV[i].designAreas,
+        designAreas: coursesCSV[i].designAreas.split(','),
       };
       formattedCourses.push(fCourse);
     }
-    getRosterCourses(formattedCourses, classRosterURL, currSem).then((missedCourses) => {
-      getRosterCourses(missedCourses, prevClassRosterURL, prevSem).then((missedCoursesNew) => {
-        getRosterCourses(missedCoursesNew, summerClassRosterURL, summerSem).then(() => {
-          transformCourses(fetchedCourses);
-        });
-      });
-    });
+    getRosterCourses(formattedCourses, classRosterURL, currSem)
+      .then((missedCourses) => getRosterCourses(missedCourses, prevClassRosterURL, prevSem))
+      .then((missedCoursesNew) =>
+        getRosterCourses(missedCoursesNew, summerClassRosterURL, summerSem)
+      )
+      .then(() => transformCourses(fetchedCourses));
   });
-async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string, currSem: string) {
+async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string, sem: string) {
   const missedCourses = [];
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < coursesOne.length; i += 1) {
@@ -45,7 +44,7 @@ async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string,
         const classes = resData.data.classes as RosterCourse[];
         fetchedCourses.push({
           course: classes[0] as RosterCourse,
-          sem: currSem,
+          sem,
           designAreas: coursesOne[i].designAreas,
         });
       })
@@ -81,8 +80,11 @@ function transformCourses(coursesTwo: FetchedCourse[]) {
 }
 function pushCoursesToDatabase(formattedCourses: Course[]) {
   for (let i = 0; i < formattedCourses.length; i += 1) {
-    const courseIdCollection = courses.doc('SP22').collection(formattedCourses[i].id);
-    const newCourse = courseIdCollection.doc(formattedCourses[i].code.toString());
+    const courseIdCollection = courses.doc(currSem).collection(currSem);
+    const newCourse = courseIdCollection.doc(
+      `${formattedCourses[i].id.toString()} ${formattedCourses[i].code.toString()}`
+    );
     newCourse.set(formattedCourses[i].content);
   }
+  console.log('done');
 }

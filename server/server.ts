@@ -7,7 +7,6 @@ import {
   createCourses,
   deleteCourses,
   getCourses,
-  getCourses_v2,
   updateCourses,
 } from './endpoints/courses/courses_endpoints';
 import {} from './types';
@@ -55,7 +54,7 @@ export const events = db.collection('events');
  * storing them in a local array of type Course.
  */
 app.get('/getCourses', async (req, res) => {
-  getCoursesv2(req, res);
+  getCourses(req, res);
 });
 /**
  * retrieving the desired courses via query parameters from the database and
