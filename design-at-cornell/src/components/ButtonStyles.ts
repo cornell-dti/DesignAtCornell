@@ -6,6 +6,7 @@ export const RectangularButton = styled.div`
   height: 36px;
   background: white;
   border-radius: 4px;
+  margin: 0 10px;
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;

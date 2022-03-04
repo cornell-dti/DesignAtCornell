@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
 
-export const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: row;

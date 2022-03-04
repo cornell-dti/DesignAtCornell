@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Title from './title/Title';
-import { PageContainer } from './ExploreCoursesStyles';
+import { VerticalFlex } from '../components/ContainerStyles';
 import Courses from './courses/Courses';
-import Pagination from './Pagination';
+import Pagination from '../pagination/Pagination';
 import { Course } from '../../../server/types';
 import {
   Filters,
@@ -63,16 +63,16 @@ const ExploreCourses = () => {
   const displayedCourses = filterResult.slice(firstCourseIdx, lastCourseIdx);
 
   return (
-    <PageContainer>
+    <VerticalFlex>
       <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
       <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
-        coursesPerPage={coursesPerPage}
-        totalCourses={filterResult.length}
+        cardsPerPage={coursesPerPage}
+        totalCards={filterResult.length}
         paginate={setPage}
       />
-    </PageContainer>
+    </VerticalFlex>
   );
 };
 

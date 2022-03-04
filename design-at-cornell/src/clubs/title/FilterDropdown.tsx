@@ -3,12 +3,10 @@ import {
   FilterButton,
   FilterDropdownContainer,
   FilterFormContainer,
-  LargeFilterFormContainer,
 } from '../../components/FilterBarStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import downArrow from '../../static/images/down-arrow.png';
 import { Form } from '../../components/FormStyles';
-import { department_name } from '../../constants/departments';
 
 const FilterDropdown = (props: Props) => {
   const [expand, setExpand] = useState<boolean>(false);
@@ -32,9 +30,7 @@ const FilterDropdown = (props: Props) => {
                 props.setPage(1);
               }}
             />
-            <label htmlFor={tag}>
-              {props.category === 'Majors/Minors' ? department_name[tag] : tag}
-            </label>
+            <label htmlFor={tag}>{tag}</label>
           </div>
         )
       )}
@@ -47,11 +43,7 @@ const FilterDropdown = (props: Props) => {
         <p>{props.category}</p>
         <img src={downArrow} alt={'expand'} />
       </FilterButton>
-      {props.category === 'Majors/Minors' ? (
-        <LargeFilterFormContainer expand={expand}>{filterForm}</LargeFilterFormContainer>
-      ) : (
-        <FilterFormContainer expand={expand}>{filterForm}</FilterFormContainer>
-      )}
+      <FilterFormContainer expand={expand}>{filterForm}</FilterFormContainer>
     </FilterDropdownContainer>
   );
 };
