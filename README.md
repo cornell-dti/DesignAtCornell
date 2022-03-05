@@ -16,6 +16,7 @@
 - **Sydney Tran** - Software Developer
 - **Sarah Young** - Software Developer
 - **Vishok Jonnalagadda** - Software Developer
+- **Pratyush Sudhakar** - Software Developer
 
 ### 2020 - 2021
 
