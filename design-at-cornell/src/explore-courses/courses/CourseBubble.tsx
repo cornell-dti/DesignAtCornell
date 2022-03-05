@@ -35,7 +35,6 @@ const CourseBubble = (course: Course) => {
     >
       <Subtitle>
         <p>{course.id + ' ' + course.code}</p>
-        <img src={bookmark} alt="save course" />
       </Subtitle>
       <Title>{course.content.title}</Title>
       <TagsContainer>
@@ -81,10 +80,6 @@ const CourseBubble = (course: Course) => {
               )}
               <Tag>{course.content.credits + ' Credits'}</Tag>
             </TagsContainer>
-            <RectangularButton>
-              <img src={bookmark} alt={'add to saved'} />
-              <p>Add to Saved</p>
-            </RectangularButton>
           </HorizontalFlex>
         </ModalHeader>
 
