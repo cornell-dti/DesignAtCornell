@@ -7,12 +7,10 @@ import {
   Title,
 } from '../../components/DashboardElementStyles';
 import { dashboardColors } from '../../constants/colors';
-import bookmark from '../../static/images/bookmark.svg';
 import exit from '../../static/images/exit.svg';
 import { Course } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
 import { ModalContainer, ModalHeader } from '../../components/ModalStyles';
-import { RectangularButton } from '../../components/ButtonStyles';
 import { HorizontalFlex } from '../../components/ContainerStyles';
 import { colors } from '../../constants/colors';
 
@@ -25,7 +23,6 @@ const CourseBubble = (course: Course) => {
     >
       <Subtitle>
         <p>{course.id + ' ' + course.code}</p>
-        <img src={bookmark} alt="save course" />
       </Subtitle>
       <Title>{course.content.title}</Title>
       <TagsContainer>
@@ -71,10 +68,6 @@ const CourseBubble = (course: Course) => {
               )}
               <Tag>{course.content.credits + ' Credits'}</Tag>
             </TagsContainer>
-            <RectangularButton>
-              <img src={bookmark} alt={'add to saved'} />
-              <p>Add to Saved</p>
-            </RectangularButton>
           </HorizontalFlex>
         </ModalHeader>
       </ModalContainer>
