@@ -78,20 +78,12 @@ const ClubBubble = (club: Club) => {
             {club.content.credits === null ? null : <Tag>{club.content.credits + ' Credits'}</Tag>}
           </TagsContainer>
           <ButtonContainer>
-            <LargeRectangularButton>
-              <img
-                onClick={() => (window.location.href = club.content.website)}
-                src={openlink}
-                alt={'website'}
-              />
+            <LargeRectangularButton onClick={() => window.open(club.content.website)}>
+              <img src={openlink} alt={'website'} />
               <p>Website</p>
             </LargeRectangularButton>
-            <LargeRectangularButton>
-              <img
-                onClick={() => (window.location.href = club.content.website)}
-                src={openlink}
-                alt={'application'}
-              />
+            <LargeRectangularButton onClick={() => window.open(club.content.website)}>
+              <img src={openlink} alt={'application'} />
               <p>Application</p>
             </LargeRectangularButton>
           </ButtonContainer>
