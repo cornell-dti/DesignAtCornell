@@ -1,38 +1,35 @@
 import { courses } from '../../server';
 import { Course, courseContent, rosterSem } from '../../types';
 
+const currSem = 'SP22';
 export async function getCourses(req, res) {
   const courseId = req.query.id;
   const courseCode = req.query.code;
   const localCourses: Course[] = [];
-  let collectionIncrementer = 0;
 
   if (courseId === undefined) {
-    const courseTypes = await courses.doc(rosterSem).listCollections();
-    const collections = courseTypes.map((collection) => collection.listDocuments());
+    const coursesCollection = (await courses.doc(currSem).collection(currSem).get()).docs;
     /* eslint-disable no-await-in-loop */
-    for (const collection of collections) {
-      const cId = courseTypes[collectionIncrementer].id;
-      for (const docRef of await collection) {
-        const cCode = docRef.id;
-        const cContent: courseContent = (await docRef.get()).data() as courseContent;
-        const course: Course = {
-          id: cId,
-          code: parseInt(cCode, 10),
-          content: cContent,
-        };
-        localCourses.push(course);
-      }
-      collectionIncrementer += 1;
+    for (const doc of coursesCollection) {
+      const docId = doc.id.split(' ');
+      const cId = docId[0];
+      const cCode = docId[1];
+      const cContent: courseContent = doc.data() as courseContent;
+      const course: Course = {
+        id: cId,
+        code: parseInt(cCode, 10),
+        content: cContent,
+      };
+      localCourses.push(course);
     }
   } else {
-    const desiredCourse = (
-      await courses.doc(rosterSem).collection(courseId.toString()).get()
-    ).docs.filter((doc) => doc.id == courseCode.toString());
+    const desiredCourse = (await courses.doc(currSem).collection(currSem).get()).docs.filter(
+      (doc) => doc.id == `${courseId} ${courseCode.toString()}`
+    );
     for (const doc of desiredCourse) {
       const cContent: courseContent = doc.data() as courseContent;
       const course: Course = {
-        id: courseId.toString(),
+        id: courseId,
         code: parseInt(courseCode.toString(), 10),
         content: cContent,
       };
@@ -58,10 +55,10 @@ export async function createCourses(req, res) {
     course.content.major === undefined ||
     course.content.designAreas.length == 0
   ) {
-    res.send({ success: false, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
-    const courseIdCollection = courses.doc(rosterSem).collection(courseId);
-    const newCourse = courseIdCollection.doc(courseCode.toString());
+    const courseCollection = courses.doc(currSem).collection(currSem);
+    const newCourse = courseCollection.doc(`${courseId} ${courseCode.toString()}`);
     newCourse.set(course.content);
     res.send({ success: true, data: course });
   }
@@ -72,9 +69,9 @@ export async function deleteCourses(req, res) {
   const courseCode: number = req.body.code;
 
   if (courseId === undefined || courseCode === undefined) {
-    res.send({ success: false, message: 'One or more fields is missing' });
+    res.send({ success: false, message: 'Course ID or code is missing.' });
   } else {
-    courses.doc(rosterSem).collection(courseId).doc(courseCode.toString()).delete();
+    courses.doc(currSem).collection(currSem).doc(`${courseId} ${courseCode.toString()}`).delete();
     res.send({ success: true });
   }
 }
@@ -91,12 +88,12 @@ export async function updateCourses(req, res) {
     courseCode === undefined ||
     courseId === undefined
   ) {
-    res.send('One or more fields is missing.');
+    res.send({ success: true, message: 'One or more fields is missing.' });
   } else {
     courses
-      .doc(rosterSem)
-      .collection(courseId)
-      .doc(courseCode.toString())
+      .doc(currSem)
+      .collection(currSem)
+      .doc(`${courseId} ${courseCode.toString()}`)
       .update({ field: content });
     res.send({ success: true });
   }
