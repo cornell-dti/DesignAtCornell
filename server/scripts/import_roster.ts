@@ -51,7 +51,7 @@ async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string,
     queriedCourses.forEach((queriedCourse) => {
       if (queriedCourse.status === 'fulfilled') {
         const queriedCourseData = queriedCourse.value.data as RosterResponse;
-        const {classes} = queriedCourseData.data;
+        const { classes } = queriedCourseData.data;
         const courseSubject = classes[0].subject;
         const courseCode = classes[0].catalogNbr;
         fetchedCourses.push({
