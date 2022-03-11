@@ -14,6 +14,7 @@ import { Modal } from 'semantic-ui-react';
 import { ModalContainer, ModalHeader } from '../../components/ModalStyles';
 import { RectangularButton } from '../../components/ButtonStyles';
 import { HorizontalFlex } from '../../components/ContainerStyles';
+import { colors } from '../../constants/colors';
 
 const CourseBubble = (course: Course) => {
   const [open, setOpen] = React.useState(false);
@@ -55,7 +56,7 @@ const CourseBubble = (course: Course) => {
       style={{ width: '699px', height: '523px', borderRadius: '10px' }}
     >
       <ModalContainer>
-        <ModalHeader>
+        <ModalHeader color={colors.lightBlue}>
           <Subtitle>
             <p style={{ color: 'white' }}>{course.id + ' ' + course.code}</p>
             <img onClick={() => setOpen(false)} src={exit} alt="close modal" />

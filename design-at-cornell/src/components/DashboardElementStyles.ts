@@ -61,6 +61,7 @@ export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  overflow: hidden;
   width: 100%;
   height: fit-content;
   align-items: flex-start;
