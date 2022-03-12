@@ -23,8 +23,8 @@ const Clubs = () => {
   const [currentPage, setPage] = useState(1);
   const filterList = [
     { category: 'Design Areas', tags: designAreaTags, setTags: setDesignAreaTags },
-    { category: 'Majors/Minors', tags: orgTypeTags, setTags: setOrgTypeTags },
-    { category: 'Semesters', tags: sizeTags, setTags: setSizeTags },
+    { category: 'Organization Type', tags: orgTypeTags, setTags: setOrgTypeTags },
+    { category: 'Size', tags: sizeTags, setTags: setSizeTags },
   ];
 
   const filterResult = clubs.filter(
