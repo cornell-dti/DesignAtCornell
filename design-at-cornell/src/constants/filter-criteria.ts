@@ -58,3 +58,18 @@ export const credits: Filters = {
   '4': false,
   '5+': false,
 };
+
+export const organizationType: Filters = {
+  Club: false,
+  'Project Team': false,
+  'Community Service': false,
+  Mentorship: false,
+  'Career Prep': false,
+  Volunteering: false,
+};
+
+export const size: Filters = {
+  Small: false,
+  Medium: false,
+  Large: false,
+};

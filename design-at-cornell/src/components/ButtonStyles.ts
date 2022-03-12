@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 86px;
+  margin: 0 -10px;
+  justify-content: space-between;
+`;
+
 export const RectangularButton = styled.div`
   display: flex;
   width: 165px;
   height: 36px;
   background: white;
   border-radius: 4px;
+  margin: 0 10px;
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
@@ -19,6 +28,7 @@ export const RectangularButton = styled.div`
     color: black;
   }
 `;
+
 
 export const ModalButton = styled.div`
   display: flex;
@@ -70,4 +80,28 @@ export const SyllabusButton = styled(ModalButton)`
   box-shadow: 0px 0px 22px ${colors.syllabus_blue};
   left: 409px;
   top: 579px;
+
+export const LargeRectangularButton = styled.div`
+  display: flex;
+  width: 230px;
+  height: 40px;
+  background: white;
+  border-radius: 4px;
+  margin: 0 10px;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  img {
+    margin: 0 30px;
+  }
+
+  p {
+    width: fit-content;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6b6b6b;
+  }
+
 `;
