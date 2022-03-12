@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../constants/colors';
 
 export const RectangularButton = styled.div`
   display: flex;
@@ -48,25 +49,25 @@ export const ModalButton = styled.div`
 `;
 
 export const CUReviewsButton = styled(ModalButton)`
-  box-shadow: 0px 0px 22px #e3bff0;
+  box-shadow: 0px 0px 22px ${colors.cureviews_purple} ;
   left: 806px;
   top: 580px;
 `;
 
 export const CourseRosterButton = styled(ModalButton)`
-  box-shadow: 0px 0px 22px #c9e1aa;
+  box-shadow: 0px 0px 22px ${colors.course_roster_green};
   left: 540px;
   top: 579px;
 `;
 
 export const CourseSiteButton = styled(ModalButton)`
-  box-shadow: 0px 0px 22px rgba(254, 186, 171, 0.83);
+  box-shadow: 0px 0px 22px ${colors.course_site_orange};
   left: 673px;
   top: 579px;
 `;
 
 export const SyllabusButton = styled(ModalButton)`
-  box-shadow: 0px 0px 22px #b1d5ef;
+  box-shadow: 0px 0px 22px ${colors.syllabus_blue};
   left: 409px;
   top: 579px;
 `;

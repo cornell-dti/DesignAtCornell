@@ -13,6 +13,10 @@ export const colors = {
   lightGreen: 'rgba(125, 206, 87, 0.27)',
   green: '#8ed663',
   shadow: 'rgba(0, 0, 0, 0.05)',
+  syllabus_blue: '#b1d5ef',
+  course_site_orange: 'rgba(254, 186, 171, 0.83)',
+  cureviews_purple: '#e3bff0',
+  course_roster_green: '#c9e1aa'
 };
 
 export const courseColors = ['#BAE6FF', '#FFE5A1', '#FFC5EF', '#C9E1AA', '#FFCBBA', '#D3D2F7'];
