@@ -29,7 +29,6 @@ export const RectangularButton = styled.div`
   }
 `;
 
-
 export const ModalButton = styled.div`
   display: flex;
   width: 106px;
@@ -80,6 +79,7 @@ export const SyllabusButton = styled(ModalButton)`
   box-shadow: 0px 0px 22px ${colors.syllabus_blue};
   left: 409px;
   top: 579px;
+`;
 
 export const LargeRectangularButton = styled.div`
   display: flex;
@@ -103,5 +103,4 @@ export const LargeRectangularButton = styled.div`
     line-height: 19px;
     color: #6b6b6b;
   }
-
 `;

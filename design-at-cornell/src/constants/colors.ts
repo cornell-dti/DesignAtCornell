@@ -22,7 +22,6 @@ export const colors = {
 
   red: '#F56E5B',
   white: '#FFFFFF',
-
 };
 
 export const dashboardColors = ['#BAE6FF', '#FFE5A1', '#FFC5EF', '#C9E1AA', '#FFCBBA', '#D3D2F7'];
