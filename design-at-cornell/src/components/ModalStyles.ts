@@ -24,11 +24,11 @@ export const VerticalModalHeader = styled.div`
   display: flex;
   flex-direction: column;
   width: 356px;
-  height: 100%;
+  height: 527px;
   background-color: ${colors.red};
   padding: 60px 60px 60px 60px;
   border-radius: 10px 0px 0px 10px;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const VerticalModalBody = styled.div`

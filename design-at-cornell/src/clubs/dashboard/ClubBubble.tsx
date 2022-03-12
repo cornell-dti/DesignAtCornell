@@ -13,6 +13,7 @@ import openlink from '../../static/images/openlink-icon.svg';
 import exit from '../../static/images/exit.svg';
 import { Club } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
+import { HorizontalFlex } from '../../components/ContainerStyles';
 import {
   ModalContainer,
   VerticalModalHeader,
@@ -64,36 +65,40 @@ const ClubBubble = (club: Club) => {
       style={{ width: '790px', height: '527px', borderRadius: '10px' }}
     >
       <ModalContainer>
-        <VerticalModalHeader>
-          <LargeTitle>{club.title}</LargeTitle>
-          <Subtitle>
-            <p style={{ color: 'white' }}>{'Apply by '}</p>
-          </Subtitle>
-          <TagsContainer>
-            {club.content.orgType === '' ? null : <Tag>{club.content.orgType}</Tag>}
-            {club.content.size === '' ? null : <Tag>{club.content.size}</Tag>}
-            {club.content.designAreas.filter((x) => x !== '').length === 0 ? null : (
-              <Tag>{club.content.designAreas.join(', ')}</Tag>
-            )}
-            {club.content.credits === null ? null : <Tag>{club.content.credits + ' Credits'}</Tag>}
-          </TagsContainer>
-          <ButtonContainer>
-            <LargeRectangularButton onClick={() => window.open(club.content.website)}>
-              <img src={openlink} alt={'website'} />
-              <p>Website</p>
-            </LargeRectangularButton>
-            <LargeRectangularButton onClick={() => window.open(club.content.website)}>
-              <img src={openlink} alt={'application'} />
-              <p>Application</p>
-            </LargeRectangularButton>
-          </ButtonContainer>
-        </VerticalModalHeader>
-        <VerticalModalBody>
-          <Subtitle>
-            <p>{}</p>
-            <img onClick={() => setOpen(false)} src={exit} alt="close modal" />
-          </Subtitle>
-        </VerticalModalBody>
+        <HorizontalFlex>
+          <VerticalModalHeader>
+            <LargeTitle>{club.title}</LargeTitle>
+            <Subtitle>
+              <p style={{ color: 'white' }}>{'Apply by '}</p>
+            </Subtitle>
+            <TagsContainer>
+              {club.content.orgType === '' ? null : <Tag>{club.content.orgType}</Tag>}
+              {club.content.size === '' ? null : <Tag>{club.content.size}</Tag>}
+              {club.content.designAreas.filter((x) => x !== '').length === 0 ? null : (
+                <Tag>{club.content.designAreas.join(', ')}</Tag>
+              )}
+              {club.content.credits === null ? null : (
+                <Tag>{club.content.credits + ' Credits'}</Tag>
+              )}
+            </TagsContainer>
+            <ButtonContainer>
+              <LargeRectangularButton onClick={() => window.open(club.content.website)}>
+                <img src={openlink} alt={'website'} />
+                <p>Website</p>
+              </LargeRectangularButton>
+              <LargeRectangularButton onClick={() => window.open(club.content.website)}>
+                <img src={openlink} alt={'application'} />
+                <p>Application</p>
+              </LargeRectangularButton>
+            </ButtonContainer>
+          </VerticalModalHeader>
+          <VerticalModalBody>
+            <Subtitle>
+              <p>{}</p>
+              <img onClick={() => setOpen(false)} src={exit} alt="close modal" />
+            </Subtitle>
+          </VerticalModalBody>
+        </HorizontalFlex>
       </ModalContainer>
     </Modal>
   );
