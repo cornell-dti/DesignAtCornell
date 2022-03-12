@@ -57,6 +57,11 @@ app.get('/getCourses', async (req, res) => {
   getCourses(req, res);
 });
 /**
+ * retrieving the desired courses via query parameters from the database and
+ * storing them in a local array of type Course.
+ */
+
+/**
  * creates a new course object in firestore using client provided fields
  */
 app.post('/createCourse', async (req, res) => {

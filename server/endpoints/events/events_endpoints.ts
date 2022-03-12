@@ -34,7 +34,7 @@ export async function createEvents(req, res) {
     event.content.period === undefined ||
     event.content.type === undefined
   ) {
-    res.send({ success: false, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     const newEvent = events.doc(event.title);
     newEvent.set(event.content);
@@ -45,7 +45,7 @@ export async function createEvents(req, res) {
 export async function deleteEvents(req, res) {
   const { title } = req.body;
   if (title === undefined) {
-    res.send({ success: false, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'Event title is missing.' });
   } else {
     events.doc(title).delete();
     res.send({ success: true });
@@ -58,7 +58,7 @@ export async function updateEvents(req, res) {
   const { content } = req.body;
 
   if (title === undefined || field === undefined || content === undefined) {
-    res.send({ success: true, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     events.doc(title).update({ field: content });
     res.send({ success: true });
