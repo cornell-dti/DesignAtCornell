@@ -49,7 +49,7 @@ export const ModalButton = styled.div`
 `;
 
 export const CUReviewsButton = styled(ModalButton)`
-  box-shadow: 0px 0px 22px ${colors.cureviews_purple} ;
+  box-shadow: 0px 0px 22px ${colors.cureviews_purple};
   left: 806px;
   top: 580px;
 `;
