@@ -51,3 +51,26 @@ export const LargeRectangularButton = styled.div`
     color: #6b6b6b;
   }
 `;
+
+export const SmallRectangularButton = styled.div`
+  display: flex;
+  width: 102px;
+  height: 34px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 2px #e6e6e6;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+
+  img {
+  }
+
+  p {
+    width: fit-content;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    color: #6b6b6b;
+  }
+`;
