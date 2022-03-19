@@ -31,7 +31,7 @@ const Homepage: React.FC = () => (
 
     <SubComponentVerticalFlex>
       <SubComponentHorizontalFlex>
-        <SubComponent onClick={() => window.open('/explore-courses')}>
+        <SubComponent onClick={() => window.open('/explore-courses', "_self")}>
           <img src={design_courses} alt={'Design Courses'} />
           <SubComponentVerticalFlex>
             <SubComponentTitle>Design Courses</SubComponentTitle>
@@ -39,14 +39,14 @@ const Homepage: React.FC = () => (
               Your central hub for finding and learning about courses to enrich your design skillset
               and broaden your horizons.
             </p>
-            <ExploreSubtitle onClick={() => window.open('/explore-courses')}>
+            <ExploreSubtitle onClick={() => window.open('/explore-courses', "_self")}>
               {' '}
               Explore Courses {'>'}
             </ExploreSubtitle>
           </SubComponentVerticalFlex>
         </SubComponent>
 
-        <SubComponent onClick={() => window.open('/areas-of-study')}>
+        <SubComponent onClick={() => window.open('/areas-of-study', "_self")}>
           <img src={majors_minors} alt={'Majors/Minors'} />
           <SubComponentVerticalFlex>
             <SubComponentTitle>Majors {'&'} Minors</SubComponentTitle>
@@ -54,30 +54,30 @@ const Homepage: React.FC = () => (
               A guide to the different paths and stories you may pave in your design career at
               Cornell.{' '}
             </p>
-            <ExploreSubtitle onClick={() => window.open('/areas-of-study')}>
+            <ExploreSubtitle onClick={() =>  window.open('/areas-of-study', "_self")}>
               {' '}
               Explore Majors {'&'} Minors {'>'}
             </ExploreSubtitle>
           </SubComponentVerticalFlex>
         </SubComponent>
 
-        <SubComponent>
+        <SubComponent onClick={() => window.open('/student-organizations', "_self")}>
           <img src={orgs_icon} alt={'Organizations'} />
           <SubComponentVerticalFlex>
             <SubComponentTitle>Organizations</SubComponentTitle>
             <p>A place to find all design-related organizations at Cornell.</p>
-            <ExploreSubtitle> Explore Organizations {'>'}</ExploreSubtitle>
+            <ExploreSubtitle onClick={() => window.open('/student-organizations', "_self")}> Explore Organizations {'>'}</ExploreSubtitle>
           </SubComponentVerticalFlex>
         </SubComponent>
       </SubComponentHorizontalFlex>
 
       <SubComponentHorizontalFlex>
-        <SubComponent onClick={() => window.open('/events')}>
+        <SubComponent onClick={() => window.open('/events', "_self")}>
           <img src={events_icon} alt={'Events'} />
           <SubComponentVerticalFlex>
             <SubComponentTitle>Events</SubComponentTitle>
             <p>Find events to learn, grow and share with your creative community.</p>
-            <ExploreSubtitle onClick={() => window.open('/events')}>
+            <ExploreSubtitle onClick={() => window.open('/events', "_self")}>
               {' '}
               Explore Events {'>'}
             </ExploreSubtitle>
