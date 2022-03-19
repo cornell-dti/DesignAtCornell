@@ -19,8 +19,8 @@ const FilterBar = (props: Props) => {
         }}
       />
       <RectangularButton>
-        <img src={bookmarked} alt={'saved courses'} />
-        <p>Saved Courses</p>
+        <img src={bookmarked} alt={'saved clubs'} />
+        <p>Saved Clubs</p>
       </RectangularButton>
     </FilterBarContainer>
   );

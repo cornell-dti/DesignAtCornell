@@ -32,7 +32,7 @@ export async function createClubs(req, res) {
     club.content.orgType === undefined ||
     club.content.contact === undefined
   ) {
-    res.send({ success: false, message: 'one or more fields is missing' });
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     const newClub = clubs.doc(club.title);
     newClub.set(club.content);
@@ -44,7 +44,7 @@ export async function deleteClubs(req, res) {
   const { title } = req.body;
 
   if (title === undefined) {
-    res.send({ success: false, message: 'One or more fields is missing' });
+    res.send({ success: false, message: 'Club name field is missing.' });
   } else {
     clubs.doc(title).delete();
     res.send({ success: true });
@@ -57,7 +57,7 @@ export async function updateClubs(req, res) {
   const { content } = req.body;
 
   if (content === undefined || field === undefined || title === undefined) {
-    res.send('One or more fields is missing.');
+    res.send({ success: false, message: 'One or more fields is missing.' });
   } else {
     clubs.doc(title).update({ field: content });
     res.send({ success: true });

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import exit from '../static/images/exit.svg';
+import { colors } from '../constants/colors';
 
 export const ModalContainer = styled.div`
   display: flex;
@@ -16,6 +17,28 @@ export const ModalHeader = styled.div`
   background-color: ${(props) => props.color};
   padding: 30px;
   border-radius: 10px 10px 0px 0px;
+  justify-content: space-between;
+`;
+
+export const VerticalModalHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 356px;
+  height: 527px;
+  background-color: ${colors.red};
+  padding: 60px 60px 60px 60px;
+  border-radius: 10px 0px 0px 10px;
+  justify-content: space-between;
+`;
+
+export const VerticalModalBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 434px;
+  height: 100%;
+  background-color: ${colors.white};
+  padding: 30px;
+  border-radius: 0px 10px 10px 0px;
   justify-content: space-between;
 `;
 
