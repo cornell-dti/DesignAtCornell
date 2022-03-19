@@ -50,21 +50,20 @@ export const SubComponent = styled.div`
   cursor: pointer;
 
   p {
-  font-weight: normal;
-  font-size: 24px;
-  text-align: left;
-  color: black;
-  align-items: left;
-  width: 80%;
-  justify-content: space-between;
-  padding-top: 25px;
-  cursor: pointer;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: left;
+    color: black;
+    align-items: left;
+    width: 80%;
+    justify-content: space-between;
+    padding-top: 25px;
+    cursor: pointer;
   }
 
   img {
     cursor: pointer;
   }
-
 `;
 
 export const ExploreSubtitle = styled.div`
@@ -79,6 +78,3 @@ export const ExploreSubtitle = styled.div`
   width: 100%;
   cursor: pointer;
 `;
-
-
-

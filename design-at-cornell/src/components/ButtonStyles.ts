@@ -70,4 +70,3 @@ export const SyllabusButton = styled(ModalButton)`
   left: 409px;
   top: 579px;
 `;
-
