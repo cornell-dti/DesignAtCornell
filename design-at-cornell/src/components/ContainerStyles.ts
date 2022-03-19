@@ -17,3 +17,13 @@ export const VerticalFlex = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 `;
+
+export const ButtonHorizontalFlex = styled.div`
+  display: flex;
+  flex: 10;
+  flex-direction: row;
+  width: 80%;
+  height: fit-content;
+  align-items: left;
+  justify-content: space-between;
+`;
