@@ -2,22 +2,22 @@
   height: 100%;
   width: 100%;
 }
- 
+
 .Headline {
   text-align: center;
   font-family: 'Work Sans';
   font-style: normal;
-  font-size:large;
+  font-size: large;
   text-align: center;
-  color: #0E1500;
+  color: #0e1500;
 }
- 
+
 .MissionStat {
   text-align: center;
   font-family: 'Work Sans';
   font-style: normal;
   font-size: medium;
   text-align: center;
-  color: #0E1500;
+  color: #0e1500;
   padding-top: 20px;
 }
