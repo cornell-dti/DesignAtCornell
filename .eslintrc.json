@@ -20,7 +20,8 @@
   },
   "plugins": ["react", "@typescript-eslint", "jest"],
   "rules": {
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "@typescript-eslint/camelcase": "off"
   },
   "settings": {
     "import/resolver": {
@@ -37,7 +38,6 @@
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/camelcase": "off"
-
       }
     }
   ]
