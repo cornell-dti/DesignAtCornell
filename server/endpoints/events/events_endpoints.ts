@@ -7,7 +7,7 @@ function formatEvents(jsonEvents) {
   console.log(eventsList.length);
   const formattedEvents: Event[] = [];
 
-  for (let i = 0; i < eventsList.length; i+=1) {
+  for (let i = 0; i < eventsList.length; i += 1) {
     const formattedEvent: Event = {
       title: eventsList[i].event.title,
       lastDate: eventsList[i].event.last_date,
