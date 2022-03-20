@@ -189,7 +189,8 @@ export type EventsResponse = {
 export type LocalistEvent = {
   event: LocalistEventContent;
 };
-/*eslint camelcase: "error"*/
+
+/* eslint-disable @typescript-eslint/camelcase */
 export type LocalistEventContent = {
   id: number;
   title: string;
@@ -245,13 +246,13 @@ export type LocalistEventContent = {
   photo_url: string;
   venue_url: string;
 };
-/*eslint camelcase: "error"*/
 
+/* eslint-disable @typescript-eslint/camelcase */
 export type EventInstance = {
   event_instance: EventInstanceContent;
 };
-/*eslint camelcase: "error"*/
 
+/* eslint-disable @typescript-eslint/camelcase */
 export type EventInstanceContent = {
   id: number;
   event_id: number;
@@ -271,7 +272,8 @@ export type Geo = {
   country: string;
   zip: string;
 };
-/*eslint camelcase: "error"*/
+
+/* eslint-disable @typescript-eslint/camelcase */
 export type Filters = {
   departments: nameID[];
   event_types: nameID[];
@@ -282,7 +284,7 @@ export type nameID = {
   name: string;
   id: number;
 };
-/*eslint camelcase: "error"*/
+/* eslint-disable @typescript-eslint/camelcase */
 export type CustomFields = {
   contact_email: string;
   contact_name: string;
