@@ -20,8 +20,8 @@ function formatEvents(jsonEvents) {
 }
 
 export function getEvents(req, res) {
-  fetch('https://events.cornell.edu/api/2/events/search?search=design')
+  fetch('https://events.cornell.edu/api/2/events/search?search=design&pp=20')
   .then(response => response.json())
   .then(jsonResponse => formatEvents(jsonResponse))
-  .then(formattedEvents => res.send(formattedEvents));
+  .then(formattedEvents => res.send(formattedEvents));  
 }
