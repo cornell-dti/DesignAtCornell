@@ -64,6 +64,8 @@ export const SmallRectangularButton = styled.div`
   cursor: pointer;
 
   img {
+    min-width: 16%;  
+    height: auto;  
   }
 
   p {
