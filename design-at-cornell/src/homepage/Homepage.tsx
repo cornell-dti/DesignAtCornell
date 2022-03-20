@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './Homepage.module.css';
+import { Headline, MissionStat } from '../components/HomepageStyles';
 
 const Homepage: React.FC = () => (
   <div className={styles.Homepage} data-testid="Homepage">
-    <div className={styles.Headline}>
+    <Headline>
       <b>Your ultimate resource for all things Design at Cornell University.</b>
-    </div>
-    <div className={styles.MissionStat}>Design at Cornell Mission Statement</div>
+    </Headline>
+    <MissionStat>Design at Corenll Mission Statement</MissionStat>
   </div>
 );
 
