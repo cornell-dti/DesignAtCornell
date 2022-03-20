@@ -1,5 +1,5 @@
-import { EventsResponse, Event, LocalistEvent } from '../../types';
 import fetch from 'node-fetch';
+import { EventsResponse, Event, LocalistEvent } from '../../types';
 
 function formatEvents(jsonEvents) {
   const eventsResponse: EventsResponse = jsonEvents as EventsResponse;
