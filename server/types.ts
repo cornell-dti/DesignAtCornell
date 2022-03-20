@@ -1,3 +1,4 @@
+/* eslint no-use-before-define: 0 */
 export type courseContent = {
   title: string;
   description: string;
@@ -49,20 +50,6 @@ export type Club = {
   title: string;
   content: clubContent;
 };
-
-// export type eventContent = {
-//   date: string;
-//   period: string;
-//   type: string;
-//   topic: string;
-//   description: string;
-//   rsvpLink: string;
-// };
-
-// export type Event = {
-//   title: string;
-//   content: eventContent;
-// };
 
 export const rosterSem = 'SP21';
 
@@ -190,7 +177,6 @@ export type LocalistEvent = {
   event: LocalistEventContent;
 };
 
-/* eslint-disable @typescript-eslint/camelcase */
 export type LocalistEventContent = {
   id: number;
   title: string;
@@ -247,12 +233,12 @@ export type LocalistEventContent = {
   venue_url: string;
 };
 
-/* eslint-disable @typescript-eslint/camelcase */
+
 export type EventInstance = {
   event_instance: EventInstanceContent;
 };
 
-/* eslint-disable @typescript-eslint/camelcase */
+
 export type EventInstanceContent = {
   id: number;
   event_id: number;
@@ -273,7 +259,7 @@ export type Geo = {
   zip: string;
 };
 
-/* eslint-disable @typescript-eslint/camelcase */
+
 export type Filters = {
   departments: nameID[];
   event_types: nameID[];
@@ -284,7 +270,7 @@ export type nameID = {
   name: string;
   id: number;
 };
-/* eslint-disable @typescript-eslint/camelcase */
+
 export type CustomFields = {
   contact_email: string;
   contact_name: string;
