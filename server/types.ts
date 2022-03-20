@@ -233,11 +233,9 @@ export type LocalistEventContent = {
   venue_url: string;
 };
 
-
 export type EventInstance = {
   event_instance: EventInstanceContent;
 };
-
 
 export type EventInstanceContent = {
   id: number;
@@ -258,7 +256,6 @@ export type Geo = {
   country: string;
   zip: string;
 };
-
 
 export type Filters = {
   departments: nameID[];
