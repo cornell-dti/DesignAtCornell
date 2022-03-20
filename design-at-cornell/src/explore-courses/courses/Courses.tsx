@@ -1,7 +1,6 @@
 import React from 'react';
 import { VerticalFlex } from '../../components/ContainerStyles';
 import { Grid } from '../../components/DashboardGridStyles';
-import Sort from './Sort';
 import CourseBubble from './CourseBubble';
 import { Course } from '../../../../server/types';
 
@@ -16,7 +15,7 @@ const Courses = (courses: Course[]) => {
 
   return (
     <VerticalFlex>
-      <Sort />
+      <br></br>
       {courseBubbles}
     </VerticalFlex>
   );
