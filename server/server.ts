@@ -18,10 +18,7 @@ import {
 } from './endpoints/majors_minors/majors_minors_endpoints';
 import { createClubs, deleteClubs, getClubs, updateClubs } from './endpoints/clubs/clubs_endpoints';
 import {
-  createEvents,
-  deleteEvents,
   getEvents,
-  updateEvents,
 } from './endpoints/events/events_endpoints';
 
 // eslint-disable-next-line
@@ -158,27 +155,6 @@ app.post('/updateClub', async (req, res) => {
  */
 app.get('/getEvents', async (req, res) => {
   getEvents(req, res);
-});
-
-/**
- * creates a new event object in firestore using client provIded fields
- */
-app.post('/createEvent', async (req, res) => {
-  createEvents(req, res);
-});
-
-/**
- * querying the database for the event with the event title and deleting it
- */
-app.delete('/deleteEvent', async (req, res) => {
-  deleteEvents(req, res);
-});
-
-/**
- * updates the specified field of a event with specified content
- */
-app.post('/updateEvent', async (req, res) => {
-  updateEvents(req, res);
 });
 
 app.get('/*', (req, res) => {
