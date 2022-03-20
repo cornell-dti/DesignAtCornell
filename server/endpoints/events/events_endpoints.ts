@@ -1,5 +1,5 @@
 import { EventsResponse, Event, LocalistEvent } from '../../types';
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 function formatEvents(jsonEvents) {
   const eventsResponse: EventsResponse = jsonEvents as EventsResponse;
@@ -7,7 +7,7 @@ function formatEvents(jsonEvents) {
   console.log(eventsList.length);
   const formattedEvents: Event[] = [];
 
-  for (let i = 0; i < eventsList.length; i++) {
+  for (let i = 0; i < eventsList.length; i+=1) {
     const formattedEvent: Event = {
       title: eventsList[i].event.title,
       lastDate: eventsList[i].event.last_date,
@@ -19,7 +19,7 @@ function formatEvents(jsonEvents) {
   return formattedEvents;
 }
 
-export function getEvents(req, res) {
+export default function getEvents(req, res) {
   fetch('https://events.cornell.edu/api/2/events/search?search=design&pp=20')
     .then((response) => response.json())
     .then((jsonResponse) => formatEvents(jsonResponse))
