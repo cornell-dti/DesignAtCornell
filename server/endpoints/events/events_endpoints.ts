@@ -13,6 +13,7 @@ function formatEvents(jsonEvents) {
       lastDate: eventsList[i].event.last_date,
       url: eventsList[i].event.localist_url,
       description: eventsList[i].event.description_text,
+      location: eventsList[i].event.location_name
     };
     formattedEvents.push(formattedEvent);
   }

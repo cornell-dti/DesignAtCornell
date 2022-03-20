@@ -287,4 +287,5 @@ export type Event = {
   lastDate: string;
   url: string;
   description: string;
+  location: string;
 };
