@@ -17,7 +17,7 @@ const ClubBubble = (club: Club) => (
         {club.content.orgType === '' ? null : (
           <Tag
             style={{
-              background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
+              background: dashboardColors[2],
             }}
           >
             {club.content.orgType}
@@ -26,7 +26,7 @@ const ClubBubble = (club: Club) => (
         {club.content.size === '' ? null : (
           <Tag
             style={{
-              background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
+              background: dashboardColors[3],
             }}
           >
             {club.content.size}
@@ -35,7 +35,7 @@ const ClubBubble = (club: Club) => (
         {club.content.designAreas.filter((area) => area !== '').length === 0 ? null : (
           <Tag
             style={{
-              background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
+              background: dashboardColors[4],
             }}
           >
             {club.content.designAreas.join(', ')}
@@ -44,7 +44,7 @@ const ClubBubble = (club: Club) => (
         {club.content.credits === null ? null : (
           <Tag
             style={{
-              background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
+              background: dashboardColors[1],
             }}
           >
             {club.content.credits}
