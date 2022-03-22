@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Homepage.module.css';
 import {
   SubComponentHorizontalFlex,
   SubComponentVerticalFlex,
@@ -19,7 +18,7 @@ import resources_icon from '../static/images/resources_icon.svg';
 import community_icon from '../static/images/community_icon.svg';
 
 const Homepage: React.FC = () => (
-  <div className={styles.Homepage} data-testid="Homepage">
+  <div data-testid="Homepage">
     <Headline>
       <b>Your ultimate resource for all things Design at Cornell University.</b>
     </Headline>
