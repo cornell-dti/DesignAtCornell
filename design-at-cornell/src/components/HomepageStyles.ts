@@ -1,5 +1,24 @@
 import styled from 'styled-components';
 
+export const Headline = styled.div`
+  text-align: center;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-size: large;
+  text-align: center;
+  color: black;
+`;
+
+export const MissionStat = styled.div`
+  text-align: center;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-size: medium;
+  text-align: center;
+  color: black;
+  padding-top: 20px;
+`;
+
 export const Title = styled.div`
   font-weight: bold;
   font-size: 35px;

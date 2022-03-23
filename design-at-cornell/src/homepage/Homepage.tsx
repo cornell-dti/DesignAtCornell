@@ -1,14 +1,11 @@
 import React from 'react';
-import styles from './Homepage.module.css';
-import AppPlaceholderImage from '../placeholder/AppPlaceholderImage';
 import {
-  HomepageVerticalFlex,
   SubComponentHorizontalFlex,
   SubComponentVerticalFlex,
 } from '../components/ContainerStyles';
 import {
-  Title,
-  Subtitle,
+  Headline,
+  MissionStat,
   SubComponent,
   SubComponentTitle,
   ExploreSubtitle,
@@ -19,15 +16,13 @@ import orgs_icon from '../static/images/orgs_icon.svg';
 import events_icon from '../static/images/events_icon.svg';
 import resources_icon from '../static/images/resources_icon.svg';
 import community_icon from '../static/images/community_icon.svg';
+
 const Homepage: React.FC = () => (
-  <div className={styles.Homepage} data-testid="Homepage">
-    <AppPlaceholderImage />
-    <HomepageVerticalFlex>
-      <Title>Your ultimate resource for all things design at Cornell University</Title>
-      <Subtitle>
-        Connecting and inspiring designers, faculty, and current/future design students.
-      </Subtitle>
-    </HomepageVerticalFlex>
+  <div data-testid="Homepage">
+    <Headline>
+      <b>Your ultimate resource for all things Design at Cornell University.</b>
+    </Headline>
+    <MissionStat>Design at Corenll Mission Statement</MissionStat>
 
     <SubComponentVerticalFlex>
       <SubComponentHorizontalFlex>
