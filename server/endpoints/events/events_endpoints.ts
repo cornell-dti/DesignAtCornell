@@ -16,15 +16,17 @@ function formatEvents(jsonEvents) {
       date: eventsList[i].event.event_instances[0].event_instance.start,
       url: eventsList[i].event.localist_url,
       description: eventsList[i].event.description_text,
-      location: eventsList[i].event.location_name
+      location: eventsList[i].event.location_name,
     };
     formattedEvents.push(formattedEvent);
   }
   return formattedEvents;
 }
-//'https://events.cornell.edu/api/2/events/search?search=design'
+
 export default function getEvents(req, res) {
-  fetch('https://events.cornell.edu/api/2/events/search?search=design&distinct=true&pp=100&sort=date&days=365')
+  fetch(
+    'https://events.cornell.edu/api/2/events/search?search=design&distinct=true&pp=100&sort=date&days=365'
+  )
     .then((response) => response.json())
     .then((jsonResponse) => formatEvents(jsonResponse))
     .then((formattedEvents) => res.send(formattedEvents));
