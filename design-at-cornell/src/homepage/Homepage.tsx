@@ -16,14 +16,17 @@ import orgs_icon from '../static/images/orgs_icon.svg';
 import events_icon from '../static/images/events_icon.svg';
 import resources_icon from '../static/images/resources_icon.svg';
 import community_icon from '../static/images/community_icon.svg';
+import Title from './title';
 
 const Homepage: React.FC = () => (
   <div data-testid="Homepage">
+    <Title />
     <Headline>
       <b>Your ultimate resource for all things Design at Cornell University.</b>
     </Headline>
-    <MissionStat>Design at Corenll Mission Statement</MissionStat>
-
+    <MissionStat>
+      Our mission is to connect, inform, and inspire the design community at Cornell University.
+    </MissionStat>
     <SubComponentVerticalFlex>
       <SubComponentHorizontalFlex>
         <SubComponent onClick={() => window.open('/explore-courses', '_self')}>
@@ -31,8 +34,8 @@ const Homepage: React.FC = () => (
           <SubComponentVerticalFlex>
             <SubComponentTitle>Design Courses</SubComponentTitle>
             <p>
-              Your central hub for finding and learning about courses to enrich your design skillset
-              and broaden your horizons.
+              A central hub to learn about courses to enrich your design skillset and broaden your
+              horizons
             </p>
             <ExploreSubtitle onClick={() => window.open('/explore-courses', '_self')}>
               {' '}
@@ -47,10 +50,9 @@ const Homepage: React.FC = () => (
             <SubComponentTitle>Majors {'&'} Minors</SubComponentTitle>
             <p>
               A guide to the different paths and stories you may pave in your design career at
-              Cornell.{' '}
+              Cornell
             </p>
             <ExploreSubtitle onClick={() => window.open('/areas-of-study', '_self')}>
-              {' '}
               Explore Majors {'&'} Minors {'>'}
             </ExploreSubtitle>
           </SubComponentVerticalFlex>
@@ -60,7 +62,7 @@ const Homepage: React.FC = () => (
           <img src={orgs_icon} alt={'Organizations'} />
           <SubComponentVerticalFlex>
             <SubComponentTitle>Organizations</SubComponentTitle>
-            <p>A place to find all design-related organizations at Cornell.</p>
+            <p>A place to find all design-related organizations at Cornell</p>
             <ExploreSubtitle onClick={() => window.open('/student-organizations', '_self')}>
               {' '}
               Explore Organizations {'>'}
@@ -74,7 +76,7 @@ const Homepage: React.FC = () => (
           <img src={events_icon} alt={'Events'} />
           <SubComponentVerticalFlex>
             <SubComponentTitle>Events</SubComponentTitle>
-            <p>Find events to learn, grow and share with your creative community.</p>
+            <p>Find events to learn, grow, and share with your creative community</p>
             <ExploreSubtitle onClick={() => window.open('/events', '_self')}>
               {' '}
               Explore Events {'>'}
