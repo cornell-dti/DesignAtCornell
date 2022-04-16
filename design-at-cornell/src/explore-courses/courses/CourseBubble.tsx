@@ -7,23 +7,11 @@ import {
   Title,
 } from '../../components/DashboardElementStyles';
 import { dashboardColors } from '../../constants/colors';
-import bookmark from '../../static/images/bookmark.svg';
-import reviews_icon from '../../static/images/reviews_icon.svg';
-import courseroster_icon from '../../static/images/courseroster_icon.svg';
-import syllabus_icon from '../../static/images/syllabus_icon.svg';
-import coursesite_icon from '../../static/images/coursesite_icon.svg';
 import exit from '../../static/images/exit.svg';
 import { Course } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
-import { ModalContainer, ModalHeader, ModalContent } from '../../components/ModalStyles';
-import {
-  RectangularButton,
-  CUReviewsButton,
-  CourseRosterButton,
-  SyllabusButton,
-  CourseSiteButton,
-} from '../../components/ButtonStyles';
-import { HorizontalFlex, ButtonHorizontalFlex } from '../../components/ContainerStyles';
+import { ModalContainer, ModalHeader } from '../../components/ModalStyles';
+import { HorizontalFlex } from '../../components/ContainerStyles';
 import { colors } from '../../constants/colors';
 
 const CourseBubble = (course: Course) => {
