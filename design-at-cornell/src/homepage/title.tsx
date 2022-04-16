@@ -10,7 +10,7 @@ const title = () => (
           brief description of spotlight to intrigue and interest users
           <br />
           <br />
-          <a href="https://www.cornell.edu" target="_blank">
+          <a href="https://www.cornell.edu" rel="noopener noreferrer" target="_blank">
             Learn more{'>'}
           </a>
         </p>
