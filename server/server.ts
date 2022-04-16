@@ -18,7 +18,6 @@ import {
 } from './endpoints/majors_minors/majors_minors_endpoints';
 import { createClubs, deleteClubs, getClubs, updateClubs } from './endpoints/clubs/clubs_endpoints';
 import getEvents from './endpoints/events/events_endpoints';
-
 // eslint-disable-next-line
 const serviceAccount = require('./designAtCornellServiceAccount.json');
 

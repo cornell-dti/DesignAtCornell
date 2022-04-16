@@ -220,7 +220,7 @@ export type LocalistEventContent = {
   description_text: string;
   photo_id: number;
   detail_views: number;
-  events_instances: EventInstance[];
+  event_instances: EventInstance[];
   address: string;
   description: string;
   featured: boolean;
@@ -284,7 +284,7 @@ export type formattedEvents = {
 
 export type Event = {
   title: string;
-  lastDate: string;
+  date: string;
   url: string;
   description: string;
   location: string;
