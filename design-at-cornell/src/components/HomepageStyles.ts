@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import homepage_banner from '../static/images/homepage_banner.svg';
-import { colors } from '../constants/colors';
 
 export const BannerBackground = styled.div`
   display: flex;
