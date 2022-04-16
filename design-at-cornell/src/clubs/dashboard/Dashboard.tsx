@@ -1,7 +1,6 @@
 import React from 'react';
 import { VerticalFlex } from '../../components/ContainerStyles';
 import { Grid } from '../../components/DashboardGridStyles';
-import Sort from './Sort';
 import ClubBubble from './ClubBubble';
 import { Club } from '../../../../server/types';
 
@@ -16,7 +15,7 @@ const Dashboard = (clubs: Club[]) => {
 
   return (
     <VerticalFlex>
-      <Sort />
+      <br></br>
       {clubBubbles}
     </VerticalFlex>
   );

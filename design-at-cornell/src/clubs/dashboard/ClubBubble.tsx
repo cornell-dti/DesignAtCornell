@@ -8,7 +8,6 @@ import {
   LargeTitle,
 } from '../../components/DashboardElementStyles';
 import { dashboardColors } from '../../constants/colors';
-import bookmark from '../../static/images/bookmark.svg';
 import openlink from '../../static/images/openlink-icon.svg';
 import exit from '../../static/images/exit.svg';
 import { Club } from '../../../../server/types';
@@ -30,7 +29,6 @@ const ClubBubble = (club: Club) => {
     >
       <Subtitle>
         <p>{club.content.orgType}</p>
-        <img src={bookmark} alt="save club" />
       </Subtitle>
       <Title>{club.title}</Title>
       <TagsContainer>
