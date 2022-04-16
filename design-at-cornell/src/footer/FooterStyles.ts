@@ -6,10 +6,17 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 405px;
+  height: 50%;
   background: ${colors.lightGray};
   padding: 126px 126px 100px 126px;
   justify-content: space-between;
+
+  p {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: right;
+  }
 `;
 
 export const FooterColumnn = styled.div`
@@ -19,6 +26,12 @@ export const FooterColumnn = styled.div`
   height: 100%;
   justify-content: space-between;
   font-weight: bold;
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+  }
 `;
 
 export const Logo = styled(Link)`

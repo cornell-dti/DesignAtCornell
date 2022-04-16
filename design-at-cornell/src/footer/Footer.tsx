@@ -1,7 +1,5 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles';
-import { explore, resources, account } from '../constants/pages';
-import dacLogo from '../static/images/logo.svg';
+import { FooterContainer, FooterColumnn, DTILogo} from './FooterStyles';
 import dtiLogo from '../static/images/dti-logo.svg';
 
 type Page = {
@@ -10,23 +8,10 @@ type Page = {
 };
 
 const Footer = () => {
-  const column = (pages: Page[]) => (
-    <FooterColumnn>
-      {pages.map((page) => (
-        <StyledLink key={page.name} to={page.url}>
-          <p>{page.name}</p>
-        </StyledLink>
-      ))}
-    </FooterColumnn>
-  );
 
   return (
     <FooterContainer>
       <FooterColumnn>
-        <Logo to="/explore-courses">
-          <img src={dacLogo} alt="logo" />
-          <p>Design@Cornell</p>
-        </Logo>
         <div>
           <p>Powered by</p>
           <DTILogo>
@@ -35,9 +20,7 @@ const Footer = () => {
           </DTILogo>
         </div>
       </FooterColumnn>
-      {column(explore)}
-      {column(resources)}
-      {column(account)}
+        <p>For any questions, please contact hello@cornelldti.org</p>
     </FooterContainer>
   );
 };
