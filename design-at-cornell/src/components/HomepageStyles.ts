@@ -9,7 +9,7 @@ export const BannerBackground = styled.div`
   background-image: url(${homepage_banner});
   padding-left: 100px;
   padding-right: 100px;
-  margin-bottom: 25px;
+  margin-bottom: 90px;
 `;
 
 export const BlurbContainer = styled.div`
@@ -79,7 +79,7 @@ export const MissionStat = styled.div`
   font-size: large;
   text-align: center;
   color: black;
-  padding-top: 20px;
+  margin-top: 40px;
 `;
 
 export const Title = styled.div`
