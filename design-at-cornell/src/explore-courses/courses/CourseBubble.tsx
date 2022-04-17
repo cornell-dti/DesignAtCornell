@@ -12,9 +12,7 @@ import exit from '../../static/images/exit.svg';
 import { Course } from '../../../../server/types';
 import { Modal } from 'semantic-ui-react';
 import { ModalContainer, ModalHeader, ModalContent } from '../../components/ModalStyles';
-import {
-  CourseRosterButton,
-} from '../../components/ButtonStyles';
+import { CourseRosterButton } from '../../components/ButtonStyles';
 import { HorizontalFlex } from '../../components/ContainerStyles';
 import { colors } from '../../constants/colors';
 
@@ -77,9 +75,11 @@ const CourseBubble = (course: Course) => {
 
         <ModalContent>
           <Subtitle>{course.content.description}</Subtitle>
-            <CourseRosterButton onClick={() => window.open(course.content.courseRoster)}>
-              <p><img src={openlink_icon} style={{ marginRight:'5px'}}></img>Course Roster</p>
-            </CourseRosterButton>
+          <CourseRosterButton onClick={() => window.open(course.content.courseRoster)}>
+            <p>
+              <img src={openlink_icon} style={{ marginRight: '5px' }}></img>Course Roster
+            </p>
+          </CourseRosterButton>
         </ModalContent>
       </ModalContainer>
     </Modal>
