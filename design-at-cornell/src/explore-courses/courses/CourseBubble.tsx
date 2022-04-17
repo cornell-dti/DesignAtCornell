@@ -77,7 +77,12 @@ const CourseBubble = (course: Course) => {
           <Subtitle>{course.content.description}</Subtitle>
           <CourseRosterButton onClick={() => window.open(course.content.courseRoster)}>
             <p>
-              <img src={openlink_icon} style={{ marginRight: '5px' }}></img>Course Roster
+              <img
+                src={openlink_icon}
+                style={{ marginRight: '5px' }}
+                alt={'Go to Course Roster'}
+              ></img>
+              Course Roster
             </p>
           </CourseRosterButton>
         </ModalContent>
