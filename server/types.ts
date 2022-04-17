@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export type courseContent = {
   title: string;
   description: string;
@@ -48,20 +49,6 @@ export type clubContent = {
 export type Club = {
   title: string;
   content: clubContent;
-};
-
-export type eventContent = {
-  date: string;
-  period: string;
-  type: string;
-  topic: string;
-  description: string;
-  rsvpLink: string;
-};
-
-export type Event = {
-  title: string;
-  content: eventContent;
 };
 
 export const rosterSem = 'SP21';
@@ -180,4 +167,125 @@ export type FetchedCourse = {
 export type identifierAndDA = {
   identifier: string[];
   designAreas: string[];
+};
+
+export type EventsResponse = {
+  events: LocalistEvent[];
+};
+
+export type LocalistEvent = {
+  event: LocalistEventContent;
+};
+
+export type LocalistEventContent = {
+  id: number;
+  title: string;
+  url: string;
+  updated_at: string;
+  created_at: string;
+  facebook_id: string | null;
+  first_date: string;
+  last_date: string;
+  hashtag: string;
+  urlname: string;
+  user_id: number;
+  directions: string;
+  allows_reviews: boolean;
+  allows_attendence: boolean;
+  location: string;
+  room_number: string;
+  location_name: string;
+  status: string;
+  experience: string;
+  stream_url: string | null;
+  stream_info: string | null;
+  stream_embed_code: null;
+  created_by: number;
+  updated_by: number;
+  city_id: null;
+  neighborhood_id: null;
+  school_id: number;
+  campus_id: null;
+  recurring: boolean;
+  free: boolean;
+  private: boolean;
+  verified: boolean;
+  rejected: boolean;
+  sponsored: boolean;
+  venue_id: number;
+  ticket_url: string;
+  ticket_cost: string;
+  keywords: string[];
+  tags: string[];
+  description_text: string;
+  photo_id: number;
+  detail_views: number;
+  event_instances: EventInstance[];
+  address: string;
+  description: string;
+  featured: boolean;
+  geo: Geo;
+  filters: Filters;
+  custom_fields: CustomFields;
+  localist_url: string;
+  localist_ics_url: string;
+  photo_url: string;
+  venue_url: string;
+};
+
+export type EventInstance = {
+  event_instance: EventInstanceContent;
+};
+
+export type EventInstanceContent = {
+  id: number;
+  event_id: number;
+  start: string;
+  end: string | null;
+  ranking: number;
+  all_day: boolean;
+  num_attending: number;
+};
+
+export type Geo = {
+  latitude: string;
+  longitude: string;
+  street: string;
+  city: string;
+  state: string;
+  country: string;
+  zip: string;
+};
+
+export type Filters = {
+  departments: nameID[];
+  event_types: nameID[];
+  event_university_themes: nameID[];
+};
+
+export type nameID = {
+  name: string;
+  id: number;
+};
+
+export type CustomFields = {
+  contact_email: string;
+  contact_name: string;
+  contact_phone: number;
+  speake: string;
+  speaker_affiliation: string;
+  dept_web_site: string;
+  open_to: string;
+};
+
+export type formattedEvents = {
+  events: Event[];
+};
+
+export type Event = {
+  title: string;
+  date: string;
+  url: string;
+  description: string;
+  location: string;
 };
