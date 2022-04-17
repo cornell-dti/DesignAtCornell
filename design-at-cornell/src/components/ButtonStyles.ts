@@ -64,9 +64,19 @@ export const CUReviewsButton = styled(ModalButton)`
 `;
 
 export const CourseRosterButton = styled(ModalButton)`
-  box-shadow: 0px 0px 22px ${colors.course_roster_green};
+  box-shadow: 0px 0px 8px ${colors.shadow};
+  border-radius:5px;
+  width:136px;
   left: 540px;
   top: 579px;
+  height: 33px;
+  margin-top:22px;
+  padding-top:13px;
+  padding-bottom:20px;
+  p {
+    font-weight: lighter;
+    font-size: 13px;
+  }
 `;
 
 export const CourseSiteButton = styled(ModalButton)`
