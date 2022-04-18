@@ -16,16 +16,11 @@ const Clubs = () => {
   }, []);
 
   const [clubs, setClubs] = useState<Club[]>([]);
-  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas, all: true });
-  const [orgTypeTags, setOrgTypeTags] = useState<Filters>({ ...organizationType, all: true });
-  const [sizeTags, setSizeTags] = useState<Filters>({ ...size, all: true });
-  const [search, setSearch] = useState('');
+  const [designAreaTags] = useState<Filters>({ ...designAreas, all: true });
+  const [orgTypeTags] = useState<Filters>({ ...organizationType, all: true });
+  const [sizeTags] = useState<Filters>({ ...size, all: true });
+  const [search] = useState('');
   const [currentPage, setPage] = useState(1);
-  const filterList = [
-    { category: 'Design Areas', tags: designAreaTags, setTags: setDesignAreaTags },
-    { category: 'Organization Type', tags: orgTypeTags, setTags: setOrgTypeTags },
-    { category: 'Size', tags: sizeTags, setTags: setSizeTags },
-  ];
 
   const filterResult = clubs.filter(
     (club) =>
@@ -47,7 +42,7 @@ const Clubs = () => {
 
   return (
     <VerticalFlex>
-      <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
+      <Title />
       <Dashboard {...displayedClubs} />
       <Pagination
         currentPage={currentPage}
