@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, DTILogo, StyledLink } from './FooterStyles';
+import { FooterContainer, FooterColumnn, DTILogo} from './FooterStyles';
 import dtiLogo from '../static/images/dti-logo.svg';
 
 type Page = {
