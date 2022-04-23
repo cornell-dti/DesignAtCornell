@@ -5,10 +5,10 @@ import { colors } from '../constants/colors';
 export const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
+  background: ${colors.lightGray};
   width: 100%;
   height: 50%;
-  background: ${colors.lightGray};
-  padding: 126px 126px 100px 126px;
+  padding: 75px 126px 50px 126px;
   justify-content: space-between;
 
   p {
@@ -23,15 +23,27 @@ export const FooterColumnn = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  height: 100%;
   justify-content: space-between;
   font-weight: bold;
+  margin-bottom: 10px;
   p {
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
     text-align: left;
-  }
+
+    &:hover {
+      text-decoration: none;
+      color: black;
+
+    }
+
+    &:link {
+      text-decoration: none;
+      color: black;
+    }
+}
+
 `;
 
 export const Logo = styled(Link)`
@@ -39,7 +51,7 @@ export const Logo = styled(Link)`
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   p {
     font-weight: bold;
@@ -102,3 +114,4 @@ export const StyledLink = styled(Link)`
     color: ${colors.linkColor};
   }
 `;
+
