@@ -35,15 +35,13 @@ export const FooterColumnn = styled.div`
     &:hover {
       text-decoration: none;
       color: black;
-
     }
 
     &:link {
       text-decoration: none;
       color: black;
     }
-}
-
+  }
 `;
 
 export const Logo = styled(Link)`
@@ -114,4 +112,3 @@ export const StyledLink = styled(Link)`
     color: ${colors.linkColor};
   }
 `;
-
