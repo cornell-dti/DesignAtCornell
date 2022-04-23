@@ -11,6 +11,13 @@ export const TitleBackground = styled.div`
   padding-right: 100px;
 `;
 
+export const TitleBackgroundImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 556px;
+`;
+
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,6 +41,37 @@ export const TitleContainer = styled.div`
     text-align: left;
     color: black;
     padding-left: 5px;
+  }
+`;
+
+export const TitleContainerBox = styled.div`
+  display: flex;
+  flex-direction: column; 
+  width: 493px;
+  height: 400px;
+  margin-left: 107px;
+  margin-top: 78px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 20px;
+  padding: 55px 45px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+  h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 39px;
+    color: #FFFFFF;
+  }
+
+  p {
+    font-style: normal;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 27px;
+    color: #FFFFFF;
   }
 `;
 
