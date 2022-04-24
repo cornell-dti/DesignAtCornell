@@ -289,3 +289,16 @@ export type Event = {
   description: string;
   location: string;
 };
+
+export type Article = {
+  id: string;
+  url: string;
+  title: string;
+  content_text: string;
+  image: string;
+  image_1x1: string;
+  date_published: string;
+  tags: string[];
+  image_featured: string;
+  image_alt: string;
+};

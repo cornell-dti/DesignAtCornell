@@ -5,20 +5,54 @@ import { colors } from '../constants/colors';
 export const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 405px;
   background: ${colors.lightGray};
-  padding: 126px 126px 100px 126px;
+  width: 100%;
+  height: 50%;
+  padding: 75px 126px 50px 126px;
   justify-content: space-between;
+
+  p {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: right;
+  }
 `;
 
-export const FooterColumnn = styled.div`
+export const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  height: 100%;
   justify-content: space-between;
   font-weight: bold;
+  margin-bottom: 10px;
+
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+
+    &:link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+`;
+
+export const Email = styled(FooterColumn)`
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    margin-top: 20px;
+  }
 `;
 
 export const Logo = styled(Link)`
@@ -26,7 +60,7 @@ export const Logo = styled(Link)`
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   p {
     font-weight: bold;
