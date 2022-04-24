@@ -17,7 +17,9 @@ import {
   updateMajors,
 } from './endpoints/majors_minors/majors_minors_endpoints';
 import { createClubs, deleteClubs, getClubs, updateClubs } from './endpoints/clubs/clubs_endpoints';
+
 import getEvents from './endpoints/events/events_endpoints';
+import getArticles from './endpoints/articles/articles_endpoints';
 // eslint-disable-next-line
 const serviceAccount = require('./designAtCornellServiceAccount.json');
 
@@ -150,9 +152,13 @@ app.post('/updateClub', async (req, res) => {
  * retrieving the desired event(s) via query parameters from the database and
  * storing them in a local array of type Event.
  */
-app.get('/getEvents', async (req, res) => {
-  getEvents(req, res);
-});
+app.get('/getEvents', getEvents);
+
+/**
+ * ARTICLES FETCHING OPERATIONS
+ */
+
+app.get('/getArticles', getArticles);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../design-at-cornell/build/', 'index.html'));
