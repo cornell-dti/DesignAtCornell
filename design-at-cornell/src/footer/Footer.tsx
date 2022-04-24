@@ -1,7 +1,5 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, Logo, DTILogo, StyledLink } from './FooterStyles';
-import { explore, resources, account } from '../constants/pages';
-import dacLogo from '../static/images/logo.svg';
+import { FooterContainer, FooterColumn, DTILogo, Email } from './FooterStyles';
 import dtiLogo from '../static/images/dti-logo.svg';
 
 type Page = {
@@ -10,23 +8,9 @@ type Page = {
 };
 
 const Footer = () => {
-  const column = (pages: Page[]) => (
-    <FooterColumnn>
-      {pages.map((page) => (
-        <StyledLink key={page.name} to={page.url}>
-          <p>{page.name}</p>
-        </StyledLink>
-      ))}
-    </FooterColumnn>
-  );
-
   return (
     <FooterContainer>
-      <FooterColumnn>
-        <Logo to="/explore-courses">
-          <img src={dacLogo} alt="logo" />
-          <p>Design@Cornell</p>
-        </Logo>
+      <FooterColumn>
         <div>
           <p>Powered by</p>
           <DTILogo>
@@ -34,10 +18,16 @@ const Footer = () => {
             <p>Cornell Design & Tech Initiative</p>
           </DTILogo>
         </div>
-      </FooterColumnn>
-      {column(explore)}
-      {column(resources)}
-      {column(account)}
+      </FooterColumn>
+      <Email>
+        <p>
+          For any questions, please contact
+          <a href="mailto: hello@cornelldti.org" target="_blank" rel="noopener noreferrer">
+            {' '}
+            hello@cornelldti.org
+          </a>
+        </p>
+      </Email>
     </FooterContainer>
   );
 };
