@@ -19,13 +19,14 @@ export const FooterContainer = styled.div`
   }
 `;
 
-export const FooterColumnn = styled.div`
+export const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
   justify-content: space-between;
   font-weight: bold;
   margin-bottom: 10px;
+
   p {
     font-weight: bold;
     font-size: 16px;
@@ -41,6 +42,16 @@ export const FooterColumnn = styled.div`
       text-decoration: none;
       color: black;
     }
+  }
+`;
+
+export const Email = styled(FooterColumn)`
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    margin-top: 20px;
   }
 `;
 

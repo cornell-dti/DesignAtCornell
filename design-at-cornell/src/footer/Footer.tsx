@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterContainer, FooterColumnn, DTILogo} from './FooterStyles';
+import { FooterContainer, FooterColumn, DTILogo, Email } from './FooterStyles';
 import dtiLogo from '../static/images/dti-logo.svg';
 
 type Page = {
@@ -10,7 +10,7 @@ type Page = {
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterColumnn>
+      <FooterColumn>
         <div>
           <p>Powered by</p>
           <DTILogo>
@@ -18,13 +18,16 @@ const Footer = () => {
             <p>Cornell Design & Tech Initiative</p>
           </DTILogo>
         </div>
-      </FooterColumnn>
-      <div>
+      </FooterColumn>
+      <Email>
         <p>
           For any questions, please contact
-          <a href="mailto: hello@cornelldti.org"> hello@cornelldti.org</a>
+          <a href="mailto: hello@cornelldti.org" target="_blank" rel="noopener noreferrer">
+            {' '}
+            hello@cornelldti.org
+          </a>
         </p>
-      </div>
+      </Email>
     </FooterContainer>
   );
 };
