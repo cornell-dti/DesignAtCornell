@@ -2,12 +2,14 @@
   text-align: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   body {
-    background-image: url(./static/images/placeholder.png);
-    background-size: 100% auto;
+    background-image: url(./static/images/mobile-placeholder.svg);
+    /* background-size: 100% auto; */
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-color: #ec952e;
+    background-color: #f9e36d;
   }
 
   div {
