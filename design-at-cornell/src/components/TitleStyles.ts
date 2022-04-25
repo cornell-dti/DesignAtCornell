@@ -53,13 +53,13 @@ export const TitleContainerBox = styled.div`
   margin-top: 65px;
   background: rgba(0, 0, 0, 0.45);
   border-radius: 20px;
-  padding: 45px 35px;
+  padding: 45px 45px;
   align-items: flex-start;
   justify-content: space-evenly;
 
   h1 {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 32px;
     line-height: 35px;
     color: #FFFFFF;
   }
@@ -68,6 +68,7 @@ export const TitleContainerBox = styled.div`
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
+    line-height: 27px;
     color: #FFFFFF;
   }
 `;
