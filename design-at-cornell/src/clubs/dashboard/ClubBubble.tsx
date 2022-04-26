@@ -12,7 +12,7 @@ import { SmallRectangularButton } from '../../components/ButtonStyles';
 
 const ClubBubble = (club: Club) => (
   <ElementContainer>
-    <Title>{club.title}</Title>
+    <Title style={{ fontSize: '18px' }}>{club.title}</Title>
     <TagsContainer>
       {club.content.orgType === '' ? null : (
         <Tag
