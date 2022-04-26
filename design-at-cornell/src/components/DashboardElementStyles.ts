@@ -82,3 +82,16 @@ export const Tag = styled.div`
   font-size: 12px;
   color: black;
 `;
+
+export const HeadingLine = styled.div`
+  height: 0px;
+  border: 1px solid ${colors.pink};
+  box-sizing: border-box;
+`;
+
+export const HeadingTitle = styled.div`
+  font-weight: 500;
+  line-height: 25px;
+  align-items: center;
+  color: black;
+`;
