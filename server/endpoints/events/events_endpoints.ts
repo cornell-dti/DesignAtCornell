@@ -1,66 +1,33 @@
+import { json } from 'body-parser';
+import fetch from 'node-fetch';
 import { events } from '../../server';
-import { eventContent, Event } from '../../types';
+import { EventsResponse, Event, LocalistEvent, EventInstance } from '../../types';
 
-export async function getEvents(req, res) {
-  const { title } = req.query;
-  const localEvents: Event[] = [];
-  if (title === undefined) {
-    const eventDocs = await events.get();
-    for (const docRef of eventDocs.docs) {
-      const eventC: eventContent = docRef.data() as eventContent;
-      const event = {
-        title: docRef.id,
-        content: eventC,
-      };
-      localEvents.push(event);
-    }
-    res.send({ success: true, data: localEvents });
-  } else {
-    const eventRef = await events.doc(title.toString()).get();
-    const event = eventRef.data();
-    event.title = title;
-    res.send({ success: true, data: event });
+function formatEvents(jsonEvents) {
+  const eventsResponse: EventsResponse = jsonEvents as EventsResponse;
+  console.log(eventsResponse.events);
+  const eventsList: LocalistEvent[] = eventsResponse.events as LocalistEvent[];
+  console.log(eventsList.length);
+  const formattedEvents: Event[] = [];
+
+  for (let i = 0; i < eventsList.length; i += 1) {
+    const formattedEvent: Event = {
+      title: eventsList[i].event.title,
+      date: eventsList[i].event.event_instances[0].event_instance.start,
+      url: eventsList[i].event.localist_url,
+      description: eventsList[i].event.description_text,
+      location: eventsList[i].event.location_name,
+    };
+    formattedEvents.push(formattedEvent);
   }
+  return formattedEvents;
 }
 
-export async function createEvents(req, res) {
-  const event: Event = req.body;
-  if (
-    event.title === undefined ||
-    event.content.description === undefined ||
-    event.content.date === undefined ||
-    event.content.topic === undefined ||
-    event.content.rsvpLink === undefined ||
-    event.content.period === undefined ||
-    event.content.type === undefined
-  ) {
-    res.send({ success: false, message: 'One or more fields is missing.' });
-  } else {
-    const newEvent = events.doc(event.title);
-    newEvent.set(event.content);
-    res.send({ success: true, data: event });
-  }
-}
-
-export async function deleteEvents(req, res) {
-  const { title } = req.body;
-  if (title === undefined) {
-    res.send({ success: false, message: 'Event title is missing.' });
-  } else {
-    events.doc(title).delete();
-    res.send({ success: true });
-  }
-}
-
-export async function updateEvents(req, res) {
-  const { title } = req.body;
-  const { field } = req.body;
-  const { content } = req.body;
-
-  if (title === undefined || field === undefined || content === undefined) {
-    res.send({ success: false, message: 'One or more fields is missing.' });
-  } else {
-    events.doc(title).update({ field: content });
-    res.send({ success: true });
-  }
+export default function getEvents(req, res) {
+  fetch(
+    'https://events.cornell.edu/api/2/events/search?search=design&distinct=true&pp=100&sort=date&days=365'
+  )
+    .then((response) => response.json())
+    .then((jsonResponse) => formatEvents(jsonResponse))
+    .then((formattedEvents) => res.send(formattedEvents));
 }

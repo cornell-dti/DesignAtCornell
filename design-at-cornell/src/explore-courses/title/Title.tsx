@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterBar, { Props } from './FilterBar';
-import { TitleBackground, TitleContainer, QuizButton } from '../../components/TitleStyles';
+import { TitleBackground, TitleContainer } from '../../components/TitleStyles';
 import { colors } from '../../constants/colors';
 
 const Title = (props: Props) => (
@@ -11,9 +11,6 @@ const Title = (props: Props) => (
         Your central hub for finding and learning about courses to enrich your design skillset and
         broaden your horizons.
       </p>
-      <QuizButton>
-        <p>Taking the Design Course Quiz</p>
-      </QuizButton>
     </TitleContainer>
     <FilterBar {...props} />
   </TitleBackground>
