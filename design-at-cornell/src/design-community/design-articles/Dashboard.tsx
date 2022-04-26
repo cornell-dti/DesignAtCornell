@@ -22,7 +22,7 @@ const Dashboard = (article: Article[]) => {
         <HeadingLine style={{width: `50px`}}/>
         <HeadingTitle style={{fontSize: `18px`}}>Design Articles</HeadingTitle>
         <HeadingLine style={{width: `975px`}}/>
-        <HeadingTitle style={{fontSize: `14px`}}>View more articles</HeadingTitle>
+        <HeadingTitle style={{fontSize: `14px`}} onClick={() => window.open('/articles', '_self')}>View more articles</HeadingTitle>
         <HeadingLine style={{width: `100px`}}/>
       </HorizontalFlex>
       <br></br>
