@@ -8,7 +8,7 @@ import ArticleBubble from './ArticleBubble';
 const Dashboard = (article: Article[]) => {
   const articleBubbles = (
     <Grid style = {{justifyContent: `space-between`}}>
-      {Object.values(article).map((article) => (
+      {Object.values(article).slice(0,3).map((article) => (
         <ArticleBubble key={article.id} {...article} />
       ))}
     </Grid>
