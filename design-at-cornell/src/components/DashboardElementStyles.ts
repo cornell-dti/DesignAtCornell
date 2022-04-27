@@ -15,6 +15,13 @@ export const ElementContainer = styled.div`
   padding: 25px;
   align-items: flex-start;
   justify-content: space-between;
+
+  img {
+    margin: -25px;
+    width: 370px;
+    height: 220px;
+    border-radius: 20px 20px 0px 0px;
+  }
 `;
 
 export const Title = styled.div`
@@ -24,6 +31,19 @@ export const Title = styled.div`
   text-align: start;
   margin: 0;
   color: black;
+
+  p {
+    margin-top: 30px;
+    width: 330px;
+    font-size: 18px;
+    line-height: 21px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
 `;
 
 export const LargeTitle = styled.div`
@@ -50,6 +70,12 @@ export const Subtitle = styled.div`
     text-align: start;
     margin: 0;
     color: ${colors.gray};
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
   }
 
   img {
