@@ -7,7 +7,7 @@ import ArticleBubble from './ArticleBubble';
 
 const Dashboard = (article: Article[]) => {
   const articleBubbles = (
-    <Grid>
+    <Grid style = {{justifyContent: `space-between`}}>
       {Object.values(article).map((article) => (
         <ArticleBubble key={article.id} {...article} />
       ))}
@@ -25,7 +25,6 @@ const Dashboard = (article: Article[]) => {
         <HeadingTitle style={{fontSize: `14px`}} onClick={() => window.open('/articles', '_self')}>View more articles</HeadingTitle>
         <HeadingLine style={{width: `100px`}}/>
       </HorizontalFlex>
-      <br></br>
       <br></br>
       {articleBubbles}
     </VerticalFlex>

@@ -7,7 +7,7 @@ import FacultyBubble from './FacultyBubble';
 
 const Dashboard = (faculty: Instructor[]) => {
   const facultyBubbles = (
-    <Grid>
+    <Grid style = {{justifyContent: `space-between`}}>
       {Object.values(faculty).map((faculty) => (
         <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
       ))}
@@ -25,7 +25,6 @@ const Dashboard = (faculty: Instructor[]) => {
         <HeadingTitle style={{fontSize: `14px`}}>View more faculty</HeadingTitle>
         <HeadingLine style={{width: `100px`}}/>
       </HorizontalFlex>
-      <br></br>
       <br></br>
       {facultyBubbles}
     </VerticalFlex>
