@@ -22,7 +22,7 @@ const Dashboard = (faculty: Instructor[]) => {
         <HeadingLine style={{width: `50px`}}/>
         <HeadingTitle style={{fontSize: `18px`}}>Our Faculty</HeadingTitle>
         <HeadingLine style={{width: `1000px`}}/>
-        <HeadingTitle style={{fontSize: `14px`}}>View more faculty</HeadingTitle>
+        <HeadingTitle style={{fontSize: `14px`, cursor: `pointer`}}>View more faculty</HeadingTitle>
         <HeadingLine style={{width: `100px`}}/>
       </HorizontalFlex>
       <br></br>
