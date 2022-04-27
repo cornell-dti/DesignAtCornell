@@ -9,7 +9,7 @@ import { VerticalFlex } from '../../../components/ContainerStyles';
 
 
 const ArticleBubble = (article: Article) => (
-  <ElementContainer style={{width: `270px`, height: `325px`, borderRadius: `20px`}}>
+  <ElementContainer style={{width: `270px`, height: `325px`, borderRadius: `20px`}} onClick={() => (window.open(article.url))}>
     <VerticalFlex>
       <img style={{width: `269px`, height: `180px`}} src={article.image_featured} alt={article.image_alt}/>
       <Subtitle>
