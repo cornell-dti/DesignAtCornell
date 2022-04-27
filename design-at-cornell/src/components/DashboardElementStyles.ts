@@ -9,8 +9,8 @@ export const ElementContainer = styled.div`
   height: 197px;
   cursor: pointer;
   background: white;
-  border: 1px solid;
   border-radius: 8px;
+  box-shadow: 0px 0px 5px 2px #e6e6e6;
   margin: 1.5%;
   padding: 25px;
   align-items: flex-start;
