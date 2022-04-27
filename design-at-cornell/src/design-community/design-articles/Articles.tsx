@@ -7,7 +7,7 @@ const Articles = () => {
   useEffect(() => {
     axios
       .get('http://localhost:3000/getArticles')
-      .then((res) => res.data.data)
+      .then((res) => res.data)
       .then(setArticles);
   }, []);
 
