@@ -7,7 +7,7 @@ const Faculty = () => {
   useEffect(() => {
     axios
       .get('http://localhost:3000/getFaculty')
-      .then((res) => res.data.data)
+      .then((res) => res.data)
       .then(setFaculty);
   }, []);
 
