@@ -6,9 +6,9 @@ import Faculty from './faculty/Faculty';
 
 const DesignCommunity = () => (
   <VerticalFlex>
-      <Title />
-      <Articles />
-      <Faculty />
+    <Title />
+    <Articles />
+    <Faculty />
   </VerticalFlex>
 );
 

@@ -7,28 +7,32 @@ import FacultyBubble from './FacultyBubble';
 
 const Dashboard = (faculty: Instructor[]) => {
   const facultyBubbles = (
-    <Grid style = {{justifyContent: `space-between`}}>
-      {Object.values(faculty).slice(0,6).map((faculty) => (
-        <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
-      ))}
+    <Grid style={{ justifyContent: `space-between` }}>
+      {Object.values(faculty)
+        .slice(0, 6)
+        .map((faculty) => (
+          <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
+        ))}
     </Grid>
   );
-  
+
   return (
     <VerticalFlex>
       <br></br>
       <br></br>
       <HorizontalFlex>
-        <HeadingLine style={{width: `50px`}}/>
-        <HeadingTitle style={{fontSize: `18px`}}>Our Faculty</HeadingTitle>
-        <HeadingLine style={{width: `1000px`}}/>
-        <HeadingTitle style={{fontSize: `14px`, cursor: `pointer`}}>View more faculty</HeadingTitle>
-        <HeadingLine style={{width: `100px`}}/>
+        <HeadingLine style={{ width: `50px` }} />
+        <HeadingTitle style={{ fontSize: `18px` }}>Our Faculty</HeadingTitle>
+        <HeadingLine style={{ width: `1000px` }} />
+        <HeadingTitle style={{ fontSize: `14px`, cursor: `pointer` }}>
+          View more faculty
+        </HeadingTitle>
+        <HeadingLine style={{ width: `100px` }} />
       </HorizontalFlex>
       <br></br>
       {facultyBubbles}
     </VerticalFlex>
   );
 };
-  
+
 export default Dashboard;

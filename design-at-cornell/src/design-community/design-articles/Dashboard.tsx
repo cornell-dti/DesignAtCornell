@@ -7,10 +7,12 @@ import ArticleBubble from './ArticleBubble';
 
 const Dashboard = (article: Article[]) => {
   const articleBubbles = (
-    <Grid style = {{justifyContent: `space-between`}}>
-      {Object.values(article).slice(0,3).map((article) => (
-        <ArticleBubble key={article.id} {...article} />
-      ))}
+    <Grid style={{ justifyContent: `space-between` }}>
+      {Object.values(article)
+        .slice(0, 3)
+        .map((article) => (
+          <ArticleBubble key={article.id} {...article} />
+        ))}
     </Grid>
   );
 
@@ -19,11 +21,16 @@ const Dashboard = (article: Article[]) => {
       <br></br>
       <br></br>
       <HorizontalFlex>
-        <HeadingLine style={{width: `50px`}}/>
-        <HeadingTitle style={{fontSize: `18px`}}>Design Articles</HeadingTitle>
-        <HeadingLine style={{width: `975px`}}/>
-        <HeadingTitle style={{fontSize: `14px`, cursor: `pointer`}} onClick={() => window.open('/articles', '_self')}>View more articles</HeadingTitle>
-        <HeadingLine style={{width: `100px`}}/>
+        <HeadingLine style={{ width: `50px` }} />
+        <HeadingTitle style={{ fontSize: `18px` }}>Design Articles</HeadingTitle>
+        <HeadingLine style={{ width: `975px` }} />
+        <HeadingTitle
+          style={{ fontSize: `14px`, cursor: `pointer` }}
+          onClick={() => window.open('/articles', '_self')}
+        >
+          View more articles
+        </HeadingTitle>
+        <HeadingLine style={{ width: `100px` }} />
       </HorizontalFlex>
       <br></br>
       {articleBubbles}
