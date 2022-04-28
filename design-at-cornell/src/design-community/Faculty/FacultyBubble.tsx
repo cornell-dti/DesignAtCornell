@@ -5,7 +5,7 @@ import {
 import { Instructor } from '../../../../server/types';
 
 const FacultyBubble = (faculty: Instructor) => (
-  <ElementContainer>
+  <ElementContainer style = {{boxShadow: `0px 0px`}}>
   </ElementContainer>
 );
 
