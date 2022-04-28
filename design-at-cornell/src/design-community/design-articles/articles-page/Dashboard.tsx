@@ -6,6 +6,7 @@ import { Article } from '../../../../../server/types';
 import ArticleBubble from './Bubble';
 import LargeArticleBubble from './LargeBubble';
 const Dashboard = (article: Article[]) => {
+
   const articleBubbles = (
     <CommunityGrid>
       {Object.values(article)
