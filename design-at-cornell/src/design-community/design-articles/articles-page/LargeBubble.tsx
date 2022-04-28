@@ -22,7 +22,7 @@ const LargeArticleBubble = (article: Article) => (
                     {article.title}
                 </Title>
                 <Subtitle>
-                    <p style={{fontSize: `20px`, lineHeight: `30px`, WebkitLineClamp: 4}}>{article.content_text}</p>
+                    <p style={{width: `600px`, fontSize: `20px`, lineHeight: `30px`, WebkitLineClamp: 4}}>{article.content_text}</p>
                 </Subtitle>
             </VerticalFlex>
             </HorizontalFlex>
