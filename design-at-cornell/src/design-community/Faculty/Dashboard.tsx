@@ -8,7 +8,7 @@ import FacultyBubble from './FacultyBubble';
 const Dashboard = (faculty: Instructor[]) => {
   const facultyBubbles = (
     <Grid style = {{justifyContent: `space-between`}}>
-      {Object.values(faculty).slice(0,3).map((faculty) => (
+      {Object.values(faculty).slice(0,6).map((faculty) => (
         <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
       ))}
     </Grid>
