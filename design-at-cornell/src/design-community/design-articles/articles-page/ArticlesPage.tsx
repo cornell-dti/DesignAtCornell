@@ -13,9 +13,7 @@ const ArticlesPage = () => {
 
   const [articles, setArticles] = useState<Article[]>([]);
 
-  return (
-    <DesignArticlesDashboard {...articles}/>
-  )
+  return <DesignArticlesDashboard {...articles} />;
 };
 
 export default ArticlesPage;

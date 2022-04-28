@@ -13,9 +13,7 @@ const Faculty = () => {
 
   const [faculty, setFaculty] = useState<Instructor[]>([]);
 
-  return (
-    <FacultyDashboard {...faculty}/>
-  )
+  return <FacultyDashboard {...faculty} />;
 };
 
 export default Faculty;

@@ -46,7 +46,7 @@ export const TitleContainer = styled.div`
 
 export const TitleContainerBox = styled.div`
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   width: 400px;
   height: 320px;
   margin-left: 105px;
@@ -61,7 +61,7 @@ export const TitleContainerBox = styled.div`
     font-weight: 600;
     font-size: 32px;
     line-height: 35px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   p {
@@ -69,7 +69,7 @@ export const TitleContainerBox = styled.div`
     font-weight: 500;
     font-size: 17px;
     line-height: 27px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 `;
 
