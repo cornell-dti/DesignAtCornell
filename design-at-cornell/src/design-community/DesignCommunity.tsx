@@ -2,7 +2,7 @@ import React from 'react';
 import { VerticalFlex } from '../components/ContainerStyles';
 import Title from './Title';
 import Articles from './design-articles/Articles';
-import Faculty from './Faculty/Faculty';
+import Faculty from './faculty/Faculty';
 
 const DesignCommunity = () => (
   <VerticalFlex>
