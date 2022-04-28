@@ -14,15 +14,15 @@ const LargeArticleBubble = (article: Article) => (
             <img style={{width: `550px`, height: `350px`, borderRadius: `20px 0px 0px 20px`}} src={article.image} alt={article.image_alt}/>
             <VerticalFlex style={{marginLeft: `70px`, justifyContent: `space-evenly`}}>
                 <Subtitle>
-                    <p style={{fontSize: `18px`, lineHeight: `21px`}}>
+                    <p style={{fontSize: `16px`, lineHeight: `18px`}}>
                         {article.date_published.split(" ")[2] + " " + article.date_published.split(" ")[1] + ", " + article.date_published.split(" ")[3]} 
                         </p>
                 </Subtitle>
-                <Title style={{width: `600px`, fontSize: `40px`, lineHeight: `47px`}}>
+                <Title style={{width: `600px`, fontSize: `36px`, lineHeight: `42px`}}>
                     {article.title}
                 </Title>
                 <Subtitle>
-                    <p style={{width: `600px`, fontSize: `20px`, lineHeight: `30px`, WebkitLineClamp: 4}}>{article.content_text}</p>
+                    <p style={{width: `600px`, fontSize: `18px`, lineHeight: `25px`, WebkitLineClamp: 4}}>{article.content_text}</p>
                 </Subtitle>
             </VerticalFlex>
             </HorizontalFlex>
