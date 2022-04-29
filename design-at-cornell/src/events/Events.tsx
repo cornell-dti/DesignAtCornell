@@ -1,54 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VerticalFlex } from '../components/ContainerStyles';
 import { EventList } from './EventsStyles';
 import Title from './Title';
 import Filter from './dashboard/Filter';
 import EventDisplay from './dashboard/EventDisplay';
-
-export type Event = {
-  name: string;
-  startTime: Date;
-  endTime: Date;
-  location: string;
-  tags: string[];
-  description: string;
-  links: string[];
-};
+import { Event } from '../../../server/types';
+import axios from 'axios';
 
 const Events = () => {
-  const [events] = useState<Event[]>([
-    {
-      name: 'Design Seminar Series with Professor XYZ',
-      startTime: new Date(2021, 9, 5, 15),
-      endTime: new Date(2021, 9, 5, 16),
-      location: 'Virtual',
-      tags: ['Annual', 'Virtual', 'Computing in the Arts'],
-      description:
-        'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['google', 'zoom'],
-    },
-    {
-      name: 'Design Seminar Series with Professor XYZ',
-      startTime: new Date(2021, 9, 5, 20),
-      endTime: new Date(2021, 9, 6, 8),
-      location: 'Virtual',
-      tags: ['Annual', 'Virtual', 'Computing in the Arts'],
-      description:
-        'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['google', 'zoom'],
-    },
-    {
-      name: 'Design Seminar Series with Professor XYZ',
-      startTime: new Date(2021, 10, 20, 18),
-      endTime: new Date(2021, 10, 20, 20),
-      location: 'Virtual',
-      tags: ['Annual', 'Virtual', 'Computing in the Arts'],
-      description:
-        'As an expert in spatial design studies, Professor XYZ is visiting to give her annual lecture on how designers can better design for and the description goes on and on but this is not a real event so I’m just typing random words until this text space looks filled enough and this seems good so i’ll stop now.',
-      links: ['google', 'zoom'],
-    },
-  ]);
-
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/getEvents')
+      .then((res) => res.data.data)
+      .then(FormatEvents);
+  }, []);
+  
+  const [event, FormatEvents] = useState<Event[]>([]);
   const date = new Date();
 
   const [year, setYear] = useState(date.getFullYear());
@@ -58,9 +25,10 @@ const Events = () => {
   const rightClickHandler = () => setYear(year + 1);
   const monthClickHandler = (m: number) => setMonth(m);
 
-  const filteredEvents = events.filter((event) => {
-    const start = event.startTime.getFullYear() * 12 + event.startTime.getMonth();
-    const end = event.endTime.getFullYear() * 12 + event.endTime.getMonth();
+  const filteredEvents = event.filter((event) => {
+    const event_date = new Date(event.date);
+    const start = event_date.getFullYear() * 12 + event_date.getMonth();
+    const end = event_date.getFullYear() * 12 + event_date.getMonth();
     const cur = year * 12 + month;
     return start <= cur && cur <= end;
   });
@@ -68,7 +36,7 @@ const Events = () => {
   const eventDisplay = (
     <EventList>
       {filteredEvents.map((event) => (
-        <EventDisplay key={event.name} {...event} />
+        <EventDisplay key={event.title} {...event} />
       ))}
     </EventList>
   );
