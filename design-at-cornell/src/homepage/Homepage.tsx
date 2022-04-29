@@ -19,6 +19,7 @@ import Title from './title';
 
 const Homepage: React.FC = () => (
   <div data-testid="Homepage">
+    <Router />
     <Title />
     <Headline>
       <b>Your ultimate resource for all things Design at Cornell University.</b>
