@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import homepage_banner from '../static/images/homepage_banner.svg';
 
@@ -104,7 +105,7 @@ export const CardTitle = styled.div`
   margin-top: 50px;
 `;
 
-export const ExploreSubtitle = styled.div`
+export const ExploreSubtitle = styled(Link)`
   font-weight: normal;
   font-size: 24px;
   line-height: 20px;

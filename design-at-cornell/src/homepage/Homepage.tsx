@@ -31,27 +31,27 @@ const Homepage: React.FC = () => (
           <img src={design_courses} alt={'Design Courses'} />
           <CardTitle>Design Courses</CardTitle>
           <p>A central hub to learn about courses to enrich your design skillset</p>
-          <ExploreSubtitle> Explore Courses {'>'}</ExploreSubtitle>
+          <ExploreSubtitle to="./explore-courses"> Explore Courses {'>'}</ExploreSubtitle>
         </ElementContainer>
         <ElementContainer onClick={() => window.open('/events', '_self')}>
           <img src={events_icon} alt={'Events'} />
           <CardTitle>Events</CardTitle>
           <p>Find events to learn, grow, and share with your creative community</p>
-          <ExploreSubtitle> Explore Events {'>'}</ExploreSubtitle>
+          <ExploreSubtitle to="./events"> Explore Events {'>'}</ExploreSubtitle>
         </ElementContainer>
       </Col>
       <Col>
-        <ElementContainer onClick={() => window.open('/areas-of-study', '_self')}>
+        <ElementContainer>
           <img src={majors_minors} alt={'Majors/Minors'} />
           <CardTitle>Majors {'&'} Minors</CardTitle>
-          <p>A guide to the different paths you may pave in at Cornell</p>
-          <ExploreSubtitle> Explore Majors & Minors {'>'}</ExploreSubtitle>
+          <p>A guide to the different paths you may pave at Cornell</p>
+          <ExploreSubtitle to="./areas-of-study"> Explore Majors & Minors {'>'}</ExploreSubtitle>
         </ElementContainer>
         <ElementContainer onClick={() => window.open('/articles', '_self')}>
           <img src={resources_icon} alt={'Articles'} />
           <CardTitle>Articles</CardTitle>
           <p>Increase your knowledge of design through relevant articles</p>
-          <ExploreSubtitle> Explore Articles {'>'}</ExploreSubtitle>
+          <ExploreSubtitle to="./articles"> Explore Articles {'>'}</ExploreSubtitle>
         </ElementContainer>
       </Col>
       <Col>
@@ -59,13 +59,16 @@ const Homepage: React.FC = () => (
           <img src={orgs_icon} alt={'Student Organizations'} />
           <CardTitle>Organizations</CardTitle>
           <p>A place to explore your passion through design organizations at Cornell</p>
-          <ExploreSubtitle> Explore Organizations {'>'}</ExploreSubtitle>
+          <ExploreSubtitle to="./student-organizations">
+            {' '}
+            Explore Organizations {'>'}
+          </ExploreSubtitle>
         </ElementContainer>
         <ElementContainer onClick={() => window.open('/design-community', '_self')}>
           <img src={community_icon} alt={'Faculties'} />
-          <CardTitle>Design Courses</CardTitle>
+          <CardTitle>Faculty</CardTitle>
           <p>Explore and connect with the design faculty here at Cornell</p>
-          <ExploreSubtitle> Explore Community {'>'}</ExploreSubtitle>
+          <ExploreSubtitle to="./design-community"> Explore Community {'>'}</ExploreSubtitle>
         </ElementContainer>
       </Col>
     </Grid>
