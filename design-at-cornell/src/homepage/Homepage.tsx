@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  SubComponentHorizontalFlex,
-  SubComponentVerticalFlex,
-} from '../components/ContainerStyles';
-import {
   Headline,
   MissionStat,
-  SubComponent,
-  SubComponentTitle,
+  CardTitle,
+  Grid,
+  ElementContainer,
+  Col,
   ExploreSubtitle,
 } from '../components/HomepageStyles';
 import design_courses from '../static/images/design_courses.svg';
@@ -27,82 +25,50 @@ const Homepage: React.FC = () => (
     <MissionStat>
       Our mission is to connect, inform, and inspire the design community at Cornell University.
     </MissionStat>
-    <SubComponentVerticalFlex>
-      <SubComponentHorizontalFlex>
-        <SubComponent onClick={() => window.open('/explore-courses', '_self')}>
+    <Grid>
+      <Col>
+        <ElementContainer onClick={() => window.open('/explore-courses', '_self')}>
           <img src={design_courses} alt={'Design Courses'} />
-          <SubComponentVerticalFlex>
-            <SubComponentTitle>Design Courses</SubComponentTitle>
-            <p>
-              A central hub to learn about courses to enrich your design skillset and broaden your
-              horizons
-            </p>
-            <ExploreSubtitle onClick={() => window.open('/explore-courses', '_self')}>
-              {' '}
-              Explore Courses {'>'}
-            </ExploreSubtitle>
-          </SubComponentVerticalFlex>
-        </SubComponent>
-
-        <SubComponent onClick={() => window.open('/areas-of-study', '_self')}>
-          <img src={majors_minors} alt={'Majors/Minors'} />
-          <SubComponentVerticalFlex>
-            <SubComponentTitle>Majors {'&'} Minors</SubComponentTitle>
-            <p>
-              A guide to the different paths and stories you may pave in your design career at
-              Cornell
-            </p>
-            <ExploreSubtitle onClick={() => window.open('/areas-of-study', '_self')}>
-              Explore Majors {'&'} Minors {'>'}
-            </ExploreSubtitle>
-          </SubComponentVerticalFlex>
-        </SubComponent>
-
-        <SubComponent onClick={() => window.open('/student-organizations', '_self')}>
-          <img src={orgs_icon} alt={'Organizations'} />
-          <SubComponentVerticalFlex>
-            <SubComponentTitle>Organizations</SubComponentTitle>
-            <p>A place to find all design-related organizations at Cornell</p>
-            <ExploreSubtitle onClick={() => window.open('/student-organizations', '_self')}>
-              {' '}
-              Explore Organizations {'>'}
-            </ExploreSubtitle>
-          </SubComponentVerticalFlex>
-        </SubComponent>
-      </SubComponentHorizontalFlex>
-
-      <SubComponentHorizontalFlex>
-        <SubComponent onClick={() => window.open('/events', '_self')}>
+          <CardTitle>Design Courses</CardTitle>
+          <p>A central hub to learn about courses to enrich your design skillset</p>
+          <ExploreSubtitle> Explore Courses {'>'}</ExploreSubtitle>
+        </ElementContainer>
+        <ElementContainer onClick={() => window.open('/events', '_self')}>
           <img src={events_icon} alt={'Events'} />
-          <SubComponentVerticalFlex>
-            <SubComponentTitle>Events</SubComponentTitle>
-            <p>Find events to learn, grow, and share with your creative community</p>
-            <ExploreSubtitle onClick={() => window.open('/events', '_self')}>
-              {' '}
-              Explore Events {'>'}
-            </ExploreSubtitle>
-          </SubComponentVerticalFlex>
-        </SubComponent>
-
-        <SubComponent>
-          <img src={resources_icon} alt={'Resources'} />
-          <SubComponentVerticalFlex>
-            <SubComponentTitle>Resources</SubComponentTitle>
-            <p>Find design resources here. </p>
-            <ExploreSubtitle> Explore Resources {'>'}</ExploreSubtitle>
-          </SubComponentVerticalFlex>
-        </SubComponent>
-
-        <SubComponent>
-          <img src={community_icon} alt={'Community'} />
-          <SubComponentVerticalFlex>
-            <SubComponentTitle>Community</SubComponentTitle>
-            <p>Short Description about the design community to intrigue and interest users</p>
-            <ExploreSubtitle> Explore Community {'>'}</ExploreSubtitle>
-          </SubComponentVerticalFlex>
-        </SubComponent>
-      </SubComponentHorizontalFlex>
-    </SubComponentVerticalFlex>
+          <CardTitle>Events</CardTitle>
+          <p>Find events to learn, grow, and share with your creative community</p>
+          <ExploreSubtitle> Explore Events {'>'}</ExploreSubtitle>
+        </ElementContainer>
+      </Col>
+      <Col>
+        <ElementContainer onClick={() => window.open('/areas-of-study', '_self')}>
+          <img src={majors_minors} alt={'Majors/Minors'} />
+          <CardTitle>Majors {'&'} Minors</CardTitle>
+          <p>A guide to the different paths you may pave in at Cornell</p>
+          <ExploreSubtitle> Explore Majors & Minors {'>'}</ExploreSubtitle>
+        </ElementContainer>
+        <ElementContainer onClick={() => window.open('/articles', '_self')}>
+          <img src={resources_icon} alt={'Articles'} />
+          <CardTitle>Articles</CardTitle>
+          <p>Increase your knowledge of design through relevant articles</p>
+          <ExploreSubtitle> Explore Articles {'>'}</ExploreSubtitle>
+        </ElementContainer>
+      </Col>
+      <Col>
+        <ElementContainer onClick={() => window.open('/student-organizations', '_self')}>
+          <img src={orgs_icon} alt={'Student Organizations'} />
+          <CardTitle>Organizations</CardTitle>
+          <p>A place to explore your passion through design organizations at Cornell</p>
+          <ExploreSubtitle> Explore Organizations {'>'}</ExploreSubtitle>
+        </ElementContainer>
+        <ElementContainer onClick={() => window.open('/design-community', '_self')}>
+          <img src={community_icon} alt={'Faculties'} />
+          <CardTitle>Design Courses</CardTitle>
+          <p>Explore and connect with the design faculty here at Cornell</p>
+          <ExploreSubtitle> Explore Community {'>'}</ExploreSubtitle>
+        </ElementContainer>
+      </Col>
+    </Grid>
   </div>
 );
 

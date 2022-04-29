@@ -64,16 +64,17 @@ export const Blurb = styled.div`
 `;
 
 export const Headline = styled.div`
-  text-align: center;
   font-family: 'Work Sans';
   font-style: normal;
   font-size: x-large;
   text-align: center;
   color: black;
+  justify-content: center;
 `;
 
 export const MissionStat = styled.div`
   text-align: center;
+  justify-content: center;
   font-family: 'Work Sans';
   font-style: normal;
   font-size: large;
@@ -82,63 +83,19 @@ export const MissionStat = styled.div`
   margin-top: 40px;
 `;
 
-export const Title = styled.div`
-  font-weight: bold;
-  font-size: 35px;
-  line-height: 20px;
-  text-align: center;
-  color: black;
-  align-items: center;
-  justify-content: space-between;
-  white-space: normal;
-  padding-left: 100px;
-`;
-
-export const Subtitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 15px;
-  text-align: center;
-  padding-top: 100px;
-  white-space: normal;
-  padding-left: 100px;
-`;
-
-export const SubComponentTitle = styled.div`
-  font-weight: bold;
-  font-size: 35px;
-  line-height: 20px;
-  text-align: left;
-  color: black;
-  align-items: left;
-  margin-top: 50px;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-export const SubComponent = styled.div`
+export const ElementContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   font-weight: normal;
-  text-align: left;
-  width: 100%;
-  height: 100%;
+  margin-bottom: 90px;
   cursor: pointer;
 
   p {
-    font-weight: normal;
     font-size: 24px;
     text-align: left;
-    color: black;
     align-items: left;
-    width: 80%;
-    justify-content: space-between;
+    width: 300px;
     padding-top: 25px;
     cursor: pointer;
   }
@@ -146,6 +103,16 @@ export const SubComponent = styled.div`
   img {
     cursor: pointer;
   }
+`;
+
+export const CardTitle = styled.div`
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 20px;
+  text-align: left;
+  color: black;
+  align-items: left;
+  margin-top: 50px;
 `;
 
 export const ExploreSubtitle = styled.div`
@@ -159,4 +126,18 @@ export const ExploreSubtitle = styled.div`
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
+`;
+
+export const Grid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  margin-top: 90px;
+  margin-left: 40px;
+  justify-content: center;
+`;
+
+export const Col = styled.div`
+  margin-right: 40px;
 `;
