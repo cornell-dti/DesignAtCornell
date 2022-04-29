@@ -37,17 +37,6 @@ export const BlurbContainer = styled.div`
     padding-left: 50px;
     font-weight: 500;
   }
-
-  a {
-    position: static;
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 500;
-    margin-top: 20px;
-    font-size: 24px;
-    text-decoration-line: underline;
-    color: blue;
-  }
 `;
 
 export const Blurb = styled.div`
@@ -55,10 +44,10 @@ export const Blurb = styled.div`
   display: block;
   justify-content: center;
   position: absolute;
-  width: 550px;
-  height: 430px;
-  right: 100px;
-  top: 150px;
+  width: 497px;
+  height: 348px;
+  right: 120px;
+  top: 190px;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
 `;

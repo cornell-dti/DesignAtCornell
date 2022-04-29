@@ -5,15 +5,8 @@ const title = () => (
   <BannerBackground>
     <Blurb>
       <BlurbContainer>
-        <h3>Spotlight Heading</h3>
-        <p>
-          brief description of spotlight to intrigue and interest users
-          <br />
-          <br />
-          <a href="https://www.cornell.edu" rel="noopener noreferrer" target="_blank">
-            Learn more{'>'}
-          </a>
-        </p>
+        <h3>Learn. Aspire. Create.</h3>
+        <p>Introducing the newest way to find Design Resources at Cornell</p>
       </BlurbContainer>
     </Blurb>
   </BannerBackground>
