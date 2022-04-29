@@ -79,7 +79,6 @@ export const ElementContainer = styled.div`
   align-items: flex-start;
   font-weight: normal;
   margin-bottom: 90px;
-  cursor: pointer;
 
   p {
     font-size: 24px;
@@ -87,7 +86,6 @@ export const ElementContainer = styled.div`
     align-items: left;
     width: 300px;
     padding-top: 25px;
-    cursor: pointer;
   }
 
   img {
