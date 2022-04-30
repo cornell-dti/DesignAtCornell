@@ -21,21 +21,13 @@ const Dashboard = (faculty: Instructor[]) => {
       <br></br>
       <br></br>
       <HorizontalFlex>
-        <HeadingLine style={{ width: `50px` }} />
-        <HeadingTitle
-          style={{ fontSize: `18px`, cursor: `pointer` }}
-          onClick={() => window.open('/faculty', '_self')}
-        >
-          Our Faculty
-        </HeadingTitle>
-        <HeadingLine style={{ width: `1000px` }} />
-        <HeadingTitle
-          style={{ fontSize: `14px`, cursor: `pointer` }}
-          onClick={() => window.open('/faculty', '_self')}
-        >
-          View more faculty
-        </HeadingTitle>
-        <HeadingLine style={{ width: `100px` }} />
+        <HeadingLine>
+          <hr />
+          <h1 onClick={() => window.open('/faculty', '_self')}>Our Faculty</h1>
+          <line />
+          <h2 onClick={() => window.open('/faculty', '_self')}>View more faculty</h2>
+          <hr />
+        </HeadingLine>
       </HorizontalFlex>
       <br></br>
       {facultyBubbles}

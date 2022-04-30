@@ -26,9 +26,11 @@ const Dashboard = (article: Article[]) => {
       <br></br>
       <br></br>
       <HorizontalFlex>
-        <HeadingLine style={{ width: `75px` }} />
-        <HeadingTitle style={{ fontWeight: 700, fontSize: `45px` }}>Articles</HeadingTitle>
-        <HeadingLine style={{ width: `1150px` }} />
+        <HeadingLine>
+          <hr />
+          <h3>Articles</h3>
+          <line />
+        </HeadingLine>
       </HorizontalFlex>
       <br></br>
       <br></br>

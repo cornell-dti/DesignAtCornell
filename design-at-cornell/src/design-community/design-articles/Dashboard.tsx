@@ -1,7 +1,7 @@
 import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
 import { Grid } from '../../components/DashboardGridStyles';
-import { HeadingLine, HeadingTitle } from '../../components/DashboardElementStyles';
+import { HeadingLine } from '../../components/DashboardElementStyles';
 import { Article } from '../../../../server/types';
 import ArticleBubble from './ArticleBubble';
 
@@ -21,21 +21,13 @@ const Dashboard = (article: Article[]) => {
       <br></br>
       <br></br>
       <HorizontalFlex>
-        <HeadingLine style={{ width: `50px` }} />
-        <HeadingTitle
-          style={{ fontSize: `18px`, cursor: `pointer` }}
-          onClick={() => window.open('/articles', '_self')}
-        >
-          Design Articles
-        </HeadingTitle>
-        <HeadingLine style={{ width: `975px` }} />
-        <HeadingTitle
-          style={{ fontSize: `14px`, cursor: `pointer` }}
-          onClick={() => window.open('/articles', '_self')}
-        >
-          View more articles
-        </HeadingTitle>
-        <HeadingLine style={{ width: `100px` }} />
+        <HeadingLine>
+          <hr />
+          <h1 onClick={() => window.open('/articles', '_self')}>Design Articles</h1>
+          <line />
+          <h2 onClick={() => window.open('/articles', '_self')}>View more articles</h2>
+          <hr />
+        </HeadingLine>
       </HorizontalFlex>
       <br></br>
       {articleBubbles}
