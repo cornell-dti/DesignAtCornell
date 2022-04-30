@@ -55,14 +55,14 @@ export type Faculty = {
   name: string;
   email: string;
   title: string;
-  college: string; 
+  college: string;
   department: string;
   courses: string[];
   description: string;
   tags: string[];
   website: string;
-  image: string
-}
+  image: string;
+};
 
 export const rosterSem = 'SP21';
 

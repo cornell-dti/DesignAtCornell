@@ -38,7 +38,7 @@ fsClubsRead
           credits: parseInt(clubsCSV[i].credits, 10),
           size: clubsCSV[i].size,
           description: clubsCSV[i].description,
-          contact: clubsCSV[i].contact, 
+          contact: clubsCSV[i].contact,
         },
       };
       formattedClubs.push(fClub);

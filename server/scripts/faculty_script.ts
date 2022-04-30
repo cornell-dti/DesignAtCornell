@@ -19,7 +19,7 @@ function createFaculty(formatFaculty: Faculty[]) {
       description: formatFaculty[i].description,
       tags: formatFaculty[i].tags,
       website: formatFaculty[i].website,
-      image: formatFaculty[i].image
+      image: formatFaculty[i].image,
     });
   }
 }
@@ -38,11 +38,11 @@ fsFacultyRead
         title: facultyCSV[i].Title,
         college: facultyCSV[i].College,
         department: facultyCSV[i].Department,
-        courses: facultyCSV[i].CourseNumber.split(","),
+        courses: facultyCSV[i].CourseNumber.split(','),
         description: facultyCSV[i].Description,
-        tags: facultyCSV[i].Tags.split(","),
+        tags: facultyCSV[i].Tags.split(','),
         website: facultyCSV[i].FacultyWebsites,
-        image: facultyCSV[i].Images
+        image: facultyCSV[i].Images,
       };
       formattedFaculty.push(fFaculty);
     }
