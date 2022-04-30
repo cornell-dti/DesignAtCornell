@@ -1,11 +1,10 @@
 import React from 'react';
-import { ElementContainer, Title, Subtitle } from '../../components/DashboardElementStyles';
+import { ArticleBubbleContainer, Title, ArticleBubbleSubtitle } from '../../components/DashboardElementStyles';
 import { Article } from '../../../../server/types';
 import { VerticalFlex } from '../../components/ContainerStyles';
 
 const ArticleBubble = (article: Article) => (
-  <ElementContainer
-    style={{ width: `370px`, height: `350px`, borderRadius: `20px` }}
+  <ArticleBubbleContainer
     onClick={() => window.open(article.url)}
   >
     <VerticalFlex>
@@ -13,13 +12,11 @@ const ArticleBubble = (article: Article) => (
       <Title>
         <p>{article.title}</p>
       </Title>
-      <Subtitle>
-        <p style={{ marginBottom: `-5px`, fontSize: `12px`, lineHeight: `18px` }}>
-          {article.content_text}
-        </p>
-      </Subtitle>
+      <ArticleBubbleSubtitle>
+        <p>{article.content_text}</p>
+      </ArticleBubbleSubtitle>
     </VerticalFlex>
-  </ElementContainer>
+  </ArticleBubbleContainer>
 );
 
 export default ArticleBubble;
