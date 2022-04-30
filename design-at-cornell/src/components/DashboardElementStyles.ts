@@ -10,7 +10,7 @@ export const ElementContainer = styled.div`
   cursor: pointer;
   background: white;
   border-radius: 8px;
-  box-shadow: 0px 0px 5px 2px #e6e6e6;
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
   margin: 1.5%;
   padding: 25px;
   align-items: flex-start;
