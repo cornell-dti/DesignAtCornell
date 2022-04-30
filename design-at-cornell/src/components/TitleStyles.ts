@@ -61,7 +61,7 @@ export const TitleContainerBox = styled.div`
     font-weight: 600;
     font-size: 32px;
     line-height: 35px;
-    color: #ffffff;
+    color: ${colors.white};
   }
 
   p {
@@ -69,7 +69,7 @@ export const TitleContainerBox = styled.div`
     font-weight: 500;
     font-size: 17px;
     line-height: 27px;
-    color: #ffffff;
+    color: ${colors.white};
   }
 `;
 
