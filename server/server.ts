@@ -39,6 +39,7 @@ export const courses = db.collection('courses');
 export const majors = db.collection('majors');
 export const clubs = db.collection('clubs');
 export const events = db.collection('events');
+export const faculty = db.collection('faculty');
 
 /**
  * COURSES COLLECTION CRUD OPERATIONS
