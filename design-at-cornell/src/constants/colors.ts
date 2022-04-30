@@ -15,6 +15,7 @@ export const colors = {
   green: '#8ed663',
   pink: '#F796FF',
   shadow: 'rgba(0, 0, 0, 0.05)',
+  cardShadow: '#e6e6e6',
 
   syllabus_blue: '#b1d5ef',
   course_site_orange: 'rgba(254, 186, 171, 0.83)',
