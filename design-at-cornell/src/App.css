@@ -5,11 +5,9 @@
 @media (max-width: 1000px) {
   body {
     background-image: url(./static/images/mobile-placeholder.svg);
-    /* background-size: 100% auto; */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: #f9e36d;
   }
 
   div {
