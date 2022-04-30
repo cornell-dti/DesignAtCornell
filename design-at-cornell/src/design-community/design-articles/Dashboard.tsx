@@ -22,10 +22,12 @@ const Dashboard = (article: Article[]) => {
       <br></br>
       <HorizontalFlex>
         <HeadingLine style={{ width: `50px` }} />
-        <HeadingTitle 
+        <HeadingTitle
           style={{ fontSize: `18px`, cursor: `pointer` }}
           onClick={() => window.open('/articles', '_self')}
-          >Design Articles</HeadingTitle>
+        >
+          Design Articles
+        </HeadingTitle>
         <HeadingLine style={{ width: `975px` }} />
         <HeadingTitle
           style={{ fontSize: `14px`, cursor: `pointer` }}
