@@ -24,6 +24,12 @@ export const ElementContainer = styled.div`
   }
 `;
 
+export const ArticleBubbleContainer = styled(ElementContainer)`
+  width: 370px;
+  height: 350px;
+  border-radius: 20px;
+`;
+
 export const Title = styled.div`
   font-weight: bold;
   font-size: 20px;
@@ -82,6 +88,15 @@ export const Subtitle = styled.div`
     cursor: pointer;
   }
 `;
+
+export const ArticleBubbleSubtitle = styled(Subtitle)`
+  p {
+    margin-bottom: -5px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+`;
+
 
 export const TagsContainer = styled.div`
   display: flex;
