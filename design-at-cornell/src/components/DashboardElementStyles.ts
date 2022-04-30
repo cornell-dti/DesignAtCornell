@@ -24,6 +24,12 @@ export const Title = styled.div`
   text-align: start;
   margin: 0;
   color: black;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 `;
 
 export const LargeTitle = styled.div`
