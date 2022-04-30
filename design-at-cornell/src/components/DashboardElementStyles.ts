@@ -97,7 +97,6 @@ export const ArticleBubbleSubtitle = styled(Subtitle)`
   }
 `;
 
-
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -125,9 +124,56 @@ export const Tag = styled.div`
 `;
 
 export const HeadingLine = styled.div`
-  height: 0px;
-  border: 1px solid ${colors.pink};
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+
+  h1 {
+    flex-grow: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    margin: -2px 15px 0px 15px;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+  }
+
+  h2 {
+    flex-grow: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 25px;
+    margin: -2px 13px 0px 13px;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+  }
+
+  h3 {
+    flex-grow: 0;
+    font-size: 45px;
+    font-weight: 700;
+    margin: -2px 20px 0px 20px;
+    align-items: center;
+    color: black;
+  }
+
+  hr {
+    flex-grow: 0;
+    height: 1px;
+    width: 80px;
+    border: 1px solid ${colors.pink};
+    box-sizing: border-box;
+  }
+
+  line {
+    flex-grow: 1;
+    height: 1px;
+    border: 1px solid ${colors.pink};
+    box-sizing: border-box;
+  }
 `;
 
 export const HeadingTitle = styled.div`
