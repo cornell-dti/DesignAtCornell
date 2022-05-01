@@ -27,7 +27,6 @@ const Dashboard = (props: Props) => {
       <StudiesContainer>
         {studies('Undergraduate Majors', props.majors)}
         {studies('Undergraduate Minors', props.minors)}
-        {studies('Graduate Studies', props.gradStudies)}
       </StudiesContainer>
       <ApplyTags
         {...{
@@ -44,7 +43,6 @@ const Dashboard = (props: Props) => {
 type Props = {
   majors: Major[];
   minors: Major[];
-  gradStudies: Major[];
   designAreaTags: Filters;
   schoolTags: Filters;
   setDesignTags: SetFilters;

@@ -56,7 +56,6 @@ export const AreaOfStudyButton = styled.div`
     font-weight: bold;
     font-size: 16px;
     color: black;
-    cursor: pointer;
   }
 `;
 
