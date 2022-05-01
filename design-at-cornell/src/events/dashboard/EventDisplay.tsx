@@ -1,9 +1,9 @@
 import React from 'react';
-import { EventContainer, Settings, TagsContainer, Link } from '../EventsStyles';
+import { EventContainer, Settings, EventLink } from '../EventsStyles';
 import { Event } from '../../../../server/types';
 import time from '../../static/images/time.svg';
 import loc from '../../static/images/location.svg';
-import { buttons } from '../../constants/eventButtons';
+import linkIcon from '../../static/images/link-icon.svg';
 import Events from '../Events';
 
 const EventDisplay = (event: Event) => (
@@ -16,11 +16,12 @@ const EventDisplay = (event: Event) => (
       <p>{event.location}</p>
     </Settings>
     <p>{event.description}</p>
-    <Link key={event.url} shadowColor={buttons[event.url]?.color}>
-      <img src={buttons[event.url]?.icon} alt={event.url} />
-      <p>{buttons[event.url]?.name}</p>
-    </Link> 
- 
+
+    <EventLink onClick={() => window.open(event.url)}>
+      <img src= {linkIcon} alt={event.url} />
+      <p>{"Event Link"}</p>
+    </EventLink>
+    
   </EventContainer>
 );
 

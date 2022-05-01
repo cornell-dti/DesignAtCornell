@@ -106,10 +106,11 @@ export const EventContainer = styled.div`
     color: black;
     margin: 10;
     overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     text-overflow: ellipsis;
-    width: calc(90%);
+    width: calc(97%);
 
   }
 `;
@@ -167,6 +168,26 @@ export const Link = styled.div<{ shadowColor: string }>`
   height: 49px;
   border-radius: 9px;
   box-shadow: 0px 0px 22px ${({ shadowColor }) => shadowColor};
+  margin-right: 30px;
+  padding: 20px;
+  align-items: center;
+  cursor: pointer;
+
+  p {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    color: black;
+    margin-left: 10px;
+  }
+`;
+
+export const EventLink = styled.div`
+  display: flex;
+  width: fit-content;
+  height: 49px;
+  border-radius: 9px;
+  box-shadow: 0px 0px 22px #FFC0FC;
   margin-right: 30px;
   padding: 20px;
   align-items: center;
