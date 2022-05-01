@@ -82,7 +82,7 @@ const Homepage: React.FC = () => (
           </Link>
           <CardTitle>Faculty</CardTitle>
           <p>Explore and connect with the design faculty here at Cornell</p>
-          <ExploreSubtitle to="./design-community"> Explore Community {'>'}</ExploreSubtitle>
+          <ExploreSubtitle to="./faculty"> Explore Faculty {'>'}</ExploreSubtitle>
         </ElementContainer>
       </Col>
     </Grid>
