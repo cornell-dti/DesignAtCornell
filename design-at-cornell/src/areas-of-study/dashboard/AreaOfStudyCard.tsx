@@ -5,7 +5,7 @@ import { Major } from '../../../../server/types';
 
 const AreaOfStudyCard = (props: Props) => {
   return (
-    <AreaOfStudyButton 
+    <AreaOfStudyButton
       key={props.study.title}
       onClick={() => window.open(props.study.content.departmentPage)}
     >
