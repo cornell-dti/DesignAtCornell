@@ -14,7 +14,7 @@ const Events = () => {
       .then((res) => res.data)
       .then(FormatEvents);
   }, []);
-  
+
   const [events, FormatEvents] = useState<Event[]>([]);
   const date = new Date();
   const [year, setYear] = useState(date.getFullYear());

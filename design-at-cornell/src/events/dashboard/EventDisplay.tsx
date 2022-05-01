@@ -10,17 +10,22 @@ const EventDisplay = (event: Event) => (
     <h1>{event.title}</h1>
     <Settings>
       <img src={time} alt="time" />
-      <p>{event.date.substring(0,10) + " " + event.date.substring(11,16) + event.date.substring(19) + " EST"}</p>
+      <p>
+        {event.date.substring(0, 10) +
+          ' ' +
+          event.date.substring(11, 16) +
+          event.date.substring(19) +
+          ' EST'}
+      </p>
       <img src={loc} alt="location" />
       <p>{event.location}</p>
     </Settings>
     <p>{event.description}</p>
 
     <EventLink onClick={() => window.open(event.url)}>
-      <img src= {linkIcon} alt={event.url} />
-      <p>{"Event Link"}</p>
+      <img src={linkIcon} alt={event.url} />
+      <p>{'Event Link'}</p>
     </EventLink>
-    
   </EventContainer>
 );
 

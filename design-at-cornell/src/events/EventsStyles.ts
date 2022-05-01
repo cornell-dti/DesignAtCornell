@@ -99,7 +99,6 @@ export const EventContainer = styled.div`
     margin: 10;
   }
 
-
   p {
     font-size: 16px;
     line-height: 19px;
@@ -111,7 +110,6 @@ export const EventContainer = styled.div`
     -webkit-line-clamp: 3;
     text-overflow: ellipsis;
     width: calc(97%);
-
   }
 `;
 
@@ -123,7 +121,7 @@ export const Settings = styled.div`
     margin-right: 10px;
   }
 
-  p{
+  p {
     font-size: 20px;
     line-height: 23px;
     color: #939393;
@@ -141,7 +139,7 @@ export const EventLink = styled.div`
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px #AED8F7;
+  box-shadow: 0px 0px 22px #aed8f7;
   margin-right: 30px;
   padding: 20px;
   align-items: center;
