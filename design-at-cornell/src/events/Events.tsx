@@ -11,13 +11,12 @@ const Events = () => {
   useEffect(() => {
     axios
       .get('http://localhost:3000/getEvents')
-      .then((res) => res.data.data)
+      .then((res) => res.data)
       .then(FormatEvents);
   }, []);
   
-  const [event, FormatEvents] = useState<Event[]>([]);
+  const [events, FormatEvents] = useState<Event[]>([]);
   const date = new Date();
-
   const [year, setYear] = useState(date.getFullYear());
   const [month, setMonth] = useState(date.getMonth());
 
@@ -25,12 +24,11 @@ const Events = () => {
   const rightClickHandler = () => setYear(year + 1);
   const monthClickHandler = (m: number) => setMonth(m);
 
-  const filteredEvents = event.filter((event) => {
-    const event_date = new Date(event.date);
-    const start = event_date.getFullYear() * 12 + event_date.getMonth();
-    const end = event_date.getFullYear() * 12 + event_date.getMonth();
-    const cur = year * 12 + month;
-    return start <= cur && cur <= end;
+  const filteredEvents = events.filter((event) => {
+    const eventDate = new Date(event.date);
+    const eventMonth = eventDate.getFullYear() * 12 + eventDate.getMonth();
+    const filterMonth = year * 12 + month;
+    return eventMonth === filterMonth;
   });
 
   const eventDisplay = (

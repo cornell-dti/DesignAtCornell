@@ -4,7 +4,7 @@ export const Divider = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80px;
+  height: 80%;
   padding: 5px;
   align-items: center;
 `;
@@ -81,8 +81,8 @@ export const EventList = styled.div`
 export const EventContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 353px;
+  width: calc(100%);
+  height: 300px;
   background: white;
   border-radius: 14px;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.07);
@@ -96,13 +96,21 @@ export const EventContainer = styled.div`
     font-size: 32px;
     line-height: 38px;
     color: black;
-    margin: 0;
+    margin: 10;
   }
+
 
   p {
     font-size: 16px;
     line-height: 19px;
     color: black;
+    margin: 10;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: calc(90%);
+
   }
 `;
 
@@ -114,11 +122,16 @@ export const Settings = styled.div`
     margin-right: 10px;
   }
 
-  p {
+  p{
     font-size: 20px;
     line-height: 23px;
     color: #939393;
     margin: 0 30px 0 0;
+    overflow: visible;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: clip;
+    width: calc(200%);
   }
 `;
 
