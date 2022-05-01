@@ -20,11 +20,13 @@ const AreasOfStudy = () => {
         const minors = allStudies.filter(({ content }) => content.type === 'Minor');
         setMajors(majors);
         setMinors(minors);
+        setGradStudies([...majors, ...minors]);
       });
   }, []);
 
   const [majors, setMajors] = useState<Major[]>([]);
   const [minors, setMinors] = useState<Major[]>([]);
+  const [gradStudies, setGradStudies] = useState<Major[]>([]);
 
   const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas });
 
@@ -37,6 +39,7 @@ const AreasOfStudy = () => {
         {...{
           majors: majors,
           minors: minors,
+          gradStudies: gradStudies,
           designAreaTags: designAreaTags,
           schoolTags: schoolTags,
           setDesignTags: setDesignAreaTags,
