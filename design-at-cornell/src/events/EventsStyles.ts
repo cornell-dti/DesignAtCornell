@@ -136,58 +136,12 @@ export const Settings = styled.div`
   }
 `;
 
-export const TagsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  height: fit-content;
-  align-items: flex-start;
-`;
-
-export const Tag = styled.div`
-  display: flex;
-  width: fit-content;
-  height: 22px;
-  border-radius: 43px;
-  margin-right: 10px;
-  padding: 10px;
-  align-items: center;
-  background: #e4e4e4;
-  p {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: rgba(0, 0, 0, 0.49);
-  }
-`;
-
-export const Link = styled.div<{ shadowColor: string }>`
-  display: flex;
-  width: fit-content;
-  height: 49px;
-  border-radius: 9px;
-  box-shadow: 0px 0px 22px ${({ shadowColor }) => shadowColor};
-  margin-right: 30px;
-  padding: 20px;
-  align-items: center;
-  cursor: pointer;
-
-  p {
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 20px;
-    color: black;
-    margin-left: 10px;
-  }
-`;
-
 export const EventLink = styled.div`
   display: flex;
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px #FFC0FC;
+  box-shadow: 0px 0px 22px #AED8F7;
   margin-right: 30px;
   padding: 20px;
   align-items: center;
