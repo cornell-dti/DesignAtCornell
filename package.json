@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "startReact": "cd design-at-cornell && yarn start",
-    "build": "cd design-at-cornell && yarn build",
-    "test": "cd design-at-cornell && yarn test",
+    "frontend-build": "cd design-at-cornell && yarn build",
+    "frontend-test": "cd design-at-cornell && yarn test",
     "eject": "cd design-at-cornell && yarn eject",
     "tsc": "yarn workspaces run tsc",
     "frontend-dev": "yarn workspace design-at-cornell start",
@@ -13,7 +13,8 @@
     "format": "prettier --write \"**/*.{ts,js,tsx,css,html}\"",
     "format:check": "prettier --check \"**/*.{ts,js,tsx,css,html}\"",
     "lint": "eslint . --ext .js --ext .ts --ext .jsx --ext .tsx",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "postinstall": "yarn workspace server tsc"
   },
   "dependencies": {
     "axios": "^0.21.1",

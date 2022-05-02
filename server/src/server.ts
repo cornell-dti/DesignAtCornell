@@ -19,21 +19,13 @@ import {
 import { createClubs, deleteClubs, getClubs, updateClubs } from './endpoints/clubs/clubs_endpoints';
 import getEvents from './endpoints/events/events_endpoints';
 import getArticles from './endpoints/articles/articles_endpoints';
-// eslint-disable-next-line
-const serviceAccount = require('./designAtCornellServiceAccount.json');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://designatcornell.firebaseio.com',
-});
+import { db } from './firebase-config';
 
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../design-at-cornell/build/')));
-
-const db = admin.firestore();
 
 export const courses = db.collection('courses');
 export const majors = db.collection('majors');
