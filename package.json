@@ -15,6 +15,9 @@
     "lint": "eslint . --ext .js --ext .ts --ext .jsx --ext .tsx",
     "lint:fix": "yarn lint --fix"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "@types/express": "^4.17.11",
