@@ -2,13 +2,13 @@ import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../../components/ContainerStyles';
 import { CommunityGrid } from '../../../components/DashboardGridStyles';
 import { HeadingLine } from '../../../components/DashboardElementStyles';
-import { Instructor } from '../../../../../server/types';
+import { Faculty } from '../../../../../server/types';
 import FacultyBubble from './Bubble';
-const Dashboard = (faculty: Instructor[]) => {
+const Dashboard = (faculty: Faculty[]) => {
   const facultyBubbles = (
     <CommunityGrid>
       {Object.values(faculty).map((faculty) => (
-        <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
+        <FacultyBubble key={faculty.name} {...faculty} />
       ))}
     </CommunityGrid>
   );
