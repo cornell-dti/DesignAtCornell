@@ -1,7 +1,7 @@
 import csv from 'csv-parser';
 import fsFacultyRead from 'fs';
-import { faculty } from '../server';
-import { Faculty } from '../types';
+import { faculty } from '../src/server';
+import { Faculty } from '../src/types';
 
 const facultyCSV = [];
 
