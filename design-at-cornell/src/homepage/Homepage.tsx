@@ -5,7 +5,6 @@ import {
   CardTitle,
   Grid,
   ElementContainer,
-  Col,
   ExploreSubtitle,
 } from '../components/HomepageStyles';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
@@ -28,7 +27,6 @@ const Homepage: React.FC = () => (
       Our mission is to connect, inform, and inspire the design community at Cornell University.
     </MissionStat>
     <Grid>
-      <Col>
         <ElementContainer>
           <Link to="./explore-courses">
             <img src={design_courses} alt={'Design Courses'} />
@@ -45,8 +43,6 @@ const Homepage: React.FC = () => (
           <p>Find events to learn, grow, and share with your creative community</p>
           <ExploreSubtitle to="./events"> Explore Events {'>'}</ExploreSubtitle>
         </ElementContainer>
-      </Col>
-      <Col>
         <ElementContainer>
           <Link to="./areas-of-study">
             <img src={majors_minors} alt={'Majors/Minors'} />
@@ -63,8 +59,6 @@ const Homepage: React.FC = () => (
           <p>Increase your knowledge of design through relevant articles</p>
           <ExploreSubtitle to="./articles"> Explore Articles {'>'}</ExploreSubtitle>
         </ElementContainer>
-      </Col>
-      <Col>
         <ElementContainer>
           <Link to="./student-organizations">
             <img src={orgs_icon} alt={'Student Organizations'} />
@@ -84,7 +78,6 @@ const Homepage: React.FC = () => (
           <p>Explore and connect with the design faculty here at Cornell</p>
           <ExploreSubtitle to="./faculty"> Explore Faculty {'>'}</ExploreSubtitle>
         </ElementContainer>
-      </Col>
     </Grid>
   </div>
 );
