@@ -41,7 +41,7 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
     width: 290px;
     height: 290px;
     border-radius: 50%;
-    border: 13px solid white; 
+    border: 13px solid white;
     outline: 3px solid ${colors.purple};
   }
 
