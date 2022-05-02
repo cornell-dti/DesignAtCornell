@@ -1,7 +1,8 @@
 import React from 'react';
-import { HorizontalFlex, VerticalFlex } from '../../../components/ContainerStyles';
+import { VerticalFlex } from '../../../components/ContainerStyles';
+import { TitleBackground, TitleContainer } from '../../../components/TitleStyles';
+import { colors } from '../../../constants/colors';
 import { CommunityGrid } from '../../../components/DashboardGridStyles';
-import { HeadingLine } from '../../../components/DashboardElementStyles';
 import { Faculty } from '../../../../../server/types';
 import FacultyBubble from './Bubble';
 const Dashboard = (faculty: Faculty[]) => {
@@ -15,15 +16,12 @@ const Dashboard = (faculty: Faculty[]) => {
 
   return (
     <VerticalFlex>
-      <br></br>
-      <br></br>
-      <HorizontalFlex>
-        <HeadingLine>
-          <hr />
-          <h3>Faculty</h3>
-          <line />
-        </HeadingLine>
-      </HorizontalFlex>
+      <TitleBackground color={colors.purple}>
+        <TitleContainer>
+          <h1>The Design Faculty</h1>
+          <p>Explore your interests with like-minded faculty.</p>
+        </TitleContainer>
+      </TitleBackground>
       <br></br>
       <br></br>
       {facultyBubbles}
