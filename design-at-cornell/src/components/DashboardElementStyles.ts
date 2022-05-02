@@ -30,6 +30,30 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
   border-radius: 20px;
 `;
 
+export const SmallArticleBubbleContainer = styled(ElementContainer)`
+  width: 270px;
+  height: 325px;
+  border-radius: 20px;
+
+  img {
+    width: 270px;
+    height: 180px;
+  }
+`;
+
+export const LargeArticleBubbleContainer = styled(ElementContainer)`
+  margin-left: 20px;
+  width: 97%;
+  height: 350px;
+  border-radius: 20px;
+
+  img {
+    width: 550px;
+    height: 350px;
+    border-radius: 20px 0px 0px 20px;
+  }
+`;
+
 export const Title = styled.div`
   font-weight: bold;
   font-size: 20px;
@@ -94,6 +118,54 @@ export const ArticleBubbleSubtitle = styled(Subtitle)`
     margin-bottom: -5px;
     font-size: 12px;
     line-height: 18px;
+  }
+`;
+
+export const SmallArticleBubbleTitle = styled(Title)`
+  p {
+    margin-top: 5px;
+    width: 220px;
+    -webkit-line-clamp: 3;
+  }
+`;
+
+export const LargeArticleBubbleTitle = styled(Title)`
+  margin-top: 5px;
+  font-size: 36px;
+  line-height: 42px;
+`;
+
+export const SmallArticleBubbleDate = styled(Subtitle)`
+  p {
+    margin-top: 40px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+`;
+
+export const LargeArticleBubbleDate = styled(Subtitle)`
+  p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+`;
+
+export const SmallArticleBubbleSubtitle = styled(Subtitle)`
+  p {
+    margin-top: 5px;
+    margin-bottom: -5px;
+    font-size: 12px;
+    line-height: 18px;
+    -webkit-line-clamp: 3;
+  }
+`;
+
+export const LargeArticleBubbleSubtitle = styled(Subtitle)`
+  p {
+    width: 600px;
+    font-size: 18px;
+    line-height: 25px;
+    -webkit-line-clamp: 4;
   }
 `;
 

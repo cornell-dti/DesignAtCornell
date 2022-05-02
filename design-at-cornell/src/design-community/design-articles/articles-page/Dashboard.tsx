@@ -1,13 +1,13 @@
 import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../../components/ContainerStyles';
-import { Grid } from '../../../components/DashboardGridStyles';
-import { HeadingLine, HeadingTitle } from '../../../components/DashboardElementStyles';
+import { ArticleGrid } from '../../../components/DashboardGridStyles';
+import { HeadingLine } from '../../../components/DashboardElementStyles';
 import { Article } from '../../../../../server/types';
 import ArticleBubble from './Bubble';
 import LargeArticleBubble from './LargeBubble';
 const Dashboard = (article: Article[]) => {
   const articleBubbles = (
-    <Grid style={{ justifyContent: `space-between` }}>
+    <ArticleGrid>
       {Object.values(article)
         .slice(0, 1)
         .map((article) => (
@@ -18,7 +18,7 @@ const Dashboard = (article: Article[]) => {
         .map((article) => (
           <ArticleBubble key={article.id} {...article} />
         ))}
-    </Grid>
+    </ArticleGrid>
   );
 
   return (
