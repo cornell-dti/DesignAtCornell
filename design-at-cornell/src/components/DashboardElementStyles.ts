@@ -48,7 +48,7 @@ export const LargeArticleBubbleContainer = styled(ElementContainer)`
   border-radius: 20px;
 
   img {
-    width: 550px;
+    width: 50%;
     height: 350px;
     border-radius: 20px 0px 0px 20px;
   }
@@ -162,7 +162,6 @@ export const SmallArticleBubbleSubtitle = styled(Subtitle)`
 
 export const LargeArticleBubbleSubtitle = styled(Subtitle)`
   p {
-    width: 600px;
     font-size: 18px;
     line-height: 25px;
     -webkit-line-clamp: 4;
