@@ -58,6 +58,7 @@ export const SubComponentHorizontalFlex = styled.div`
 `;
 
 export const ArticleBubbleVerticalFlex = styled(VerticalFlex)`
+  width: 100%;
   margin-left: 70px;
   justify-content: space-evenly;
 `;
