@@ -79,7 +79,7 @@ export const ElementContainer = styled.div`
   align-items: flex-start;
   font-weight: normal;
   margin-bottom: 90px;
-  margin-right:40px;
+  margin-right: 40px;
 
   p {
     font-size: 24px;
@@ -126,4 +126,3 @@ export const Grid = styled.div`
   margin-left: 40px;
   justify-content: center;
 `;
-
