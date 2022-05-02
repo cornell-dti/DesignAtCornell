@@ -51,6 +51,19 @@ export type Club = {
   content: clubContent;
 };
 
+export type Faculty = {
+  name: string;
+  email: string;
+  title: string;
+  college: string;
+  department: string;
+  courses: string[];
+  description: string;
+  tags: string[];
+  website: string;
+  image: string;
+};
+
 export const rosterSem = 'SP21';
 
 export type RosterResponse = {
