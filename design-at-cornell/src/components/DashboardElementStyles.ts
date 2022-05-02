@@ -246,4 +246,3 @@ export const HeadingLine = styled.div`
     box-sizing: border-box;
   }
 `;
-
