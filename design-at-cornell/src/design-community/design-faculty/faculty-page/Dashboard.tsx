@@ -7,10 +7,9 @@ import FacultyBubble from './Bubble';
 const Dashboard = (faculty: Instructor[]) => {
   const facultyBubbles = (
     <CommunityGrid>
-      {Object.values(faculty)
-        .map((faculty) => (
-          <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
-        ))}
+      {Object.values(faculty).map((faculty) => (
+        <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
+      ))}
     </CommunityGrid>
   );
 
