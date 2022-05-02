@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import FacultyDashboard from './Dashboard';
-import { Instructor } from '../../../../server/types';
+import { Faculty } from '../../../../server/types';
 
-const Faculty = () => {
+const Instructors = () => {
   useEffect(() => {
     axios
       .get('http://localhost:3000/getFaculty')
@@ -11,9 +11,9 @@ const Faculty = () => {
       .then(setFaculty);
   }, []);
 
-  const [faculty, setFaculty] = useState<Instructor[]>([]);
+  const [faculty, setFaculty] = useState<Faculty[]>([]);
 
   return <FacultyDashboard {...faculty} />;
 };
 
-export default Faculty;
+export default Instructors;

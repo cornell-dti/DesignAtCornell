@@ -1,7 +1,7 @@
 import React from 'react';
 import { ElementContainer } from '../../../components/DashboardElementStyles';
-import { Instructor } from '../../../../../server/types';
+import { Faculty } from '../../../../../server/types';
 
-const FacultyBubble = (faculty: Instructor) => <ElementContainer></ElementContainer>;
+const FacultyBubble = (faculty: Faculty) => <ElementContainer></ElementContainer>;
 
 export default FacultyBubble;
