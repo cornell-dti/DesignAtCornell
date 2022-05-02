@@ -15,6 +15,7 @@ import {
 } from '../constants/filter-criteria';
 
 const ExploreCourses = () => {
+  console.log(api);
   useEffect(() => {
     api
       .get('/getCourses')
