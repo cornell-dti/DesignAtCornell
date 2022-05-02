@@ -6,14 +6,14 @@ config();
 
 const serviceAccountPath = './resources/firebase-adminsdk.json';
 
-const hydrateServiceAccount = (serviceAccountPath: string): admin.ServiceAccount => {
+const hydrateServiceAccount = (): admin.ServiceAccount => {
   const serviceAccount = JSON.parse(readFileSync(serviceAccountPath).toString());
   const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
   return { ...serviceAccount, privateKey };
 };
 
 admin.initializeApp({
-  credential: admin.credential.cert(hydrateServiceAccount(serviceAccountPath)),
+  credential: admin.credential.cert(hydrateServiceAccount()),
   databaseURL: process.env.DATABASE_URL,
 });
 
