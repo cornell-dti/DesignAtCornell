@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "startReact": "cd design-at-cornell && yarn start",
-    "build": "cd design-at-cornell && yarn build",
+    "frontend-build": "cd design-at-cornell && yarn build",
     "test": "cd design-at-cornell && yarn test",
     "eject": "cd design-at-cornell && yarn eject",
     "tsc": "yarn workspaces run tsc",
