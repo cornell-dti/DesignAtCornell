@@ -57,6 +57,40 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
   }
 `;
 
+export const SmallFacultyBubbleContainer = styled(FacultyBubbleContainer)`
+  width: 600px;
+  height: 350px;
+  margin: 20px 10px;
+  padding: 0px;
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
+
+  img {
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 7px solid white;
+    outline: 1.5px solid ${colors.purple};
+  }
+
+  h1 {
+    margin-top: -15px;
+    margin-left: 50px;
+    width: 160px;
+    font-size: 20px;
+    color: black;
+  }
+
+  p {
+    margin-top: -15px;
+    margin-left: 50px;
+    width: 160px;
+    font-size: 14px;
+    color: black;
+  }
+`;
+
 export const SmallArticleBubbleContainer = styled(ElementContainer)`
   width: 270px;
   height: 325px;
@@ -162,6 +196,13 @@ export const LargeArticleBubbleTitle = styled(Title)`
   line-height: 42px;
 `;
 
+export const FacultyBubbleTitle = styled(Title)`
+  margin-top: 36px;
+  margin-left: 22px;
+  font-size: 14px;
+  line-height: 21px;
+`;
+
 export const SmallArticleBubbleDate = styled(Subtitle)`
   p {
     margin-top: 40px;
@@ -195,6 +236,19 @@ export const LargeArticleBubbleSubtitle = styled(Subtitle)`
   }
 `;
 
+export const FacultyBubbleSubtitle = styled(Subtitle)`
+  p {
+    width: 100%;
+    margin-top: 3px;
+    margin: 0px 22px;
+    font-weight: normal;
+    font-size: 14px;
+    color: black;
+    line-height: 21px;
+    -webkit-line-clamp: 4;
+  }
+`;
+
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -203,6 +257,11 @@ export const TagsContainer = styled.div`
   width: 100%;
   height: fit-content;
   align-items: flex-start;
+`;
+
+export const FacultyBubbleTagsContainer = styled(TagsContainer)`
+  margin-left: 22px;
+  margin-bottom: 15px;
 `;
 
 export const Tag = styled.div`
