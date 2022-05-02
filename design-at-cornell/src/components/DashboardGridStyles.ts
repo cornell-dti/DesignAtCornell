@@ -50,6 +50,6 @@ export const Grid = styled.div`
   padding: 0 80px;
 `;
 
-export const ArticleGrid = styled(Grid)`
+export const CommunityGrid = styled(Grid)`
   justify-content: space-between;
 `;
