@@ -30,6 +30,33 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
   border-radius: 20px;
 `;
 
+export const FacultyBubbleContainer = styled(ElementContainer)`
+  width: 370px;
+  height: 450px;
+  box-shadow: 0px 0px 0px 0px;
+
+  img {
+    margin: 15px;
+    margin-bottom: 25px;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    border: 13px solid white; 
+    outline: 3px solid ${colors.purple};
+  }
+
+  p {
+    margin-left: 25%;
+    margin-bottom: 8px;
+    width: 173px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: black;
+  }
+`;
+
 export const SmallArticleBubbleContainer = styled(ElementContainer)`
   width: 270px;
   height: 325px;

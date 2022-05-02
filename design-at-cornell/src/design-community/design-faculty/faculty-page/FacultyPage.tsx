@@ -6,7 +6,7 @@ import { Faculty } from '../../../../../server/types';
 const FacultyPage = () => {
   useEffect(() => {
     axios
-      .get('http://localhost:3000/getArticles')
+      .get('http://localhost:3000/getFaculty')
       .then((res) => res.data)
       .then(setFaculty);
   }, []);
