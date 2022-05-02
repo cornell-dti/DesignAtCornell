@@ -1,7 +1,7 @@
 import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
 import { Grid } from '../../components/DashboardGridStyles';
-import { HeadingLine, HeadingTitle } from '../../components/DashboardElementStyles';
+import { HeadingLine } from '../../components/DashboardElementStyles';
 import { Instructor } from '../../../../server/types';
 import FacultyBubble from './FacultyBubble';
 

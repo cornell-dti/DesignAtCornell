@@ -247,9 +247,3 @@ export const HeadingLine = styled.div`
   }
 `;
 
-export const HeadingTitle = styled.div`
-  font-weight: 500;
-  line-height: 25px;
-  align-items: center;
-  color: black;
-`;
