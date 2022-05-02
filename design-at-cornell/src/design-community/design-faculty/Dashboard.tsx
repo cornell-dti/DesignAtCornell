@@ -31,6 +31,8 @@ const Dashboard = (faculty: Faculty[]) => {
       </HorizontalFlex>
       <br></br>
       {facultyBubbles}
+      <br></br>
+      <br></br>
     </VerticalFlex>
   );
 };
