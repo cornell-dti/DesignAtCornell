@@ -1,15 +1,13 @@
 import React from 'react';
-import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
-import { CommunityGrid } from '../../components/DashboardGridStyles';
-import { HeadingLine } from '../../components/DashboardElementStyles';
-import { Instructor } from '../../../../server/types';
-import FacultyBubble from './FacultyBubble';
-
+import { HorizontalFlex, VerticalFlex } from '../../../components/ContainerStyles';
+import { CommunityGrid } from '../../../components/DashboardGridStyles';
+import { HeadingLine } from '../../../components/DashboardElementStyles';
+import { Instructor } from '../../../../../server/types';
+import FacultyBubble from './Bubble';
 const Dashboard = (faculty: Instructor[]) => {
   const facultyBubbles = (
     <CommunityGrid>
       {Object.values(faculty)
-        .slice(0, 6)
         .map((faculty) => (
           <FacultyBubble key={faculty.instrAssignSeq} {...faculty} />
         ))}
@@ -23,14 +21,14 @@ const Dashboard = (faculty: Instructor[]) => {
       <HorizontalFlex>
         <HeadingLine>
           <hr />
-          <h1 onClick={() => window.open('/faculty', '_self')}>Our Faculty</h1>
+          <h3>Faculty</h3>
           <line />
-          <h2 onClick={() => window.open('/faculty', '_self')}>View more faculty</h2>
-          <hr />
         </HeadingLine>
       </HorizontalFlex>
       <br></br>
+      <br></br>
       {facultyBubbles}
+      <br></br>
     </VerticalFlex>
   );
 };

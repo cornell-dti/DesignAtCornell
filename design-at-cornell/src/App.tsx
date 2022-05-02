@@ -8,6 +8,7 @@ import AreasOfStudy from './areas-of-study/AreasOfStudy.lazy';
 import Clubs from './clubs/Clubs.lazy';
 import DesignCommunity from './design-community/DesignCommunity.lazy';
 import Articles from './design-community/design-articles/articles-page/ArticlesPage.lazy';
+import Faculty from './design-community/design-faculty/faculty-page/FacultyPage.lazy';
 import About from './about/About.lazy';
 import Contact from './contact/Contact.lazy';
 import PageNotFound from './404/PageNotFound.lazy';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/student-organizations" component={Clubs} />
           <Route path="/design-community" component={DesignCommunity} />
           <Route path="/articles" component={Articles} />
+          <Route path="/faculty" component={Faculty} />
           <Route exact path="/" component={Homepage} />
           <Route path="/*" component={PageNotFound} />
         </Switch>

@@ -3,7 +3,7 @@ import { ElementContainer } from '../../components/DashboardElementStyles';
 import { Instructor } from '../../../../server/types';
 
 const FacultyBubble = (faculty: Instructor) => (
-  <ElementContainer style={{ boxShadow: `0px 0px` }}></ElementContainer>
+  <ElementContainer></ElementContainer>
 );
 
 export default FacultyBubble;
