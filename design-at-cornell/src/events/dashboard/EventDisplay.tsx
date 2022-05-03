@@ -11,7 +11,7 @@ const EventDisplay = (event: Event) => (
     <Settings>
       <img src={time} alt="time" />
       <p>
-        {new Date(event.date.substring(0, 16)).toLocaleString('en', {
+        {new Date(event.date).toLocaleString('en', {
           month: 'long',
           day: 'numeric',
           year: 'numeric',
