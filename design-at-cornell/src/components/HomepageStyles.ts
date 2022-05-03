@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import homepage_banner from '../static/images/homepage_banner.svg';
+import { colors } from '../constants/colors';
 
 export const BannerBackground = styled.div`
   display: flex;
@@ -49,7 +50,7 @@ export const Blurb = styled.div`
   height: 348px;
   right: 120px;
   top: 190px;
-  background: rgba(255, 255, 255, 0.85);
+  background: ${colors.blurb};
   border-radius: 20px;
 `;
 
@@ -79,7 +80,8 @@ export const ElementContainer = styled.div`
   align-items: flex-start;
   font-weight: normal;
   margin-bottom: 90px;
-  margin-right: 40px;
+  margin-right:40px;
+  flex: 0 0 26%;
 
   p {
     font-size: 24px;
@@ -123,6 +125,5 @@ export const Grid = styled.div`
   flex-wrap: wrap;
   height: fit-content;
   margin-top: 90px;
-  margin-left: 40px;
   justify-content: center;
 `;

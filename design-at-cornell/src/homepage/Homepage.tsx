@@ -68,7 +68,7 @@ const Homepage: React.FC = () => (
         <ExploreSubtitle to="./articles"> Explore Articles {'>'}</ExploreSubtitle>
       </ElementContainer>
       <ElementContainer>
-        <Link to="./design-community">
+        <Link to="./faculty">
           <img src={community_icon} alt={'Faculties'} />
         </Link>
         <CardTitle>Faculty</CardTitle>
