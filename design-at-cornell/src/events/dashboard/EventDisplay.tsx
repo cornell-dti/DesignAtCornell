@@ -11,21 +11,20 @@ const EventDisplay = (event: Event) => (
     <Settings>
       <img src={time} alt="time" />
       <p>
-        {new Date(event.date.substring(0,16)).toLocaleString('en',{
+        {new Date(event.date.substring(0, 16)).toLocaleString('en', {
           month: 'long',
           day: 'numeric',
           year: 'numeric',
           hour: 'numeric',
-          minute: 'numeric'
-        })
-        }
+          minute: 'numeric',
+        })}
       </p>
-      { (event.location.length === 0) ? null : 
-      <span>
-        <img src={loc} alt="location" /> 
-        <p>{event.location}</p>
-      </span>
-      }
+      {event.location.length === 0 ? null : (
+        <span>
+          <img src={loc} alt="location" />
+          <p>{event.location}</p>
+        </span>
+      )}
     </Settings>
     <p>{event.description}</p>
 

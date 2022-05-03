@@ -134,7 +134,7 @@ export const Settings = styled.div`
     width: calc(100%);
   }
 
-  span{
+  span {
     white-space: nowrap;
   }
 `;
