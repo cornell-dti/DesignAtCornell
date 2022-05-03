@@ -25,7 +25,6 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-
 export const courses = db.collection('courses');
 export const majors = db.collection('majors');
 export const clubs = db.collection('clubs');
@@ -150,8 +149,6 @@ app.get('/getEvents', getEvents);
  */
 
 app.get('/getArticles', getArticles);
-
-
 
 if (process.env.NODE_ENV) {
   app.use(express.static(path.join('../design-at-cornell/build')));
