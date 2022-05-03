@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../constants/util';
 import DesignArticlesDashboard from './Dashboard';
-import { Article } from '../../../../server/types';
+import { Article } from '../../../../server/src/types';
 
 const Articles = () => {
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/getArticles')
+    api
+      .get('/getArticles')
       .then((res) => res.data)
       .then(setArticles);
   }, []);

@@ -5,7 +5,7 @@ import {
   SmallArticleBubbleDate,
   SmallArticleBubbleSubtitle,
 } from '../../../components/DashboardElementStyles';
-import { Article } from '../../../../../server/types';
+import { Article } from '../../../../../server/src/types';
 import { VerticalFlex } from '../../../components/ContainerStyles';
 
 const ArticleBubble = (article: Article) => (

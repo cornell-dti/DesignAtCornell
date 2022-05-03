@@ -2,7 +2,7 @@ import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
 import { CommunityGrid } from '../../components/DashboardGridStyles';
 import { HeadingLine } from '../../components/DashboardElementStyles';
-import { Faculty } from '../../../../server/types';
+import { Faculty } from '../../../../server/src/types';
 import FacultyBubble from './FacultyBubble';
 
 const Dashboard = (faculty: Faculty[]) => {

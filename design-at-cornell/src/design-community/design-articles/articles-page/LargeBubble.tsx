@@ -5,7 +5,7 @@ import {
   LargeArticleBubbleDate,
   LargeArticleBubbleSubtitle,
 } from '../../../components/DashboardElementStyles';
-import { Article } from '../../../../../server/types';
+import { Article } from '../../../../../server/src/types';
 import {
   HorizontalFlex,
   VerticalFlex,

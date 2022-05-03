@@ -3,7 +3,7 @@ import { VerticalFlex } from '../../../components/ContainerStyles';
 import { TitleBackground, TitleContainer } from '../../../components/TitleStyles';
 import { colors } from '../../../constants/colors';
 import { CommunityGrid } from '../../../components/DashboardGridStyles';
-import { Faculty } from '../../../../../server/types';
+import { Faculty } from '../../../../../server/src/types';
 import FacultyBubble from './Bubble';
 const Dashboard = (faculty: Faculty[]) => {
   const facultyBubbles = (

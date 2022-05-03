@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../../constants/util';
 import DesignFacultyDashboard from './Dashboard';
-import { Faculty } from '../../../../../server/types';
+import { Faculty } from '../../../../../server/src/types';
 
 const FacultyPage = () => {
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/getFaculty')
+    api
+      .get('/getFaculty')
       .then((res) => res.data)
       .then(setFaculty);
   }, []);
