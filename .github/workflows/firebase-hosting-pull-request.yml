@@ -8,13 +8,13 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Yarn Install
         run: yarn install
-      - name: Yarn Install Frontend
-        run: cd design-at-cornell && yarn install
       - name: Build frontend
         run: yarn frontend-build
+        env:
+          REACT_APP_BASE_URL: '${{ secrets.REACT_APP_BASE_URL }}'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
