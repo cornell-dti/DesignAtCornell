@@ -7,7 +7,7 @@ const FacultyPage = () => {
   useEffect(() => {
     api
       .get('/getFaculty')
-      .then((res) => res.data)
+      .then((res) => res.data.data)
       .then(setFaculty);
   }, []);
 

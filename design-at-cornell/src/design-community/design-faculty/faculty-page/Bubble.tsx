@@ -25,13 +25,15 @@ const FacultyBubble = (faculty: Faculty) => (
         <br></br>
       </FacultyBubbleVerticalFlex>
       <VerticalFlex>
-        <FacultyBubbleTitle>About {faculty.name}:</FacultyBubbleTitle>
+        <FacultyBubbleTitle>About {faculty.name}</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
           <p>{faculty.description}</p>
         </FacultyBubbleSubtitle>
         <FacultyBubbleTitle>Courses Taught:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
-          {faculty.courses === undefined ? null : <p>{faculty.courses.join(', ')}</p>}
+          {faculty.courses === undefined ? null : (
+            <p>{faculty.courses.join(', ')}</p>
+          )}
         </FacultyBubbleSubtitle>
         <br></br>
         <FacultyBubbleTagsContainer>

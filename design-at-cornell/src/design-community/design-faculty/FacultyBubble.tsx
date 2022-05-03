@@ -7,7 +7,7 @@ const FacultyBubble = (faculty: Faculty) => (
   <FacultyBubbleContainer onClick={() => window.open(faculty.website)}>
     <VerticalFlex>
       <img src={faculty.image} alt="faculty profile" />
-      <p>{faculty.name}</p>
+      <h1>{faculty.name}</h1>
       <p>{faculty.title}</p>
       <p>{faculty.department}</p>
     </VerticalFlex>

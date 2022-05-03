@@ -66,7 +66,7 @@ export const ArticleBubbleVerticalFlex = styled(VerticalFlex)`
 
 export const FacultyBubbleVerticalFlex = styled(VerticalFlex)`
   width: 450px;
-  height: 350px;
+  height: 370px;
   justify-content: space-around;
   background-color: ${colors.lightGray};
 `;

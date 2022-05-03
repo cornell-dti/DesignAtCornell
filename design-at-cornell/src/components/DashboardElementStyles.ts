@@ -32,7 +32,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
 
 export const FacultyBubbleContainer = styled(ElementContainer)`
   width: 370px;
-  height: 450px;
+  height: 480px;
   box-shadow: 0px 0px 0px 0px;
 
   img {
@@ -45,9 +45,21 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
     outline: 3px solid ${colors.purple};
   }
 
+  h1 {
+    margin-top: 5px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+    width: 173px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: black;
+  }
+
   p {
     margin-left: 25%;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     width: 173px;
     text-align: center;
     font-weight: 600;
@@ -59,7 +71,7 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
 
 export const SmallFacultyBubbleContainer = styled(FacultyBubbleContainer)`
   width: 600px;
-  height: 350px;
+  height: 370px;
   margin: 20px 10px;
   padding: 0px;
   box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
@@ -75,15 +87,16 @@ export const SmallFacultyBubbleContainer = styled(FacultyBubbleContainer)`
   }
 
   h1 {
-    margin-top: -15px;
-    margin-left: 50px;
-    width: 160px;
-    font-size: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-top: -5px;
+    width: 260px;
+    font-size: 18px;
     color: black;
   }
 
   p {
-    margin-top: -15px;
+    margin-top: 2px;
     margin-left: 50px;
     width: 160px;
     font-size: 14px;
@@ -245,7 +258,7 @@ export const FacultyBubbleSubtitle = styled(Subtitle)`
     font-size: 14px;
     color: black;
     line-height: 21px;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
   }
 `;
 
