@@ -51,15 +51,6 @@ export type Club = {
   content: clubContent;
 };
 
-export type eventContent = {
-  date: string;
-  period: string;
-  type: string;
-  topic: string;
-  description: string;
-  rsvpLink: string;
-};
-
 export const rosterSem = 'SP21';
 
 export type RosterResponse = {

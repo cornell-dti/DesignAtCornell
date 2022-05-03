@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../constants/colors';
 
 export const Divider = styled.div`
   display: flex;
@@ -139,7 +140,7 @@ export const EventLink = styled.div`
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px #aed8f7;
+  box-shadow: 0px 0px 22px ${colors.event_link_blue};
   margin-right: 30px;
   padding: 20px;
   align-items: center;

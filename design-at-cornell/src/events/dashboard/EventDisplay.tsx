@@ -17,8 +17,12 @@ const EventDisplay = (event: Event) => (
           event.date.substring(19) +
           ' EST'}
       </p>
-      <img src={loc} alt="location" />
-      <p>{event.location}</p>
+      { (event.location.length == 0) ? null : 
+      <div>
+        <img src={loc} alt="location" />, 
+        <p>{event.location}</p>
+      </div>
+      }
     </Settings>
     <p>{event.description}</p>
 
