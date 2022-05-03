@@ -31,9 +31,7 @@ const FacultyBubble = (faculty: Faculty) => (
         </FacultyBubbleSubtitle>
         <FacultyBubbleTitle>Courses Taught:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
-          {faculty.courses === undefined ? null : (
-            <p>{faculty.courses.join(', ')}</p>
-          )}
+          {faculty.courses === undefined ? null : <p>{faculty.courses.join(', ')}</p>}
         </FacultyBubbleSubtitle>
         <br></br>
         <FacultyBubbleTagsContainer>
@@ -54,7 +52,6 @@ const FacultyBubble = (faculty: Faculty) => (
             >
               {faculty.tags[1]}
             </Tag>
-            
           )}
         </FacultyBubbleTagsContainer>
         <br></br>
