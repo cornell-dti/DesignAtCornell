@@ -1,21 +1,24 @@
 {
-  "name": "design-at-cornell-server",
+  "name": "server",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "ts-node server.ts",
+    "start": "node dist/server.js",
+    "start-dev": "ts-node src/server.ts",
     "courses-script": "ts-node scripts/courses_script.ts",
     "majors-script": "ts-node scripts/majors_minors_script.ts",
     "clubs-script": "ts-node scripts/clubs_script.ts",
     "events-script": "ts-node scripts/events_script.ts",
     "roster-script": "ts-node scripts/import_roster.ts",
     "faculty-script": "ts-node scripts/faculty_script.ts",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
     "@types/supertest": "^2.0.10",
+    "@types/node-fetch": "^2.6.1",
     "axios": "^0.23.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -31,9 +34,5 @@
     "supertest": "^6.1.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "^2.6.1",
-    "axios": "^0.23.0"
   }
 }

@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import fsCoursesRead from 'fs';
 import csv from 'csv-parser';
-import { Course, RosterCourse, RosterResponse, FetchedCourse, identifierAndDA } from '../types';
-import { courses } from '../server';
+import { Course, RosterCourse, RosterResponse, FetchedCourse, identifierAndDA } from '../src/types';
+import { courses } from '../src/server';
 
 const currSem = 'SP22';
 const prevSem = 'FA21';

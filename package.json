@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "startReact": "cd design-at-cornell && yarn start",
-    "frontend-build": "cd design-at-cornell && yarn build",
-    "test": "cd design-at-cornell && yarn test",
-    "eject": "cd design-at-cornell && yarn eject",
+    "startReact": "yarn workspace design-at-cornell start",
+    "frontend-build": "yarn workspace design-at-cornell build",
+    "frontend-test": "yarn workspace design-at-cornell test",
+    "frontend-eject": "yarn workspace design-at-cornell eject",
     "tsc": "yarn workspaces run tsc",
     "frontend-dev": "yarn workspace design-at-cornell start",
     "backend-dev": "yarn workspace server start",
     "format": "prettier --write \"**/*.{ts,js,tsx,css,html}\"",
     "format:check": "prettier --check \"**/*.{ts,js,tsx,css,html}\"",
     "lint": "eslint . --ext .js --ext .ts --ext .jsx --ext .tsx",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "postinstall": "yarn workspace server tsc"
   },
   "engines": {
     "node": "16.x"
