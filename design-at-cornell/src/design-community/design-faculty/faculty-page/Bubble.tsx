@@ -31,11 +31,13 @@ const FacultyBubble = (faculty: Faculty) => (
         </FacultyBubbleSubtitle>
         <FacultyBubbleTitle>Courses Taught:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
-          <p>{faculty.tags.join(', ')}</p>
+          {faculty.courses === undefined ? null : (
+            <p>{faculty.courses.join(', ')}</p>
+          )}
         </FacultyBubbleSubtitle>
         <br></br>
         <FacultyBubbleTagsContainer>
-          {faculty.tags.filter((area) => area !== '').length === 0 ? null : (
+          {faculty.tags === undefined ? null : (
             <Tag
               style={{
                 background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
