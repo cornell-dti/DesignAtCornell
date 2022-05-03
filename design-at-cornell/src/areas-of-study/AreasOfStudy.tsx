@@ -4,7 +4,7 @@ import { VerticalFlex } from '../components/ContainerStyles';
 import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
 import { Filters, designAreas, schools } from '../constants/filter-criteria';
-import { Major } from '../../../server/types';
+import { Major } from '../../../server/src/types';
 
 const AreasOfStudy = () => {
   const majorsURL = 'http://localhost:3000/getMajors';
