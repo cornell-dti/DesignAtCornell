@@ -9,7 +9,7 @@ import {
 import { dashboardColors } from '../../constants/colors';
 import openlink_icon from '../../static/images/openlink-icon.svg';
 import exit from '../../static/images/exit.svg';
-import { Course } from '../../../../server/types';
+import { Course } from '../../../../server/src/types';
 import { Modal } from 'semantic-ui-react';
 import { ModalContainer, ModalHeader, ModalContent } from '../../components/ModalStyles';
 import { CourseRosterButton } from '../../components/ButtonStyles';

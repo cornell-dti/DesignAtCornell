@@ -2,7 +2,7 @@ import React from 'react';
 import { VerticalFlex } from '../../components/ContainerStyles';
 import { Grid } from '../../components/DashboardGridStyles';
 import ClubBubble from './ClubBubble';
-import { Club } from '../../../../server/types';
+import { Club } from '../../../../server/src/types';
 
 const Dashboard = (clubs: Club[]) => {
   const clubBubbles = (

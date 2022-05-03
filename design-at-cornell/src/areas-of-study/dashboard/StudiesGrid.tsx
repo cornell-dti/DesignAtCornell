@@ -2,7 +2,7 @@ import React from 'react';
 import AreaOfStudyModal from './AreaOfStudyModal';
 import { Grid } from '../AreasOfStudyStyles';
 import { Filters } from '../../constants/filter-criteria';
-import { Major } from '../../../../server/types';
+import { Major } from '../../../../server/src/types';
 
 const StudiesGrid = (props: Props) => (
   <Grid>

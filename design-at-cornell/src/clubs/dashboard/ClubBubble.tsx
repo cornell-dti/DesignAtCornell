@@ -10,7 +10,7 @@ import {
 import { dashboardColors } from '../../constants/colors';
 import openlink from '../../static/images/openlink-icon.svg';
 import exit from '../../static/images/exit.svg';
-import { Club } from '../../../../server/types';
+import { Club } from '../../../../server/src/types';
 import { Modal } from 'semantic-ui-react';
 import { HorizontalFlex } from '../../components/ContainerStyles';
 import {

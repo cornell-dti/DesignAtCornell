@@ -4,7 +4,7 @@ import Title from './title/Title';
 import { VerticalFlex } from '../components/ContainerStyles';
 import Courses from './courses/Courses';
 import Pagination from '../pagination/Pagination';
-import { Course } from '../../../server/types';
+import { Course } from '../../../server/src/types';
 import {
   Filters,
   designAreas,
