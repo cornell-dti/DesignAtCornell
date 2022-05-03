@@ -11,7 +11,7 @@ import {
   VerticalFlex,
   FacultyBubbleVerticalFlex,
 } from '../../../components/ContainerStyles';
-import { Faculty } from '../../../../../server/types';
+import { Faculty } from '../../../../../server/src/types';
 import { dashboardColors } from '../../../constants/colors';
 
 const FacultyBubble = (faculty: Faculty) => (
@@ -19,46 +19,30 @@ const FacultyBubble = (faculty: Faculty) => (
     <HorizontalFlex>
       <FacultyBubbleVerticalFlex>
         <img
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-          alt="faculty image"
+          src={faculty.image}
+          alt="faculty profile"
         />
-        <h1>Professor's Name</h1>
-        <p>Job Title</p>
-        <p>Department</p>
+        <h1>{faculty.name}</h1>
+        <p>{faculty.title}</p>
+        <p>{faculty.department}</p>
         <br></br>
       </FacultyBubbleVerticalFlex>
       <VerticalFlex>
-        <FacultyBubbleTitle>About Name:</FacultyBubbleTitle>
+        <FacultyBubbleTitle>About {faculty.name}:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
           <p>
-            Short Description Here. Short Description Here. Short Description Here. Short
-            Description Here.
+            {faculty.description}
           </p>
         </FacultyBubbleSubtitle>
         <FacultyBubbleTitle>Courses Taught:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
           <p>
-            Course Code: Course Name, Course Code: Course Name, Course Code: Course Name, Course
-            Code: Course Name
+          {faculty.tags.join(', ')}
           </p>
         </FacultyBubbleSubtitle>
         <br></br>
         <FacultyBubbleTagsContainer>
-          <Tag
-            style={{
-              background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-            }}
-          >
-            product design
-          </Tag>
-          <Tag
-            style={{
-              background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-            }}
-          >
-            digital design
-          </Tag>
-          {/* {faculty.tags.filter((area) => area !== '').length === 0 ? null : (
+          {faculty.tags.filter((area) => area !== '').length === 0 ? null : (
             <Tag
                 style={{
                 background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
@@ -66,7 +50,7 @@ const FacultyBubble = (faculty: Faculty) => (
             >
                 {faculty.tags.join(', ')}
             </Tag>
-            )} */}
+            )}
         </FacultyBubbleTagsContainer>
         <br></br>
       </VerticalFlex>

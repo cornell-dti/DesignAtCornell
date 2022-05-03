@@ -1,18 +1,18 @@
 import React from 'react';
 import { FacultyBubbleContainer } from '../../components/DashboardElementStyles';
-import { Faculty } from '../../../../server/types';
+import { Faculty } from '../../../../server/src/types';
 import { VerticalFlex } from '../../components/ContainerStyles';
 
 const FacultyBubble = (faculty: Faculty) => (
   <FacultyBubbleContainer onClick={() => window.open(faculty.website)}>
     <VerticalFlex>
       <img
-        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-        alt="faculty image"
+        src={faculty.image}
+        alt="faculty profile"
       />
-      <p>Professor's Full Name</p>
-      <p>Job Title</p>
-      <p>Department</p>
+      <p>{faculty.name}</p>
+      <p>{faculty.title}</p>
+      <p>{faculty.department}</p>
     </VerticalFlex>
   </FacultyBubbleContainer>
 );
