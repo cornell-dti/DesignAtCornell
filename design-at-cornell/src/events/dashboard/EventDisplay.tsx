@@ -11,17 +11,20 @@ const EventDisplay = (event: Event) => (
     <Settings>
       <img src={time} alt="time" />
       <p>
-        {event.date.substring(0, 10) +
-          ' ' +
-          event.date.substring(11, 16) +
-          event.date.substring(19) +
-          ' EST'}
+        {new Date(event.date.substring(0,16)).toLocaleString('en',{
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric'
+        })
+        }
       </p>
-      { (event.location.length == 0) ? null : 
-      <div>
-        <img src={loc} alt="location" />, 
+      { (event.location.length === 0) ? null : 
+      <span>
+        <img src={loc} alt="location" /> 
         <p>{event.location}</p>
-      </div>
+      </span>
       }
     </Settings>
     <p>{event.description}</p>

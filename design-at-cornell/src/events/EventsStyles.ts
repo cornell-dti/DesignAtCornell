@@ -131,7 +131,11 @@ export const Settings = styled.div`
     white-space: nowrap;
     display: inline-block;
     text-overflow: clip;
-    width: calc(200%);
+    width: calc(100%);
+  }
+
+  span{
+    white-space: nowrap;
   }
 `;
 
