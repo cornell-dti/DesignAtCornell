@@ -1,7 +1,7 @@
 import { faculty } from '../../server';
 import { Faculty } from '../../types';
 
-export async function getFaculty(req, res) {
+export default async function getFaculty(req, res) {
   const localFaculty: Faculty[] = [];
   const facultyDocs = await faculty.get();
 

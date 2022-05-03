@@ -18,7 +18,7 @@ import {
 import { createClubs, deleteClubs, getClubs, updateClubs } from './endpoints/clubs/clubs_endpoints';
 import getEvents from './endpoints/events/events_endpoints';
 import getArticles from './endpoints/articles/articles_endpoints';
-import { getFaculty } from './endpoints/faculty/faculty_endpoints';
+import getFaculty from './endpoints/faculty/faculty_endpoints';
 import { db } from './firebase-config';
 
 const app = express();
