@@ -36,14 +36,6 @@ const Homepage: React.FC = () => (
         <ExploreSubtitle to="./explore-courses"> Explore Courses {'>'}</ExploreSubtitle>
       </ElementContainer>
       <ElementContainer>
-        <Link to="./events">
-          <img src={events_icon} alt={'Events'} />
-        </Link>
-        <CardTitle>Events</CardTitle>
-        <p>Find events to learn, grow, and share with your creative community</p>
-        <ExploreSubtitle to="./events"> Explore Events {'>'}</ExploreSubtitle>
-      </ElementContainer>
-      <ElementContainer>
         <Link to="./areas-of-study">
           <img src={majors_minors} alt={'Majors/Minors'} />
         </Link>
@@ -52,20 +44,28 @@ const Homepage: React.FC = () => (
         <ExploreSubtitle to="./areas-of-study"> Explore Majors & Minors {'>'}</ExploreSubtitle>
       </ElementContainer>
       <ElementContainer>
-        <Link to="./articles">
-          <img src={resources_icon} alt={'Articles'} />
-        </Link>
-        <CardTitle>Articles</CardTitle>
-        <p>Increase your knowledge of design through relevant articles</p>
-        <ExploreSubtitle to="./articles"> Explore Articles {'>'}</ExploreSubtitle>
-      </ElementContainer>
-      <ElementContainer>
         <Link to="./student-organizations">
           <img src={orgs_icon} alt={'Student Organizations'} />
         </Link>
         <CardTitle>Organizations</CardTitle>
         <p>A place to explore your passion through design organizations at Cornell</p>
         <ExploreSubtitle to="./student-organizations"> Explore Organizations {'>'}</ExploreSubtitle>
+      </ElementContainer>
+      <ElementContainer>
+        <Link to="./events">
+          <img src={events_icon} alt={'Events'} />
+        </Link>
+        <CardTitle>Events</CardTitle>
+        <p>Find events to learn, grow, and share with your creative community</p>
+        <ExploreSubtitle to="./events"> Explore Events {'>'}</ExploreSubtitle>
+      </ElementContainer>
+      <ElementContainer>
+        <Link to="./articles">
+          <img src={resources_icon} alt={'Articles'} />
+        </Link>
+        <CardTitle>Articles</CardTitle>
+        <p>Increase your knowledge of design through relevant articles</p>
+        <ExploreSubtitle to="./articles"> Explore Articles {'>'}</ExploreSubtitle>
       </ElementContainer>
       <ElementContainer>
         <Link to="./design-community">
