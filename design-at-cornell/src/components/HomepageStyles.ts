@@ -80,7 +80,7 @@ export const ElementContainer = styled.div`
   align-items: flex-start;
   font-weight: normal;
   margin-bottom: 90px;
-  margin-right:40px;
+  margin-right: 40px;
   flex: 0 0 26%;
 
   p {
