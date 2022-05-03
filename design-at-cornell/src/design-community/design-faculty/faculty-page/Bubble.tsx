@@ -18,10 +18,7 @@ const FacultyBubble = (faculty: Faculty) => (
   <SmallFacultyBubbleContainer onClick={() => window.open(faculty.website)}>
     <HorizontalFlex>
       <FacultyBubbleVerticalFlex>
-        <img
-          src={faculty.image}
-          alt="faculty profile"
-        />
+        <img src={faculty.image} alt="faculty profile" />
         <h1>{faculty.name}</h1>
         <p>{faculty.title}</p>
         <p>{faculty.department}</p>
@@ -30,27 +27,23 @@ const FacultyBubble = (faculty: Faculty) => (
       <VerticalFlex>
         <FacultyBubbleTitle>About {faculty.name}:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
-          <p>
-            {faculty.description}
-          </p>
+          <p>{faculty.description}</p>
         </FacultyBubbleSubtitle>
         <FacultyBubbleTitle>Courses Taught:</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
-          <p>
-          {faculty.tags.join(', ')}
-          </p>
+          <p>{faculty.tags.join(', ')}</p>
         </FacultyBubbleSubtitle>
         <br></br>
         <FacultyBubbleTagsContainer>
           {faculty.tags.filter((area) => area !== '').length === 0 ? null : (
             <Tag
-                style={{
+              style={{
                 background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-                }}
+              }}
             >
-                {faculty.tags.join(', ')}
+              {faculty.tags.join(', ')}
             </Tag>
-            )}
+          )}
         </FacultyBubbleTagsContainer>
         <br></br>
       </VerticalFlex>
