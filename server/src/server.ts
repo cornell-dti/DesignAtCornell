@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin from 'firebase-admin';
-import { getNodeMajorVersion } from 'typescript';
 import {
   createCourses,
   deleteCourses,
@@ -25,7 +24,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../design-at-cornell/build/')));
+
 
 export const courses = db.collection('courses');
 export const majors = db.collection('majors');
@@ -152,9 +151,14 @@ app.get('/getEvents', getEvents);
 
 app.get('/getArticles', getArticles);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../design-at-cornell/build/', 'index.html'));
-});
+
+
+if (process.env.NODE_ENV) {
+  app.use(express.static(path.join('../design-at-cornell/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Design@Cornell server listening on port ${port}`);

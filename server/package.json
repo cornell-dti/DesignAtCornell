@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node dist/server.js",
-    "start-dev": "ts-node server.ts",
+    "start-dev": "ts-node src/server.ts",
     "courses-script": "ts-node scripts/courses_script.ts",
     "majors-script": "ts-node scripts/majors_minors_script.ts",
     "clubs-script": "ts-node scripts/clubs_script.ts",
