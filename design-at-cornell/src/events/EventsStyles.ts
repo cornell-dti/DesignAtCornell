@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { colors } from '../constants/colors';
 
 export const Divider = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80px;
+  height: 80%;
   padding: 5px;
   align-items: center;
 `;
@@ -81,8 +82,8 @@ export const EventList = styled.div`
 export const EventContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 353px;
+  width: calc(100%);
+  height: 300px;
   background: white;
   border-radius: 14px;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.07);
@@ -96,13 +97,20 @@ export const EventContainer = styled.div`
     font-size: 32px;
     line-height: 38px;
     color: black;
-    margin: 0;
+    margin: 10;
   }
 
   p {
     font-size: 16px;
     line-height: 19px;
     color: black;
+    margin: 10;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    width: calc(97%);
   }
 `;
 
@@ -119,41 +127,24 @@ export const Settings = styled.div`
     line-height: 23px;
     color: #939393;
     margin: 0 30px 0 0;
+    overflow: visible;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: clip;
+    width: calc(100%);
+  }
+
+  span {
+    white-space: nowrap;
   }
 `;
 
-export const TagsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  height: fit-content;
-  align-items: flex-start;
-`;
-
-export const Tag = styled.div`
-  display: flex;
-  width: fit-content;
-  height: 22px;
-  border-radius: 43px;
-  margin-right: 10px;
-  padding: 10px;
-  align-items: center;
-  background: #e4e4e4;
-  p {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: rgba(0, 0, 0, 0.49);
-  }
-`;
-
-export const Link = styled.div<{ shadowColor: string }>`
+export const EventLink = styled.div`
   display: flex;
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px ${({ shadowColor }) => shadowColor};
+  box-shadow: 0px 0px 22px ${colors.event_link_blue};
   margin-right: 30px;
   padding: 20px;
   align-items: center;
