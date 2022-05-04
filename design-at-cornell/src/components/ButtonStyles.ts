@@ -114,3 +114,30 @@ export const LargeRectangularButton = styled.div`
     color: #6b6b6b;
   }
 `;
+
+export const SmallRectangularButton = styled.div`
+  display: flex;
+  width: 102px;
+  height: 34px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+
+  img {
+    width: 15%;
+    height: auto;
+    border-radius: 0px;
+    margin: 0px;
+  }
+
+  p {
+    width: fit-content;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    color: ${colors.websiteGray};
+  }
+`;

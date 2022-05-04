@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../constants/util';
 import Title from './title/Title';
 import { VerticalFlex } from '../components/ContainerStyles';
 import Courses from './courses/Courses';
 import Pagination from '../pagination/Pagination';
-import { Course } from '../../../server/types';
+import { Course } from '../../../server/src/types';
 import {
   Filters,
   designAreas,
@@ -16,8 +16,8 @@ import {
 
 const ExploreCourses = () => {
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/getCourses')
+    api
+      .get('/getCourses')
       .then((res) => res.data.data)
       .then(setCourses);
   }, []);

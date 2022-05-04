@@ -13,15 +13,21 @@ export const colors = {
   pastelGreen: 'rgba(142, 214, 99, 0.17)',
   lightGreen: 'rgba(125, 206, 87, 0.27)',
   green: '#8ed663',
+  pink: '#F796FF',
+  purple: '#CAA1FE',
   shadow: 'rgba(0, 0, 0, 0.05)',
+  cardShadow: '#e6e6e6',
+  websiteGray: '#6B6B6B',
 
   syllabus_blue: '#b1d5ef',
   course_site_orange: 'rgba(254, 186, 171, 0.83)',
   cureviews_purple: '#e3bff0',
   course_roster_green: '#c9e1aa',
+  blurb: 'rgba(255,255,255,0.85)',
 
   red: '#F56E5B',
   white: '#FFFFFF',
+  event_link_blue: '#AED8F7',
 };
 
 export const dashboardColors = ['#BAE6FF', '#FFE5A1', '#FFC5EF', '#C9E1AA', '#FFCBBA', '#D3D2F7'];

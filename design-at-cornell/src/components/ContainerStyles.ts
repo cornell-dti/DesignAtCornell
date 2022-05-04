@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../constants/colors';
 
 export const HorizontalFlex = styled.div`
   display: flex;
@@ -55,4 +56,17 @@ export const SubComponentHorizontalFlex = styled.div`
   align-items: left;
   justify-content: space-between;
   padding: 100px;
+`;
+
+export const ArticleBubbleVerticalFlex = styled(VerticalFlex)`
+  width: 100%;
+  margin-left: 70px;
+  justify-content: space-evenly;
+`;
+
+export const FacultyBubbleVerticalFlex = styled(VerticalFlex)`
+  width: 450px;
+  height: 370px;
+  justify-content: space-around;
+  background-color: ${colors.lightGray};
 `;
