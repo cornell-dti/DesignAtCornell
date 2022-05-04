@@ -17,6 +17,7 @@ export const colors = {
   purple: '#CAA1FE',
   shadow: 'rgba(0, 0, 0, 0.05)',
   cardShadow: '#e6e6e6',
+  websiteGray: '#6B6B6B',
 
   syllabus_blue: '#b1d5ef',
   course_site_orange: 'rgba(254, 186, 171, 0.83)',

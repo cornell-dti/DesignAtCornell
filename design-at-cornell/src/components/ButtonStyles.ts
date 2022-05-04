@@ -121,14 +121,16 @@ export const SmallRectangularButton = styled.div`
   height: 34px;
   background: white;
   border-radius: 4px;
-  box-shadow: 0px 0px 5px 2px #e6e6e6;
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
 
   img {
-    min-width: 16%;
+    width: 15%;
     height: auto;
+    border-radius: 0px;
+    margin: 0px;
   }
 
   p {
@@ -136,6 +138,6 @@ export const SmallRectangularButton = styled.div`
     font-weight: 600;
     font-size: 13px;
     line-height: 15px;
-    color: #6b6b6b;
+    color: ${colors.websiteGray};
   }
 `;

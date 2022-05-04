@@ -187,6 +187,11 @@ export const Subtitle = styled.div`
   }
 `;
 
+export const ClubBubbleTitle = styled(Title)`
+  font-size: 18px;
+  line-height: 21px;
+`;
+
 export const ArticleBubbleSubtitle = styled(Subtitle)`
   p {
     margin-bottom: -5px;

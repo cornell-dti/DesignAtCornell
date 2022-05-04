@@ -3,7 +3,7 @@ import {
   ElementContainer,
   TagsContainer,
   Tag,
-  Title,
+  ClubBubbleTitle,
 } from '../../components/DashboardElementStyles';
 import { dashboardColors } from '../../constants/colors';
 import openlink from '../../static/images/openlink-icon.svg';
@@ -12,12 +12,12 @@ import { SmallRectangularButton } from '../../components/ButtonStyles';
 
 const ClubBubble = (club: Club) => (
   <ElementContainer>
-    <Title style={{ fontSize: '18px' }}>{club.title}</Title>
+    <ClubBubbleTitle>{club.title}</ClubBubbleTitle>
     <TagsContainer>
       {club.content.orgType === '' ? null : (
         <Tag
           style={{
-            background: dashboardColors[2],
+            background: dashboardColors[0],
           }}
         >
           {club.content.orgType}
@@ -26,7 +26,7 @@ const ClubBubble = (club: Club) => (
       {club.content.size === '' ? null : (
         <Tag
           style={{
-            background: dashboardColors[3],
+            background: dashboardColors[1],
           }}
         >
           {club.content.size}
@@ -35,7 +35,7 @@ const ClubBubble = (club: Club) => (
       {club.content.designAreas.filter((area) => area !== '').length === 0 ? null : (
         <Tag
           style={{
-            background: dashboardColors[4],
+            background: dashboardColors[2],
           }}
         >
           {club.content.designAreas.join(', ')}
@@ -44,7 +44,7 @@ const ClubBubble = (club: Club) => (
       {club.content.credits === null ? null : (
         <Tag
           style={{
-            background: dashboardColors[1],
+            background: dashboardColors[3],
           }}
         >
           {club.content.credits}
