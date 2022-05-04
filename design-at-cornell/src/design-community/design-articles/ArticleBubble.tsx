@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ArticleBubbleContainer,
-  Title,
+  ArticleBubbleTitle,
   ArticleBubbleSubtitle,
 } from '../../components/DashboardElementStyles';
 import { Article } from '../../../../server/src/types';
@@ -11,9 +11,9 @@ const ArticleBubble = (article: Article) => (
   <ArticleBubbleContainer onClick={() => window.open(article.url)}>
     <VerticalFlex>
       <img src={article.image_featured} alt={article.image_alt} />
-      <Title>
+      <ArticleBubbleTitle>
         <p>{article.title}</p>
-      </Title>
+      </ArticleBubbleTitle>
       <ArticleBubbleSubtitle>
         <p>{article.content_text}</p>
       </ArticleBubbleSubtitle>

@@ -15,19 +15,20 @@ export const ElementContainer = styled.div`
   padding: 25px;
   align-items: flex-start;
   justify-content: space-between;
-
-  img {
-    margin: -25px;
-    width: 370px;
-    height: 220px;
-    border-radius: 20px 20px 0px 0px;
-  }
 `;
 
 export const ArticleBubbleContainer = styled(ElementContainer)`
-  width: 370px;
-  height: 350px;
+  width: 30%;
+  height: auto;
   border-radius: 20px;
+
+  img {
+    width: calc(100% + 50px);
+    height: auto;
+    aspect-ratio: 5/3;
+    margin: -25px 0px 0px -25px;
+    border-radius: 20px 20px 0px 0px;
+  }
 `;
 
 export const FacultyBubbleContainer = styled(ElementContainer)`
@@ -105,25 +106,28 @@ export const SmallFacultyBubbleContainer = styled(FacultyBubbleContainer)`
 `;
 
 export const SmallArticleBubbleContainer = styled(ElementContainer)`
-  width: 270px;
-  height: 325px;
+  height: auto;
   border-radius: 20px;
 
   img {
-    width: 270px;
-    height: 180px;
+    width: calc(100% + 50px);
+    height: auto;
+    aspect-ratio: 3/2;
+    margin: -25px 25px 0px -25px;
+    border-radius: 20px 20px 0px 0px;
   }
 `;
 
 export const LargeArticleBubbleContainer = styled(ElementContainer)`
-  margin-left: 20px;
   width: 97%;
-  height: 350px;
+  height: auto;
   border-radius: 20px;
 
   img {
-    width: 50%;
-    height: 350px;
+    margin: -25px 25px -25px -25px;
+    width: auto;
+    height: calc(100% + 50px);
+    aspect-ratio: 5/3;
     border-radius: 20px 0px 0px 20px;
   }
 `;
@@ -192,9 +196,17 @@ export const ClubBubbleTitle = styled(Title)`
   line-height: 21px;
 `;
 
+export const ArticleBubbleTitle = styled(Title)`
+  p {
+    margin-top: 20px;
+    width: 100%;
+    -webkit-line-clamp: 3;
+  }
+`;
+
 export const ArticleBubbleSubtitle = styled(Subtitle)`
   p {
-    margin-bottom: -5px;
+    margin-top: 8px;
     font-size: 12px;
     line-height: 18px;
   }
@@ -203,15 +215,19 @@ export const ArticleBubbleSubtitle = styled(Subtitle)`
 export const SmallArticleBubbleTitle = styled(Title)`
   p {
     margin-top: 5px;
-    width: 220px;
+    width: 100%;
     -webkit-line-clamp: 3;
   }
 `;
 
 export const LargeArticleBubbleTitle = styled(Title)`
-  margin-top: 5px;
-  font-size: 36px;
-  line-height: 42px;
+p {
+    margin-top: 10px;
+    font-size: 36px;
+    line-height: 42px;
+    width: 100%;
+    -webkit-line-clamp: 2;
+  }
 `;
 
 export const FacultyBubbleTitle = styled(Title)`
@@ -223,7 +239,7 @@ export const FacultyBubbleTitle = styled(Title)`
 
 export const SmallArticleBubbleDate = styled(Subtitle)`
   p {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 11px;
     line-height: 13px;
   }
@@ -239,7 +255,6 @@ export const LargeArticleBubbleDate = styled(Subtitle)`
 export const SmallArticleBubbleSubtitle = styled(Subtitle)`
   p {
     margin-top: 5px;
-    margin-bottom: -5px;
     font-size: 12px;
     line-height: 18px;
     -webkit-line-clamp: 3;
@@ -248,6 +263,7 @@ export const SmallArticleBubbleSubtitle = styled(Subtitle)`
 
 export const LargeArticleBubbleSubtitle = styled(Subtitle)`
   p {
+    margin-top: 15px;
     font-size: 18px;
     line-height: 25px;
     -webkit-line-clamp: 4;

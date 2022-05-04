@@ -49,7 +49,3 @@ export const Grid = styled.div`
   height: fit-content;
   padding: 0 80px;
 `;
-
-export const CommunityGrid = styled(Grid)`
-  justify-content: space-between;
-`;
