@@ -23,6 +23,7 @@ export const colors = {
   course_site_orange: 'rgba(254, 186, 171, 0.83)',
   cureviews_purple: '#e3bff0',
   course_roster_green: '#c9e1aa',
+  blurb: 'rgba(255,255,255,0.85)',
 
   red: '#F56E5B',
   white: '#FFFFFF',
