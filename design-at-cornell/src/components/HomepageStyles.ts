@@ -80,8 +80,7 @@ export const ElementContainer = styled.div`
   align-items: flex-start;
   font-weight: normal;
   margin-bottom: 90px;
-  margin-right: 40px;
-  flex: 0 0 26%;
+  margin-inline: 20px;
 
   p {
     font-size: 24px;
@@ -104,6 +103,12 @@ export const CardTitle = styled.div`
   color: black;
   align-items: left;
   margin-top: 50px;
+`;
+
+export const GridItem = styled.div`
+  display: flex;
+  flex: 0 0 26%;
+  justify-content: center;
 `;
 
 export const ExploreSubtitle = styled(Link)`
