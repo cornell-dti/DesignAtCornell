@@ -1,7 +1,7 @@
 import React from 'react';
 import { AreaOfStudyButton, AreaOfStudyTag } from '../AreasOfStudyStyles';
 import { Filters } from '../../constants/filter-criteria';
-import { Major } from '../../../../server/types';
+import { Major } from '../../../../server/src/types';
 
 const AreaOfStudyCard = (props: Props) => {
   return (
