@@ -4,13 +4,13 @@ import { EventList } from './EventsStyles';
 import Title from './Title';
 import Filter from './dashboard/Filter';
 import EventDisplay from './dashboard/EventDisplay';
-import { Event } from '../../../server/types';
-import axios from 'axios';
+import { Event } from '../../../server/src/types';
+import api from '../constants/util';
 
 const Events = () => {
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/getEvents')
+    api
+      .get('/getEvents')
       .then((res) => res.data)
       .then(FormatEvents);
   }, []);
