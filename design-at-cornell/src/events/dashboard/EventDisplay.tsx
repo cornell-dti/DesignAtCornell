@@ -1,6 +1,6 @@
 import React from 'react';
 import { EventContainer, Settings, EventLink } from '../EventsStyles';
-import { Event } from '../../../../server/types';
+import { Event } from '../../../../server/src/types';
 import time from '../../static/images/time.svg';
 import loc from '../../static/images/location.svg';
 import linkIcon from '../../static/images/link-icon.svg';
