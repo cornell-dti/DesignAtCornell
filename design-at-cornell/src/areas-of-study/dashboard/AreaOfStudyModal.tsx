@@ -6,7 +6,7 @@ import {
   ModalContentResponse,
 } from '../AreasOfStudyStyles';
 import { Filters } from '../../constants/filter-criteria';
-import { Major } from '../../../../server/types';
+import { Major } from '../../../../server/src/types';
 import { Modal } from 'semantic-ui-react';
 import {
   ModalContainer,

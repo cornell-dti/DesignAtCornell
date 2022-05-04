@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../constants/util';
 import { VerticalFlex } from '../components/ContainerStyles';
 import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
 import { Filters, designAreas, schools } from '../constants/filter-criteria';
-import { Major } from '../../../server/types';
+import { Major } from '../../../server/src/types';
 
 const AreasOfStudy = () => {
-  const majorsURL = 'http://localhost:3000/getMajors';
   useEffect(() => {
-    axios
+    api
       .get<{
         success: boolean;
         data: Major[];
-      }>(majorsURL)
+      }>('/getMajors')
       .then((res) => res.data.data)
       .then((allStudies) => {
         const majors = allStudies.filter(({ content }) => content.type === 'Major');

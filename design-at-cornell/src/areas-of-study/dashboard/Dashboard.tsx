@@ -1,7 +1,7 @@
 import React from 'react';
 import { DashboardContainer, StudiesContainer, Divider } from '../AreasOfStudyStyles';
 import StudiesGrid from './StudiesGrid';
-import { Major } from '../../../../server/types';
+import { Major } from '../../../../server/src/types';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import ApplyTags from './ApplyTags';
 

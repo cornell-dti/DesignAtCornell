@@ -2,7 +2,7 @@ import React from 'react';
 import { VerticalFlex } from '../../components/ContainerStyles';
 import { Grid } from '../../components/DashboardGridStyles';
 import CourseBubble from './CourseBubble';
-import { Course } from '../../../../server/types';
+import { Course } from '../../../../server/src/types';
 
 const Courses = (courses: Course[]) => {
   const courseBubbles = (

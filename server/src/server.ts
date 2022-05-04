@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import admin from 'firebase-admin';
-import { getNodeMajorVersion } from 'typescript';
 import {
   createCourses,
   deleteCourses,
@@ -20,26 +19,19 @@ import { createClubs, deleteClubs, getClubs, updateClubs } from './endpoints/clu
 
 import getEvents from './endpoints/events/events_endpoints';
 import getArticles from './endpoints/articles/articles_endpoints';
-// eslint-disable-next-line
-const serviceAccount = require('./designAtCornellServiceAccount.json');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://designatcornell.firebaseio.com',
-});
+import getFaculty from './endpoints/faculty/faculty_endpoints';
+import { db } from './firebase-config';
 
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../design-at-cornell/build/')));
-
-const db = admin.firestore();
 
 export const courses = db.collection('courses');
 export const majors = db.collection('majors');
 export const clubs = db.collection('clubs');
 export const events = db.collection('events');
+export const faculty = db.collection('faculty');
 
 /**
  * COURSES COLLECTION CRUD OPERATIONS
@@ -160,9 +152,18 @@ app.get('/getEvents', getEvents);
 
 app.get('/getArticles', getArticles);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../design-at-cornell/build/', 'index.html'));
-});
+/**
+ * FACULTY FETCHING OPERATIONS
+ */
+
+app.get('/getFaculty', getFaculty);
+
+if (process.env.NODE_ENV) {
+  app.use(express.static(path.join('../design-at-cornell/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('../../design-at-cornell', 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Design@Cornell server listening on port ${port}`);
