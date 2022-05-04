@@ -17,9 +17,10 @@ const AreasOfStudy = () => {
       .then((allStudies) => {
         const majors = allStudies.filter(({ content }) => content.type === 'Major');
         const minors = allStudies.filter(({ content }) => content.type === 'Minor');
+        const gradStudies = allStudies.filter(({ content }) => content.academicLevel === 'G');
         setMajors(majors);
         setMinors(minors);
-        setGradStudies([...majors, ...minors]);
+        setGradStudies(gradStudies);
       });
   }, []);
 

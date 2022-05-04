@@ -45,12 +45,12 @@ export const Grid = styled.div`
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
-  justify-content: space-between;
 `;
 
 export const AreaOfStudyButton = styled.div`
-  width: 287px;
+  width: 30%;
   margin-bottom: 38px;
+  margin-inline: 10px;
 
   h1 {
     font-weight: bold;
