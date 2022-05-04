@@ -13,7 +13,10 @@ export const colors = {
   pastelGreen: 'rgba(142, 214, 99, 0.17)',
   lightGreen: 'rgba(125, 206, 87, 0.27)',
   green: '#8ed663',
+  pink: '#F796FF',
+  purple: '#CAA1FE',
   shadow: 'rgba(0, 0, 0, 0.05)',
+  cardShadow: '#e6e6e6',
 
   syllabus_blue: '#b1d5ef',
   course_site_orange: 'rgba(254, 186, 171, 0.83)',

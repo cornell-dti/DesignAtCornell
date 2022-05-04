@@ -8,7 +8,7 @@ const pages: Page[] = [
   { name: 'Majors & Minors', url: '/areas-of-study' },
   { name: 'Student Organizations', url: '/student-organizations' },
   { name: 'Events', url: '/events' },
-  { name: 'Design Resources', url: '/design-resources' },
+  { name: 'Design Community', url: '/design-community' },
 ];
 
 const explore: Page[] = [
