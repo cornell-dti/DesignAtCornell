@@ -20,7 +20,7 @@ const About: React.FC = () => (
         <br />
         <br />
         Contact <a href="mailto:mshepley@cornell.edu">mshepley@cornell.edu</a> for questions about
-        the project or <a href="mailto:hello@cornelldti.org">hello@cornelldti.org</a> for any
+        the project or <a href="mailto:designatcornell@gmail.com">designatcornell@gmail.com</a> for any
         technical issues.
       </p>
     </div>
