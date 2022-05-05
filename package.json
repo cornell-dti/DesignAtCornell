@@ -7,14 +7,13 @@
     "frontend-build": "yarn workspace design-at-cornell build",
     "frontend-test": "yarn workspace design-at-cornell test",
     "frontend-eject": "yarn workspace design-at-cornell eject",
-    "tsc": "yarn workspaces run tsc",
+    "build": "yarn workspaces run build",
     "frontend-dev": "yarn workspace design-at-cornell start",
     "backend-dev": "yarn workspace server start",
     "format": "prettier --write \"**/*.{ts,js,tsx,css,html}\"",
     "format:check": "prettier --check \"**/*.{ts,js,tsx,css,html}\"",
     "lint": "eslint . --ext .js --ext .ts --ext .jsx --ext .tsx",
-    "lint:fix": "yarn lint --fix",
-    "postinstall": "yarn workspace server tsc"
+    "lint:fix": "yarn lint --fix"
   },
   "engines": {
     "node": "16.x"
