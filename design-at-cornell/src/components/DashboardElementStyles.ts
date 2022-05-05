@@ -32,15 +32,15 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
 `;
 
 export const FacultyBubbleContainer = styled(ElementContainer)`
-  width: 370px;
-  height: 480px;
+  width: 23%;
+  height: auto;
+  margin: 2% 5%;
   box-shadow: 0px 0px 0px 0px;
 
   img {
-    margin: 15px;
     margin-bottom: 25px;
-    width: 290px;
-    height: 290px;
+    width: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 13px solid white;
     outline: 3px solid ${colors.purple};
@@ -48,9 +48,8 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
 
   h1 {
     margin-top: 5px;
-    margin-left: 25%;
     margin-bottom: 20px;
-    width: 173px;
+    width: 100%;
     text-align: center;
     font-weight: 600;
     font-size: 18px;
@@ -59,9 +58,8 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
   }
 
   p {
-    margin-left: 25%;
     margin-bottom: 10px;
-    width: 173px;
+    width: 100%;
     text-align: center;
     font-weight: 600;
     font-size: 16px;
