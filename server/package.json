@@ -11,7 +11,7 @@
     "events-script": "ts-node scripts/events_script.ts",
     "roster-script": "ts-node scripts/import_roster.ts",
     "faculty-script": "ts-node scripts/faculty_script.ts",
-    "tsc": "tsc",
+    "build": "tsc",
     "clean": "rm -rf dist"
   },
   "dependencies": {
