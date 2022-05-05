@@ -69,37 +69,14 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
 `;
 
 export const SmallFacultyBubbleContainer = styled(FacultyBubbleContainer)`
-  width: 600px;
-  height: 370px;
-  margin: 20px 10px;
+  width: 46%;
+  margin: 2%;
   padding: 0px;
   box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
 
   img {
-    margin-top: 30px;
-    margin-left: 50px;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 7px solid white;
-    outline: 1.5px solid ${colors.purple};
-  }
-
-  h1 {
-    text-align: center;
-    margin-left: 0px;
-    margin-top: -5px;
-    width: 260px;
-    font-size: 18px;
-    color: black;
-  }
-
-  p {
-    margin-top: 2px;
-    margin-left: 50px;
-    width: 160px;
-    font-size: 14px;
-    color: black;
+    width: 80%;
+    margin: 10%;
   }
 `;
 
