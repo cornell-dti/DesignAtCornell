@@ -1,7 +1,14 @@
 import axios, { AxiosResponse } from 'axios';
 import fsCoursesRead from 'fs';
 import csv from 'csv-parser';
-import { Course, RosterCourse, RosterResponse, FetchedCourse, identifierAndDA } from '../src/types';
+import {
+  Course,
+  RosterCourse,
+  RosterResponse,
+  FetchedCourse,
+  identifierAndDA,
+  rosterSem,
+} from '../src/types';
 import { courses } from '../src/server';
 
 const currSem = 'SP22';
@@ -41,7 +48,6 @@ fsCoursesRead
   });
 
 async function getRosterCourses(coursesOne: identifierAndDA[], classUrl: string, sem: string) {
-  console.log(sem, coursesOne);
   const missedCourses: identifierAndDA[] = [];
   await Promise.allSettled(
     coursesOne.map((course) =>
@@ -86,24 +92,25 @@ function transformCourses(coursesTwo: FetchedCourse[]) {
       content: {
         title: coursesTwo[i].course.titleLong,
         description: coursesTwo[i].course.description,
-        courseSite: 'tbd',
+        courseSite: null,
         courseRoster: `https://classes.cornell.edu/browse/roster/${coursesTwo[i].sem}/class/${coursesTwo[i].course.subject}/${coursesTwo[i].course.catalogNbr}`,
         credits: coursesTwo[i].course.enrollGroups[0].unitsMaximum,
-        major: 'tbd',
+        major: null,
         designAreas: coursesTwo[i].designAreas,
         semester: formattedSemesters,
+        department: null,
       },
     });
   }
   pushCoursesToDatabase(formattedCourses);
 }
 function pushCoursesToDatabase(formattedCourses: Course[]) {
-  const courseIdCollection = courses.doc('SP23').collection('SP23');
+  const courseIdCollection = courses.doc(rosterSem).collection(rosterSem);
   for (let i = 0; i < formattedCourses.length; i += 1) {
     const newCourse = courseIdCollection.doc(
       `${formattedCourses[i].id.toString()} ${formattedCourses[i].code.toString()}`
     );
     newCourse.set(formattedCourses[i].content);
   }
-  console.log('done');
+  console.log(formattedCourses.length, ' courses added to database!');
 }

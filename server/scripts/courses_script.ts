@@ -18,6 +18,7 @@ function createCourses(formatCourses: Course[]) {
       designAreas: formatCourses[i].content.designAreas,
       courseRoster: formatCourses[i].content.courseRoster,
       courseSite: formatCourses[i].content.courseSite,
+      department: formatCourses[i].content.department,
     });
   }
 }
@@ -42,6 +43,7 @@ fsCoursesRead
           designAreas: coursesCSV[i].designAreas.split(', '),
           courseRoster: coursesCSV[i].courseRoster,
           courseSite: coursesCSV[i].courseSite,
+          department: coursesCSV[i].department,
         },
       };
       formattedCourses.push(fCourse);
