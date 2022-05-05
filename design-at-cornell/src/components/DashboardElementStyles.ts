@@ -206,8 +206,6 @@ export const LargeArticleBubbleTitle = styled(Title)`
 `;
 
 export const FacultyBubbleTitle = styled(Title)`
-  margin-top: 36px;
-  margin-left: 22px;
   font-size: 14px;
   line-height: 21px;
 `;
@@ -248,8 +246,6 @@ export const LargeArticleBubbleSubtitle = styled(Subtitle)`
 export const FacultyBubbleSubtitle = styled(Subtitle)`
   p {
     width: 100%;
-    margin-top: 3px;
-    margin: 0px 22px;
     font-weight: normal;
     font-size: 14px;
     color: black;
@@ -266,11 +262,6 @@ export const TagsContainer = styled.div`
   width: 100%;
   height: fit-content;
   align-items: flex-start;
-`;
-
-export const FacultyBubbleTagsContainer = styled(TagsContainer)`
-  margin-left: 22px;
-  margin-bottom: 15px;
 `;
 
 export const Tag = styled.div`

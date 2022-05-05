@@ -3,28 +3,28 @@ import {
   SmallFacultyBubbleContainer,
   FacultyBubbleTitle,
   FacultyBubbleSubtitle,
-  FacultyBubbleTagsContainer,
+  TagsContainer,
   Tag,
 } from '../../../components/DashboardElementStyles';
 import {
-  HorizontalFlex,
-  VerticalFlex,
-  FacultyBubbleVerticalFlex,
+  FacultyBubbleLeftVerticalFlex,
+  FacultyBubbleRightVerticalFlex,
+  FacultyBubbleHorizontalFlex,
 } from '../../../components/ContainerStyles';
 import { Faculty } from '../../../../../server/src/types';
 import { dashboardColors } from '../../../constants/colors';
 
 const FacultyBubble = (faculty: Faculty) => (
   <SmallFacultyBubbleContainer onClick={() => window.open(faculty.website)}>
-    <HorizontalFlex>
-      <FacultyBubbleVerticalFlex>
+    <FacultyBubbleHorizontalFlex>
+      <FacultyBubbleLeftVerticalFlex>
         <img src={faculty.image} alt="faculty profile" />
         <h1>{faculty.name}</h1>
         <p>{faculty.title}</p>
         <p>{faculty.department}</p>
         <br></br>
-      </FacultyBubbleVerticalFlex>
-      <VerticalFlex>
+      </FacultyBubbleLeftVerticalFlex>
+      <FacultyBubbleRightVerticalFlex>
         <FacultyBubbleTitle>About {faculty.name}</FacultyBubbleTitle>
         <FacultyBubbleSubtitle>
           <p>{faculty.description}</p>
@@ -34,7 +34,7 @@ const FacultyBubble = (faculty: Faculty) => (
           {faculty.courses === undefined ? null : <p>{faculty.courses.join(', ')}</p>}
         </FacultyBubbleSubtitle>
         <br></br>
-        <FacultyBubbleTagsContainer>
+        <TagsContainer>
           {faculty.tags[0] === undefined ? null : (
             <Tag
               style={{
@@ -53,10 +53,10 @@ const FacultyBubble = (faculty: Faculty) => (
               {faculty.tags[1]}
             </Tag>
           )}
-        </FacultyBubbleTagsContainer>
+        </TagsContainer>
         <br></br>
-      </VerticalFlex>
-    </HorizontalFlex>
+      </FacultyBubbleRightVerticalFlex>
+    </FacultyBubbleHorizontalFlex>
   </SmallFacultyBubbleContainer>
 );
 

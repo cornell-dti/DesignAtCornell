@@ -62,8 +62,16 @@ export const ArticleBubbleVerticalFlex = styled(VerticalFlex)`
   margin: 1%;
 `;
 
-export const FacultyBubbleVerticalFlex = styled(VerticalFlex)`
-  width: 80%;
-  justify-content: space-around;
+export const FacultyBubbleLeftVerticalFlex = styled(VerticalFlex)`
+  width: 45%;
   background-color: ${colors.lightGray};
+`;
+
+export const FacultyBubbleRightVerticalFlex = styled(VerticalFlex)`
+  width: 55%;
+  padding: 5%;
+`;
+
+export const FacultyBubbleHorizontalFlex = styled(HorizontalFlex)`
+  height: 100%;
 `;
