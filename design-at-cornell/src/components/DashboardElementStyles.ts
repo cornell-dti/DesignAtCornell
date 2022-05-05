@@ -196,7 +196,7 @@ export const SmallArticleBubbleTitle = styled(Title)`
 `;
 
 export const LargeArticleBubbleTitle = styled(Title)`
-p {
+  p {
     margin-top: 10px;
     font-size: 36px;
     line-height: 42px;
