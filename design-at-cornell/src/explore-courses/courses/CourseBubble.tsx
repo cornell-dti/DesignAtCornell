@@ -63,7 +63,6 @@ const CourseBubble = (course: Course) => {
           <Title>{course.content.title}</Title>
           <HorizontalFlex>
             <TagsContainer>
-              <Tag>{course.content.major}</Tag>
               <Tag>{course.content.semester.join(', ')}</Tag>
               {course.content.designAreas.filter((x) => x !== '').length === 0 ? null : (
                 <Tag>{course.content.designAreas.join(', ')}</Tag>

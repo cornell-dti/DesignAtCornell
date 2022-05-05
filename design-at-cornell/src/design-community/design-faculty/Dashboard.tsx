@@ -1,19 +1,19 @@
 import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
-import { CommunityGrid } from '../../components/DashboardGridStyles';
+import { Grid } from '../../components/DashboardGridStyles';
 import { HeadingLine } from '../../components/DashboardElementStyles';
 import { Faculty } from '../../../../server/src/types';
 import FacultyBubble from './FacultyBubble';
 
 const Dashboard = (faculty: Faculty[]) => {
   const facultyBubbles = (
-    <CommunityGrid>
+    <Grid>
       {Object.values(faculty)
         .slice(0, 6)
         .map((faculty) => (
           <FacultyBubble key={faculty.name} {...faculty} />
         ))}
-    </CommunityGrid>
+    </Grid>
   );
 
   return (
