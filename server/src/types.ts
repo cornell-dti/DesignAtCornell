@@ -8,6 +8,7 @@ export type courseContent = {
   major: string;
   designAreas: string[];
   semester: string[];
+  department: string;
 };
 
 export type Course = {
@@ -64,7 +65,7 @@ export type Faculty = {
   image: string;
 };
 
-export const rosterSem = 'SP21';
+export const rosterSem = 'SP22';
 
 export type RosterResponse = {
   status: string;
