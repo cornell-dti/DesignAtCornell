@@ -21,7 +21,7 @@ function createMajors(formatMajors: Major[]) {
 }
 
 fsMajorsRead
-  .createReadStream('./website_data_csv/majors.csv')
+  .createReadStream('./website_data_csv/majors2.csv')
   .pipe(csv())
   .on('data', (data) => majorsCSV.push(data))
   .on('end', () => {
