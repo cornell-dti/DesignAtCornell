@@ -65,6 +65,9 @@ export const ArticleBubbleVerticalFlex = styled(VerticalFlex)`
 export const FacultyBubbleLeftVerticalFlex = styled(VerticalFlex)`
   width: 45%;
   background-color: ${colors.lightGray};
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const FacultyBubbleRightVerticalFlex = styled(VerticalFlex)`

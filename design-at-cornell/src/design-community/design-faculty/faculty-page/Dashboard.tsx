@@ -2,16 +2,17 @@ import React from 'react';
 import { VerticalFlex } from '../../../components/ContainerStyles';
 import { TitleBackground, TitleContainer } from '../../../components/TitleStyles';
 import { colors } from '../../../constants/colors';
-import { Grid } from '../../../components/DashboardGridStyles';
+import { FacultyCardGrid } from '../../../components/DashboardGridStyles';
 import { Faculty } from '../../../../../server/src/types';
 import FacultyBubble from './Bubble';
+
 const Dashboard = (faculty: Faculty[]) => {
   const facultyBubbles = (
-    <Grid>
+    <FacultyCardGrid>
       {Object.values(faculty).map((faculty) => (
         <FacultyBubble key={faculty.name} {...faculty} />
       ))}
-    </Grid>
+    </FacultyCardGrid>
   );
 
   return (

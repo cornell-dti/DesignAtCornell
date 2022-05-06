@@ -21,7 +21,7 @@ export const TitleBackgroundImage = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 55%;
+  width: 100%;
   height: 85%;
   align-items: flex-start;
   justify-content: center;

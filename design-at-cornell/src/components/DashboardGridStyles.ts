@@ -57,3 +57,11 @@ export const FacultyGrid = styled.div`
   height: fit-content;
   justify-content: space-evenly;
 `;
+
+export const FacultyCardGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  margin: 0px 45px 0px 45px;
+`;

@@ -51,6 +51,7 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
     outline: 2px solid ${colors.purple};
     margin-bottom: 30px;
   }
+
   p {
     width: 100%;
     text-align: center;
@@ -70,6 +71,16 @@ export const SmallFacultyBubbleContainer = styled(FacultyBubbleContainer)`
   img {
     width: 80%;
     margin: 10%;
+  }
+
+  h1 {
+    line-height: 20px;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 15px;
   }
 `;
 
@@ -250,7 +261,7 @@ export const FacultyBubbleSubtitle = styled(Subtitle)`
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
   height: fit-content;
@@ -265,6 +276,7 @@ export const Tag = styled.div`
   margin-right: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 5px;
   align-items: center;
   background-color: ${colors.transparentWhite};
   white-space: nowrap;
