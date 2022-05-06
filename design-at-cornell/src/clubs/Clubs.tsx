@@ -4,7 +4,6 @@ import Title from './title/Title';
 import Pagination from '../pagination/Pagination';
 import { VerticalFlex } from '../components/ContainerStyles';
 import { Club } from '../../../server/src/types';
-import { Filters, designAreas, organizationType, size } from '../constants/filter-criteria';
 import Dashboard from './dashboard/Dashboard';
 
 const Clubs = () => {
