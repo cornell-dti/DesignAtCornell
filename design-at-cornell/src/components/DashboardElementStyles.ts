@@ -44,7 +44,7 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 50%;
-    border: 13px solid white;
+    border: 8px solid white;
     outline: 3px solid ${colors.purple};
   }
 
