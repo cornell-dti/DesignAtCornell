@@ -5,7 +5,7 @@ export const ElementContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 22%;
-  min-width: 250px;
+  min-width: 300px;
   height: 197px;
   cursor: pointer;
   background: white;
@@ -261,8 +261,7 @@ export const FacultyBubbleSubtitle = styled(Subtitle)`
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;
   width: 100%;
   height: fit-content;
   align-items: flex-start;
@@ -274,6 +273,7 @@ export const Tag = styled.div`
   height: 28px;
   border-radius: 43px;
   margin-right: 10px;
+  margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
