@@ -22,9 +22,9 @@ const Footer = () => {
       <Email>
         <p>
           For any questions, please contact
-          <a href="mailto: hello@cornelldti.org" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:designatcornell@gmail.com" target="_blank" rel="noopener noreferrer">
             {' '}
-            hello@cornelldti.org
+            designatcornell@gmail.com
           </a>
         </p>
       </Email>
