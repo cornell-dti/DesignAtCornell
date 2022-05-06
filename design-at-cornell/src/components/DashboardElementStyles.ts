@@ -5,7 +5,7 @@ export const ElementContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 22%;
-  min-width: 300px;
+  min-width: 280px;
   height: 197px;
   cursor: pointer;
   background: white;
