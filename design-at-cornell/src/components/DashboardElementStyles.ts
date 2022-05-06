@@ -26,6 +26,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
     width: calc(100% + 50px);
     height: auto;
     aspect-ratio: 5/3;
+    object-fit: cover;
     margin: -25px 0px 0px -25px;
     border-radius: 20px 20px 0px 0px;
   }
@@ -41,6 +42,7 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
     margin-bottom: 25px;
     width: 100%;
     aspect-ratio: 1/1;
+    object-fit: cover;
     border-radius: 50%;
     border: 13px solid white;
     outline: 3px solid ${colors.purple};
@@ -88,6 +90,7 @@ export const SmallArticleBubbleContainer = styled(ElementContainer)`
     width: calc(100% + 50px);
     height: auto;
     aspect-ratio: 3/2;
+    object-fit: cover;
     margin: -25px 25px 0px -25px;
     border-radius: 20px 20px 0px 0px;
   }
@@ -103,6 +106,7 @@ export const LargeArticleBubbleContainer = styled(ElementContainer)`
     width: auto;
     height: calc(100% + 50px);
     aspect-ratio: 5/3;
+    object-fit: cover;
     border-radius: 20px 0px 0px 20px;
   }
 `;
