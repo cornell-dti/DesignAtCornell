@@ -59,14 +59,19 @@ export const SubComponentHorizontalFlex = styled.div`
 `;
 
 export const ArticleBubbleVerticalFlex = styled(VerticalFlex)`
-  width: 100%;
-  margin-left: 70px;
-  justify-content: space-evenly;
+  margin: 1%;
 `;
 
-export const FacultyBubbleVerticalFlex = styled(VerticalFlex)`
-  width: 450px;
-  height: 370px;
-  justify-content: space-around;
+export const FacultyBubbleLeftVerticalFlex = styled(VerticalFlex)`
+  width: 45%;
   background-color: ${colors.lightGray};
+`;
+
+export const FacultyBubbleRightVerticalFlex = styled(VerticalFlex)`
+  width: 55%;
+  padding: 5%;
+`;
+
+export const FacultyBubbleHorizontalFlex = styled(HorizontalFlex)`
+  height: 100%;
 `;

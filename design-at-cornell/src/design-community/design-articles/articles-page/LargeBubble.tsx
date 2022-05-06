@@ -27,7 +27,9 @@ const LargeArticleBubble = (article: Article) => (
                 article.date_published.split(' ')[3]}
             </p>
           </LargeArticleBubbleDate>
-          <LargeArticleBubbleTitle>{article.title}</LargeArticleBubbleTitle>
+          <LargeArticleBubbleTitle>
+            <p>{article.title}</p>
+          </LargeArticleBubbleTitle>
           <LargeArticleBubbleSubtitle>
             <p>{article.content_text}</p>
           </LargeArticleBubbleSubtitle>

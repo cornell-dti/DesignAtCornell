@@ -23,15 +23,6 @@ const ClubBubble = (club: Club) => (
           {club.content.orgType}
         </Tag>
       )}
-      {club.content.size === '' ? null : (
-        <Tag
-          style={{
-            background: dashboardColors[1],
-          }}
-        >
-          {club.content.size}
-        </Tag>
-      )}
       {club.content.designAreas.filter((area) => area !== '').length === 0 ? null : (
         <Tag
           style={{
@@ -39,15 +30,6 @@ const ClubBubble = (club: Club) => (
           }}
         >
           {club.content.designAreas.join(', ')}
-        </Tag>
-      )}
-      {club.content.credits === null ? null : (
-        <Tag
-          style={{
-            background: dashboardColors[3],
-          }}
-        >
-          {club.content.credits}
         </Tag>
       )}
     </TagsContainer>
