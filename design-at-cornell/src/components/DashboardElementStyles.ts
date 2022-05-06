@@ -34,6 +34,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
 
 export const FacultyBubbleContainer = styled(ElementContainer)`
   width: 23%;
+  min-width: 0;
   height: auto;
   margin: 2% 5%;
   box-shadow: 0px 0px 0px 0px;
