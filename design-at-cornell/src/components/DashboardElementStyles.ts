@@ -5,7 +5,7 @@ export const ElementContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 22%;
-  min-width: 250px;
+  min-width: 300px;
   height: 197px;
   cursor: pointer;
   background: white;
@@ -26,6 +26,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
     width: calc(100% + 50px);
     height: auto;
     aspect-ratio: 5/3;
+    object-fit: cover;
     margin: -25px 0px 0px -25px;
     border-radius: 20px 20px 0px 0px;
   }
@@ -33,6 +34,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
 
 export const FacultyBubbleContainer = styled(ElementContainer)`
   width: 23%;
+  min-width: 0;
   height: auto;
   margin: 2% 5%;
   box-shadow: 0px 0px 0px 0px;
@@ -41,8 +43,9 @@ export const FacultyBubbleContainer = styled(ElementContainer)`
     margin-bottom: 25px;
     width: 100%;
     aspect-ratio: 1/1;
+    object-fit: cover;
     border-radius: 50%;
-    border: 13px solid white;
+    border: 8px solid white;
     outline: 3px solid ${colors.purple};
   }
 
@@ -88,6 +91,7 @@ export const SmallArticleBubbleContainer = styled(ElementContainer)`
     width: calc(100% + 50px);
     height: auto;
     aspect-ratio: 3/2;
+    object-fit: cover;
     margin: -25px 25px 0px -25px;
     border-radius: 20px 20px 0px 0px;
   }
@@ -103,6 +107,7 @@ export const LargeArticleBubbleContainer = styled(ElementContainer)`
     width: auto;
     height: calc(100% + 50px);
     aspect-ratio: 5/3;
+    object-fit: cover;
     border-radius: 20px 0px 0px 20px;
   }
 `;
@@ -257,8 +262,7 @@ export const FacultyBubbleSubtitle = styled(Subtitle)`
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;
   width: 100%;
   height: fit-content;
   align-items: flex-start;
@@ -270,6 +274,7 @@ export const Tag = styled.div`
   height: 28px;
   border-radius: 43px;
   margin-right: 10px;
+  margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
