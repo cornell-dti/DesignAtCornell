@@ -11,18 +11,14 @@ function createClubs(formatClubs: Club[]) {
     newClubs.set({
       title: formatClubs[i].title,
       orgType: formatClubs[i].content.orgType,
-      size: formatClubs[i].content.size,
       designAreas: formatClubs[i].content.designAreas,
-      description: formatClubs[i].content.description,
       website: formatClubs[i].content.website,
-      credits: formatClubs[i].content.credits,
-      contact: formatClubs[i].content.contact,
     });
   }
 }
 
 fsClubsRead
-  .createReadStream('./website_data_csv/clubs.csv')
+  .createReadStream('./website_data_csv/clubs2.csv')
   .pipe(csv())
   .on('data', (data) => clubsCSV.push(data))
   .on('end', () => {
@@ -35,10 +31,6 @@ fsClubsRead
           orgType: clubsCSV[i].orgType,
           designAreas: clubsCSV[i].designAreas.split(', '),
           website: clubsCSV[i].website,
-          credits: parseInt(clubsCSV[i].credits, 10),
-          size: clubsCSV[i].size,
-          description: clubsCSV[i].description,
-          contact: clubsCSV[i].contact,
         },
       };
       formattedClubs.push(fClub);
