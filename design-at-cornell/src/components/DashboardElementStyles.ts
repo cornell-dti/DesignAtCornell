@@ -32,39 +32,32 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
 `;
 
 export const FacultyBubbleContainer = styled(ElementContainer)`
-  width: 23%;
-  height: auto;
-  margin: 2% 5%;
+  width: 320px;
+  height: 400px;
   box-shadow: 0px 0px 0px 0px;
+  flex-direction: column;
+  margin-bottom: 40px;
+  @media (min-width: 1375px) {
+    width: 420px;
+    height: 480px;
+  }
 
   img {
-    margin-bottom: 25px;
-    width: 100%;
     aspect-ratio: 1/1;
+    width: 100%;
+    object-fit: cover;
     border-radius: 50%;
-    border: 13px solid white;
-    outline: 3px solid ${colors.purple};
+    border: 12px solid white;
+    outline: 2px solid ${colors.purple};
+    margin-bottom: 30px;
   }
-
-  h1 {
-    margin-top: 5px;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 21px;
-    color: black;
-  }
-
   p {
-    margin-bottom: 10px;
     width: 100%;
     text-align: center;
-    font-weight: 600;
+    font-weight: 900;
     font-size: 16px;
-    line-height: 21px;
     color: black;
+    line-height: 10px;
   }
 `;
 

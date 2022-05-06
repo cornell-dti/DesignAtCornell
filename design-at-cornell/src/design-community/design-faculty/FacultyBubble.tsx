@@ -1,16 +1,17 @@
 import React from 'react';
 import { FacultyBubbleContainer } from '../../components/DashboardElementStyles';
 import { Faculty } from '../../../../server/src/types';
-import { VerticalFlex } from '../../components/ContainerStyles';
 
-const FacultyBubble = (faculty: Faculty) => (
+interface FacultyBubbleProps {
+  faculty: Faculty;
+}
+
+const FacultyBubble = ({ faculty }: FacultyBubbleProps) => (
   <FacultyBubbleContainer onClick={() => window.open(faculty.website)}>
-    <VerticalFlex>
-      <img src={faculty.image} alt="faculty profile" />
-      <h1>{faculty.name}</h1>
-      <p>{faculty.title}</p>
-      <p>{faculty.department}</p>
-    </VerticalFlex>
+    <img src={faculty.image} alt="faculty profile" />
+    <p>{faculty.name}</p>
+    <p>{faculty.title}</p>
+    <p>{faculty.department}</p>
   </FacultyBubbleContainer>
 );
 

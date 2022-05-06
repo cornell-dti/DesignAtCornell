@@ -47,5 +47,13 @@ export const Grid = styled.div`
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
-  padding: 0 80px;
+`;
+
+export const FacultyGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-evenly;
 `;

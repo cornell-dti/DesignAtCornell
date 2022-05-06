@@ -51,7 +51,7 @@ export const TitleContainerBox = styled.div`
   height: 320px;
   margin-left: 105px;
   margin-top: 65px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.65);
   border-radius: 20px;
   padding: 45px 45px;
   align-items: flex-start;

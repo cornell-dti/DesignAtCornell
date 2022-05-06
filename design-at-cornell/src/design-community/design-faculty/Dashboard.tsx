@@ -1,25 +1,27 @@
 import React from 'react';
 import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
-import { Grid } from '../../components/DashboardGridStyles';
+import { FacultyGrid } from '../../components/DashboardGridStyles';
 import { HeadingLine } from '../../components/DashboardElementStyles';
 import { Faculty } from '../../../../server/src/types';
 import FacultyBubble from './FacultyBubble';
 
-const Dashboard = (faculty: Faculty[]) => {
-  const facultyBubbles = (
-    <Grid>
+const FacultyImages = ({ faculty }: { faculty: Faculty[] }) => {
+  return (
+    <FacultyGrid>
       {Object.values(faculty)
         .slice(0, 6)
         .map((faculty) => (
-          <FacultyBubble key={faculty.name} {...faculty} />
+          <FacultyBubble faculty={faculty} key={faculty.name} />
         ))}
-    </Grid>
+    </FacultyGrid>
   );
+};
 
+const Dashboard = (faculty: Faculty[]) => {
   return (
     <VerticalFlex>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       <HorizontalFlex>
         <HeadingLine>
           <hr />
@@ -29,10 +31,10 @@ const Dashboard = (faculty: Faculty[]) => {
           <hr />
         </HeadingLine>
       </HorizontalFlex>
-      <br></br>
-      {facultyBubbles}
-      <br></br>
-      <br></br>
+      <br />
+      <FacultyImages faculty={faculty} />
+      <br />
+      <br />
     </VerticalFlex>
   );
 };
