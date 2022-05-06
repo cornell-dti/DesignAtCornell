@@ -24,13 +24,9 @@ export async function createClubs(req, res) {
 
   if (
     club.title === undefined ||
-    club.content.description === undefined ||
     club.content.website === undefined ||
     club.content.designAreas === undefined ||
-    club.content.size === undefined ||
-    club.content.credits === undefined ||
-    club.content.orgType === undefined ||
-    club.content.contact === undefined
+    club.content.orgType === undefined
   ) {
     res.send({ success: false, message: 'One or more fields is missing.' });
   } else {

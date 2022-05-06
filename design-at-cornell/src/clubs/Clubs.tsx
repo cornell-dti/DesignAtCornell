@@ -4,7 +4,6 @@ import Title from './title/Title';
 import Pagination from '../pagination/Pagination';
 import { VerticalFlex } from '../components/ContainerStyles';
 import { Club } from '../../../server/src/types';
-import { Filters, designAreas, organizationType, size } from '../constants/filter-criteria';
 import Dashboard from './dashboard/Dashboard';
 
 const Clubs = () => {
@@ -16,29 +15,12 @@ const Clubs = () => {
   }, []);
 
   const [clubs, setClubs] = useState<Club[]>([]);
-  const [designAreaTags] = useState<Filters>({ ...designAreas, all: true });
-  const [orgTypeTags] = useState<Filters>({ ...organizationType, all: true });
-  const [sizeTags] = useState<Filters>({ ...size, all: true });
-  const [search] = useState('');
   const [currentPage, setPage] = useState(1);
 
-  const filterResult = clubs.filter(
-    (club) =>
-      club.content.designAreas.reduce(
-        (acc, area) => acc || designAreaTags[area],
-        designAreaTags['all']
-      ) &&
-      (orgTypeTags['all'] || orgTypeTags[club.content.orgType]) &&
-      (sizeTags['all'] || sizeTags[club.content.size]) &&
-      (club.title + club.content.orgType)
-        .replace(/\s/g, '')
-        .toLowerCase()
-        .includes(search.replace(/\s/g, '').toLowerCase())
-  );
   const clubsPerPage = 20;
   const lastClubIdx = currentPage * clubsPerPage;
   const firstClubIdx = lastClubIdx - clubsPerPage;
-  const displayedClubs = filterResult.slice(firstClubIdx, lastClubIdx);
+  const displayedClubs = clubs.slice(firstClubIdx, lastClubIdx);
 
   return (
     <VerticalFlex>
@@ -47,7 +29,7 @@ const Clubs = () => {
       <Pagination
         currentPage={currentPage}
         cardsPerPage={clubsPerPage}
-        totalCards={filterResult.length}
+        totalCards={clubs.length}
         paginate={setPage}
       />
     </VerticalFlex>

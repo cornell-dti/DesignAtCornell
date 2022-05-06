@@ -40,11 +40,7 @@ export type Reason = {
 export type clubContent = {
   designAreas: string[];
   orgType: string;
-  size: string;
   website: string;
-  description: string;
-  credits: number;
-  contact: string;
 };
 
 export type Club = {
