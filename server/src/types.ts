@@ -18,6 +18,7 @@ export type Course = {
 };
 
 export type majorContent = {
+  title: string;
   academicLevel: string;
   departmentPage: string;
   designAreas: string[];
