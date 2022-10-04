@@ -41,6 +41,21 @@ export const Logo = styled(Link)`
   }
 `;
 
+export const CornellLogo = styled.div`
+  img {
+    margin-top: 12px;
+    height: 70px;
+  }
+`;
+
+export const Line = styled.div`
+  margin-top: 12px;
+  height: 70px;
+  border-left: 1px solid black;
+  margin-left: -18px;
+  margin-right: 16px;
+`;
+
 export const Nav = styled.div`
   display: flex;
   flex-direction: row;
