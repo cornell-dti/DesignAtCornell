@@ -29,7 +29,7 @@ fsMajorsRead
     // converting each course (CSV object) into formatCourse (JSON object)
     for (let i = 0; i < majorsCSV.length; i += 1) {
       const fMajor: Major = {
-        title: majorsCSV[i].title + ', ' + majorsCSV[i].academicLevel + ', ' + majorsCSV[i].type,
+        title: `${majorsCSV[i].title},  ${majorsCSV[i].academicLevel}, ${majorsCSV[i].type}`,
         content: {
           academicLevel: majorsCSV[i].academicLevel,
           designAreas: majorsCSV[i].designAreas.split(', '),
