@@ -24,8 +24,8 @@ const AreaOfStudyModal = (props: Props) => {
   const [open, setOpen] = React.useState(false);
 
   const areaOfStudyButton = (
-    <AreaOfStudyButton key={props.study.title}>
-      <h1>{props.study.title}</h1>
+    <AreaOfStudyButton key={props.study.content.title}>
+      <h1>{props.study.content.title}</h1>
       <AreaOfStudyTag highlight={props.schoolTags[props.study.content.school]}>
         {props.study.content.school + '. '}
       </AreaOfStudyTag>
