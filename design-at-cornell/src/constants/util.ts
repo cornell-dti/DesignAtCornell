@@ -8,7 +8,9 @@ dotenv.config();
 // Change to only local if you are testing backend functionality.
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3000',
+  baseURL: process.env.REACT_APP_BASE_URL,
+  // baseURL: 'http://localhost:3000',
 });
 
 export default api;
+
