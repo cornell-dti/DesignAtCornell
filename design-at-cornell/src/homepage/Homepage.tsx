@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Headline,
-  MissionStat,
   CardTitle,
   Grid,
   ElementContainer,
@@ -21,12 +19,6 @@ const Homepage: React.FC = () => (
   <div data-testid="Homepage">
     <Router />
     <Title />
-    <Headline>
-      <b>Your ultimate resource for all things Design at Cornell University.</b>
-    </Headline>
-    <MissionStat>
-      Our mission is to connect, inform, and inspire the design community at Cornell University.
-    </MissionStat>
     <Grid>
       <GridItem>
         <ElementContainer>

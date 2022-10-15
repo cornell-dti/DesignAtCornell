@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 96px;
   color: black;
-  padding-left: 60px;
+  padding-left: 50px;
   padding-right: 60px;
 `;
 
