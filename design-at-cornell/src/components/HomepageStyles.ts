@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import homepage_banner from '../static/images/homepage_banner.svg';
+import mobile_homepage from '../static/images/mobile_homepage.svg';
 import { colors } from '../constants/colors';
 
 export const BannerBackground = styled.div`
@@ -12,6 +13,12 @@ export const BannerBackground = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   margin-bottom: 90px;
+  @media (max-width: 1000px) {
+      overflow-y: visible;
+      color: white;
+      height: 336px;
+      background-image: url(${mobile_homepage});
+    }
 `;
 
 export const BlurbContainer = styled.div`
@@ -26,10 +33,23 @@ export const BlurbContainer = styled.div`
     height: 72px;
     font-family: 'Work Sans';
     font-style: normal;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 30px;
     line-height: 47px;
     padding-left: 50px;
+    
+    @media (max-width: 1000px) {
+      overflow-y: visible;
+      color: white;
+      text-align: center;
+      display: inline-block;
+      height: 10%;
+      width: 100%;
+      font-size: 55px;
+      line-height: 60px;
+      align-items: center;
+      padding-left: 25px;
+    }
   }
 
   p {
@@ -38,12 +58,23 @@ export const BlurbContainer = styled.div`
     color: black;
     padding-left: 50px;
     font-weight: 500;
+    @media (max-width: 1000px) {
+      overflow-y: visible;
+      text-align: center;
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      margin-top: 50px;
+      line-height: 23px;
+      padding-left: 25px;
+
+    }
   }
 `;
 
 export const Blurb = styled.div`
   text-align: center;
-  display: block;
+  display: inline-block;
   justify-content: center;
   position: absolute;
   width: 497px;
@@ -52,6 +83,17 @@ export const Blurb = styled.div`
   top: 190px;
   background: ${colors.blurb};
   border-radius: 20px;
+
+
+  @media (max-width: 1000px) {
+    overflow-y: visible;
+    text-align: center;
+    width: 100%;
+    right: 0%;
+    top: 15%;
+    background: transparent;
+    color: white;
+  }
 `;
 
 export const Headline = styled.div`
