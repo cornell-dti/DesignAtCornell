@@ -6,10 +6,10 @@ import { Major } from '../../../../server/src/types';
 const AreaOfStudyCard = (props: Props) => {
   return (
     <AreaOfStudyButton
-      key={props.study.title}
+      key={props.study.content.title}
       onClick={() => window.open(props.study.content.departmentPage)}
     >
-      <h1>{props.study.title}</h1>
+      <h1>{props.study.content.title}</h1>
       <AreaOfStudyTag highlight={props.schoolTags[props.study.content.school]}>
         {props.study.content.school + '. '}
       </AreaOfStudyTag>
