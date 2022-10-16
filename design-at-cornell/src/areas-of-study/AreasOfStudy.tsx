@@ -29,18 +29,28 @@ const AreasOfStudy = () => {
   const [minors, setMinors] = useState<Major[]>([]);
   const [gradStudies, setGradStudies] = useState<Major[]>([]);
 
-  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas });
+  const [designAreaTags, setDesignAreaTags] = useState<Filters>({ ...designAreas, all: true });
 
-  const [schoolTags, setSchoolTags] = useState<Filters>({ ...schools });
+  const [schoolTags, setSchoolTags] = useState<Filters>({ ...schools, all: true });
+
+  const filterResult = (studies: Major[]) =>
+    studies.filter(
+      (study) =>
+        study.content.designAreas.reduce(
+          (acc, area) => acc || designAreaTags[area],
+          designAreaTags['all']
+        ) &&
+        (schoolTags['all'] || schoolTags[study.content.school])
+    );
 
   return (
     <VerticalFlex>
       <Title />
       <Dashboard
         {...{
-          majors: majors,
-          minors: minors,
-          gradStudies: gradStudies,
+          majors: filterResult(majors),
+          minors: filterResult(minors),
+          gradStudies: filterResult(gradStudies),
           designAreaTags: designAreaTags,
           schoolTags: schoolTags,
           setDesignTags: setDesignAreaTags,
