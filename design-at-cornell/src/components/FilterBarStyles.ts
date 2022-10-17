@@ -21,12 +21,20 @@ export const FilterDropdownContainer = styled.li`
   position: relative;
   display: inline;
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 10px 10px 0px 10px;
   p {
     font-weight: bold;
     font-size: 12px;
     margin-right: 20px;
     margin-top: 4px;
+  }
+`;
+
+export const MobileFilterDropdownContainer = styled(FilterDropdownContainer)`
+  align-self: flex-end;
+  margin: 20px 20px 0px 20px;
+  @media (min-width: 901px) {
+    visibility: hidden;
   }
 `;
 
@@ -51,6 +59,14 @@ export const FilterButton = styled.div<{ expand: boolean }>`
   }
 `;
 
+export const MobileFilterButton = styled(FilterButton)`
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
+  height: 36px;
+  padding: 5px 15px;
+  visibility: ${({ expand }) => (!expand ? 'visible' : 'hidden')};
+`;
+
 export const FilterFormContainer = styled.div<{ expand: boolean }>`
   width: 100%;
   position: absolute;
@@ -63,7 +79,7 @@ export const FilterFormContainer = styled.div<{ expand: boolean }>`
 
 export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
   width: fit-content;
-  height: 340px;
+  height: fit-content;
   position: absolute;
   white-space: nowrap;
   display: ${({ expand }) => (expand ? 'inline' : 'none')};
@@ -71,6 +87,21 @@ export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
   padding: 0px 15px 15px 15px;
   border-radius: 0 15px 15px 15px;
   box-shadow: 0px 20px 20px 10px ${colors.shadow};
+`;
+
+export const MobileLargeFilterFormContainer = styled(LargeFilterFormContainer)`
+  margin-top: -150px;
+  border-radius: 15px;
+
+  img {
+    position: absolute;
+    padding-top: 15px;
+    left: 90%;
+  }
+
+  h4 {
+    margin: 12px 0px 5px 0px;
+  }
 `;
 
 export const SearchBar = styled.input`

@@ -4,6 +4,7 @@ import StudiesGrid from './StudiesGrid';
 import { Major } from '../../../../server/src/types';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import ApplyTags from './ApplyTags';
+import ApplyTagsDropdown from './ApplyTagsDropdown';
 
 const Dashboard = (props: Props) => {
   const studies = (category: string, studies: Major[]) => (
@@ -24,6 +25,14 @@ const Dashboard = (props: Props) => {
 
   return (
     <DashboardContainer>
+      <ApplyTagsDropdown
+        {...{
+          designAreaTags: props.designAreaTags,
+          schoolTags: props.schoolTags,
+          setDesignAreaTags: props.setDesignTags,
+          setSchoolTags: props.setSchoolTags,
+        }}
+      />
       <StudiesContainer>
         {studies('Undergraduate Majors', props.majors)}
         {studies('Undergraduate Minors', props.minors)}

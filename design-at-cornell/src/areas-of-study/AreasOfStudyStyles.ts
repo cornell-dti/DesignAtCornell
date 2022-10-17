@@ -6,6 +6,10 @@ export const DashboardContainer = styled.div`
   flex-direction: row;
   width: 100%;
   height: fit-content;
+
+  @media (max-width: 901px) {
+    flex-direction: column;
+  }
 `;
 
 export const StudiesContainer = styled.div`
@@ -14,6 +18,11 @@ export const StudiesContainer = styled.div`
   width: 80%;
   height: fit-content;
   padding: 60px 90px;
+
+  @media (max-width: 901px) {
+    width: 100%;
+    padding: 25px;
+  }
 `;
 
 export const Divider = styled.div`
@@ -37,6 +46,16 @@ export const Divider = styled.div`
     border: 4px solid #8ed663;
     margin-left: 20px;
   }
+
+  @media (max-width: 901px) {
+    h1 {
+      font-size: 22px;
+    }
+
+    hr {
+      border-width: 2.5px;
+    }
+  }
 `;
 
 export const Grid = styled.div`
@@ -57,6 +76,10 @@ export const AreaOfStudyButton = styled.div`
     font-size: 16px;
     color: black;
     cursor: pointer;
+  }
+
+  @media (max-width: 901px) {
+    width: 100%;
   }
 `;
 
@@ -87,6 +110,13 @@ export const ApplyTagsContainer = styled.div`
     line-height: 40px;
     color: black;
     margin: 0;
+  }
+
+  @media (max-width: 901px) {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
   }
 `;
 
