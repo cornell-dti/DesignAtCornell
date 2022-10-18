@@ -35,6 +35,8 @@ export const MobileFilterDropdownContainer = styled(FilterDropdownContainer)`
   margin: 20px 20px 0px 20px;
   @media (min-width: 901px) {
     visibility: hidden;
+    width: 0px;
+    margin: 0px;
   }
 `;
 
@@ -65,6 +67,11 @@ export const MobileFilterButton = styled(FilterButton)`
   height: 36px;
   padding: 5px 15px;
   visibility: ${({ expand }) => (!expand ? 'visible' : 'hidden')};
+
+  @media (min-width: 901px) {
+    visibility: hidden;
+    width: 0px;
+  }
 `;
 
 export const FilterFormContainer = styled.div<{ expand: boolean }>`
