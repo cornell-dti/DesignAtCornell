@@ -27,6 +27,21 @@ export const StyledPagination = styled.div`
   }
 `;
 
+export const MobileAreaOfStudyStyledPagination = styled(StyledPagination)`
+  margin-top: -25px;
+  margin-bottom: 25px;
+  padding: 0px 10px;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
+    justify-content: space-between;
+  }
+`;
+
 export const PageButton = styled.button<{ selected: boolean }>`
   width: 41px;
   height: 41px;
@@ -57,7 +72,6 @@ export const PageNavButton = styled.button<{ direction: string }>`
   line-height: 41px;
   text-align: center;
   align-items: center;
-  justify-content: ${({ direction }) => (direction === 'left' ? 'flex-start' : 'flex-end')};
   cursor: pointer;
 
   img {
@@ -69,4 +83,10 @@ export const PageNavButton = styled.button<{ direction: string }>`
     border: none;
     outline: none;
   }
+`;
+
+export const MobileAreaOfStudyPageNavButton = styled(PageNavButton)`
+  font-size: 16px;
+  line-height: 20px;
+  width: fit-content;
 `;

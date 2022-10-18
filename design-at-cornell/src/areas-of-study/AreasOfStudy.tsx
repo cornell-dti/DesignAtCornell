@@ -5,6 +5,7 @@ import Title from './title/Title';
 import Dashboard from './dashboard/Dashboard';
 import { Filters, designAreas, schools } from '../constants/filter-criteria';
 import { Major } from '../../../server/src/types';
+import MobileAreaOfStudyPagination from '../pagination/MobileAreasOfStudyPagination';
 
 const AreasOfStudy = () => {
   useEffect(() => {
@@ -33,6 +34,8 @@ const AreasOfStudy = () => {
 
   const [schoolTags, setSchoolTags] = useState<Filters>({ ...schools, all: true });
 
+  const [pages, setPages] = useState<String[]>(['Majors', 'Graduate', 'Minors']);
+
   const filterResult = (studies: Major[]) =>
     studies.filter(
       (study) =>
@@ -55,8 +58,11 @@ const AreasOfStudy = () => {
           schoolTags: schoolTags,
           setDesignTags: setDesignAreaTags,
           setSchoolTags: setSchoolTags,
+          pages: pages,
+          setPages: setPages,
         }}
       />
+      <MobileAreaOfStudyPagination pages={pages} paginate={setPages} />
     </VerticalFlex>
   );
 };

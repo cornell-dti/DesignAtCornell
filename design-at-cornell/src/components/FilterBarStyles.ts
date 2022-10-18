@@ -17,6 +17,14 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
+export const MobileFilterBarContainer = styled(FilterBarContainer)`
+  justify-content: center;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+`;
+
 export const FilterDropdownContainer = styled.li`
   position: relative;
   display: inline;
@@ -34,9 +42,7 @@ export const MobileFilterDropdownContainer = styled(FilterDropdownContainer)`
   align-self: flex-end;
   margin: 20px 20px 0px 20px;
   @media (min-width: 901px) {
-    visibility: hidden;
-    width: 0px;
-    margin: 0px;
+    display: none;
   }
 `;
 
@@ -69,8 +75,7 @@ export const MobileFilterButton = styled(FilterButton)`
   visibility: ${({ expand }) => (!expand ? 'visible' : 'hidden')};
 
   @media (min-width: 901px) {
-    visibility: hidden;
-    width: 0px;
+    display: none;
   }
 `;
 
@@ -104,10 +109,41 @@ export const MobileLargeFilterFormContainer = styled(LargeFilterFormContainer)`
     position: absolute;
     padding-top: 15px;
     left: 90%;
+    cursor: pointer;
   }
 
   h4 {
     margin: 12px 0px 5px 0px;
+  }
+`;
+
+export const MobileSelectFormContainer = styled(MobileLargeFilterFormContainer)`
+  margin-top: -100px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  img {
+    left: 85%;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding-top: 5px;
+    margin-left: -5px;
+    font-family: 'Work Sans';
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 19px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: ${colors.green};
   }
 `;
 

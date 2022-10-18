@@ -13,15 +13,28 @@ export const DashboardContainer = styled.div`
 `;
 
 export const StudiesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: fit-content;
-  padding: 60px 90px;
-
+  @media (min-width: 901px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: fit-content;
+    padding: 60px 90px;
+  }
   @media (max-width: 901px) {
+    display: none;
+  }
+`;
+
+export const MobileStudiesContainer = styled.div`
+  @media (max-width: 901px) {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height: fit-content;
     padding: 25px;
+  }
+  @media (min-width: 901px) {
+    display: none;
   }
 `;
 
@@ -113,10 +126,7 @@ export const ApplyTagsContainer = styled.div`
   }
 
   @media (max-width: 901px) {
-    visibility: hidden;
-    width: 0px;
-    height: 0px;
-    padding: 0px;
+    display: none;
   }
 `;
 

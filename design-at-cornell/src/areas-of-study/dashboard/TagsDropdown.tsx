@@ -9,7 +9,7 @@ import downArrow from '../../static/images/down-arrow.png';
 import exit from '../../static/images/exit.svg';
 import { Form } from '../../components/FormStyles';
 
-const ApplyTagsDropdown = (props: Props) => {
+const TagsDropdown = (props: Props) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [numDesignAreasApplied, setNumDesignAreasApplied] = useState<number>(0);
   const [numSchoolsApplied, setNumSchoolsApplied] = useState<number>(0);
@@ -72,4 +72,4 @@ type Props = {
   setSchoolTags: SetFilters;
 };
 
-export default ApplyTagsDropdown;
+export default TagsDropdown;
