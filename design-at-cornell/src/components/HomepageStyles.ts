@@ -4,6 +4,20 @@ import homepage_banner from '../static/images/homepage_banner.svg';
 import mobile_homepage from '../static/images/mobile_homepage.svg';
 import { colors } from '../constants/colors';
 
+
+export const DesktopWrapper = styled.div`
+  @media (max-width: 1000px) {
+      display: none;
+  }
+
+`;
+
+export const MobileWrapper = styled.div`
+  @media (min-width: 1001px) {
+        display: none;
+  }
+`;
+
 export const BannerBackground = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,6 +32,7 @@ export const BannerBackground = styled.div`
       color: white;
       height: 336px;
       background-image: url(${mobile_homepage});
+      margin-bottom: 0px;
     }
 `;
 
@@ -64,7 +79,7 @@ export const BlurbContainer = styled.div`
       display: inline-block;
       color: white;
       font-size: 18px;
-      margin-top: 50px;
+      margin-top: 68px;
       line-height: 23px;
       padding-left: 25px;
 
@@ -103,6 +118,9 @@ export const Headline = styled.div`
   text-align: center;
   color: black;
   justify-content: center;
+  @media (max-width: 1000px) {
+    display: none
+  }
 `;
 
 export const MissionStat = styled.div`
@@ -111,9 +129,11 @@ export const MissionStat = styled.div`
   font-family: 'Work Sans';
   font-style: normal;
   font-size: large;
-  text-align: center;
   color: black;
   margin-top: 40px;
+  @media (max-width: 1000px) {
+    display: none
+  }
 `;
 
 export const ElementContainer = styled.div`
@@ -145,12 +165,31 @@ export const CardTitle = styled.div`
   color: black;
   align-items: left;
   margin-top: 50px;
+  @media (max-width: 1000px) {
+    display: flex;
+    width: 60%;
+    box-sizing: border-box;
+    margin-top: 27px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
 `;
 
 export const GridItem = styled.div`
   display: flex;
   flex: 0 0 26%;
   justify-content: center;
+`;
+
+export const GridMobile = styled.div`
+  display: flex;
+  flex: 0 0 0%;
+  justify-content: left;
+  margin-top: -5px;
 `;
 
 export const ExploreSubtitle = styled(Link)`
@@ -164,6 +203,19 @@ export const ExploreSubtitle = styled(Link)`
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    align-items: right;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    position: absolute;
+    margin-top: 27px;
+    margin-left: -30px;
+    color: black;
+  }
 `;
 
 export const Grid = styled.div`
@@ -173,4 +225,35 @@ export const Grid = styled.div`
   height: fit-content;
   margin-top: 90px;
   justify-content: center;
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    justify-content: left;
+    margin-top: 0px;
+  }
 `;
+
+export const MobileElementContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: normal;
+  margin-bottom: 90px;
+
+  p {
+    font-size: 24px;
+    text-align: left;
+    align-items: left;
+    width: 300px;
+    padding-top: 25px;
+  }
+
+  img {
+    cursor: pointer;
+  }
+`;
+
+
+
+
