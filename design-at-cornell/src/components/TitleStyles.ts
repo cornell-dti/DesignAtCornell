@@ -9,6 +9,11 @@ export const TitleBackground = styled.div`
   background: ${(props) => props.color};
   padding-left: 100px;
   padding-right: 100px;
+  @media (max-width: 1000px) {
+      padding-left: 40px;
+      padding-right: 10px;
+      height: 370px;
+    }
 `;
 
 export const TitleBackgroundImage = styled.div`
@@ -33,6 +38,10 @@ export const TitleContainer = styled.div`
     line-height: 75px;
     margin-bottom: 30px;
     color: black;
+    @media (max-width: 1000px) {
+      font-size: 50px;
+      line-height: 30px;
+    }
   }
 
   p {
@@ -41,6 +50,13 @@ export const TitleContainer = styled.div`
     text-align: left;
     color: black;
     padding-left: 5px;
+    @media (max-width: 1000px) {
+      font-size: 23px;
+    }
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+    font-size: 16px;
   }
 `;
 
