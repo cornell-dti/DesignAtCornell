@@ -15,7 +15,7 @@ import {
   SmallHeading,
 } from '../components/HomepageStyles';
 import homepageEventDisplay from './mobile-events-dashboard/HomepageEventFunctions';
-import articlesDisplay from './mobile-articles-dashboard/articles-homepage-dashboard'
+import articlesDisplay from './mobile-articles-dashboard/articles-homepage-dashboard';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import design_courses from '../static/images/design_courses.svg';
 import majors_minors from '../static/images/majors_minors.svg';
@@ -141,7 +141,9 @@ const Homepage: React.FC = () => (
           {homepageEventDisplay()}
         </MobileElementContainer>
         <MobileElementContainer>
-          <SmallHeading><Link to="./events"></Link>See more events</SmallHeading>
+          <SmallHeading>
+            <Link to="./events"></Link>See more events
+          </SmallHeading>
         </MobileElementContainer>
         <MobileElementContainer>
           <SmallTitle>Articles</SmallTitle>
@@ -149,14 +151,13 @@ const Homepage: React.FC = () => (
           {articlesDisplay()}
         </MobileElementContainer>
         <MobileElementContainer>
-          <SmallHeading><Link to="./articles"></Link>See more articles</SmallHeading>
+          <SmallHeading>
+            <Link to="./articles"></Link>See more articles
+          </SmallHeading>
         </MobileElementContainer>
       </MobileWrapper>
     </Grid>
-
-
-
-  </div >
+  </div>
 );
 
 export default Homepage;

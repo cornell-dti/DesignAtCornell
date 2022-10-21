@@ -131,13 +131,13 @@ export const EventContainer = styled.div`
     }
   }
   @media (max-width: 1000px) {
-      height: 250px;
-      width: 55%;
-      justify-content: space-evenly;
-      box-shadow: 0px 4px 24px 2px rgba(0, 0, 0, 0.07);
-      border-radius: 20px;
-      position: relative;
-      padding: 10px 30px;
+    height: 250px;
+    width: 55%;
+    justify-content: space-evenly;
+    box-shadow: 0px 4px 24px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    position: relative;
+    padding: 10px 30px;
   }
 `;
 
@@ -162,9 +162,8 @@ export const Settings = styled.div`
     @media (max-width: 1000px) {
       font-size: 18px;
       margin: 0 0 0 0;
-      display: inline-flex
-      
-  }
+      display: inline-flex;
+    }
   }
 
   span {

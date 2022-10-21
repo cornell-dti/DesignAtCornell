@@ -4,17 +4,15 @@ import homepage_banner from '../static/images/homepage_banner.svg';
 import mobile_homepage from '../static/images/mobile_homepage.svg';
 import { colors } from '../constants/colors';
 
-
 export const DesktopWrapper = styled.div`
   @media (max-width: 1000px) {
-      display: none;
+    display: none;
   }
-
 `;
 
 export const MobileWrapper = styled.div`
   @media (min-width: 1001px) {
-        display: none;
+    display: none;
   }
 `;
 
@@ -28,12 +26,12 @@ export const BannerBackground = styled.div`
   padding-right: 100px;
   margin-bottom: 90px;
   @media (max-width: 1000px) {
-      overflow-y: visible;
-      color: white;
-      height: 336px;
-      background-image: url(${mobile_homepage});
-      margin-bottom: 0px;
-    }
+    overflow-y: visible;
+    color: white;
+    height: 336px;
+    background-image: url(${mobile_homepage});
+    margin-bottom: 0px;
+  }
 `;
 
 export const BlurbContainer = styled.div`
@@ -52,7 +50,7 @@ export const BlurbContainer = styled.div`
     font-size: 30px;
     line-height: 47px;
     padding-left: 50px;
-    
+
     @media (max-width: 1000px) {
       overflow-y: visible;
       color: white;
@@ -83,7 +81,6 @@ export const BlurbContainer = styled.div`
       line-height: 23px;
       padding-left: 25px;
       padding-right: 7px;
-
     }
   }
 `;
@@ -99,7 +96,6 @@ export const Blurb = styled.div`
   top: 190px;
   background: ${colors.blurb};
   border-radius: 20px;
-
 
   @media (max-width: 1000px) {
     overflow-y: visible;
@@ -120,7 +116,7 @@ export const Headline = styled.div`
   color: black;
   justify-content: center;
   @media (max-width: 1000px) {
-    display: none
+    display: none;
   }
 `;
 
@@ -133,7 +129,7 @@ export const MissionStat = styled.div`
   color: black;
   margin-top: 40px;
   @media (max-width: 1000px) {
-    display: none
+    display: none;
   }
 `;
 
@@ -309,6 +305,3 @@ export const SmallHeading = styled.div`
   margin-left: 50px;
   cursor: pointer;
 `;
-
-
-

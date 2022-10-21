@@ -3,7 +3,6 @@ import { EventContainer, Settings } from '../../events/EventsStyles';
 import { Event } from '../../../../server/src/types';
 import time from '../../static/images/time.svg';
 
-
 const HomepageEventDisplay = (event: Event) => (
   <EventContainer>
     <Settings>

@@ -33,11 +33,7 @@ const HomepageFunctions = () => {
     </ListsEvents>
   );
 
-  return (
-    <VerticalFlex>
-      {homepageDisplay}
-    </VerticalFlex>
-  );
+  return <VerticalFlex>{homepageDisplay}</VerticalFlex>;
 };
 
 export default HomepageFunctions;

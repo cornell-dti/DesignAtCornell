@@ -3,7 +3,7 @@ import { HorizontalFlex, VerticalFlex } from '../../components/ContainerStyles';
 import { ListsArticles } from '../../components/HomepageStyles';
 import { Article } from '../../../../server/src/types';
 import OriginalArticleBubble from '../../design-community/design-articles/ArticleBubble';
-import ArticleBubble from './article-bubble'
+import ArticleBubble from './article-bubble';
 
 const Dashboard = (article: Article[]) => {
   const articleBubbles = (
@@ -16,11 +16,7 @@ const Dashboard = (article: Article[]) => {
     </ListsArticles>
   );
 
-  return (
-    <VerticalFlex>
-      {articleBubbles}
-    </VerticalFlex>
-  );
+  return <VerticalFlex>{articleBubbles}</VerticalFlex>;
 };
 
 export default Dashboard;

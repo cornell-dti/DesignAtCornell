@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleBubbleTitle, ArticleBubbleContainer } from './article-homepage-styles'
+import { ArticleBubbleTitle, ArticleBubbleContainer } from './article-homepage-styles';
 import { Article } from '../../../../server/src/types';
 import { VerticalFlex } from '../../components/ContainerStyles';
 

@@ -26,7 +26,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
     width: calc(100% + 50px);
     aspect-ratio: 5/3;
     object-fit: cover;
-    margin:-25px 0px 0px -25px;
+    margin: -25px 0px 0px -25px;
     border-radius: 20px 20px 0px 0px;
   }
 
