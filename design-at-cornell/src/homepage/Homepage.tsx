@@ -10,9 +10,12 @@ import {
   DesktopWrapper,
   MobileWrapper,
   GridMobile,
-  MobileElementContainer
+  MobileElementContainer,
+  SmallTitle,
+  SmallHeading,
 } from '../components/HomepageStyles';
-import Events from '../events/Events';
+import homepageEventDisplay from './mobile-events-dashboard/HomepageEventFunctions';
+import articlesDisplay from './mobile-articles-dashboard/articles-homepage-dashboard'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import design_courses from '../static/images/design_courses.svg';
 import majors_minors from '../static/images/majors_minors.svg';
@@ -25,6 +28,7 @@ import majors_minors_mobile from '../static/images/majors-minors-mobile.svg';
 import courses_mobile from '../static/images/courses-mobile.svg';
 import orgs_mobile from '../static/images/orgs-mobile.svg';
 import faculty_mobile from '../static/images/faculty-mobile.svg';
+import { render } from 'react-dom';
 const Homepage: React.FC = () => (
   <div data-testid="Homepage">
     <Router />
@@ -132,17 +136,21 @@ const Homepage: React.FC = () => (
         </GridMobile>
 
         <MobileElementContainer>
-          <CardTitle>Upcoming Events</CardTitle>
+          <SmallTitle>Upcoming Events</SmallTitle>
           <ExploreSubtitle to="./events"> {'>'}</ExploreSubtitle>
-          {Events}
+          {homepageEventDisplay()}
         </MobileElementContainer>
-
         <MobileElementContainer>
-          <CardTitle>Articles</CardTitle>
-          <ExploreSubtitle to="./articles"> {'>'}</ExploreSubtitle>
-          {Events}
+          <SmallHeading><Link to="./events"></Link>See more events</SmallHeading>
         </MobileElementContainer>
-
+        <MobileElementContainer>
+          <SmallTitle>Articles</SmallTitle>
+          <ExploreSubtitle to="./articles"> {'>'}</ExploreSubtitle>
+          {articlesDisplay()}
+        </MobileElementContainer>
+        <MobileElementContainer>
+          <SmallHeading><Link to="./articles"></Link>See more articles</SmallHeading>
+        </MobileElementContainer>
       </MobileWrapper>
     </Grid>
 

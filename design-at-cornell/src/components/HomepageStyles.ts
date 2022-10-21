@@ -79,9 +79,10 @@ export const BlurbContainer = styled.div`
       display: inline-block;
       color: white;
       font-size: 18px;
-      margin-top: 68px;
+      margin-top: 100px;
       line-height: 23px;
       padding-left: 25px;
+      padding-right: 7px;
 
     }
   }
@@ -174,7 +175,7 @@ export const CardTitle = styled.div`
     font-weight: bold;
     font-size: 18px;
     line-height: 23px;
-    margin-left: 20px;
+    margin-left: 50px;
     cursor: pointer;
   }
 `;
@@ -239,7 +240,7 @@ export const MobileElementContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   font-weight: normal;
-  margin-bottom: 90px;
+  margin-bottom: 50px;
 
   p {
     font-size: 24px;
@@ -254,6 +255,60 @@ export const MobileElementContainer = styled.div`
   }
 `;
 
+export const ListsEvents = styled.div`
+  display: flex;
+  align-items: left;
+  margin-top: 100px;
+  margin-left: 40px;
+  margin-right: 40%;
+  flex-direction: column;
+  justify-content: left;
+  height: 350px;
+`;
+
+export const ListsArticles = styled.div`
+  display: flex;
+  align-items: left;
+  margin-top: 100px;
+  margin-left: 40px;
+  margin-right: 40%;
+  flex-direction: column;
+  justify-content: left;
+  height: 200px;
+`;
+
+export const SmallTitle = styled.div`
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  align-items: left;
+  text-decoration: underline;
+  display: flex;
+  width: 60%;
+  box-sizing: border-box;
+  margin-top: 27px;
+  position: absolute;
+  font-size: 18px;
+  line-height: 23px;
+  margin-left: 50px;
+  cursor: pointer;
+`;
+
+export const SmallHeading = styled.div`
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  align-items: left;
+  text-decoration: underline;
+  display: flex;
+  width: 60%;
+  margin-top: 60px;
+  position: relative;
+  font-size: 12px;
+  line-height: 17px;
+  margin-left: 50px;
+  cursor: pointer;
+`;
 
 
 

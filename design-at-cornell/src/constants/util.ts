@@ -3,12 +3,10 @@ import axios from 'axios';
 
 dotenv.config();
 
-// PROD: process.env.REACT_APP_BASE_URL
-// LOCAL: http://localhost:3000
-// Change to only local if you are testing backend functionality.
+// use process.env.REACT_APP_BASE_URL if only changing frontend 
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3000',
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 export default api;
