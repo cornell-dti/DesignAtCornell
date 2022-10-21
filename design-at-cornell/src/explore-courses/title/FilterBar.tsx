@@ -6,16 +6,16 @@ import FilterDropdown from './FilterDropdown';
 const FilterBar = (props: Props) => {
   return (
     <FilterBarContainer>
-      {props.filterList.map((f) => (
-        <FilterDropdown key={f.category} {...{ ...f, setPage: props.setPage }} />
-      ))}
       <SearchBar
-        placeholder="Name, Keywords, Topics, Etc"
+        placeholder="Search"
         onChange={(event) => {
           props.setSearch(event.target.value);
           props.setPage(1);
         }}
       />
+      {props.filterList.map((f) => (
+        <FilterDropdown key={f.category} {...{ ...f, setPage: props.setPage }} />
+      ))}
     </FilterBarContainer>
   );
 };

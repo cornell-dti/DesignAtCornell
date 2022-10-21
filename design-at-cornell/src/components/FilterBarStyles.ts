@@ -88,4 +88,7 @@ export const SearchBar = styled.input`
   &:focus {
     outline: none;
   }
+  @media (max-width: 1000px) {
+    
+  }
 `;
