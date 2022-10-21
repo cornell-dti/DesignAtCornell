@@ -12,6 +12,7 @@ import {
   GridMobile,
   MobileElementContainer
 } from '../components/HomepageStyles';
+import Events from '../events/Events';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import design_courses from '../static/images/design_courses.svg';
 import majors_minors from '../static/images/majors_minors.svg';
@@ -133,7 +134,13 @@ const Homepage: React.FC = () => (
         <MobileElementContainer>
           <CardTitle>Upcoming Events</CardTitle>
           <ExploreSubtitle to="./events"> {'>'}</ExploreSubtitle>
+          {Events}
+        </MobileElementContainer>
 
+        <MobileElementContainer>
+          <CardTitle>Articles</CardTitle>
+          <ExploreSubtitle to="./articles"> {'>'}</ExploreSubtitle>
+          {Events}
         </MobileElementContainer>
 
       </MobileWrapper>
