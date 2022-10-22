@@ -39,8 +39,8 @@ const Homepage: React.FC = () => (
     <MissionStat>
       Our mission is to connect, inform, and inspire the design community at Cornell University.
     </MissionStat>
-    <Grid>
-      <DesktopWrapper>
+    <DesktopWrapper>
+      <Grid>
         <GridItem>
           <ElementContainer>
             <Link to="./explore-courses">
@@ -104,8 +104,10 @@ const Homepage: React.FC = () => (
             <ExploreSubtitle to="./faculty"> Explore Faculty {'>'}</ExploreSubtitle>
           </ElementContainer>
         </GridItem>
-      </DesktopWrapper>
-      <MobileWrapper>
+      </Grid>
+    </DesktopWrapper>
+    <MobileWrapper>
+      <Grid>
         <GridMobile>
           <Link to="./areas-of-study">
             <ExploreSubtitle to="./areas-of-study"> {'>'}</ExploreSubtitle>
@@ -155,8 +157,8 @@ const Homepage: React.FC = () => (
             <Link to="./articles"></Link>See more articles
           </SmallHeading>
         </MobileElementContainer>
-      </MobileWrapper>
-    </Grid>
+      </Grid>
+    </MobileWrapper>
   </div>
 );
 

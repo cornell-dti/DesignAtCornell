@@ -297,7 +297,7 @@ export const SmallHeading = styled.div`
   align-items: left;
   text-decoration: underline;
   display: flex;
-  width: 60%;
+  width: 80%;
   margin-top: 60px;
   position: relative;
   font-size: 12px;
