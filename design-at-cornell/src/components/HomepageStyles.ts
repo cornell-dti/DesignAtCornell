@@ -7,7 +7,7 @@ export const BannerBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 550px;
+  height: 730px;
   background-image: url(${homepage_banner});
   padding-left: 100px;
   padding-right: 100px;
@@ -23,7 +23,7 @@ export const BlurbContainer = styled.div`
   justify-content: center;
   text-align: left;
   h3 {
-    height: 72px;
+    height: 45px;
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: bolder;
@@ -34,9 +34,10 @@ export const BlurbContainer = styled.div`
 
   p {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 30px;
     color: black;
     padding-left: 50px;
+    padding-right: 50px;
     font-weight: 500;
   }
 `;
@@ -46,32 +47,12 @@ export const Blurb = styled.div`
   display: block;
   justify-content: center;
   position: absolute;
-  width: 497px;
-  height: 348px;
-  right: 120px;
-  top: 190px;
+  width: 450px;
+  height: 220px;
+  right: 150px;
+  top: 220px;
   background: ${colors.blurb};
   border-radius: 20px;
-`;
-
-export const Headline = styled.div`
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-size: x-large;
-  text-align: center;
-  color: black;
-  justify-content: center;
-`;
-
-export const MissionStat = styled.div`
-  text-align: center;
-  justify-content: center;
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-size: large;
-  text-align: center;
-  color: black;
-  margin-top: 40px;
 `;
 
 export const ElementContainer = styled.div`
@@ -83,11 +64,12 @@ export const ElementContainer = styled.div`
   margin-inline: 20px;
 
   p {
-    font-size: 24px;
+    font-size: 18px;
     text-align: left;
     align-items: left;
     width: 300px;
     padding-top: 25px;
+    min-height: 100px;
   }
 
   img {
@@ -97,7 +79,7 @@ export const ElementContainer = styled.div`
 
 export const CardTitle = styled.div`
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 20px;
   text-align: left;
   color: black;
@@ -109,11 +91,13 @@ export const GridItem = styled.div`
   display: flex;
   flex: 0 0 26%;
   justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
 `;
 
 export const ExploreSubtitle = styled(Link)`
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 20px;
   text-align: left;
   color: blue;
