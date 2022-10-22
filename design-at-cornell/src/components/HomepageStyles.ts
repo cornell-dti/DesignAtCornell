@@ -259,7 +259,7 @@ export const ListsEvents = styled.div`
   margin-right: 40%;
   flex-direction: column;
   justify-content: left;
-  height: 350px;
+  height: 290px;
 `;
 
 export const ListsArticles = styled.div`
@@ -270,7 +270,7 @@ export const ListsArticles = styled.div`
   margin-right: 40%;
   flex-direction: column;
   justify-content: left;
-  height: 200px;
+  height: 620px;
 `;
 
 export const SmallTitle = styled.div`
@@ -298,10 +298,11 @@ export const SmallHeading = styled.div`
   text-decoration: underline;
   display: flex;
   width: 80%;
-  margin-top: 60px;
+  margin-top: 80px;
   position: relative;
   font-size: 12px;
   line-height: 17px;
   margin-left: 50px;
   cursor: pointer;
+  color: #818181;
 `;

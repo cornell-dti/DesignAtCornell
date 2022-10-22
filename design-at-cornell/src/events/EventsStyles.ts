@@ -102,7 +102,7 @@ export const EventContainer = styled.div`
       text-overflow: ellipsis;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
-      margin: 10;
+      margin-top: 10px;
       overflow: hidden;
       white-space: nowrap;
       width: calc(97%);
@@ -161,8 +161,9 @@ export const Settings = styled.div`
     width: calc(100%);
     @media (max-width: 1000px) {
       font-size: 18px;
-      margin: 0 0 0 0;
+      margin: -15px 0px 10px 0;
       display: inline-flex;
+      font-weight: bold;
     }
   }
 
