@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { colors } from '../constants/colors';
 
 export const FooterContainer = styled.div`
@@ -8,14 +7,19 @@ export const FooterContainer = styled.div`
   background: ${colors.lightGray};
   width: 100%;
   height: 50%;
-  padding: 75px 126px 50px 126px;
+  padding: 50px 126px;
   justify-content: space-between;
 
   p {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 19px;
-    text-align: right;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding: 50px 30px;
+    gap: 30px;
   }
 `;
 
@@ -24,14 +28,13 @@ export const FooterColumn = styled.div`
   flex-direction: column;
   width: fit-content;
   justify-content: space-between;
-  font-weight: bold;
-  margin-bottom: 10px;
 
   p {
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
     text-align: left;
+    margin: 0;
 
     &:hover {
       text-decoration: none;
@@ -45,41 +48,8 @@ export const FooterColumn = styled.div`
   }
 `;
 
-export const Email = styled(FooterColumn)`
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: right;
-    margin-top: 20px;
-  }
-`;
-
-export const Logo = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  height: fit-content;
-  margin-bottom: 10px;
-
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: left;
-  }
-
-  &:focus,
-  &:hover,
-  &:active,
-  &:visited,
-  &:link {
-    text-decoration: none;
-    color: black;
-  }
-`;
-
 export const DTILogo = styled.div`
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
   width: fit-content;
@@ -93,10 +63,9 @@ export const DTILogo = styled.div`
   }
 
   p {
-    width: 95px;
+    width: 150px;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 18px;
     color: black;
   }
 
@@ -110,16 +79,32 @@ export const DTILogo = styled.div`
   }
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
+// TODO font weight not working
+export const Contact = styled.p`
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  text-align: left;
-  color: black;
 
-  &:hover {
-    text-decoration: none;
-    color: ${colors.linkColor};
+  @media (min-width: 1001px) {
+    text-align-last: right;
+  }
+`;
+
+export const CopyRight = styled.div`
+  @media (min-width: 1001px) {
+    display: none;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  gap: 15px;
+
+  .cornell-logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65px;
+    height: 65px;
   }
 `;
