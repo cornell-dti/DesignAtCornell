@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileBreakpoint } from '../constants/styling';
 import { colors } from '../constants/colors';
 
 export const FooterContainer = styled.div`
@@ -16,57 +17,23 @@ export const FooterContainer = styled.div`
     line-height: 19px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     flex-direction: column;
     padding: 50px 30px;
     gap: 30px;
   }
-`;
 
-export const FooterColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  justify-content: space-between;
-
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: left;
-    margin: 0;
-
-    &:hover {
-      text-decoration: none;
-      color: black;
-    }
-
-    &:link {
-      text-decoration: none;
-      color: black;
-    }
+  .cornell-logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65px;
+    height: 65px;
   }
-`;
 
-export const DTILogo = styled.div`
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  width: fit-content;
-  height: fit-content;
-  align-items: center;
-
-  img {
+  .dti-logo {
+    margin-right: 10px;
     width: 30px;
     height: 30px;
-    margin-right: 10px;
-  }
-
-  p {
-    width: 150px;
-    font-weight: bold;
-    font-size: 18px;
-    color: black;
   }
 
   &:focus,
@@ -79,32 +46,58 @@ export const DTILogo = styled.div`
   }
 `;
 
+export const Divider = styled.span`
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 1px solid black;
+  height: 65px;
+`;
+
+export const ColContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: space-between;
+
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+  }
+`;
+
+export const RowContainer = styled.div`
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+
+  p {
+    width: 150px;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+  }
+`;
+
 // TODO font weight not working
 export const Contact = styled.p`
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
 
-  @media (min-width: 1001px) {
+  @media (min-width: ${mobileBreakpoint + 1}px) {
     text-align-last: right;
   }
 `;
 
 export const CopyRight = styled.div`
-  @media (min-width: 1001px) {
-    display: none;
-  }
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
   gap: 15px;
-
-  .cornell-logo {
-    margin-left: auto;
-    margin-right: auto;
-    width: 65px;
-    height: 65px;
-  }
 `;

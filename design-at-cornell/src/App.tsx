@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './AppStyles.ts';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './homepage/Homepage.lazy';
 import ExploreCourses from './explore-courses/ExploreCourses.lazy';
@@ -14,10 +14,13 @@ import Contact from './contact/Contact.lazy';
 import PageNotFound from './404/PageNotFound.lazy';
 import Header from './header/Header.lazy';
 import Footer from './footer/Footer.lazy';
+import { GlobalStyle } from './AppStyles';
 
 function App() {
+  console.log(process.env.NODE_ENV);
   return (
     <Router>
+      <GlobalStyle />
       <div data-testid="App">
         <Header />
         <Switch>
