@@ -10,10 +10,10 @@ export const TitleBackground = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   @media (max-width: 1000px) {
-      padding-left: 40px;
-      padding-right: 10px;
-      height: 370px;
-    }
+    padding-left: 40px;
+    padding-right: 10px;
+    height: 370px;
+  }
 `;
 
 export const TitleBackgroundImage = styled.div`
@@ -22,9 +22,9 @@ export const TitleBackgroundImage = styled.div`
   width: 100%;
   height: 450px;
   @media (max-width: 1000px) {
-      font-size: 50px;
-      line-height: 30px;
-    }
+    font-size: 50px;
+    line-height: 30px;
+  }
 `;
 
 export const TitleContainer = styled.div`

@@ -69,4 +69,11 @@ export const PageNavButton = styled.button<{ direction: string }>`
     border: none;
     outline: none;
   }
+
+  @media (max-width: 1000px) {
+    width: 100px;
+    text-align: left;
+    align-items: left;
+    justify-content: space-between;
+  }
 `;

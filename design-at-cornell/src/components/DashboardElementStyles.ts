@@ -19,6 +19,11 @@ export const ElementContainer = styled.div`
 
 export const ClubBubbleContainer = styled(ElementContainer)`
   cursor: default;
+  @media (max-width: 1000px) {
+    width: 950px;
+    min-width: 375px;
+    margin-left: -7px;
+  }
 `;
 
 export const ArticleBubbleContainer = styled(ElementContainer)`
