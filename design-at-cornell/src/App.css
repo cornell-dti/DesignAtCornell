@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   body {
     background-image: url(./static/images/mobile-placeholder.svg);
     background-position: center;
@@ -13,4 +13,4 @@
   div {
     display: none;
   }
-}
+} */
