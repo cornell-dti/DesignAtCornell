@@ -7,6 +7,7 @@ import {
   Contact,
   CopyRight,
   Divider,
+  TitlePar,
   Sent,
 } from './FooterStyles';
 import dtiLogo from '../static/images/dti-logo.svg';
@@ -42,7 +43,7 @@ const Footer = () => {
       <BoldPar>Powered by</BoldPar>
       <RowContainer>
         <img src={dtiLogo} className="dti-logo" alt="dti logo" />
-        <BoldPar>{dti}</BoldPar>
+        <TitlePar>{dti}</TitlePar>
       </RowContainer>
     </ColContainer>
   );
