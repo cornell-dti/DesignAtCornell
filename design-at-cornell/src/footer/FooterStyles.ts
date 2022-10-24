@@ -11,12 +11,6 @@ export const FooterContainer = styled.div`
   padding: 50px 126px;
   justify-content: space-between;
 
-  p {
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 19px;
-  }
-
   @media (max-width: ${mobileBreakpoint}px) {
     flex-direction: column;
     padding: 50px 30px;
@@ -53,14 +47,17 @@ export const Divider = styled.span`
   height: 65px;
 `;
 
+export const Sent = styled.p`
+  font-size: 14px;
+`;
+
 export const ColContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  justify-content: space-between;
+  justify-content: center;
 
   p {
-    font-weight: bold;
     font-size: 16px;
     text-align: left;
     margin: 0;
@@ -77,13 +74,15 @@ export const RowContainer = styled.div`
 
   p {
     width: 150px;
-    font-weight: bold;
     font-size: 16px;
     color: black;
   }
 `;
 
-// TODO font weight not working
+export const BoldPar = styled.p`
+  font-weight: bold;
+`;
+
 export const Contact = styled.p`
   font-weight: bold;
   font-size: 16px;
