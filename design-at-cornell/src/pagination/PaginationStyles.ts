@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const StyledPagination = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ export const MobileAreaOfStudyStyledPagination = styled(StyledPagination)`
   margin-bottom: 25px;
   padding: 0px 10px;
 
-  @media (min-width: 901px) {
+  @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
 

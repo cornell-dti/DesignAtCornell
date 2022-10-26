@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
 import magnifyingGlass from '../static/images/magnifying-glass.svg';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const FilterBarContainer = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ export const FilterBarContainer = styled.div`
 export const MobileFilterBarContainer = styled(FilterBarContainer)`
   justify-content: center;
 
-  @media (min-width: 901px) {
+  @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
 `;
@@ -41,7 +42,7 @@ export const FilterDropdownContainer = styled.li`
 export const MobileFilterDropdownContainer = styled(FilterDropdownContainer)`
   align-self: flex-end;
   margin: 20px 20px 0px 20px;
-  @media (min-width: 901px) {
+  @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
 `;
@@ -74,7 +75,7 @@ export const MobileFilterButton = styled(FilterButton)`
   padding: 5px 15px;
   visibility: ${({ expand }) => (!expand ? 'visible' : 'hidden')};
 
-  @media (min-width: 901px) {
+  @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
 `;
