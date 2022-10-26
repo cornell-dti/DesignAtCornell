@@ -117,6 +117,12 @@ export const MobileLargeFilterFormContainer = styled(LargeFilterFormContainer)`
   }
 `;
 
+export const CenteredMobileLargeFilterFormContainer = styled(MobileLargeFilterFormContainer)`
+  width: 350px;
+  right: -2vw;
+  border: 5px solid white;
+`;
+
 export const MobileSelectFormContainer = styled(MobileLargeFilterFormContainer)`
   margin-top: -100px;
 

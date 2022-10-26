@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   MobileFilterButton,
   MobileFilterDropdownContainer,
-  MobileLargeFilterFormContainer,
+  CenteredMobileLargeFilterFormContainer,
 } from '../../components/FilterBarStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
 import downArrow from '../../static/images/down-arrow.png';
@@ -49,7 +49,7 @@ const TagsDropdown = (props: Props) => {
         <p>Filters</p>
         <img src={downArrow} alt={'expand'} />
       </MobileFilterButton>
-      <MobileLargeFilterFormContainer expand={expand}>
+      <CenteredMobileLargeFilterFormContainer expand={expand}>
         <img onClick={() => setExpand(false)} src={exit} alt="close" />
         <h4>Design Areas</h4>
         {filterForm(
@@ -60,7 +60,7 @@ const TagsDropdown = (props: Props) => {
         )}
         <h4>Schools</h4>
         {filterForm(props.schoolTags, props.setSchoolTags, numSchoolsApplied, setNumSchoolsApplied)}
-      </MobileLargeFilterFormContainer>
+      </CenteredMobileLargeFilterFormContainer>
     </MobileFilterDropdownContainer>
   );
 };
