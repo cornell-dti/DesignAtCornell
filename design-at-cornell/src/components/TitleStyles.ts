@@ -42,6 +42,10 @@ export const TitleContainer = styled.div`
     line-height: 75px;
     margin-bottom: 30px;
     color: black;
+    @media (max-width: 1000px) {
+      font-size: 50px;
+      line-height: 50px;
+    }
   }
 
   p {
