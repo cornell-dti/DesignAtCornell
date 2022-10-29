@@ -75,3 +75,9 @@ export const FacultyBubbleRightVerticalFlex = styled(VerticalFlex)`
 export const FacultyBubbleHorizontalFlex = styled(HorizontalFlex)`
   height: 100%;
 `;
+
+export const ShowContainer = styled.div<{ show: boolean }>`
+  width: 100%;
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
+  height: ${({ show }) => (show ? '' : '0px')};
+`;
