@@ -8,19 +8,30 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 96px;
   color: black;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0px 40px;
+
+  .cornell-logo {
+    margin: auto 0px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .dac-log {
+    width: 142px;
+  }
 `;
 
-export const Logo = styled(Link)`
+export const Divider = styled.span`
+  margin: auto 15px;
+  border-left: 1px solid black;
+  height: 65px;
+`;
+
+export const RowContainer = styled(Link)`
   display: flex;
   flex-direction: row;
   width: 40%;
   height: 100%;
-
-  img {
-    width: 142px;
-  }
 
   p {
     width: 73px;
