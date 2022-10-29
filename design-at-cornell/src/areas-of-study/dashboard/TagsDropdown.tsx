@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { ApplyTagsContainer } from '../AreasOfStudyStyles';
+import {
+  MobileFilterButton,
+  MobileFilterDropdownContainer,
+  CenteredMobileLargeFilterFormContainer,
+} from '../../components/FilterBarStyles';
 import { Filters, SetFilters } from '../../constants/filter-criteria';
+import downArrow from '../../static/images/down-arrow.png';
+import exit from '../../static/images/exit.svg';
 import { Form } from '../../components/FormStyles';
 
-const ApplyTags = (props: Props) => {
+const TagsDropdown = (props: Props) => {
+  const [expand, setExpand] = useState<boolean>(false);
   const [numDesignAreasApplied, setNumDesignAreasApplied] = useState<number>(0);
   const [numSchoolsApplied, setNumSchoolsApplied] = useState<number>(0);
 
-  const checkboxes = (
+  const filterForm = (
     tags: Filters,
     setter: SetFilters,
     numApplied: number,
@@ -37,18 +44,24 @@ const ApplyTags = (props: Props) => {
   );
 
   return (
-    <ApplyTagsContainer>
-      <h5>Apply Tags</h5>
-      <h6>Design Areas</h6>
-      {checkboxes(
-        props.designAreaTags,
-        props.setDesignAreaTags,
-        numDesignAreasApplied,
-        setNumDesignAreasApplied
-      )}
-      <h6>Schools</h6>
-      {checkboxes(props.schoolTags, props.setSchoolTags, numSchoolsApplied, setNumSchoolsApplied)}
-    </ApplyTagsContainer>
+    <MobileFilterDropdownContainer>
+      <MobileFilterButton onClick={() => setExpand(!expand)} expand={expand}>
+        <p>Filters</p>
+        <img src={downArrow} alt={'expand'} />
+      </MobileFilterButton>
+      <CenteredMobileLargeFilterFormContainer expand={expand}>
+        <img onClick={() => setExpand(false)} src={exit} alt="close" />
+        <h4>Design Areas</h4>
+        {filterForm(
+          props.designAreaTags,
+          props.setDesignAreaTags,
+          numDesignAreasApplied,
+          setNumDesignAreasApplied
+        )}
+        <h4>Schools</h4>
+        {filterForm(props.schoolTags, props.setSchoolTags, numSchoolsApplied, setNumSchoolsApplied)}
+      </CenteredMobileLargeFilterFormContainer>
+    </MobileFilterDropdownContainer>
   );
 };
 
@@ -59,4 +72,4 @@ type Props = {
   setSchoolTags: SetFilters;
 };
 
-export default ApplyTags;
+export default TagsDropdown;
