@@ -9,16 +9,18 @@ const EventDisplay = (event: Event) => (
   <EventContainer>
     <h1>{event.title}</h1>
     <Settings>
-      <img src={time} alt="time" />
-      <p>
-        {new Date(event.date).toLocaleString('en', {
-          month: 'long',
-          day: 'numeric',
-          year: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric',
-        })}
-      </p>
+      <span>
+        <img src={time} alt="time" />
+        <p>
+          {new Date(event.date).toLocaleString('en', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+          })}
+        </p>
+      </span>
       {event.location.length === 0 ? null : (
         <span>
           <img src={loc} alt="location" />

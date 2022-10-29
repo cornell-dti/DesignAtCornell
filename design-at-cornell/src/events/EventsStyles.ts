@@ -106,6 +106,11 @@ export const EventList = styled.div`
   height: fit-content;
   padding-left: 80px;
   padding-right: 80px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 export const EventContainer = styled.div`
@@ -141,6 +146,25 @@ export const EventContainer = styled.div`
     text-overflow: ellipsis;
     width: calc(97%);
   }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    height: fit-content;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    h1 {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 16px;
+      color: black;
+      margin: 10px 0px;
+    }
+  }
 `;
 
 export const Settings = styled.div`
@@ -166,6 +190,19 @@ export const Settings = styled.div`
   span {
     white-space: nowrap;
   }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    flex-direction: column;
+
+    img {
+      width: 12px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
 `;
 
 export const EventLink = styled.div`
@@ -185,5 +222,20 @@ export const EventLink = styled.div`
     line-height: 20px;
     color: black;
     margin-left: 10px;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    height: 35px;
+    padding: 15px;
+    margin-top: 5px;
+
+    img {
+      width: 12px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 `;
