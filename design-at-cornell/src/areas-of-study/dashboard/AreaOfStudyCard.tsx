@@ -10,13 +10,9 @@ const AreaOfStudyCard = (props: Props) => {
       onClick={() => window.open(props.study.content.departmentPage)}
     >
       <h1>{props.study.content.title}</h1>
-      <AreaOfStudyTag highlight={props.schoolTags[props.study.content.school]}>
-        {props.study.content.school + '. '}
-      </AreaOfStudyTag>
+      <AreaOfStudyTag>{props.study.content.school + '. '}</AreaOfStudyTag>
       {props.study.content.designAreas.map((area) =>
-        area === '' ? null : (
-          <AreaOfStudyTag highlight={props.designAreaTags[area]}>{area + '. '}</AreaOfStudyTag>
-        )
+        area === '' ? null : <AreaOfStudyTag>{area + '. '}</AreaOfStudyTag>
       )}
     </AreaOfStudyButton>
   );
