@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const Divider = styled.div`
   display: flex;
@@ -11,15 +12,22 @@ export const Divider = styled.div`
 `;
 
 export const FilterButton = styled.div<{ open: boolean }>`
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
   display: flex;
   flex-direction: row;
-  width: 350px;
-  height: 70px;
+  width: fit-content;
+  padding: 15px 20px 15px 25px;
+  height: fit-content;
+  margin: 15px;
   align-items: center;
   justify-content: ${({ open }) => (open ? 'space-between' : 'center')};
   background: ${({ open }) => (open ? 'white' : 'none')};
-  border-radius: 26px 26px 0 0;
-  box-shadow: ${({ open }) => (open ? '0px 0px 24px 2px rgba(0, 0, 0, 0.07)' : 'none')};
+  border-radius: ${({ open }) => (open ? '26px 26px 0 0' : '50px')};
+  box-shadow: ${({ open }) => (open ? '0px 0px 24px 2px rgba(0, 0, 0, 0.07)' : '')};
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    padding: ${({ open }) => (open ? '8px 15px 20px 20px' : '5px 15px 5px 20px')};
+  }
 `;
 
 export const MonthSelected = styled.div`
@@ -30,6 +38,10 @@ export const MonthSelected = styled.div`
   text-align: center;
   color: black;
   cursor: pointer;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 16px;
+  }
 `;
 
 export const Arrow = styled.img<{ direction: string; show: boolean }>`
@@ -40,6 +52,11 @@ export const Arrow = styled.img<{ direction: string; show: boolean }>`
   height: 24px;
   margin: 0px 10px;
   cursor: pointer;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const FilterWindow = styled.div<{ open: boolean }>`
@@ -53,6 +70,11 @@ export const FilterWindow = styled.div<{ open: boolean }>`
   margin-top: 70px;
   padding: 10px;
   background: white;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 380px;
+    height: 300px;
+  }
 `;
 
 export const MonthButton = styled.div<{ selected: boolean }>`
@@ -68,6 +90,13 @@ export const MonthButton = styled.div<{ selected: boolean }>`
   line-height: 75px;
   text-align: center;
   color: ${({ selected }) => (selected ? 'white' : 'black')};
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+  }
 `;
 
 export const EventList = styled.div`
@@ -144,7 +173,7 @@ export const EventLink = styled.div`
   width: fit-content;
   height: 49px;
   border-radius: 9px;
-  box-shadow: 0px 0px 22px ${colors.event_link_blue};
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
   margin-right: 30px;
   padding: 20px;
   align-items: center;
