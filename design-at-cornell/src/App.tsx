@@ -15,30 +15,33 @@ import PageNotFound from './404/PageNotFound.lazy';
 import Header from './header/Header.lazy';
 import Footer from './footer/Footer.lazy';
 import { GlobalStyle } from './AppStyles';
+import { GlobalContextProvider } from './context/GlobalContext';
 
 function App() {
   console.log(process.env.NODE_ENV);
   return (
-    <Router>
-      <GlobalStyle />
-      <div data-testid="App">
-        <Header />
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/explore-courses" component={ExploreCourses} />
-          <Route path="/events" component={Events} />
-          <Route path="/areas-of-study" component={AreasOfStudy} />
-          <Route path="/student-organizations" component={Clubs} />
-          <Route path="/design-community" component={DesignCommunity} />
-          <Route path="/articles" component={Articles} />
-          <Route path="/faculty" component={Faculty} />
-          <Route exact path="/" component={Homepage} />
-          <Route path="/*" component={PageNotFound} />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+    <GlobalContextProvider>
+      <Router>
+        <GlobalStyle />
+        <div data-testid="App">
+          <Header />
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/explore-courses" component={ExploreCourses} />
+            <Route path="/events" component={Events} />
+            <Route path="/areas-of-study" component={AreasOfStudy} />
+            <Route path="/student-organizations" component={Clubs} />
+            <Route path="/design-community" component={DesignCommunity} />
+            <Route path="/articles" component={Articles} />
+            <Route path="/faculty" component={Faculty} />
+            <Route exact path="/" component={Homepage} />
+            <Route path="/*" component={PageNotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </GlobalContextProvider>
   );
 }
 
