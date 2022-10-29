@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Headline,
-  MissionStat,
   CardTitle,
   Grid,
   ElementContainer,
@@ -14,19 +12,13 @@ import majors_minors from '../static/images/majors_minors.svg';
 import orgs_icon from '../static/images/orgs_icon.svg';
 import events_icon from '../static/images/events_icon.svg';
 import resources_icon from '../static/images/resources_icon.svg';
-import community_icon from '../static/images/community_icon.svg';
+import faculty from '../static/images/faculty.svg';
 import Title from './title';
 
 const Homepage: React.FC = () => (
   <div data-testid="Homepage">
     <Router />
     <Title />
-    <Headline>
-      <b>Your ultimate resource for all things Design at Cornell University.</b>
-    </Headline>
-    <MissionStat>
-      Our mission is to connect, inform, and inspire the design community at Cornell University.
-    </MissionStat>
     <Grid>
       <GridItem>
         <ElementContainer>
@@ -84,7 +76,7 @@ const Homepage: React.FC = () => (
       <GridItem>
         <ElementContainer>
           <Link to="./faculty">
-            <img src={community_icon} alt={'Faculties'} />
+            <img src={faculty} alt={'Faculties'} />
           </Link>
           <CardTitle>Faculty</CardTitle>
           <p>Explore and connect with the design faculty here at Cornell</p>

@@ -11,12 +11,6 @@ export const FooterContainer = styled.div`
   padding: 50px 126px;
   justify-content: space-between;
 
-  p {
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 19px;
-  }
-
   @media (max-width: ${mobileBreakpoint}px) {
     flex-direction: column;
     padding: 50px 30px;
@@ -32,8 +26,8 @@ export const FooterContainer = styled.div`
 
   .dti-logo {
     margin-right: 10px;
-    width: 30px;
-    height: 30px;
+    width: 42px;
+    height: 42px;
   }
 
   &:focus,
@@ -50,40 +44,47 @@ export const Divider = styled.span`
   margin-left: 10px;
   margin-right: 10px;
   border-left: 1px solid black;
-  height: 65px;
+  height: 100%;
 `;
 
 export const ColContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  justify-content: space-between;
-
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    text-align: left;
-    margin: 0;
-  }
+  justify-content: center;
 `;
 
 export const RowContainer = styled.div`
-  margin: 5px;
   display: flex;
   flex-direction: row;
   width: fit-content;
   height: fit-content;
   align-items: center;
-
-  p {
-    width: 150px;
-    font-weight: bold;
-    font-size: 16px;
-    color: black;
-  }
 `;
 
-// TODO font weight not working
+export const Sent = styled.p`
+  padding-top: 10px;
+  font-size: 14px;
+`;
+
+export const BoldPar = styled.p`
+  margin: 0;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5px;
+`;
+
+export const TitlePar = styled.p`
+  font-size: 18px;
+  text-align: left;
+  margin: 0;
+  font-weight: bold;
+  width: 150px;
+  color: black;
+  line-height: 18px;
+`;
+
 export const Contact = styled.p`
   font-weight: bold;
   font-size: 16px;
@@ -99,5 +100,4 @@ export const CopyRight = styled.div`
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  gap: 15px;
 `;

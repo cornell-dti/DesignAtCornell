@@ -6,7 +6,7 @@ const title = () => (
     <Blurb>
       <BlurbContainer>
         <h3>Learn. Aspire. Create.</h3>
-        <p>Introducing the newest way to find Design Resources at Cornell</p>
+        <p>Your ultimate resource for all things design at Cornell University.</p>
       </BlurbContainer>
     </Blurb>
   </BannerBackground>

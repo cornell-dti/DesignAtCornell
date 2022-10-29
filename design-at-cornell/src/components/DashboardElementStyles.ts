@@ -17,6 +17,10 @@ export const ElementContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const ClubBubbleContainer = styled(ElementContainer)`
+  cursor: default;
+`;
+
 export const ArticleBubbleContainer = styled(ElementContainer)`
   width: 30%;
   height: auto;

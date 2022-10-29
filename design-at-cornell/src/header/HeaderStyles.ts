@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
     height: 70px;
   }
 
-  .dac-log {
+  .dac-logo {
     width: 142px;
   }
 `;
@@ -50,6 +50,21 @@ export const RowContainer = styled(Link)`
     text-decoration: none;
     color: black;
   }
+`;
+
+export const CornellLogo = styled.div`
+  img {
+    margin-top: 12px;
+    height: 70px;
+  }
+`;
+
+export const Line = styled.div`
+  margin-top: 12px;
+  height: 70px;
+  border-left: 1px solid black;
+  margin-left: -18px;
+  margin-right: 16px;
 `;
 
 export const Nav = styled.div`
