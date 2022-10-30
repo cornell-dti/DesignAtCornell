@@ -95,6 +95,7 @@ export const PageNavButton = styled.button<{ direction: string }>`
   line-height: 41px;
   text-align: center;
   align-items: center;
+  justify-content: ${({ direction }) => (direction === 'left' ? 'flex-start' : 'flex-end')};
   cursor: pointer;
 
   img {
