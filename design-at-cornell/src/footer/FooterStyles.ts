@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { mobileBreakpoint } from '../constants/styling';
 import { colors } from '../constants/colors';
 
 export const FooterContainer = styled.div`
@@ -8,65 +8,26 @@ export const FooterContainer = styled.div`
   background: ${colors.lightGray};
   width: 100%;
   height: 50%;
-  padding: 75px 126px 50px 126px;
+  padding: 50px 126px;
   justify-content: space-between;
 
-  p {
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 19px;
-    text-align: right;
+  @media (max-width: ${mobileBreakpoint}px) {
+    flex-direction: column;
+    padding: 50px 30px;
+    gap: 30px;
   }
-`;
 
-export const FooterColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  justify-content: space-between;
-  font-weight: bold;
-  margin-bottom: 10px;
-
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: left;
-
-    &:hover {
-      text-decoration: none;
-      color: black;
-    }
-
-    &:link {
-      text-decoration: none;
-      color: black;
-    }
+  .cornell-logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65px;
+    height: 65px;
   }
-`;
 
-export const Email = styled(FooterColumn)`
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: right;
-    margin-top: 20px;
-  }
-`;
-
-export const Logo = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  height: fit-content;
-  margin-bottom: 10px;
-
-  p {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: left;
+  .dti-logo {
+    margin-right: 10px;
+    width: 42px;
+    height: 42px;
   }
 
   &:focus,
@@ -79,47 +40,64 @@ export const Logo = styled(Link)`
   }
 `;
 
-export const DTILogo = styled.div`
+export const Divider = styled.span`
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 1px solid black;
+  height: 100%;
+`;
+
+export const ColContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: center;
+`;
+
+export const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: fit-content;
   height: fit-content;
   align-items: center;
-
-  img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  p {
-    width: 95px;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: black;
-  }
-
-  &:focus,
-  &:hover,
-  &:active,
-  &:visited,
-  &:link {
-    text-decoration: none;
-    color: black;
-  }
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
+export const Sent = styled.p`
+  padding-top: 10px;
+  font-size: 14px;
+`;
+
+export const BoldPar = styled.p`
+  margin: 0;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5px;
+`;
+
+export const TitlePar = styled.p`
+  font-size: 18px;
+  text-align: left;
+  margin: 0;
+  font-weight: bold;
+  width: 150px;
+  color: black;
+  line-height: 18px;
+`;
+
+export const Contact = styled.p`
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  text-align: left;
-  color: black;
 
-  &:hover {
-    text-decoration: none;
-    color: ${colors.linkColor};
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    text-align-last: right;
   }
+`;
+
+export const CopyRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 `;

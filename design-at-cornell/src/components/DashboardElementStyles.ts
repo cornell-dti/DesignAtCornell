@@ -17,6 +17,10 @@ export const ElementContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const ClubBubbleContainer = styled(ElementContainer)`
+  cursor: default;
+`;
+
 export const ArticleBubbleContainer = styled(ElementContainer)`
   width: 30%;
   height: auto;
@@ -129,7 +133,6 @@ export const Title = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
     white-space: normal;
   }
 `;

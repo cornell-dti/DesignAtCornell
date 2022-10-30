@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import homepage_banner from '../static/images/homepage_banner.svg';
 import mobile_homepage from '../static/images/mobile_homepage.svg';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const DesktopWrapper = styled.div`
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     display: none;
   }
 `;
 
 export const MobileWrapper = styled.div`
-  @media (min-width: 1001px) {
+  @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
 `;
@@ -20,12 +21,12 @@ export const BannerBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 550px;
+  height: 730px;
   background-image: url(${homepage_banner});
   padding-left: 100px;
   padding-right: 100px;
   margin-bottom: 90px;
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     overflow-y: visible;
     color: white;
     height: 336px;
@@ -43,7 +44,7 @@ export const BlurbContainer = styled.div`
   justify-content: center;
   text-align: left;
   h3 {
-    height: 72px;
+    height: 45px;
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: bold;
@@ -51,7 +52,7 @@ export const BlurbContainer = styled.div`
     line-height: 47px;
     padding-left: 50px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: ${mobileBreakpoint}px) {
       overflow-y: visible;
       color: white;
       text-align: center;
@@ -62,16 +63,18 @@ export const BlurbContainer = styled.div`
       line-height: 60px;
       align-items: center;
       padding-left: 25px;
+      margin-top: 100px;
     }
   }
 
   p {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 30px;
     color: black;
     padding-left: 50px;
+    padding-right: 50px;
     font-weight: 500;
-    @media (max-width: 1000px) {
+    @media (max-width: ${mobileBreakpoint}px) {
       overflow-y: visible;
       text-align: center;
       display: inline-block;
@@ -83,6 +86,7 @@ export const BlurbContainer = styled.div`
       padding-right: 7px;
     }
   }
+  
 `;
 
 export const Blurb = styled.div`
@@ -90,10 +94,10 @@ export const Blurb = styled.div`
   display: inline-block;
   justify-content: center;
   position: absolute;
-  width: 497px;
-  height: 348px;
-  right: 120px;
-  top: 190px;
+  width: 450px;
+  height: 220px;
+  right: 150px;
+  top: 220px;
   background: ${colors.blurb};
   border-radius: 20px;
 
@@ -115,7 +119,7 @@ export const Headline = styled.div`
   text-align: center;
   color: black;
   justify-content: center;
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     display: none;
   }
 `;
@@ -142,11 +146,12 @@ export const ElementContainer = styled.div`
   margin-inline: 20px;
 
   p {
-    font-size: 24px;
+    font-size: 18px;
     text-align: left;
     align-items: left;
     width: 300px;
     padding-top: 25px;
+    min-height: 100px;
   }
 
   img {
@@ -156,13 +161,13 @@ export const ElementContainer = styled.div`
 
 export const CardTitle = styled.div`
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 20px;
   text-align: left;
   color: black;
   align-items: left;
   margin-top: 50px;
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     display: flex;
     width: 60%;
     box-sizing: border-box;
@@ -180,7 +185,10 @@ export const GridItem = styled.div`
   display: flex;
   flex: 0 0 26%;
   justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
 `;
+
 
 export const GridMobile = styled.div`
   display: flex;
@@ -191,7 +199,7 @@ export const GridMobile = styled.div`
 
 export const ExploreSubtitle = styled(Link)`
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 20px;
   text-align: left;
   color: blue;
@@ -200,7 +208,7 @@ export const ExploreSubtitle = styled(Link)`
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     display: flex;
     justify-content: right;
     text-align: right;
@@ -222,7 +230,7 @@ export const Grid = styled.div`
   height: fit-content;
   margin-top: 90px;
   justify-content: center;
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     display: flex;
     flex-direction: row;
     height: fit-content;
