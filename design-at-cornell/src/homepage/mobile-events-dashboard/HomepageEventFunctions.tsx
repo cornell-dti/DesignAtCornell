@@ -15,8 +15,8 @@ const HomepageFunctions = () => {
 
   const [events, FormatEvents] = useState<Event[]>([]);
   const date = new Date();
-  const [year, setYear] = useState(date.getFullYear());
-  const [month, setMonth] = useState(date.getMonth());
+  const year = date.getFullYear();
+  const month = date.getMonth();
 
   const filteredEvents = events.filter((event) => {
     const eventDate = new Date(event.date);

@@ -297,16 +297,18 @@ export const SmallTitle = styled.div`
   cursor: pointer;
 `;
 
-export const SmallHeading = styled(SmallTitle)`
+export const SmallHeading = styled(Link)`
   font-weight: bold;
   text-align: left;
   color: black;
   align-items: left;
+  text-decoration: underline;
   width: 80%;
   margin-top: 80px;
   position: relative;
   font-size: 12px;
   line-height: 17px;
+  margin-left: 50px;
   cursor: pointer;
   color: #818181;
 `;

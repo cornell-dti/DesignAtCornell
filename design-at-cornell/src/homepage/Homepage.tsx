@@ -142,9 +142,7 @@ const Homepage: React.FC = () => (
           {homepageEventDisplay()}
         </MobileElementContainer>
         <MobileElementContainer>
-          <SmallHeading>
-            <Link to="./events"></Link>See more events
-          </SmallHeading>
+          <SmallHeading to="./events">See more events</SmallHeading>
         </MobileElementContainer>
         <MobileElementContainer>
           <SmallTitle>Articles</SmallTitle>
@@ -152,9 +150,7 @@ const Homepage: React.FC = () => (
           {articlesDisplay()}
         </MobileElementContainer>
         <MobileElementContainer>
-          <SmallHeading>
-            <Link to="./articles"></Link>See more articles
-          </SmallHeading>
+          <SmallHeading to="./articles">See more articles</SmallHeading>
         </MobileElementContainer>
       </Grid>
     </MobileWrapper>
