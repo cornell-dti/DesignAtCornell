@@ -29,6 +29,58 @@ export const TitleBackgroundImage = styled.div`
   }
 `;
 
+export const StudentOrgBackground = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 450px;
+  background: ${(props) => props.color};
+  padding-left: 100px;
+  padding-right: 100px;
+  @media (max-width: ${mobileBreakpoint}px) {
+    padding-left: 40px;
+    padding-right: 10px;
+    height: 370px;
+  }
+  `;
+
+export const StudentOrgContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 85%;
+  align-items: flex-start;
+  justify-content: center;
+
+  h1 {
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 64px;
+    line-height: 75px;
+    margin-bottom: 30px;
+    color: black;
+    @media (max-width: ${mobileBreakpoint}px) {
+      font-size: 50px;
+      line-height: 50px;
+    }
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: left;
+    color: black;
+    padding-left: 5px;
+    @media (max-width: ${mobileBreakpoint}px) {
+      font-size: 23px;
+    }
+  }
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 100%;
+    font-size: 16px;
+  }
+`;
+
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;

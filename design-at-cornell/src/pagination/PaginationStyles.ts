@@ -85,11 +85,10 @@ export const PageNavButton = styled.button<{ direction: string }>`
     outline: none;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     width: 100px;
     text-align: left;
     align-items: left;
-    justify-content: space-between;
   }
 `;
 
