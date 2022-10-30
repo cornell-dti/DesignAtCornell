@@ -20,11 +20,11 @@ const Clubs = () => {
     if (window.innerWidth < mobileBreakpoint) {
       setMobileVersion(8);
     }
-  }
+  };
 
   const [clubs, setClubs] = useState<Club[]>([]);
   const [currentPage, setPage] = useState(1);
-  const [mobileVersion, setMobileVersion] = useState(20)
+  const [mobileVersion, setMobileVersion] = useState(20);
 
   const lastClubIdx = currentPage * mobileVersion;
   const firstClubIdx = lastClubIdx - mobileVersion;

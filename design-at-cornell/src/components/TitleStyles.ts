@@ -42,7 +42,7 @@ export const StudentOrgBackground = styled.div`
     padding-right: 10px;
     height: 370px;
   }
-  `;
+`;
 
 export const StudentOrgContainer = styled.div`
   display: flex;
