@@ -101,7 +101,7 @@ export const Blurb = styled.div`
   background: ${colors.blurb};
   border-radius: 20px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     overflow-y: visible;
     text-align: center;
     width: 100%;
@@ -132,7 +132,7 @@ export const MissionStat = styled.div`
   font-size: large;
   color: black;
   margin-top: 40px;
-  @media (max-width: 1000px) {
+  @media (max-width: ${mobileBreakpoint}px) {
     display: none;
   }
 `;
@@ -270,7 +270,7 @@ export const ListsEvents = styled.div`
   height: 290px;
 `;
 
-export const ListsArticles = styled.div`
+export const ListsArticles = styled(ListsEvents)`
   display: flex;
   align-items: left;
   margin-top: 100px;
@@ -298,19 +298,16 @@ export const SmallTitle = styled.div`
   cursor: pointer;
 `;
 
-export const SmallHeading = styled.div`
+export const SmallHeading = styled(SmallTitle)`
   font-weight: bold;
   text-align: left;
   color: black;
   align-items: left;
-  text-decoration: underline;
-  display: flex;
   width: 80%;
   margin-top: 80px;
   position: relative;
   font-size: 12px;
   line-height: 17px;
-  margin-left: 50px;
   cursor: pointer;
   color: #818181;
 `;
