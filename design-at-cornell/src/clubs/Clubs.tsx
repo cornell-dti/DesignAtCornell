@@ -29,7 +29,7 @@ const Clubs = () => {
   const lastClubIdx = currentPage * mobileVersion;
   const firstClubIdx = lastClubIdx - mobileVersion;
   const displayedClubs = clubs.slice(firstClubIdx, lastClubIdx);
-  console.log(mobileVersion);
+
   return (
     <VerticalFlex>
       <Title />
