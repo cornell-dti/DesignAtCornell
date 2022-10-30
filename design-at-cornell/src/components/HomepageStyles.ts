@@ -86,7 +86,6 @@ export const BlurbContainer = styled.div`
       padding-right: 7px;
     }
   }
-  
 `;
 
 export const Blurb = styled.div`
@@ -188,7 +187,6 @@ export const GridItem = styled.div`
   margin-left: 30px;
   margin-right: 30px;
 `;
-
 
 export const GridMobile = styled.div`
   display: flex;
