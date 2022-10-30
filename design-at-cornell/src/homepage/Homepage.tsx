@@ -23,13 +23,11 @@ import orgs_icon from '../static/images/orgs_icon.svg';
 import events_icon from '../static/images/events_icon.svg';
 import resources_icon from '../static/images/resources_icon.svg';
 import community_icon from '../static/images/community_icon.svg';
-import faculty from '../static/images/faculty.svg';
 import Title from './title';
 import majors_minors_mobile from '../static/images/majors-minors-mobile.svg';
 import courses_mobile from '../static/images/courses-mobile.svg';
 import orgs_mobile from '../static/images/orgs-mobile.svg';
 import faculty_mobile from '../static/images/faculty-mobile.svg';
-import { render } from 'react-dom';
 const Homepage: React.FC = () => (
   <div data-testid="Homepage">
     <Router />

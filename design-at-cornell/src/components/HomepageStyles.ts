@@ -62,7 +62,8 @@ export const BlurbContainer = styled.div`
       font-size: 55px;
       line-height: 60px;
       align-items: center;
-      padding-left: 25px;
+      padding-left: 10px;
+      padding-right: 50px;
       margin-top: 100px;
     }
   }
@@ -83,7 +84,7 @@ export const BlurbContainer = styled.div`
       margin-top: 100px;
       line-height: 23px;
       padding-left: 25px;
-      padding-right: 7px;
+      padding-right: 50px;
     }
   }
 `;
