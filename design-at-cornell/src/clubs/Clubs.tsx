@@ -18,18 +18,18 @@ const Clubs = () => {
 
   const changeClubsPerPage = () => {
     if (window.innerWidth < mobileBreakpoint) {
-      setMobileVersion(8);
+      setClubsPerPage(8);
     } else {
-      setMobileVersion(20);
+      setClubsPerPage(20);
     }
   };
 
   const [clubs, setClubs] = useState<Club[]>([]);
   const [currentPage, setPage] = useState(1);
-  const [mobileVersion, setMobileVersion] = useState(20);
+  const [cards, setClubsPerPage] = useState(20);
 
-  const lastClubIdx = currentPage * mobileVersion;
-  const firstClubIdx = lastClubIdx - mobileVersion;
+  const lastClubIdx = currentPage * cards;
+  const firstClubIdx = lastClubIdx - cards;
   const displayedClubs = clubs.slice(firstClubIdx, lastClubIdx);
 
   return (
@@ -38,7 +38,7 @@ const Clubs = () => {
       <Dashboard {...displayedClubs} />
       <Pagination
         currentPage={currentPage}
-        cardsPerPage={mobileVersion}
+        cardsPerPage={cards}
         totalCards={clubs.length}
         paginate={setPage}
       />
