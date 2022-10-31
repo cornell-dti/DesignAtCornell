@@ -13,12 +13,14 @@ const Clubs = () => {
       .get('/getClubs')
       .then((res) => res.data.data)
       .then(setClubs);
-    changeClubsPerPage();
+    window.addEventListener('resize', changeClubsPerPage);
   }, []);
 
   const changeClubsPerPage = () => {
     if (window.innerWidth < mobileBreakpoint) {
       setMobileVersion(8);
+    } else {
+      setMobileVersion(20);
     }
   };
 
