@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../constants/colors';
+import { colors } from '../constants/colors';
 
 export const ElementContainer = styled.div`
   display: flex;
@@ -69,5 +69,45 @@ export const ArticleBubbleSubtitle = styled.div`
     line-height: 19px;
     color: #818181;
     font-weight: bold;
+  }
+`;
+
+export const HomepageEventContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 85vw;
+  min-width: 300px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0px 4px 24px 2px ${colors.cardShadow};
+  padding: 20px;
+  align-items: left;
+  justify-content: space-between;
+  h1 {
+    font-size: 18px;
+    line-height: 38px;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(97%);
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #939393;
+    margin: 10;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(97%);
   }
 `;

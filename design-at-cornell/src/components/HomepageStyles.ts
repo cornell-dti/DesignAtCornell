@@ -62,7 +62,7 @@ export const BlurbContainer = styled.div`
       font-size: 55px;
       line-height: 60px;
       align-items: center;
-      padding-left: 10px;
+      padding-left: 30px;
       padding-right: 50px;
       margin-top: 100px;
     }
@@ -191,9 +191,12 @@ export const GridItem = styled.div`
 
 export const GridMobile = styled.div`
   display: flex;
-  flex: 0 0 0%;
+  flex: 0 0 100%;
+  width: 450px;
   justify-content: left;
   margin-top: -5px;
+  position: relative;
+  overflow: hidden;
 `;
 
 export const ExploreSubtitle = styled(Link)`
@@ -261,23 +264,18 @@ export const MobileElementContainer = styled.div`
 export const ListsEvents = styled.div`
   display: flex;
   align-items: left;
-  margin-top: 100px;
-  margin-left: 40px;
-  margin-right: 40%;
+  width: 80%;
+  margin: 100px 42px;
   flex-direction: column;
   justify-content: left;
-  height: 290px;
+  height: 400px;
+  margin-bottom: -10px;
 `;
 
 export const ListsArticles = styled(ListsEvents)`
-  display: flex;
-  align-items: left;
-  margin-top: 100px;
-  margin-left: 40px;
-  margin-right: 40%;
-  flex-direction: column;
-  justify-content: left;
-  height: 620px;
+  height: 10%;
+  width: 85%;
+  margin-bottom: -50px;
 `;
 
 export const SmallTitle = styled.div`
@@ -304,11 +302,10 @@ export const SmallHeading = styled(Link)`
   align-items: left;
   text-decoration: underline;
   width: 80%;
-  margin-top: 80px;
   position: relative;
   font-size: 12px;
   line-height: 17px;
-  margin-left: 50px;
+  margin-left: 45px;
   cursor: pointer;
   color: #818181;
 `;

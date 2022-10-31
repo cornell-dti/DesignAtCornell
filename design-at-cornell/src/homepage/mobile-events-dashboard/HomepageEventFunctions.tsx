@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { VerticalFlex } from '../../components/ContainerStyles';
 import { ListsEvents } from '../../components/HomepageStyles';
 import HomepageEventDisplay from './HomepageEventDisplay';
 import { Event } from '../../../../server/src/types';
@@ -33,7 +32,7 @@ const HomepageFunctions = () => {
     </ListsEvents>
   );
 
-  return <VerticalFlex>{homepageDisplay}</VerticalFlex>;
+  return homepageDisplay;
 };
 
 export default HomepageFunctions;

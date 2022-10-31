@@ -3,7 +3,7 @@ import {
   ArticleBubbleTitle,
   ArticleBubbleContainer,
   ArticleBubbleSubtitle,
-} from './article-homepage-styles';
+} from '../external-elements-styles';
 import { Article } from '../../../../server/src/types';
 import { VerticalFlex } from '../../components/ContainerStyles';
 

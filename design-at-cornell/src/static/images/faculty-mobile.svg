@@ -1,6 +1,6 @@
 <svg width="1000" height="75" viewBox="0 0 1000 75" fill="none" xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
-  <rect width="1000" height="75" fill="#FF8C38" fill-opacity="0.75" />
+  <rect width="1000" height="75" fill="#FF8C38" fill-opacity="0.90" />
   <g style="mix-blend-mode:overlay">
     <rect width="1000" height="75" fill="url(#pattern0)" />
   </g>

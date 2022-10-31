@@ -1,10 +1,11 @@
 import React from 'react';
-import { EventContainer, Settings } from '../../events/EventsStyles';
+import { Settings } from '../../events/EventsStyles';
+import { HomepageEventContainer } from '../external-elements-styles';
 import { Event } from '../../../../server/src/types';
 import time from '../../static/images/time.svg';
 
 const HomepageEventDisplay = (event: Event) => (
-  <EventContainer>
+  <HomepageEventContainer>
     <Settings>
       <p>
         {new Date(event.date).toLocaleString('en', {
@@ -23,7 +24,7 @@ const HomepageEventDisplay = (event: Event) => (
         })}
       </p>
     </Settings>
-  </EventContainer>
+  </HomepageEventContainer>
 );
 
 export default HomepageEventDisplay;
