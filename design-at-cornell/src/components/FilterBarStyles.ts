@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
 import magnifyingGlass from '../static/images/magnifying-glass.svg';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const FilterBarContainer = styled.div`
   display: flex;
@@ -17,16 +18,32 @@ export const FilterBarContainer = styled.div`
   }
 `;
 
+export const MobileFilterBarContainer = styled(FilterBarContainer)`
+  justify-content: center;
+
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    display: none;
+  }
+`;
+
 export const FilterDropdownContainer = styled.li`
   position: relative;
   display: inline;
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 10px 10px 0px 10px;
   p {
     font-weight: bold;
     font-size: 12px;
     margin-right: 20px;
     margin-top: 4px;
+  }
+`;
+
+export const MobileFilterDropdownContainer = styled(FilterDropdownContainer)`
+  align-self: flex-end;
+  margin: 20px 20px 0px 20px;
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    display: none;
   }
 `;
 
@@ -51,6 +68,18 @@ export const FilterButton = styled.div<{ expand: boolean }>`
   }
 `;
 
+export const MobileFilterButton = styled(FilterButton)`
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 2px ${colors.cardShadow};
+  height: 36px;
+  padding: 5px 15px;
+  visibility: ${({ expand }) => (!expand ? 'visible' : 'hidden')};
+
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    display: none;
+  }
+`;
+
 export const FilterFormContainer = styled.div<{ expand: boolean }>`
   width: 100%;
   position: absolute;
@@ -63,7 +92,7 @@ export const FilterFormContainer = styled.div<{ expand: boolean }>`
 
 export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
   width: fit-content;
-  height: 340px;
+  height: fit-content;
   position: absolute;
   white-space: nowrap;
   display: ${({ expand }) => (expand ? 'inline' : 'none')};
@@ -71,6 +100,58 @@ export const LargeFilterFormContainer = styled.div<{ expand: boolean }>`
   padding: 0px 15px 15px 15px;
   border-radius: 0 15px 15px 15px;
   box-shadow: 0px 20px 20px 10px ${colors.shadow};
+`;
+
+export const MobileLargeFilterFormContainer = styled(LargeFilterFormContainer)`
+  margin-top: -150px;
+  border-radius: 15px;
+
+  img {
+    position: absolute;
+    padding-top: 15px;
+    left: 90%;
+    cursor: pointer;
+  }
+
+  h4 {
+    margin: 12px 0px 5px 0px;
+  }
+`;
+
+export const CenteredMobileLargeFilterFormContainer = styled(MobileLargeFilterFormContainer)`
+  width: 350px;
+  right: -2vw;
+  border: 5px solid white;
+`;
+
+export const MobileSelectFormContainer = styled(MobileLargeFilterFormContainer)`
+  margin-top: -100px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  img {
+    left: 85%;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding-top: 5px;
+    margin-left: -5px;
+    font-family: 'Work Sans';
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 19px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: ${colors.green};
+  }
 `;
 
 export const SearchBar = styled.input`

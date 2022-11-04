@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 96px;
   color: black;
-  padding-left: 60px;
+  padding-left: 50px;
   padding-right: 60px;
 `;
 
@@ -39,6 +39,21 @@ export const Logo = styled(Link)`
     text-decoration: none;
     color: black;
   }
+`;
+
+export const CornellLogo = styled.div`
+  img {
+    margin-top: 12px;
+    height: 70px;
+  }
+`;
+
+export const Line = styled.div`
+  margin-top: 12px;
+  height: 70px;
+  border-left: 1px solid black;
+  margin-left: -18px;
+  margin-right: 16px;
 `;
 
 export const Nav = styled.div`

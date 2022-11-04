@@ -1,17 +1,38 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import homepage_banner from '../static/images/homepage_banner.svg';
+import mobile_homepage from '../static/images/mobile_homepage.svg';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
+
+export const DesktopWrapper = styled.div`
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: none;
+  }
+`;
+
+export const MobileWrapper = styled.div`
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    display: none;
+  }
+`;
 
 export const BannerBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 550px;
+  height: 730px;
   background-image: url(${homepage_banner});
   padding-left: 100px;
   padding-right: 100px;
   margin-bottom: 90px;
+  @media (max-width: ${mobileBreakpoint}px) {
+    overflow-y: visible;
+    color: white;
+    height: 336px;
+    background-image: url(${mobile_homepage});
+    margin-bottom: 0px;
+  }
 `;
 
 export const BlurbContainer = styled.div`
@@ -23,35 +44,72 @@ export const BlurbContainer = styled.div`
   justify-content: center;
   text-align: left;
   h3 {
-    height: 72px;
+    height: 45px;
     font-family: 'Work Sans';
     font-style: normal;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 30px;
     line-height: 47px;
     padding-left: 50px;
+
+    @media (max-width: ${mobileBreakpoint}px) {
+      overflow-y: visible;
+      color: white;
+      text-align: center;
+      display: inline-block;
+      height: 10%;
+      width: 100%;
+      font-size: 55px;
+      line-height: 60px;
+      align-items: center;
+      padding-left: 30px;
+      padding-right: 50px;
+      margin-top: 100px;
+    }
   }
 
   p {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 30px;
     color: black;
     padding-left: 50px;
+    padding-right: 50px;
     font-weight: 500;
+    @media (max-width: ${mobileBreakpoint}px) {
+      overflow-y: visible;
+      text-align: center;
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      margin-top: 100px;
+      line-height: 23px;
+      padding-left: 25px;
+      padding-right: 50px;
+    }
   }
 `;
 
 export const Blurb = styled.div`
   text-align: center;
-  display: block;
+  display: inline-block;
   justify-content: center;
   position: absolute;
-  width: 497px;
-  height: 348px;
-  right: 120px;
-  top: 190px;
+  width: 450px;
+  height: 220px;
+  right: 150px;
+  top: 220px;
   background: ${colors.blurb};
   border-radius: 20px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    overflow-y: visible;
+    text-align: center;
+    width: 100%;
+    right: 0%;
+    top: 15%;
+    background: transparent;
+    color: white;
+  }
 `;
 
 export const Headline = styled.div`
@@ -61,6 +119,9 @@ export const Headline = styled.div`
   text-align: center;
   color: black;
   justify-content: center;
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: none;
+  }
 `;
 
 export const MissionStat = styled.div`
@@ -69,9 +130,11 @@ export const MissionStat = styled.div`
   font-family: 'Work Sans';
   font-style: normal;
   font-size: large;
-  text-align: center;
   color: black;
   margin-top: 40px;
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: none;
+  }
 `;
 
 export const ElementContainer = styled.div`
@@ -81,6 +144,109 @@ export const ElementContainer = styled.div`
   font-weight: normal;
   margin-bottom: 90px;
   margin-inline: 20px;
+
+  p {
+    font-size: 18px;
+    text-align: left;
+    align-items: left;
+    width: 300px;
+    padding-top: 25px;
+    min-height: 100px;
+  }
+
+  img {
+    cursor: pointer;
+  }
+`;
+
+export const CardTitle = styled.div`
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 20px;
+  text-align: left;
+  color: black;
+  align-items: left;
+  margin-top: 50px;
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: flex;
+    width: 60%;
+    box-sizing: border-box;
+    margin-top: 27px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+`;
+
+export const GridItem = styled.div`
+  display: flex;
+  flex: 0 0 26%;
+  justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
+`;
+
+export const GridMobile = styled.div`
+  display: flex;
+  flex: 0 0 100%;
+  width: 450px;
+  justify-content: left;
+  margin-top: -5px;
+  position: relative;
+  overflow: hidden;
+`;
+
+export const ExploreSubtitle = styled(Link)`
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: left;
+  color: blue;
+  align-items: left;
+  margin-top: 8px;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    align-items: right;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    position: absolute;
+    margin-top: 27px;
+    margin-left: -30px;
+    color: black;
+  }
+`;
+
+export const Grid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  margin-top: 90px;
+  justify-content: center;
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    justify-content: left;
+    margin-top: 0px;
+  }
+`;
+
+export const MobileElementContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: normal;
+  margin-bottom: 50px;
 
   p {
     font-size: 24px;
@@ -95,40 +261,51 @@ export const ElementContainer = styled.div`
   }
 `;
 
-export const CardTitle = styled.div`
+export const ListsEvents = styled.div`
+  display: flex;
+  align-items: left;
+  width: 80%;
+  margin: 100px 42px;
+  flex-direction: column;
+  justify-content: left;
+  height: 400px;
+  margin-bottom: -10px;
+`;
+
+export const ListsArticles = styled(ListsEvents)`
+  height: 10%;
+  width: 85%;
+  margin-bottom: -50px;
+`;
+
+export const SmallTitle = styled.div`
   font-weight: bold;
-  font-size: 35px;
-  line-height: 20px;
   text-align: left;
   color: black;
   align-items: left;
-  margin-top: 50px;
-`;
-
-export const GridItem = styled.div`
+  text-decoration: underline;
   display: flex;
-  flex: 0 0 26%;
-  justify-content: center;
-`;
-
-export const ExploreSubtitle = styled(Link)`
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 20px;
-  text-align: left;
-  color: blue;
-  align-items: left;
-  margin-top: 8px;
-  justify-content: space-between;
-  width: 100%;
+  width: 60%;
+  box-sizing: border-box;
+  margin-top: 27px;
+  position: absolute;
+  font-size: 18px;
+  line-height: 23px;
+  margin-left: 50px;
   cursor: pointer;
 `;
 
-export const Grid = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: fit-content;
-  margin-top: 90px;
-  justify-content: center;
+export const SmallHeading = styled(Link)`
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  align-items: left;
+  text-decoration: underline;
+  width: 80%;
+  position: relative;
+  font-size: 12px;
+  line-height: 17px;
+  margin-left: 45px;
+  cursor: pointer;
+  color: #818181;
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const TitleBackground = styled.div`
   display: flex;
@@ -9,11 +10,12 @@ export const TitleBackground = styled.div`
   background: ${(props) => props.color};
   padding-left: 100px;
   padding-right: 100px;
-  @media (max-width: 1000px) {
-      padding-left: 40px;
-      padding-right: 10px;
-      height: 370px;
-    }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 300px;
+  }
 `;
 
 export const TitleBackgroundImage = styled.div`
@@ -54,11 +56,39 @@ export const TitleContainer = styled.div`
       font-size: 23px;
     }
   }
-  @media (max-width: 1000px) {
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    h1 {
+      font-size: 36px;
+      line-height: 48px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
     width: 100%;
-    font-size: 16px;
   }
 `;
+
+export const CourseTitleContainer = styled(TitleContainer)`
+  h1 {
+    @media (max-width: ${mobileBreakpoint}px) {
+      font-size: 50px;
+      line-height: 30px;
+      margin-top: 15px;
+    }
+  }
+  
+
+  p {
+    @media (max-width:  ${mobileBreakpoint}px) {
+      font-size: 20px;
+      margin-top: 15px;
+    }
+  }
+  `;
 
 export const TitleContainerBox = styled.div`
   display: flex;

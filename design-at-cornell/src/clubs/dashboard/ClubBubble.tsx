@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ElementContainer,
+  ClubBubbleContainer,
   TagsContainer,
   Tag,
   ClubBubbleTitle,
@@ -11,7 +11,7 @@ import { Club } from '../../../../server/src/types';
 import { SmallRectangularButton } from '../../components/ButtonStyles';
 
 const ClubBubble = (club: Club) => (
-  <ElementContainer>
+  <ClubBubbleContainer>
     <ClubBubbleTitle>{club.title}</ClubBubbleTitle>
     <TagsContainer>
       {club.content.orgType === '' ? null : (
@@ -37,7 +37,7 @@ const ClubBubble = (club: Club) => (
       <img src={openlink} alt={'website'} />
       <p>Website</p>
     </SmallRectangularButton>
-  </ElementContainer>
+  </ClubBubbleContainer>
 );
 
 export default ClubBubble;
