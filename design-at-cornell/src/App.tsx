@@ -18,7 +18,6 @@ import { GlobalStyle } from './AppStyles';
 import { GlobalContextProvider } from './context/GlobalContext';
 
 function App() {
-  console.log(process.env.NODE_ENV);
   return (
     <GlobalContextProvider>
       <Router>

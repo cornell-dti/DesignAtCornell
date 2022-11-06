@@ -6,7 +6,7 @@ type Page = {
 const pages: Page[] = [
   { name: 'Courses', url: '/explore-courses' },
   { name: 'Majors & Minors', url: '/areas-of-study' },
-  { name: 'Student Organizations', url: '/student-organizations' },
+  { name: 'Student Orgs', url: '/student-organizations' },
   { name: 'Events', url: '/events' },
   { name: 'Faculty', url: '/faculty' },
   { name: 'Articles', url: '/articles' },
@@ -15,7 +15,7 @@ const pages: Page[] = [
 const explore: Page[] = [
   { name: 'Courses', url: '/explore-courses' },
   { name: 'Majors & Minors', url: '/areas-of-study' },
-  { name: 'Student Organizations', url: '/student-organizations' },
+  { name: 'Student Orgs', url: '/student-organizations' },
   { name: 'Events', url: '/events' },
 ];
 

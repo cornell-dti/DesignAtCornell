@@ -12,6 +12,7 @@ export const BannerBackground = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   margin-bottom: 90px;
+  position: relative;
 `;
 
 export const BlurbContainer = styled.div`
