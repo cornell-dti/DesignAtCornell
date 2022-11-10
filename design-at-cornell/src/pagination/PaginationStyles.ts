@@ -84,6 +84,12 @@ export const PageNavButton = styled.button<{ direction: string }>`
     border: none;
     outline: none;
   }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 100px;
+    text-align: left;
+    align-items: left;
+  }
 `;
 
 export const MobileAreaOfStudyPageNavButton = styled(PageNavButton)`
