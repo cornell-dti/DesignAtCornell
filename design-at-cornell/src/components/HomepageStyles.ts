@@ -13,6 +13,7 @@ export const DesktopWrapper = styled.div`
 
 export const MobileWrapper = styled.div`
   @media (min-width: ${mobileBreakpoint + 1}px) {
+    width: 100%;
     display: none;
   }
 `;
