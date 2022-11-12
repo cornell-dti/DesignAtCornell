@@ -22,6 +22,16 @@ const FilterBar = (props: Props) => {
 
 export type Props = {
   filterList: { category: string; tags: Filters; setTags: SetFilters }[];
+  designAreaTags: Filters,
+  departmentTags: Filters,
+  semesterTags: Filters,
+  levelTags: Filters,
+  creditTags: Filters,
+  setDesignTags: SetFilters,
+  setDepartmentTags: SetFilters,
+  setSemesterTags: SetFilters,
+  setLevelTags: SetFilters,
+  setCreditTags: SetFilters,
   setPage: (page: React.SetStateAction<number>) => void;
   setSearch: (search: React.SetStateAction<string>) => void;
 };

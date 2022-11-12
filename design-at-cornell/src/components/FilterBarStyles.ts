@@ -37,6 +37,15 @@ export const FilterDropdownContainer = styled.li`
     margin-right: 20px;
     margin-top: 4px;
   }
+  @media (max-width: ${mobileBreakpoint}px) {
+    p {
+    width: 100%;
+    margin-left: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  }
 `;
 
 export const MobileFilterDropdownContainer = styled(FilterDropdownContainer)`
@@ -78,6 +87,16 @@ export const MobileFilterButton = styled(FilterButton)`
   @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
+`;
+
+export const MobileCoursesFilterButton = styled(FilterButton)`
+  background: rgba(255, 255, 255, 0.53);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
+  border-radius: 50px;
+  height: 45px;
+  padding: 9px 15px;
+  margin-top: -64px;
+  visibility: ${({ expand }) => (!expand ? 'visible' : 'hidden')};
 `;
 
 export const FilterFormContainer = styled.div<{ expand: boolean }>`
@@ -122,6 +141,12 @@ export const CenteredMobileLargeFilterFormContainer = styled(MobileLargeFilterFo
   width: 350px;
   right: -2vw;
   border: 5px solid white;
+`;
+
+export const ScrolledMobileLargeFilterFormContainer = styled(CenteredMobileLargeFilterFormContainer)`
+  width: 350px;
+  height: 400px;
+  overflow-y: scroll;
 `;
 
 export const MobileSelectFormContainer = styled(MobileLargeFilterFormContainer)`
@@ -169,7 +194,30 @@ export const SearchBar = styled.input`
   &:focus {
     outline: none;
   }
-  @media (max-width: 1000px) {
-    
+  `;
+
+export const MobileSearchBar = styled.input`
+  flex-grow: 1;
+  height: 45px;
+  border-radius: 50px;
+  padding: 0 10px;
+  margin: 20px 15px;
+  width: 65vw;
+  border-style: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
+  background-image: url(${magnifyingGlass});
+  background-position: 7px 14px;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  color: black;
+
+  &:focus {
+    outline: none;
   }
-`;
+  `;
