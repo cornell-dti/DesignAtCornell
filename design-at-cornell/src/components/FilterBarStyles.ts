@@ -39,12 +39,12 @@ export const FilterDropdownContainer = styled.li`
   }
   @media (max-width: ${mobileBreakpoint}px) {
     p {
-    width: 100%;
-    margin-left: 2px;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 18px;
-  }
+      width: 100%;
+      margin-left: 2px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 `;
 
@@ -143,7 +143,9 @@ export const CenteredMobileLargeFilterFormContainer = styled(MobileLargeFilterFo
   border: 5px solid white;
 `;
 
-export const ScrolledMobileLargeFilterFormContainer = styled(CenteredMobileLargeFilterFormContainer)`
+export const ScrolledMobileLargeFilterFormContainer = styled(
+  CenteredMobileLargeFilterFormContainer
+)`
   width: 350px;
   height: 400px;
   overflow-y: scroll;
@@ -194,7 +196,7 @@ export const SearchBar = styled.input`
   &:focus {
     outline: none;
   }
-  `;
+`;
 
 export const MobileSearchBar = styled.input`
   flex-grow: 1;
@@ -220,4 +222,4 @@ export const MobileSearchBar = styled.input`
   &:focus {
     outline: none;
   }
-  `;
+`;

@@ -80,15 +80,14 @@ export const CourseTitleContainer = styled(TitleContainer)`
       margin-top: 15px;
     }
   }
-  
 
   p {
-    @media (max-width:  ${mobileBreakpoint}px) {
+    @media (max-width: ${mobileBreakpoint}px) {
       font-size: 20px;
       margin-top: 15px;
     }
   }
-  `;
+`;
 
 export const TitleContainerBox = styled.div`
   display: flex;

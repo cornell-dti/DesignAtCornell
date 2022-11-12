@@ -2,10 +2,7 @@ import React from 'react';
 import FilterBar, { Props } from './FilterBar';
 import { TitleBackground, CourseTitleContainer } from '../../components/TitleStyles';
 import { colors } from '../../constants/colors';
-import {
-  DesktopWrapper,
-} from '../../components/HomepageStyles';
-
+import { DesktopWrapper } from '../../components/HomepageStyles';
 
 const Title = (props: Props) => (
   <TitleBackground color={colors.yellow}>
@@ -16,7 +13,9 @@ const Title = (props: Props) => (
         broaden your horizons.
       </p>
     </CourseTitleContainer>
-    <DesktopWrapper><FilterBar {...props} /></DesktopWrapper>
+    <DesktopWrapper>
+      <FilterBar {...props} />
+    </DesktopWrapper>
   </TitleBackground>
 );
 

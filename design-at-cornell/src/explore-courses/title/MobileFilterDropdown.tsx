@@ -41,9 +41,7 @@ const MobileFilterDropdown = (props: Props) => {
                 props.setPage(1);
               }}
             />
-            <label htmlFor={tag}>
-              {tag === 'Majors/Minors' ? department_name[tag] : tag}
-            </label>
+            <label htmlFor={tag}>{tag === 'Majors/Minors' ? department_name[tag] : tag}</label>
           </div>
         )
       )}
@@ -59,11 +57,26 @@ const MobileFilterDropdown = (props: Props) => {
       <ScrolledMobileLargeFilterFormContainer expand={expand}>
         <img onClick={() => setExpand(false)} src={exit} alt="close" />
         <h4>Design Areas</h4>
-        {filterForm(props.designAreaTags, props.setDesignTags, appliedDesignOptions, setDesignOptions)}
+        {filterForm(
+          props.designAreaTags,
+          props.setDesignTags,
+          appliedDesignOptions,
+          setDesignOptions
+        )}
         <h4>Majors & Minors</h4>
-        {filterForm(props.departmentTags, props.setDepartmentTags, appliedDepartmentOptions, setDepartmentOptions)}
+        {filterForm(
+          props.departmentTags,
+          props.setDepartmentTags,
+          appliedDepartmentOptions,
+          setDepartmentOptions
+        )}
         <h4>Semesters</h4>
-        {filterForm(props.semesterTags, props.setSemesterTags, appliedSemesterOptions, setSemesterOptions)}
+        {filterForm(
+          props.semesterTags,
+          props.setSemesterTags,
+          appliedSemesterOptions,
+          setSemesterOptions
+        )}
         <h4>Levels</h4>
         {filterForm(props.levelTags, props.setLevelTags, appliedLevelOptions, setLevelOptions)}
         <h4>Credits</h4>
@@ -74,16 +87,16 @@ const MobileFilterDropdown = (props: Props) => {
 };
 
 export type Props = {
-  designAreaTags: Filters,
-  departmentTags: Filters,
-  semesterTags: Filters,
-  levelTags: Filters,
-  creditTags: Filters,
-  setDesignTags: SetFilters,
-  setDepartmentTags: SetFilters,
-  setSemesterTags: SetFilters,
-  setLevelTags: SetFilters,
-  setCreditTags: SetFilters,
+  designAreaTags: Filters;
+  departmentTags: Filters;
+  semesterTags: Filters;
+  levelTags: Filters;
+  creditTags: Filters;
+  setDesignTags: SetFilters;
+  setDepartmentTags: SetFilters;
+  setSemesterTags: SetFilters;
+  setLevelTags: SetFilters;
+  setCreditTags: SetFilters;
   setPage: (page: React.SetStateAction<number>) => void;
   setSearch: (search: React.SetStateAction<string>) => void;
 };
