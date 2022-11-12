@@ -143,9 +143,7 @@ export const CenteredMobileLargeFilterFormContainer = styled(MobileLargeFilterFo
   border: 5px solid white;
 `;
 
-export const ScrolledMobileLargeFilterFormContainer = styled(
-  CenteredMobileLargeFilterFormContainer
-)`
+export const ScrolledMobileLargeFilterFormContainer = styled(CenteredMobileLargeFilterFormContainer)`
   width: 350px;
   height: 400px;
   overflow-y: scroll;
