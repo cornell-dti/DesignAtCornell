@@ -19,6 +19,7 @@ const MobileFilterDropdown = (props: Props) => {
   const [appliedCreditOptions, setCreditOptions] = useState<number>(0);
 
   const filterForm = (
+    category: string,
     tags: Filters,
     setter: SetFilters,
     appliedOptions: number,
@@ -41,7 +42,7 @@ const MobileFilterDropdown = (props: Props) => {
                 props.setPage(1);
               }}
             />
-            <label htmlFor={tag}>{tag === 'Majors/Minors' ? department_name[tag] : tag}</label>
+            <label htmlFor={tag}>{category === 'Majors/Minors' ? department_name[tag] : tag}</label>
           </div>
         )
       )}
@@ -58,6 +59,7 @@ const MobileFilterDropdown = (props: Props) => {
         <img onClick={() => setExpand(false)} src={exit} alt="close" />
         <h4>Design Areas</h4>
         {filterForm(
+          'Design Areas',
           props.designAreaTags,
           props.setDesignTags,
           appliedDesignOptions,
@@ -65,6 +67,7 @@ const MobileFilterDropdown = (props: Props) => {
         )}
         <h4>Majors & Minors</h4>
         {filterForm(
+          'Majors/Minors',
           props.departmentTags,
           props.setDepartmentTags,
           appliedDepartmentOptions,
@@ -72,15 +75,28 @@ const MobileFilterDropdown = (props: Props) => {
         )}
         <h4>Semesters</h4>
         {filterForm(
+          'Semesters',
           props.semesterTags,
           props.setSemesterTags,
           appliedSemesterOptions,
           setSemesterOptions
         )}
         <h4>Levels</h4>
-        {filterForm(props.levelTags, props.setLevelTags, appliedLevelOptions, setLevelOptions)}
+        {filterForm(
+          'Levels',
+          props.levelTags,
+          props.setLevelTags,
+          appliedLevelOptions,
+          setLevelOptions
+        )}
         <h4>Credits</h4>
-        {filterForm(props.creditTags, props.setCreditTags, appliedCreditOptions, setCreditOptions)}
+        {filterForm(
+          'Credits',
+          props.creditTags,
+          props.setCreditTags,
+          appliedCreditOptions,
+          setCreditOptions
+        )}
       </ScrolledMobileLargeFilterFormContainer>
     </MobileFilterDropdownContainer>
   );
