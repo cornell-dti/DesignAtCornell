@@ -5,12 +5,13 @@ import {
   ColContainer,
   Nav,
   NavItem,
+  FullContainer,
   Grow,
   StyledLink,
   LogoText,
   Divider,
 } from './HeaderStyles';
-import { Transition, Icon, Menu, Button } from 'semantic-ui-react';
+import { Icon, Menu, Button } from 'semantic-ui-react';
 import { pages } from '../constants/pages';
 import dacLogo from '../static/images/logo.svg';
 import cornellLogo from '../static/images/black-white-cornell-logo.svg';
@@ -23,82 +24,67 @@ const Header = () => {
   const { isMobileView } = useContext(GlobalContext);
   const [showMenu, setShowMenu] = useState(false);
 
-  const navigation = (
+  const updateMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const Navigation = () => (
     <Nav>
       {pages.map((page) => (
         <StyledLink key={page.name} to={page.url}>
-          <NavItem>{page.name}</NavItem>
+          <NavItem {...(location.pathname === page.url ? { className: 'active' } : {})}>
+            {page.name}
+          </NavItem>
         </StyledLink>
       ))}
     </Nav>
   );
 
-  const desktopLogo = (
-    <>
-      <img src={dacLogo} className="dac-logo" alt="logo" />
-      <LogoText>
-        Design At <br />
-        Cornell
-      </LogoText>
-    </>
+  const MobileNav = () => (
+    <Button icon style={{ background: 'none' }} onClick={updateMenu}>
+      <Icon name={showMenu ? 'x' : 'bars'} size="large" />
+    </Button>
   );
 
-  const mobileLogo = (
+  const MobileLogo = () => (
     <ColContainer>
       <img src={dacLogo} className="dac-logo" alt="logo" />
       <LogoText>Design At Cornell</LogoText>
     </ColContainer>
   );
 
-  const updateMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
-  const mobileNav = (
-    <Button icon style={{ background: 'none' }} onClick={updateMenu}>
-      <Icon name={showMenu ? 'x' : 'bars'} size="large" />
-    </Button>
-  );
-
   return (
-    <div>
+    <FullContainer>
       <HeaderContainer>
         <StyledLink to="./">
           <RowContainer>
             <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
             <Divider />
 
-            {isMobileView ? mobileLogo : desktopLogo}
+            <MobileLogo />
           </RowContainer>
         </StyledLink>
 
         <Grow></Grow>
-        {isMobileView ? mobileNav : navigation}
+        {isMobileView ? <MobileNav /> : <Navigation />}
       </HeaderContainer>
-      <Transition.Group animation="slide down" duration={{ show: 500, hide: 250 }}>
-        {isMobileView && showMenu && (
-          <Menu vertical style={{ width: '100%', margin: 0 }}>
-            {pages.map((page) => (
-              <Menu.Item
-                style={{
-                  paddingLeft: '64px',
-                  paddingRight: '64px',
-                  fontSize: '18px',
-                  margin: 0,
-                }}
-                key={page.name}
-                active={location.pathname === page.url}
-                onClick={() => {
-                  history.push(page.url);
-                }}
-              >
-                {page.name}
-              </Menu.Item>
-            ))}
-          </Menu>
-        )}
-      </Transition.Group>
-    </div>
+      {isMobileView && showMenu && (
+        <Menu vertical style={{ width: '100%', margin: 0 }}>
+          {pages.map((page) => (
+            <Menu.Item
+              key={page.name}
+              active={location.pathname === page.url}
+              onClick={() => {
+                history.push(page.url);
+                setShowMenu(false);
+              }}
+            >
+              <p className="mobile-nav-item">{page.name}</p>
+            </Menu.Item>
+          ))}
+        </Menu>
+      )}
+    </FullContainer>
   );
 };
 export default Header;
