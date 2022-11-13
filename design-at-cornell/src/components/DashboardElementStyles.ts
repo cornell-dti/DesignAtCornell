@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const ElementContainer = styled.div`
   display: flex;
@@ -19,6 +20,11 @@ export const ElementContainer = styled.div`
 
 export const ClubBubbleContainer = styled(ElementContainer)`
   cursor: default;
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 950px;
+    min-width: 375px;
+    margin-left: -22px;
+  }
 `;
 
 export const ArticleBubbleContainer = styled(ElementContainer)`
@@ -133,7 +139,6 @@ export const Title = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text- ellipsis;
     white-space: normal;
   }
 `;
