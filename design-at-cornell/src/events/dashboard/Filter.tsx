@@ -15,9 +15,17 @@ type Props = {
   leftClickHandler: () => void;
   rightClickHandler: () => void;
   monthClickHandler: (m: number) => void;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const Filter = ({ month, year, leftClickHandler, rightClickHandler, monthClickHandler }: Props) => {
+const Filter = ({
+  month,
+  year,
+  leftClickHandler,
+  rightClickHandler,
+  monthClickHandler,
+  setPage,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const months = [
     'January',
@@ -42,6 +50,7 @@ const Filter = ({ month, year, leftClickHandler, rightClickHandler, monthClickHa
           selected={months[month] === m}
           onClick={() => {
             monthClickHandler(i);
+            setPage(1);
             setOpen(false);
           }}
         >
