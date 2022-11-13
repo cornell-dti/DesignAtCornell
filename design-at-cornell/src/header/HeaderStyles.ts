@@ -57,7 +57,7 @@ export const ColContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  align-items: center;
+  align-items: left;
   justify-content: center;
 `;
 
