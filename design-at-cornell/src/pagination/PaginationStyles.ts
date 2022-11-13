@@ -9,7 +9,7 @@ export const StyledPagination = styled.div`
   display: flex;
   width: 100%;
   height: 80px;
-  padding: 0px 80px;
+  padding: 0px 80px 15px 80px;
   align-items: center;
 
   ul {
@@ -29,6 +29,14 @@ export const StyledPagination = styled.div`
   div {
     width: 15%;
     height: 41px;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    padding: 0px 10px;
+
+    li {
+      margin: 2px;
+    }
   }
 `;
 
@@ -63,6 +71,20 @@ export const PageButton = styled.button<{ selected: boolean }>`
     border: none;
     outline: none;
   }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 31px;
+    height: 31px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (max-width: ${mobileBreakpoint / 2}px) {
+    width: 21px;
+    height: 21px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 `;
 
 export const PageNavButton = styled.button<{ direction: string }>`
@@ -77,6 +99,7 @@ export const PageNavButton = styled.button<{ direction: string }>`
   line-height: 41px;
   text-align: center;
   align-items: center;
+  justify-content: ${({ direction }) => (direction === 'left' ? 'flex-start' : 'flex-end')};
   cursor: pointer;
 
   img {
@@ -90,9 +113,23 @@ export const PageNavButton = styled.button<{ direction: string }>`
   }
 
   @media (max-width: ${mobileBreakpoint}px) {
-    width: 100px;
-    text-align: left;
-    align-items: left;
+    height: 31px;
+    font-size: 16px;
+    line-height: 20px;
+
+    img {
+      height: 20px;
+    }
+  }
+
+  @media (max-width: ${mobileBreakpoint / 2}px) {
+    height: 21px;
+    font-size: 12px;
+    line-height: 16px;
+
+    img {
+      height: 16px;
+    }
   }
 `;
 

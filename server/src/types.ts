@@ -289,6 +289,11 @@ export type CustomFields = {
   open_to: string;
 };
 
+export type LoadingEvents = {
+  loading: boolean;
+  events: Event[];
+};
+
 export type formattedEvents = {
   events: Event[];
 };
