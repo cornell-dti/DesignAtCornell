@@ -25,15 +25,15 @@ function App() {
         <div data-testid="App">
           <Header />
           <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/explore-courses" component={ExploreCourses} />
-            <Route path="/events" component={Events} />
+            {/* <Route path="/about" component={About} /> */}
+            {/* <Route path="/contact" component={Contact} /> */}
+            <Route path="/courses" component={ExploreCourses} />
             <Route path="/areas-of-study" component={AreasOfStudy} />
-            <Route path="/student-organizations" component={Clubs} />
-            <Route path="/design-community" component={DesignCommunity} />
-            <Route path="/articles" component={Articles} />
+            <Route path="/student-orgs" component={Clubs} />
+            <Route path="/events" component={Events} />
+            {/* <Route path="/design-community" component={DesignCommunity} /> */}
             <Route path="/faculty" component={Faculty} />
+            <Route path="/articles" component={Articles} />
             <Route exact path="/" component={Homepage} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
