@@ -1,19 +1,42 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: fit-content;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    flex-direction: column;
+  }
 `;
 
 export const StudiesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: fit-content;
-  padding: 60px 90px;
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: fit-content;
+    padding: 60px 90px;
+  }
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: none;
+  }
+`;
+
+export const MobileStudiesContainer = styled.div`
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 25px;
+  }
+  @media (min-width: ${mobileBreakpoint + 1}px) {
+    display: none;
+  }
 `;
 
 export const Divider = styled.div`
@@ -37,6 +60,16 @@ export const Divider = styled.div`
     border: 4px solid #8ed663;
     margin-left: 20px;
   }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    h1 {
+      font-size: 22px;
+    }
+
+    hr {
+      border-width: 2.5px;
+    }
+  }
 `;
 
 export const Grid = styled.div`
@@ -58,10 +91,13 @@ export const AreaOfStudyButton = styled.div`
     color: black;
     cursor: pointer;
   }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 100%;
+  }
 `;
 
-export const AreaOfStudyTag = styled.span<{ highlight: boolean }>`
-  background: ${({ highlight }) => (highlight ? colors.yellowHighlight : 'white')};
+export const AreaOfStudyTag = styled.span`
   font-size: 13px;
   color: ${colors.gray};
 `;
@@ -88,6 +124,10 @@ export const ApplyTagsContainer = styled.div`
     line-height: 40px;
     color: black;
     margin: 0;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: none;
   }
 `;
 
