@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Pagination as SemanticPagination, StrictPaginationProps } from 'semantic-ui-react';
-import { StyledPagination } from './PaginationStyles';
+import { SemanticStyledPagination } from './PaginationStyles';
 import { GlobalContext } from '../context/GlobalContext';
 
 const Pagination = ({ currentPage, cardsPerPage, totalCards, paginate }: Props) => {
@@ -13,7 +13,7 @@ const Pagination = ({ currentPage, cardsPerPage, totalCards, paginate }: Props) 
   };
 
   return (
-    <StyledPagination>
+    <SemanticStyledPagination>
       <SemanticPagination
         pointing
         secondary
@@ -24,7 +24,7 @@ const Pagination = ({ currentPage, cardsPerPage, totalCards, paginate }: Props) 
         onPageChange={updatePage}
         totalPages={numPages}
       />
-    </StyledPagination>
+    </SemanticStyledPagination>
   );
 };
 

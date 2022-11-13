@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import { mobileBreakpoint } from '../constants/styling';
 
+export const SemanticStyledPagination = styled.div`
+  margin: 15px auto;
+`;
+
 export const StyledPagination = styled.div`
-  // margin: 15px auto;
   display: flex;
   width: 100%;
   height: 80px;
