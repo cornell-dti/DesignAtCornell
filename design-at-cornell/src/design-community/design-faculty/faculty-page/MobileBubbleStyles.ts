@@ -49,6 +49,8 @@ export const BubbleContainer = styled.div`
   .show {
     border: 0;
     margin: 0;
+    background: none;
+
     :hover {
       cursor: pointer;
     }

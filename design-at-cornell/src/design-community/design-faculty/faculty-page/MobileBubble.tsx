@@ -6,7 +6,6 @@ import { dashboardColors } from '../../../constants/colors';
 import { BubbleContainer, ColContainer, RowContainer, Tag, Split } from './MobileBubbleStyles';
 import downArrow from '../../../static/images/down-arrow.svg';
 import upArrow from '../../../static/images/up-arrow.svg';
-import { StyledComponent } from 'styled-components';
 
 const linkArrow = '↗';
 
