@@ -15,8 +15,6 @@ const randomizeArray = (arr: any[], n: number) => {
 };
 
 const FacultyBubble = (faculty: Faculty) => {
-  // TODO grid padding from DashboardGridStyles.ts
-  // TODO check font family working
   const duration = 120;
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,7 +24,6 @@ const FacultyBubble = (faculty: Faculty) => {
   const toggleStyle = useSpring({
     overflow: 'hidden',
     height: show && ref.current ? `${ref.current.offsetHeight}px` : '0px',
-    // maxHeight: show ? '1000px' : '0px',
     config: { duration },
   });
 
@@ -81,10 +78,8 @@ const FacultyBubble = (faculty: Faculty) => {
             <p className="right-item">{faculty.department}</p>
           </ColContainer>
         </RowContainer>
-        {/* faculty.website */}
         {/* faculty.email */}
         {/* faculty.college */}
-        {/* hide */}
 
         <animated.div style={toggleStyle}>
           <ColContainer ref={ref}>

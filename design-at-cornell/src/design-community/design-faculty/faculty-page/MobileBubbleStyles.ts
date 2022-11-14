@@ -23,6 +23,7 @@ export const BubbleContainer = styled.div`
   }
 
   .faculty-name {
+    margin-top: 15px;
     font-family: 'Work Sans';
     font-size: 18px;
     font-weight: bold;
@@ -38,7 +39,7 @@ export const BubbleContainer = styled.div`
   }
 
   .faculty-description {
-    margin: 8px 0px 0px;
+    margin: 16px 0px 0px;
   }
 
   .course-title {
@@ -47,6 +48,7 @@ export const BubbleContainer = styled.div`
   }
 
   .show {
+    height: 24px;
     border: 0;
     margin: 0;
     background: none;
@@ -57,7 +59,7 @@ export const BubbleContainer = styled.div`
   }
 
   .tags {
-    width: calc(100% - 30px);
+    width: calc(100% - 40px);
   }
 `;
 
@@ -83,17 +85,20 @@ export const ColContainer = styled.div`
 
 export const Tag = styled.div`
   display: flex;
-  width: fit-content;
-  height: 28px;
-  border-radius: 43px;
-  padding-left: 10px;
-  padding-right: 10px;
   align-items: center;
-  background-color: ${colors.transparentWhite};
-  white-space: nowrap;
+
+  padding: 0px 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  width: fit-content;
+  height: 24px;
+  border-radius: 43px;
+
   font-weight: bold;
   font-size: 12px;
   color: black;
-  margin-top: 10px;
-  margin-right: 10px;
+  white-space: nowrap;
+
+  background-color: ${colors.transparentWhite};
 `;
