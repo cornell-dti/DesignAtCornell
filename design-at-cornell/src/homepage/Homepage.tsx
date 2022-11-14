@@ -19,18 +19,6 @@ import articlesDisplay from './mobile-articles-dashboard/articles-homepage-dashb
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { home, homeMobile } from '../constants/pages';
 
-import design_courses from '../static/images/design_courses.svg';
-import majors_minors from '../static/images/majors_minors.svg';
-import orgs_icon from '../static/images/orgs_icon.svg';
-import events_icon from '../static/images/events_icon.svg';
-import resources_icon from '../static/images/resources_icon.svg';
-import community_icon from '../static/images/community_icon.svg';
-
-import majors_minors_mobile from '../static/images/majors-minors-mobile.svg';
-import courses_mobile from '../static/images/courses-mobile.svg';
-import orgs_mobile from '../static/images/orgs-mobile.svg';
-import faculty_mobile from '../static/images/faculty-mobile.svg';
-
 import Title from './title';
 const Homepage: React.FC = () => (
   <div data-testid="Homepage">

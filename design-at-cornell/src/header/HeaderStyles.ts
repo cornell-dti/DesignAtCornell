@@ -97,7 +97,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const NavItem = styled.p`
-  margin: 0px 20px;
+  margin: 0px 15px;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
