@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ElementContainer,
+  CourseContainer,
   Subtitle,
   TagsContainer,
   Tag,
@@ -20,7 +20,7 @@ const CourseBubble = (course: Course) => {
   const [open, setOpen] = React.useState(false);
 
   const courseCard = (
-    <ElementContainer
+    <CourseContainer
       style={{ borderColor: dashboardColors[Math.floor(Math.random() * dashboardColors.length)] }}
     >
       <Subtitle>
@@ -43,7 +43,7 @@ const CourseBubble = (course: Course) => {
           {course.content.semester.join(', ')}
         </Tag>
       </TagsContainer>
-    </ElementContainer>
+    </CourseContainer>
   );
 
   return (

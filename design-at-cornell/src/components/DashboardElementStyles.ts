@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const ElementContainer = styled.div`
   display: flex;
@@ -15,6 +16,13 @@ export const ElementContainer = styled.div`
   padding: 25px;
   align-items: flex-start;
   justify-content: space-between;
+`;
+export const CourseContainer = styled(ElementContainer)`
+  @media (max-width: ${mobileBreakpoint}px){
+    margin-left : -10px;
+    align-items: left; 
+    width: 97vw;
+  }
 `;
 
 export const ClubBubbleContainer = styled(ElementContainer)`
