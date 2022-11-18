@@ -244,10 +244,10 @@ export const Grid = styled.div`
 export const MobileElementContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: left;
   font-weight: normal;
   margin-bottom: 50px;
-
+  margin-right: 50px;
   p {
     font-size: 24px;
     text-align: left;

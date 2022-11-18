@@ -117,7 +117,7 @@ const Homepage: React.FC = () => (
         <GridMobile>
           <Link to="./explore-courses">
             <CardTitle>Design Courses</CardTitle>
-            <ExploreSubtitle to="./explorecourses"> {'>'}</ExploreSubtitle>
+            <ExploreSubtitle to="./explore-courses"> {'>'}</ExploreSubtitle>
             <img src={courses_mobile} alt={'Design Courses'} />
           </Link>
         </GridMobile>
