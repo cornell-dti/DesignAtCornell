@@ -52,7 +52,7 @@ export const Grid = styled.div`
 `;
 
 export const MobileCourseGrid = styled(Grid)`
-  @media (max-width: ${mobileBreakpoint}px){
+  @media (max-width: ${mobileBreakpoint}px) {
     grid-gap: 20px;
   }
 `;

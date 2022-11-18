@@ -18,9 +18,9 @@ export const ElementContainer = styled.div`
   justify-content: space-between;
 `;
 export const CourseContainer = styled(ElementContainer)`
-  @media (max-width: ${mobileBreakpoint}px){
-    margin-left : -10px;
-    align-items: left; 
+  @media (max-width: ${mobileBreakpoint}px) {
+    margin-left: -10px;
+    align-items: left;
     width: 97vw;
   }
 `;
