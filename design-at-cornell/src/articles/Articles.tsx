@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import api from '../constants/util';
 
+// global context
+import { mobileBreakpoint } from '../constants/styling';
+
 // styles
 import {
   Banner,
@@ -18,14 +21,30 @@ import {
   MTitle,
   MText,
   XSBubble,
+  XSContent,
   XSTitle,
   LeftContainer,
   Row,
+  RegContainer,
   RegBubble,
   RegContent,
   RegDate,
   RegTitle,
   RegText,
+  MLBubble,
+  MLContent,
+  MLDate,
+  MLTitle,
+  MLText,
+  MobileContainer,
+  MobileBubble,
+  MobileContent,
+  MobileDate,
+  MobileTitle,
+  FirstRow,
+  WideDivider,
+  SmallDivider,
+  VerticalDivider,
 } from './Articles.styles';
 
 type Article = {
@@ -43,7 +62,7 @@ type Article = {
 
 const BigArticle = (article: Article) => {
   return (
-    <BigBubble>
+    <BigBubble onClick={() => window.open(article.url)}>
       <BigBubbleContent>
         <BubbleDate>
           {article.date_published.split(' ')[2] +
@@ -62,7 +81,7 @@ const BigArticle = (article: Article) => {
 
 const MedArticle = (article: Article) => {
   return (
-    <MBubble>
+    <MBubble onClick={() => window.open(article.url)}>
       <img src={article.image_1x1} alt={article.image_alt} />
       <MContent>
         <RegDate>
@@ -81,16 +100,18 @@ const MedArticle = (article: Article) => {
 
 const XSArticle = (article: Article) => {
   return (
-    <XSBubble>
-      <img src={article.image_1x1} alt={article.image_alt} />
-      <XSTitle> {article.title} </XSTitle>
+    <XSBubble onClick={() => window.open(article.url)}>
+      <img src={article.image} alt={article.image_alt} />
+      <XSContent>
+        <XSTitle> {article.title} </XSTitle>
+      </XSContent>
     </XSBubble>
   );
 };
 
 const RegArticle = (article: Article) => {
   return (
-    <RegBubble>
+    <RegBubble onClick={() => window.open(article.url)}>
       <img src={article.image_featured} alt={article.image_alt} />
       <RegContent>
         <RegDate>
@@ -107,6 +128,43 @@ const RegArticle = (article: Article) => {
   );
 };
 
+const MLArticle = (article: Article) => {
+  return (
+    <MLBubble onClick={() => window.open(article.url)}>
+      <img src={article.image_featured} alt={article.image_alt} />
+      <MLContent>
+        <MLDate>
+          {article.date_published.split(' ')[2] +
+            ' ' +
+            article.date_published.split(' ')[1] +
+            ', ' +
+            article.date_published.split(' ')[3]}{' '}
+        </MLDate>
+        <MLTitle>{article.title} </MLTitle>
+        <MLText>{article.content_text}</MLText>
+      </MLContent>
+    </MLBubble>
+  );
+};
+
+const MobileArticle = (article: Article) => {
+  return (
+    <MobileBubble onClick={() => window.open(article.url)}>
+      <MobileContent>
+        <MobileTitle>{article.title} </MobileTitle>
+        <MobileDate>
+          {article.date_published.split(' ')[2] +
+            ' ' +
+            article.date_published.split(' ')[1] +
+            ', ' +
+            article.date_published.split(' ')[3]}{' '}
+        </MobileDate>
+      </MobileContent>
+      <img src={article.image_1x1} alt={article.image_alt} />
+    </MobileBubble>
+  );
+};
+
 const Articles = () => {
   // articles to show
   const [articles, setArticles] = useState<Article[]>([]);
@@ -118,6 +176,54 @@ const Articles = () => {
     });
   }, []);
 
+  const mobileViewCheck = `(max-width: ${mobileBreakpoint}px)`;
+  const [mobileView, setMobileView] = useState(window.matchMedia(mobileViewCheck).matches);
+  useEffect(() => {
+    window.matchMedia(mobileViewCheck).addEventListener('change', (e) => setMobileView(e.matches));
+  }, [mobileViewCheck]);
+
+  const DesktopView = () => {
+    return (
+      <Body>
+        <FirstRow>
+          {articles[0] && <BigArticle {...articles[0]} />}
+
+          <LeftContainer>
+            {articles[1] && <MedArticle {...articles[1]} />}
+            <SmallDivider />
+            <Row>
+              {articles[2] && <XSArticle {...articles[2]} />}
+              {articles[3] && <XSArticle {...articles[3]} />}
+            </Row>
+          </LeftContainer>
+        </FirstRow>
+        <WideDivider />
+        <RegContainer>
+          {articles.map((article, index) => {
+            // map through all articles
+            if (index > 3 && index <= 15) {
+              return <RegArticle {...article} />;
+            }
+          })}
+        </RegContainer>
+      </Body>
+    );
+  };
+
+  const MobileView = () => {
+    return (
+      <MobileContainer>
+        {articles[0] && <MLArticle {...articles[0]} />}
+        {articles.map((article, index) => {
+          // map through all articles
+          if (index > 0 && index <= 15) {
+            return <MobileArticle {...article} />;
+          }
+        })}
+      </MobileContainer>
+    );
+  };
+
   return (
     <div>
       <Banner>
@@ -127,36 +233,9 @@ const Articles = () => {
           From almuni to current students to professionals in industry.
         </BannerText>
       </Banner>
-      <Body>
-        {articles[0] && <BigArticle {...articles[0]} />}
-        <LeftContainer>
-          {articles[1] && <MedArticle {...articles[1]} />}
-          <Row>
-            {articles[2] && <XSArticle {...articles[2]} />}
-            {articles[3] && <XSArticle {...articles[3]} />}
-          </Row>
-        </LeftContainer>
-        {articles.map((article, index) => {
-          // map through all articles
-          if (index > 3 && index <= 15) {
-            return <RegArticle {...article} />;
-          }
-        })}
-      </Body>
+      {mobileView ? <MobileView /> : <DesktopView />}
     </div>
   );
 };
 
 export default Articles;
-
-// {
-//   articles.map((article, i) => {
-//     if (i === 0) {
-//       return BigArticle(article);
-//     } else if (i == 1) {
-//       return MedArticle(article);
-//     } else if (i === 2 || i === 3) {
-//       return XSArticle(article);
-//     }
-//   });
-// }

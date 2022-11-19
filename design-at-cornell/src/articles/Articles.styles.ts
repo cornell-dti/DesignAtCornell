@@ -3,54 +3,87 @@ import articlesBg from './articles-bg.svg';
 
 import { mobileBreakpoint } from '../constants/styling';
 
+export const WideDivider = styled.div`
+  height: 1px;
+  width: 1284px;
+
+  border: 1.5px solid #e3e3e3;
+`;
+
+export const SmallDivider = styled.div`
+  height: 1px;
+  width: 460px;
+  border: 1.5px solid #e3e3e3;
+`;
+
+export const VerticalDivider = styled.div`
+  width: 0px;
+  height: 716px;
+  border: 1.5px solid #e3e3e3;
+`;
+
 export const Banner = styled.div`
   text-align: center;
   background-image: url(${articlesBg});
   background-position: center;
   background-size: cover;
   height: 376px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    height: 220px;
+  }
 `;
 
 export const BannerText = styled.div`
   color: black;
-  font-size: 25px;
-  font-weight: 500;
+
   text-align: left;
-  line-height: 47px;
+
   height: 100%;
+
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 131.8%;
 
   display: flex;
   flex-flow: column nowrap;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
   margin: 0 6%;
 
   @media (max-width: ${mobileBreakpoint}px) {
-    font-size: 1.2rem;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125.3%;
   }
 `;
 
 export const Header = styled.div`
   font-weight: 700;
-  font-size: 2.75rem;
+  font-size: 40px;
+  line-height: 47px;
   @media (max-width: ${mobileBreakpoint}px) {
-    font-size: 2rem;
+    // font-size: 2rem;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
   }
 `;
 
 export const SubHeader = styled.div`
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 30px;
+  line-height: 35px;
   @media (max-width: ${mobileBreakpoint}px) {
-    font-size: 1.5rem;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125.3%;
   }
 `;
 
 export const Body = styled.div`
   margin: 0 auto;
-  // max-width: 1440px;
-  min-height: 100vh;
-  height: 100%;
+  max-width: 1440px;
   width: 100%;
 
   padding: 51px 0;
@@ -58,8 +91,9 @@ export const Body = styled.div`
   font-size: 1.5rem;
 
   display: flex;
-  flex-flow: row wrap;
-  gap: 45px;
+  flex-flow: column nowrap;
+  gap: 50px;
+
   justify-content: center;
   align-items: center;
   @media (max-width: ${mobileBreakpoint}px) {
@@ -67,23 +101,39 @@ export const Body = styled.div`
   }
 `;
 
+export const FirstRow = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 1322px;
+  gap: 50px;
+  padding: 0 20px;
+
+  // background: pink;
+`;
+
 export const BigBubble = styled.div`
+  cursor: pointer;
   max-height: 717px;
   max-width: 737px;
+  width: 100%;
 
   height: auto;
 
-  margin: 0px 10px;
-
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
   border-radius: 10px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 
   img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 0px 0px 10px 10px;
-    margin-bottom: -5px;
   }
 `;
 
@@ -128,12 +178,11 @@ export const BubbleDate = styled.div`
 `;
 
 export const MBubble = styled.div`
+  cursor: pointer;
   max-height: 464px;
   max-width: 461px;
 
   height: auto;
-
-  margin: 0px 10px;
 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
   border-radius: 10px;
@@ -183,8 +232,11 @@ export const MText = styled.div`
 `;
 
 export const XSBubble = styled.div`
-  height: 206px;
+  cursor: pointer;
+  max-height: 206px;
   max-width: 214px;
+
+  width: 100%;
 
   display: flex;
   flex-flow: column nowrap;
@@ -194,9 +246,7 @@ export const XSBubble = styled.div`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
   border-radius: 10px;
 
-  margin: 0px 10px;
-
-  overflow: hidden;
+  // overflow: hidden;
 
   img {
     // position: absolute;
@@ -208,39 +258,51 @@ export const XSBubble = styled.div`
   }
 `;
 
-export const XSTitle = styled.div`
-  height: 100%;
+export const XSContent = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: left;
   padding: 12px 15px;
 
+  height: 100%;
+`;
+
+export const XSTitle = styled.div`
   font-weight: 500;
   font-size: 18px;
-  line-height: 21px;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  line-height: 22px;
 
   overflow: hidden;
 
   width: 100%;
   max-width: 283px;
+
+  max-height: 44px;
+  text-overflow: ellipsis;
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
-  flex-flow: column nowrap;
-  gap: 50px;
-  justify-content: center;
+  flex-flow: row wrap;
+  gap: 35px;
+  justify-content: right;
+  max-width: 450px;
+  max-height: 717px;
+  // background-color: green;
 `;
 
 export const Row = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  width: 100%;
-  justify-content: space-between;
+  max-width: fit-content;
+  justify-content: center;
+  gap: 32px;
 `;
 
 export const RegBubble = styled.div`
+  cursor: pointer;
   height: 331px;
   width: 100%;
   max-width: 283px;
@@ -260,7 +322,7 @@ export const RegBubble = styled.div`
 
 export const RegContent = styled.div`
   width: 100%;
-  height: 100%;
+
   display: flex;
   flex-flow: column nowrap;
   gap: 10px;
@@ -310,4 +372,151 @@ export const RegText = styled.div`
   /* or 23px */
 
   color: #545454;
+`;
+
+export const RegContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 50px;
+
+  width: 100%;
+  padding: 10px 20px;
+`;
+
+export const MobileContainer = styled.div`
+  display: flex;
+  flex-flow column nowrap;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+`;
+
+export const MLBubble = styled.div`
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
+
+  img {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 0px;
+    border-radius: 10px 10px 0px 0px;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.11));
+  }
+`;
+
+export const MLContent = styled.div`
+  padding: 20px 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  text-align: left;
+  justify-content: center;
+`;
+
+export const MLDate = styled.div`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #8c8c8c;
+`;
+
+export const MLTitle = styled.div`
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+`;
+
+export const MLText = styled.div`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  /* or 171% */
+
+  color: #545454;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  width: 100%;
+`;
+
+export const MobileBubble = styled.div`
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  height: 105px;
+
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.11);
+
+  position: relative;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  img {
+    width: auto;
+    max-width: 150px;
+
+    max-height: 105px;
+
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.11));
+  }
+`;
+
+export const MobileContent = styled.div`
+  padding: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+  justify-content: center;
+`;
+
+export const MobileTitle = styled.div`
+  font-weight: 500;
+  font-size: 16px;
+  // line-height: 132.8%;
+  /* or 21px */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+`;
+
+export const MobileDate = styled.div`
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: #8c8c8c;
 `;
