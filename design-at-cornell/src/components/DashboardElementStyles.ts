@@ -17,6 +17,13 @@ export const ElementContainer = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 `;
+export const CourseContainer = styled(ElementContainer)`
+  @media (max-width: ${mobileBreakpoint}px) {
+    margin-left: -60px;
+    align-items: left;
+    width: 95vw;
+  }
+`;
 
 export const ClubBubbleContainer = styled(ElementContainer)`
   cursor: default;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ElementContainer,
+  CourseContainer,
   Subtitle,
   TagsContainer,
   Tag,
@@ -23,7 +23,7 @@ const CourseBubble = (course: Course) => {
   const tags = [`${course.content.credits} Credits`, ...course.content.semester];
 
   const courseCard = (
-    <ElementContainer>
+    <CourseContainer>
       <Subtitle>
         <p>{course.id + ' ' + course.code}</p>
       </Subtitle>
@@ -38,7 +38,7 @@ const CourseBubble = (course: Course) => {
           );
         })}
       </TagsContainer>
-    </ElementContainer>
+    </CourseContainer>
   );
 
   return (

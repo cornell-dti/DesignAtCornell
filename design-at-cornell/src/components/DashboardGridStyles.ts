@@ -54,3 +54,11 @@ export const Grid = styled.div`
     padding: 0 20px;
   }
 `;
+
+export const MobileCourseGrid = styled(Grid)`
+  @media (max-width: ${mobileBreakpoint}px) {
+    width: 112%;
+    margin-right: 50px;
+    grid-gap: 20px;
+  }
+`;
