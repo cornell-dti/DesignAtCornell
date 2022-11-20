@@ -246,8 +246,8 @@ export const MobileElementContainer = styled.div`
   flex-direction: column;
   align-items: left;
   font-weight: normal;
+  width: 100%;
   margin-bottom: 50px;
-  margin-right: 50px;
   p {
     font-size: 24px;
     text-align: left;
