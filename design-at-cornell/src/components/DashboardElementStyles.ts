@@ -19,9 +19,9 @@ export const ElementContainer = styled.div`
 `;
 export const CourseContainer = styled(ElementContainer)`
   @media (max-width: ${mobileBreakpoint}px) {
-    margin-left: -10px;
+    margin-left: -60px;
     align-items: left;
-    width: 97vw;
+    width: 95vw;
   }
 `;
 
