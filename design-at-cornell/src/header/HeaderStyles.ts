@@ -9,6 +9,10 @@ export const FullContainer = styled.div`
     height: 70px;
   }
 
+  .old-dac-logo {
+    width: 140px;
+  }
+
   .dac-logo {
     width: 75px;
   }
@@ -21,6 +25,21 @@ export const FullContainer = styled.div`
     padding: 4px 32px;
     font-size: 18px;
     margin: 0;
+  }
+
+  .old-logo-text {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    height: fit-content;
+    margin: auto 0px auto 18px;
+  }
+
+  .logo-text {
+    font-weight: bold;
+    font-size: 10px;
+    margin: 0px;
+    white-space: nowrap;
   }
 
   button.nav-button {
@@ -44,7 +63,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 96px;
   color: black;
-  padding: 0px 40px;
+  padding: 0px 32px;
 `;
 
 export const Divider = styled.span`
@@ -64,13 +83,6 @@ export const ColContainer = styled.div`
 export const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-export const LogoText = styled.span`
-  font-weight: bold;
-  font-size: 10px;
-  margin: 0px;
-  white-space: nowrap;
 `;
 
 export const Nav = styled.div`

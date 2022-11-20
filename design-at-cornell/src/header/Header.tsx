@@ -8,7 +8,6 @@ import {
   FullContainer,
   Grow,
   StyledLink,
-  LogoText,
   Divider,
 } from './HeaderStyles';
 import { Icon, Menu, Button } from 'semantic-ui-react';
@@ -17,6 +16,8 @@ import dacLogo from '../static/images/logo.svg';
 import cornellLogo from '../static/images/black-white-cornell-logo.svg';
 import { GlobalContext } from '../context/GlobalContext';
 import { useLocation, useHistory } from 'react-router-dom';
+
+const useOldLogo = true;
 
 const Header = () => {
   const location = useLocation();
@@ -46,24 +47,33 @@ const Header = () => {
     </Button>
   );
 
+  const DesktopLogo = () => (
+    <RowContainer>
+      <img src={dacLogo} className="old-dac-logo" alt="logo" />
+      <span className="old-logo-text">
+        Design <br />
+        At <br />
+        Cornell
+      </span>
+    </RowContainer>
+  );
+
   const MobileLogo = () => (
-    <ColContainer>
-      <img src={dacLogo} className="dac-logo" alt="logo" />
-      <LogoText>Design At Cornell</LogoText>
-    </ColContainer>
+    <RowContainer>
+      <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
+      <Divider />
+
+      <ColContainer>
+        <img src={dacLogo} className="dac-logo" alt="logo" />
+        <span className="logo-text">Design At Cornell</span>
+      </ColContainer>
+    </RowContainer>
   );
 
   return (
     <FullContainer>
       <HeaderContainer>
-        <StyledLink to="./">
-          <RowContainer>
-            <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
-            <Divider />
-
-            <MobileLogo />
-          </RowContainer>
-        </StyledLink>
+        <StyledLink to="./">{useOldLogo ? <DesktopLogo /> : <MobileLogo />}</StyledLink>
 
         <Grow></Grow>
         {isMobileView ? <MobileNav /> : <Navigation />}
