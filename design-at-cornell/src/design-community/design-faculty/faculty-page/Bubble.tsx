@@ -18,7 +18,7 @@ const FacultyBubble = (faculty: Faculty) => (
   <SmallFacultyBubbleContainer onClick={() => window.open(faculty.website)}>
     <FacultyBubbleHorizontalFlex>
       <FacultyBubbleLeftVerticalFlex>
-        <img src={faculty.image} alt="faculty profile" />
+        <img src={faculty.image} alt={faculty.name} />
         <h1>{faculty.name}</h1>
         <p>{faculty.title}</p>
         <p>{faculty.department}</p>
