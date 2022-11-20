@@ -4,6 +4,9 @@ import api from '../constants/util';
 // global context
 import { mobileBreakpoint } from '../constants/styling';
 
+// pagination
+import Pagination from '../pagination/Pagination';
+
 // styles
 import {
   Banner,
@@ -44,7 +47,6 @@ import {
   FirstRow,
   WideDivider,
   SmallDivider,
-  VerticalDivider,
 } from './Articles.styles';
 
 type Article = {
@@ -168,6 +170,7 @@ const MobileArticle = (article: Article) => {
 const Articles = () => {
   // articles to show
   const [articles, setArticles] = useState<Article[]>([]);
+  const [currPage, setCurrPage] = useState(1);
 
   // get articles from database
   useEffect(() => {
@@ -181,6 +184,15 @@ const Articles = () => {
   useEffect(() => {
     window.matchMedia(mobileViewCheck).addEventListener('change', (e) => setMobileView(e.matches));
   }, [mobileViewCheck]);
+
+  // articles to show
+  const articlesPerPage = 8;
+  const lastArticleIdx = currPage * articlesPerPage;
+  const firstArticleIdx = lastArticleIdx - articlesPerPage;
+  var currentArticles = articles.slice(firstArticleIdx, lastArticleIdx + 4);
+  if (mobileView) {
+    currentArticles = articles.slice(firstArticleIdx, lastArticleIdx + 1);
+  }
 
   const DesktopView = () => {
     return (
@@ -199,11 +211,12 @@ const Articles = () => {
         </FirstRow>
         <WideDivider />
         <RegContainer>
-          {articles.map((article, index) => {
+          {currentArticles.map((article, index) => {
             // map through all articles
-            if (index > 3 && index <= 15) {
+            if (index > 3) {
               return <RegArticle {...article} />;
             }
+            return null;
           })}
         </RegContainer>
       </Body>
@@ -214,11 +227,12 @@ const Articles = () => {
     return (
       <MobileContainer>
         {articles[0] && <MLArticle {...articles[0]} />}
-        {articles.map((article, index) => {
+        {currentArticles.map((article, index) => {
           // map through all articles
-          if (index > 0 && index <= 15) {
+          if (index > 0) {
             return <MobileArticle {...article} />;
           }
+          return null;
         })}
       </MobileContainer>
     );
@@ -234,6 +248,12 @@ const Articles = () => {
         </BannerText>
       </Banner>
       {mobileView ? <MobileView /> : <DesktopView />}
+      <Pagination
+        currentPage={currPage}
+        cardsPerPage={articlesPerPage}
+        totalCards={articles.length - 4}
+        paginate={setCurrPage}
+      />
     </div>
   );
 };
