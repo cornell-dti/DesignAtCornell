@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { animated, useSpring } from 'react-spring';
-
 import { Faculty } from '../../../../../server/src/types';
 import { dashboardColors } from '../../../constants/colors';
 import { BubbleContainer, ColContainer, RowContainer, Tag, Split } from './MobileBubbleStyles';
 import downArrow from '../../../static/images/down-arrow.svg';
 import upArrow from '../../../static/images/up-arrow.svg';
+import Expanding from '../../../animated/Expanding';
 
 const linkArrow = '↗';
 
@@ -15,17 +14,8 @@ const randomizeArray = (arr: any[], n: number) => {
 };
 
 const FacultyBubble = (faculty: Faculty) => {
-  const duration = 120;
-  const ref = useRef<HTMLDivElement>(null);
-
   const [show, setShow] = useState<boolean>(false);
   const [colors, setColors] = useState<string[]>([]);
-
-  const toggleStyle = useSpring({
-    overflow: 'hidden',
-    height: show && ref.current ? `${ref.current.offsetHeight}px` : '0px',
-    config: { duration },
-  });
 
   useEffect(() => {
     setColors(randomizeArray(dashboardColors, faculty.tags.length));
@@ -65,7 +55,7 @@ const FacultyBubble = (faculty: Faculty) => {
       <ColContainer>
         <RowContainer>
           <img className={'profile-image'} src={faculty.image} alt={faculty.name}></img>
-          <ColContainer onClick={toggleShow}>
+          <ColContainer>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -81,18 +71,17 @@ const FacultyBubble = (faculty: Faculty) => {
         {/* faculty.email */}
         {/* faculty.college */}
 
-        <animated.div style={toggleStyle}>
-          <ColContainer ref={ref}>
+        <Expanding show={show}>
+          <ColContainer>
             <p className="faculty-description">{faculty.description}</p>
             <h6 className="course-title">Courses</h6>
             {faculty.courses.length !== 0 ? <Courses /> : <NoCourses />}
           </ColContainer>
-        </animated.div>
-
+        </Expanding>
         <Split>
           <Tags />
-          <button className={'show'}>
-            <img src={show ? upArrow : downArrow} alt={'show'} onClick={toggleShow} />
+          <button className={'show'} onClick={toggleShow}>
+            <img src={show ? upArrow : downArrow} alt={'show'} />
           </button>
         </Split>
       </ColContainer>
