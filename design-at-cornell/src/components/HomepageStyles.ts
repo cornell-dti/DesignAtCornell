@@ -212,19 +212,25 @@ export const ExploreSubtitle = styled(Link)`
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
-  @media (max-width: ${mobileBreakpoint}px) {
-    display: flex;
-    justify-content: right;
-    text-align: right;
-    align-items: right;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 20px;
-    position: absolute;
-    margin-top: 27px;
-    margin-left: -30px;
-    color: black;
-  }
+`;
+
+export const MobileExploreSubtitle = styled.span`
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: right;
+  color: blue;
+  align-items: left;
+  width: 100%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  position: absolute;
+  margin-top: 27px;
+  margin-left: -30px;
+  color: black;
 `;
 
 export const Grid = styled.div`
