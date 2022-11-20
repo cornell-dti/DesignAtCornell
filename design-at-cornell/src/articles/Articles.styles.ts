@@ -8,18 +8,21 @@ export const WideDivider = styled.div`
   width: 1284px;
 
   border: 1.5px solid #e3e3e3;
+  background: #e3e3e3;
 `;
 
 export const SmallDivider = styled.div`
   height: 1px;
   width: 460px;
   border: 1.5px solid #e3e3e3;
+  background: #e3e3e3;
 `;
 
 export const VerticalDivider = styled.div`
   width: 0px;
   height: 716px;
   border: 1.5px solid #e3e3e3;
+  background: #e3e3e3;
 `;
 
 export const Banner = styled.div`
