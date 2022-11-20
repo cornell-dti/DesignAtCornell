@@ -5,10 +5,14 @@ import { mobileBreakpoint } from '../constants/styling';
 
 export const WideDivider = styled.div`
   height: 1px;
-  width: 1284px;
+  max-width: 1284px;
+  width: 95%;
+  margin: 0 20px;
 
   border: 1.5px solid #e3e3e3;
   background: #e3e3e3;
+
+  overflow: hidden;
 `;
 
 export const SmallDivider = styled.div`
