@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../constants/colors';
+import { mobileBreakpoint } from '../constants/styling';
 
 export const Divider = styled.div`
   display: flex;
@@ -48,4 +49,8 @@ export const Grid = styled.div`
   width: 100%;
   height: fit-content;
   padding: 0 80px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    padding: 0 20px;
+  }
 `;
