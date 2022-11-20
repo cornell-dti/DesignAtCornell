@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import api from '../constants/util';
 import Title from './title/Title';
-import { VerticalFlex } from '../components/ContainerStyles';
+import { VerticalFlex } from './CourseStyles';
 import Courses from './courses/Courses';
+// import Pagination from '../pagination/Pagination';
 import Pagination from '../pagination/Pagination';
 import { Course } from '../../../server/src/types';
 import {

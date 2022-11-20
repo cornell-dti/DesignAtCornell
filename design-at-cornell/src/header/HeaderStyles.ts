@@ -1,34 +1,49 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { colors } from '../constants/colors';
+import { Link } from 'react-router-dom';
 
-export const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 96px;
-  color: black;
-  padding-left: 50px;
-  padding-right: 60px;
-`;
-
-export const Logo = styled(Link)`
-  display: flex;
-  flex-direction: row;
-  width: 40%;
-  height: 100%;
-
-  img {
-    width: 142px;
+export const FullContainer = styled.div`
+  .cornell-logo {
+    margin: auto 0px;
+    width: 70px;
+    height: 70px;
   }
 
-  p {
-    width: 73px;
+  .old-dac-logo {
+    width: 140px;
+  }
+
+  .dac-logo {
+    width: 75px;
+  }
+
+  .active {
+    color: ${colors.linkColor};
+  }
+
+  .mobile-nav-item {
+    padding: 4px 32px;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .old-logo-text {
     font-weight: bold;
     font-size: 16px;
-    line-height: 19px;
     text-align: left;
-    margin: 18px;
+    height: fit-content;
+    margin: auto 0px auto 18px;
+  }
+
+  .logo-text {
+    font-weight: bold;
+    font-size: 10px;
+    margin: 0px;
+    white-space: nowrap;
+  }
+
+  button.nav-button {
+    background: none;
   }
 
   &:focus,
@@ -41,41 +56,68 @@ export const Logo = styled(Link)`
   }
 `;
 
-export const CornellLogo = styled.div`
-  img {
-    margin-top: 12px;
-    height: 70px;
-  }
+export const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 96px;
+  color: black;
+  padding: 0px 32px;
 `;
 
-export const Line = styled.div`
-  margin-top: 12px;
-  height: 70px;
+export const Divider = styled.span`
+  margin: auto 10px;
   border-left: 1px solid black;
-  margin-left: -18px;
-  margin-right: 16px;
+  height: 65px;
+`;
+
+export const ColContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: left;
+  justify-content: center;
+`;
+
+export const RowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Nav = styled.div`
   display: flex;
   flex-direction: row;
-  width: 60%;
-  height: 100%;
   align-items: center;
   justify-content: space-around;
 `;
 
+export const Grow = styled.div`
+  min-width: 40px;
+  flex-grow: 1;
+`;
+
 export const StyledLink = styled(Link)`
-  width: 107px;
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
+    text-decoration: none;
+    color: black;
+  }
+`;
+
+export const NavItem = styled.p`
+  margin: 0px 15px;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: black;
 
-  &:focus {
-    text-decoration: none;
+  &:hover {
     color: ${colors.linkColor};
+    text-decoration: none;
   }
 `;

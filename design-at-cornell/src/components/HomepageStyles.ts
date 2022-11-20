@@ -26,6 +26,7 @@ export const BannerBackground = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   margin-bottom: 90px;
+  position: relative;
   @media (max-width: ${mobileBreakpoint}px) {
     overflow-y: visible;
     color: white;

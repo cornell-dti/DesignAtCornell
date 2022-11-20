@@ -11,18 +11,18 @@ export const GlobalStyle = createGlobalStyle`
   ${
     process.env.NODE_ENV === 'production' &&
     `
-  @media (max-width: ${mobileBreakpoint}px) {
-    body {
-      background-image: url(${mobilePlaceholder});
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+  // @media (max-width: ${mobileBreakpoint}px) {
+  //   body {
+  //     background-image: url(${mobilePlaceholder});
+  //     background-position: center;
+  //     background-size: contain;
+  //     background-repeat: no-repeat;
+  //   }
 
-    div {
-      display: none;
-    }
-  }
+  //   div {
+  //     display: none;
+  //   }
+  // }
   `
   }
 `;
