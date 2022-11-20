@@ -48,7 +48,7 @@ export const BlurbContainer = styled.div`
     height: 45px;
     font-family: 'Work Sans';
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 30px;
     line-height: 47px;
     padding-left: 50px;
@@ -75,7 +75,7 @@ export const BlurbContainer = styled.div`
     color: black;
     padding-left: 50px;
     padding-right: 50px;
-    font-weight: 500;
+    font-weight: 400;
     @media (max-width: ${mobileBreakpoint}px) {
       overflow-y: visible;
       text-align: center;
@@ -117,6 +117,7 @@ export const Headline = styled.div`
   font-family: 'Work Sans';
   font-style: normal;
   font-size: x-large;
+  font-weight: 500;
   text-align: center;
   color: black;
   justify-content: center;
@@ -161,7 +162,7 @@ export const ElementContainer = styled.div`
 `;
 
 export const CardTitle = styled.div`
-  font-weight: bold;
+  font-weight: 500;
   font-size: 30px;
   line-height: 20px;
   text-align: left;
@@ -174,7 +175,7 @@ export const CardTitle = styled.div`
     box-sizing: border-box;
     margin-top: 27px;
     position: absolute;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
     line-height: 23px;
     margin-left: 50px;
@@ -216,7 +217,7 @@ export const ExploreSubtitle = styled(Link)`
     justify-content: right;
     text-align: right;
     align-items: right;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     position: absolute;
@@ -280,7 +281,7 @@ export const ListsArticles = styled(ListsEvents)`
 `;
 
 export const SmallTitle = styled.div`
-  font-weight: bold;
+  font-weight: 500;
   text-align: left;
   color: black;
   align-items: left;
@@ -297,7 +298,7 @@ export const SmallTitle = styled.div`
 `;
 
 export const SmallHeading = styled(Link)`
-  font-weight: bold;
+  font-weight: 500;
   text-align: left;
   color: black;
   align-items: left;
