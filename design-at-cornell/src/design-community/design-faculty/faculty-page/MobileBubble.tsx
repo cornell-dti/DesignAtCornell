@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Faculty } from '../../../../../server/src/types';
 import { dashboardColors } from '../../../constants/colors';
 import { BubbleContainer, ColContainer, RowContainer, Tag, Split } from './MobileBubbleStyles';
