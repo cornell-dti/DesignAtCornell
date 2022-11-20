@@ -15,6 +15,7 @@ export const MobileWrapper = styled.div`
   @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
+  width: 100%;
 `;
 
 export const BannerBackground = styled.div`

@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { VerticalFlex } from '../../../components/ContainerStyles';
 import { TitleBackground, TitleContainer } from '../../../components/TitleStyles';
 import { colors } from '../../../constants/colors';
 import { Grid } from '../../../components/DashboardGridStyles';
 import { Faculty } from '../../../../../server/src/types';
 import FacultyBubble from './Bubble';
+import MobileFacultyBubble from './MobileBubble';
+
+import { GlobalContext } from '../../../context/GlobalContext';
+
 const Dashboard = (faculty: Faculty[]) => {
+  const { isMobileView } = useContext(GlobalContext);
   const facultyBubbles = (
     <Grid>
       {Object.values(faculty).map((faculty) => (
         <FacultyBubble key={faculty.name} {...faculty} />
+      ))}
+    </Grid>
+  );
+
+  const mobileFacultyBubbles = (
+    <Grid>
+      {Object.values(faculty).map((faculty) => (
+        <MobileFacultyBubble key={faculty.name} {...faculty} />
       ))}
     </Grid>
   );
@@ -24,7 +37,7 @@ const Dashboard = (faculty: Faculty[]) => {
       </TitleBackground>
       <br></br>
       <br></br>
-      {facultyBubbles}
+      {isMobileView ? mobileFacultyBubbles : facultyBubbles}
       <br></br>
     </VerticalFlex>
   );

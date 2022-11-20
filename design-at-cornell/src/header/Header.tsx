@@ -1,4 +1,7 @@
 import React, { useState, useContext } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import { Icon, Menu, Button } from 'semantic-ui-react';
+
 import {
   HeaderContainer,
   RowContainer,
@@ -10,12 +13,11 @@ import {
   StyledLink,
   Divider,
 } from './HeaderStyles';
-import { Icon, Menu, Button } from 'semantic-ui-react';
 import { pages } from '../constants/pages';
 import dacLogo from '../static/images/logo.svg';
 import cornellLogo from '../static/images/black-white-cornell-logo.svg';
 import { GlobalContext } from '../context/GlobalContext';
-import { useLocation, useHistory } from 'react-router-dom';
+import Expanding from '../animated/Expanding';
 
 const useOldLogo = true;
 
@@ -78,21 +80,23 @@ const Header = () => {
         <Grow></Grow>
         {isMobileView ? <MobileNav /> : <Navigation />}
       </HeaderContainer>
-      {isMobileView && showMenu && (
-        <Menu vertical style={{ width: '100%', margin: 0 }}>
-          {pages.map((page) => (
-            <Menu.Item
-              key={page.name}
-              active={location.pathname === page.url}
-              onClick={() => {
-                history.push(page.url);
-                setShowMenu(false);
-              }}
-            >
-              <p className="mobile-nav-item">{page.name}</p>
-            </Menu.Item>
-          ))}
-        </Menu>
+      {isMobileView && (
+        <Expanding show={showMenu}>
+          <Menu vertical style={{ width: '100%', margin: 0 }}>
+            {pages.map((page) => (
+              <Menu.Item
+                key={page.name}
+                active={location.pathname === page.url}
+                onClick={() => {
+                  history.push(page.url);
+                  setShowMenu(false);
+                }}
+              >
+                <p className="mobile-nav-item">{page.name}</p>
+              </Menu.Item>
+            ))}
+          </Menu>
+        </Expanding>
       )}
     </FullContainer>
   );
