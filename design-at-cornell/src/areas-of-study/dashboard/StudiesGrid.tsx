@@ -6,8 +6,8 @@ import { Major } from '../../../../server/src/types';
 
 const StudiesGrid = (props: Props) => (
   <Grid>
-    {Object.values(props.studies).map((study) => (
-      <AreaOfStudyCard key={study.title} {...{ ...props, study: study }}></AreaOfStudyCard>
+    {Object.values(props.studies).map((study, idx) => (
+      <AreaOfStudyCard key={`${idx} study.title`} {...{ ...props, study: study }}></AreaOfStudyCard>
     ))}
   </Grid>
 );

@@ -15,6 +15,7 @@ export const MobileWrapper = styled.div`
   @media (min-width: ${mobileBreakpoint + 1}px) {
     display: none;
   }
+  width: 100%;
 `;
 
 export const BannerBackground = styled.div`
@@ -26,6 +27,7 @@ export const BannerBackground = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   margin-bottom: 90px;
+  position: relative;
   @media (max-width: ${mobileBreakpoint}px) {
     overflow-y: visible;
     color: white;
@@ -64,7 +66,7 @@ export const BlurbContainer = styled.div`
       align-items: center;
       padding-left: 30px;
       padding-right: 50px;
-      margin-top: 100px;
+      margin-top: 50px;
     }
   }
 

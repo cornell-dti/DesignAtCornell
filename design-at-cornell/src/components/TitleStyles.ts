@@ -96,6 +96,10 @@ export const TitleContainer = styled.div`
     line-height: 75px;
     margin-bottom: 30px;
     color: black;
+    @media (max-width: 1000px) {
+      font-size: 50px;
+      line-height: 30px;
+    }
   }
 
   p {
@@ -104,6 +108,9 @@ export const TitleContainer = styled.div`
     text-align: left;
     color: black;
     padding-left: 5px;
+    @media (max-width: 1000px) {
+      font-size: 23px;
+    }
   }
   @media (max-width: ${mobileBreakpoint}px) {
     h1 {
@@ -131,6 +138,23 @@ export const TitleContainer = styled.div`
     }
 
     width: 100%;
+  }
+`;
+
+export const CourseTitleContainer = styled(TitleContainer)`
+  h1 {
+    @media (max-width: ${mobileBreakpoint}px) {
+      font-size: 50px;
+      line-height: 30px;
+      margin-top: 15px;
+    }
+  }
+
+  p {
+    @media (max-width: ${mobileBreakpoint}px) {
+      font-size: 20px;
+      margin-top: 15px;
+    }
   }
 `;
 

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import api from '../constants/util';
 import Title from './title/Title';
-import { VerticalFlex } from '../components/ContainerStyles';
+import { VerticalFlex } from './CourseStyles';
 import Courses from './courses/Courses';
+// import Pagination from '../pagination/Pagination';
 import Pagination from '../pagination/Pagination';
 import { Course } from '../../../server/src/types';
+import { MobileWrapper } from '../components/HomepageStyles';
+import MobileFilter from './title/MobileFilter';
 import {
   Filters,
   designAreas,
@@ -64,7 +67,42 @@ const ExploreCourses = () => {
 
   return (
     <VerticalFlex>
-      <Title {...{ filterList: filterList, setPage: setPage, setSearch: setSearch }} />
+      <Title
+        {...{
+          filterList: filterList,
+          designAreaTags: designAreaTags,
+          departmentTags: departmentTags,
+          semesterTags: semesterTags,
+          levelTags: levelTags,
+          creditTags: creditTags,
+          setDesignTags: setDesignAreaTags,
+          setDepartmentTags: setDepartmentTags,
+          setSemesterTags: setSemesterTags,
+          setLevelTags: setLevelTags,
+          setCreditTags: setCreditTags,
+          setPage: setPage,
+          setSearch: setSearch,
+        }}
+      />
+      <MobileWrapper>
+        <MobileFilter
+          {...{
+            filterList: filterList,
+            designAreaTags: designAreaTags,
+            departmentTags: departmentTags,
+            semesterTags: semesterTags,
+            levelTags: levelTags,
+            creditTags: creditTags,
+            setDesignTags: setDesignAreaTags,
+            setDepartmentTags: setDepartmentTags,
+            setSemesterTags: setSemesterTags,
+            setLevelTags: setLevelTags,
+            setCreditTags: setCreditTags,
+            setPage: setPage,
+            setSearch: setSearch,
+          }}
+        />
+      </MobileWrapper>
       <Courses {...displayedCourses} />
       <Pagination
         currentPage={currentPage}
