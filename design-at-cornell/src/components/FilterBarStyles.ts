@@ -186,7 +186,7 @@ export const SearchBar = styled.input`
   height: 28px;
   border-radius: 43px;
   padding: 0 10px;
-  margin: 0 10px;
+  margin: 0px 10px -10px 0;
   border-style: none;
   background-image: url(${magnifyingGlass});
   background-position: 7px 7px;

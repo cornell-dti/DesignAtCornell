@@ -131,16 +131,6 @@ export const EventContainer = styled.div`
     line-height: 38px;
     color: black;
     margin: 10;
-    @media (max-width: 1000px) {
-      font-size: 18px;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      margin-top: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      width: calc(97%);
-    }
   }
 
   p {
@@ -154,24 +144,6 @@ export const EventContainer = styled.div`
     -webkit-line-clamp: 3;
     text-overflow: ellipsis;
     width: calc(97%);
-    @media (max-width: 1000px) {
-      font-size: 16px;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
-      white-space: nowrap;
-      width: calc(97%);
-    }
-  }
-  @media (max-width: 1000px) {
-    height: 250px;
-    width: 55%;
-    justify-content: space-evenly;
-    box-shadow: 0px 4px 24px 2px rgba(0, 0, 0, 0.07);
-    border-radius: 20px;
-    position: relative;
-    padding: 10px 30px;
   }
 
   @media (max-width: ${mobileBreakpoint}px) {
@@ -269,6 +241,34 @@ export const EventLink = styled.div`
     p {
       font-size: 12px;
       line-height: 16px;
+    }
+  }
+`;
+
+export const NoEventsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: 10%;
+
+  img {
+    width: 90%;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    img {
+      width: 70%;
+    }
+
+    p {
+      font-size: 16px;
     }
   }
 `;

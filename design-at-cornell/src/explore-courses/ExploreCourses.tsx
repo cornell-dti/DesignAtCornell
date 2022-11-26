@@ -35,10 +35,10 @@ const ExploreCourses = () => {
   const [currentPage, setPage] = useState(1);
   const filterList = [
     { category: 'Design Areas', tags: designAreaTags, setTags: setDesignAreaTags },
-    { category: 'Majors/Minors', tags: departmentTags, setTags: setDepartmentTags },
     { category: 'Semesters', tags: semesterTags, setTags: setSemesterTags },
     { category: 'Levels', tags: levelTags, setTags: setLevelTags },
     { category: 'Credits', tags: creditTags, setTags: setCreditTags },
+    { category: 'Majors/Minors', tags: departmentTags, setTags: setDepartmentTags },
   ];
 
   const filterResult = courses.filter(
