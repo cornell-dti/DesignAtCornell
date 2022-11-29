@@ -50,7 +50,7 @@ const Footer = () => {
             {useOldLogo || (
               <>
                 <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
-                <Divider />{' '}
+                <Divider />
               </>
             )}
             <DTI />
@@ -69,7 +69,9 @@ const Footer = () => {
       </ColContainer>
       {isMobileView && (
         <CopyRight>
-          <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
+          {useOldLogo || (
+            <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
+          )}
           <CopyRightSentence />
         </CopyRight>
       )}
