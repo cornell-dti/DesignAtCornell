@@ -22,7 +22,7 @@ export const BannerBackground = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 730px;
+  height: 450px;
   background-image: url(${homepage_banner});
   padding-left: 100px;
   padding-right: 100px;

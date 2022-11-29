@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { VerticalFlex, ShowContainer, Spinner } from '../components/ContainerStyles';
-import { EventList } from './EventsStyles';
+import { EventList, NoEventsContainer } from './EventsStyles';
 import Title from './Title';
 import Filter from './dashboard/Filter';
 import EventDisplay from './dashboard/EventDisplay';
 import { LoadingEvents } from '../../../server/src/types';
 import api from '../constants/util';
 import Pagination from '../pagination/Pagination';
+import calendar from '../static/images/calendar.svg';
 
 const Events = () => {
   const [state, setState] = useState<LoadingEvents>({
@@ -51,6 +52,13 @@ const Events = () => {
     </EventList>
   );
 
+  const noEventsDisplay = (
+    <NoEventsContainer>
+      <img src={calendar} alt="calendar" />
+      <p>There are no events for this month.</p>
+    </NoEventsContainer>
+  );
+
   const LoadingIndicator = () => {
     return <Spinner />;
   };
@@ -66,7 +74,8 @@ const Events = () => {
           monthClickHandler={monthClickHandler}
           setPage={setPage}
         />
-        {eventDisplay}
+        {filteredEvents.length > 0 && eventDisplay}
+        {filteredEvents.length <= 0 && noEventsDisplay}
         <ShowContainer show={filteredEvents.length - eventsPerPage > 0}>
           <Pagination
             currentPage={currentPage}
