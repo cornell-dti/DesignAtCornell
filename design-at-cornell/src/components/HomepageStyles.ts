@@ -66,7 +66,7 @@ export const BlurbContainer = styled.div`
       align-items: center;
       padding-left: 30px;
       padding-right: 50px;
-      margin-top: 100px;
+      margin-top: 50px;
     }
   }
 
@@ -246,10 +246,10 @@ export const Grid = styled.div`
 export const MobileElementContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: left;
   font-weight: normal;
+  width: 100%;
   margin-bottom: 50px;
-
   p {
     font-size: 24px;
     text-align: left;

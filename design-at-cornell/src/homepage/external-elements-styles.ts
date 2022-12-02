@@ -18,7 +18,7 @@ export const ElementContainer = styled.div`
 `;
 
 export const ArticleBubbleContainer = styled(ElementContainer)`
-  width: 100%;
+  width: 85vw;
   height: auto;
   border-radius: 20px;
 
