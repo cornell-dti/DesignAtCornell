@@ -21,13 +21,14 @@ export const MobileWrapper = styled.div`
 export const BannerBackground = styled.div`
   display: flex;
   flex-direction: column;
+
+  justify-content: flex-end;
+  align-items: center;
+
   width: 100%;
-  height: 450px;
+  min-height: 450px;
   background-image: url(${homepage_banner});
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-bottom: 90px;
-  position: relative;
+
   @media (max-width: ${mobileBreakpoint}px) {
     overflow-y: visible;
     color: white;
@@ -59,13 +60,10 @@ export const BlurbContainer = styled.div`
       color: white;
       text-align: center;
       display: inline-block;
-      height: 10%;
       width: 100%;
       font-size: 30px;
       line-height: 60px;
       align-items: center;
-      padding-left: 30px;
-      padding-right: 50px;
       margin-top: 50px;
     }
   }
@@ -92,30 +90,44 @@ export const BlurbContainer = styled.div`
 `;
 
 export const Blurb = styled.div`
-  text-align: center;
-  display: inline-block;
-  justify-content: center;
-  position: absolute;
-  width: 450px;
-  height: 220px;
-  right: 150px;
-  top: 110px;
   background: ${colors.blurb};
   border-radius: 20px;
+  padding: 50px;
+  max-width: 457px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 265px;
+  right: 150px;
+
+  h3 {
+    font-weight: 550;
+    font-size: 30px;
+    line-height: 47px;
+    width: 100%;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 153.3%;
+  }
 
   @media (max-width: ${mobileBreakpoint}px) {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     overflow-y: visible;
-    text-align: center;
     width: 100%;
-    right: 0%;
-    top: 15%;
+    height: 100%;
     background: transparent;
     color: white;
+    right: 0px;
+    top: 0px;
+    text-align: left;
+
+    padding: 25px;
   }
 `;
 
