@@ -61,7 +61,7 @@ export const BlurbContainer = styled.div`
       display: inline-block;
       height: 10%;
       width: 100%;
-      font-size: 55px;
+      font-size: 30px;
       line-height: 60px;
       align-items: center;
       padding-left: 30px;
@@ -99,9 +99,14 @@ export const Blurb = styled.div`
   width: 450px;
   height: 220px;
   right: 150px;
-  top: 220px;
+  top: 110px;
   background: ${colors.blurb};
   border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: ${mobileBreakpoint}px) {
     overflow-y: visible;
