@@ -11,6 +11,7 @@ import {
   MobileElementContainer,
   SmallTitle,
   SmallHeading,
+  MobileExploreSubtitle,
 } from '../components/HomepageStyles';
 import homepageEventDisplay from './mobile-events-dashboard/HomepageEventFunctions';
 import articlesDisplay from './mobile-articles-dashboard/articles-homepage-dashboard';
