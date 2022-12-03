@@ -14,12 +14,9 @@ import dtiLogo from '../static/images/dti-logo.svg';
 import cornellLogo from '../static/images/black-white-cornell-logo.svg';
 import { GlobalContext } from '../context/GlobalContext';
 
-type Page = {
-  name: string;
-  url: string;
-};
-
 const dti = 'Cornell Design & Tech Initiative';
+
+const useOldLogo = true;
 
 const CopyRightSentence = () => {
   const year = new Date().getFullYear();
@@ -50,8 +47,12 @@ const Footer = () => {
       ) : (
         <ColContainer>
           <RowContainer>
-            <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
-            <Divider />
+            {useOldLogo || (
+              <>
+                <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
+                <Divider />
+              </>
+            )}
             <DTI />
           </RowContainer>
           <CopyRightSentence />
@@ -68,7 +69,9 @@ const Footer = () => {
       </ColContainer>
       {isMobileView && (
         <CopyRight>
-          <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
+          {useOldLogo || (
+            <img src={cornellLogo} className="cornell-logo" alt="black white cornell logo" />
+          )}
           <CopyRightSentence />
         </CopyRight>
       )}
