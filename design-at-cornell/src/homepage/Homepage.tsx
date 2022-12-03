@@ -13,6 +13,7 @@ import {
   SmallHeading,
   Headline,
   MissionStat,
+  MobileExploreSubtitle,
 } from '../components/HomepageStyles';
 import homepageEventDisplay from './mobile-events-dashboard/HomepageEventFunctions';
 import articlesDisplay from './mobile-articles-dashboard/articles-homepage-dashboard';
@@ -51,7 +52,7 @@ const Homepage: React.FC = () => (
         {homeMobile.map((page) => (
           <GridMobile key={page.url}>
             <Link to={page.url}>
-              <ExploreSubtitle to={page.url}> {'>'}</ExploreSubtitle>
+              <MobileExploreSubtitle> {'>'}</MobileExploreSubtitle>
               <CardTitle>{page.name}</CardTitle>
               <img src={page.image} alt={page.name} />
             </Link>
@@ -60,7 +61,9 @@ const Homepage: React.FC = () => (
 
         <MobileElementContainer>
           <SmallTitle>Upcoming Events</SmallTitle>
-          <ExploreSubtitle to="./events"> {'>'}</ExploreSubtitle>
+          <Link to="./events">
+            <MobileExploreSubtitle> {'>'}</MobileExploreSubtitle>
+          </Link>
           {homepageEventDisplay()}
         </MobileElementContainer>
         <MobileElementContainer>
@@ -68,7 +71,9 @@ const Homepage: React.FC = () => (
         </MobileElementContainer>
         <MobileElementContainer>
           <SmallTitle>Articles</SmallTitle>
-          <ExploreSubtitle to="./articles"> {'>'}</ExploreSubtitle>
+          <Link to="./articles">
+            <MobileExploreSubtitle> {'>'}</MobileExploreSubtitle>
+          </Link>
           {articlesDisplay()}
         </MobileElementContainer>
         <MobileElementContainer>

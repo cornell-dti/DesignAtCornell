@@ -2,9 +2,18 @@
 
 ## Contributors
 
-#### School Year
+### School Year
 
-### 2021 - 2022
+#### 2022 - 2023
+
+- **Pranavi Gupta** - Product Manager
+- **Sarah Young** - Associate Product Manager
+- **Will Zhang** - Technical Project Manager
+- **Michelle Dai** - Product Designer
+- **Sydney Tran** - Software Developer
+- **Michael Ye** - Software Developer
+
+#### 2021 - 2022
 
 - **Ying Yang** - Product Manager
 - **Jessica Feng** - Technical Project Manager
@@ -18,7 +27,7 @@
 - **Vishok Jonnalagadda** - Software Developer
 - **Pratyush Sudhakar** - Software Developer
 
-### 2020 - 2021
+#### 2020 - 2021
 
 - **Ying Yang** - Product Manager
 - **Jessica Feng** - Technical Project Manager
