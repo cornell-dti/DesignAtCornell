@@ -38,7 +38,6 @@ const FacultyBubble = (faculty: Faculty) => (
         <TagsContainer>
           {faculty.tags.map((t, i) => {
             const idx = modHashString(t, dashboardColors.length);
-            console.log(idx, t);
 
             return (
               <Tag key={i} style={{ background: dashboardColors[idx] }}>
