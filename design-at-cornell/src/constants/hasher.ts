@@ -10,7 +10,7 @@ export const hashString = (string: string) => {
   return h;
 };
 
-// return hashed string between [0..length-1]
+// return hashed trimmed string between [0..length-1]
 export const modHashString = (str: string, length: number) => {
-  return ((hashString(str) % length) + length) % length;
+  return ((hashString(str.trim()) % length) + length) % length;
 };

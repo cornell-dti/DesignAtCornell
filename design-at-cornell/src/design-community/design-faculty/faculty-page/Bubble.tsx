@@ -13,6 +13,7 @@ import {
 } from '../../../components/ContainerStyles';
 import { Faculty } from '../../../../../server/src/types';
 import { dashboardColors } from '../../../constants/colors';
+import { modHashString } from '../../../constants/hasher';
 
 const FacultyBubble = (faculty: Faculty) => (
   <SmallFacultyBubbleContainer onClick={() => window.open(faculty.website)}>
@@ -35,24 +36,16 @@ const FacultyBubble = (faculty: Faculty) => (
         </FacultyBubbleSubtitle>
         <br></br>
         <TagsContainer>
-          {faculty.tags[0] === undefined ? null : (
-            <Tag
-              style={{
-                background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-              }}
-            >
-              {faculty.tags[0]}
-            </Tag>
-          )}
-          {faculty.tags[1] === undefined ? null : (
-            <Tag
-              style={{
-                background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-              }}
-            >
-              {faculty.tags[1]}
-            </Tag>
-          )}
+          {faculty.tags.map((t, i) => {
+            const idx = modHashString(t, dashboardColors.length);
+            console.log(idx, t);
+
+            return (
+              <Tag key={i} style={{ background: dashboardColors[idx] }}>
+                {t}
+              </Tag>
+            );
+          })}
         </TagsContainer>
         <br></br>
       </FacultyBubbleRightVerticalFlex>
