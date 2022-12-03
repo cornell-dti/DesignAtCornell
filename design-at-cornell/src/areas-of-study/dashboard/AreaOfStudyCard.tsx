@@ -11,8 +11,8 @@ const AreaOfStudyCard = (props: Props) => {
     >
       <h1>{props.study.content.title}</h1>
       <AreaOfStudyTag>{props.study.content.school + '. '}</AreaOfStudyTag>
-      {props.study.content.designAreas.map((area) =>
-        area === '' ? null : <AreaOfStudyTag>{area + '. '}</AreaOfStudyTag>
+      {props.study.content.designAreas.map((area, i) =>
+        area === '' ? null : <AreaOfStudyTag key={i}>{area + '. '}</AreaOfStudyTag>
       )}
     </AreaOfStudyButton>
   );

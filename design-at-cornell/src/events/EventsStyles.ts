@@ -32,8 +32,8 @@ export const FilterButton = styled.div<{ open: boolean }>`
 
 export const MonthSelected = styled.div`
   display: flex;
-  font-weight: bold;
-  font-size: 28px;
+  font-weight: 600;
+  font-size: 32px;
   line-height: 38px;
   text-align: center;
   color: black;
@@ -85,7 +85,7 @@ export const MonthButton = styled.div<{ selected: boolean }>`
   background: ${({ selected }) => (selected ? '#707070' : '#E6E6E6')};
   cursor: pointer;
 
-  font-weight: bold;
+  font-weight: 600;
   font-size: 24px;
   line-height: 75px;
   text-align: center;
@@ -126,7 +126,7 @@ export const EventContainer = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   h1 {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 32px;
     line-height: 38px;
     color: black;
@@ -188,7 +188,7 @@ export const Settings = styled.div`
       font-size: 18px;
       margin: -15px 0px 10px 0;
       display: inline-flex;
-      font-weight: bold;
+      font-weight: 500;
     }
   }
 
@@ -222,7 +222,7 @@ export const EventLink = styled.div`
   cursor: pointer;
 
   p {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 17px;
     line-height: 20px;
     color: black;

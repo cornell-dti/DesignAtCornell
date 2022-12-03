@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Faculty } from '../../../../../server/src/types';
 import { dashboardColors } from '../../../constants/colors';
 import { BubbleContainer, ColContainer, RowContainer, Tag, Split } from './MobileBubbleStyles';
 import downArrow from '../../../static/images/down-arrow.svg';
 import upArrow from '../../../static/images/up-arrow.svg';
 import Expanding from '../../../animated/Expanding';
+import { modHashString } from '../../../constants/hasher';
 
 const linkArrow = '↗';
 
-const randomizeArray = (arr: any[], n: number) => {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, n);
-};
-
 const FacultyBubble = (faculty: Faculty) => {
   const [show, setShow] = useState<boolean>(false);
-  const [colors, setColors] = useState<string[]>([]);
-
-  useEffect(() => {
-    setColors(randomizeArray(dashboardColors, faculty.tags.length));
-  }, [faculty]);
 
   const toggleShow = () => {
     setShow(!show);
@@ -41,11 +32,14 @@ const FacultyBubble = (faculty: Faculty) => {
   const Tags = () => {
     return (
       <RowContainer className="tags">
-        {faculty.tags.map((t, i) => (
-          <Tag key={i} style={{ background: colors[i] || 'none' }}>
-            {t}
-          </Tag>
-        ))}
+        {faculty.tags.map((t, i) => {
+          const idx = modHashString(t, dashboardColors.length);
+          return (
+            <Tag key={i} style={{ background: dashboardColors[idx] }}>
+              {t}
+            </Tag>
+          );
+        })}
       </RowContainer>
     );
   };

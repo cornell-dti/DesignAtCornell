@@ -15,33 +15,28 @@ import { ModalContainer, ModalHeader, ModalContent } from '../../components/Moda
 import { CourseRosterButton } from '../../components/ButtonStyles';
 import { HorizontalFlex } from '../../components/ContainerStyles';
 import { colors } from '../../constants/colors';
+import { modHashString } from '../../constants/hasher';
 
 const CourseBubble = (course: Course) => {
   const [open, setOpen] = React.useState(false);
 
+  const tags = [`${course.content.credits} Credits`, ...course.content.semester];
+
   const courseCard = (
-    <CourseContainer
-      style={{ borderColor: dashboardColors[Math.floor(Math.random() * dashboardColors.length)] }}
-    >
+    <CourseContainer>
       <Subtitle>
         <p>{course.id + ' ' + course.code}</p>
       </Subtitle>
       <Title>{course.content.title}</Title>
       <TagsContainer>
-        <Tag
-          style={{
-            background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-          }}
-        >
-          {course.content.credits + ' Credits'}
-        </Tag>
-        <Tag
-          style={{
-            background: dashboardColors[Math.floor(Math.random() * dashboardColors.length)],
-          }}
-        >
-          {course.content.semester.join(', ')}
-        </Tag>
+        {tags.map((t, i) => {
+          const idx = modHashString(t, dashboardColors.length);
+          return (
+            <Tag key={i} style={{ background: dashboardColors[idx] }}>
+              {t}
+            </Tag>
+          );
+        })}
       </TagsContainer>
     </CourseContainer>
   );
