@@ -8,13 +8,11 @@ export const TitleBackground = styled.div`
   width: 100%;
   height: 450px;
   background: ${(props) => props.color};
-  padding-left: 100px;
-  padding-right: 100px;
+  justify-content: center;
+  padding: 0 20px;
 
   @media (max-width: ${mobileBreakpoint}px) {
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 300px;
+    height: 390px;
   }
 `;
 
@@ -93,12 +91,12 @@ export const TitleContainer = styled.div`
     font-style: normal;
     font-weight: bolder;
     font-size: 64px;
-    line-height: 75px;
+    line-height: 90px;
     margin-bottom: 30px;
     color: black;
     @media (max-width: 1000px) {
       font-size: 50px;
-      line-height: 30px;
+      line-height: 60px;
     }
   }
 
@@ -142,10 +140,11 @@ export const TitleContainer = styled.div`
 `;
 
 export const CourseTitleContainer = styled(TitleContainer)`
+  max-width: 95%;
   h1 {
     @media (max-width: ${mobileBreakpoint}px) {
       font-size: 50px;
-      line-height: 30px;
+      line-height: 50px;
       margin-top: 15px;
     }
   }
