@@ -19,7 +19,6 @@ export const ElementContainer = styled.div`
 `;
 export const CourseContainer = styled(ElementContainer)`
   @media (max-width: ${mobileBreakpoint}px) {
-    margin-left: -60px;
     align-items: left;
     width: 93vw;
   }
@@ -29,8 +28,7 @@ export const ClubBubbleContainer = styled(ElementContainer)`
   cursor: default;
   @media (max-width: ${mobileBreakpoint}px) {
     width: 950px;
-    min-width: 375px;
-    margin-left: 0px;
+    max-width: 100%;
   }
 `;
 
