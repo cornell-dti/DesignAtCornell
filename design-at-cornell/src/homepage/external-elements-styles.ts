@@ -33,7 +33,7 @@ export const ArticleBubbleContainer = styled(ElementContainer)`
 `;
 
 export const Title = styled.div`
-  font-weight: bold;
+  font-weight: 500;
   font-size: 20px;
   line-height: 23px;
   text-align: start;
@@ -68,7 +68,7 @@ export const ArticleBubbleSubtitle = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: #818181;
-    font-weight: bold;
+    font-weight: 500;
   }
 `;
 

@@ -28,7 +28,7 @@ export const FullContainer = styled.div`
   }
 
   .old-logo-text {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 16px;
     text-align: left;
     height: fit-content;
@@ -36,7 +36,7 @@ export const FullContainer = styled.div`
   }
 
   .logo-text {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 10px;
     margin: 0px;
     white-space: nowrap;
@@ -111,7 +111,7 @@ export const StyledLink = styled(Link)`
 export const NavItem = styled.p`
   margin: 0px 15px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   text-align: center;

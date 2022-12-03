@@ -3,6 +3,9 @@ import { mobileBreakpoint } from '../constants/styling';
 
 export const SemanticStyledPagination = styled.div`
   margin: 15px auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 `;
 
 export const StyledPagination = styled.div`
