@@ -11,8 +11,6 @@ import {
   MobileElementContainer,
   SmallTitle,
   SmallHeading,
-  Headline,
-  MissionStat,
   MobileExploreSubtitle,
 } from '../components/HomepageStyles';
 import homepageEventDisplay from './mobile-events-dashboard/HomepageEventFunctions';
@@ -25,10 +23,6 @@ const Homepage: React.FC = () => (
   <div data-testid="Homepage">
     <Router />
     <Title />
-    <Headline>Your ultimate resource for all things Design at Cornell University.</Headline>
-    <MissionStat>
-      Our mission is to connect, inform, and inspire the design community at Cornell University.
-    </MissionStat>
     <DesktopWrapper>
       <Grid>
         {home.map((page) => (
