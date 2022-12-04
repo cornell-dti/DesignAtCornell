@@ -35,6 +35,8 @@ export const BannerBackground = styled.div`
     height: 336px;
     background-image: url(${mobile_homepage});
     margin-bottom: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 `;
 
