@@ -36,6 +36,7 @@ export const BannerBackground = styled.div`
     background-image: url(${mobile_homepage});
     margin-bottom: 0px;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
   }
 `;
