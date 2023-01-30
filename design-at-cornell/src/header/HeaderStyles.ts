@@ -10,11 +10,15 @@ export const FullContainer = styled.div`
   }
 
   .old-dac-logo {
-    width: 140px;
+    width: auto;
+    height: 90px;
+    margin-bottom: 13px;
   }
 
   .dac-logo {
-    width: 75px;
+    width: auto;
+    height: 90px;
+    margin-bottom: 13px;
   }
 
   .active {
