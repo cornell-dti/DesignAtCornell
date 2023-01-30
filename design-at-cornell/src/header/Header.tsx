@@ -52,11 +52,11 @@ const Header = () => {
   const DesktopLogo = () => (
     <RowContainer>
       <img src={dacLogo} className="old-dac-logo" alt="logo" />
-      <span className="old-logo-text">
+      {/* <span className="old-logo-text">
         Design <br />
         At <br />
         Cornell
-      </span>
+      </span> */}
     </RowContainer>
   );
 
@@ -67,7 +67,7 @@ const Header = () => {
 
       <ColContainer>
         <img src={dacLogo} className="dac-logo" alt="logo" />
-        <span className="logo-text">Design At Cornell</span>
+        {/* <span className="logo-text">Design At Cornell</span> */}
       </ColContainer>
     </RowContainer>
   );
